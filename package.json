@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "clean": "rm -r dist",
+    "build": "node metalsmith.js",
+    "start": "metalsmith-start",
+    "update": "git submodule update --remote"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.10",
+    "metalsmith": "^2.3.0",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-layouts": "^1.8.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-postcss": "^4.1.0",
+    "metalsmith-start": "^2.0.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0",
+    "postcss-nested": "^2.1.2"
+  }
+}
