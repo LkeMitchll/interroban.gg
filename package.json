@@ -4,7 +4,8 @@
     "build": "node metalsmith.js",
     "start": "metalsmith-start",
     "update": "git submodule update --remote",
-    "cms": "open https://gist.github.com/LkeMitchll/ce7c368203a26455b3b9e2ae1d40a779"
+    "cms": "open https://gist.github.com/LkeMitchll/ce7c368203a26455b3b9e2ae1d40a779",
+    "lint": "stylelint  src/*.css src/**/*"
   },
   "dependencies": {
     "handlebars": "^4.0.10",
@@ -16,6 +17,11 @@
     "metalsmith-start": "^2.0.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
-    "postcss-nested": "^2.1.2"
+    "postcss-nested": "^2.1.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-standard": "^17.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }
