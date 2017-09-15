@@ -6,8 +6,6 @@ A simple [Metalsmith][mdocs] site.
 
 1. Clone repo
 2. Run `yarn` to install dependencies to `./node_modules`
-3. Initialise git submodules with `git submodule init`
-4. Clone git submodules with `git submodule update`
 
 ## Development
 
@@ -29,18 +27,14 @@ notably:
 
 ## Updating Content (CMS)
 
-The site consists of a single page of markdown, stored as a GitHub Gist, which
+The site consists of a single page of markdown, stored on GitHub, which
 is processed by Metalsmith with added templating and styling.
 
-The Gist can be found [HERE.][gist] Alternatively you can run `yarn run cms`
-to open the link.
-
-Once edited and saved run `yarn run update` in the local repo to pull
-down the changes.
+The file can be found [HERE][file].
 
 [mdocs]: http://www.metalsmith.io
 [postcss]: http://postcss.org
 [cssnext]: http://cssnext.io
 [import]: https://github.com/postcss/postcss-import
 [nested]: https://github.com/postcss/postcss-nested
-[gist]: https://gist.github.com/LkeMitchll/ce7c368203a26455b3b9e2ae1d40a779
+[file]: https://github.com/LkeMitchll/interroban.gg/blob/master/src/index.md
