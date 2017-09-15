@@ -1,9 +1,1 @@
-:root {
-  --var-green: green;
-}
 
-@import "css/test.css";
-
-body {
-  background-color: var(--var-green);
-}
