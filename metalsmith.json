@@ -1,0 +1,18 @@
+{
+  "source": "./src",
+  "destination": "./dist",
+  "ignore": "css",
+  "plugins": {
+    "metalsmith-markdown": {},
+    "metalsmith-layouts": {
+      "engine": "handlebars"
+    },
+    "metalsmith-postcss": {
+      "plugins": {
+        "postcss-cssnext": {},
+        "postcss-nested": {},
+        "postcss-import": {}
+      }
+    }
+  }
+}
