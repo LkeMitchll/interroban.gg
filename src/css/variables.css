@@ -1,6 +1,8 @@
 :root {
-  --font-family: "Tiempos Text", Georgia, Times New Roman, serif;
+  --font-text: "Tiempos Text", Georgia, Times New Roman, serif;
+  --font-alt: "Input Mono", Monaco, monospace;
   --font-size: 1.25rem;
+  --font-size-alt: 1rem;
   --font-weight-bold: 700;
   --site-width: 64rem;
   --measure: 30em;

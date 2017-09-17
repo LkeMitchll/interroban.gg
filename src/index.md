@@ -18,7 +18,9 @@ I'm Luke Mitchell, a designer at [thoughtbot][thoughtbot.com]
 - [Dribbble][dribbble.com]
 - [Instagram][instagram.com]
 
-Set in Tiempos Text & Input Mono [Source Code][github.com]
+_Set in Tiempos Text & Input Mono_
+
+_[Source Code][github.com]_
 
 [thoughtbot.com]: https://thoughtbot.com
 [twitter.com]: https://twitter.com/LkeMitchll
