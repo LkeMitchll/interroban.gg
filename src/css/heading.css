@@ -1,0 +1,4 @@
+h1 {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bold);
+}

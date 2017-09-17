@@ -23,7 +23,6 @@ notably:
 
 - [postcss-cssnext][cssnext]
 - [postcss-import][import]
-- [postcss-nested][nested]
 
 ## Updating Content (CMS)
 
@@ -36,5 +35,4 @@ The file can be found [HERE][file].
 [postcss]: http://postcss.org
 [cssnext]: http://cssnext.io
 [import]: https://github.com/postcss/postcss-import
-[nested]: https://github.com/postcss/postcss-nested
 [file]: https://github.com/LkeMitchll/interroban.gg/blob/master/src/index.md

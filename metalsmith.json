@@ -9,9 +9,8 @@
     },
     "metalsmith-postcss": {
       "plugins": {
-        "postcss-cssnext": {},
-        "postcss-nested": {},
         "postcss-import": {},
+        "postcss-cssnext": {},
         "postcss-clean": {}
       }
     }
