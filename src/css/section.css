@@ -1,4 +1,8 @@
 section {
   max-width: var(--measure);
-  padding: var(--spacing-large) var(--spacing);
+  padding: var(--spacing);
+
+  @media (--small-viewport) {
+    padding: calc(var(--spacing) / 2);
+  }
 }

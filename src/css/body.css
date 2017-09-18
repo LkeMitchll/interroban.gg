@@ -3,9 +3,13 @@ body {
   color: var(--color-primary);
   font-family: var(--font-text);
   font-size: var(--font-size);
-  line-height: 1.6;
+  line-height: var(--line-height);
   margin: 0 auto;
   max-width: var(--site-width);
+
+  @media (--small-viewport) {
+    font-size: var(--font-size-alt);
+  }
 
   &.invert {
     color: var(--color-secondary);

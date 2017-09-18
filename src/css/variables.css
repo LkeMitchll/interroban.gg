@@ -18,9 +18,11 @@
   --font-size-alt: 1rem;
   --font-weight-bold: 600;
   --site-width: 64rem;
-  --spacing: 2rem;
-  --spacing-large: 4rem;
-  --measure: 30em;
+  --measure: 31em;
+  --line-height: 1.6;
+  --spacing: 3.2rem;
   --color-primary: black;
   --color-secondary: white;
+
+  @custom-media --small-viewport (max-width: 30em);
 }
