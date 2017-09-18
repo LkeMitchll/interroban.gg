@@ -5,7 +5,7 @@
     "start": "metalsmith-start",
     "update": "git submodule update --remote",
     "cms": "open https://gist.github.com/LkeMitchll/ce7c368203a26455b3b9e2ae1d40a779",
-    "lint": "stylelint  src/*.css src/**/*"
+    "lint": "stylelint  src/*.css src/css/**/*"
   },
   "dependencies": {
     "handlebars": "^4.0.10",
@@ -22,6 +22,9 @@
     "stylelint-config-standard": "^17.0.0"
   },
   "stylelint": {
-    "extends": "stylelint-config-standard"
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "max-nesting-depth": 2
+    }
   }
 }
