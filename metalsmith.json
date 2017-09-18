@@ -11,6 +11,12 @@
     "metalsmith-layouts": {
       "engine": "handlebars"
     },
+    "metalsmith-uglify": {
+      "sameName": true,
+      "uglify": {
+        "sourceMap": false
+      }
+    },
     "metalsmith-postcss": {
       "plugins": {
         "postcss-import": {},

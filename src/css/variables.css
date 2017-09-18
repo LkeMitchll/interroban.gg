@@ -21,5 +21,6 @@
   --spacing: 2rem;
   --spacing-large: 4rem;
   --measure: 30em;
-  --color-primary: rgb(74, 74, 74);
+  --color-primary: black;
+  --color-secondary: white;
 }

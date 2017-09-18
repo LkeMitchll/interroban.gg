@@ -6,4 +6,9 @@ body {
   line-height: 1.6;
   margin: 0 auto;
   max-width: var(--site-width);
+
+  &.invert {
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+  }
 }
