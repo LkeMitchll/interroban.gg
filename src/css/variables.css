@@ -1,11 +1,25 @@
+@font-face {
+  font-family: Tiempos Text Regular;
+  font-weight: 400;
+  src: url("fonts/TiemposTextTest-Regular.woff");
+}
+
+@font-face {
+  font-family: Tiempos Text Semibold;
+  font-weight: 600;
+  src: url("fonts/TiemposTextTest-Semibold.woff");
+}
+
 :root {
-  --font-text: "Tiempos Text", Georgia, Times New Roman, serif;
+  --font-text: "Tiempos Text Regular", Georgia, Times New Roman, serif;
+  --font-text-strong: "Tiempos Text Semibold", Georgia, Times New Roman, serif;
   --font-alt: "Input Mono", Monaco, monospace;
   --font-size: 1.25rem;
   --font-size-alt: 1rem;
-  --font-weight-bold: 700;
+  --font-weight-bold: 600;
   --site-width: 64rem;
   --spacing: 2rem;
   --spacing-large: 4rem;
   --measure: 30em;
+  --color-primary: rgb(74, 74, 74);
 }

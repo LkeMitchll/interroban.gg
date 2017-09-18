@@ -1,5 +1,5 @@
 a {
-  color: black;
+  color: inherit;
 
   &:hover {
     text-decoration: none;

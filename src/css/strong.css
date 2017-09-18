@@ -1,5 +1,4 @@
-h1 {
+strong {
   font-family: var(--font-text-strong);
-  font-size: var(--font-size);
   font-weight: var(--font-weight-bold);
 }
