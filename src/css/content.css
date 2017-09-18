@@ -1,0 +1,4 @@
+p,
+ul {
+  margin: var(--spacing) 0;
+}

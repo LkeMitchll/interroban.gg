@@ -2,6 +2,6 @@ body {
   font-family: var(--font-text);
   font-size: var(--font-size);
   line-height: 1.6;
-  max-width: var(--site-width);
   margin: 0 auto;
+  max-width: var(--site-width);
 }

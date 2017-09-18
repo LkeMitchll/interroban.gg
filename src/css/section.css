@@ -1,3 +1,4 @@
 section {
   max-width: var(--measure);
+  padding: var(--spacing-large) var(--spacing);
 }

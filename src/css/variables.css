@@ -5,5 +5,7 @@
   --font-size-alt: 1rem;
   --font-weight-bold: 700;
   --site-width: 64rem;
+  --spacing: 2rem;
+  --spacing-large: 4rem;
   --measure: 30em;
 }
