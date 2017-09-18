@@ -3,7 +3,11 @@
   "destination": "./dist",
   "ignore": "css",
   "plugins": {
-    "metalsmith-markdown": {},
+    "metalsmith-markdown": {
+      "gfm": true,
+      "breaks": true,
+      "smartypants": true
+    },
     "metalsmith-layouts": {
       "engine": "handlebars"
     },
