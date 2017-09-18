@@ -3,6 +3,6 @@ section {
   padding: var(--spacing);
 
   @media (--small-viewport) {
-    padding: calc(var(--spacing) / 2);
+    padding: var(--spacing-small);
   }
 }

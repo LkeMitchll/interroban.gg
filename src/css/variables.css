@@ -21,6 +21,7 @@
   --measure: 31em;
   --line-height: 1.6;
   --spacing: 3.2rem;
+  --spacing-small: calc(var(--spacing) / 2);
   --color-primary: black;
   --color-secondary: white;
 
