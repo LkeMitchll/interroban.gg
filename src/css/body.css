@@ -6,6 +6,8 @@ body {
   line-height: var(--line-height);
   margin: 0 auto;
   max-width: var(--site-width);
+  transition-property: color, background-color;
+  transition-duration: 0.5s;
 
   @media (--small-viewport) {
     font-size: var(--font-size-alt);
