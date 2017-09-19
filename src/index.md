@@ -15,8 +15,8 @@ I'm Luke Mitchell, a designer at [thoughtbot][thoughtbot.com].
 - [Dribbble][dribbble.com]
 - [Instagram][instagram.com]
 
-_Set in [Tiempos Text][tiempos] & [Input Mono][input]_
-_[Source Code][github.com]_
+_Set in [Tiempos Text][tiempos] & [Input Mono][input]._
+_Source code hosted at [GitHub][github.com]._
 
 [thoughtbot.com]: https://thoughtbot.com
 [robots.thoughtbot.com]: https://robots.thoughtbot.com/authors/luke-mitchell
