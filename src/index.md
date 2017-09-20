@@ -1,7 +1,7 @@
 ---
 layout: layout.html
-title: Interroban.gg - Luke Mitchell
-description: Test description
+title: Luke Mitchell
+description: I'm Luke Mitchell, a designer at thoughtbot.
 ---
 
 # !?
