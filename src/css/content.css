@@ -1,4 +1,6 @@
+h1,
 p,
 ul {
-  margin: var(--spacing) 0;
+  margin-bottom: var(--spacing);
+  margin-top: 0;
 }

@@ -13,7 +13,7 @@
 :root {
   --font-text: "Tiempos Text Regular", Georgia, Times New Roman, serif;
   --font-text-strong: "Tiempos Text Semibold", Georgia, Times New Roman, serif;
-  --font-alt: "Input Mono", Monaco, monospace;
+  --font-alt: Courier, Monaco, monospace;
   --font-size: 1.25rem;
   --font-size-alt: 1rem;
   --font-weight-bold: 600;
