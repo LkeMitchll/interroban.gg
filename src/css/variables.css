@@ -11,19 +11,21 @@
 }
 
 :root {
-  --font-text: "Tiempos Text Regular", Georgia, Times New Roman, serif;
-  --font-text-strong: "Tiempos Text Semibold", Georgia, Times New Roman, serif;
+  --font-text: "Tiempos Text Regular", Times New Roman, system-ui;
+  --font-text-strong: "Tiempos Text Semibold", Times New Roman, system-ui;
   --font-alt: Courier, Monaco, monospace;
   --font-size: 1.25rem;
   --font-size-alt: 1rem;
   --font-weight-bold: 600;
   --site-width: 64rem;
-  --measure: 31em;
+  --measure: 32em;
   --line-height: 1.6;
-  --spacing: 3.2rem;
+  --spacing: 1.6rem;
   --spacing-small: calc(var(--spacing) / 2);
+  --spacing-large: calc(var(--spacing) * 2);
   --color-primary: rgb(17, 17, 17);
   --color-secondary: white;
+  --transition-duration: 0.5s;
 
   @custom-media --small-viewport (max-width: 30em);
 }

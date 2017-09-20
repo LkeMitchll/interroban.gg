@@ -7,7 +7,7 @@ body {
   margin: 0 auto;
   max-width: var(--site-width);
   transition-property: color, background-color;
-  transition-duration: 0.5s;
+  transition-duration: var(--transition-duration);
 
   @media (--small-viewport) {
     font-size: var(--font-size-alt);
