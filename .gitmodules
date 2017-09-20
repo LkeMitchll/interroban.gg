@@ -1,0 +1,3 @@
+[submodule "src/fonts"]
+	path = src/fonts
+	url = git@github.com:LkeMitchll/interroban.gg-fonts.git
