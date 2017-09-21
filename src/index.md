@@ -8,7 +8,7 @@ description: I'm Luke Mitchell, a designer at thoughtbot.
 
 **Interrobang** (in-ter-uh-bang) **n.** The interrobang, also known as the interabang, is a nonstandard punctuation mark used in various written languages and intended to combine the functions of the question mark and the exclamation mark or exclamation point. The glyph is a superimposition of these two marks.
 
-**I'm Luke Mitchell**, a designer at [thoughtbot][thoughtbot.com].
+Hello, I'm Luke Mitchell, a designer at [thoughtbot][thoughtbot.com] in London.
 
 - [Writing][robots.thoughtbot.com]
 - [Twitter][twitter.com]
