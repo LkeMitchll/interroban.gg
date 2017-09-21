@@ -1,6 +1,10 @@
 h1,
 p,
 ul {
-  margin-bottom: var(--spacing);
+  margin-bottom: var(--spacing-large);
   margin-top: 0;
+
+  @media (--small-viewport) {
+    margin-bottom: var(--spacing);
+  }
 }
