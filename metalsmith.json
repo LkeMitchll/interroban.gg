@@ -11,11 +11,11 @@
     "metalsmith-layouts": {
       "engine": "handlebars"
     },
-    "metalsmith-uglify": {
-      "sameName": true,
-      "uglify": {
-        "sourceMap": false
-      }
+    "metalsmith-babel": {
+      "presets": [
+        "es2015"
+      ],
+      "minified": true
     },
     "metalsmith-postcss": {
       "plugins": {
