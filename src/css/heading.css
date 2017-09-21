@@ -1,6 +1,6 @@
 h1 {
   font-family: var(--font-text-strong);
-  font-size: var(--font-size);
+  font-size: inherit;
   font-weight: var(--font-weight-bold);
 
   &:hover {
