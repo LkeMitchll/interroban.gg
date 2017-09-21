@@ -6,6 +6,7 @@ A simple [Metalsmith][mdocs] site.
 
 1. Clone repo
 2. Run `yarn` to install dependencies to `./node_modules`
+3. Run `yarn run update` to clone font submodule (private)
 
 ## Development
 
