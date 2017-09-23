@@ -15,7 +15,7 @@ Hello, I'm Luke Mitchell, a designer at [thoughtbot][thoughtbot.com] in London.
 - [Dribbble][dribbble.com]
 - [Instagram][instagram.com]
 
-_Set in [Tiempos Text][tiempos] & [Courier][courier]._
+_Set in [Tiempos Text][tiempos] & [Courier Prime][courier]._
 _Source code hosted at [GitHub][github.com]._
 
 [thoughtbot.com]: https://thoughtbot.com
@@ -25,4 +25,4 @@ _Source code hosted at [GitHub][github.com]._
 [instagram.com]: https://www.instagram.com/lkemitchll
 [github.com]: https://github.com/LkeMitchll/interroban.gg
 [tiempos]: https://klim.co.nz/retail-fonts/tiempos-text/
-[courier]: https://en.wikipedia.org/wiki/Courier_(typeface)
+[courier]: https://quoteunquoteapps.com/courierprime/

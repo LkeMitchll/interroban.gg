@@ -10,10 +10,22 @@
   src: url("fonts/TiemposTextTest-Semibold.woff");
 }
 
+@font-face {
+  font-family: Courier Prime Medium;
+  src: url("fonts/CourierPrime-Medium.eot");
+  src:
+    url("fonts/CourierPrime-Medium.eot?#iefix") format("embedded-opentype"),
+    url("fonts/CourierPrime-Medium.woff") format("woff"),
+    url("fonts/CourierPrime-Medium.ttf") format("truetype"),
+    url("fonts/CourierPrime-Medium.svg#CourierPrime-Medium") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
 :root {
   --font-text: "Tiempos Text Regular", Times New Roman, system-ui;
   --font-text-strong: "Tiempos Text Semibold", Times New Roman, system-ui;
-  --font-alt: Courier, Monaco, monospace;
+  --font-alt: "Courier Prime Medium", Courier, Monaco, monospace;
   --font-size: 1.25rem;
   --font-size-small: 1rem;
   --font-weight-bold: 600;
