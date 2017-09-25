@@ -1,13 +1,21 @@
 @font-face {
   font-family: Tiempos Text Regular;
   font-weight: 400;
-  src: url("fonts/TiemposTextTest-Regular.woff");
+  src: url("fonts/TiemposTextWeb-Regular.eot");
+  src:
+    url("fonts/TiemposTextWeb-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/TiemposTextWeb-Regular.woff2") format("woff2"),
+    url("fonts/TiemposTextWeb-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: Tiempos Text Semibold;
   font-weight: 600;
-  src: url("fonts/TiemposTextTest-Semibold.woff");
+  src: url("fonts/TiemposTextWeb-Semibold.eot");
+  src:
+    url("fonts/TiemposTextWeb-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/TiemposTextWeb-Semibold.woff2") format("woff2"),
+    url("fonts/TiemposTextWeb-Semibold.woff") format("woff");
 }
 
 @font-face {

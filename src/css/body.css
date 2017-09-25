@@ -3,6 +3,7 @@ body {
   color: var(--color-primary);
   background-color: var(--color-secondary);
   font-family: var(--font-text);
+  font-feature-settings: "kern" 1, "liga" 1;
   font-size: var(--font-size);
   line-height: var(--line-height);
   margin: 0 auto;
