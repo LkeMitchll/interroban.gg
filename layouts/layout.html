@@ -17,13 +17,13 @@
   <meta property="og:url" content="http://interroban.gg"/>
   <meta property="og:site_name" content="Interrobang"/>
   <meta property="og:type" content="website"/>
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="{{ fingerprint.[site.css] }}">
 </head>
 <body>
   <section>
     {{{ contents }}}
   </section>
 
-  <script src="site.js"></script>
+  <script src="{{ fingerprint.[site.js] }}"></script>
 </body>
 </html>

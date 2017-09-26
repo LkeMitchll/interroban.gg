@@ -3,6 +3,12 @@
   "destination": "./dist",
   "ignore": "css",
   "plugins": {
+    "metalsmith-assets": {
+      "source": "./assets"
+    },
+    "metalsmith-fingerprint": {
+      "pattern": ["site.css", "site.js"]
+    },
     "metalsmith-markdown": {
       "gfm": true,
       "breaks": true,
