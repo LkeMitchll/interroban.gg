@@ -1,7 +1,7 @@
 ---
 layout: layout.html
 title: Luke Mitchell
-description: I'm Luke Mitchell, a designer at thoughtbot.
+description: Hello, I'm Luke Mitchell, a designer at thoughtbot in London.
 ---
 
 # !?
