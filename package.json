@@ -36,7 +36,12 @@
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
-      "max-nesting-depth": 2
+      "max-nesting-depth": 1,
+      "selector-max-specificity": "0,2,0",
+      "color-named": "never",
+      "string-quotes": "double",
+      "function-url-quotes": "always",
+      "font-family-name-quotes": "always-unless-keyword"
     }
   }
 }

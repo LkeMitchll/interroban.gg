@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Tiempos Text Regular;
+  font-family: "Tiempos Text Regular";
   font-weight: 400;
   src: url("fonts/TiemposTextWeb-Regular.eot");
   src:
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: Tiempos Text Semibold;
+  font-family: "Tiempos Text Semibold";
   font-weight: 600;
   src: url("fonts/TiemposTextWeb-Semibold.eot");
   src:
@@ -19,7 +19,7 @@
 }
 
 @font-face {
-  font-family: Courier Prime Medium;
+  font-family: "Courier Prime Medium";
   src: url("fonts/CourierPrime-Medium.eot");
   src:
     url("fonts/CourierPrime-Medium.eot?#iefix") format("embedded-opentype"),
@@ -44,7 +44,7 @@
   --spacing-small: calc(var(--spacing) / 2);
   --spacing-large: calc(var(--spacing) * 2);
   --color-primary: rgb(17, 17, 17);
-  --color-secondary: white;
+  --color-secondary: rgb(255, 255, 255);
   --transition-duration: 0.5s;
 
   @custom-media --small-viewport (max-width: 30em);
