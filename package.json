@@ -10,7 +10,7 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn run clean && yarn run lint && metalsmith",
+    "build": "yarn run clean && metalsmith",
     "start": "metalsmith-start",
     "update": "git submodule init && git submodule update --remote",
     "cms": "open https://github.com/LkeMitchll/interroban.gg/blob/master/src/index.md",
@@ -30,7 +30,6 @@
     "postcss-clean": "^1.0.3",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
-    "stylelint": "^8.1.1",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint": "^8.1.1"
   }
 }
