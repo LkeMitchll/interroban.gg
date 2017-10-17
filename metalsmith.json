@@ -6,16 +6,10 @@
     "metalsmith-assets": {
       "source": "./assets"
     },
-    "metalsmith-fingerprint": {
-      "pattern": ["site.css", "site.js"]
-    },
     "metalsmith-markdown": {
       "gfm": true,
       "breaks": true,
       "smartypants": true
-    },
-    "metalsmith-layouts": {
-      "engine": "handlebars"
     },
     "metalsmith-babel": {
       "presets": [
@@ -29,6 +23,12 @@
         "postcss-cssnext": {},
         "postcss-clean": {}
       }
+    },
+    "metalsmith-fingerprint": {
+      "pattern": ["site.css", "site.js"]
+    },
+    "metalsmith-layouts": {
+      "engine": "handlebars"
     }
   }
 }
