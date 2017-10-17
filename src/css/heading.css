@@ -3,6 +3,10 @@ h1 {
   font-size: inherit;
   font-weight: var(--font-weight-bold);
 
+  & em {
+    font-family: var(--font-text);
+  }
+
   &:hover {
     cursor: help;
   }
