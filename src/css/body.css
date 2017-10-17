@@ -20,9 +20,9 @@ body {
     display: static;
     height: auto;
   }
+}
 
-  &.dark {
-    color: var(--color-secondary);
-    background-color: var(--color-primary);
-  }
+.dark {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
