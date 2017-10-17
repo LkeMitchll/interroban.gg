@@ -20,14 +20,14 @@
 
 @font-face {
   font-family: "Courier Prime Medium";
+  font-style: normal;
+  font-weight: normal;
   src: url("fonts/CourierPrime-Medium.eot");
   src:
     url("fonts/CourierPrime-Medium.eot?#iefix") format("embedded-opentype"),
     url("fonts/CourierPrime-Medium.woff") format("woff"),
     url("fonts/CourierPrime-Medium.ttf") format("truetype"),
     url("fonts/CourierPrime-Medium.svg#CourierPrime-Medium") format("svg");
-  font-style: normal;
-  font-weight: normal;
 }
 
 :root {
@@ -47,5 +47,5 @@
   --color-secondary: rgb(255, 255, 255);
   --transition-duration: 0.5s;
 
-  @custom-media --small-viewport (max-width: 30em);
+  @custom-media --small-viewport (max-width: 50em);
 }

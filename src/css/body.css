@@ -1,10 +1,13 @@
 body {
   -webkit-font-smoothing: antialiased;
-  color: var(--color-primary);
   background-color: var(--color-secondary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
   font-family: var(--font-text);
   font-feature-settings: "kern" 1, "liga" 1;
   font-size: var(--font-size);
+  height: 100vh;
   line-height: var(--line-height);
   margin: 0 auto;
   max-width: var(--site-width);
@@ -14,6 +17,8 @@ body {
 
   @media (--small-viewport) {
     font-size: var(--font-size-small);
+    display: static;
+    height: auto;
   }
 
   &.dark {
