@@ -16,7 +16,8 @@
     "cms": "open https://github.com/LkeMitchll/interroban.gg/blob/master/src/index.md",
     "lint": "stylelint  src/*.css src/css/**/*",
     "docker:build": "docker build -t interrobang .",
-    "docker:start": "docker run -d -p 1337:5000 interrobang"
+    "docker:start": "docker run -d -p 1337:5000 --name interrobang interrobang && open http://localhost:1337",
+    "docker:stop": "docker stop interrobang && docker rm interrobang"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
