@@ -43,6 +43,7 @@
   --spacing: 1.6rem;
   --spacing-small: calc(var(--spacing) / 2);
   --spacing-large: calc(var(--spacing) * 2);
+  --spacing-xlarge: calc(var(--spacing) * 4);
   --color-primary: rgb(17, 17, 17);
   --color-secondary: rgb(255, 255, 255);
   --transition-duration: 0.5s;
