@@ -14,8 +14,6 @@ body {
 
   @media (--small-viewport) {
     font-size: var(--font-size-small);
-    display: static;
-    height: auto;
   }
 }
 

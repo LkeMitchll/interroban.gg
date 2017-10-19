@@ -5,6 +5,11 @@ h1 {
 
   & em {
     font-family: var(--font-text);
+    font-size: var(--font-size);
+
+    @media (--small-viewport) {
+      font-size: var(--font-size-small);
+    }
   }
 
   &:hover {

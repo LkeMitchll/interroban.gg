@@ -1,4 +1,9 @@
 em {
   font-family: var(--font-alt);
   font-style: normal;
+  font-size: var(--font-size-alt);
+
+  @media (--small-viewport) {
+    font-size: var(--font-size-small);
+  }
 }
