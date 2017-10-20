@@ -1,0 +1,7 @@
+.ascii {
+  word-break: break-all;
+
+  @media (--small-viewport) {
+    display: none;
+  }
+}

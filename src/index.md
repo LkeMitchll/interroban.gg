@@ -14,6 +14,8 @@ Hello, I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot.com]. I help tur
 - [Dribbble][dribbble.com]
 - [Instagram][instagram.com]
 
+<div class="ascii"></div>
+
 _Set in [Tiempos Text][tiempos] & [Courier Prime][courier]._
 _Source code hosted at [GitHub][github.com]._
 
