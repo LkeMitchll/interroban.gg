@@ -1,0 +1,10 @@
+code {
+  font-family: var(--font-alt);
+  font-size: var(--font-size-alt);
+  vertical-align: middle;
+  margin-left: var(--spacing-xsmall);
+
+  @media (--small-viewport) {
+    font-size: var(--font-size-x-small);
+  }
+}

@@ -44,6 +44,7 @@
   --line-height: 1.6;
   --spacing: 1.6rem;
   --spacing-small: calc(var(--spacing) / 2);
+  --spacing-xsmall: calc(var(--spacing-small) / 2);
   --spacing-large: calc(var(--spacing) * 2);
   --spacing-xlarge: calc(var(--spacing) * 4);
   --color-primary: rgb(17, 17, 17);
