@@ -10,8 +10,8 @@ The interrobang, also known as the interabang, is a nonstandard punctuation mark
 Hello, I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot.com]. I help turn wants, needs and problems into great products.
 
 - [Writing][robots.thoughtbot.com]
-- [Twitter][twitter.com]
 - [Dribbble][dribbble.com]
+- [Twitter][twitter.com]
 - [Instagram][instagram.com]
 - [Last.fm][last.fm] `[beta]`
 
