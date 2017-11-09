@@ -1,6 +1,6 @@
 section {
   max-width: var(--measure);
-  padding: var(--spacing-large) var(--spacing);
+  padding: var(--spacing-xlarge) var(--spacing);
 
   @media (--small-viewport) {
     padding: var(--spacing-small);

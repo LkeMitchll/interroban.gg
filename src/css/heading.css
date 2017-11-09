@@ -16,3 +16,10 @@ h1 {
     cursor: help;
   }
 }
+
+h2 {
+  font-family: var(--font-text);
+  font-size: inherit;
+  font-variant-caps: small-caps;
+  text-transform: lowercase;
+}
