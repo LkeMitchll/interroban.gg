@@ -11,11 +11,13 @@ Hello, I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot.com]. I help tur
 
 - [Writing][robots.thoughtbot.com]
 - [Dribbble][dribbble.com]
-- [Twitter][twitter.com]
 - [Instagram][instagram.com]
-- [Last.fm][last.fm] `[beta]`
+- [Twitter][twitter.com]
 
-<div class="ascii"></div>
+## Side Projects
+
+- [Swansong][swansong]
+- ~~Aperture~~
 
 _Set in [Tiempos Text][tiempos] & [Courier Prime][courier]._
 _Source code hosted at [GitHub][github.com]._
@@ -25,7 +27,7 @@ _Source code hosted at [GitHub][github.com]._
 [twitter.com]: https://twitter.com/LkeMitchll
 [dribbble.com]: https://dribbble.com/Interrobang
 [instagram.com]: https://www.instagram.com/lkemitchll
-[last.fm]: http://swansong.interroban.gg
+[swansong]: http://swansong.interroban.gg
 [github.com]: https://github.com/LkeMitchll/interroban.gg
 [tiempos]: https://klim.co.nz/retail-fonts/tiempos-text/
 [courier]: https://quoteunquoteapps.com/courierprime/

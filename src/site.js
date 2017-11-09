@@ -54,36 +54,3 @@ var toggleTheme = () => {
 
 setExistingTheme()
 toggleTheme()
-
-var generateRandomIntegerBetween = (min, max) => ( Math.floor(max - Math.random() * (max - min)) )
-
-const times = i => f => {
-  if (i > 0) {
-    f()
-    times (i - 1) (f)
-  }
-}
-
-var generateLine = (string) => {
-  var line, rand
-  line = ''
-  rand = generateRandomIntegerBetween(5, 15)
-
-  times (rand) (() => line += string)
-  line += '<br>'
-
-  return line
-}
-
-var assembleLines = (targets) => {
-  for (var target of targets) {
-    var contents
-    contents = ''
-
-    times (5) (() => contents += generateLine('! ? '))
-    target.innerHTML += `<p><em> ${contents} </em></p>`
-  }
-}
-
-var lineTargets = document.getElementsByClassName('ascii')
-assembleLines(lineTargets)
