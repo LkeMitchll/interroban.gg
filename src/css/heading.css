@@ -1,7 +1,20 @@
+h1,
+h2 {
+  margin: 0 0 var(--spacing);
+
+  @media (--small-viewport) {
+    margin-bottom: var(--spacing-small);
+  }
+}
+
 h1 {
   font-family: var(--font-text-strong);
   font-size: inherit;
   font-weight: var(--font-weight-bold);
+
+  &:hover {
+    cursor: help;
+  }
 
   & em {
     font-family: var(--font-text);
@@ -11,10 +24,6 @@ h1 {
       font-size: var(--font-size-small);
     }
   }
-
-  &:hover {
-    cursor: help;
-  }
 }
 
 h2 {
@@ -22,4 +31,11 @@ h2 {
   font-size: inherit;
   font-variant-caps: small-caps;
   text-transform: lowercase;
+}
+
+h3 {
+  display: inline;
+  font-family: var(--font-text-strong);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
 }

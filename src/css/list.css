@@ -1,6 +1,11 @@
 ul {
   list-style: none;
+  margin: 0 0 var(--spacing-large);
   padding: 0;
+
+  @media (--small-viewport) {
+    margin-bottom: var(--spacing);
+  }
 }
 
 li p {

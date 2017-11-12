@@ -1,10 +1,10 @@
+/* eslint-disable */
 var Metalsmith  = require('metalsmith');
 var assets = require('metalsmith-assets');
 var markdown = require('metalsmith-markdownit');
-var babel = require('metalsmith-babel');
 var postcss = require('metalsmith-postcss');
-var fingerprint = require('metalsmith-fingerprint');
 var layouts = require('metalsmith-layouts');
+var inlineCSS = require('metalsmith-inline-css');
 
 var site = Metalsmith(__dirname)
   .source('./src')
@@ -13,11 +13,10 @@ var site = Metalsmith(__dirname)
   .use(assets({
     source: './assets'
   }))
-  .use(markdown('default', { breaks: true, typographer: true }))
-  .use(babel({
-    presets: ["es2015"],
-    minified: true
-  }))
+  .use(markdown('default', {
+    breaks: true,
+    typographer: true
+  }).use(require('markdown-it-abbr')))
   .use(postcss({
     plugins: {
       'postcss-import': {},
@@ -25,12 +24,10 @@ var site = Metalsmith(__dirname)
       'postcss-clean': {}
     }
   }))
-  .use(fingerprint({
-    pattern: ['site.css', 'site.js']
-  }))
   .use(layouts({
     engine: 'handlebars'
   }))
+  .use(inlineCSS())
 
 if (module.parent) {
   module.exports = site

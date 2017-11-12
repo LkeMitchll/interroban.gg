@@ -2,6 +2,14 @@
 
 A simple [Metalsmith][mdocs] site.
 
+## Aims
+
+- Static
+- Modern
+- Light
+- Minimal
+- Beautiful
+
 ## Setup
 
 1. Clone repo

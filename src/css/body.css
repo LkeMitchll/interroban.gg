@@ -1,3 +1,7 @@
+html {
+  cursor: help;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-secondary);
@@ -15,9 +19,4 @@ body {
   @media (--small-viewport) {
     font-size: var(--font-size-small);
   }
-}
-
-.dark {
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
 }

@@ -1,0 +1,19 @@
+h3 + p {
+  display: inline;
+}
+
+h3 + p > a {
+  display: inline-block;
+  font-family: var(--font-alt);
+  font-size: var(--font-size-alt);
+  margin: var(--spacing-small) 0 var(--spacing);
+
+  @media (--small-viewport) {
+    font-size: var(--font-size-small);
+    margin-bottom: var(--spacing-small);
+  }
+}
+
+li:last-of-type p a {
+  margin-bottom: 0;
+}

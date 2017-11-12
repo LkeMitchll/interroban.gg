@@ -1,0 +1,10 @@
+hr {
+  border-top-color: var(--color-primary);
+  display: block;
+  margin: var(--spacing-large) 0;
+  width: var(--spacing);
+
+  @media (--small-viewport) {
+    margin: var(--spacing) 0;
+  }
+}
