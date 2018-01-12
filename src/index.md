@@ -27,6 +27,8 @@ Hello, I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot]; previously [Fu
   is a gallery of my Instagram shots. Much like Swansong – it is designed to be unobtrusive and simple.  Aperture is built with React.
   [View Aperture][aperture]
 
+---
+
 ## On The Web
 
 - [Writing][robots.thoughtbot.com]
