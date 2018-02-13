@@ -19,6 +19,7 @@ h1 {
   & em {
     font-family: var(--font-text);
     font-size: var(--font-size);
+    font-weight: normal;
 
     @media (--small-viewport) {
       font-size: var(--font-size-small);
