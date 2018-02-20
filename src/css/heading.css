@@ -7,15 +7,19 @@ h2 {
   }
 }
 
-h1 {
+h1,
+h3 {
   font-family: var(--font-text-strong);
-  font-size: inherit;
   font-weight: var(--font-weight-bold);
+}
 
-  &:hover {
-    cursor: help;
-  }
+h1,
+h2,
+h3 {
+  font-size: inherit;
+}
 
+h1 {
   & em {
     font-family: var(--font-text);
     font-size: var(--font-size);
@@ -33,13 +37,10 @@ h1 {
 
 h2 {
   font-family: var(--font-text);
-  font-size: inherit;
   font-variant-caps: small-caps;
 }
 
 h3 {
   display: inline;
-  font-family: var(--font-text-strong);
-  font-size: inherit;
   font-weight: var(--font-weight-bold);
 }
