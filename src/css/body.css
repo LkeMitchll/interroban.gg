@@ -9,8 +9,6 @@ body {
   margin: 0 auto;
   max-width: var(--site-width);
   text-rendering: optimizeLegibility;
-  transition-property: color, background-color;
-  transition-duration: var(--transition-duration);
 
   @media (--small-viewport) {
     font-size: var(--font-size-small);
