@@ -4,6 +4,7 @@ var assets = require('metalsmith-assets');
 var markdown = require('metalsmith-markdownit');
 var postcss = require('metalsmith-postcss');
 var layouts = require('metalsmith-layouts');
+var cleanCSS = require('metalsmith-clean-css');
 var inlineCSS = require('metalsmith-inline-css');
 
 var site = Metalsmith(__dirname)
@@ -20,8 +21,12 @@ var site = Metalsmith(__dirname)
   .use(postcss({
     plugins: {
       'postcss-import': {},
-      'postcss-cssnext': {},
-      'postcss-clean': {}
+      'postcss-cssnext': {}
+    }
+  }))
+  .use(cleanCSS({
+    cleanCSS: {
+      level: 2
     }
   }))
   .use(layouts({
