@@ -3,18 +3,34 @@ layout: layout.html
 title: Luke Mitchell
 description: Hello, I'm Luke Mitchell, a designer at thoughtbot.
 ---
-
+::: large
 # Interrobang _(in–ter–uh–bang)_ **n**.
 The interrobang, also known as the interabang, is a nonstandard punctuation mark used in various written languages and intended to combine the functions of the question mark and the exclamation mark or exclamation point. The glyph is a superimposition of these two marks.
 
 ---
+:::
 
-Hello, I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot]. I help turn wants, needs and problems into products that users love.
+::: large
+## Hello
+
+I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot]. I help turn wants, needs and problems into products that users love.
 
 **Portfolio on request:** [luke@interroban.gg](mailto:luke@interroban.gg)
 
 ---
+:::
 
+::: small
+## On The Web
+
+- [Writing][robots.thoughtbot.com]
+- [Dribbble][dribbble.com]
+- [Twitter][twitter.com]
+
+---
+:::
+
+::: large
 ## Selected Side Projects
 
 - ### Swansong:
@@ -27,16 +43,9 @@ Hello, I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot]. I help turn wa
 
 ---
 
-## On The Web
-
-- [Writing][robots.thoughtbot.com]
-- [Dribbble][dribbble.com]
-- [Twitter][twitter.com]
-
----
-
 _Set in [Tiempos Text][tiempos] & [Courier Prime][courier]._
 _Source code hosted at [GitHub][github.com]._
+:::
 
 *[API]: Application Program Interface
 

@@ -1,0 +1,11 @@
+main {
+  padding: var(--spacing-xlarge) var(--spacing);
+  display: grid;
+  grid-template-columns: [large] 70% [small] 30%;
+  grid-column-gap: var(--spacing-large);
+
+  @media (--small-viewport) {
+    grid-template-columns: [large] 100%;
+    padding: var(--spacing);
+  }
+}

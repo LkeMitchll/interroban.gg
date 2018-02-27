@@ -6,6 +6,8 @@ var postcss = require('metalsmith-postcss');
 var layouts = require('metalsmith-layouts');
 var cleanCSS = require('metalsmith-clean-css');
 var inlineCSS = require('metalsmith-inline-css');
+var abbr = require('markdown-it-abbr');
+var container = require('markdown-it-container');
 
 var site = Metalsmith(__dirname)
   .source('./src')
@@ -17,7 +19,9 @@ var site = Metalsmith(__dirname)
   .use(markdown('default', {
     breaks: true,
     typographer: true
-  }).use(require('markdown-it-abbr')))
+  }).use(abbr)
+    .use(container, 'large')
+    .use(container, 'small'))
   .use(postcss({
     plugins: {
       'postcss-import': {},

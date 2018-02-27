@@ -1,0 +1,18 @@
+.large {
+  grid-column: large;
+  max-width: var(--measure);
+}
+
+.small {
+  grid-column: small;
+
+  @media (--small-viewport) {
+    grid-column: large;
+  }
+}
+
+.large,
+.small {
+  /* grid fallback */
+  float: left;
+}
