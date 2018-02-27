@@ -42,14 +42,13 @@
   --site-width: 60rem;
   --measure: 30em;
   --line-height: 1.6;
-  --spacing: 1.6rem;
+  --spacing: 2.2rem;
   --spacing-small: calc(var(--spacing) / 2);
   --spacing-xsmall: calc(var(--spacing-small) / 2);
-  --spacing-large: calc(var(--spacing) * 2);
-  --spacing-xlarge: calc(var(--spacing) * 4);
+  --spacing-large: calc(var(--spacing) * 1.5);
+  --spacing-xlarge: calc(var(--spacing-large) * 2);
   --color-primary: rgb(74, 74, 74);
   --color-secondary: rgb(255, 255, 255);
-  --transition-duration: 0.5s;
 
   @custom-media --small-viewport (max-width: 50em);
 }

@@ -36,8 +36,9 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-text);
+  font-family: var(--font-text-strong);
   font-variant-caps: small-caps;
+  font-weight: var(--font-weight-bold);
 }
 
 h3 {

@@ -1,6 +1,10 @@
 .large {
   grid-column: large;
   max-width: var(--measure);
+
+  &:last-of-type {
+    margin: 0;
+  }
 }
 
 .small {
@@ -13,6 +17,12 @@
 
 .large,
 .small {
+  margin: 0 0  var(--spacing-xlarge);
+
   /* grid fallback */
   float: left;
+
+  @media (--small-viewport) {
+    margin: 0 0 var(--spacing-large);
+  }
 }
