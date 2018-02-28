@@ -39,7 +39,7 @@ I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot]. I help turn wants, ne
 
 ::: large
 _Set in [Tiempos Text][tiempos] & [Courier Prime][courier]._
-_Source code hosted at [GitHub][github.com]._
+_Source code hosted at [GitHub][github.com]._ ~~:metal:~~
 :::
 
 *[API]: Application Program Interface

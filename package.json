@@ -25,6 +25,7 @@
     "handlebars": "^4.0.10",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-container": "^2.0.0",
+    "markdown-it-emoji": "^1.4.0",
     "metalsmith": "^2.3.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-clean-css": "^6.0.0",

@@ -6,6 +6,11 @@ p {
   }
 
   @media (--small-viewport) {
-    margin: 0 0 var(--spacing-small)
+    margin: 0 0 var(--spacing-small);
   }
+}
+
+s {
+  text-decoration: none;
+  font-family: var(--font-emoji);
 }

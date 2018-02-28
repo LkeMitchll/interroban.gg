@@ -34,6 +34,7 @@
   --font-text: "Tiempos Text Regular", Times New Roman, system-ui;
   --font-text-strong: "Tiempos Text Semibold", Times New Roman, system-ui;
   --font-alt: "Courier Prime Medium", Courier, Monaco, monospace;
+  --font-emoji:  "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-size: 1.4rem;
   --font-size-alt: 1.2rem;
   --font-size-small: 1rem;

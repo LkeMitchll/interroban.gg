@@ -7,6 +7,7 @@ var layouts = require('metalsmith-layouts');
 var cleanCSS = require('metalsmith-clean-css');
 var inlineCSS = require('metalsmith-inline-css');
 var abbr = require('markdown-it-abbr');
+var emoji = require('markdown-it-emoji');
 var container = require('markdown-it-container');
 
 var site = Metalsmith(__dirname)
@@ -20,6 +21,7 @@ var site = Metalsmith(__dirname)
     breaks: true,
     typographer: true
   }).use(abbr)
+    .use(emoji)
     .use(container, 'large')
     .use(container, 'small'))
   .use(postcss({
