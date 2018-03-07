@@ -11,7 +11,7 @@
   }
 
   & a {
-    display: inline-block;
+    display: block;
     font-family: var(--font-alt);
     font-size: var(--font-size-alt);
     margin: var(--spacing-small) 0 0;
