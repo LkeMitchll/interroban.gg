@@ -19,7 +19,6 @@ var site = Metalsmith(__dirname)
     source: './assets'
   }))
   .use(markdown('default', {
-    breaks: true,
     typographer: true
   }).use(abbr)
     .use(emoji)

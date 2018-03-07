@@ -6,4 +6,8 @@
   @media (--small-viewport) {
     font-size: var(--font-size-small);
   }
+
+  & p {
+    margin-bottom: 0;
+  }
 }
