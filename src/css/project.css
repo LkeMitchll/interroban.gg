@@ -1,19 +1,23 @@
-h3 + p {
-  display: inline;
-}
+.project {
+  margin: 0 0 var(--spacing);
 
-h3 + p > a {
-  display: inline-block;
-  font-family: var(--font-alt);
-  font-size: var(--font-size-alt);
-  margin: var(--spacing-small) 0 var(--spacing);
-
-  @media (--small-viewport) {
-    font-size: var(--font-size-small);
-    margin-bottom: var(--spacing-small);
+  &:last-of-type {
+    margin: 0;
   }
-}
 
-li:last-of-type p a {
-  margin-bottom: 0;
+  & > h3,
+  & > p {
+    display: inline;
+  }
+
+  & a {
+    display: inline-block;
+    font-family: var(--font-alt);
+    font-size: var(--font-size-alt);
+    margin: var(--spacing-small) 0 0;
+
+    @media (--small-viewport) {
+      font-size: var(--font-size-small);
+    }
+  }
 }

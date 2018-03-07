@@ -1,4 +1,5 @@
-.large {
+.large,
+.footer {
   grid-column: large;
   max-width: var(--measure);
 

@@ -4,7 +4,8 @@ title: Luke Mitchell
 description: Hello, I'm Luke Mitchell, a designer at thoughtbot.
 ---
 ::: large
-# Interrobang _(in–ter–uh–bang)_ **n**.
+# **Interrobang** (in–ter–uh–bang) _n._{.small-caps}
+
 The interrobang, also known as the interabang, is a nonstandard punctuation mark used in various written languages and intended to combine the functions of the question mark and the exclamation mark or exclamation point. The glyph is a superimposition of these two marks.
 :::
 
@@ -23,23 +24,24 @@ I'm Luke Mitchell. A designer at [thoughtbot][thoughtbot]. I help turn wants, ne
 - [Dribbble][dribbble.com]
 - [Instagram][instagram.com]
 - [Twitter][twitter.com]
+{.staggered-list}
 :::
 
 ::: large
 ## Selected Side Projects
 
-- ### Swansong:
+- ### Swansong: {.project}
   is an opinionated, uncluttered and personal last.fm client. Built with simplicity in mind, It consumes the last.fm API with React.
   [View Swansong][swansong]
 
-- ### Aperture:
+- ### Aperture: {.project}
   is a gallery of my Instagram shots. Much like Swansong – it is designed to be unobtrusive and simple.  Aperture is built with React.
   [View Aperture][aperture]
 :::
 
-::: large
-_Set in [Tiempos Text][tiempos] & [Courier Prime][courier]._
-_Source code hosted at [GitHub][github.com]._ ~~:metal:~~
+::: footer
+Set in [Tiempos Text][tiempos] & [Courier Prime][courier].
+Source code hosted at [GitHub][github.com]. _:metal:_{.emoji}
 :::
 
 *[API]: Application Program Interface

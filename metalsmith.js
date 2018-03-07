@@ -9,6 +9,7 @@ var inlineCSS = require('metalsmith-inline-css');
 var abbr = require('markdown-it-abbr');
 var emoji = require('markdown-it-emoji');
 var container = require('markdown-it-container');
+var attrs = require('markdown-it-attrs');
 
 var site = Metalsmith(__dirname)
   .source('./src')
@@ -22,7 +23,9 @@ var site = Metalsmith(__dirname)
     typographer: true
   }).use(abbr)
     .use(emoji)
+    .use(attrs)
     .use(container, 'large')
+    .use(container, 'footer')
     .use(container, 'small'))
   .use(postcss({
     plugins: {

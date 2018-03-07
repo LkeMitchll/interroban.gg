@@ -7,7 +7,7 @@ h2 {
   }
 }
 
-h1,
+h2,
 h3 {
   font-family: var(--font-text-strong);
   font-weight: var(--font-weight-bold);
@@ -20,28 +20,26 @@ h3 {
 }
 
 h1 {
-  & em {
-    font-family: var(--font-text);
-    font-size: var(--font-size);
-    font-weight: normal;
+  font-family: var(--font-text);
+  font-size: var(--font-size);
+  font-weight: normal;
 
-    @media (--small-viewport) {
-      font-size: var(--font-size-small);
-    }
+  @media (--small-viewport) {
+    font-size: var(--font-size-small);
   }
 
-  & strong {
+  & .small-caps {
     font-variant-caps: small-caps;
+    font-family: var(--font-text-strong);
+    font-weight: var(--font-weight-bold);
+    font-style: normal;
   }
 }
 
 h2 {
-  font-family: var(--font-text-strong);
   font-variant-caps: small-caps;
-  font-weight: var(--font-weight-bold);
 }
 
 h3 {
   display: inline;
-  font-weight: var(--font-weight-bold);
 }
