@@ -25,6 +25,7 @@ var site = Metalsmith(__dirname)
     .use(attrs)
     .use(container, 'large')
     .use(container, 'footer')
+    .use(container, 'scribble-container')
     .use(container, 'small'))
   .use(postcss({
     plugins: {

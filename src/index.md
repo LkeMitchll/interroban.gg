@@ -13,6 +13,10 @@ the question mark and the exclamation mark or exclamation point. The glyph is a
 superimposition of these two marks.
 :::
 
+::: scribble-container
+![](./scribble_1.jpg){.scribble}
+:::
+
 ::: large
 ## Hello
 
@@ -45,6 +49,10 @@ needs and problems into products that users love.
   is a gallery of my Instagram shots. Much like Swansong – it's designed to be
   unobtrusive and simple. Aperture is built with React.
   [View Aperture][aperture]
+:::
+
+::: scribble-container
+![](./scribble_2.jpg){.scribble .line}
 :::
 
 ::: footer
