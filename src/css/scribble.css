@@ -1,12 +1,14 @@
-.scribble-container {
-  @media (--small-viewport) {
-    display: none;
-  }
-}
-
 .scribble {
-  transform: translateX(-3rem) translateY(-3rem) scale(0.9);
+  display: initial;
+  transform: translateX(-2rem) translateY(-3rem) scale(0.9);
   filter: contrast(100);
   mix-blend-mode: multiply;
-  position: absolute;
+
+  @media (--breakpoint-small) {
+    display: none;
+  }
+
+  @media (--breakpoint-medium) {
+    display: none;
+  }
 }

@@ -1,5 +1,6 @@
 @font-face {
-  font-family: "Tiempos Text Regular";
+  font-family: "Tiempos Text";
+  font-style: normal;
   font-weight: 400;
   src: url("fonts/TiemposTextWeb-Regular.eot");
   src:
@@ -9,7 +10,8 @@
 }
 
 @font-face {
-  font-family: "Tiempos Text Semibold";
+  font-family: "Tiempos Text";
+  font-style: normal;
   font-weight: 600;
   src: url("fonts/TiemposTextWeb-Semibold.eot");
   src:
@@ -19,37 +21,19 @@
 }
 
 @font-face {
-  font-family: "Courier Prime Medium";
+  font-family: "Courier Prime";
   font-style: normal;
   font-weight: normal;
   src: url("fonts/CourierPrime-Medium.eot");
   src:
     url("fonts/CourierPrime-Medium.eot?#iefix") format("embedded-opentype"),
     url("fonts/CourierPrime-Medium.woff") format("woff"),
-    url("fonts/CourierPrime-Medium.ttf") format("truetype"),
-    url("fonts/CourierPrime-Medium.svg#CourierPrime-Medium") format("svg");
+    url("fonts/CourierPrime-Medium.ttf") format("truetype");
 }
 
 :root {
-  --font-text: "Tiempos Text Regular", Times New Roman, system-ui;
-  --font-text-strong: "Tiempos Text Semibold", Times New Roman, system-ui;
-  --font-alt: "Courier Prime Medium", Courier, Monaco, monospace;
+  --font-text: "Tiempos Text", Times New Roman, system-ui;
+  --font-alt: "Courier Prime", Courier, Monaco, monospace;
   --font-emoji: "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-size: 1.4rem;
-  --font-size-alt: 1.2rem;
-  --font-size-small: 1rem;
-  --font-size-x-small: 0.9rem;
-  --font-weight-bold: 600;
-  --site-width: 60rem;
-  --measure: 30em;
-  --line-height: 1.6;
-  --spacing: 2.2rem;
-  --spacing-small: calc(var(--spacing) / 2);
-  --spacing-xsmall: calc(var(--spacing-small) / 2);
-  --spacing-large: calc(var(--spacing) * 1.5);
-  --spacing-xlarge: calc(var(--spacing-large) * 2);
   --color-primary: rgb(74, 74, 74);
-  --color-secondary: rgb(255, 255, 255);
-
-  @custom-media --small-viewport (max-width: 50em);
 }

@@ -30,6 +30,7 @@ For more info read the [Metalsmith docs][mdocs]
 CSS is processed using [PostCSS][postcss] with various plugins, most
 notably:
 
+- [tachyons][tachyons]
 - [postcss-cssnext][cssnext]
 - [postcss-import][import]
 
@@ -41,15 +42,9 @@ The site is deployed with [dokku][dokku] using a `Dockerfile`, to test the deplo
 4. Open `http://localhost:1337` in a browser.
 5. Stop the container with `docker stop [id]`
 
-## Updating Content (CMS)
-
-The site consists of a single page of markdown, stored on GitHub, which
-is processed by Metalsmith with added templating and styling.
-
-The file can be found [HERE][file].
-
 [mdocs]: http://www.metalsmith.io
 [postcss]: http://postcss.org
+[tachyons]: https://tachyons.io
 [cssnext]: http://cssnext.io
 [import]: https://github.com/postcss/postcss-import
 [file]: https://github.com/LkeMitchll/interroban.gg/blob/master/src/index.md
