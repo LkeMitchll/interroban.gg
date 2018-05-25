@@ -1,14 +1,5 @@
 .scribble {
-  display: initial;
   transform: translateX(-2rem) translateY(-3rem) scale(0.9);
   filter: contrast(100);
   mix-blend-mode: multiply;
-
-  @media (--breakpoint-small) {
-    display: none;
-  }
-
-  @media (--breakpoint-medium) {
-    display: none;
-  }
 }
