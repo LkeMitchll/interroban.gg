@@ -25,6 +25,17 @@ const Wrapper = styled.section`
 `
 
 class pageSection extends React.Component {
+  renderHeading() {
+    if (this.props.title) {
+      return (
+        <Heading level={this.props.level}>
+          {this.props.title}
+          <DecorativeText> {this.props.decoratedContent}</DecorativeText>
+        </Heading>
+      )
+    }
+  }
+
   renderContent() {
     if (this.props.content) {
       return (
@@ -58,10 +69,7 @@ class pageSection extends React.Component {
         isRowLayout={this.props.isRowLayout}
       >
         <div>
-          <Heading level={this.props.level}>
-            {this.props.title}
-            <DecorativeText> {this.props.decoratedContent}</DecorativeText>
-          </Heading>
+          {this.renderHeading()}
           {this.renderContent()}
           {this.renderProjects()}
           {this.renderLinks()}

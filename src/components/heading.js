@@ -33,7 +33,7 @@ class Heading extends React.Component {
 
 Heading.propTypes = {
   large: PropTypes.bool,
-  level: PropTypes.string,
+  level: PropTypes.string.isRequired,
   children: PropTypes.node,
 }
 
