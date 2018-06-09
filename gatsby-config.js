@@ -6,6 +6,7 @@ try {
   contentfulConfig = {
     spaceId: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+    host: process.env.CONTENTFUL_HOST,
   }
 } finally {
   const { spaceId, accessToken } = contentfulConfig
