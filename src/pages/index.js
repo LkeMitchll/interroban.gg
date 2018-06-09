@@ -1,10 +1,10 @@
 import React from 'react'
-import get from 'lodash/get'
+import PropTypes from 'prop-types'
 import PageSection from '../components/page-section'
 
 class RootIndex extends React.Component {
   render() {
-    const data = get(this, 'props.data.allContentfulPage.edges')
+    const data = this.props.data.allContentfulPage.edges
     let footer
     let primaryContent = []
 
@@ -41,6 +41,10 @@ class RootIndex extends React.Component {
       </React.Fragment>
     )
   }
+}
+
+RootIndex.propTypes = {
+  data: PropTypes.object,
 }
 
 export default RootIndex

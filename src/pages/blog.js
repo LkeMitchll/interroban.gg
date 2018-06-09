@@ -1,10 +1,10 @@
 import React from 'react'
-import get from 'lodash/get'
+import PropTypes from 'prop-types'
 import Link from '../components/link.js'
 
 class BlogIndex extends React.Component {
   render() {
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+    const posts = this.props.data.allContentfulBlogPost.edges
 
     return (
       <React.Fragment>
@@ -21,6 +21,10 @@ class BlogIndex extends React.Component {
       </React.Fragment>
     )
   }
+}
+
+BlogIndex.propTypes = {
+  data: PropTypes.object,
 }
 
 export default BlogIndex

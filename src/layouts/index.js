@@ -1,5 +1,4 @@
 import React from 'react'
-import get from 'lodash/get'
 import PropTypes from 'prop-types'
 import Container from '../components/container'
 import PageSection from '../components/page-section'
@@ -23,7 +22,7 @@ const ContentWrapper = styled.section`
 
 class Template extends React.Component {
   render() {
-    const data = get(this, 'props.data.allContentfulPage.edges')
+    const data = this.props.data.allContentfulPage.edges
     let def, links
 
     data.map(({ node }) => {
@@ -64,6 +63,7 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
+  data: PropTypes.object,
   children: PropTypes.func,
 }
 
