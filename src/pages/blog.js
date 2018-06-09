@@ -9,6 +9,11 @@ const navLink = css`
   display: inline-block;
   font-family: ${ds.typography.fontFamily.secondary};
   margin-bottom: ${ds.spacing.base};
+  text-decoration: none;
+`
+
+const linkText = css`
+  text-decoration: underline;
 `
 
 class BlogIndex extends React.Component {
@@ -18,7 +23,8 @@ class BlogIndex extends React.Component {
     return (
       <React.Fragment>
         <Link className={navLink} to="/">
-          <span aria-hidden="true">{'<-'}</span> Back
+          <span aria-hidden="true">{'<-'}</span>{' '}
+          <span className={linkText}>Back</span>
         </Link>
         {posts.map(({ node }) => {
           if (node.url) {
