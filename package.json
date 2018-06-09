@@ -8,35 +8,30 @@
     "url": "https://github.com/LkeMitchll/interroban.gg.git"
   },
   "private": true,
-  "scripts": {
-    "clean": "rm -rf dist",
-    "build": "yarn run clean && node metalsmith.js",
-    "start": "metalsmith-start",
-    "update": "git submodule init && git submodule update --remote",
-    "cms": "open https://github.com/LkeMitchll/interroban.gg/blob/master/src/index.md",
-    "lint": "mdl -i src/index.md && stylelint  src/*.css src/css/**/*",
-    "docker:build": "docker build -t interrobang .",
-    "docker:start": "docker run -d -p 1337:5000 --name interrobang interrobang && open http://localhost:1337",
-    "docker:stop": "docker stop interrobang && docker rm interrobang"
-  },
   "dependencies": {
-    "caniuse-lite": "^1.0.30000810",
-    "clean-css": "^4.1.9",
-    "handlebars": "^4.0.10",
-    "metalsmith": "^2.3.0",
-    "metalsmith-assets": "^0.1.0",
-    "metalsmith-clean-css": "^6.0.0",
-    "metalsmith-inline-css": "^1.0.2",
-    "metalsmith-layouts": "^1.8.1",
-    "metalsmith-postcss": "^4.1.0",
-    "metalsmith-start": "^2.0.1",
-    "postcss": "^6.0.19",
-    "postcss-cssnext": "^3.0.2",
-    "postcss-import": "^10.0.0",
-    "tachyons": "^4.9.1"
+    "emotion": "^9.1.3",
+    "emotion-server": "^9.1.3",
+    "gatsby-link": "^1.6.34",
+    "gatsby-plugin-emotion": "^1.1.17",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-source-contentful": "^1.3.38",
+    "gatsby-transformer-remark": "^1.7.32",
+    "lodash": "^4.17.4",
+    "react-emotion": "^9.1.3",
+    "yargs-parser": "^10.0.0"
   },
   "devDependencies": {
-    "stylelint": "^8.2.0",
-    "stylelint-config-standard": "^17.0.0"
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-emotion": "^9.1.2",
+    "chalk": "^2.3.1",
+    "es2015": "^0.0.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-react": "^7.5.1",
+    "gatsby": "^1.9.202",
+    "prettier": "^1.10.2"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build"
   }
 }

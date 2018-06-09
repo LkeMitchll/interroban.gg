@@ -1,3 +1,5 @@
 node_modules
-dist
+public
 **/*.log
+.contentful.json
+.cache
