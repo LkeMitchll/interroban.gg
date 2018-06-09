@@ -15,10 +15,10 @@ const Wrapper = styled.ul`
 
 const Project = styled.li`
   margin-bottom: ${ds.spacing.large};
-  transition: opacity 0.25s ease;
+  transition: filter 0.25s linear;
 
   &:hover {
-    opacity: 0.6;
+    filter: blur(5px);
   }
 
   &:nth-of-type(2) {

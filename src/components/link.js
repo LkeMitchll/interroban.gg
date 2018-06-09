@@ -1,14 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import GatsbyLink from 'gatsby-link'
+import { Tooltip } from 'react-tippy'
 import linkCursor from '../assets/images/link_cursor.svg'
 import styled, { css } from 'react-emotion'
+import ds from '../assets/design-system'
 
 const ExternalLink = styled.a`
   text-decoration: none;
+  color: ${ds.color.primary};
+  transition: filter 0.25s linear;
 
   &:hover {
     cursor: url(${linkCursor}), auto;
+    filter: blur(5px);
   }
 `
 
@@ -22,9 +27,11 @@ const Link = ({ children, to }) => {
   // Use gatsby-link for internal, and <a> for others
   if (internal) {
     return (
-      <GatsbyLink className={InternalLink} to={to}>
-        {children}
-      </GatsbyLink>
+      <Tooltip followCursor={true} title={to} duration={0}>
+        <GatsbyLink className={InternalLink} to={to}>
+          {children}
+        </GatsbyLink>
+      </Tooltip>
     )
   }
   return (

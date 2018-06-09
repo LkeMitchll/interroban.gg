@@ -107,6 +107,11 @@ injectGlobal`
   a {
     color: ${ds.color.primary};
   }
+
+  .tippy-tooltip {
+    font-family: ${ds.typography.fontFamily.secondary};
+    font-size: ${ds.typography.fontSize.large};
+  }
 `
 
 export default ds
