@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Heading from './heading'
-import Link from './link'
+import ProjectLink from './project-link'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
@@ -16,10 +16,7 @@ const Wrapper = styled.ul`
 const Project = styled.li`
   margin-bottom: ${ds.spacing.large};
   transition: filter 0.25s linear;
-
-  &:hover {
-    filter: blur(5px);
-  }
+  position: relative;
 
   &:nth-of-type(2) {
     margin-bottom: 0;
@@ -44,21 +41,23 @@ class Projects extends React.Component {
       <Wrapper>
         {this.props.projects.map((project, i) => {
           return (
-            <Project key={i}>
-              <Link to={project.url}>
-                <Heading level="3" large>
-                  {i + 1} &mdash;
-                </Heading>
-                <Content
-                  dangerouslySetInnerHTML={{
-                    __html: project.description.childMarkdownRemark.html,
-                  }}
-                />
-                <Heading level="3" large>
-                  {project.title}
-                </Heading>
-              </Link>
-            </Project>
+            <React.Fragment key={i}>
+              <Project key={i}>
+                <ProjectLink to={project.url}>
+                  <Heading level="3" large>
+                    {i + 1} &mdash;
+                  </Heading>
+                  <Content
+                    dangerouslySetInnerHTML={{
+                      __html: project.description.childMarkdownRemark.html,
+                    }}
+                  />
+                  <Heading level="3" large>
+                    {project.title}
+                  </Heading>
+                </ProjectLink>
+              </Project>
+            </React.Fragment>
           )
         })}
       </Wrapper>

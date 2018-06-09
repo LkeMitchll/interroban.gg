@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from '../components/link.js'
+import Link from 'gatsby-link'
 
 class BlogIndex extends React.Component {
   render() {
