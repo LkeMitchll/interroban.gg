@@ -17,7 +17,9 @@ const Date = styled.time`
 `
 
 const Content = styled.a`
+  flex: 1;
   font-family: ${ds.typography.fontFamily.secondary};
+  margin-right: ${ds.spacing.small};
 `
 
 const Tag = styled.p`

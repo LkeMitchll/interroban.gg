@@ -38,6 +38,10 @@ const ds = {
     large: '4rem',
     small: '1.5rem',
   },
+  breakpoint: {
+    small: '700px',
+    medium: '1400px',
+  },
 }
 
 injectGlobal`
@@ -87,6 +91,18 @@ injectGlobal`
   html {
     font-size: 20px;
     padding: ${ds.spacing.small};
+
+    @media (max-width: ${ds.breakpoint.small}) {
+      font-size: 16px;
+    }
+  }
+
+  html,
+  body {
+    @media (max-width: ${ds.breakpoint.small}) {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   h1,

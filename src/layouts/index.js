@@ -12,11 +12,27 @@ const AsideWrapper = styled.aside`
   flex-direction: column;
   justify-content: stretch;
   padding: ${ds.spacing.large};
+
+  @media (max-width: ${ds.breakpoint.small}) {
+    padding: ${ds.spacing.small};
+  }
+
+  @media (max-width: ${ds.breakpoint.medium}) {
+    margin-bottom: ${ds.spacing.base};
+  }
 `
 
 const ContentWrapper = styled.section`
   min-height: 100vh;
   padding: ${ds.spacing.large};
+
+  @media (max-width: ${ds.breakpoint.small}) {
+    padding: ${ds.spacing.small};
+  }
+
+  @media (max-width: ${ds.breakpoint.medium}) {
+    padding-top: ${ds.spacing.small};
+  }
 `
 
 class Template extends React.Component {

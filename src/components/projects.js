@@ -18,16 +18,27 @@ const Project = styled.li`
   transition: filter 0.25s linear;
   position: relative;
 
+  @media (max-width: ${ds.breakpoint.small}) {
+    margin-bottom: ${ds.spacing.small};
+  }
+
   &:nth-of-type(2) {
     margin-bottom: 0;
     margin-left: 3rem;
     margin-top: 9.1rem;
+
+    @media (max-width: ${ds.breakpoint.small}) {
+      grid-column: 1 / span 2;
+      margin-top: 0;
+      margin-bottom: 2rem;
+      margin-left: 9rem;
+    }
   }
 
   &:nth-of-type(3) {
     grid-column: 1 / span 2;
     margin-bottom: 1rem;
-    margin-left: 6rem;
+    margin-left: 5rem;
   }
 `
 const Content = styled.div`

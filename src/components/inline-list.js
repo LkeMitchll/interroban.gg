@@ -8,6 +8,7 @@ const Wrapper = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
 `
 
 const ListItem = styled.li`
