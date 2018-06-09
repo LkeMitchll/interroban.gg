@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Heading from './heading'
+import Link from './link'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
-import linkCursor from '../assets/images/link_cursor.svg'
 
 const Wrapper = styled.ul`
   display: grid;
@@ -33,15 +33,6 @@ const Project = styled.li`
     margin-left: 6rem;
   }
 `
-
-const Link = styled.a`
-  text-decoration: none;
-
-  &:hover {
-    cursor: url(${linkCursor}), auto;
-  }
-`
-
 const Content = styled.div`
   margin-bottom: ${ds.spacing.small};
   max-width: 12em;
@@ -54,7 +45,7 @@ class Projects extends React.Component {
         {this.props.projects.map((project, i) => {
           return (
             <Project key={i}>
-              <Link href={project.url} target="_blank">
+              <Link to={project.url}>
                 <Heading level="3" large>
                   {i + 1} &mdash;
                 </Heading>

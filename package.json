@@ -34,7 +34,7 @@
   },
   "scripts": {
     "dev": "gatsby develop",
-    "server": "gatsby serve",
+    "serve": "gatsby serve",
     "build": "gatsby build",
     "lint": "eslint src/**/*.js && prettier --write src/**/*.js"
   }
