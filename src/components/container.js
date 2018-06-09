@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
-const Main = styled('main')`
+const Main = styled.main`
   color: ${ds.color.primary};
+  display: grid;
   font-family: ${ds.typography.fontFamily.primary};
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   line-height: ${ds.typography.lineHeight.base};
 `
 

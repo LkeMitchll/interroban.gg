@@ -2,24 +2,20 @@ import React from 'react'
 import get from 'lodash/get'
 import PageSection from '../components/page-section'
 import Logo from '../components/logo'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
 const AsideWrapper = styled.aside`
   background-color: black;
-  margin-right: ${ds.spacing.base};
-  padding: ${ds.spacing.large};
-  width: 50%;
-  justify-content: stretch;
   background-image: linear-gradient(#181818 0%, #090909 100%);
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
+  padding: ${ds.spacing.large};
 `
 
 const ContentWrapper = styled.section`
-  padding: ${ds.spacing.large} ${ds.spacing.base};
-  width: 50%;
-  min-height: 100vh;
+  padding: ${ds.spacing.large};
 `
 
 class RootIndex extends React.Component {
@@ -43,11 +39,7 @@ class RootIndex extends React.Component {
     })
 
     return (
-      <div
-        className={css`
-          display: flex;
-        `}
-      >
+      <React.Fragment>
         <AsideWrapper>
           <PageSection
             inverted
@@ -87,7 +79,7 @@ class RootIndex extends React.Component {
             content={footer.content}
           />
         </ContentWrapper>
-      </div>
+      </React.Fragment>
     )
   }
 }
