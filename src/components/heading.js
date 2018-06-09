@@ -5,16 +5,12 @@ import ds from '../assets/design-system'
 const styling = css`
   font-size: ${ds.typography.fontSize.base};
   font-weight: ${ds.typography.fontWeight.bold};
-  font-variant-caps: small-caps;
-  text-transform: lowercase;
-  margin-top: '0';
-  margin-bottom: ${ds.spacing.base}
+  margin-top: 0;
+  margin-bottom: ${ds.spacing.small};
 `
 
 const largeHeading = css`
   font-size: ${ds.typography.fontSize.large};
-  font-variant-caps: unset;
-  text-transform: none;
 `
 
 class Heading extends React.Component {

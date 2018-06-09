@@ -2,10 +2,19 @@ import React from 'react'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
 import Heading from './heading'
+import DecorativeText from './decorative-text'
+import Projects from './projects'
+import InlineList from './inline-list'
 
-const Wrapper = styled('section')`
-  margin-bottom: ${ds.spacing.large};
+const Wrapper = styled.section`
   color: ${props => props.inverted ? ds.color.secondary : ds.color.primary};
+  display: flex;
+  flex-direction: ${props => props.isRowLayout ? 'row' : 'column'};
+  font-family: ${props => props.altStyling ? ds.typography.fontFamily.secondary : ds.typography.fontFamily.primary};
+  font-size: ${props => props.altStyling ? ds.typography.fontSize.small : ds.typography.fontSize.base};
+  margin-bottom: ${props => props.pinBottom ? '0' : ds.spacing.large};
+  margin-top: ${props => props.pinBottom ? 'auto' : '0'};
+  max-width: ${props => props.isRowLayout ? '100%': '28em'};
 `
 
 class pageSection extends React.Component {
@@ -22,19 +31,7 @@ class pageSection extends React.Component {
   renderProjects () {
     if (this.props.projects) {
       return (
-        <ul>
-          {this.props.projects.map((project, i) => {
-            return (
-              <li key={i}>
-                <Heading level="3" large>{i+1}&mdash;</Heading>
-                <div dangerouslySetInnerHTML={{
-                  __html: project.description.childMarkdownRemark.html,
-                }}/>
-                <Heading level="3" large>{project.title}</Heading>
-              </li>
-            )
-          })}
-        </ul>
+        <Projects projects={this.props.projects} />
       )
     }
   }
@@ -42,24 +39,28 @@ class pageSection extends React.Component {
   renderLinks () {
     if (this.props.links) {
       return (
-        <ul>
-          {this.props.links.map((link, i) => {
-            return (
-              <li key={i}><a href={link.url}>{link.description}</a></li>
-            )
-          })}
-        </ul>
+        <InlineList links={this.props.links} />
       )
     }
   }
 
   render() {
     return (
-      <Wrapper inverted={this.props.inverted}>
-        <Heading level="2">{this.props.title}</Heading>
-        {this.renderContent()}
-        {this.renderProjects()}
-        {this.renderLinks()}
+      <Wrapper inverted={this.props.inverted}
+               pinBottom={this.props.pinBottom}
+               altStyling={this.props.altStyling}
+               isRowLayout={this.props.isRowLayout}>
+        <div>
+          <Heading level={this.props.level}>
+            {this.props.title}
+            <DecorativeText> {this.props.decoratedContent}</DecorativeText>
+          </Heading>
+          {this.renderContent()}
+          {this.renderProjects()}
+          {this.renderLinks()}
+        </div>
+
+        {this.props.children}
       </Wrapper>
     )
   }

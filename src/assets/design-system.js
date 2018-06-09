@@ -74,6 +74,16 @@ injectGlobal`
       url("${courierPrimeMedium_ttf}") format("truetype");
   }
 
+  ::selection {
+    background: yellow;
+    color: black;
+  }
+
+  ::-moz-selection {
+    background: yellow;
+    color: black;
+  }
+
   html {
     font-size: 20px;
     padding: ${ds.spacing.small};
@@ -87,7 +97,11 @@ injectGlobal`
 
   p {
     margin-top: 0;
-    margin-bottom: ${ds.spacing.base};
+    margin-bottom: ${ds.spacing.small};
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   a {
