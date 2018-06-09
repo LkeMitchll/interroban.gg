@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Container from '../components/container'
 import PageSection from '../components/page-section'
-import Logo from '../components/logo'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
@@ -48,13 +47,10 @@ class Template extends React.Component {
           <PageSection
             inverted
             pinBottom
-            isRowLayout
             title={links.subtitle}
             level="2"
             links={links.links}
-          >
-            <Logo />
-          </PageSection>
+          />
         </AsideWrapper>
         <ContentWrapper>{this.props.children()}</ContentWrapper>
       </Container>

@@ -10,7 +10,7 @@ import InlineList from './inline-list'
 const Wrapper = styled.section`
   color: ${props => (props.inverted ? ds.color.secondary : ds.color.primary)};
   display: flex;
-  flex-direction: ${props => (props.isRowLayout ? 'row' : 'column')};
+  flex-direction: column;
   font-family: ${props =>
     props.altStyling
       ? ds.typography.fontFamily.secondary
@@ -21,7 +21,7 @@ const Wrapper = styled.section`
       : ds.typography.fontSize.base};
   margin-bottom: ${props => (props.pinBottom ? '0' : ds.spacing.large)};
   margin-top: ${props => (props.pinBottom ? 'auto' : '0')};
-  max-width: ${props => (props.isRowLayout ? '100%' : '28em')};
+  max-width: 28em;
 `
 
 class pageSection extends React.Component {
@@ -66,7 +66,6 @@ class pageSection extends React.Component {
         inverted={this.props.inverted}
         pinBottom={this.props.pinBottom}
         altStyling={this.props.altStyling}
-        isRowLayout={this.props.isRowLayout}
       >
         <div>
           {this.renderHeading()}
@@ -91,7 +90,6 @@ pageSection.propTypes = {
   inverted: PropTypes.bool,
   pinBottom: PropTypes.bool,
   altStyling: PropTypes.bool,
-  isRowLayout: PropTypes.bool,
   children: PropTypes.node,
 }
 
