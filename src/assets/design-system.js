@@ -13,31 +13,31 @@ import courierPrimeMedium_woff from './fonts/CourierPrime-Medium.woff'
 const ds = {
   color: {
     primary: '#4a4a4a',
-    secondary: '#ffffff'
+    secondary: '#ffffff',
   },
   typography: {
     fontFamily: {
       primary: "'Tiempos Text', Times New Roman, serif",
-      secondary: "'Courier Prime', Courier, Monaco, monospace"
+      secondary: "'Courier Prime', Courier, Monaco, monospace",
     },
     fontWeight: {
-      normal: "400",
-      bold: "600"
+      normal: '400',
+      bold: '600',
     },
     fontSize: {
       base: '1rem',
       small: '0.875rem',
-      large: '2rem'
+      large: '2rem',
     },
     lineHeight: {
-      base: '1.5'
-    }
+      base: '1.5',
+    },
   },
   spacing: {
     base: '2rem',
     large: '4rem',
-    small: '1.5rem'
-  }
+    small: '1.5rem',
+  },
 }
 
 injectGlobal`

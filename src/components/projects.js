@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Heading from './heading'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
@@ -54,11 +55,17 @@ class Projects extends React.Component {
           return (
             <Project key={i}>
               <Link href={project.url} target="_blank">
-                <Heading level="3" large>{i+1} &mdash;</Heading>
-                <Content dangerouslySetInnerHTML={{
-                  __html: project.description.childMarkdownRemark.html,
-                }}/>
-                <Heading level="3" large>{project.title}</Heading>
+                <Heading level="3" large>
+                  {i + 1} &mdash;
+                </Heading>
+                <Content
+                  dangerouslySetInnerHTML={{
+                    __html: project.description.childMarkdownRemark.html,
+                  }}
+                />
+                <Heading level="3" large>
+                  {project.title}
+                </Heading>
               </Link>
             </Project>
           )
@@ -66,6 +73,10 @@ class Projects extends React.Component {
       </Wrapper>
     )
   }
+}
+
+Projects.propTypes = {
+  projects: PropTypes.array,
 }
 
 export default Projects

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { css } from 'react-emotion'
 import ds from '../assets/design-system'
 
@@ -23,9 +24,17 @@ class Heading extends React.Component {
   render() {
     const Tag = `h${this.props.level}`
     return (
-      <Tag className={[styling, this.isLargeHeading()].join(' ')}>{this.props.children}</Tag>
+      <Tag className={[styling, this.isLargeHeading()].join(' ')}>
+        {this.props.children}
+      </Tag>
     )
   }
+}
+
+Heading.propTypes = {
+  large: PropTypes.bool,
+  level: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default Heading

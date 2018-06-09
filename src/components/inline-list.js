@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
@@ -31,6 +32,10 @@ class InlineList extends React.Component {
       </Wrapper>
     )
   }
+}
+
+InlineList.propTypes = {
+  links: PropTypes.array,
 }
 
 export default InlineList

@@ -43,34 +43,49 @@ class RootIndex extends React.Component {
     })
 
     return (
-      <div className={css`display: flex;`}>
+      <div
+        className={css`
+          display: flex;
+        `}
+      >
         <AsideWrapper>
-          <PageSection inverted
+          <PageSection
+            inverted
             title={def.subtitle}
             level="1"
             decoratedContent={def.subtitleDecorativeContent}
-            content={def.content} />
-          <PageSection inverted pinBottom isRowLayout
+            content={def.content}
+          />
+          <PageSection
+            inverted
+            pinBottom
+            isRowLayout
             title={links.subtitle}
             level="2"
-            links={links.links}>
+            links={links.links}
+          >
             <Logo />
           </PageSection>
         </AsideWrapper>
         <ContentWrapper>
-          {primaryContent.map(section => {
+          {primaryContent.map((section, i) => {
             return (
-            <PageSection
-              title={section.subtitle}
-              level="2"
-              content={section.content}
-                projects={section.projects} />
+              <PageSection
+                key={i}
+                title={section.subtitle}
+                level="2"
+                content={section.content}
+                projects={section.projects}
+              />
             )
           })}
 
-          <PageSection altStyling pinBottom
+          <PageSection
+            altStyling
+            pinBottom
             title={footer.subtitle}
-            content={footer.content} />
+            content={footer.content}
+          />
         </ContentWrapper>
       </div>
     )
@@ -81,7 +96,7 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulPage(filter:{title: {eq: "Home"}}) {
+    allContentfulPage(filter: { title: { eq: "Home" } }) {
       edges {
         node {
           sections {

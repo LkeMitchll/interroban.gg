@@ -8,9 +8,7 @@ const Image = styled.img`
 
 class Logo extends React.Component {
   render() {
-    return (
-      <Image src={LogoImage} />
-    )
+    return <Image src={LogoImage} />
   }
 }
 
