@@ -1,14 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import Heading from '../components/heading'
 import BlogPost from '../components/blog-post'
-import { css } from 'react-emotion'
+import styled, { css } from 'react-emotion'
 import ds from '../assets/design-system'
+
+const Header = styled.header`
+  display: flex;
+  margin-bottom: ${ds.spacing.base};
+
+  h2 {
+    margin-left: auto;
+  }
+`
 
 const navLink = css`
   display: inline-block;
   font-family: ${ds.typography.fontFamily.secondary};
-  margin-bottom: ${ds.spacing.base};
   text-decoration: none;
 `
 
@@ -22,10 +31,15 @@ class BlogIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <Link className={navLink} to="/">
-          <span aria-hidden="true">{'<-'}</span>{' '}
-          <span className={linkText}>Back</span>
-        </Link>
+        <Header>
+          <Link className={navLink} to="/">
+            <span aria-hidden="true">&larr;</span>{' '}
+            <span className={linkText}>Back</span>
+          </Link>
+          <Heading level="2">
+            Blog
+          </Heading>
+        </Header>
         {posts.map(({ node }) => {
           if (node.url) {
             return (

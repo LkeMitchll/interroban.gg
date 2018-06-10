@@ -7,13 +7,16 @@ import ds from '../assets/design-system'
 const Wrapper = styled.article`
   display: flex;
   flex-direction: row;
-  padding: 0 0 ${ds.spacing.small};
+  padding: 0 0 ${ds.spacing.base};
+
+  @media (max-width: ${ds.breakpoint.small}) {
+    flex-direction: column;
+  }
 `
 
 const Date = styled.time`
   font-family: ${ds.typography.fontFamily.secondary};
-  margin-right: ${ds.spacing.small};
-  opacity: 0.7;
+  opacity: 0.5;
 `
 
 const Content = styled.a`
@@ -23,10 +26,13 @@ const Content = styled.a`
 `
 
 const Tag = styled.p`
+  border-right: 1px solid;
   display: inline-block;
   font-family: ${ds.typography.fontFamily.secondary};
   margin-left: auto;
+  margin-right: ${ds.spacing.xsmall};
   opacity: 0.5;
+  padding-right: ${ds.spacing.xsmall};
 `
 
 class BlogPost extends React.Component {
@@ -38,11 +44,13 @@ class BlogPost extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Date dateTime={this.props.date}>{this.formattedDate()}</Date>
         <Content href={this.props.url} target="_blank">
           {this.props.title}
         </Content>
-        <Tag>{this.props.tags[0]}</Tag>
+        <footer>
+          <Tag>{this.props.tags[0]}</Tag>
+          <Date dateTime={this.props.date}>{this.formattedDate()}</Date>
+        </footer>
       </Wrapper>
     )
   }

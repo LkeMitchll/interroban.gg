@@ -37,6 +37,7 @@ const ds = {
     base: '2rem',
     large: '4rem',
     small: '1.5rem',
+    xsmall: '0.7rem',
   },
   breakpoint: {
     small: '700px',
