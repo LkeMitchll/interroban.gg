@@ -29,7 +29,6 @@ const AsideWrapper = styled.aside`
 `
 
 const ContentWrapper = styled.section`
-  min-height: 100vh;
   padding: ${ds.spacing.large};
 
   @media (max-width: ${ds.breakpoint.small}) {
