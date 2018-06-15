@@ -7,7 +7,7 @@ const Main = styled.main`
   color: ${ds.color.primary};
   display: grid;
   font-family: ${ds.typography.fontFamily.primary};
-  grid-template-columns: repeat(auto-fit, minmax(${ds.breakpoint.small}, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   line-height: ${ds.typography.lineHeight.base};
 
   @media (max-width: ${ds.breakpoint.medium}) {
