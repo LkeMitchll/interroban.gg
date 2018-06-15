@@ -20,6 +20,12 @@ const AsideWrapper = styled.aside`
   @media (max-width: ${ds.breakpoint.medium}) {
     margin-bottom: ${ds.spacing.base};
   }
+
+  @media (min-width: ${ds.breakpoint.medium}) {
+    height: calc(100vh - 11rem);
+    position: sticky;
+    top: ${ds.spacing.small};
+  }
 `
 
 const ContentWrapper = styled.section`
