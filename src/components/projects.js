@@ -31,7 +31,6 @@ const Project = styled.li`
       grid-column: 1 / span 2;
       margin-top: 0;
       margin-bottom: 2rem;
-      margin-left: 9rem;
     }
   }
 
@@ -39,6 +38,13 @@ const Project = styled.li`
     grid-column: 1 / span 2;
     margin-bottom: 1rem;
     margin-left: 5rem;
+  }
+
+  &:nth-of-type(2),
+  &:nth-of-type(3) {
+    @media (max-width: ${ds.breakpoint.small}) {
+      margin-left: 0;
+    }
   }
 `
 const Content = styled.div`
