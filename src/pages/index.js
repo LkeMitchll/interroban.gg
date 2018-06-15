@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Helmet} from 'react-helmet'
 import PageSection from '../components/page-section'
 
 class RootIndex extends React.Component {
@@ -20,6 +21,9 @@ class RootIndex extends React.Component {
 
     return (
       <React.Fragment>
+        <Helmet>
+          <title>Interrobang - Luke Mitchell</title>
+        </Helmet>
         {primaryContent.map((section, i) => {
           return (
             <PageSection

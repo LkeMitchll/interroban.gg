@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Helmet} from 'react-helmet'
 import Link from 'gatsby-link'
 import Heading from '../components/heading'
 import BlogPost from '../components/blog-post'
@@ -31,6 +32,9 @@ class BlogIndex extends React.Component {
 
     return (
       <React.Fragment>
+        <Helmet>
+          <title>Interrobang - Blog</title>
+        </Helmet>
         <Header>
           <Link className={navLink} to="/">
             <span aria-hidden="true">&larr;</span>{' '}
