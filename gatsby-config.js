@@ -19,13 +19,31 @@ try {
 }
 
 module.exports = {
-  pathPrefix: '/gatsby-contentful-starter',
+  pathPrefix: '/',
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/assets/images/favicon.png',
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: true,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: true,
+          windows: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-emotion`,
-      options: { "merge": "merge" }
+      options: { merge: 'merge' },
     },
     {
       resolve: 'gatsby-source-contentful',
