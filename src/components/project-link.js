@@ -12,9 +12,11 @@ const ExternalLink = styled.a`
   color: ${ds.color.primary};
   transition: filter 0.25s linear;
 
-  &:hover {
-    cursor: url(${linkCursor}), auto;
-    filter: blur(5px);
+  @media (min-width: ${ds.breakpoint.medium}) {
+    &:hover {
+      cursor: url(${linkCursor}), auto;
+      filter: blur(5px);
+    }
   }
 `
 
@@ -23,9 +25,11 @@ const InternalLink = css`
   text-decoration: none;
   transition: filter 0.25s linear;
 
-  &:hover {
-    cursor: none;
-    filter: blur(5px);
+  @media (min-width: ${ds.breakpoint.medium}) {
+    &:hover {
+      cursor: none;
+      filter: blur(5px);
+    }
   }
 `
 
@@ -33,6 +37,10 @@ const Cursor = styled.div`
   font-family: ${ds.typography.fontFamily.secondary};
   font-size: ${ds.typography.fontSize.large};
   position: absolute;
+
+  @media (max-width: ${ds.breakpoint.medium}) {
+    display: none !important;
+  }
 `
 
 class ProjectLink extends React.Component {
