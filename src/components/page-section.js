@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'react-emotion'
+import styled, { css } from 'react-emotion'
 import ds from '../assets/design-system'
 import Heading from './heading'
 import DecorativeText from './decorative-text'
@@ -21,6 +21,9 @@ const Wrapper = styled.section`
       : ds.typography.fontSize.base};
   margin-bottom: ${props => (props.pinBottom ? '0' : ds.spacing.large)};
   margin-top: ${props => (props.pinBottom ? 'auto' : '0')};
+`
+
+const Measure = css`
   max-width: 28em;
 `
 
@@ -43,6 +46,7 @@ class pageSection extends React.Component {
           dangerouslySetInnerHTML={{
             __html: this.props.content.childMarkdownRemark.html,
           }}
+          className={Measure}
         />
       )
     }

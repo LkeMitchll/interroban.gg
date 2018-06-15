@@ -11,20 +11,24 @@ const AsideWrapper = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  padding: ${ds.spacing.large};
+  padding: ${ds.spacing.small};
+  height: auto;
+  position: static;
 
-  @media (max-width: ${ds.breakpoint.small}) {
-    padding: ${ds.spacing.small};
+  @media (min-width: ${ds.breakpoint.tablet}) {
+    position: sticky;
+    top: ${ds.spacing.small};
   }
 
-  @media (max-width: ${ds.breakpoint.medium}) {
-    margin-bottom: ${ds.spacing.base};
+  @media (min-width: ${ds.breakpoint.tablet}) and (max-width: ${ds.breakpoint
+      .medium}) {
+    height: calc(100vh - 7rem);
+    padding: ${ds.spacing.base};
   }
 
   @media (min-width: ${ds.breakpoint.medium}) {
     height: calc(100vh - 11rem);
-    position: sticky;
-    top: ${ds.spacing.small};
+    padding: ${ds.spacing.large};
   }
 `
 
@@ -36,7 +40,7 @@ const ContentWrapper = styled.section`
   }
 
   @media (max-width: ${ds.breakpoint.medium}) {
-    padding-top: ${ds.spacing.small};
+    padding: ${ds.spacing.base};
   }
 `
 

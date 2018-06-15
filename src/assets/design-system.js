@@ -40,7 +40,9 @@ const ds = {
     xsmall: '0.7rem',
   },
   breakpoint: {
+    tiny: '414px',
     small: '700px',
+    tablet: '1024px',
     medium: '1400px',
   },
 }
@@ -93,9 +95,18 @@ injectGlobal`
     font-size: 20px;
     padding: ${ds.spacing.small};
 
-    @media (max-width: ${ds.breakpoint.small}) {
+    @media (max-width: ${ds.breakpoint.tiny}) {
+      font-size: 14px;
+    }
+
+    @media (min-width: ${ds.breakpoint.tiny}) and (max-width: ${ds.breakpoint.small}) {
       font-size: 16px;
     }
+
+    @media (min-width: ${ds.breakpoint.small}) and (max-width: ${ds.breakpoint.medium}) {
+      font-size: 18px;
+    }
+
   }
 
   html,

@@ -11,6 +11,10 @@ const Wrapper = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (max-width: ${ds.breakpoint.medium}) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 `
 
 const Project = styled.li`
@@ -31,6 +35,10 @@ const Project = styled.li`
       grid-column: 1 / span 2;
       margin-top: 0;
       margin-bottom: 2rem;
+    }
+
+    @media (max-width: ${ds.breakpoint.medium}) {
+      margin-top: 0;
     }
   }
 
