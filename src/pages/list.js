@@ -4,29 +4,29 @@ import { Helmet } from 'react-helmet'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
 import PageHeaderNav from '../components/page-header-nav'
-import BlogPost from '../components/blog-post'
+import ListPost from '../components/list-post'
 
 const Header = styled.header`
   display: flex;
   margin-bottom: ${ds.spacing.base};
 `
 
-class BlogIndex extends React.Component {
+class ListIndex extends React.Component {
   render() {
     const posts = this.props.data.allContentfulBlogPost.edges
 
     return (
       <React.Fragment>
         <Helmet>
-          <title>Interrobang - Blog</title>
+          <title>Interrobang - List</title>
         </Helmet>
         <Header>
-          <PageHeaderNav title="Blog" />
+          <PageHeaderNav title="List" />
         </Header>
         {posts.map(({ node }) => {
           if (node.url) {
             return (
-              <BlogPost
+              <ListPost
                 key={node.id}
                 date={node.publishDate}
                 url={node.url}
@@ -41,14 +41,14 @@ class BlogIndex extends React.Component {
   }
 }
 
-BlogIndex.propTypes = {
+ListIndex.propTypes = {
   data: PropTypes.object,
 }
 
-export default BlogIndex
+export default ListIndex
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
+  query ListIndexQuery {
     allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {

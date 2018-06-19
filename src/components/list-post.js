@@ -35,10 +35,10 @@ const Tag = styled.p`
   padding-right: ${ds.spacing.xsmall};
 `
 
-class BlogPost extends React.Component {
+class ListPost extends React.Component {
   formattedDate() {
     var a = moment(this.props.date)
-    return a.format('DD MMM YY')
+    return a.format(`DD MMM 'YY`)
   }
 
   render() {
@@ -56,11 +56,11 @@ class BlogPost extends React.Component {
   }
 }
 
-BlogPost.propTypes = {
+ListPost.propTypes = {
   date: PropTypes.string,
   url: PropTypes.string,
   title: PropTypes.string,
   tags: PropTypes.array,
 }
 
-export default BlogPost
+export default ListPost

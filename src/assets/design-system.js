@@ -106,7 +106,6 @@ injectGlobal`
     @media (min-width: ${ds.breakpoint.small}) and (max-width: ${ds.breakpoint.medium}) {
       font-size: 18px;
     }
-
   }
 
   html,
