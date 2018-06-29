@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import Layout from '../layouts/index'
 import styled from 'react-emotion'
 import ds from '../assets/design-system'
 import PageHeaderNav from '../components/page-header-nav'
@@ -16,7 +18,7 @@ class ListIndex extends React.Component {
     const posts = this.props.data.allContentfulBlogPost.edges
 
     return (
-      <React.Fragment>
+      <Layout>
         <Helmet>
           <title>Interrobang - List</title>
         </Helmet>
@@ -36,7 +38,7 @@ class ListIndex extends React.Component {
             )
           }
         })}
-      </React.Fragment>
+      </Layout>
     )
   }
 }

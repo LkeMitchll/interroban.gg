@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import Layout from '../layouts/index'
 import PageSection from '../components/page-section'
 
 class RootIndex extends React.Component {
@@ -11,7 +13,7 @@ class RootIndex extends React.Component {
 
     data.map(({ node }) => {
       return node.sections.map(section => {
-        if (section.id == 'c6kgP0kjluggCm0WI2oG6mm') {
+        if (section.id == '8c9e623d-e2f8-56a6-bacd-b4ddd08abf52') {
           footer = section
         } else {
           primaryContent.push(section)
@@ -20,7 +22,7 @@ class RootIndex extends React.Component {
     })
 
     return (
-      <React.Fragment>
+      <Layout>
         <Helmet>
           <title>Interrobang - Luke Mitchell</title>
         </Helmet>
@@ -38,11 +40,11 @@ class RootIndex extends React.Component {
 
         <PageSection
           altStyling
-          pinBottom
+          pinBottom={footer.pinnedToBottom}
           title={footer.subtitle}
           content={footer.content}
         />
-      </React.Fragment>
+      </Layout>
     )
   }
 }
@@ -75,6 +77,7 @@ export const pageQuery = graphql`
               }
               url
             }
+            pinnedToBottom
           }
         }
       }

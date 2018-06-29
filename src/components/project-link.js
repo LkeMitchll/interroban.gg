@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import GatsbyLink from 'gatsby-link'
+import { Link } from 'gatsby'
 import ReactCursorPosition from 'react-cursor-position'
 import linkCursor from '../assets/images/link_cursor.svg'
 import styled, { css } from 'react-emotion'
@@ -66,9 +66,9 @@ class ProjectLink extends React.Component {
           }}
         >
           <React.Fragment>
-            <GatsbyLink className={InternalLink} to={this.props.to}>
+            <Link className={InternalLink} to={this.props.to}>
               {this.props.children}
-            </GatsbyLink>
+            </Link>
             <Cursor
               style={{
                 top: this.state.position.y - 70,
