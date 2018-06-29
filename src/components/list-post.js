@@ -48,7 +48,7 @@ class ListPost extends React.Component {
           {this.props.title}
         </Content>
         <footer>
-          <Tag>{this.props.tags[0]}</Tag>
+          <Tag>{this.props.tag}</Tag>
           <Date dateTime={this.props.date}>{this.formattedDate()}</Date>
         </footer>
       </Wrapper>
@@ -60,7 +60,7 @@ ListPost.propTypes = {
   date: PropTypes.string,
   url: PropTypes.string,
   title: PropTypes.string,
-  tags: PropTypes.array,
+  tag: PropTypes.string,
 }
 
 export default ListPost

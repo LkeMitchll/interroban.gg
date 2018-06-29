@@ -33,7 +33,7 @@ class ListIndex extends React.Component {
                 date={node.publishDate}
                 url={node.url}
                 title={node.title}
-                tags={node.tags}
+                tag={node.tag}
               />
             )
           }
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
           title
           url
           publishDate
-          tags
+          tag
         }
       }
     }
