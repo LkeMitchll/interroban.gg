@@ -46,6 +46,10 @@ const Project = styled.li`
     grid-column: 1 / span 2;
     margin-bottom: 1rem;
     margin-left: 5rem;
+
+    @media (min-width: ${ds.breakpoint.medium}) {
+      margin-top: -3rem;
+    }
   }
 
   &:nth-of-type(2),
