@@ -8,16 +8,11 @@ import PageSection from '../components/page-section'
 class RootIndex extends React.Component {
   render() {
     const data = this.props.data.allContentfulPage.edges
-    let footer
-    let primaryContent = []
+    let contentSections = []
 
     data.map(({ node }) => {
       return node.sections.map(section => {
-        if (section.id == '8c9e623d-e2f8-56a6-bacd-b4ddd08abf52') {
-          footer = section
-        } else {
-          primaryContent.push(section)
-        }
+        contentSections.push(section)
       })
     })
 
@@ -26,24 +21,19 @@ class RootIndex extends React.Component {
         <Helmet>
           <title>Interrobang - Luke Mitchell</title>
         </Helmet>
-        {primaryContent.map((section, i) => {
+        {contentSections.map((section) => {
           return (
             <PageSection
-              key={i}
-              title={section.subtitle}
-              level="2"
+              altStyling={section.alternateAppearance}
               content={section.content}
+              key={section.id}
+              level="2"
+              pinBottom={section.pinnedToBottom}
               projects={section.projects}
+              title={section.subtitle}
             />
           )
         })}
-
-        <PageSection
-          altStyling
-          pinBottom={footer.pinnedToBottom}
-          title={footer.subtitle}
-          content={footer.content}
-        />
       </Layout>
     )
   }
@@ -78,6 +68,7 @@ export const pageQuery = graphql`
               url
             }
             pinnedToBottom
+            alternateAppearance
           }
         }
       }
