@@ -12,7 +12,7 @@ const ExternalLink = styled.a`
   color: ${ds.color.primary};
   transition: filter 0.25s linear;
 
-  @media (min-width: ${ds.breakpoint.medium}) {
+  @media (min-width: ${ds.breakpoint.small}) {
     &:hover {
       cursor: url(${linkCursor}), auto;
       filter: blur(5px);
@@ -25,7 +25,7 @@ const InternalLink = css`
   text-decoration: none;
   transition: filter 0.25s linear;
 
-  @media (min-width: ${ds.breakpoint.medium}) {
+  @media (min-width: ${ds.breakpoint.small}) {
     &:hover {
       cursor: none;
       filter: blur(5px);
@@ -38,7 +38,7 @@ const Cursor = styled.div`
   font-size: ${ds.typography.fontSize.large};
   position: absolute;
 
-  @media (max-width: ${ds.breakpoint.medium}) {
+  @media (max-width: ${ds.breakpoint.small}) {
     display: none !important;
   }
 `
