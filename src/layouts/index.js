@@ -6,14 +6,14 @@ import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
 const ContentWrapper = styled.section`
-  padding: ${ds.spacing.large};
+  padding: ${ds.spacing.base};
 
   @media (max-width: ${ds.breakpoint.small}) {
     padding: ${ds.spacing.small};
   }
 
-  @media (max-width: ${ds.breakpoint.medium}) {
-    padding: ${ds.spacing.base};
+  @media (min-width: ${ds.breakpoint.medium}) {
+    padding: ${ds.spacing.large};
   }
 `
 

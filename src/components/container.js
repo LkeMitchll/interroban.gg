@@ -8,6 +8,7 @@ const Main = styled.main`
   display: grid;
   font-family: ${ds.typography.fontFamily.primary};
   line-height: ${ds.typography.lineHeight.base};
+  max-width: 2000px;
 
   @media (min-width: ${ds.breakpoint.tablet}) {
     grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));

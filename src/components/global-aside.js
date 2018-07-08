@@ -18,6 +18,7 @@ const AsideWrapper = styled.aside`
   @media (min-width: ${ds.breakpoint.tablet}) {
     position: sticky;
     top: ${ds.spacing.small};
+    padding: ${ds.spacing.small};
   }
 
   @media (min-width: ${ds.breakpoint.tablet}) and (max-width: ${ds.breakpoint
@@ -81,7 +82,7 @@ class GlobalAside extends React.Component {
                 key={node.id}
                 inverted
                 title={node.subtitle}
-                level="1"
+                level="3"
                 decoratedContent={node.subtitleDecorativeContent}
                 content={node.content}
                 links={node.links}
