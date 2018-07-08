@@ -15,11 +15,18 @@ const Header = styled.header`
 
 const ListIndex = ({
   data: {
+    allContentfulPage: {
+      edges: [
+        {
+          node: { globalAsideContent },
+        },
+      ],
+    },
     allContentfulBlogPost: { edges },
   },
 }) => {
   return (
-    <Layout>
+    <Layout globalAsideContent={globalAsideContent}>
       <Helmet>
         <title>Interrobang - List</title>
       </Helmet>
@@ -47,6 +54,32 @@ export default ListIndex
 
 export const pageQuery = graphql`
   query ListIndexQuery {
+    allContentfulPage(filter: { title: { eq: "List" } }) {
+      edges {
+        node {
+          globalAsideContent {
+            id
+            subtitle
+            content {
+              childMarkdownRemark {
+                html
+              }
+            }
+            projects {
+              title
+              description {
+                childMarkdownRemark {
+                  html
+                }
+              }
+              url
+            }
+            pinnedToBottom
+            alternateAppearance
+          }
+        }
+      }
+    }
     allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {

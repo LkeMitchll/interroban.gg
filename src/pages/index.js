@@ -10,14 +10,14 @@ const RootIndex = ({
     allContentfulPage: {
       edges: [
         {
-          node: { sections },
+          node: { globalAsideContent, sections },
         },
       ],
     },
   },
 }) => {
   return (
-    <Layout>
+    <Layout globalAsideContent={globalAsideContent}>
       <Helmet>
         <title>Interrobang - Luke Mitchell</title>
       </Helmet>
@@ -47,6 +47,26 @@ export const pageQuery = graphql`
     allContentfulPage(filter: { title: { eq: "Home" } }) {
       edges {
         node {
+          globalAsideContent {
+            id
+            subtitle
+            content {
+              childMarkdownRemark {
+                html
+              }
+            }
+            projects {
+              title
+              description {
+                childMarkdownRemark {
+                  html
+                }
+              }
+              url
+            }
+            pinnedToBottom
+            alternateAppearance
+          }
           sections {
             id
             subtitle

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import PageSection from './page-section'
 import styled from 'react-emotion'
@@ -38,49 +39,64 @@ class GlobalAside extends React.Component {
         <StaticQuery
           query={graphql`
             query AsideQuery {
-              allContentfulPage(filter: { title: { eq: "Global" } }) {
+              allContentfulPageModule(
+                filter: { moduleId: { eq: "Home: On the web" } }
+              ) {
                 edges {
                   node {
-                    sections {
-                      id
-                      subtitle
-                      subtitleDecorativeContent
-                      pinnedToBottom
-                      content {
-                        childMarkdownRemark {
-                          html
-                        }
+                    id
+                    subtitle
+                    subtitleDecorativeContent
+                    pinnedToBottom
+                    content {
+                      childMarkdownRemark {
+                        html
                       }
-                      links {
-                        description
-                        url
-                      }
+                    }
+                    links {
+                      description
+                      url
                     }
                   }
                 }
               }
             }
           `}
-          render={data =>
-            data.allContentfulPage.edges.map(({ node }) =>
-              node.sections.map(section => (
-                <PageSection
-                  key={section.id}
-                  inverted
-                  title={section.subtitle}
-                  level="1"
-                  decoratedContent={section.subtitleDecorativeContent}
-                  content={section.content}
-                  links={section.links}
-                  pinBottom={section.pinnedToBottom}
-                />
-              ))
-            )
-          }
+          render={data => [
+            <PageSection
+              key={this.props.dynamicContent.id}
+              inverted
+              title={this.props.dynamicContent.subtitle}
+              level="1"
+              decoratedContent={
+                this.props.dynamicContent.subtitleDecorativeContent
+              }
+              content={this.props.dynamicContent.content}
+              links={this.props.dynamicContent.links}
+              pinBottom={this.props.dynamicContent.pinnedToBottom}
+              animated
+            />,
+            data.allContentfulPageModule.edges.map(({ node }) => (
+              <PageSection
+                key={node.id}
+                inverted
+                title={node.subtitle}
+                level="1"
+                decoratedContent={node.subtitleDecorativeContent}
+                content={node.content}
+                links={node.links}
+                pinBottom={node.pinnedToBottom}
+              />
+            )),
+          ]}
         />
       </AsideWrapper>
     )
   }
+}
+
+GlobalAside.propTypes = {
+  dynamicContent: PropTypes.object,
 }
 
 export default GlobalAside

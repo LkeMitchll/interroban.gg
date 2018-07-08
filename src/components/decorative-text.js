@@ -5,7 +5,7 @@ import ds from '../assets/design-system'
 
 const Inline = styled.span`
   font-family: ${ds.typography.fontFamily.secondary};
-  font-weigth: normal;
+  font-weight: normal;
 `
 
 class DecorativeText extends React.Component {

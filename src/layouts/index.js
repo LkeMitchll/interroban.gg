@@ -21,7 +21,7 @@ class Layout extends React.Component {
   render() {
     return (
       <Container>
-        <GlobalAside />
+        <GlobalAside dynamicContent={this.props.globalAsideContent} />
         <ContentWrapper>{this.props.children}</ContentWrapper>
       </Container>
     )
@@ -29,6 +29,7 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
+  globalAsideContent: PropTypes.object,
   children: PropTypes.node,
 }
 

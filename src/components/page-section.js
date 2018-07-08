@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'react-emotion'
+import styled, { keyframes, css } from 'react-emotion'
 import ds from '../assets/design-system'
 import Heading from './heading'
 import DecorativeText from './decorative-text'
 import Projects from './projects'
 import InlineList from './inline-list'
+
+const bounce = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1 }
+`
 
 const Wrapper = styled.section`
   color: ${props => (props.inverted ? ds.color.secondary : ds.color.primary)};
@@ -21,6 +26,11 @@ const Wrapper = styled.section`
       : ds.typography.fontSize.base};
   margin-bottom: ${props => (props.pinBottom ? '0' : ds.spacing.large)};
   margin-top: ${props => (props.pinBottom ? 'auto' : '0')};
+  animation: ${props => (props.animated ? bounce : 'none')} 1s ease;
+
+  a {
+    color: ${props => (props.inverted ? ds.color.secondary : ds.color.primary)};
+  }
 `
 
 const Measure = css`
@@ -70,6 +80,7 @@ class pageSection extends React.Component {
         inverted={this.props.inverted}
         pinBottom={this.props.pinBottom}
         altStyling={this.props.altStyling}
+        animated={this.props.animated}
       >
         <div>
           {this.renderHeading()}
@@ -94,6 +105,7 @@ pageSection.propTypes = {
   inverted: PropTypes.bool,
   pinBottom: PropTypes.bool,
   altStyling: PropTypes.bool,
+  animated: PropTypes.bool,
   children: PropTypes.node,
 }
 
