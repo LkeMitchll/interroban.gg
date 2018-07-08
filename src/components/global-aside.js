@@ -86,6 +86,7 @@ class GlobalAside extends React.Component {
                 content={node.content}
                 links={node.links}
                 pinBottom={node.pinnedToBottom}
+                animated
               />
             )),
           ]}
