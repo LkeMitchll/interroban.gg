@@ -5,8 +5,6 @@ import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
 const Wrapper = styled.article`
-  display: flex;
-  flex-direction: row;
   padding: 0 0 ${ds.spacing.base};
 
   @media (max-width: ${ds.breakpoint.small}) {
@@ -26,11 +24,8 @@ const Content = styled.a`
 `
 
 const Tag = styled.p`
-  border-right: 1px solid;
   display: inline-block;
   font-family: ${ds.typography.fontFamily.secondary};
-  margin-left: auto;
-  margin-right: ${ds.spacing.xsmall};
   opacity: 0.5;
   padding-right: ${ds.spacing.xsmall};
 `
@@ -49,7 +44,7 @@ class ListPost extends React.Component {
         </Content>
         <footer>
           <Tag>{this.props.tag}</Tag>
-          <Date dateTime={this.props.date}>{this.formattedDate()}</Date>
+          <Date dateTime={this.props.date}>{`(${this.formattedDate()})`}</Date>
         </footer>
       </Wrapper>
     )
