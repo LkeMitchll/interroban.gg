@@ -5,38 +5,35 @@ import { Helmet } from 'react-helmet'
 import Layout from '../layouts/index'
 import PageSection from '../components/page-section'
 
-class RootIndex extends React.Component {
-  render() {
-    const data = this.props.data.allContentfulPage.edges
-    let contentSections = []
-
-    data.map(({ node }) => {
-      return node.sections.map(section => {
-        contentSections.push(section)
-      })
-    })
-
-    return (
-      <Layout>
-        <Helmet>
-          <title>Interrobang - Luke Mitchell</title>
-        </Helmet>
-        {contentSections.map((section) => {
-          return (
-            <PageSection
-              altStyling={section.alternateAppearance}
-              content={section.content}
-              key={section.id}
-              level="2"
-              pinBottom={section.pinnedToBottom}
-              projects={section.projects}
-              title={section.subtitle}
-            />
-          )
-        })}
-      </Layout>
-    )
-  }
+const RootIndex = ({
+  data: {
+    allContentfulPage: {
+      edges: [
+        {
+          node: { sections },
+        },
+      ],
+    },
+  },
+}) => {
+  return (
+    <Layout>
+      <Helmet>
+        <title>Interrobang - Luke Mitchell</title>
+      </Helmet>
+      {sections.map(section => (
+        <PageSection
+          altStyling={section.alternateAppearance}
+          content={section.content}
+          key={section.id}
+          level="2"
+          pinBottom={section.pinnedToBottom}
+          projects={section.projects}
+          title={section.subtitle}
+        />
+      ))}
+    </Layout>
+  )
 }
 
 RootIndex.propTypes = {

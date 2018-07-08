@@ -13,34 +13,30 @@ const Header = styled.header`
   margin-bottom: ${ds.spacing.base};
 `
 
-class ListIndex extends React.Component {
-  render() {
-    const posts = this.props.data.allContentfulBlogPost.edges
-
-    return (
-      <Layout>
-        <Helmet>
-          <title>Interrobang - List</title>
-        </Helmet>
-        <Header>
-          <PageHeaderNav title="List" />
-        </Header>
-        {posts.map(({ node }) => {
-          if (node.url) {
-            return (
-              <ListPost
-                key={node.id}
-                date={node.publishDate}
-                url={node.url}
-                title={node.title}
-                tag={node.tag}
-              />
-            )
-          }
-        })}
-      </Layout>
-    )
-  }
+const ListIndex = ({
+  data: {
+    allContentfulBlogPost: { edges },
+  },
+}) => {
+  return (
+    <Layout>
+      <Helmet>
+        <title>Interrobang - List</title>
+      </Helmet>
+      <Header>
+        <PageHeaderNav title="List" />
+      </Header>
+      {edges.map(post => (
+        <ListPost
+          key={post.node.id}
+          date={post.node.publishDate}
+          url={post.node.url}
+          title={post.node.title}
+          tag={post.node.tag}
+        />
+      ))}
+    </Layout>
+  )
 }
 
 ListIndex.propTypes = {

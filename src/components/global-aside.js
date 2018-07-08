@@ -62,22 +62,20 @@ class GlobalAside extends React.Component {
             }
           `}
           render={data =>
-            data.allContentfulPage.edges.map(({ node }) => {
-              return node.sections.map(section => {
-                return (
-                  <PageSection
-                    key={section.id}
-                    inverted
-                    title={section.subtitle}
-                    level="1"
-                    decoratedContent={section.subtitleDecorativeContent}
-                    content={section.content}
-                    links={section.links}
-                    pinBottom={section.pinnedToBottom}
-                  />
-                )
-              })
-            })
+            data.allContentfulPage.edges.map(({ node }) =>
+              node.sections.map(section => (
+                <PageSection
+                  key={section.id}
+                  inverted
+                  title={section.subtitle}
+                  level="1"
+                  decoratedContent={section.subtitleDecorativeContent}
+                  content={section.content}
+                  links={section.links}
+                  pinBottom={section.pinnedToBottom}
+                />
+              ))
+            )
           }
         />
       </AsideWrapper>
