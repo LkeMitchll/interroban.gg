@@ -1,15 +1,5 @@
 import { injectGlobal } from 'emotion'
 
-import tiemposTextReg_eot from './fonts/TiemposTextWeb-Regular.eot'
-import tiemposTextReg_woff from './fonts/TiemposTextWeb-Regular.woff'
-import tiemposTextReg_woff2 from './fonts/TiemposTextWeb-Regular.woff2'
-import tiemposTextSemi_eot from './fonts/TiemposTextWeb-Semibold.eot'
-import tiemposTextSemi_woff from './fonts/TiemposTextWeb-Semibold.woff'
-import tiemposTextSemi_woff2 from './fonts/TiemposTextWeb-Semibold.woff2'
-import courierPrimeMedium_ttf from './fonts/CourierPrime-Medium.ttf'
-import courierPrimeMedium_eot from './fonts/CourierPrime-Medium.eot'
-import courierPrimeMedium_woff from './fonts/CourierPrime-Medium.woff'
-
 const ds = {
   color: {
     primary: '#4a4a4a',
@@ -50,36 +40,36 @@ const ds = {
 injectGlobal`
   @font-face {
     font-family: "Tiempos Text";
-    font-style: normal;
     font-weight: 400;
-    src: url("${tiemposTextReg_eot}");
+    src: url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Regular.eot");
     src:
-      url("${tiemposTextReg_eot}?#iefix") format("embedded-opentype"),
-      url("${tiemposTextReg_woff2}") format("woff2"),
-      url("${tiemposTextReg_woff}") format("woff");
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Regular.eot?#iefix") format("embedded-opentype"),
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Regular.woff2") format("woff2"),
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Regular.woff") format("woff");
   }
 
   @font-face {
     font-family: "Tiempos Text";
-    font-style: normal;
     font-weight: 600;
-    src: url("${tiemposTextSemi_eot}");
+    src: url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Semibold.eot");
     src:
-      url("${tiemposTextSemi_eot}?#iefix") format("embedded-opentype"),
-      url("${tiemposTextSemi_woff2}") format("woff2"),
-      url("${tiemposTextSemi_woff}") format("woff");
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Semibold.eot?#iefix") format("embedded-opentype"),
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Semibold.woff2") format("woff2"),
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/TiemposTextWeb-Semibold.woff") format("woff");
   }
 
   @font-face {
     font-family: "Courier Prime";
     font-style: normal;
     font-weight: normal;
-    src: url("${courierPrimeMedium_eot}");
+    src: url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/CourierPrime-Medium.eot");
     src:
-      url("${courierPrimeMedium_eot}?#iefix") format("embedded-opentype"),
-      url("${courierPrimeMedium_woff}") format("woff"),
-      url("${courierPrimeMedium_ttf}") format("truetype");
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/CourierPrime-Medium.eot?#iefix") format("embedded-opentype"),
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/CourierPrime-Medium.woff") format("woff"),
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/CourierPrime-Medium.ttf") format("truetype"),
+      url("https://s3.eu-west-2.amazonaws.com/interrobang-fonts/CourierPrime-Medium.svg") format("svg");
   }
+
 
   ::selection {
     background: yellow;
