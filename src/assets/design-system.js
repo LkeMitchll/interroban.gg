@@ -96,7 +96,7 @@ injectGlobal`
     padding: ${ds.spacing.small};
 
     @media (max-width: ${ds.breakpoint.tiny}) {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     @media (min-width: ${ds.breakpoint.tiny}) and (max-width: ${ds.breakpoint.small}) {

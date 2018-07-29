@@ -18,7 +18,7 @@ const AsideWrapper = styled.aside`
   @media (min-width: ${ds.breakpoint.tablet}) {
     position: sticky;
     top: ${ds.spacing.small};
-    padding: ${ds.spacing.small};
+    padding: ${ds.spacing.large};
   }
 
   @media (min-width: ${ds.breakpoint.tablet}) and (max-width: ${ds.breakpoint
