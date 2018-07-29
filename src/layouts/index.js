@@ -6,6 +6,8 @@ import styled from 'react-emotion'
 import ds from '../assets/design-system'
 
 const ContentWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
   padding: ${ds.spacing.small};
 
   @media (max-width: ${ds.breakpoint.small}) {
