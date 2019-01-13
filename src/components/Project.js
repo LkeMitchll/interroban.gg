@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 class Project extends React.Component {
   render() {
     return (
-      <li>
+      <div>
         <h4>{this.props.title}</h4>
         <div dangerouslySetInnerHTML={{ __html: this.props.description }} />
         <a href={this.props.url}>Visit {this.props.title}</a>
-      </li>
+      </div>
     )
   }
 }

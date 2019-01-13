@@ -6,17 +6,14 @@ class ProjectList extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h3>{this.props.title}</h3>
-        <ul>
-          {this.props.projects.map(project => (
-            <Project
-              key={project.id}
-              title={project.title}
-              description={project.description.childMarkdownRemark.html}
-              url={project.url}
-            />
-          ))}
-        </ul>
+        {this.props.projects.map(project => (
+          <Project
+            key={project.id}
+            title={project.title}
+            description={project.description.childMarkdownRemark.html}
+            url={project.url}
+          />
+        ))}
       </React.Fragment>
     )
   }

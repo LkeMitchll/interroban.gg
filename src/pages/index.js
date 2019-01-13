@@ -1,8 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { ThemeProvider } from 'emotion-theming'
+import theme from '../themes/light'
+import { Global, css } from '@emotion/core'
+import Grids from '../shared/grid'
+import Grid from '../components/Grid'
 import PageHeader from '../components/PageHeader'
 import SocialMediaLinkList from '../components/SocialMediaLinkList'
+import Heading from '../components/Heading'
 import ProjectList from '../components/ProjectList'
 
 class Homepage extends React.Component {
@@ -12,7 +18,15 @@ class Homepage extends React.Component {
     const sections = node.sections
 
     return (
-      <div>
+      <ThemeProvider theme={theme}>
+        <Global
+          styles={css`
+            body,
+            html {
+              background-color: ${theme.colors.background};
+            }
+          `}
+        />
         {sections.map(section => {
           switch (section.__typename) {
             case 'ContentfulPageHeader':
@@ -33,15 +47,21 @@ class Homepage extends React.Component {
               )
             case 'ContentfulProjectList':
               return (
-                <ProjectList
-                  key={section.id}
-                  title={section.title}
-                  projects={section.projects}
-                />
+                <React.Fragment key={section.id}>
+                  <Heading as="h3" color="text">
+                    {section.title}
+                  </Heading>
+                  <Grid gridTemplateColumns={Grids.columns.three}>
+                    <ProjectList
+                      title={section.title}
+                      projects={section.projects}
+                    />
+                  </Grid>
+                </React.Fragment>
               )
           }
         })}
-      </div>
+      </ThemeProvider>
     )
   }
 }
