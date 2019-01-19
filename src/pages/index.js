@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { ThemeProvider } from 'emotion-theming'
-import theme from '../themes/light'
+import Layout from '../layouts/default'
+import theme from '../themes/dark'
 import { Global, css } from '@emotion/core'
 import Grids from '../shared/grid'
 import Grid from '../components/Grid'
@@ -18,50 +19,53 @@ class Homepage extends React.Component {
     const sections = node.sections
 
     return (
-      <ThemeProvider theme={theme}>
-        <Global
-          styles={css`
-            body,
-            html {
-              background-color: ${theme.colors.background};
+      <Layout>
+        <ThemeProvider theme={theme}>
+          <Global
+            styles={css`
+              body,
+              html {
+                background-color: ${theme.colors.background};
+                color: ${theme.colors.text};
+              }
+            `}
+          />
+          {sections.map(section => {
+            switch (section.__typename) {
+              case 'ContentfulPageHeader':
+                return (
+                  <PageHeader
+                    key={section.id}
+                    title={section.title}
+                    subtitle={section.subtitle}
+                  />
+                )
+              case 'ContentfulSocialMediaLinkList':
+                return (
+                  <SocialMediaLinkList
+                    key={section.id}
+                    description={section.description}
+                    links={section.links}
+                  />
+                )
+              case 'ContentfulProjectList':
+                return (
+                  <React.Fragment key={section.id}>
+                    <Heading as="h3" color="text">
+                      {section.title}
+                    </Heading>
+                    <Grid gridTemplateColumns={Grids.columns.three}>
+                      <ProjectList
+                        title={section.title}
+                        projects={section.projects}
+                      />
+                    </Grid>
+                  </React.Fragment>
+                )
             }
-          `}
-        />
-        {sections.map(section => {
-          switch (section.__typename) {
-            case 'ContentfulPageHeader':
-              return (
-                <PageHeader
-                  key={section.id}
-                  title={section.title}
-                  subtitle={section.subtitle}
-                />
-              )
-            case 'ContentfulSocialMediaLinkList':
-              return (
-                <SocialMediaLinkList
-                  key={section.id}
-                  description={section.description}
-                  links={section.links}
-                />
-              )
-            case 'ContentfulProjectList':
-              return (
-                <React.Fragment key={section.id}>
-                  <Heading as="h3" color="text">
-                    {section.title}
-                  </Heading>
-                  <Grid gridTemplateColumns={Grids.columns.three}>
-                    <ProjectList
-                      title={section.title}
-                      projects={section.projects}
-                    />
-                  </Grid>
-                </React.Fragment>
-              )
-          }
-        })}
-      </ThemeProvider>
+          })}
+        </ThemeProvider>
+      </Layout>
     )
   }
 }
