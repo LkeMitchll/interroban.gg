@@ -5,7 +5,7 @@ import { ThemeProvider } from 'emotion-theming'
 import Layout from '../layouts/default'
 import theme from '../themes/dark'
 import { Global, css } from '@emotion/core'
-import Grids from '../shared/grid'
+import shared from '../themes/shared'
 import Grid from '../components/Grid'
 import PageHeader from '../components/PageHeader'
 import SocialMediaLinkList from '../components/SocialMediaLinkList'
@@ -50,7 +50,7 @@ class Homepage extends React.Component {
                     <Heading as="h3" color="text">
                       {section.title}
                     </Heading>
-                    <Grid gridTemplateColumns={Grids.columns.three}>
+                    <Grid gridTemplateColumns={shared.grid.columns.three}>
                       <ProjectList
                         title={section.title}
                         projects={section.projects}
