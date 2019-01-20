@@ -19,5 +19,10 @@ module.exports = {
       "experimentalObjectRestSpread": true,
       "jsx": true,
     },
+  },
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
   }
 }

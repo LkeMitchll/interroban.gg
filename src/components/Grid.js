@@ -1,9 +1,10 @@
 import styled from '@emotion/styled'
 import { gridTemplateColumns, gridTemplateRows } from 'styled-system'
+import shared from '../themes/shared'
 
 const Grid = styled.section`
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: ${shared.space[3]};
   ${gridTemplateColumns}
   ${gridTemplateRows}
 `

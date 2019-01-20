@@ -1,18 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Heading from './Heading'
+import styled from '@emotion/styled'
+import shared from '../themes/shared'
+
+const Wrapper = styled.header`
+  margin-top: ${shared.space[5]};
+  margin-bottom: ${shared.space[5]};
+`
 
 class PageHeader extends React.Component {
   render() {
     return (
-      <header>
+      <Wrapper>
         <Heading color="text" mb={1}>
           {this.props.title}
         </Heading>
         <Heading as="h2" color="text">
           {this.props.subtitle}
         </Heading>
-      </header>
+      </Wrapper>
     )
   }
 }

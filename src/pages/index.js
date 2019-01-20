@@ -42,11 +42,7 @@ class Homepage extends React.Component {
                 )
               case 'ContentfulSocialMediaLinkList':
                 return (
-                  <SocialMediaLinkList
-                    key={section.id}
-                    description={section.description}
-                    links={section.links}
-                  />
+                  <SocialMediaLinkList key={section.id} links={section.links} />
                 )
               case 'ContentfulProjectList':
                 return (
