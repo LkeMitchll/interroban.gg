@@ -47,10 +47,10 @@ class Homepage extends React.Component {
               case 'ContentfulProjectList':
                 return (
                   <React.Fragment key={section.id}>
-                    <Heading as="h3" color="text">
+                    <Heading as="h3" color="text" mb={4}>
                       {section.title}
                     </Heading>
-                    <Grid gridTemplateColumns={shared.grid.columns.three}>
+                    <Grid mb={5} gridTemplateColumns={shared.grid.columns.three}>
                       <ProjectList
                         title={section.title}
                         projects={section.projects}
