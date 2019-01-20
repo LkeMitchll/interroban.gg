@@ -1,14 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Heading from './Heading'
+import Link from './Link'
 
 class Project extends React.Component {
   render() {
     return (
-      <div>
-        <h4>{this.props.title}</h4>
+      <article>
+        <Heading as="h4" fontWeight="600" fontSize={1}>
+          {this.props.title}
+        </Heading>
         <div dangerouslySetInnerHTML={{ __html: this.props.description }} />
-        <a href={this.props.url}>Visit {this.props.title}</a>
-      </div>
+        <Link
+          color="text"
+          fontSize={1}
+          fontFamily="Space Mono"
+          fontWeight="400"
+          href={this.props.url}
+        >
+          Visit {this.props.title}
+        </Link>
+      </article>
     )
   }
 }
