@@ -4,7 +4,7 @@ import shared from '../themes/shared'
 
 const Grid = styled.section`
   display: grid;
-  grid-gap: ${shared.space[3]};
+  grid-gap: ${shared.space[4]};
   ${gridTemplateColumns}
   ${gridTemplateRows}
   ${space}

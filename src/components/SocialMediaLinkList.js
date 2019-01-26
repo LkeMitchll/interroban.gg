@@ -18,7 +18,7 @@ class SocialMediaLinkList extends React.Component {
       <Wrapper>
         {this.props.links.map((link, i) => (
           <ListItem key={link.id} ml={ListItemPositions[i]} mb={3}>
-            <Link color="text" fontSize={2} href={link.url}>
+            <Link color="text" fontSize={3} href={link.url}>
               {link.description}
             </Link>
           </ListItem>

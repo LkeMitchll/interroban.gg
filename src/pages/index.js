@@ -50,7 +50,10 @@ class Homepage extends React.Component {
                     <Heading as="h3" color="text" mb={4}>
                       {section.title}
                     </Heading>
-                    <Grid mb={5} gridTemplateColumns={shared.grid.columns.three}>
+                    <Grid
+                      mb={5}
+                      gridTemplateColumns={shared.grid.columns.three}
+                    >
                       <ProjectList
                         title={section.title}
                         projects={section.projects}
@@ -86,9 +89,9 @@ export const PageQuery = graphql`
             ... on ContentfulSocialMediaLinkList {
               id
               links {
-                id
                 description
                 url
+                id
               }
             }
             ... on ContentfulProjectList {

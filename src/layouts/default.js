@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Global, css } from '@emotion/core'
+import styled from '@emotion/styled'
 import shared from '../themes/shared'
+import BackgroundImage from '../assets/images/bg.svg'
 
 const GlobalStyle = css`
   @font-face {
@@ -38,7 +40,7 @@ const GlobalStyle = css`
     font-family: 'Space Grotesk', 'Helvetica Neue', 'Helvetica', 'Arial',
       sans-serif;
     font-weight: 400;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -48,13 +50,24 @@ const GlobalStyle = css`
   }
 `
 
+const Main = styled.main`
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 60%;
+  margin-top: ${shared.space[4]};
+
+  @media (min-width: 840px) {
+    background-image: url(${BackgroundImage});
+  }
+`
+
 class Layout extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <Main>
         <Global styles={GlobalStyle} />
         {this.props.children}
-      </React.Fragment>
+      </Main>
     )
   }
 }

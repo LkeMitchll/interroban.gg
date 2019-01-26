@@ -9,6 +9,7 @@ const Link = styled.a`
 
   &:hover {
     font-style: ${props => (props.fontFamily ? 'italic' : 'normal')};
+    text-decoration: none;
   }
 `
 

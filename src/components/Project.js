@@ -7,7 +7,7 @@ class Project extends React.Component {
   render() {
     return (
       <article>
-        <Heading as="h4" fontWeight="600" fontSize={1}>
+        <Heading as="h4" fontWeight="600" fontSize={2}>
           {this.props.title}
         </Heading>
         <div dangerouslySetInnerHTML={{ __html: this.props.description }} />
