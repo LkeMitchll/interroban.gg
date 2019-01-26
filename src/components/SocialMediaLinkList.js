@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import shared from '../themes/shared'
+import Anime from 'react-anime'
 import Link from './Link'
 import ListItem from './ListItem'
 
@@ -16,13 +17,20 @@ class SocialMediaLinkList extends React.Component {
   render() {
     return (
       <Wrapper>
-        {this.props.links.map((link, i) => (
-          <ListItem key={link.id} ml={ListItemPositions[i]} mb={3}>
-            <Link color="text" fontSize={3} href={link.url}>
-              {link.description}
-            </Link>
-          </ListItem>
-        ))}
+        <Anime
+          direction="reverse"
+          delay={(e, i) => i * 150}
+          opacity="0"
+          translateY="5rem"
+        >
+          {this.props.links.map((link, i) => (
+            <ListItem key={link.id} ml={ListItemPositions[i]} mb={3}>
+              <Link color="text" fontSize={3} href={link.url}>
+                {link.description}
+              </Link>
+            </ListItem>
+          ))}
+        </Anime>
       </Wrapper>
     )
   }

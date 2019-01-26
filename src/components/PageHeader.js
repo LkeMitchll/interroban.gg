@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Heading from './Heading'
 import styled from '@emotion/styled'
 import shared from '../themes/shared'
+import Anime from 'react-anime'
 
 const Wrapper = styled.header`
   padding-top: ${shared.space[5]};
@@ -12,16 +13,23 @@ const Wrapper = styled.header`
 class PageHeader extends React.Component {
   render() {
     return (
-      <Wrapper>
-        <Heading color="text" mb={1}>
-          {this.props.title}
-        </Heading>
-        {this.props.subtitle && (
-          <Heading as="h2" color="text">
-            {this.props.subtitle}
+      <Anime
+        direction="reverse"
+        delay={(e, i) => i * 100}
+        opacity="0"
+        translateY="5rem"
+      >
+        <Wrapper>
+          <Heading color="text" mb={1}>
+            {this.props.title}
           </Heading>
-        )}
-      </Wrapper>
+          {this.props.subtitle && (
+            <Heading as="h2" color="text">
+              {this.props.subtitle}
+            </Heading>
+          )}
+        </Wrapper>
+      </Anime>
     )
   }
 }

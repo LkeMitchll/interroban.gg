@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import shared from '../themes/shared'
+import Anime from 'react-anime'
 import BackgroundImage from '../assets/images/bg.svg'
 
 const GlobalStyle = css`
@@ -54,7 +55,8 @@ const Main = styled.main`
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 60%;
-  margin-top: ${shared.space[4]};
+  margin-top: ${shared.space[3]};
+  opacity: 0;
 
   @media (min-width: 840px) {
     background-image: url(${BackgroundImage});
@@ -64,10 +66,12 @@ const Main = styled.main`
 class Layout extends React.Component {
   render() {
     return (
-      <Main>
-        <Global styles={GlobalStyle} />
-        {this.props.children}
-      </Main>
+      <Anime delay={500} direction="normal" opacity="1" easing="easeInOutCirc">
+        <Main>
+          <Global styles={GlobalStyle} />
+          {this.props.children}
+        </Main>
+      </Anime>
     )
   }
 }
