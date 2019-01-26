@@ -11,7 +11,7 @@ const Wrapper = styled.ul`
   margin-bottom: ${shared.space[5]};
 `
 
-const ListItemPositions = ['25%', '0', '25%', '50%']
+const ListItemPositions = [['0', '25%'], '0', ['0', '25%'], ['0', '50%']]
 
 class SocialMediaLinkList extends React.Component {
   render() {
