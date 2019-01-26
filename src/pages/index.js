@@ -11,6 +11,7 @@ import PageHeader from '../components/PageHeader'
 import SocialMediaLinkList from '../components/SocialMediaLinkList'
 import Heading from '../components/Heading'
 import ProjectList from '../components/ProjectList'
+import Footer from '../components/Footer'
 
 class Homepage extends React.Component {
   render() {
@@ -63,6 +64,7 @@ class Homepage extends React.Component {
                 )
             }
           })}
+          <Footer>Hello</Footer>
         </ThemeProvider>
       </Layout>
     )
