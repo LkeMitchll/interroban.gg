@@ -64,7 +64,7 @@ class Homepage extends React.Component {
                 )
             }
           })}
-          <Footer>Hello</Footer>
+          <Footer />
         </ThemeProvider>
       </Layout>
     )

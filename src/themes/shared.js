@@ -4,6 +4,7 @@ const shared = {
   grid: {
     columns: {
       three: ['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)'],
+      two: ['1fr', 'repeat(2,1fr)'],
     },
   },
 }

@@ -4,10 +4,12 @@ import Heading from './Heading'
 import styled from '@emotion/styled'
 import shared from '../themes/shared'
 import Anime from 'react-anime'
+import Link from './Link'
 
 const Wrapper = styled.header`
   padding-top: ${shared.space[5]};
   margin-bottom: ${shared.space[5]};
+  top: 0;
 `
 
 class PageHeader extends React.Component {
@@ -27,6 +29,16 @@ class PageHeader extends React.Component {
             <Heading as="h2" color="text">
               {this.props.subtitle}
             </Heading>
+          )}
+          {!this.props.subtitle && (
+            <Link
+              href="/"
+              color="text"
+              fontFamily="Space Mono"
+              fontSize={shared.fontSizes[2]}
+            >
+              Back
+            </Link>
           )}
         </Wrapper>
       </Anime>
