@@ -32,6 +32,7 @@ class ListPage extends React.Component {
           <Grid
             gridTemplateColumns={shared.grid.columns.two}
             gridGap={shared.space[0]}
+            mb={shared.space[4]}
           >
             {posts.map(post => {
               const p = post.node

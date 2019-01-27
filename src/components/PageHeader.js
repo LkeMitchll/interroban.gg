@@ -4,7 +4,7 @@ import Heading from './Heading'
 import styled from '@emotion/styled'
 import shared from '../themes/shared'
 import Anime from 'react-anime'
-import Link from './Link'
+import InternalLink from './InternalLink'
 
 const Wrapper = styled.header`
   padding-top: ${shared.space[5]};
@@ -15,12 +15,7 @@ const Wrapper = styled.header`
 class PageHeader extends React.Component {
   render() {
     return (
-      <Anime
-        direction="reverse"
-        delay={(e, i) => i * 100}
-        opacity="0"
-        translateY="5rem"
-      >
+      <Anime delay={500} opacity={[0,1]} translateY={["5rem", "0"]}>
         <Wrapper>
           <Heading color="text" mb={1}>
             {this.props.title}
@@ -31,14 +26,13 @@ class PageHeader extends React.Component {
             </Heading>
           )}
           {!this.props.subtitle && (
-            <Link
+            <InternalLink
               href="/"
-              color="text"
               fontFamily="Space Mono"
               fontSize={shared.fontSizes[2]}
             >
               Back
-            </Link>
+            </InternalLink>
           )}
         </Wrapper>
       </Anime>

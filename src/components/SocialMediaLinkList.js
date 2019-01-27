@@ -18,10 +18,10 @@ class SocialMediaLinkList extends React.Component {
     return (
       <Wrapper>
         <Anime
-          direction="reverse"
-          delay={(e, i) => i * 150}
-          opacity="0"
-          translateY="5rem"
+          direction="normal"
+          delay={(e, i) => i * 300}
+          opacity={[0, 1]}
+          translateY={["5rem", "0"]}
         >
           {this.props.links.map((link, i) => (
             <ListItem key={link.id} ml={ListItemPositions[i]} mb={3}>

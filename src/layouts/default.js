@@ -66,7 +66,7 @@ const Main = styled.main`
 class Layout extends React.Component {
   render() {
     return (
-      <Anime delay={500} direction="normal" opacity="1" easing="easeInOutCirc">
+      <Anime direction="normal" opacity="1" easing="easeInOutCirc">
         <Main>
           <Global styles={GlobalStyle} />
           {this.props.children}
