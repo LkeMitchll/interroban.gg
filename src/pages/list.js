@@ -28,11 +28,12 @@ class ListPage extends React.Component {
             `}
           />
 
-          <PageHeader title={'List'} />
+          <PageHeader title={'List'} fixed />
           <Grid
             gridTemplateColumns={shared.grid.columns.two}
             gridGap={shared.space[0]}
             mb={shared.space[4]}
+            pt={[0, shared.space[5]]}
           >
             {posts.map(post => {
               const p = post.node

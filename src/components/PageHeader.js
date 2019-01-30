@@ -9,14 +9,17 @@ import InternalLink from './InternalLink'
 const Wrapper = styled.header`
   padding-top: ${shared.space[5]};
   margin-bottom: ${shared.space[5]};
-  top: 0;
+
+  @media (min-width: 640px) {
+    position: ${props => (props.fixed ? 'fixed' : 'static')};
+  }
 `
 
 class PageHeader extends React.Component {
   render() {
     return (
-      <Anime delay={500} opacity={[0,1]} translateY={["5rem", "0"]}>
-        <Wrapper>
+      <Anime delay={500} opacity={[0, 1]} translateY={['5rem', '0']}>
+        <Wrapper fixed={this.props.fixed}>
           <Heading color="text" mb={1}>
             {this.props.title}
           </Heading>
@@ -43,6 +46,7 @@ class PageHeader extends React.Component {
 PageHeader.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  fixed: PropTypes.bool,
 }
 
 export default PageHeader
