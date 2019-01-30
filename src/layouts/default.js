@@ -56,7 +56,6 @@ const Main = styled.main`
   background-position: right top;
   background-size: 60%;
   margin-top: ${shared.space[3]};
-  opacity: 0;
 
   @media (min-width: 840px) {
     background-image: url(${BackgroundImage});
@@ -66,7 +65,12 @@ const Main = styled.main`
 class Layout extends React.Component {
   render() {
     return (
-      <Anime direction="normal" opacity="1" easing="easeInOutCirc">
+      <Anime
+        direction="normal"
+        opacity={[0, 1]}
+        easing="easeInOutCirc"
+        translateY={['10rem', 0]}
+      >
         <Main>
           <Global styles={GlobalStyle} />
           {this.props.children}
