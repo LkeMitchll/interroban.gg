@@ -4,6 +4,7 @@ import { ThemeProvider } from 'emotion-theming'
 import Layout from '../layouts/default'
 import theme from '../themes/light'
 import { Global, css } from '@emotion/core'
+import Helmet from 'react-helmet'
 import PageHeader from '../components/PageHeader'
 import shared from '../themes/shared'
 import Grid from '../components/Grid'
@@ -27,7 +28,9 @@ class ListPage extends React.Component {
               }
             `}
           />
-
+          <Helmet>
+            <title>Luke Mitchell | List: A collection of interesting links</title>
+          </Helmet>
           <PageHeader title={'List'} fixed />
           <Grid
             gridTemplateColumns={shared.grid.columns.two}

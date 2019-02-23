@@ -5,6 +5,7 @@ import { ThemeProvider } from 'emotion-theming'
 import Layout from '../layouts/default'
 import theme from '../themes/dark'
 import { Global, css } from '@emotion/core'
+import Helmet from 'react-helmet'
 import shared from '../themes/shared'
 import Grid from '../components/Grid'
 import PageHeader from '../components/PageHeader'
@@ -31,6 +32,9 @@ class Homepage extends React.Component {
               }
             `}
           />
+          <Helmet>
+            <title>Luke Mitchell, Designer</title>
+          </Helmet>
           {sections.map(section => {
             switch (section.__typename) {
               case 'ContentfulPageHeader':
