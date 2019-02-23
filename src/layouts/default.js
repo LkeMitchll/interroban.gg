@@ -58,7 +58,7 @@ const Main = styled.main`
   margin-top: ${shared.space[3]};
 
   @media (min-width: 840px) {
-    background-image: url(${BackgroundImage});
+    background-image: ${props => props.background ? `url(${BackgroundImage})` : 'none'};
   }
 `
 
@@ -71,7 +71,7 @@ class Layout extends React.Component {
         easing="easeInOutCirc"
         translateY={['10rem', 0]}
       >
-        <Main>
+        <Main background={this.props.background}>
           <Global styles={GlobalStyle} />
           {this.props.children}
         </Main>
@@ -82,6 +82,7 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.object,
+  background: PropTypes.bool,
 }
 
 export default Layout

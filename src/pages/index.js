@@ -20,7 +20,7 @@ class Homepage extends React.Component {
     const sections = node.sections
 
     return (
-      <Layout>
+      <Layout background>
         <ThemeProvider theme={theme}>
           <Global
             styles={css`
