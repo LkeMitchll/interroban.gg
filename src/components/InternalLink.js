@@ -44,7 +44,10 @@ class InternalLink extends React.Component {
 InternalLink.propTypes = {
   light: PropTypes.bool,
   href: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.string,
+  ]),
   fontSize: PropTypes.string,
   fontFamily: PropTypes.string,
   fontWeight: PropTypes.string,
