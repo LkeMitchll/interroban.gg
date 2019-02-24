@@ -29,7 +29,9 @@ class ListPage extends React.Component {
             `}
           />
           <Helmet>
-            <title>Luke Mitchell | List: A collection of interesting links</title>
+            <title>
+              Luke Mitchell | List: A collection of interesting links
+            </title>
           </Helmet>
           <PageHeader title={'List'} fixed />
           <Grid

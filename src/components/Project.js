@@ -17,7 +17,7 @@ class Project extends React.Component {
           <Link
             color="text"
             fontSize={1}
-            fontFamily="Space Mono"
+            fontFamily={shared.fontFamilies.mono}
             fontWeight="400"
             href={this.props.url}
           >
@@ -26,7 +26,7 @@ class Project extends React.Component {
         )}
         {this.props.url.charAt(0) == '/' && (
           <InternalLink
-            fontFamily="Space Mono"
+            fontFamily={shared.fontFamilies.mono}
             fontWeight="400"
             fontSize={shared.fontSizes[1]}
             href={this.props.url}

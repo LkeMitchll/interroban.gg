@@ -24,7 +24,7 @@ class Footer extends React.Component {
         </p>
         <Link
           fontSize={1}
-          fontFamily="Space Mono"
+          fontFamily={shared.fontFamilies.mono}
           color="text"
           href="https://github.com/LkeMitchll/interroban.gg"
         >

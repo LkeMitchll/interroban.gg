@@ -31,7 +31,7 @@ class PageHeader extends React.Component {
           {!this.props.subtitle && (
             <InternalLink
               href="/"
-              fontFamily="Space Mono"
+              fontFamily={shared.fontFamilies.mono}
               fontSize={shared.fontSizes[2]}
             >
               Back

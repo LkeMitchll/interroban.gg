@@ -19,7 +19,7 @@ const MetaWrapper = styled.div`
 `
 
 const Meta = styled.p`
-  font-family: 'Space Mono';
+  font-family: ${shared.fontFamilies.mono};
   font-size: ${shared.fontSizes[1]};
   margin-right: ${shared.space[1]};
 

@@ -4,7 +4,6 @@ import { css } from 'emotion'
 import { Link } from 'gatsby'
 
 const BaseStyles = css`
-  font-family: 'Space Mono';
   color: black;
 
   &:hover {
@@ -31,8 +30,8 @@ class InternalLink extends React.Component {
           ${Theme};
           font-size: ${this.props.fontSize};
           font-weight: ${this.props.fontWeight};
+          font-family: ${this.props.fontFamily};
         `}
-        fontFamily={this.props.fontFamily}
         to={this.props.href}
       >
         {this.props.children}
@@ -44,10 +43,7 @@ class InternalLink extends React.Component {
 InternalLink.propTypes = {
   light: PropTypes.bool,
   href: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.string,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   fontSize: PropTypes.string,
   fontFamily: PropTypes.string,
   fontWeight: PropTypes.string,
