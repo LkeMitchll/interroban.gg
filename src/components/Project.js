@@ -4,6 +4,11 @@ import Heading from './Heading'
 import InternalLink from './InternalLink'
 import Link from './Link'
 import shared from '../themes/shared'
+import styled from '@emotion/styled'
+
+const Content = styled.div`
+  line-height: 1.5;
+`
 
 class Project extends React.Component {
   render() {
@@ -12,7 +17,7 @@ class Project extends React.Component {
         <Heading as="h4" fontWeight="600" fontSize={2}>
           {this.props.title}
         </Heading>
-        <div dangerouslySetInnerHTML={{ __html: this.props.description }} />
+        <Content dangerouslySetInnerHTML={{ __html: this.props.description }} />
         {this.props.url.charAt(0) !== '/' && (
           <Link
             color="text"

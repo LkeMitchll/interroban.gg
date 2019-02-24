@@ -14,6 +14,10 @@ const Footnote = styled.small`
   display: block;
 `
 
+const Content = styled.p`
+  line-height: 1.5;
+`
+
 class About extends React.Component {
   render() {
     return (
@@ -21,14 +25,14 @@ class About extends React.Component {
         <Heading mb={4}>About</Heading>
         <Grid mb={5} gridTemplateColumns={shared.grid.columns.single}>
           <div>
-            <p>
+            <Content>
               Multidisciplinary Designer &sup1; at{' '}
               <Link color="text" target="_blank" href="https://thoughtbot.com">
                 thoughtbot
               </Link>{' '}
               &mdash; Currently interested in Design Systems, React JS,
               Wabi-sabi &sup2; &amp; Brutalism &sup3;.
-            </p>
+            </Content>
             <Link
               color="text"
               href="mailto:luke@interroban.gg"
