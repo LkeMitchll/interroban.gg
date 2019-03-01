@@ -3,14 +3,14 @@ const shared = {
   fontSizes: ['0.5rem', '0.75rem', '1rem', '2rem'],
   fontFamilies: {
     sans:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";',
-    mono: 'Courier, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;',
+      "'Space Grotesk', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;",
+    mono: '"Space Mono", Courier, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;',
   },
   grid: {
     columns: {
       three: ['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)'],
       two: ['1fr', 'repeat(2,1fr)'],
-      single: ['1fr', '1fr', 'repeat(2,1fr)'],
+      single: ['1fr', '1fr', 'repeat(2, 1fr)'],
     },
   },
 }

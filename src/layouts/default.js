@@ -7,6 +7,34 @@ import Anime from 'react-anime'
 import BackgroundImage from '../assets/images/bg.svg'
 
 const GlobalStyle = css`
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('https://s3.eu-west-2.amazonaws.com/interrobang-fonts/SpaceGrotesk-Regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('https://s3.eu-west-2.amazonaws.com/interrobang-fonts/SpaceGrotesk-SemiBold.woff2');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('https://s3.eu-west-2.amazonaws.com/interrobang-fonts/SpaceMono-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('https://s3.eu-west-2.amazonaws.com/interrobang-fonts/SpaceMono-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+  }
+
   body,
   html {
     font-size: 22px;

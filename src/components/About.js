@@ -30,7 +30,7 @@ class About extends React.Component {
               <Link color="text" target="_blank" href="https://thoughtbot.com">
                 thoughtbot
               </Link>{' '}
-              &mdash; Currently interested in Design Systems, React JS,
+              &mdash; Currently interested in design systems, React JS,
               Wabi-sabi &sup2; &amp; Brutalism &sup3;.
             </Content>
             <Link
