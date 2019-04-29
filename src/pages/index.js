@@ -86,7 +86,7 @@ export default Homepage
 
 export const PageQuery = graphql`
   query HomeQuery {
-    allContentfulPage(filter: { title: { eq: "Home New" } }) {
+    allContentfulPage(filter: { title: { eq: "Home" } }) {
       edges {
         node {
           sections {
