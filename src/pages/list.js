@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import { ThemeProvider } from 'emotion-theming'
 import Layout from '../layouts/default'
 import theme from '../themes/light'

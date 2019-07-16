@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import shared from '../themes/shared'
-import Anime from 'react-anime'
 import BackgroundImage from '../assets/images/bg.svg'
 
 const GlobalStyle = css`
@@ -65,17 +64,10 @@ const Main = styled.main`
 class Layout extends React.Component {
   render() {
     return (
-      <Anime
-        direction="normal"
-        opacity={[0, 1]}
-        easing="easeInOutCirc"
-        translateY={['10rem', 0]}
-      >
-        <Main background={this.props.background}>
-          <Global styles={GlobalStyle} />
-          {this.props.children}
-        </Main>
-      </Anime>
+      <Main background={this.props.background}>
+        <Global styles={GlobalStyle} />
+        {this.props.children}
+      </Main>
     )
   }
 }
