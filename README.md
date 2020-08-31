@@ -1,30 +1,30 @@
-# Interrobang
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## My website - [interroban.gg][]
+## Getting Started
 
-Built with [Gatsby][] & [Contentful][]
+First, run the development server:
 
-## Development
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-1. Clone this repo
-2. Run `yarn install`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can build the project by running `yarn run build`, this will bundle the
-site into the `public` folder.
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-Running `yarn run serve` will start a server to
-preview the production code.
+## Learn More
 
-Run `yarn run dev` to start a local development server, it will watch for
-changes, build the site and reload the page in a browser.
+To learn more about Next.js, take a look at the following resources:
 
-You may also run `yarn run lint` to run `eslint` and `prettier` on the .js files.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
----
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-The site was built to be used with [Netlify][].
+## Deploy on Vercel
 
-[interroban.gg]: https://www.interroban.gg
-[Gatsby]: https://www.gatsbyjs.org
-[Contentful]: https://www.contentful.com
-[Netlify]: https://www.netlify.com
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

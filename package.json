@@ -1,48 +1,15 @@
 {
   "name": "interroban.gg",
-  "version": "3.0.0",
-  "license": "GPL-3.0",
-  "description": "Personal website of Luke Mitchell",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/LkeMitchll/interroban.gg.git"
-  },
+  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@emotion/core": "^10.0.6",
-    "@emotion/styled": "^10.0.6",
-    "emotion": "^9.1.3",
-    "emotion-server": "^9.1.3",
-    "emotion-theming": "^10.0.6",
-    "gatsby-plugin-emotion": "^2.0.0-beta.2",
-    "gatsby-plugin-favicon": "^3.1.5",
-    "gatsby-plugin-netlify": "^2.0.0-beta.4",
-    "gatsby-plugin-react-helmet": "^3.0.0-beta.3",
-    "gatsby-source-contentful": "^2.0.1-beta.7",
-    "gatsby-transformer-remark": "^2.1.1-beta.2",
-    "graphql": "^0.13.2",
-    "moment": "^2.22.2",
-    "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-helmet": "^5.2.0",
-    "styled-system": "^3.2.0",
-    "yargs-parser": "^10.0.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "babel-plugin-emotion": "^9.1.2",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^4.15.0",
-    "eslint-plugin-react": "^7.5.1",
-    "gatsby": "^2.0.0-beta.12",
-    "prettier": "^1.13.4",
-    "webpack": "^4.12.2"
-  },
   "scripts": {
-    "dev": "gatsby develop",
-    "serve": "gatsby serve",
-    "build": "gatsby build",
-    "lint": "eslint src/**/*.js && prettier --write src/**/*.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.5.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   }
 }
