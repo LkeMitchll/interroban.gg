@@ -1,0 +1,37 @@
+import { ReactElement } from "react";
+import { Tokens, Link } from "./designSystem";
+
+export default function Nav(): ReactElement {
+  return (
+    <>
+      <ul>
+        <li>
+          <Link url="#">About</Link>
+        </li>
+        <li>
+          <Link url="#">Work</Link>
+        </li>
+        <li>
+          <Link url="#">Bookmarks</Link>
+        </li>
+      </ul>
+
+      <style jsx>{`
+        ul {
+          display: flex;
+          flex-direction: column;
+        }
+
+        @media screen and (min-width: ${Tokens.breakpoints.small}) {
+          ul {
+            flex-direction: row;
+          }
+        }
+
+        li {
+          margin-right: ${Tokens.space[0]};
+        }
+      `}</style>
+    </>
+  );
+}

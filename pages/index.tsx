@@ -1,16 +1,19 @@
 import Head from "next/head";
 import type { ReactElement } from "react";
+import { About } from "../components/compositions/Home";
+import { Header } from "../components/compositions";
 
 const Home = (): ReactElement => (
-  <div>
+  <>
     <Head>
       <title>Luke Mitchell</title>
     </Head>
 
+    <Header />
     <main>
-      <h1>Hello, World!</h1>
+      <About />
     </main>
-  </div>
+  </>
 );
 
 export default Home;
