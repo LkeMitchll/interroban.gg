@@ -1,9 +1,18 @@
+import { GetStaticProps } from "next";
+import { ContentAPI } from "../services/contentful";
+import { ReactElement } from "react";
+import { Page } from "../services/contentful.types";
 import Head from "next/head";
-import type { ReactElement } from "react";
 import { About } from "../components/compositions/Home";
 import { Header } from "../components/compositions";
 
-const Home = (): ReactElement => (
+export const getStaticProps: GetStaticProps = async ({}) => {
+  const api = new ContentAPI();
+  const page = await api.fetchPage("gs1BugZQXA8mN7DniEOFx");
+  return { props: page };
+};
+
+const Home = (page: Page): ReactElement => (
   <>
     <Head>
       <title>Luke Mitchell</title>
@@ -11,7 +20,7 @@ const Home = (): ReactElement => (
 
     <Header />
     <main>
-      <About />
+      <About content={page} />
     </main>
   </>
 );
