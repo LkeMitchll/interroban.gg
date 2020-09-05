@@ -3,3 +3,11 @@ export type Page = {
   title: string;
   description: string;
 };
+
+export type Bookmark = {
+  id: string;
+  title: string;
+  url: string;
+  tag: string;
+  date: Date;
+};
