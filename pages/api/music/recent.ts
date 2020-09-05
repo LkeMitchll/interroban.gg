@@ -9,9 +9,9 @@ export default async (
   const response = await getRecentTracks();
   const { items } = await response.json();
 
-  const tracks = items.slice(0, 5).map((playedItem: any) => ({
+  const tracks = items.slice(0, 5).map((playedItem: Record<string, any>) => ({
     artist: playedItem.track.artists
-      .map((_artist: any) => _artist.name)
+      .map((_artist: Record<string, any>) => _artist.name)
       .join(", "),
     title: playedItem.track.name,
   }));
