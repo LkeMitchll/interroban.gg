@@ -1,7 +1,8 @@
 // https://system-ui.com/theme
 export default {
   colors: {
-    primary: "rgb(29,29,31)",
+    primary: "#191F18",
+    secondary: "#43564F",
   },
   space: ["1rem"],
   fonts: {
@@ -9,7 +10,9 @@ export default {
     serif: "Blanco",
     mono: "Pitch",
   },
-  fontSizes: ["1rem"],
+  fontSizes: ["1rem", "1.333rem"],
+  fontWeights: { reg: "400", semi: "600" },
+  lineHeights: { default: "1.4", heading: "1.1" },
   breakpoints: {
     small: "600px",
     medium: "800px",

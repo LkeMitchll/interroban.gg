@@ -8,6 +8,10 @@ const GlobalStyles = (): ReactElement => (
         font-size: 14px;
       }
 
+      body {
+        color: ${Tokens.colors.primary};
+      }
+
       @media screen and (min-width: ${Tokens.breakpoints.small}) {
         html {
           font-size: 16px;

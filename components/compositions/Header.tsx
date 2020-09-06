@@ -18,11 +18,11 @@ export default function Header(): ReactElement {
 
         @media screen and (min-width: ${Tokens.breakpoints.small}) {
           nav {
-            grid-template: "a . b b" auto / 1fr 1fr 1fr 1fr;
+            grid-template: "a a b b" auto / 1fr 1fr 1fr 1fr;
           }
         }
 
-        nav :global(h1) {
+        nav :global(.logo) {
           grid-area: a;
         }
 

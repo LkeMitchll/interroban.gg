@@ -18,6 +18,10 @@ export default function Heading({
         .heading {
           color: ${Tokens.colors.primary};
           font-size: ${Tokens.fontSizes[0]};
+          font-family: ${Tokens.fonts.sans};
+          font-weight: ${Tokens.fontWeights.semi};
+          line-height: ${Tokens.lineHeights.heading};
+          margin: 0 0 ${Tokens.space[0]};
         }
       `}</style>
     </>
