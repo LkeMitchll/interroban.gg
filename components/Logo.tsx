@@ -17,9 +17,14 @@ export default function Logo(): ReactElement {
       </div>
 
       <style jsx>{`
+        .logo {
+          align-items: flex-end;
+        }
+
         .logo :global(h1) {
           font-size: ${Tokens.fontSizes[1]};
           letter-spacing: -0.5px;
+          line-height: ${Tokens.lineHeights.crushed};
         }
 
         a {

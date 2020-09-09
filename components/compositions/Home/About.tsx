@@ -1,6 +1,14 @@
+import css from "styled-jsx/css";
 import { ReactElement } from "react";
-import { Tokens, Heading, Link, P, Image } from "../../designSystem";
+import { Tokens, Image, Small } from "../../designSystem";
+import { Title, Markdown } from "../../";
 import { Page } from "../../../services/contentful.types";
+
+const title = css.resolve`
+  header {
+    grid-area: b;
+  }
+`;
 
 export default function About({ content }: { content?: Page }): ReactElement {
   const imageURL =
@@ -9,18 +17,32 @@ export default function About({ content }: { content?: Page }): ReactElement {
     <>
       <section>
         <Image src={imageURL} alt="A nice photo" />
-        <div className="title">
-          <Heading>{content.title}</Heading>
-          <Link url="#">Read more</Link>
-        </div>
+        <Title
+          title="About Me"
+          sectionNumber="1.1"
+          link={{ url: "#", text: "Read more" }}
+          className={title.className}
+        />
         <div className="content">
-          <P>{content.description}</P>
+          <Markdown source={content.description} />
+          <Small>
+            Product Designer
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            UI & UX Developer
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            Mentor
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            Illustrator
+          </Small>
         </div>
       </section>
+
+      {title.styles}
 
       <style jsx>{`
         section {
           display: grid;
+          grid-column-gap: ${Tokens.space[2]};
           grid-template:
             "a a a" auto
             "b b b" auto
@@ -54,14 +76,16 @@ export default function About({ content }: { content?: Page }): ReactElement {
 
         section :global(img) {
           grid-area: a;
-        }
-
-        .title {
-          grid-area: b;
+          margin-bottom: ${Tokens.space[2]};
         }
 
         .content {
           grid-area: c;
+          margin-top: ${Tokens.space[1]};
+        }
+
+        .markdownContainer :global(p) {
+          font-family: ${Tokens.fonts.serif};
         }
       `}</style>
     </>

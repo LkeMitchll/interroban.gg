@@ -14,6 +14,9 @@ export default function Header(): ReactElement {
         nav {
           display: grid;
           grid-template: "a a a b" auto / 1fr 1fr 1fr 1fr;
+          grid-column-gap: ${Tokens.space[2]};
+          margin-bottom: ${Tokens.space[2]};
+          margin-top: ${Tokens.space[3]};
         }
 
         @media screen and (min-width: ${Tokens.breakpoints.small}) {

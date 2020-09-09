@@ -10,23 +10,52 @@ const GlobalStyles = (): ReactElement => (
 
       body {
         color: ${Tokens.colors.primary};
+        margin-top: ${Tokens.space[2]};
+        padding: 0 ${Tokens.space[1]};
       }
 
       @media screen and (min-width: ${Tokens.breakpoints.small}) {
         html {
-          font-size: 16px;
+          font-size: calc(15px + 2 * ((100vw - 320px) / 680));
+        }
+
+        body {
+          padding: 0 5vw;
         }
       }
 
-      @media screen and (min-width: ${Tokens.breakpoints.medium}) {
-        html {
-          font-size: 18px;
-        }
-      }
       @media screen and (min-width: ${Tokens.breakpoints.large}) {
         html {
-          font-size: 20px;
+          font-size: calc(18px + 4 * ((100vw - 1000px) / 680));
         }
+
+        body {
+          padding: 0 10vw;
+        }
+      }
+
+      @media screen and (min-width: ${Tokens.breakpoints.xlarge}) {
+        html {
+          font-size: 22px;
+        }
+
+        body {
+          padding: 0 15vw;
+        }
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-bottom: ${Tokens.space[1]};
+      }
+
+      p {
+        line-height: ${Tokens.lineHeights.default};
+      }
+
+      a {
+        color: ${Tokens.colors.primary};
       }
 
       ul {

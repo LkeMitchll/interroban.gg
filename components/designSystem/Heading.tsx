@@ -21,7 +21,8 @@ export default function Heading({
           font-family: ${Tokens.fonts.sans};
           font-weight: ${Tokens.fontWeights.semi};
           line-height: ${Tokens.lineHeights.heading};
-          margin: 0 0 ${Tokens.space[0]};
+          margin-top: 0;
+          margin-bottom: 0;
         }
       `}</style>
     </>

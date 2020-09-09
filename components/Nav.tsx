@@ -20,6 +20,7 @@ export default function Nav(): ReactElement {
         ul {
           display: flex;
           flex-direction: column;
+          align-items: flex-end;
         }
 
         @media screen and (min-width: ${Tokens.breakpoints.small}) {
@@ -29,7 +30,7 @@ export default function Nav(): ReactElement {
         }
 
         li {
-          margin-right: ${Tokens.space[0]};
+          margin-right: ${Tokens.space[2]};
         }
       `}</style>
     </>
