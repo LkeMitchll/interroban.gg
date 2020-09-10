@@ -1,30 +1,30 @@
+import { styled } from "../stitches";
 import { ReactElement } from "react";
-import { Tokens } from ".";
 
 interface HeadingProps {
   children: React.ReactNode;
   level?: keyof JSX.IntrinsicElements;
+  css?: Record<string, string>;
 }
+
+const Tag = styled("h1", {
+  color: "$primary",
+  fontSize: "$1",
+  fontFamily: "$sans",
+  fontWeight: "$semi",
+  lineHeight: "$heading",
+  marginTop: "$0",
+  marginBottom: "$0",
+});
 
 export default function Heading({
   children,
-  level: Tag = "h1",
+  level,
+  css,
 }: HeadingProps): ReactElement {
   return (
-    <>
-      <Tag className="heading">{children}</Tag>
-
-      <style jsx>{`
-        .heading {
-          color: ${Tokens.colors.primary};
-          font-size: ${Tokens.fontSizes[0]};
-          font-family: ${Tokens.fonts.sans};
-          font-weight: ${Tokens.fontWeights.semi};
-          line-height: ${Tokens.lineHeights.heading};
-          margin-top: 0;
-          margin-bottom: 0;
-        }
-      `}</style>
-    </>
+    <Tag css={css} as={level}>
+      {children}
+    </Tag>
   );
 }

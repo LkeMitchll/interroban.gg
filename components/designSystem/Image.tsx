@@ -1,24 +1,20 @@
+import { styled } from "../stitches";
 import { ReactElement } from "react";
-import { Tokens } from ".";
+
+const Img = styled("img", {
+  width: "100%",
+  marginBottom: "$1",
+  borderRadius: "2px",
+});
 
 export default function Image({
   src,
   alt,
+  css,
 }: {
   src: string;
   alt: string;
+  css: Record<string, string>;
 }): ReactElement {
-  return (
-    <>
-      <img src={src} alt={alt} />
-
-      <style jsx>{`
-        img {
-          width: 100%;
-          margin-bottom: ${Tokens.space[1]};
-          border-radius: 2px;
-        }
-      `}</style>
-    </>
-  );
+  return <Img src={src} alt={alt} css={css} />;
 }

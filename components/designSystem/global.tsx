@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { Tokens } from ".";
 
 const GlobalStyles = (): ReactElement => (
   <style global jsx>
@@ -9,12 +8,12 @@ const GlobalStyles = (): ReactElement => (
       }
 
       body {
-        color: ${Tokens.colors.primary};
-        margin-top: ${Tokens.space[2]};
-        padding: 0 ${Tokens.space[1]};
+        color: black;
+        margin-top: 6rem;
+        padding: 0 1rem;
       }
 
-      @media screen and (min-width: ${Tokens.breakpoints.small}) {
+      @media screen and (min-width: 600px) {
         html {
           font-size: calc(15px + 2 * ((100vw - 320px) / 680));
         }
@@ -24,7 +23,7 @@ const GlobalStyles = (): ReactElement => (
         }
       }
 
-      @media screen and (min-width: ${Tokens.breakpoints.large}) {
+      @media screen and (min-width: 1000px) {
         html {
           font-size: calc(18px + 4 * ((100vw - 1000px) / 680));
         }
@@ -34,7 +33,7 @@ const GlobalStyles = (): ReactElement => (
         }
       }
 
-      @media screen and (min-width: ${Tokens.breakpoints.xlarge}) {
+      @media screen and (min-width: 1600px) {
         html {
           font-size: 22px;
         }
@@ -42,26 +41,6 @@ const GlobalStyles = (): ReactElement => (
         body {
           padding: 0 15vw;
         }
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin-bottom: ${Tokens.space[1]};
-      }
-
-      p {
-        line-height: ${Tokens.lineHeights.default};
-      }
-
-      a {
-        color: ${Tokens.colors.primary};
-      }
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
       }
     `}
   </style>

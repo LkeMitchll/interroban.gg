@@ -1,5 +1,7 @@
+import { styled } from "./stitches";
 import { ReactElement } from "react";
-import { Tokens, Heading, Link } from "./designSystem";
+import { Heading } from "./designSystem";
+import { Link } from ".";
 
 type TitleLink = "url" | "text";
 
@@ -7,41 +9,35 @@ interface TitleProps {
   sectionNumber?: string;
   title: string;
   link?: Record<TitleLink, string>;
-  className?: string;
+  css?: Record<string, string>;
 }
+
+const Header = styled("header", {
+  marginBottom: "$1",
+});
+
+const Number = styled("span", {
+  fontFamily: "$mono",
+  fontSize: "$3",
+  display: "block",
+  marginBottom: "$0",
+});
 
 const Title = ({
   sectionNumber = null,
   link = null,
   title,
-  className,
-}: TitleProps): ReactElement => (
-  <>
-    <header className={`title ${className}`}>
-      <Heading level="h2">
-        <span>{sectionNumber}</span>
+  css,
+}: TitleProps): ReactElement => {
+  return (
+    <Header css={css}>
+      <Heading level="h2" css={{ lineHeight: "$default" }}>
+        <Number>{sectionNumber}</Number>
         {title}
       </Heading>
       {link ? <Link url={link.url}>{link.text}</Link> : null}
-    </header>
-
-    <style jsx>{`
-      .title {
-        margin-bottom: ${Tokens.space[1]};
-      }
-
-      .title :global(h2) {
-        line-height: ${Tokens.lineHeights.default};
-      }
-
-      .title :global(h2 span) {
-        font-family: ${Tokens.fonts.mono};
-        font-size: ${Tokens.fontSizes[2]};
-        display: block;
-        margin-bottom: ${Tokens.space[0]};
-      }
-    `}</style>
-  </>
-);
+    </Header>
+  );
+};
 
 export default Title;

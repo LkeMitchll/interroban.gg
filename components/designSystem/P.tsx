@@ -1,23 +1,12 @@
-import { ReactElement } from "react";
-import { Tokens } from ".";
+import { styled } from "../stitches";
 
-export default function P({
-  children,
-}: {
-  children: React.ReactNode;
-}): ReactElement {
-  return (
-    <>
-      <p>{children}</p>
+const P = styled("p", {
+  marginTop: 0,
+  fontFamily: "$serif",
+  marginBottom: "$1",
+  maxWidth: "30rem",
+  fontSize: "$1",
+  lineHeight: "$default",
+});
 
-      <style jsx>{`
-        p {
-          margin-top: 0;
-          font-family: ${Tokens.fonts.serif};
-          margin-bottom: ${Tokens.space[1]};
-          max-width: 30rem;
-        }
-      `}</style>
-    </>
-  );
-}
+export default P;

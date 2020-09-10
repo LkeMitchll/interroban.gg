@@ -1,41 +1,42 @@
+import { styled } from "./stitches";
 import { ReactElement } from "react";
 import Link from "next/link";
 import { Heading } from "./designSystem";
-import { Tokens } from "./designSystem";
 
-export default function Logo(): ReactElement {
+const Container = styled("div", {
+  display: "flex",
+  alignItems: "flex-end",
+});
+
+const A = styled("a", {
+  textDecoration: "none",
+});
+
+const Secondary = styled("span", {
+  display: "block",
+  fontWeight: "$normal",
+});
+
+export default function Logo({
+  css,
+}: {
+  css: Record<string, string>;
+}): ReactElement {
   return (
-    <>
-      <div className="logo">
-        <Link href="/">
-          <a>
-            <Heading>
-              Luke Mitchell? <span>Product Designer!</span>
-            </Heading>
-          </a>
-        </Link>
-      </div>
-
-      <style jsx>{`
-        .logo {
-          align-items: flex-end;
-        }
-
-        .logo :global(h1) {
-          font-size: ${Tokens.fontSizes[1]};
-          letter-spacing: -0.5px;
-          line-height: ${Tokens.lineHeights.crushed};
-        }
-
-        a {
-          text-decoration: none;
-        }
-
-        span {
-          display: block;
-          font-weight: ${Tokens.fontWeights.reg};
-        }
-      `}</style>
-    </>
+    <Container css={css}>
+      <Link href="/">
+        <A>
+          <Heading
+            css={{
+              fontSize: "$2",
+              letterSpacing: "-0.5px",
+              lineHeight: "$crushed",
+            }}
+          >
+            Luke Mitchell? <Secondary>Product Designer!</Secondary>
+          </Heading>
+        </A>
+      </Link>
+    </Container>
   );
 }

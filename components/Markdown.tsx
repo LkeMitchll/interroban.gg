@@ -1,24 +1,17 @@
 import { ReactElement } from "react";
-import css from "styled-jsx/css";
 import ReactMarkdown from "react-markdown";
-import { Tokens } from "./designSystem";
+import { P, A } from "./designSystem";
 
 export default function Markdown(
   source: Record<"source", string>,
 ): ReactElement {
+  const elements = {
+    paragraph: P,
+    link: A,
+  };
   return (
     <>
-      <ReactMarkdown className={className} {...source} />
-      {styles}
+      <ReactMarkdown renderers={elements} {...source} />
     </>
   );
 }
-
-const { className, styles } = css.resolve`
-  div :global(p) {
-    font-family: ${Tokens.fonts.serif};
-    margin-top: 0;
-    margin-bottom: ${Tokens.space[1]};
-    max-width: 30rem;
-  }
-`;

@@ -1,38 +1,46 @@
+import { styled } from "./stitches";
 import { ReactElement } from "react";
-import { Tokens, Link } from "./designSystem";
+import { Link } from ".";
 
-export default function Nav(): ReactElement {
+const List = styled("ul", {
+  display: "flex",
+  alignItems: "flex-end",
+  listStyle: "none",
+  marginBottom: "$0",
+  padding: "0",
+
+  variants: {
+    layout: {
+      tiny: {
+        flexDirection: "column",
+      },
+      small: {
+        flexDirection: "row",
+      },
+    },
+  },
+});
+
+const Item = styled("li", {
+  marginRight: "$2",
+});
+
+export default function Nav({
+  css,
+}: {
+  css: Record<string, string>;
+}): ReactElement {
   return (
-    <>
-      <ul>
-        <li>
-          <Link url="#">About</Link>
-        </li>
-        <li>
-          <Link url="#">Work</Link>
-        </li>
-        <li>
-          <Link url="#">Bookmarks</Link>
-        </li>
-      </ul>
-
-      <style jsx>{`
-        ul {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-        }
-
-        @media screen and (min-width: ${Tokens.breakpoints.small}) {
-          ul {
-            flex-direction: row;
-          }
-        }
-
-        li {
-          margin-right: ${Tokens.space[2]};
-        }
-      `}</style>
-    </>
+    <List layout={{ initial: "tiny", bp1: "small" }} css={css}>
+      <Item>
+        <Link url="#">About</Link>
+      </Item>
+      <Item>
+        <Link url="#">Work</Link>
+      </Item>
+      <Item>
+        <Link url="#">Bookmarks</Link>
+      </Item>
+    </List>
   );
 }

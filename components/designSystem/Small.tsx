@@ -1,18 +1,9 @@
-import { ReactElement } from "react";
-import { Tokens } from ".";
+import { styled } from "../stitches";
 
-const Small = ({ children }: { children: React.ReactNode }): ReactElement => (
-  <>
-    <small>{children}</small>
-
-    <style jsx>{`
-      small {
-        font-family: ${Tokens.fonts.serif};
-        font-size: ${Tokens.fontSizes[2]};
-        color: ${Tokens.colors.secondary};
-      }
-    `}</style>
-  </>
-);
+const Small = styled("small", {
+  fontFamily: "$serif",
+  fontSize: "$3",
+  color: "$secondary",
+});
 
 export default Small;

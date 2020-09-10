@@ -1,38 +1,30 @@
+import { styled } from "../stitches";
 import { ReactElement } from "react";
-import { Tokens } from "../designSystem";
-import { Nav, Logo } from "../";
+import { Logo, Nav } from "../";
+
+const Container = styled("nav", {
+  display: "grid",
+  marginBottom: "$2",
+  marginTop: "$3",
+  gridGap: "$2",
+
+  variants: {
+    layout: {
+      tiny: {
+        gridTemplate: `"a a a b" auto / 1fr 1fr 1fr 1fr`,
+      },
+      small: {
+        gridTemplate: `"a a b b" auto / 1fr 1fr 1fr 1fr`,
+      },
+    },
+  },
+});
 
 export default function Header(): ReactElement {
   return (
-    <>
-      <nav>
-        <Logo />
-        <Nav />
-      </nav>
-
-      <style jsx>{`
-        nav {
-          display: grid;
-          grid-template: "a a a b" auto / 1fr 1fr 1fr 1fr;
-          grid-column-gap: ${Tokens.space[2]};
-          margin-bottom: ${Tokens.space[2]};
-          margin-top: ${Tokens.space[3]};
-        }
-
-        @media screen and (min-width: ${Tokens.breakpoints.small}) {
-          nav {
-            grid-template: "a a b b" auto / 1fr 1fr 1fr 1fr;
-          }
-        }
-
-        nav :global(.logo) {
-          grid-area: a;
-        }
-
-        nav :global(ul) {
-          grid-area: b;
-        }
-      `}</style>
-    </>
+    <Container layout={{ initial: "tiny", bp1: "small" }}>
+      <Logo css={{ gridArea: "a" }} />
+      <Nav css={{ gridArea: "b" }} />
+    </Container>
   );
 }
