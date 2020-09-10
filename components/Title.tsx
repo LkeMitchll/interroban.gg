@@ -1,7 +1,7 @@
-import { styled } from "./stitches";
+import { styled } from "tokens";
+import { Heading } from "designSystem";
+import { Link } from "components";
 import { ReactElement } from "react";
-import { Heading } from "./designSystem";
-import { Link } from ".";
 
 type TitleLink = "url" | "text";
 

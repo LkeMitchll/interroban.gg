@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { Track } from "../../../services/spotify.types";
-import { getRecentTracks } from "../../../services/spotify";
+import { getRecentTracks } from "services/spotify";
+import { Track } from "services/spotify.types";
 
 export default async (
   _req: NextApiRequest,

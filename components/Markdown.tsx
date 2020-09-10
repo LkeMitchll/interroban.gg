@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
 import ReactMarkdown from "react-markdown";
-import { P, A } from "./designSystem";
+import { P, A } from "designSystem";
+import { ReactElement } from "react";
 
 export default function Markdown(
   source: Record<"source", string>,

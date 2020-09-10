@@ -1,7 +1,7 @@
-import { styled } from "./stitches";
-import { ReactElement } from "react";
 import Link from "next/link";
-import { Heading } from "./designSystem";
+import { styled } from "tokens";
+import { Heading } from "designSystem";
+import { ReactElement } from "react";
 
 const Container = styled("div", {
   display: "flex",

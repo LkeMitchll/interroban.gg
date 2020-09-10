@@ -1,4 +1,4 @@
-import { styled } from "../stitches";
+import { styled } from "tokens";
 
 const Small = styled("small", {
   fontFamily: "$serif",

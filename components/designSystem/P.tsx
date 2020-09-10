@@ -1,4 +1,4 @@
-import { styled } from "../stitches";
+import { styled } from "tokens";
 
 const P = styled("p", {
   marginTop: 0,

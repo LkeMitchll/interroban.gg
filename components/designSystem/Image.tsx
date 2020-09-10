@@ -1,4 +1,4 @@
-import { styled } from "../stitches";
+import { styled } from "tokens";
 import { ReactElement } from "react";
 
 const Img = styled("img", {

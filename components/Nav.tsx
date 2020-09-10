@@ -1,6 +1,6 @@
-import { styled } from "./stitches";
+import { styled } from "tokens";
+import { Link } from "components";
 import { ReactElement } from "react";
-import { Link } from ".";
 
 const List = styled("ul", {
   display: "flex",

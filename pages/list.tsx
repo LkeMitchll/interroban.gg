@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
-import { ContentAPI } from "../services/contentful";
+import { ContentAPI } from "services/contentful";
+import { Bookmark } from "services/contentful.types";
 import { ReactElement } from "react";
-import { Bookmark } from "../services/contentful.types";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();

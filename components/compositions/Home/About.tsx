@@ -1,8 +1,8 @@
-import { styled } from "../../stitches";
+import { styled } from "tokens";
+import { Image, Small } from "designSystem";
+import { Title, Markdown } from "components";
 import { ReactElement } from "react";
-import { Image, Small } from "../../designSystem";
-import { Title, Markdown } from "../../";
-import { Page } from "../../../services/contentful.types";
+import { Page } from "services/contentful.types";
 
 const Container = styled("section", {
   display: "grid",

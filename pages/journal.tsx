@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import useSWR from "swr";
-import { Track } from "../services/spotify.types";
+import { Track } from "services/spotify.types";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

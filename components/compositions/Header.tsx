@@ -1,6 +1,6 @@
-import { styled } from "../stitches";
+import { styled } from "tokens";
+import { Logo, Nav } from "components";
 import { ReactElement } from "react";
-import { Logo, Nav } from "../";
 
 const Container = styled("nav", {
   display: "grid",
