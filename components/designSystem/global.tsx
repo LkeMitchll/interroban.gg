@@ -4,7 +4,7 @@ const GlobalStyles = (): ReactElement => (
   <style global jsx>
     {`
       html {
-        font-size: 14px;
+        font-size: 16px;
       }
 
       body {
@@ -15,7 +15,7 @@ const GlobalStyles = (): ReactElement => (
 
       @media screen and (min-width: 600px) {
         html {
-          font-size: calc(15px + 2 * ((100vw - 320px) / 680));
+          font-size: calc(18px + 2 * ((100vw - 320px) / 680));
         }
 
         body {
@@ -25,7 +25,7 @@ const GlobalStyles = (): ReactElement => (
 
       @media screen and (min-width: 1000px) {
         html {
-          font-size: calc(18px + 4 * ((100vw - 1000px) / 680));
+          font-size: calc(20px + 4 * ((100vw - 1000px) / 680));
         }
 
         body {

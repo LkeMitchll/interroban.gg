@@ -22,7 +22,9 @@ const List = styled("ul", {
 });
 
 const Item = styled("li", {
-  marginRight: "$2",
+  bp1: {
+    marginRight: "$2",
+  },
 });
 
 export default function Nav({

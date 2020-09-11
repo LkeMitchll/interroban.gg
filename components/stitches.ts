@@ -13,8 +13,8 @@ const theme = {
   },
   fontSizes: {
     $1: "1rem",
-    $2: "1.333rem",
-    $3: "0.833rem",
+    $2: "1.2rem",
+    $3: "0.75rem",
   },
   fontWeights: {
     $normal: "400",

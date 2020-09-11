@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { ContentAPI } from "services/contentful";
-import { Header, About } from "compositions";
+import { Header, About, Footer } from "compositions";
 import { ReactElement } from "react";
 import { Page } from "services/contentful.types";
 
@@ -22,6 +22,7 @@ const Home = (page: Page): ReactElement => {
       <main>
         <About content={page} />
       </main>
+      <Footer />
     </>
   );
 };
