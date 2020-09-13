@@ -24,7 +24,10 @@ export default function Header(): ReactElement {
   return (
     <Container layout={{ initial: "tiny", bp1: "small" }}>
       <Logo css={{ gridArea: "a" }} />
-      <Nav css={{ gridArea: "b" }} />
+      <Nav
+        layout={{ initial: "verticalRTL", bp1: "horizontal" }}
+        css={{ gridArea: "b" }}
+      />
     </Container>
   );
 }

@@ -4,17 +4,21 @@ import { ReactElement } from "react";
 
 const List = styled("ul", {
   display: "flex",
-  alignItems: "flex-end",
   listStyle: "none",
   marginBottom: "$0",
   padding: "0",
 
   variants: {
     layout: {
-      tiny: {
+      vertical: {
         flexDirection: "column",
       },
-      small: {
+      verticalRTL: {
+        flexDirection: "column",
+        alignItems: "flex-end",
+        marginRight: "-$2",
+      },
+      horizontal: {
         flexDirection: "row",
       },
     },
@@ -22,18 +26,18 @@ const List = styled("ul", {
 });
 
 const Item = styled("li", {
-  bp1: {
-    marginRight: "$2",
-  },
+  marginRight: "$2",
 });
 
 export default function Nav({
   css,
+  layout,
 }: {
-  css: Record<string, string>;
+  css?: Record<string, string>;
+  layout?: Record<string, string>;
 }): ReactElement {
   return (
-    <List layout={{ initial: "tiny", bp1: "small" }} css={css}>
+    <List layout={layout} css={css}>
       <Item>
         <Link url="#">About</Link>
       </Item>
