@@ -1,12 +1,12 @@
 import { styled } from "tokens";
-import { Link } from "components";
+import { NavLink } from "components";
 import { ReactElement } from "react";
 
 const List = styled("ul", {
   display: "flex",
   listStyle: "none",
   marginBottom: "$0",
-  padding: "0",
+  padding: "$0",
 
   variants: {
     layout: {
@@ -39,13 +39,16 @@ export default function Nav({
   return (
     <List layout={layout} css={css}>
       <Item>
-        <Link url="#">About</Link>
+        <NavLink url="/about">About</NavLink>
       </Item>
       <Item>
-        <Link url="#">Work</Link>
+        <NavLink url="/work">Work</NavLink>
       </Item>
       <Item>
-        <Link url="#">Bookmarks</Link>
+        <NavLink url="/journal">Journal</NavLink>
+      </Item>
+      <Item>
+        <NavLink url="/bookmarks">Bookmarks</NavLink>
       </Item>
     </List>
   );

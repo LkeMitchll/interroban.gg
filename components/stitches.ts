@@ -1,9 +1,19 @@
 import { createStyled } from "@stitches/react";
 
-const theme = {
+const Color = (
+  hue: number,
+  sat: number,
+  light: number,
+  opacity: number,
+): string => {
+  return `hsla(${hue}, ${sat}%, ${light}%, ${opacity})`;
+};
+
+export const theme = {
   colors: {
-    $primary: "#191F18",
-    $secondary: "#43564F",
+    $primary: Color(115, 13, 11, 0.8),
+    $secondary: Color(115, 13, 30, 1),
+    $bg: "#FDFFFA",
   },
   space: {
     $0: "0",
@@ -26,10 +36,23 @@ const theme = {
     $serif: "Blanco",
     $mono: "Pitch",
   },
+  letterSpacings: {
+    $logo: "-0.5px",
+  },
   lineHeights: {
     $default: "1.4",
     $heading: "1.3",
     $crushed: "1.1",
+  },
+  sizes: {
+    $full: "100%",
+    $measure: "30rem",
+  },
+  radii: {
+    $image: "2px",
+  },
+  borderWidths: {
+    $1: "1px",
   },
 };
 

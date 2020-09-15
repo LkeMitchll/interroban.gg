@@ -58,7 +58,7 @@ export default function About({ content }: { content?: Page }): ReactElement {
       <Title
         title="About Me"
         sectionNumber="1.1"
-        link={{ url: "#", text: "Read more" }}
+        link={{ url: "/about", text: "Read more" }}
         css={{ gridArea: "b" }}
       />
       <Content>

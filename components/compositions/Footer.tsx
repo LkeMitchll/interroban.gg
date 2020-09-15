@@ -1,6 +1,6 @@
 import { styled } from "tokens";
 import { PlainList, TertiaryText, Subtitle, Small } from "designSystem";
-import { Link, Nav } from "components";
+import { NavLink, Nav } from "components";
 import { ReactElement } from "react";
 
 const Container = styled("footer", {
@@ -51,7 +51,7 @@ const Item = styled("li", {
   marginRight: "$2",
 
   bp2: {
-    marginRight: 0,
+    marginRight: "$0",
   },
 });
 
@@ -76,9 +76,9 @@ export default function Footer(): ReactElement {
       <PlainList>
         {links.map((link: Record<"title" | "url", string>, i: number) => (
           <Item key={i}>
-            <Link url={link.url} plain>
+            <NavLink url={link.url} plain>
               {link.title}
-            </Link>
+            </NavLink>
           </Item>
         ))}
       </PlainList>

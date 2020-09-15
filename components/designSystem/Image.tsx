@@ -2,9 +2,9 @@ import { styled } from "tokens";
 import { ReactElement } from "react";
 
 const Img = styled("img", {
-  width: "100%",
+  width: "$full",
   marginBottom: "$1",
-  borderRadius: "2px",
+  borderRadius: "$image",
 });
 
 export default function Image({

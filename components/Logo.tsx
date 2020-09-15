@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavLink from "next/link";
 import { styled } from "tokens";
 import { Heading } from "designSystem";
 import { ReactElement } from "react";
@@ -24,19 +24,19 @@ export default function Logo({
 }): ReactElement {
   return (
     <Container css={css}>
-      <Link href="/">
-        <A>
+      <NavLink href="/">
+        <A href="#">
           <Heading
             css={{
               fontSize: "$2",
-              letterSpacing: "-0.5px",
+              letterSpacing: "$logo",
               lineHeight: "$crushed",
             }}
           >
             Luke Mitchell? <Secondary>Product Designer!</Secondary>
           </Heading>
         </A>
-      </Link>
+      </NavLink>
     </Container>
   );
 }

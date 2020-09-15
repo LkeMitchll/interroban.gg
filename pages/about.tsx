@@ -1,7 +1,6 @@
-import Head from "next/head";
 import { GetStaticProps } from "next";
 import { ContentAPI } from "services/contentful";
-import { Header, Intro, Footer } from "compositions";
+import { RichText } from "components";
 import { ReactElement } from "react";
 import { Page } from "services/contentful.types";
 
@@ -11,20 +10,6 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   return { props: page };
 };
 
-const Home = (page: Page): ReactElement => {
-  return (
-    <>
-      <Head>
-        <title>Luke Mitchell</title>
-      </Head>
-
-      <Header />
-      <main>
-        <Intro content={page} />
-      </main>
-      <Footer />
-    </>
-  );
-};
-
-export default Home;
+export default function AboutPage(page: Page): ReactElement {
+  return <RichText source={page.content} />;
+}

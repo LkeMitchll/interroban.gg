@@ -1,6 +1,6 @@
 import { styled } from "tokens";
 import { Heading } from "designSystem";
-import { Link } from "components";
+import { NavLink } from "components";
 import { ReactElement } from "react";
 
 type TitleLink = "url" | "text";
@@ -35,7 +35,7 @@ const Title = ({
         <Number>{sectionNumber}</Number>
         {title}
       </Heading>
-      {link ? <Link url={link.url}>{link.text}</Link> : null}
+      {link ? <NavLink url={link.url}>{link.text}</NavLink> : null}
     </Header>
   );
 };

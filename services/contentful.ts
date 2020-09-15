@@ -30,6 +30,7 @@ export class ContentAPI {
         id: entry.sys.id,
         title: entry.fields.title,
         description: entry.fields.description,
+        content: entry.fields.content,
       };
       return page;
     });

@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { styled } from "tokens";
 
 const Wrapper = styled("p", {
-  margin: 0,
+  margin: "$0",
 });
 
 const Tag = styled("small", {

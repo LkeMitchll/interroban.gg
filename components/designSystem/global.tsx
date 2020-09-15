@@ -1,3 +1,4 @@
+import { theme } from "tokens";
 import { ReactElement } from "react";
 
 const GlobalStyles = (): ReactElement => (
@@ -5,12 +6,17 @@ const GlobalStyles = (): ReactElement => (
     {`
       html {
         font-size: 16px;
+        background-color: ${theme.colors.$bg};
       }
 
       body {
-        color: black;
-        margin-top: 6rem;
+        background-color: ${theme.colors.$bg};
+        color: ${theme.colors.$primary};
+        margin-top: ${theme.space.$3};
         padding: 0 1rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
 
       @media screen and (min-width: 600px) {

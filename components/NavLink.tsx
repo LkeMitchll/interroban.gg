@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { styled } from "tokens";
 import { ReactElement } from "react";
 
@@ -6,31 +7,32 @@ const A = styled("a", {
   fontFamily: "$mono",
   fontSize: "$3",
   textDecoration: "none",
+  cursor: "pointer",
 
   variants: {
     appearance: {
       plain: {},
       underline: {
-        borderBottom: "1px solid $primary",
+        borderBottom: "$1 solid $primary",
       },
     },
   },
 });
 
-interface LinkProps {
+interface NavLinkProps {
   children: React.ReactNode;
   url: string;
   plain?: boolean;
 }
 
-export default function Link({
+export default function NavLink({
   children,
   url,
   plain,
-}: LinkProps): ReactElement {
+}: NavLinkProps): ReactElement {
   return (
-    <A href={url} appearance={plain ? "plain" : "underline"}>
-      {children}
-    </A>
+    <Link href={url}>
+      <A appearance={plain ? "plain" : "underline"}>{children}</A>
+    </Link>
   );
 }
