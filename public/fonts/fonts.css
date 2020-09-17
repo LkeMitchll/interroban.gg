@@ -26,6 +26,14 @@
 }
 
 @font-face {
+  font-family: "Blanco";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: local("Blanco Trial Italic");
+}
+
+@font-face {
   font-family: "Pitch";
   font-weight: 600;
   font-style: normal;

@@ -6,7 +6,9 @@ import Image from "./Image";
 import Small from "./Small";
 import PlainList from "./PlainList";
 import TertiaryText from "./TertiaryText";
+import SecondaryText from "./SecondaryText";
 import Subtitle from "./Subtitle";
+import Footnote from "./Footnote";
 
 export {
   GlobalStyles,
@@ -17,5 +19,7 @@ export {
   Small,
   PlainList,
   TertiaryText,
+  SecondaryText,
   Subtitle,
+  Footnote,
 };

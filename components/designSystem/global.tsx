@@ -29,19 +29,9 @@ const GlobalStyles = (): ReactElement => (
         }
       }
 
-      @media screen and (min-width: 1000px) {
-        html {
-          font-size: calc(20px + 4 * ((100vw - 1000px) / 680));
-        }
-
-        body {
-          padding: 0 10vw;
-        }
-      }
-
       @media screen and (min-width: 1600px) {
         html {
-          font-size: 22px;
+          font-size: 21px;
         }
 
         body {

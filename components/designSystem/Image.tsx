@@ -14,7 +14,7 @@ export default function Image({
 }: {
   src: string;
   alt: string;
-  css: Record<string, string>;
+  css?: Record<string, string>;
 }): ReactElement {
   return <Img src={src} alt={alt} css={css} />;
 }

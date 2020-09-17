@@ -43,10 +43,12 @@ export const theme = {
     $default: "1.4",
     $heading: "1.3",
     $crushed: "1.1",
+    $relaxed: "1.6",
   },
   sizes: {
     $full: "100%",
     $measure: "30rem",
+    $compact: "15rem",
   },
   radii: {
     $image: "2px",

@@ -32,15 +32,19 @@ const Item = styled("li", {
 export default function Nav({
   css,
   layout,
+  compact,
 }: {
   css?: Record<string, string>;
   layout?: Record<string, string>;
+  compact?: boolean;
 }): ReactElement {
   return (
     <List layout={layout} css={css}>
-      <Item>
-        <NavLink url="/about">About</NavLink>
-      </Item>
+      {!compact ? (
+        <Item>
+          <NavLink url="/about">About</NavLink>
+        </Item>
+      ) : null}
       <Item>
         <NavLink url="/work">Work</NavLink>
       </Item>

@@ -14,3 +14,22 @@ export type Bookmark = {
   tag: string;
   date: Date;
 };
+
+export type List = {
+  title: string;
+  items: Array<Job>;
+};
+
+export type Job = {
+  id: string;
+  title: string;
+  period: string;
+  company: string;
+};
+
+export type Asset = {
+  url: string;
+  desc: string;
+  width: number;
+  height: number;
+};

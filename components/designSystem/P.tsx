@@ -7,6 +7,14 @@ const P = styled("p", {
   maxWidth: "$measure",
   fontSize: "$1",
   lineHeight: "$default",
+
+  variants: {
+    margin: {
+      0: {
+        marginBottom: "$0",
+      },
+    },
+  },
 });
 
 export default P;
