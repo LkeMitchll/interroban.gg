@@ -86,19 +86,22 @@ export default function Footer(): ReactElement {
   };
 
   const InfoLinks = [
-    { title: "About", url: "#" },
-    { title: "Colophon", url: "#" },
-    { title: "Uses", url: "#" },
+    { title: "About", url: "/about" },
+    { title: "Colophon", url: "/colophon" },
+    { title: "Uses", url: "/uses" },
   ];
   const ContactLinks = [
-    { title: "Email", url: "#" },
-    { title: "Twitter", url: "#" },
-    { title: "LinkedIn", url: "#" },
+    { title: "Email", url: "mailto:luke@interroban.gg" },
+    { title: "Twitter", url: "https://twitter.com/lkemitchll" },
+    {
+      title: "LinkedIn",
+      url: "https://www.linkedin.com/in/luke-mitchell-69ba421b3/",
+    },
   ];
   const ElsewhereLinks = [
-    { title: "Dribbble", url: "#" },
-    { title: "Pinterest", url: "#" },
-    { title: "GitHub", url: "#" },
+    { title: "Dribbble", url: "https://dribbble.com/Interrobang" },
+    { title: "Pinterest", url: "https://www.pinterest.co.uk/lkemitchll" },
+    { title: "GitHub", url: "https://www.github.com/lkemitchll" },
   ];
 
   return (

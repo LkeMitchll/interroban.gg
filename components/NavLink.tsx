@@ -30,9 +30,23 @@ export default function NavLink({
   url,
   plain,
 }: NavLinkProps): ReactElement {
+  const external =
+    url.startsWith("http") || url.startsWith("mailto") || url.startsWith("#");
   return (
-    <Link href={url}>
-      <A appearance={plain ? "plain" : "underline"}>{children}</A>
-    </Link>
+    <>
+      {external ? (
+        <A
+          href={url}
+          appearance={plain ? "plain" : "underline"}
+          target="_blank"
+        >
+          {children}
+        </A>
+      ) : (
+        <Link href={url}>
+          <A appearance={plain ? "plain" : "underline"}>{children}</A>
+        </Link>
+      )}
+    </>
   );
 }
