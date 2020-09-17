@@ -1,7 +1,9 @@
 import Head from "next/head";
 import { styled } from "tokens";
+import { Transition } from "components";
 import { Header, Footer } from "compositions";
 import { ReactElement } from "react";
+import { useRouter } from "next/router";
 
 const Main = styled("main", {
   marginTop: "$3",
@@ -13,6 +15,7 @@ export default function Layout({
 }: {
   children: React.ReactNode;
 }): ReactElement {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -20,8 +23,10 @@ export default function Layout({
       </Head>
 
       <Header />
-      <Main>{children}</Main>
-      <Footer />
+      <Transition location={router.pathname}>
+        <Main>{children}</Main>
+        <Footer />
+      </Transition>
     </>
   );
 }

@@ -6,5 +6,16 @@ import Markdown from "./Markdown";
 import NavLink from "./NavLink";
 import RichText from "./RichText";
 import ListItem from "./ListItem";
+import Transition from "./Transition";
 
-export { Layout, Nav, Logo, Title, Markdown, NavLink, RichText, ListItem };
+export {
+  Layout,
+  Nav,
+  Logo,
+  Title,
+  Markdown,
+  NavLink,
+  RichText,
+  ListItem,
+  Transition,
+};
