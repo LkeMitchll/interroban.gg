@@ -1,5 +1,5 @@
 import { ContentfulClientApi, createClient } from "contentful";
-import { Page, Bookmark, List, Job, Asset } from "./contentful.types";
+import { Page, Bookmark, List, Job, Asset, Roundup } from "./contentful.types";
 
 export class ContentAPI {
   client: ContentfulClientApi;
@@ -19,6 +19,7 @@ export class ContentAPI {
       url: rawPost.url,
       tag: rawPost.tag,
       date: rawPost.publishDate,
+      notes: rawPost.notes ? rawPost.notes : null,
     };
   };
 
@@ -43,6 +44,17 @@ export class ContentAPI {
     }
   };
 
+  convertRoundup = (rawData: { sys: any; fields: any }): Roundup => {
+    const rawRoundup = rawData.fields;
+    return {
+      id: rawData.sys.id,
+      title: rawRoundup.title,
+      links: rawRoundup.links.map((link: { sys: any; fields: any }) =>
+        this.convertBookmark(link),
+      ),
+    };
+  };
+
   async fetchPage(id: string): Promise<Page> {
     return await this.client.getEntry(id).then((result) => {
       const entry: { sys: any; fields: any } = result;
@@ -51,7 +63,7 @@ export class ContentAPI {
         id: entry.sys.id,
         title: entry.fields.title,
         description: entry.fields.description,
-        content: entry.fields.content,
+        content: entry.fields.content ? entry.fields.content : null,
       };
       return page;
     });
@@ -67,6 +79,20 @@ export class ContentAPI {
       .then((result) => {
         const posts = result.items.map((entry) => this.convertBookmark(entry));
         return posts;
+      });
+  }
+
+  async fetchRoundups(): Promise<Array<Roundup>> {
+    return await this.client
+      .getEntries({
+        content_type: "roundup",
+        order: "-fields.date",
+      })
+      .then((result) => {
+        const roundups = result.items.map((roundup) =>
+          this.convertRoundup(roundup),
+        );
+        return roundups;
       });
   }
 

@@ -1,26 +1,35 @@
 import { GetStaticProps } from "next";
 import { ContentAPI } from "services/contentful";
-import { Bookmark } from "services/contentful.types";
+import {
+  Bookmark,
+  Page,
+  Roundup as RoundupType,
+} from "services/contentful.types";
 import { ReactElement } from "react";
+import { Hero, List } from "compositions";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
+  const page = await api.fetchPage("4bctuwqdqxtWxfaNXPLqaI");
   const posts = await api.fetchBookmarks();
-  return { props: { posts } };
+  const roundups = await api.fetchRoundups();
+  return { props: { posts, page, roundups } };
 };
 
-const List = ({ posts }: { posts: Array<Bookmark> }): ReactElement => {
+interface BookmarksProps {
+  posts: Array<Bookmark>;
+  page: Page;
+  roundups: Array<RoundupType>;
+}
+
+const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
+  const latestRoundup = roundups[0];
   return (
-    <ul>
-      {posts.map((entry) => (
-        <li key={entry.id}>
-          <a href={entry.url}>{entry.title}</a>
-          <p>{entry.tag}</p>
-          <p>{entry.date}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      <Hero title={page.title} intro={page.description} />
+      <List posts={posts} roundup={latestRoundup} />
+    </>
   );
 };
 
-export default List;
+export default Bookmarks;

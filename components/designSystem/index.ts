@@ -9,6 +9,8 @@ import TertiaryText from "./TertiaryText";
 import SecondaryText from "./SecondaryText";
 import Subtitle from "./Subtitle";
 import Footnote from "./Footnote";
+import LargeText from "./LargeText";
+import NumberedList from "./NumberedList";
 
 export {
   GlobalStyles,
@@ -22,4 +24,6 @@ export {
   SecondaryText,
   Subtitle,
   Footnote,
+  LargeText,
+  NumberedList,
 };

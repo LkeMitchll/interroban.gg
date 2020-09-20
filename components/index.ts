@@ -7,6 +7,8 @@ import NavLink from "./NavLink";
 import RichText from "./RichText";
 import ListItem from "./ListItem";
 import Transition from "./Transition";
+import Bookmark from "./Bookmark";
+import Roundup from "./Roundup";
 
 export {
   Layout,
@@ -18,4 +20,6 @@ export {
   RichText,
   ListItem,
   Transition,
+  Bookmark,
+  Roundup,
 };

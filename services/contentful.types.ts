@@ -4,7 +4,7 @@ export type Page = {
   id: string;
   title: string;
   description: string;
-  content: Document;
+  content?: Document;
 };
 
 export type Bookmark = {
@@ -13,6 +13,7 @@ export type Bookmark = {
   url: string;
   tag: string;
   date: Date;
+  notes?: string;
 };
 
 export type List = {
@@ -32,4 +33,10 @@ export type Asset = {
   desc: string;
   width: number;
   height: number;
+};
+
+export type Roundup = {
+  id: string;
+  title: string;
+  links: Array<Bookmark>;
 };

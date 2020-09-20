@@ -7,6 +7,7 @@ interface ListItemProps {
   title: string;
   url?: string;
   subtitle: string;
+  external?: boolean;
 }
 
 const Container = styled("li", {
@@ -18,6 +19,7 @@ export default function ListItem({
   title,
   url,
   subtitle,
+  external,
 }: ListItemProps): ReactElement {
   return (
     <Container>
@@ -25,7 +27,9 @@ export default function ListItem({
         <TertiaryText css={{ marginBottom: "$0" }}>{top}</TertiaryText>
       ) : null}
       {url ? (
-        <A href={url}>{title}</A>
+        <A href={url} target={external ? "_blank" : null}>
+          {title}
+        </A>
       ) : (
         <P css={{ marginBottom: "$0", lineHeight: "$relaxed" }}>{title}</P>
       )}

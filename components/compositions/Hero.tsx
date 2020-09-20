@@ -1,5 +1,5 @@
 import { Title } from "components";
-import { Footnote, Image, Small } from "designSystem";
+import { Footnote, Image, LargeText, Small } from "designSystem";
 import { styled } from "tokens";
 import { ReactElement } from "react";
 import { Asset } from "services/contentful.types";
@@ -29,24 +29,36 @@ const Container = styled("div", {
 export default function Hero({
   image,
   title,
+  intro,
 }: {
-  image: Asset;
+  image?: Asset;
   title: string;
+  intro?: string;
 }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
       <Title title={title} link={{ url: "/", text: "Back" }} />
-      <Image
-        src={`${image.url}?w=${image.width / 4}&q=50`}
-        alt={image.desc}
-        css={{ gridArea: "b" }}
-      />
-      <Footnote
-        position={{ initial: "aside" }}
-        css={{ marginTop: "auto", marginBottom: "$1", position: "static" }}
-      >
-        <Small>Image: {image.desc}</Small>
-      </Footnote>
+      {intro ? (
+        <LargeText css={{ gridArea: "b", marginBottom: "$3" }}>
+          {intro}
+        </LargeText>
+      ) : null}
+      {image ? (
+        <>
+          <Image
+            src={`${image.url}?w=${image.width / 4}&q=50`}
+            alt={image.desc}
+            css={{ gridArea: "b" }}
+          />
+
+          <Footnote
+            position={{ initial: "aside" }}
+            css={{ marginTop: "auto", marginBottom: "$1", position: "static" }}
+          >
+            <Small>Image: {image.desc}</Small>
+          </Footnote>
+        </>
+      ) : null}
     </Container>
   );
 }
