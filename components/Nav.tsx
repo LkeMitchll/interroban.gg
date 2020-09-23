@@ -1,16 +1,22 @@
 import { styled } from "tokens";
 import { NavLink } from "components";
 import { ReactElement } from "react";
+import { TCssWithBreakpoints } from "@stitches/react";
 
 const List = styled("ul", {
   display: "flex",
   listStyle: "none",
   marginBottom: "$0",
+  marginTop: "$0",
   padding: "$0",
 
   variants: {
     layout: {
       vertical: {
+        flexDirection: "column",
+      },
+      verticalCompact: {
+        marginTop: "$1",
         flexDirection: "column",
       },
       verticalRTL: {
@@ -34,7 +40,7 @@ export default function Nav({
   layout,
   compact,
 }: {
-  css?: Record<string, string>;
+  css?: TCssWithBreakpoints<any>;
   layout?: Record<string, string>;
   compact?: boolean;
 }): ReactElement {

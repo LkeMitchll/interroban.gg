@@ -1182,6 +1182,11 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/spotify-api@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@types/spotify-api/-/spotify-api-0.0.4.tgz#61a200e8281a363cbb154ed13447e800b04bcca2"
+  integrity sha512-5mHfveWQP1XW0sZXrBB3vewyQw0lXuD+l62jGKkJI8mFLHqxufJeV0BaHsx7IAI72fsdxtFWeQkmNh79mY+/Tw==
+
 "@typescript-eslint/eslint-plugin@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.0.1.tgz#88bde9239e29d688315718552cf80a3490491017"

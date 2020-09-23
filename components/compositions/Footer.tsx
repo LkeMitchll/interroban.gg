@@ -113,7 +113,10 @@ export default function Footer(): ReactElement {
           Luke Mitchell &mdash; <br />
           Product Designer
         </Small>
-        <Nav layout={{ initial: "horizontal", bp2: "vertical" }} compact />
+        <Nav
+          layout={{ initial: "horizontal", bp2: "verticalCompact" }}
+          compact
+        />
       </Column>
       <Column alignment={"bottom"}>
         {Title("Information")}

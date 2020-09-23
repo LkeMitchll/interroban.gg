@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { styled } from "tokens";
+import { TCssWithBreakpoints } from "@stitches/react";
 
 const Wrapper = styled("p", {
   margin: "$0",
@@ -16,7 +17,7 @@ export default function Small({
   css,
 }: {
   children: React.ReactNode;
-  css?: Record<string, string>;
+  css?: TCssWithBreakpoints<any>;
 }): ReactElement {
   return (
     <Wrapper>

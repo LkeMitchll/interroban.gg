@@ -4,17 +4,18 @@ import { ReactElement } from "react";
 
 const Container = styled("nav", {
   display: "grid",
-  marginBottom: "$2",
-  marginTop: "$3",
   gridGap: "$2",
 
   variants: {
     layout: {
       tiny: {
         gridTemplate: `"a a a b" auto / 1fr 1fr 1fr 1fr`,
+        marginTop: "$2",
       },
       small: {
         gridTemplate: `"a a b b" auto / 1fr 1fr 1fr 1fr`,
+        marginTop: "$3",
+        marginBottom: "$2",
       },
     },
   },

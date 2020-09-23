@@ -1,29 +1,52 @@
-const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
-const RECENT_TRACKS_ENDPOINT =
-  "https://api.spotify.com/v1/me/player/recently-played";
-const basic = Buffer.from(
-  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
-).toString("base64");
+export class MusicAPI {
+  tokenEndpoint: string;
+  apiEndpoint: string;
+  recentlyPlayedEndpoint: string;
+  topTracksEndpoint: string;
+  credentials: string;
 
-async function getAccessToken() {
-  const response = await fetch(TOKEN_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${basic}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: `grant_type=refresh_token&refresh_token=${process.env.SPOTIFY_REFRESH_TOKEN}`,
-  });
+  constructor() {
+    this.tokenEndpoint = "https://accounts.spotify.com/api/token";
+    this.apiEndpoint = "https://api.spotify.com/v1/me";
 
-  return response.json();
-}
+    this.credentials = Buffer.from(
+      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
+    ).toString("base64");
 
-export async function getRecentTracks(): Promise<Response> {
-  const { access_token } = await getAccessToken();
+    this.recentlyPlayedEndpoint = `${this.apiEndpoint}/player/recently-played`;
+    this.topTracksEndpoint = `${this.apiEndpoint}/top/tracks`;
+  }
 
-  return fetch(RECENT_TRACKS_ENDPOINT, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
+  async getAccessToken(): Promise<Record<"access_token", string>> {
+    const response = await fetch(this.tokenEndpoint, {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${this.credentials}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `grant_type=refresh_token&refresh_token=${process.env.SPOTIFY_REFRESH_TOKEN}`,
+    });
+
+    return response.json();
+  }
+
+  async request(endpoint: string): Promise<Response> {
+    const { access_token } = await this.getAccessToken();
+
+    return fetch(endpoint, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+  }
+
+  async getRecentTracks(): Promise<Response> {
+    return this.request(`${this.recentlyPlayedEndpoint}?limit=10`);
+  }
+
+  async getTopTracks(): Promise<Response> {
+    return this.request(
+      `${this.topTracksEndpoint}?time_range=short_term&limit=5`,
+    );
+  }
 }

@@ -1,5 +1,19 @@
-import { ContentfulClientApi, createClient } from "contentful";
-import { Page, Bookmark, List, Job, Asset, Roundup } from "./contentful.types";
+import {
+  ContentfulClientApi,
+  createClient,
+  Entry,
+  Asset as ContentfulAsset,
+} from "contentful";
+import {
+  Page,
+  Bookmark,
+  List,
+  Job,
+  Asset,
+  Roundup,
+  JournalEntry,
+  BlogPost,
+} from "./contentful.types";
 
 export class ContentAPI {
   client: ContentfulClientApi;
@@ -11,7 +25,7 @@ export class ContentAPI {
     });
   }
 
-  convertBookmark = (rawData: { sys: any; fields: any }): Bookmark => {
+  convertBookmark = (rawData: Entry<any>): Bookmark => {
     const rawPost = rawData.fields;
     return {
       id: rawData.sys.id,
@@ -23,7 +37,7 @@ export class ContentAPI {
     };
   };
 
-  convertJob = (rawData: { sys: any; fields: any }): Job => {
+  convertJob = (rawData: Entry<any>): Job => {
     const rawJob = rawData.fields;
 
     return {
@@ -34,30 +48,47 @@ export class ContentAPI {
     };
   };
 
-  convertListItems = (
-    type: string,
-    data: Array<{ sys: any; fields: any }>,
-  ): Array<Job> => {
+  convertJournalEntry = (rawData: Entry<any>): JournalEntry => {
+    const rawEntry = rawData.fields;
+
+    return {
+      content: rawEntry.content,
+      date: rawEntry.date,
+    };
+  };
+
+  convertListItems = (type: string, data: Array<Entry<any>>): Array<Job> => {
     switch (type) {
       case "job":
         return data.map((item) => this.convertJob(item));
     }
   };
 
-  convertRoundup = (rawData: { sys: any; fields: any }): Roundup => {
+  convertRoundup = (rawData: Entry<any>): Roundup => {
     const rawRoundup = rawData.fields;
     return {
       id: rawData.sys.id,
       title: rawRoundup.title,
-      links: rawRoundup.links.map((link: { sys: any; fields: any }) =>
+      links: rawRoundup.links.map((link: Entry<any>) =>
         this.convertBookmark(link),
       ),
     };
   };
 
+  convertBlogPost = (rawData: Entry<any>): BlogPost => {
+    const rawPost = rawData.fields;
+    return {
+      id: rawData.sys.id,
+      title: rawPost.title,
+      slug: rawPost.slug,
+      date: rawPost.date,
+      content: rawPost.content,
+    };
+  };
+
   async fetchPage(id: string): Promise<Page> {
     return await this.client.getEntry(id).then((result) => {
-      const entry: { sys: any; fields: any } = result;
+      const entry: Entry<any> = result;
 
       const page = {
         id: entry.sys.id,
@@ -87,6 +118,7 @@ export class ContentAPI {
       .getEntries({
         content_type: "roundup",
         order: "-fields.date",
+        limit: 1,
       })
       .then((result) => {
         const roundups = result.items.map((roundup) =>
@@ -96,9 +128,49 @@ export class ContentAPI {
       });
   }
 
+  async fetchBlogPostBySlug(slug: string): Promise<BlogPost> {
+    return await this.client
+      .getEntries({
+        content_type: "post",
+        "fields.slug": slug,
+        limit: 1,
+      })
+      .then((result) => {
+        const posts = result.items.map((post) => this.convertBlogPost(post));
+        return posts[0];
+      });
+  }
+
+  async fetchBlogPosts(): Promise<Array<BlogPost>> {
+    return await this.client
+      .getEntries({
+        content_type: "post",
+        order: "-fields.date",
+      })
+      .then((result) => {
+        const posts = result.items.map((post) => this.convertBlogPost(post));
+        return posts;
+      });
+  }
+
+  async fetchJournalEntry(): Promise<JournalEntry> {
+    return await this.client
+      .getEntries({
+        content_type: "journalEntry",
+        order: "-fields.date",
+        limit: 1,
+      })
+      .then((result) => {
+        const entries = result.items.map((entry) =>
+          this.convertJournalEntry(entry),
+        );
+        return entries[0];
+      });
+  }
+
   async fetchList(id: string): Promise<List> {
     return await this.client.getEntry(id).then((result) => {
-      const entry: { sys: any; fields: any } = result;
+      const entry: Entry<any> = result;
       const itemType = entry.fields.items[0].sys.contentType.sys.id;
 
       const list = {
@@ -111,7 +183,7 @@ export class ContentAPI {
 
   async fetchAsset(id: string): Promise<Asset> {
     return await this.client.getAsset(id).then((result) => {
-      const asset: { sys: any; fields: any } = result;
+      const asset: ContentfulAsset = result;
 
       const image = {
         url: asset.fields.file.url,

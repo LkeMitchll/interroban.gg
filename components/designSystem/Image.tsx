@@ -1,5 +1,6 @@
 import { styled } from "tokens";
 import { ReactElement } from "react";
+import { TCssWithBreakpoints } from "@stitches/react";
 
 const Img = styled("img", {
   width: "$full",
@@ -14,7 +15,7 @@ export default function Image({
 }: {
   src: string;
   alt: string;
-  css?: Record<string, string>;
+  css?: TCssWithBreakpoints<any>;
 }): ReactElement {
   return <Img src={src} alt={alt} css={css} />;
 }

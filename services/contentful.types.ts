@@ -40,3 +40,16 @@ export type Roundup = {
   title: string;
   links: Array<Bookmark>;
 };
+
+export type JournalEntry = {
+  content: Document;
+  date: Date;
+};
+
+export type BlogPost = {
+  id: string;
+  title: string;
+  slug: string;
+  date: Date;
+  content: Document;
+};

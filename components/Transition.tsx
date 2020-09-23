@@ -25,7 +25,7 @@ const Transition = ({
   location,
 }: {
   children: React.ReactNode;
-  location: any;
+  location: string;
 }): ReactElement => {
   return (
     <TransitionGroup style={{ position: "relative" }}>

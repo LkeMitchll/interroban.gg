@@ -1,19 +1,24 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getRecentTracks } from "services/spotify";
-import { Track } from "services/spotify.types";
+import { MusicAPI } from "services/spotify";
+import { PlayHistoryObject, Track } from "services/spotify.types";
 
 export default async (
   _req: NextApiRequest,
   res: NextApiResponse<Array<Track>>,
 ): Promise<any> => {
-  const response = await getRecentTracks();
+  const api = new MusicAPI();
+  const response = await api.getRecentTracks();
   const { items } = await response.json();
 
-  const tracks = items.slice(0, 5).map((playedItem: Record<string, any>) => ({
-    artist: playedItem.track.artists
-      .map((_artist: Record<string, any>) => _artist.name)
+  const tracks: Array<Track> = items.map((song: PlayHistoryObject) => ({
+    id: song.track.id,
+    artist: song.track.artists
+      .map((_artist: SpotifyApi.ArtistObjectFull) => _artist.name)
       .join(", "),
-    title: playedItem.track.name,
+    album: song.track.album.name,
+    title: song.track.name,
+    cover: song.track.album.images[1].url,
+    url: song.track.external_urls.spotify,
   }));
 
   res.status(200).json(tracks);

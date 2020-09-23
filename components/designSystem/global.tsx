@@ -12,7 +12,7 @@ const GlobalStyles = (): ReactElement => (
       body {
         background-color: ${theme.colors.$bg};
         color: ${theme.colors.$primary};
-        margin-top: ${theme.space.$3};
+        margin-top: ${theme.space.$2};
         padding: 0 1rem;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

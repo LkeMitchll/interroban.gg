@@ -5,7 +5,6 @@ import { ReactElement } from "react";
 
 const Container = styled("div", {
   display: "flex",
-  alignItems: "flex-end",
 });
 
 const A = styled("a", {

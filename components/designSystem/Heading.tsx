@@ -1,10 +1,11 @@
 import { styled } from "tokens";
 import { ReactElement } from "react";
+import { TCssWithBreakpoints } from "@stitches/react";
 
 interface HeadingProps {
   children: React.ReactNode;
   level?: keyof JSX.IntrinsicElements;
-  css?: Record<string, string>;
+  css?: TCssWithBreakpoints<any>;
 }
 
 const Tag = styled("h1", {

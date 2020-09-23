@@ -2,6 +2,7 @@ import { styled } from "tokens";
 import { Heading } from "designSystem";
 import { NavLink } from "components";
 import { ReactElement } from "react";
+import { TCssWithBreakpoints } from "@stitches/react";
 
 type TitleLink = "url" | "text";
 
@@ -9,7 +10,7 @@ interface TitleProps {
   sectionNumber?: string;
   title: string;
   link?: Record<TitleLink, string>;
-  css?: Record<string, string>;
+  css?: TCssWithBreakpoints<any>;
 }
 
 const Header = styled("header", {

@@ -37,7 +37,11 @@ export default function Hero({
 }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
-      <Title title={title} link={{ url: "/", text: "Back" }} />
+      <Title
+        title={title}
+        link={{ url: "/", text: "Back" }}
+        css={{ gridArea: "a" }}
+      />
       {intro ? (
         <LargeText css={{ gridArea: "b", marginBottom: "$3" }}>
           {intro}
@@ -52,8 +56,12 @@ export default function Hero({
           />
 
           <Footnote
-            position={{ initial: "aside" }}
-            css={{ marginTop: "auto", marginBottom: "$1", position: "static" }}
+            css={{
+              marginTop: "auto",
+              marginBottom: "$1",
+              position: "static",
+              gridArea: "f",
+            }}
           >
             <Small>Image: {image.desc}</Small>
           </Footnote>

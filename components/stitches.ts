@@ -17,8 +17,10 @@ export const theme = {
   },
   space: {
     $0: "0",
+    $_5: "0.5rem",
     $1: "1rem",
     $2: "2rem",
+    $2_5: "3rem",
     $3: "6rem",
   },
   fontSizes: {

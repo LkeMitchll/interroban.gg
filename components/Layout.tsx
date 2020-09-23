@@ -23,7 +23,7 @@ export default function Layout({
       </Head>
 
       <Header />
-      <Transition location={router.pathname}>
+      <Transition location={router.asPath}>
         <Main>{children}</Main>
         <Footer />
       </Transition>

@@ -11,6 +11,7 @@ import Subtitle from "./Subtitle";
 import Footnote from "./Footnote";
 import LargeText from "./LargeText";
 import NumberedList from "./NumberedList";
+import BulletList from "./BulletList";
 
 export {
   GlobalStyles,
@@ -26,4 +27,5 @@ export {
   Footnote,
   LargeText,
   NumberedList,
+  BulletList,
 };

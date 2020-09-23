@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { styled } from "tokens";
+import { TCssWithBreakpoints } from "@stitches/react";
 
 const Tag = styled("h2", {
   color: "$primary",
@@ -13,7 +14,7 @@ const Tag = styled("h2", {
 interface SubtitleProps {
   children: React.ReactNode;
   level?: keyof JSX.IntrinsicElements;
-  css?: Record<string, string>;
+  css?: TCssWithBreakpoints<any>;
 }
 
 export default function Subtitle({

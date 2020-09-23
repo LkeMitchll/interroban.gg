@@ -10,7 +10,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn run lint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -34,6 +34,7 @@
     "@types/node": "^14.10.3",
     "@types/react": "^16.9.49",
     "@types/react-transition-group": "^4.4.0",
+    "@types/spotify-api": "^0.0.4",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "eslint": "^7.8.0",
