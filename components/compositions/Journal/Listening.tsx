@@ -34,10 +34,7 @@ export default function Listening({
               title={track.title}
               subtitle={track.artist}
               url={track.url}
-              image={{
-                url: track.cover,
-                alt: `Cover art for ${track.album} by ${track.artist}`,
-              }}
+              image={track.cover}
               external
             />
           ))}

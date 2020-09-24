@@ -82,6 +82,8 @@ export default function History({
         <Image
           src={`${headshot.url}?w=${Math.round(headshot.width / 6)}&q=50`}
           alt={headshot.desc}
+          width={Math.round(headshot.width / 6)}
+          height={Math.round(headshot.height / 6)}
           css={{ width: "80%" }}
         />
       </div>

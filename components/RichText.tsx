@@ -68,6 +68,8 @@ function footnote(node: Inline): ReactNode {
             <Image
               src={image.file.url}
               alt={image.description}
+              width={image.width}
+              height={image.height}
               css={{ marginBottom: "$0" }}
             />
             <Small>Image: {children}</Small>

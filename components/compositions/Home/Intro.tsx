@@ -2,7 +2,7 @@ import { styled } from "tokens";
 import { Image, Small } from "designSystem";
 import { Title, Markdown } from "components";
 import { ReactElement } from "react";
-import { Page } from "services/contentful.types";
+import { Page, Asset } from "services/contentful.types";
 
 const Container = styled("section", {
   display: "grid",
@@ -47,14 +47,24 @@ const Content = styled("div", {
   marginTop: "$1",
 });
 
-export default function About({ content }: { content?: Page }): ReactElement {
-  const imageURL =
-    "https://images.unsplash.com/photo-1598965897289-4768a8799acc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80";
+export default function About({
+  content,
+  image,
+}: {
+  content?: Page;
+  image: Asset;
+}): ReactElement {
   return (
     <Container
       layout={{ initial: "tiny", bp1: "small", bp2: "medium", bp3: "large" }}
     >
-      <Image src={imageURL} alt="A nice photo" css={{ gridArea: "a" }} />
+      <Image
+        src={`${image.url}?w=${image.width / 4}&q=50`}
+        alt={image.desc}
+        width={image.width / 4}
+        height={image.height / 4}
+        css={{ gridArea: "a" }}
+      />
       <Title
         title="About Me"
         sectionNumber="1.1"

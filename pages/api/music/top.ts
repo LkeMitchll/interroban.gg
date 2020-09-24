@@ -10,18 +10,25 @@ export default async (
   const response = await api.getTopTracks();
   const { items } = await response.json();
 
-  const tracks: Array<Track> = items.map(
-    (song: SpotifyApi.TrackObjectFull) => ({
+  const tracks: Array<Track> = items.map((song: SpotifyApi.TrackObjectFull) => {
+    const artist = song.artists
+      .map((_artist: SpotifyApi.ArtistObjectFull) => _artist.name)
+      .join(", ");
+    const track = {
       id: song.id,
-      artist: song.artists
-        .map((_artist: SpotifyApi.ArtistObjectFull) => _artist.name)
-        .join(", "),
+      artist: artist,
       album: song.album.name,
       title: song.name,
-      cover: song.album.images[1].url,
+      cover: {
+        url: song.album.images[1].url,
+        width: song.album.images[1].width,
+        height: song.album.images[1].height,
+        alt: `Cover art for ${song.album.name} by ${artist}`,
+      },
       url: song.external_urls.spotify,
-    }),
-  );
+    };
+    return track;
+  });
 
   res.status(200).json(tracks);
 };

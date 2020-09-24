@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import { A, Image, P, SecondaryText, TertiaryText } from "designSystem";
 import { TCssWithBreakpoints } from "@stitches/react";
 import Link from "next/link";
+import { CoverArt } from "services/spotify.types";
 
 interface ListItemProps {
   top?: string;
@@ -10,7 +11,7 @@ interface ListItemProps {
   url?: string;
   urlAs?: string;
   subtitle: string;
-  image?: Record<"url" | "alt", string>;
+  image?: CoverArt;
   external?: boolean;
 }
 
@@ -55,7 +56,13 @@ export default function ListItem({
   return (
     <Container>
       {image ? (
-        <Image src={image.url} alt={image.alt} css={smallImage} />
+        <Image
+          src={image.url}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          css={smallImage}
+        />
       ) : null}
       {top ? (
         <TertiaryText css={{ marginBottom: "$0" }}>{top}</TertiaryText>

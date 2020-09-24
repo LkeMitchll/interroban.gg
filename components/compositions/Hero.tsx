@@ -52,6 +52,8 @@ export default function Hero({
           <Image
             src={`${image.url}?w=${image.width / 4}&q=50`}
             alt={image.desc}
+            width={image.width / 4}
+            height={image.height / 4}
             css={{ gridArea: "b" }}
           />
 

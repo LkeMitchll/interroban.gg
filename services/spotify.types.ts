@@ -3,8 +3,15 @@ export type Track = {
   artist: string;
   album: string;
   title: string;
-  cover: string;
+  cover: CoverArt;
   url: string;
+};
+
+export type CoverArt = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
 };
 
 export type PlayHistoryObject = {
