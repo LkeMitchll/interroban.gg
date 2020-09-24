@@ -7,5 +7,17 @@ import List from "./Bookmarks/List";
 import Now from "./Journal/Now";
 import Posts from "./Journal/Posts";
 import Listening from "./Journal/Listening";
+import Reading from "./Journal/Reading";
 
-export { Header, Intro, Footer, Hero, History, List, Now, Posts, Listening };
+export {
+  Header,
+  Intro,
+  Footer,
+  Hero,
+  History,
+  List,
+  Now,
+  Posts,
+  Listening,
+  Reading,
+};

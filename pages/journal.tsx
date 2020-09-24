@@ -1,5 +1,5 @@
 import { Title } from "components";
-import { Listening, Now, Posts } from "compositions";
+import { Listening, Now, Posts, Reading } from "compositions";
 import { ContentAPI } from "services/contentful";
 import { GetStaticProps } from "next";
 import { ReactElement } from "react";
@@ -13,12 +13,14 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
   const journalEntry = await api.fetchJournalEntry();
   const blogPosts = await api.fetchBlogPosts();
-  return { props: { journalEntry, blogPosts } };
+  const readingEntries = await api.fetchList("2uust09L73V2AcXwl3F80h");
+  return { props: { journalEntry, blogPosts, readingEntries } };
 };
 
 interface JournalProps {
   journalEntry: JournalEntry;
   blogPosts: Array<BlogPost>;
+  readingEntries: any;
 }
 
 const Container = styled("section", {
@@ -41,6 +43,7 @@ const Container = styled("section", {
 export default function Journal({
   journalEntry,
   blogPosts,
+  readingEntries,
 }: JournalProps): ReactElement {
   const recentTracks = useSWR("/api/music/top", fetcher).data;
   const LastWeek = useSWR("/api/music/totals", fetcher).data;
@@ -58,6 +61,7 @@ export default function Journal({
         </div>
         <Posts posts={blogPosts} />
         <Listening totals={LastWeek} tracks={recentTracks} />
+        <Reading title={readingEntries.title} items={readingEntries.items} />
       </Container>
     </>
   );

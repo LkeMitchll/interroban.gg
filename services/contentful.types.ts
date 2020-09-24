@@ -18,7 +18,7 @@ export type Bookmark = {
 
 export type List = {
   title: string;
-  items: Array<Job>;
+  items: Array<any>;
 };
 
 export type Job = {
@@ -52,4 +52,12 @@ export type BlogPost = {
   slug: string;
   date: Date;
   content: Document;
+};
+
+export type ReadingEntry = {
+  id: string;
+  title: string;
+  type: "Book" | "Article";
+  author: string;
+  url: string;
 };

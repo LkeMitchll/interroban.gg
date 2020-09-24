@@ -13,6 +13,7 @@ import {
   Roundup,
   JournalEntry,
   BlogPost,
+  ReadingEntry,
 } from "./contentful.types";
 
 export class ContentAPI {
@@ -48,6 +49,18 @@ export class ContentAPI {
     };
   };
 
+  convertReadingEntry = (rawData: Entry<any>): ReadingEntry => {
+    const rawReadingEntry = rawData.fields;
+
+    return {
+      id: rawData.sys.id,
+      title: rawReadingEntry.title,
+      type: rawReadingEntry.type,
+      author: rawReadingEntry.author,
+      url: rawReadingEntry.url,
+    };
+  };
+
   convertJournalEntry = (rawData: Entry<any>): JournalEntry => {
     const rawEntry = rawData.fields;
 
@@ -57,10 +70,15 @@ export class ContentAPI {
     };
   };
 
-  convertListItems = (type: string, data: Array<Entry<any>>): Array<Job> => {
+  convertListItems = (
+    type: string,
+    data: Array<Entry<any>>,
+  ): Array<Job | ReadingEntry> => {
     switch (type) {
       case "job":
         return data.map((item) => this.convertJob(item));
+      case "readingEntry":
+        return data.map((item) => this.convertReadingEntry(item));
     }
   };
 
