@@ -39,6 +39,7 @@ export default function NavLink({
           href={url}
           appearance={plain ? "plain" : "underline"}
           target="_blank"
+          rel="noreferrer"
         >
           {children}
         </A>

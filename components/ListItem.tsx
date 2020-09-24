@@ -63,7 +63,12 @@ export default function ListItem({
       <Divider>
         {url ? (
           <Link href={url} as={urlAs} passHref>
-            <A target={external ? "_blank" : null}>{title}</A>
+            <A
+              target={external ? "_blank" : null}
+              rel={external ? "noreferrer" : null}
+            >
+              {title}
+            </A>
           </Link>
         ) : (
           <P css={{ marginBottom: "$0", lineHeight: "$relaxed" }}>{title}</P>
