@@ -7,10 +7,19 @@ import {
   Paragraph,
   Block,
   Hyperlink,
+  Heading2,
 } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { styled } from "tokens";
-import { P, Small, Image, A, Footnote, BulletList } from "designSystem";
+import {
+  P,
+  Small,
+  Image,
+  A,
+  Footnote,
+  BulletList,
+  Subtitle,
+} from "designSystem";
 
 type RichTextProps = {
   source?: Document;
@@ -127,9 +136,15 @@ const options = {
     [BLOCKS.PARAGRAPH]: (node: Paragraph, children: RichTextChildren) => {
       return generateFootnotes(node, children);
     },
-    [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
-      <BulletList>{children}</BulletList>
+    [BLOCKS.HEADING_2]: (_: Heading2, children: RichTextChildren) => (
+      <Subtitle css={{ gridArea: "auto / c" }}>{children}</Subtitle>
     ),
+    [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
+      <BulletList css={{ gridArea: "auto / c" }}>{children}</BulletList>
+    ),
+    [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
+      return <A href={node.data.uri}>{children}</A>;
+    },
     [INLINES.EMBEDDED_ENTRY]: (node: Inline) => footnote(node),
   },
 };
