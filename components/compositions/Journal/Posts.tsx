@@ -2,6 +2,7 @@ import { ListItem } from "components";
 import { Subtitle, PlainList } from "designSystem";
 import { ReactElement } from "react";
 import { BlogPost } from "services/contentful.types";
+import { formattedDate } from "helpers/date";
 
 export default function Posts({
   posts,
@@ -16,7 +17,10 @@ export default function Posts({
           <ListItem
             key={post.id}
             title={post.title}
-            subtitle={post.date.toString()}
+            subtitle={formattedDate(post.date, {
+              month: "long",
+              year: "numeric",
+            })}
             url={`/post/[slug]`}
             urlAs={`/post/${post.slug}`}
           />

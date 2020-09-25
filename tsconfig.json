@@ -23,6 +23,7 @@
       "designSystem": ["components/designSystem/index"],
       "designSystem/*": ["components/designSystem/*"],
       "services/*": ["services/*"],
+      "helpers/*": ["helpers/*"],
       "tokens": ["components/stitches"]
     }
   },
