@@ -16,16 +16,17 @@ export default function Layout({
   children: React.ReactNode;
 }): ReactElement {
   const router = useRouter();
+  const isBlogPost = router.route === "/post/[slug]";
   return (
     <>
       <Head>
         <title>Luke Mitchell</title>
       </Head>
 
-      <Header />
       <Transition location={router.asPath}>
+        {!isBlogPost ? <Header /> : null}
         <Main>{children}</Main>
-        <Footer />
+        {!isBlogPost ? <Footer /> : null}
       </Transition>
     </>
   );

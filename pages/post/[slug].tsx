@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
 import { BlogPost } from "services/contentful.types";
+import { formattedDate } from "helpers/date";
 
 type Params = {
   params: {
@@ -63,7 +64,12 @@ export default function Post({ post }: { post: BlogPost }): ReactElement {
     <>
       <Header alignment={{ initial: "left", bp3: "center" }}>
         <Heading>{post.title}</Heading>
-        <SecondaryText css={{ maxWidth: "unset" }}>{post.date}</SecondaryText>
+        <SecondaryText css={{ maxWidth: "unset" }}>
+          {formattedDate(post.date, {
+            month: "long",
+            year: "numeric",
+          })}
+        </SecondaryText>
       </Header>
       <RichText source={post.content} />
       <Footer alignment={{ initial: "left", bp3: "center" }}>
