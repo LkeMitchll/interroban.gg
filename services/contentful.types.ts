@@ -52,6 +52,7 @@ export type BlogPost = {
   slug: string;
   date: Date;
   content: Document;
+  description: string;
 };
 
 export type ReadingEntry = {

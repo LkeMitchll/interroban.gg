@@ -5,6 +5,8 @@ import { GetStaticProps } from "next";
 import { ReactElement } from "react";
 import { BlogPost, JournalEntry } from "services/contentful.types";
 import useSWR from "swr";
+import generateRss from "helpers/rss";
+import fs from "fs";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -13,6 +15,9 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   const journalEntry = await api.fetchJournalEntry();
   const blogPosts = await api.fetchBlogPosts();
   const readingEntries = await api.fetchList("2uust09L73V2AcXwl3F80h");
+  const rss = generateRss(blogPosts);
+
+  fs.writeFileSync("./public/rss.xml", rss);
   return { props: { journalEntry, blogPosts, readingEntries } };
 };
 
@@ -28,7 +33,7 @@ export default function Journal({
   readingEntries,
 }: JournalProps): ReactElement {
   const recentTracks = useSWR("/api/music/top", fetcher).data;
-  const LastWeek = useSWR("/api/music/totals", fetcher).data;
+  const LastWeek = useSWR("/api/music", fetcher).data;
 
   return (
     <>

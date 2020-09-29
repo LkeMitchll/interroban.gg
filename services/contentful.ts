@@ -104,6 +104,7 @@ export class ContentAPI {
       slug: rawPost.slug,
       date: rawPost.date,
       content: rawPost.content,
+      description: rawPost.description,
     };
   };
 
