@@ -1,7 +1,7 @@
 import { styled } from "tokens";
 import { Asset, List } from "services/contentful.types";
 import { ReactElement } from "react";
-import { Image, P, PlainList, Subtitle } from "designSystem";
+import { Image, P, PlainList, Heading, Subtitle } from "designSystem";
 import { ListItem } from "components";
 
 interface HistoryProps {
@@ -71,7 +71,9 @@ export default function History({
   return (
     <Container layout={{ initial: "twoCol", bp3: "fourCol" }}>
       <Summary layout={{ initial: "single", bp3: "full" }}>
-        <Subtitle css={{ marginBottom: "$1" }}>Career</Subtitle>
+        <Heading css={{ marginBottom: "$1" }} small>
+          Career
+        </Heading>
         <P>
           I&apos;ve been a designer for (almost) 10 years, gaining experience
           working with clients of all sizes, spanning many industries. If you

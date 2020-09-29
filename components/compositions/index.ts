@@ -3,11 +3,12 @@ import Intro from "./Home/Intro";
 import History from "./About/History";
 import Footer from "./Footer";
 import Hero from "./Hero";
-import List from "./Bookmarks/List";
 import Now from "./Journal/Now";
 import Posts from "./Journal/Posts";
 import Listening from "./Journal/Listening";
 import Reading from "./Journal/Reading";
+import Bookmarks from "./Bookmarks/Bookmarks";
+import Roundups from "./Bookmarks/Roundups";
 
 export {
   Header,
@@ -15,9 +16,10 @@ export {
   Footer,
   Hero,
   History,
-  List,
   Now,
   Posts,
   Listening,
   Reading,
+  Bookmarks,
+  Roundups,
 };

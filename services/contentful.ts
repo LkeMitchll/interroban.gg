@@ -14,6 +14,7 @@ import {
   JournalEntry,
   BlogPost,
   ReadingEntry,
+  Project,
 } from "./contentful.types";
 
 export class ContentAPI {
@@ -73,12 +74,14 @@ export class ContentAPI {
   convertListItems = (
     type: string,
     data: Array<Entry<any>>,
-  ): Array<Job | ReadingEntry> => {
+  ): Array<Job | ReadingEntry | Project> => {
     switch (type) {
       case "job":
         return data.map((item) => this.convertJob(item));
       case "readingEntry":
         return data.map((item) => this.convertReadingEntry(item));
+      case "project":
+        return data.map((item) => this.convertProject(item));
     }
   };
 
@@ -104,6 +107,27 @@ export class ContentAPI {
     };
   };
 
+  convertProject = (rawData: Entry<any>): Project => {
+    const rawProject = rawData.fields;
+    return {
+      id: rawData.sys.id,
+      title: rawProject.title,
+      image: this.convertImage(rawProject.image),
+      blurb: rawProject.blurb,
+      content: rawProject.description,
+    };
+  };
+
+  convertImage = (rawData: ContentfulAsset): Asset => {
+    const rawImage = rawData.fields;
+    return {
+      url: rawImage.file.url,
+      desc: rawImage.description,
+      width: rawImage.file.details.image.width,
+      height: rawImage.file.details.image.height,
+    };
+  };
+
   async fetchPage(id: string): Promise<Page> {
     return await this.client.getEntry(id).then((result) => {
       const entry: Entry<any> = result;
@@ -118,12 +142,12 @@ export class ContentAPI {
     });
   }
 
-  async fetchBookmarks(): Promise<Array<Bookmark>> {
+  async fetchBookmarks(limit = 1000): Promise<Array<Bookmark>> {
     return await this.client
       .getEntries({
         content_type: "blogPost",
         order: "-fields.publishDate",
-        limit: 1000,
+        limit: limit,
       })
       .then((result) => {
         const posts = result.items.map((entry) => this.convertBookmark(entry));
@@ -159,11 +183,12 @@ export class ContentAPI {
       });
   }
 
-  async fetchBlogPosts(): Promise<Array<BlogPost>> {
+  async fetchBlogPosts(limit = 100): Promise<Array<BlogPost>> {
     return await this.client
       .getEntries({
         content_type: "post",
         order: "-fields.date",
+        limit: limit,
       })
       .then((result) => {
         const posts = result.items.map((post) => this.convertBlogPost(post));
@@ -203,13 +228,15 @@ export class ContentAPI {
     return await this.client.getAsset(id).then((result) => {
       const asset: ContentfulAsset = result;
 
-      const image = {
-        url: asset.fields.file.url,
-        desc: asset.fields.description,
-        width: asset.fields.file.details.image.width,
-        height: asset.fields.file.details.image.height,
-      };
-      return image;
+      return this.convertImage(asset);
+    });
+  }
+
+  async fetchProject(id: string): Promise<Project> {
+    return await this.client.getEntry(id).then((result) => {
+      const raw: Entry<any> = result;
+
+      return this.convertProject(raw);
     });
   }
 }

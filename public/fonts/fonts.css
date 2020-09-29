@@ -1,14 +1,5 @@
 @font-face {
   font-family: "GT America Extended";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: local("GT America Trial Ext Rg");
-}
-
-@font-face {
-  font-family: "GT America Extended";
   font-weight: 600;
   font-style: bold;
   font-display: swap;

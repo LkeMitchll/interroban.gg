@@ -1,12 +1,14 @@
 import { GetStaticProps } from "next";
 import { ContentAPI } from "services/contentful";
 import {
+  Asset,
   Bookmark,
   Page,
   Roundup as RoundupType,
 } from "services/contentful.types";
 import { ReactElement } from "react";
-import { Hero, List } from "compositions";
+import { Hero, Bookmarks as AllBookmarks, Roundups } from "compositions";
+import { Splitter } from "components";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
@@ -20,14 +22,19 @@ interface BookmarksProps {
   posts: Array<Bookmark>;
   page: Page;
   roundups: Array<RoundupType>;
+  image: Asset;
 }
 
 const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
   const latestRoundup = roundups[0];
+  const bookmarkList = (
+    <AllBookmarks title="All Bookmarks" posts={posts} compact />
+  );
+  const roundupList = <Roundups roundup={latestRoundup} />;
   return (
     <>
       <Hero title={page.title} intro={page.description} />
-      <List posts={posts} roundup={latestRoundup} />
+      <Splitter col1={bookmarkList} col2={roundupList} />
     </>
   );
 };

@@ -13,7 +13,6 @@ const A = styled("a", {
 
 const Secondary = styled("span", {
   display: "block",
-  fontWeight: "$normal",
 });
 
 export default function Logo({
@@ -32,7 +31,7 @@ export default function Logo({
               lineHeight: "$crushed",
             }}
           >
-            Luke Mitchell? <Secondary>Product Designer!</Secondary>
+            Luke Mitchell <Secondary>Product Designer</Secondary>
           </Heading>
         </A>
       </NavLink>

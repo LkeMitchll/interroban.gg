@@ -1,17 +1,23 @@
 import { ListItem } from "components";
-import { Subtitle, PlainList } from "designSystem";
+import { Heading, PlainList } from "designSystem";
 import { ReactElement } from "react";
 import { BlogPost } from "services/contentful.types";
 import { formattedDate } from "helpers/date";
 
 export default function Posts({
   posts,
+  title,
+  compact,
 }: {
   posts: Array<BlogPost>;
+  title: string;
+  compact?: boolean;
 }): ReactElement {
   return (
     <div>
-      <Subtitle css={{ marginBottom: "$2" }}>Posts</Subtitle>
+      <Heading level="h2" css={{ marginBottom: "$2" }} small={compact}>
+        {title}
+      </Heading>
       <PlainList>
         {posts.map((post) => (
           <ListItem

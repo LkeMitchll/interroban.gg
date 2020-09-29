@@ -9,6 +9,8 @@ import ListItem from "./ListItem";
 import Transition from "./Transition";
 import Bookmark from "./Bookmark";
 import Roundup from "./Roundup";
+import Splitter from "./Splitter";
+import Project from "./Project";
 
 export {
   Layout,
@@ -22,4 +24,6 @@ export {
   Transition,
   Bookmark,
   Roundup,
+  Splitter,
+  Project,
 };

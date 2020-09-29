@@ -109,14 +109,17 @@ export default function Footer(): ReactElement {
       <Column
         position={{ initial: "threeCol", bp1: "horizontal", bp2: "oneCol" }}
       >
-        <Small css={{ display: "block" }}>
+        <Small
+          css={{
+            display: "block",
+            marginBottom: "$1",
+            bp1: { marginBottom: "$0" },
+          }}
+        >
           Luke Mitchell &mdash; <br />
           Product Designer
         </Small>
-        <Nav
-          layout={{ initial: "horizontal", bp2: "verticalCompact" }}
-          compact
-        />
+        <Nav layout={{ initial: "horizontal", bp2: "verticalCompact" }} />
       </Column>
       <Column alignment={"bottom"}>
         {Title("Information")}

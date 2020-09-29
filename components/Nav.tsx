@@ -38,21 +38,14 @@ const Item = styled("li", {
 export default function Nav({
   css,
   layout,
-  compact,
 }: {
   css?: TCssWithBreakpoints<any>;
   layout?: Record<string, string>;
-  compact?: boolean;
 }): ReactElement {
   return (
     <List layout={layout} css={css}>
-      {!compact ? (
-        <Item>
-          <NavLink url="/about">About</NavLink>
-        </Item>
-      ) : null}
       <Item>
-        <NavLink url="/work">Work</NavLink>
+        <NavLink url="/about">About</NavLink>
       </Item>
       <Item>
         <NavLink url="/journal">Journal</NavLink>

@@ -61,3 +61,11 @@ export type ReadingEntry = {
   author: string;
   url: string;
 };
+
+export type Project = {
+  id: string;
+  title: string;
+  blurb: string;
+  image: Asset;
+  content: Document;
+};

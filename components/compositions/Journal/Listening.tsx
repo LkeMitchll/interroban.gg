@@ -1,4 +1,4 @@
-import { A, NumberedList, P, SecondaryText, Subtitle } from "designSystem";
+import { A, Heading, NumberedList, P, SecondaryText } from "designSystem";
 import { ListItem } from "components";
 import { ReactElement } from "react";
 import { MusicTotals } from "services/last-fm.types";
@@ -13,7 +13,9 @@ export default function Listening({
 }): ReactElement {
   return (
     <div>
-      <Subtitle css={{ marginBottom: "$2" }}>Listening</Subtitle>
+      <Heading css={{ marginBottom: "$2" }} small>
+        Listening
+      </Heading>
       {totals ? (
         <P css={{ marginBottom: "$2" }}>
           Last week I listened to around

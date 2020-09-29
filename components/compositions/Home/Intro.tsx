@@ -1,8 +1,7 @@
 import { styled } from "tokens";
-import { Image, Small } from "designSystem";
-import { Title, Markdown } from "components";
+import { Markdown, Title } from "components";
 import { ReactElement } from "react";
-import { Page, Asset } from "services/contentful.types";
+import { Page } from "services/contentful.types";
 
 const Container = styled("section", {
   display: "grid",
@@ -11,78 +10,21 @@ const Container = styled("section", {
 
   variants: {
     layout: {
-      tiny: {
-        gridTemplate: `
-          "a a a" auto
-          "b b b" auto
-          "c c c" auto / 1fr 1fr 1fr;
-        `,
+      horizontal: {
+        gridTemplateColumns: "1fr 1fr",
       },
-      small: {
-        gridTemplate: `
-          "a a a a" auto
-          ". b b b" auto
-          ". c c c" auto / 1fr 1fr 1fr 1fr;
-        `,
-      },
-      medium: {
-        gridTemplate: `
-          ". a a a" auto
-          ". b b b" auto
-          ". c c c" auto / 1fr 1fr 1fr 1fr;
-        `,
-      },
-      large: {
-        gridTemplate: `
-          ". a a a" auto
-          ". b c c" auto / 1fr 1fr 1fr 1fr;
-        `,
+      vertical: {
+        gridTemplateColumns: "1fr",
       },
     },
   },
 });
 
-const Content = styled("div", {
-  gridArea: "c",
-  marginTop: "$1",
-});
-
-export default function About({
-  content,
-  image,
-}: {
-  content?: Page;
-  image: Asset;
-}): ReactElement {
+export default function About({ content }: { content?: Page }): ReactElement {
   return (
-    <Container
-      layout={{ initial: "tiny", bp1: "small", bp2: "medium", bp3: "large" }}
-    >
-      <Image
-        src={`${image.url}?w=${image.width / 4}&q=50`}
-        alt={image.desc}
-        width={image.width / 4}
-        height={image.height / 4}
-        css={{ gridArea: "a" }}
-      />
-      <Title
-        title="About Me"
-        sectionNumber="1.1"
-        link={{ url: "/about", text: "Read more" }}
-        css={{ gridArea: "b" }}
-      />
-      <Content>
-        <Markdown source={content.description} />
-        <Small>
-          Product Designer
-          <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          UI & UX Developer
-          <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          Mentor
-          <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          Illustrator
-        </Small>
-      </Content>
+    <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
+      <Title title="About Me" link={{ text: "Read more", url: "/about" }} />
+      <Markdown source={content.description} />
     </Container>
   );
 }
