@@ -8,7 +8,7 @@ export default function List({
   title,
   compact,
 }: {
-  posts: Array<Bookmark>;
+  posts: Bookmark[];
   title: string;
   compact?: boolean;
 }): ReactElement {

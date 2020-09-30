@@ -14,7 +14,7 @@ type Params = {
 };
 
 type Paths = {
-  paths: Array<Params>;
+  paths: Params[];
   fallback: boolean;
 };
 

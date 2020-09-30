@@ -8,7 +8,7 @@ export default function Reading({
   items,
 }: {
   title: string;
-  items: Array<ReadingEntry>;
+  items: ReadingEntry[];
 }): ReactElement {
   return (
     <div>

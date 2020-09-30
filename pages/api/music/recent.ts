@@ -4,13 +4,13 @@ import { PlayHistoryObject, Track } from "services/spotify.types";
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Array<Track>>,
+  res: NextApiResponse<Track[]>,
 ): Promise<any> => {
   const api = new MusicAPI();
   const response = await api.getRecentTracks();
   const { items } = await response.json();
 
-  const tracks: Array<Track> = items.map((song: PlayHistoryObject) => ({
+  const tracks: Track[] = items.map((song: PlayHistoryObject) => ({
     id: song.track.id,
     artist: song.track.artists
       .map((_artist: SpotifyApi.ArtistObjectFull) => _artist.name)

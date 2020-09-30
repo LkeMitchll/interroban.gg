@@ -4,13 +4,13 @@ import { Track } from "services/spotify.types";
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Array<Track>>,
+  res: NextApiResponse<Track[]>,
 ): Promise<any> => {
   const api = new MusicAPI();
   const response = await api.getTopTracks();
   const { items } = await response.json();
 
-  const tracks: Array<Track> = items.map((song: SpotifyApi.TrackObjectFull) => {
+  const tracks: Track[] = items.map((song: SpotifyApi.TrackObjectFull) => {
     const artist = song.artists
       .map((_artist: SpotifyApi.ArtistObjectFull) => _artist.name)
       .join(", ");

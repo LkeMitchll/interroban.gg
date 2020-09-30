@@ -9,7 +9,7 @@ export default function Listening({
   tracks,
 }: {
   totals: MusicTotals;
-  tracks: Array<Track>;
+  tracks: Track[];
 }): ReactElement {
   return (
     <div>

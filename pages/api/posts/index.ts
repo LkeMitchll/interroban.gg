@@ -13,10 +13,10 @@ type ShortBlogPost = {
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Array<ShortBlogPost>>,
+  res: NextApiResponse<ShortBlogPost[]>,
 ): Promise<any> => {
   const api = new ContentAPI();
-  const posts = (await api.fetchBlogPosts()) as Array<ShortBlogPost>;
+  const posts = (await api.fetchBlogPosts()) as ShortBlogPost[];
   posts.map((post) => {
     delete post.content;
     post.url = "https://interroban.gg/post/" + post.slug;

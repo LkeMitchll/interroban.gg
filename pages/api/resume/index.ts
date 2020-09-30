@@ -4,7 +4,7 @@ import { Job } from "services/contentful.types";
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Array<Job>>,
+  res: NextApiResponse<Job[]>,
 ): Promise<any> => {
   const api = new ContentAPI();
   const resume = await api.fetchList("4GpYef6usWILucVp1ZYNi9");

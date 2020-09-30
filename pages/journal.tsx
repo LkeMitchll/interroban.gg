@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async ({}) => {
 
 interface JournalProps {
   journalEntry: JournalEntry;
-  blogPosts: Array<BlogPost>;
+  blogPosts: BlogPost[];
   readingEntries: any;
 }
 

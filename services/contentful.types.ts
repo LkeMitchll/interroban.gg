@@ -38,7 +38,7 @@ export type Asset = {
 export type Roundup = {
   id: string;
   title: string;
-  links: Array<Bookmark>;
+  links: Bookmark[];
 };
 
 export type JournalEntry = {

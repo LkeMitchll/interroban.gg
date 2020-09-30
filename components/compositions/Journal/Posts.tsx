@@ -9,7 +9,7 @@ export default function Posts({
   title,
   compact,
 }: {
-  posts: Array<BlogPost>;
+  posts: BlogPost[];
   title: string;
   compact?: boolean;
 }): ReactElement {

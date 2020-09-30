@@ -15,8 +15,8 @@ import { styled } from "components/stitches";
 
 interface HomeProps {
   page: Page;
-  posts: Array<BlogPost>;
-  bookmarks: Array<Bookmark>;
+  posts: BlogPost[];
+  bookmarks: Bookmark[];
   projects: List;
 }
 

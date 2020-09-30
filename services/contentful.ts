@@ -73,8 +73,8 @@ export class ContentAPI {
 
   convertListItems = (
     type: string,
-    data: Array<Entry<any>>,
-  ): Array<Job | ReadingEntry | Project> => {
+    data: Entry<any>[],
+  ): Job[] | ReadingEntry[] | Project[] => {
     switch (type) {
       case "job":
         return data.map((item) => this.convertJob(item));
@@ -143,7 +143,7 @@ export class ContentAPI {
     });
   }
 
-  async fetchBookmarks(limit = 1000): Promise<Array<Bookmark>> {
+  async fetchBookmarks(limit = 1000): Promise<Bookmark[]> {
     return await this.client
       .getEntries({
         content_type: "blogPost",
@@ -156,7 +156,7 @@ export class ContentAPI {
       });
   }
 
-  async fetchRoundups(): Promise<Array<Roundup>> {
+  async fetchRoundups(): Promise<Roundup[]> {
     return await this.client
       .getEntries({
         content_type: "roundup",
@@ -184,7 +184,7 @@ export class ContentAPI {
       });
   }
 
-  async fetchBlogPosts(limit = 100): Promise<Array<BlogPost>> {
+  async fetchBlogPosts(limit = 100): Promise<BlogPost[]> {
     return await this.client
       .getEntries({
         content_type: "post",

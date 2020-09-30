@@ -71,7 +71,7 @@ export default function Footer(): ReactElement {
     </Subtitle>
   );
 
-  const List = (links: Array<FooterLink>) => {
+  const List = (links: FooterLink[]) => {
     return (
       <PlainList>
         {links.map((link: Record<"title" | "url", string>, i: number) => (

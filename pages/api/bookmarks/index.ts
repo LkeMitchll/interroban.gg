@@ -4,7 +4,7 @@ import { Bookmark } from "services/contentful.types";
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Array<Bookmark>>,
+  res: NextApiResponse<Bookmark[]>,
 ): Promise<any> => {
   const api = new ContentAPI();
   const bookmarks = await api.fetchBookmarks();

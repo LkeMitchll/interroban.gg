@@ -19,9 +19,9 @@ export const getStaticProps: GetStaticProps = async ({}) => {
 };
 
 interface BookmarksProps {
-  posts: Array<Bookmark>;
+  posts: Bookmark[];
   page: Page;
-  roundups: Array<RoundupType>;
+  roundups: RoundupType[];
   image: Asset;
 }
 

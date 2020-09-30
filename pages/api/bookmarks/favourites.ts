@@ -4,7 +4,7 @@ import { Roundup } from "services/contentful.types";
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Array<Roundup>>,
+  res: NextApiResponse<Roundup[]>,
 ): Promise<any> => {
   const api = new ContentAPI();
   const roundups = await api.fetchRoundups();
