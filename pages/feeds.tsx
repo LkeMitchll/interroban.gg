@@ -1,4 +1,4 @@
-import { ListItem, Title } from "components";
+import { ListItem } from "components";
 import { Hero } from "components/compositions";
 import { PlainList } from "components/designSystem";
 import { css } from "components/stitches";
@@ -8,7 +8,7 @@ import { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
 import { Page } from "services/contentful.types";
 import { FeedAPI } from "services/feedbin";
-import { Feed } from "services/feedbin.type";
+import { Feed } from "services/feedbin.types";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
