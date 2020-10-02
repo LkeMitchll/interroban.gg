@@ -2,6 +2,7 @@ import { styled } from "tokens";
 import { NavLink } from "components";
 import { ReactElement } from "react";
 import { TCssWithBreakpoints } from "@stitches/react";
+import { useRouter } from "next/router";
 
 const List = styled("ul", {
   display: "flex",
@@ -27,6 +28,14 @@ const List = styled("ul", {
       horizontal: {
         flexDirection: "row",
       },
+      centered: {
+        flexDirection: "row",
+        justifyContent: "center",
+
+        " li:last-of-type": {
+          marginRight: "$0",
+        },
+      },
     },
   },
 });
@@ -42,16 +51,24 @@ export default function Nav({
   css?: TCssWithBreakpoints<any>;
   layout?: Record<string, string>;
 }): ReactElement {
+  const currentPage = useRouter().asPath;
+
   return (
     <List layout={layout} css={css}>
       <Item>
-        <NavLink url="/about">About</NavLink>
+        <NavLink url="/about" active={currentPage == "/about"}>
+          About
+        </NavLink>
       </Item>
       <Item>
-        <NavLink url="/journal">Journal</NavLink>
+        <NavLink url="/journal" active={currentPage == "/journal"}>
+          Journal
+        </NavLink>
       </Item>
       <Item>
-        <NavLink url="/bookmarks">Bookmarks</NavLink>
+        <NavLink url="/bookmarks" active={currentPage == "/bookmarks"}>
+          Bookmarks
+        </NavLink>
       </Item>
     </List>
   );

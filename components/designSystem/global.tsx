@@ -17,6 +17,7 @@ const GlobalStyles = (): ReactElement => (
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        font-feature-settings: "case" on;
       }
 
       @media screen and (min-width: 600px) {
@@ -37,6 +38,10 @@ const GlobalStyles = (): ReactElement => (
         body {
           padding: 0 15vw;
         }
+      }
+
+      p {
+        font-feature-settings: "ss01" on, "ss02" on;
       }
     `}
   </style>

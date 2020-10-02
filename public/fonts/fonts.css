@@ -4,7 +4,8 @@
   font-style: bold;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: local("GT America Trial Ext Md");
+  src: url(/fonts/GT-America-Extended-Medium.woff2) format("woff2"),
+    url(/fonts/GT-America-Extended-Medium.woff) format("woff");
 }
 
 @font-face {
@@ -25,10 +26,29 @@
 }
 
 @font-face {
+  font-family: "Blanco";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: local("Blanco Trial Medium");
+}
+
+@font-face {
   font-family: "Pitch";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
   unicode-range: U+000-5FF;
-  src: local("PitchTest-Semibold");
+  src: url(/fonts/pitch-web-semibold.woff2) format("woff2"),
+    url(/fonts/pitch-web-semibold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pitch";
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: url(/fonts/pitch-web-semibold-italic.woff2) format("woff2"),
+    url(/fonts/pitch-web-semibold-italic.woff) format("woff");
 }

@@ -9,11 +9,23 @@ const A = styled("a", {
   textDecoration: "none",
   cursor: "pointer",
 
+  ":hover": {
+    fontStyle: "italic",
+  },
+
   variants: {
-    appearance: {
+    decoration: {
       plain: {},
       underline: {
         borderBottom: "$1 solid $primary",
+      },
+    },
+    state: {
+      inactive: {
+        fontStyle: "normal",
+      },
+      active: {
+        fontStyle: "italic",
       },
     },
   },
@@ -23,12 +35,14 @@ interface NavLinkProps {
   children: React.ReactNode;
   url: string;
   plain?: boolean;
+  active?: boolean;
 }
 
 export default function NavLink({
   children,
   url,
   plain,
+  active,
 }: NavLinkProps): ReactElement {
   const external =
     url.startsWith("http") || url.startsWith("mailto") || url.startsWith("#");
@@ -37,7 +51,8 @@ export default function NavLink({
       {external ? (
         <A
           href={url}
-          appearance={plain ? "plain" : "underline"}
+          decoration={plain ? "plain" : "underline"}
+          state={active ? "active" : "inactive"}
           target="_blank"
           rel="noreferrer"
         >
@@ -45,7 +60,12 @@ export default function NavLink({
         </A>
       ) : (
         <Link href={url}>
-          <A appearance={plain ? "plain" : "underline"}>{children}</A>
+          <A
+            decoration={plain ? "plain" : "underline"}
+            state={active ? "active" : "inactive"}
+          >
+            {children}
+          </A>
         </Link>
       )}
     </>
