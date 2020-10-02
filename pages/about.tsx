@@ -9,7 +9,7 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
   const page = await api.fetchPage("gs1BugZQXA8mN7DniEOFx");
   const experience = await api.fetchList("4GpYef6usWILucVp1ZYNi9");
-  const hero = await api.fetchAsset("4zYimAKeW3GKJ9lFyKQDv6");
+  const hero = await api.fetchAsset("5ZI6Cx1N7O5KG8ikkg1wv7");
   const headshot = await api.fetchAsset("67CIdWsQZqjaJkMPMxOjnQ");
   return { props: { page, experience, hero, headshot } };
 };
