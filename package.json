@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix --max-warnings 0"
   },
   "husky": {
     "hooks": {
@@ -15,7 +15,7 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "eslint --fix"
+      "eslint --fix --max-warnings 0"
     ]
   },
   "dependencies": {
