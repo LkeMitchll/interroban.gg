@@ -48,7 +48,7 @@ export default function Journal({
             <Now entry={journalEntry} />
           </div>
         }
-        col2={<Posts title="Posts" posts={blogPosts} compact />}
+        col2={<Posts title="Recent Posts" posts={blogPosts} compact />}
         css={{ marginBottom: "$3" }}
         reverse
       />
