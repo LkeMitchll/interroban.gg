@@ -34,7 +34,7 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
   return (
     <>
       <Hero title={page.title} intro={page.description} />
-      <Splitter col1={bookmarkList} col2={roundupList} />
+      <Splitter col1={bookmarkList} col2={roundupList} reverse />
     </>
   );
 };
