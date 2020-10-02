@@ -24,7 +24,13 @@ export default function Listening({
             {totals.tracks} songs, on {totals.albums} albums.
           </A>
         </P>
-      ) : null}
+      ) : (
+        <P css={{ marginBottom: "$2" }}>
+          Loading...
+          <br />
+          <br />
+        </P>
+      )}
       <SecondaryText as="h3" css={{ marginBottom: "$2" }}>
         Top Tracks (Past month)
       </SecondaryText>
