@@ -86,9 +86,9 @@ export default function Footer(): ReactElement {
   };
 
   const InfoLinks = [
-    { title: "About", url: "/about" },
     { title: "Colophon", url: "/colophon" },
     { title: "Uses", url: "/uses" },
+    { title: "Feeds", url: "/feeds" },
   ];
   const ContactLinks = [
     { title: "Email", url: "mailto:luke@interroban.gg" },
