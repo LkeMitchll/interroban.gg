@@ -29,6 +29,7 @@ export default function Logo({
               fontSize: "$2",
               letterSpacing: "$logo",
               lineHeight: "$crushed",
+              marginBottom: "$0",
             }}
           >
             Luke Mitchell <Secondary>Product Designer</Secondary>

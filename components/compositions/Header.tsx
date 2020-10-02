@@ -17,16 +17,28 @@ const Container = styled("nav", {
         marginTop: "$3",
         marginBottom: "$2",
       },
+      minimal: {
+        gridTemplate: `"b" auto / 1fr`,
+        marginTop: "$3",
+        marginBottom: "$2",
+      },
     },
   },
 });
 
-export default function Header(): ReactElement {
+export default function Header({
+  layout,
+}: {
+  layout?: Record<any, any>;
+}): ReactElement {
   return (
-    <Container layout={{ initial: "tiny", bp1: "small" }}>
-      <Logo css={{ gridArea: "a" }} />
+    <Container layout={layout ? layout : { initial: "tiny", bp1: "small" }}>
+      {layout?.initial == "minimal" ? null : <Logo css={{ gridArea: "a" }} />}
       <Nav
-        layout={{ initial: "verticalRTL", bp1: "horizontal" }}
+        layout={{
+          initial: layout?.initial == "minimal" ? "centered" : "verticalRTL",
+          bp1: layout?.initial == "minimal" ? "centered" : "horizontal",
+        }}
         css={{ gridArea: "b" }}
       />
     </Container>
