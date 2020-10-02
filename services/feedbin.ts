@@ -1,3 +1,5 @@
+import { Feed } from "services/feedbin.types";
+
 export class FeedAPI {
   apiEndpoint: string;
   credentials: string;
@@ -12,7 +14,7 @@ export class FeedAPI {
     ).toString("base64");
   }
 
-  async request(endpoint: string): Promise<any> {
+  async request(endpoint: string): Promise<Response> {
     return fetch(endpoint, {
       headers: {
         Authorization: `Basic ${this.credentials}`,
@@ -20,7 +22,7 @@ export class FeedAPI {
     });
   }
 
-  async fetchSubscriptions(): Promise<any> {
+  async fetchSubscriptions(): Promise<Feed[]> {
     const request = await this.request(`${this.subscriptionsEndpoint}`);
     const response = await request.json();
     return response;
