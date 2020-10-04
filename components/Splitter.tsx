@@ -4,7 +4,8 @@ import { styled } from "tokens";
 
 const Container = styled("section", {
   display: "grid",
-  gridGap: "$2",
+  gridColumnGap: "$2",
+  gridRowGap: "$2_5",
 
   variants: {
     layout: {

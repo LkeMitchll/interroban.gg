@@ -13,7 +13,7 @@ interface TitleProps {
 }
 
 const Header = styled("header", {
-  marginBottom: "$1",
+  marginBottom: "$2",
 });
 
 const Title = ({ link = null, title, css }: TitleProps): ReactElement => {

@@ -43,7 +43,7 @@ export default function Hero({
         css={{ gridArea: "a" }}
       />
       {intro ? (
-        <LargeText css={{ gridArea: "b", marginBottom: "$3" }}>
+        <LargeText css={{ gridArea: "b", marginBottom: "$2" }}>
           {intro}
         </LargeText>
       ) : null}
