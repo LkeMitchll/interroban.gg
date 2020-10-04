@@ -63,6 +63,7 @@ export const theme = {
 export const { styled, css } = createStyled({
   tokens: theme,
   breakpoints: {
+    bp0: (rule) => `@media (min-width: 400px) { ${rule} }`,
     bp1: (rule) => `@media (min-width: 600px) { ${rule} }`,
     bp2: (rule) => `@media (min-width: 800px) { ${rule} }`,
     bp3: (rule) => `@media (min-width: 1000px) { ${rule} }`,

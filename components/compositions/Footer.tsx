@@ -21,6 +21,7 @@ const Container = styled("footer", {
 });
 
 const Column = styled("div", {
+  gridColumn: "1",
   variants: {
     position: {
       threeCol: {
@@ -121,15 +122,15 @@ export default function Footer(): ReactElement {
         </Small>
         <Nav layout={{ initial: "horizontal", bp2: "verticalCompact" }} />
       </Column>
-      <Column alignment={"bottom"}>
+      <Column css={{ bp0: { gridColumn: "auto" } }} alignment={"bottom"}>
         {Title("Information")}
         {List(InfoLinks)}
       </Column>
-      <Column alignment={"bottom"}>
+      <Column css={{ bp0: { gridColumn: "auto" } }} alignment={"bottom"}>
         {Title("Contact")}
         {List(ContactLinks)}
       </Column>
-      <Column alignment={"bottom"}>
+      <Column css={{ bp0: { gridColumn: "auto" } }} alignment={"bottom"}>
         {Title("Elsewhere")}
         {List(ElsewhereLinks)}
       </Column>
