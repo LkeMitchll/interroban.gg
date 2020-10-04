@@ -19,9 +19,11 @@ export default function List({
       </Heading>
       <PlainList
         css={{
-          display: "grid",
-          gridColumnGap: "$2",
-          gridTemplateColumns: "1fr 1fr",
+          bp2: {
+            display: "grid",
+            gridColumnGap: "$2",
+            gridTemplateColumns: "1fr 1fr",
+          },
         }}
       >
         {posts.map((entry) => (
