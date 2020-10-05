@@ -21,9 +21,13 @@ export class ContentAPI {
   client: ContentfulClientApi;
 
   constructor() {
+    const isDev = process.env.NODE_ENV == "development";
     this.client = createClient({
+      host: isDev ? "preview.contentful.com" : "cdn.contentful.com",
       space: process.env.CONTENTFUL_SPACE_ID,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      accessToken: isDev
+        ? process.env.CONTENTFUL_DEV_ACCESS_TOKEN
+        : process.env.CONTENTFUL_ACCESS_TOKEN,
     });
   }
 
@@ -100,11 +104,11 @@ export class ContentAPI {
     const rawPost = rawData.fields;
     return {
       id: rawData.sys.id,
-      title: rawPost.title,
-      slug: rawPost.slug,
-      date: rawPost.date,
-      content: rawPost.content,
-      description: rawPost.description,
+      title: rawPost.title ? rawPost.title : null,
+      slug: rawPost.slug ? rawPost.slug : null,
+      date: rawPost.date ? rawPost.date : null,
+      content: rawPost.content ? rawPost.content : null,
+      description: rawPost.description ? rawPost.description : null,
     };
   };
 

@@ -65,17 +65,15 @@ export default function Post({ post }: { post: BlogPost }): ReactElement {
       <Header alignment={{ initial: "left", bp3: "center" }}>
         <Heading>{post.title}</Heading>
         <SecondaryText css={{ maxWidth: "unset" }}>
-          {formattedDate(post.date, {
-            month: "long",
-            year: "numeric",
-          })}
+          {post.date &&
+            formattedDate(post.date, {
+              month: "long",
+              year: "numeric",
+            })}
         </SecondaryText>
       </Header>
       <RichText source={post.content} />
       <Footer alignment={{ initial: "left", bp3: "center" }}>
-        <SecondaryText css={{ marginBottom: "$1" }}>
-          Written by Luke Mitchell &mdash; Product Designer
-        </SecondaryText>
         <NavLink url="/journal">Back to Journal</NavLink>
       </Footer>
     </>
