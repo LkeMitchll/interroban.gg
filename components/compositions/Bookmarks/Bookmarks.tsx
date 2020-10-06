@@ -19,7 +19,7 @@ export default function List({
       </Heading>
       <PlainList
         css={{
-          bp2: {
+          bp4: {
             display: "grid",
             gridColumnGap: "$2",
             gridTemplateColumns: "1fr 1fr",

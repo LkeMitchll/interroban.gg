@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled, css } from "tokens";
 import { ReactElement } from "react";
 import { A, Image, P, SecondaryText, TertiaryText } from "designSystem";
 import { TCssWithBreakpoints } from "@stitches/react";
@@ -13,6 +13,7 @@ interface ListItemProps {
   subtitle: string;
   image?: CoverArt;
   external?: boolean;
+  concat?: boolean;
 }
 
 const Container = styled("li", {
@@ -32,6 +33,7 @@ export default function ListItem({
   subtitle,
   image,
   external,
+  concat,
 }: ListItemProps): ReactElement {
   const smallImage: TCssWithBreakpoints<any> = {
     display: "inline-block",
@@ -42,16 +44,24 @@ export default function ListItem({
     verticalAlign: "text-top",
     marginTop: "0.3rem",
   };
-  const ellipsisText: TCssWithBreakpoints<any> = {
-    maxWidth: "55vw",
+  const ellipsisText = css({
     paddingRight: "$1",
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
     bp2: {
-      maxWidth: "25vw",
+      width: "350px",
+      display: "block",
     },
-  };
+    bp3: {
+      width: "450px",
+      display: "block",
+    },
+    bp4: {
+      width: "300px",
+      display: "block",
+    },
+  });
 
   return (
     <Container>
@@ -73,6 +83,7 @@ export default function ListItem({
             <A
               target={external ? "_blank" : null}
               rel={external ? "noreferrer" : null}
+              className={concat && ellipsisText}
             >
               {title}
             </A>
@@ -80,7 +91,7 @@ export default function ListItem({
         ) : (
           <P css={{ marginBottom: "$0", lineHeight: "$relaxed" }}>{title}</P>
         )}
-        <SecondaryText css={ellipsisText}>{subtitle}</SecondaryText>
+        <SecondaryText css={concat && ellipsisText}>{subtitle}</SecondaryText>
       </Divider>
     </Container>
   );

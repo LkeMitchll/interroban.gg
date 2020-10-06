@@ -9,6 +9,7 @@ export default function Bookmark({ data }: { data: Type }): ReactElement {
       url={data.url}
       subtitle={`${data.tag}`}
       external
+      concat
     />
   );
 }
