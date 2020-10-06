@@ -43,11 +43,7 @@ export default function Journal({
         css={{ marginBottom: "$2_5" }}
       />
       <Splitter
-        col1={
-          <div>
-            <Now entry={journalEntry} />
-          </div>
-        }
+        col1={<Now entry={journalEntry} />}
         col2={<Posts title="Recent Posts" posts={blogPosts} compact />}
         css={{ marginBottom: "$3" }}
         reverse

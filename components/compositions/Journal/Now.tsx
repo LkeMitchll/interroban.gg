@@ -3,10 +3,15 @@ import { SecondaryText, Heading } from "designSystem";
 import { ReactElement } from "react";
 import { JournalEntry } from "services/contentful.types";
 import { formattedDate } from "helpers/date";
+import { styled } from "tokens";
+
+const Container = styled("div", {
+  paddingRight: "$2",
+});
 
 export default function Now({ entry }: { entry: JournalEntry }): ReactElement {
   return (
-    <div>
+    <Container>
       <Heading css={{ marginBottom: "$2" }} small>
         What I&apos;m doing now
       </Heading>
@@ -19,6 +24,6 @@ export default function Now({ entry }: { entry: JournalEntry }): ReactElement {
           year: "numeric",
         })}
       </SecondaryText>
-    </div>
+    </Container>
   );
 }
