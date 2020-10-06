@@ -71,7 +71,7 @@ export default function History({
   return (
     <Container layout={{ initial: "twoCol", bp3: "fourCol" }}>
       <Summary layout={{ initial: "single", bp3: "full" }}>
-        <Heading css={{ marginBottom: "$1" }} small>
+        <Heading level="h3" css={{ marginBottom: "$1" }} small>
           Career
         </Heading>
         <P>
@@ -90,7 +90,9 @@ export default function History({
         />
       </div>
       <div>
-        <Subtitle css={{ marginBottom: "$1" }}>{experience.title}</Subtitle>
+        <Subtitle level="h4" css={{ marginBottom: "$1" }}>
+          {experience.title}
+        </Subtitle>
         <PlainList>
           {experience.items.map((item) => (
             <ListItem
@@ -103,7 +105,9 @@ export default function History({
         </PlainList>
       </div>
       <div>
-        <Subtitle css={{ marginBottom: "$1" }}>Select Clients</Subtitle>
+        <Subtitle level="h4" css={{ marginBottom: "$1" }}>
+          Select Clients
+        </Subtitle>
         <PlainList css={{ lineHeight: "$relaxed" }}>
           {clients.map((client, i) => (
             <Item key={i}>{client}</Item>
@@ -111,7 +115,9 @@ export default function History({
         </PlainList>
       </div>
       <div>
-        <Subtitle css={{ marginBottom: "$1" }}>Skills</Subtitle>
+        <Subtitle level="h4" css={{ marginBottom: "$1" }}>
+          Skills
+        </Subtitle>
         <PlainList css={{ lineHeight: "$relaxed" }}>
           {skills.map((skill, i) => (
             <Item key={i}>{skill}</Item>

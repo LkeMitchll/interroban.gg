@@ -7,14 +7,16 @@ export default function List({
   posts,
   title,
   compact,
+  level,
 }: {
   posts: Bookmark[];
   title: string;
   compact?: boolean;
+  level?: keyof JSX.IntrinsicElements;
 }): ReactElement {
   return (
     <>
-      <Heading css={{ marginBottom: "$2" }} small={compact}>
+      <Heading level={level} css={{ marginBottom: "$2" }} small={compact}>
         {title}
       </Heading>
       <PlainList

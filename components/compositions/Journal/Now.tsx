@@ -12,7 +12,7 @@ const Container = styled("div", {
 export default function Now({ entry }: { entry: JournalEntry }): ReactElement {
   return (
     <Container>
-      <Heading css={{ marginBottom: "$2" }} small>
+      <Heading level="h3" css={{ marginBottom: "$2" }} small>
         What I&apos;m doing now
       </Heading>
       <RichText source={entry.content} unwrapped />

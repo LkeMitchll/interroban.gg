@@ -28,7 +28,7 @@ interface BookmarksProps {
 const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
   const latestRoundup = roundups[0];
   const bookmarkList = (
-    <AllBookmarks title="All Bookmarks" posts={posts} compact />
+    <AllBookmarks title="All Bookmarks" level="h3" posts={posts} compact />
   );
   const roundupList = <Roundups roundup={latestRoundup} />;
   return (

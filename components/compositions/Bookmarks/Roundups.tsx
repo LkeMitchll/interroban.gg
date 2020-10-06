@@ -10,7 +10,7 @@ export default function List({
 }): ReactElement {
   return (
     <>
-      <Heading css={{ marginBottom: "$2" }} small>
+      <Heading level="h3" css={{ marginBottom: "$2" }} small>
         Favourites - {roundup.title}
       </Heading>
       <Roundup data={roundup} />

@@ -15,7 +15,7 @@ export default function Posts({
 }): ReactElement {
   return (
     <div>
-      <Heading level="h2" css={{ marginBottom: "$2" }} small={compact}>
+      <Heading level="h3" css={{ marginBottom: "$2" }} small={compact}>
         {title}
         <A css={{ marginLeft: "$1", fontWeight: "$normal" }} href="/rss.xml">
           Feed

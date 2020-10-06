@@ -54,14 +54,14 @@ const Home = ({
         }
         col2={
           <>
-            <Bookmarks title="Recent Bookmarks" posts={bookmarks} />
+            <Bookmarks title="Recent Bookmarks" posts={bookmarks} level="h2" />
             <NavLink url="/bookmarks">See all</NavLink>
           </>
         }
         css={{ marginBottom: "$3" }}
       />
       <section>
-        <Heading>
+        <Heading level="h2">
           Selected Work <Beta>beta</Beta>
         </Heading>
         {projects.items.map((project: ProjectType) => (

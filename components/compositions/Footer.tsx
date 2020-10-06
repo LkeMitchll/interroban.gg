@@ -67,7 +67,7 @@ export default function Footer(): ReactElement {
   };
 
   const Title = (content: string) => (
-    <Subtitle level="h3" css={{ lineHeight: "1", marginBottom: "$1" }}>
+    <Subtitle level="h4" css={{ lineHeight: "1", marginBottom: "$1" }}>
       {content}
     </Subtitle>
   );
