@@ -12,11 +12,11 @@ const Container = styled("div", {
 export default function Now({ entry }: { entry: JournalEntry }): ReactElement {
   return (
     <Container>
-      <Heading level="h3" css={{ marginBottom: "$2" }} small>
+      <Heading as="h3" margin="medium" size="small">
         What I&apos;m doing now
       </Heading>
       <RichText source={entry.content} unwrapped />
-      <SecondaryText css={{ marginTop: "$2", display: "block" }}>
+      <SecondaryText css={{ marginTop: "$2" }}>
         Last updated &ndash;{" "}
         {formattedDate(entry.date, {
           day: "numeric",

@@ -63,8 +63,8 @@ export default function Post({ post }: { post: BlogPost }): ReactElement {
   return (
     <>
       <Header alignment={{ initial: "left", bp3: "center" }}>
-        <Heading>{post.title}</Heading>
-        <SecondaryText css={{ maxWidth: "unset" }}>
+        <Heading size="large">{post.title}</Heading>
+        <SecondaryText>
           {post.date &&
             formattedDate(post.date, {
               month: "long",

@@ -1,26 +1,29 @@
 import { styled } from "tokens";
-import { ReactElement } from "react";
-import { TCssWithBreakpoints } from "@stitches/react";
 
-const Img = styled("img", {
+const Image = styled("img", {
   marginBottom: "$1",
   borderRadius: "$image",
   width: "$full",
   height: "auto",
+
+  variants: {
+    margin: {
+      none: {
+        marginBottom: "$0",
+      },
+    },
+    size: {
+      tiny: {
+        display: "inline-block",
+        width: "40px",
+        marginBottom: "$0",
+        marginRight: "$1",
+        marginLeft: "$1",
+        verticalAlign: "text-top",
+        marginTop: "0.3rem",
+      },
+    },
+  },
 });
 
-export default function Image({
-  src,
-  alt,
-  css,
-  width,
-  height,
-}: {
-  src: string;
-  alt: string;
-  css?: TCssWithBreakpoints<any>;
-  width: number;
-  height: number;
-}): ReactElement {
-  return <Img src={src} alt={alt} css={css} width={width} height={height} />;
-}
+export default Image;

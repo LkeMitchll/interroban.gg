@@ -19,7 +19,7 @@ const Header = styled("header", {
 const Title = ({ link = null, title, css }: TitleProps): ReactElement => {
   return (
     <Header css={css}>
-      <Heading level="h2" css={{ lineHeight: "$default" }}>
+      <Heading as="h2" css={{ lineHeight: "$default" }} size="large">
         {title}
       </Heading>
       {link ? <NavLink url={link.url}>{link.text}</NavLink> : null}

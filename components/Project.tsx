@@ -39,7 +39,7 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
         css={{ gridArea: "image" }}
       />
       <div>
-        <Heading level="h3" css={{ marginBottom: "$_5" }} small>
+        <Heading as="h3" margin="tiny" size="small">
           {data.title}
         </Heading>
         <Small>{data.blurb}</Small>

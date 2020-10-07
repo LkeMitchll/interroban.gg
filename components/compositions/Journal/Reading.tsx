@@ -12,7 +12,7 @@ export default function Reading({
 }): ReactElement {
   return (
     <div>
-      <Heading level="h3" css={{ marginBottom: "$2" }} small>
+      <Heading as="h3" margin="medium" size="small">
         {title}
       </Heading>
       <PlainList>

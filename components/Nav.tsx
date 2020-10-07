@@ -49,12 +49,12 @@ export default function Nav({
   layout,
 }: {
   css?: TCssWithBreakpoints<any>;
-  layout?: Record<string, string>;
+  layout?: any;
 }): ReactElement {
   const currentPage = useRouter().asPath;
 
   return (
-    <List layout={layout} css={css}>
+    <List css={css} layout={layout}>
       <Item>
         <NavLink url="/about" active={currentPage == "/about"}>
           About

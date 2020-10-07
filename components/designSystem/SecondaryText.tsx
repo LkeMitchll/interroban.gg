@@ -7,6 +7,14 @@ const SecondaryText = styled("p", {
   color: "$secondary",
   fontStyle: "italic",
   margin: "$0",
+
+  variants: {
+    margin: {
+      medium: {
+        marginBottom: "$2",
+      },
+    },
+  },
 });
 
 export default SecondaryText;

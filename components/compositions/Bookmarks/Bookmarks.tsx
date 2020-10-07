@@ -6,28 +6,21 @@ import { Bookmark } from "services/contentful.types";
 export default function List({
   posts,
   title,
-  compact,
-  level,
+  as,
+  size,
 }: {
   posts: Bookmark[];
   title: string;
   compact?: boolean;
-  level?: keyof JSX.IntrinsicElements;
+  as?: keyof JSX.IntrinsicElements;
+  size?: "small" | "large";
 }): ReactElement {
   return (
     <>
-      <Heading level={level} css={{ marginBottom: "$2" }} small={compact}>
+      <Heading as={as ? as : "h3"} size={size ? size : "large"} margin="medium">
         {title}
       </Heading>
-      <PlainList
-        css={{
-          bp4: {
-            display: "grid",
-            gridColumnGap: "$2",
-            gridTemplateColumns: "1fr 1fr",
-          },
-        }}
-      >
+      <PlainList>
         {posts.map((entry) => (
           <Item key={entry.id} data={entry} />
         ))}

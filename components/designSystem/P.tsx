@@ -10,8 +10,16 @@ const P = styled("p", {
 
   variants: {
     margin: {
-      0: {
+      none: {
         marginBottom: "$0",
+      },
+      medium: {
+        marginBottom: "$2",
+      },
+    },
+    lineHeight: {
+      relaxed: {
+        lineHeight: "$relaxed",
       },
     },
   },

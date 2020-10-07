@@ -13,11 +13,11 @@ export default function Listening({
 }): ReactElement {
   return (
     <div>
-      <Heading level="h3" css={{ marginBottom: "$2" }} small>
+      <Heading as="h3" margin="medium" size="small">
         Listening
       </Heading>
       {totals ? (
-        <P css={{ marginBottom: "$2" }}>
+        <P margin="medium">
           Last week I listened to around
           <br />
           <A href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A">
@@ -25,13 +25,13 @@ export default function Listening({
           </A>
         </P>
       ) : (
-        <P css={{ marginBottom: "$2" }}>
+        <P margin="medium">
           Loading...
           <br />
           <br />
         </P>
       )}
-      <SecondaryText as="h3" css={{ marginBottom: "$2" }}>
+      <SecondaryText as="h3" margin="medium">
         Top Tracks (Past month)
       </SecondaryText>
       {tracks ? (

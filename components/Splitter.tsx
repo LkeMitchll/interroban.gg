@@ -1,4 +1,3 @@
-import { TCssWithBreakpoints } from "@stitches/react";
 import { ReactElement } from "react";
 import { styled } from "tokens";
 
@@ -12,6 +11,11 @@ const Container = styled("section", {
       vertical: { gridTemplateColumns: "1fr" },
       horizontal: {
         gridTemplateColumns: "1fr 1fr",
+      },
+    },
+    margin: {
+      large: {
+        marginBottom: "$3",
       },
     },
   },
@@ -41,18 +45,21 @@ const Column = styled("div", {
 interface SplitterProps {
   col1: ReactElement;
   col2: ReactElement;
-  css?: TCssWithBreakpoints<any>;
   reverse?: boolean;
+  margin?: "large";
 }
 
 export default function Splitter({
   col1,
   col2,
-  css,
   reverse,
+  margin,
 }: SplitterProps): ReactElement {
   return (
-    <Container css={css} layout={{ initial: "vertical", bp2: "horizontal" }}>
+    <Container
+      layout={{ initial: "vertical", bp2: "horizontal" }}
+      margin={margin}
+    >
       <Column
         position={{
           initial: reverse ? "second" : "first",

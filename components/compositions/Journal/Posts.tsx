@@ -1,5 +1,5 @@
 import { ListItem } from "components";
-import { A, Heading, PlainList } from "designSystem";
+import { Heading, PlainList } from "designSystem";
 import { ReactElement } from "react";
 import { BlogPost } from "services/contentful.types";
 import { formattedDate } from "helpers/date";
@@ -7,19 +7,18 @@ import { formattedDate } from "helpers/date";
 export default function Posts({
   posts,
   title,
-  compact,
+  as,
+  size,
 }: {
   posts: BlogPost[];
   title: string;
-  compact?: boolean;
+  as?: keyof JSX.IntrinsicElements;
+  size?: "small" | "large";
 }): ReactElement {
   return (
     <div>
-      <Heading level="h3" css={{ marginBottom: "$2" }} small={compact}>
+      <Heading as={as ? as : "h3"} margin="medium" size={size ? size : "large"}>
         {title}
-        <A css={{ marginLeft: "$1", fontWeight: "$normal" }} href="/rss.xml">
-          Feed
-        </A>
       </Heading>
       <PlainList>
         {posts.map((post) => (

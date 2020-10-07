@@ -43,7 +43,7 @@ export default function Hero({
         css={{ gridArea: "a" }}
       />
       {intro ? (
-        <LargeText css={{ gridArea: "b", marginBottom: "$2" }}>
+        <LargeText margin="medium" css={{ gridArea: "b" }}>
           {intro}
         </LargeText>
       ) : null}
@@ -57,14 +57,7 @@ export default function Hero({
             css={{ gridArea: "b" }}
           />
 
-          <Footnote
-            css={{
-              marginTop: "auto",
-              marginBottom: "$1",
-              position: "static",
-              gridArea: "f",
-            }}
-          >
+          <Footnote position="hero" css={{ gridArea: "f" }}>
             <Small>Image: {image.desc}</Small>
           </Footnote>
         </>

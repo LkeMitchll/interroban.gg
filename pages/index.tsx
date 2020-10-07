@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
   const page = await api.fetchPage("gs1BugZQXA8mN7DniEOFx");
   const posts = await api.fetchBlogPosts(3);
-  const bookmarks = await api.fetchBookmarks(6);
+  const bookmarks = await api.fetchBookmarks(3);
   const projects = await api.fetchList("1UfYIu858cZdZuMjgejpRG");
 
   return { props: { page, posts, bookmarks, projects } };
@@ -48,20 +48,20 @@ const Home = ({
       <Splitter
         col1={
           <>
-            <Posts title="Recent Posts" posts={posts} />
+            <Posts title="Recent Posts" posts={posts} as="h2" />
             <NavLink url="/journal">See all</NavLink>
           </>
         }
         col2={
           <>
-            <Bookmarks title="Recent Bookmarks" posts={bookmarks} level="h2" />
+            <Bookmarks title="Recent Bookmarks" posts={bookmarks} as="h2" />
             <NavLink url="/bookmarks">See all</NavLink>
           </>
         }
-        css={{ marginBottom: "$3" }}
+        margin="large"
       />
       <section>
-        <Heading level="h2">
+        <Heading as="h2" size="large">
           Selected Work <Beta>beta</Beta>
         </Heading>
         {projects.items.map((project: ProjectType) => (

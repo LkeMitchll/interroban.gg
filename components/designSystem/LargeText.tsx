@@ -6,6 +6,14 @@ const LargeText = styled("p", {
   lineHeight: "$default",
   margin: "$0",
   fontFeatureSettings: `"ss01" off`,
+
+  variants: {
+    margin: {
+      medium: {
+        marginBottom: "$2",
+      },
+    },
+  },
 });
 
 export default LargeText;

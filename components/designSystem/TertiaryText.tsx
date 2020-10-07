@@ -5,6 +5,14 @@ const TertiaryText = styled("p", {
   fontSize: "$3",
   marginTop: "$0",
   marginBottom: "$1",
+
+  variants: {
+    margin: {
+      none: {
+        marginBottom: "$0",
+      },
+    },
+  },
 });
 
 export default TertiaryText;

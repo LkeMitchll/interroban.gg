@@ -1,5 +1,5 @@
-import { Splitter, Title } from "components";
-import { Listening, Now, Posts, Reading } from "compositions";
+import { Splitter } from "components";
+import { Hero, Listening, Now, Posts, Reading } from "compositions";
 import { ContentAPI } from "services/contentful";
 import { GetStaticProps } from "next";
 import { ReactElement } from "react";
@@ -37,16 +37,12 @@ export default function Journal({
 
   return (
     <>
-      <Title
-        title="Journal"
-        link={{ url: "/", text: "Back" }}
-        css={{ marginBottom: "$2_5" }}
-      />
+      <Hero title="Journal" />
       <Splitter
         col1={<Now entry={journalEntry} />}
-        col2={<Posts title="Recent Posts" posts={blogPosts} compact />}
-        css={{ marginBottom: "$3" }}
+        col2={<Posts title="Recent Posts" posts={blogPosts} size="small" />}
         reverse
+        margin="large"
       />
       <Splitter
         col1={<Listening totals={LastWeek} tracks={recentTracks} />}

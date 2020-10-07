@@ -14,6 +14,10 @@ const Footnote = styled("aside", {
         marginBottom: "$2",
         position: "static",
       },
+      hero: {
+        marginTop: "auto",
+        marginBottom: "$1",
+      },
     },
   },
 });

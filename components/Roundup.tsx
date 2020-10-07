@@ -5,6 +5,11 @@ import { styled } from "tokens";
 
 const Item = styled("li", {
   marginBottom: "$2",
+
+  " a": {
+    display: "block",
+    marginBottom: "$1",
+  },
 });
 
 export default function Roundup({ data }: { data: Type }): ReactElement {
@@ -12,13 +17,8 @@ export default function Roundup({ data }: { data: Type }): ReactElement {
     <NumberedList>
       {data.links.map((link: Bookmark) => (
         <Item key={link.id}>
-          <A
-            css={{ marginLeft: "$1", marginBottom: "$1", display: "block" }}
-            href={link.url}
-          >
-            {link.title}
-          </A>
-          <P css={{ marginLeft: "-$1" }}>{link.notes}</P>
+          <A href={link.url}>{link.title}</A>
+          <P>{link.notes}</P>
         </Item>
       ))}
     </NumberedList>

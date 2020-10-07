@@ -79,7 +79,7 @@ function footnote(node: Inline): ReactNode {
               alt={image.description}
               width={image.width}
               height={image.height}
-              css={{ marginBottom: "$0" }}
+              margin="none"
             />
             <Small>Image: {children}</Small>
           </>
@@ -87,7 +87,7 @@ function footnote(node: Inline): ReactNode {
       },
       [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
         return (
-          <A href={node.data.uri} css={{ fontSize: "$3" }}>
+          <A href={node.data.uri} size="small">
             {children}
           </A>
         );
@@ -137,7 +137,7 @@ const options = {
       return generateFootnotes(node, children);
     },
     [BLOCKS.HEADING_2]: (_: Heading2, children: RichTextChildren) => (
-      <Heading level="h2" css={{ gridArea: "auto / c" }} small>
+      <Heading as="h2" css={{ gridArea: "auto / c" }} size="small">
         {children}
       </Heading>
     ),

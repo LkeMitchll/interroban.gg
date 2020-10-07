@@ -9,9 +9,5 @@ export default function Markdown(
     paragraph: P,
     link: A,
   };
-  return (
-    <>
-      <ReactMarkdown renderers={elements} {...source} />
-    </>
-  );
+  return <ReactMarkdown renderers={elements} {...source} />;
 }

@@ -25,11 +25,11 @@ export default function Logo({
       <NavLink href="/">
         <A href="#">
           <Heading
+            size="large"
+            margin="none"
             css={{
-              fontSize: "$2",
               letterSpacing: "$logo",
               lineHeight: "$crushed",
-              marginBottom: "$0",
             }}
           >
             Luke Mitchell <Secondary>Product Designer</Secondary>

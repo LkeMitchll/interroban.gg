@@ -37,6 +37,9 @@ const Column = styled("div", {
         gridGap: "$2",
         alignItems: "flex-end",
       },
+      auto: {
+        gridColumn: "auto",
+      },
     },
     alignment: {
       bottom: {
@@ -67,7 +70,7 @@ export default function Footer(): ReactElement {
   };
 
   const Title = (content: string) => (
-    <Subtitle level="h4" css={{ lineHeight: "1", marginBottom: "$1" }}>
+    <Subtitle level="h4" margin="small">
       {content}
     </Subtitle>
   );
@@ -110,27 +113,21 @@ export default function Footer(): ReactElement {
       <Column
         position={{ initial: "threeCol", bp1: "horizontal", bp2: "oneCol" }}
       >
-        <Small
-          css={{
-            display: "block",
-            marginBottom: "$1",
-            bp1: { marginBottom: "$0" },
-          }}
-        >
+        <Small display="block" margin={{ initial: "small", bp1: "none" }}>
           Luke Mitchell &mdash; <br />
           Product Designer
         </Small>
         <Nav layout={{ initial: "horizontal", bp2: "verticalCompact" }} />
       </Column>
-      <Column css={{ bp0: { gridColumn: "auto" } }} alignment={"bottom"}>
+      <Column position="auto" alignment="bottom">
         {Title("Information")}
         {List(InfoLinks)}
       </Column>
-      <Column css={{ bp0: { gridColumn: "auto" } }} alignment={"bottom"}>
+      <Column position="auto" alignment="bottom">
         {Title("Contact")}
         {List(ContactLinks)}
       </Column>
-      <Column css={{ bp0: { gridColumn: "auto" } }} alignment={"bottom"}>
+      <Column position="auto" alignment="bottom">
         {Title("Elsewhere")}
         {List(ElsewhereLinks)}
       </Column>
