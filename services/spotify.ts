@@ -41,7 +41,7 @@ export class MusicAPI {
   }
 
   async getRecentTracks(): Promise<Response> {
-    return this.request(`${this.recentlyPlayedEndpoint}?limit=10`);
+    return this.request(`${this.recentlyPlayedEndpoint}?limit=50`);
   }
 
   async getTopTracks(): Promise<Response> {
