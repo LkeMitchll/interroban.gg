@@ -43,11 +43,11 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
     <div>
       <Table>
         <TableRow>
-          <TableCell>Total</TableCell>
+          <TableCell appearance="alternative">Total</TableCell>
           <TableCell>{posts.length}</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Updated</TableCell>
+          <TableCell appearance="alternative">Updated</TableCell>
           <TableCell>
             {formattedDate(posts[0].date, {
               day: "numeric",

@@ -26,13 +26,13 @@ const Container = styled("div", {
         gridTemplate: `"a a a ." auto
                       "b b b b" auto
                       "c c . ." auto / 1fr 1fr 1fr 1fr`,
-        marginBottom: "$2",
+        marginBottom: "$3",
         gridColumnGap: "$2",
       },
       withStatsHorizontal: {
         gridTemplate: `"a b b c" auto
                        "f b b c"/ 1fr 1fr 1fr 1fr`,
-        marginBottom: "$2",
+        marginBottom: "$3",
         gridGap: "$2",
       },
     },

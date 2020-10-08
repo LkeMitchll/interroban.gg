@@ -30,11 +30,11 @@ export default function FeedsPage({
     <>
       <Table>
         <TableRow>
-          <TableCell>Total</TableCell>
+          <TableCell appearance="alternative">Total</TableCell>
           <TableCell>{feeds.length}</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Updated</TableCell>
+          <TableCell appearance="alternative">Updated</TableCell>
           <TableCell>
             {formattedDate(feeds[0].created_at, {
               day: "numeric",

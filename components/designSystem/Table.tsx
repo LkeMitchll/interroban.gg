@@ -17,4 +17,15 @@ export const TableRow = styled("tr", {
 export const TableCell = styled("td", {
   padding: "$_25 $0",
   lineHeight: "$crushed",
+
+  variants: {
+    appearance: {
+      default: {
+        fontStyle: "normal",
+      },
+      alternative: {
+        fontStyle: "italic",
+      },
+    },
+  },
 });
