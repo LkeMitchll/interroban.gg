@@ -23,7 +23,7 @@ export default function Layout({
         <title>Luke Mitchell</title>
       </Head>
 
-      <Header layout={isBlogPost ? { initial: "minimal" } : null} />
+      <Header />
       <Transition location={router.asPath}>
         <Main>{children}</Main>
       </Transition>

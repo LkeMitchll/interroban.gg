@@ -1,6 +1,6 @@
-import { ListItem } from "components";
+import { ListItem, NavLink } from "components";
 import { Hero } from "components/compositions";
-import { PlainList } from "components/designSystem";
+import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
 import { css } from "components/stitches";
 import { formattedDate } from "helpers/date";
 import { GetStaticProps } from "next";
@@ -26,6 +26,27 @@ export default function FeedsPage({
   page: Page;
   feeds: Feed[];
 }): ReactElement {
+  const stats = (
+    <>
+      <Table>
+        <TableRow>
+          <TableCell>Total</TableCell>
+          <TableCell>{feeds.length}</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Updated</TableCell>
+          <TableCell>
+            {formattedDate(feeds[0].created_at, {
+              day: "numeric",
+              month: "numeric",
+              year: "numeric",
+            })}
+          </TableCell>
+        </TableRow>
+      </Table>
+      <NavLink url="/api/feeds">Feeds API</NavLink>
+    </>
+  );
   const Wrapper = css({
     display: "grid",
     gridColumnGap: "$2",
@@ -44,7 +65,7 @@ export default function FeedsPage({
 
   return (
     <>
-      <Hero title={page.title} intro={page.description} />
+      <Hero title={page.title} stats={stats} intro={page.description} />
       <PlainList className={Wrapper}>
         {feeds.map((feed) => (
           <ListItem

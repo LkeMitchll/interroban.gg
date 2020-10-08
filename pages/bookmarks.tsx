@@ -8,7 +8,9 @@ import {
 } from "services/contentful.types";
 import { ReactElement } from "react";
 import { Hero, Bookmarks as AllBookmarks, Roundups } from "compositions";
-import { Splitter } from "components";
+import { NavLink, Splitter } from "components";
+import { Table, TableRow, TableCell } from "designSystem";
+import { formattedDate } from "helpers/date";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
@@ -37,9 +39,30 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
     />
   );
   const roundupList = <Roundups roundup={latestRoundup} />;
+  const stats = (
+    <div>
+      <Table>
+        <TableRow>
+          <TableCell>Total</TableCell>
+          <TableCell>{posts.length}</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Updated</TableCell>
+          <TableCell>
+            {formattedDate(posts[0].date, {
+              day: "numeric",
+              month: "numeric",
+              year: "numeric",
+            })}
+          </TableCell>
+        </TableRow>
+      </Table>
+      <NavLink url="/api/bookmarks">Bookmarks API</NavLink>
+    </div>
+  );
   return (
     <>
-      <Hero title={page.title} intro={page.description} />
+      <Hero title={page.title} stats={stats} intro={page.description} />
       <Splitter col1={bookmarkList} col2={roundupList} reverse />
     </>
   );

@@ -13,10 +13,12 @@ export const theme = {
   colors: {
     $primary: Color(115, 13, 11, 0.8),
     $secondary: Color(115, 13, 30, 1),
+    $faded: Color(115, 13, 11, 0.2),
     $bg: "#FDFFFA",
   },
   space: {
     $0: "0",
+    $_25: "0.25rem",
     $_5: "0.5rem",
     $1: "1rem",
     $2: "2rem",

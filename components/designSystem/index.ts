@@ -12,6 +12,7 @@ import Footnote from "./Footnote";
 import LargeText from "./LargeText";
 import NumberedList from "./NumberedList";
 import BulletList from "./BulletList";
+import { Table, TableRow, TableCell } from "./Table";
 
 export {
   GlobalStyles,
@@ -28,4 +29,7 @@ export {
   LargeText,
   NumberedList,
   BulletList,
+  Table,
+  TableRow,
+  TableCell,
 };

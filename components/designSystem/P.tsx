@@ -17,6 +17,10 @@ const P = styled("p", {
         marginBottom: "$2",
       },
     },
+    padding: {
+      none: { padding: "$0" },
+      right: { paddingRight: "$2" },
+    },
     lineHeight: {
       relaxed: {
         lineHeight: "$relaxed",

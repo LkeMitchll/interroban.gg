@@ -14,27 +14,11 @@ const List = styled("ul", {
   variants: {
     layout: {
       vertical: {
-        flexDirection: "column",
-      },
-      verticalCompact: {
         marginTop: "$1",
         flexDirection: "column",
       },
-      verticalRTL: {
-        flexDirection: "column",
-        alignItems: "flex-end",
-        marginRight: "-$2",
-      },
       horizontal: {
         flexDirection: "row",
-      },
-      centered: {
-        flexDirection: "row",
-        justifyContent: "center",
-
-        " li:last-of-type": {
-          marginRight: "$0",
-        },
       },
     },
   },

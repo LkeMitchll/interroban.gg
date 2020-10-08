@@ -1,5 +1,5 @@
 import { Title } from "components";
-import { Footnote, Image, LargeText, Small } from "designSystem";
+import { Footnote, Image, Small, P } from "designSystem";
 import { styled } from "tokens";
 import { ReactElement } from "react";
 import { Asset } from "services/contentful.types";
@@ -22,31 +22,61 @@ const Container = styled("div", {
         marginBottom: "$2",
         gridGap: "$2",
       },
+      withStatsVertical: {
+        gridTemplate: `"a a a ." auto
+                      "b b b b" auto
+                      "c c . ." auto / 1fr 1fr 1fr 1fr`,
+        marginBottom: "$2",
+        gridColumnGap: "$2",
+      },
+      withStatsHorizontal: {
+        gridTemplate: `"a b b c" auto
+                       "f b b c"/ 1fr 1fr 1fr 1fr`,
+        marginBottom: "$2",
+        gridGap: "$2",
+      },
     },
   },
+});
+
+const StatsContainer = styled("div", {
+  gridArea: "c",
 });
 
 export default function Hero({
   image,
   title,
   intro,
+  stats,
 }: {
   image?: Asset;
   title: string;
   intro?: string;
+  stats?: ReactElement;
 }): ReactElement {
   return (
-    <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
+    <Container
+      layout={
+        stats
+          ? { initial: "withStatsVertical", bp2: "withStatsHorizontal" }
+          : { initial: "vertical", bp2: "horizontal" }
+      }
+    >
       <Title
         title={title}
         link={{ url: "/", text: "Back" }}
         css={{ gridArea: "a" }}
       />
       {intro ? (
-        <LargeText margin="medium" css={{ gridArea: "b" }}>
+        <P
+          margin="medium"
+          padding={stats ? "right" : "none"}
+          css={{ gridArea: "b" }}
+        >
           {intro}
-        </LargeText>
+        </P>
       ) : null}
+      {stats && <StatsContainer>{stats}</StatsContainer>}
       {image ? (
         <>
           <Image

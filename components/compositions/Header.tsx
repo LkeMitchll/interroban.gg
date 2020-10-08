@@ -35,10 +35,7 @@ export default function Header({
     <Container layout={layout ? layout : { initial: "tiny", bp1: "small" }}>
       {layout?.initial == "minimal" ? null : <Logo css={{ gridArea: "a" }} />}
       <Nav
-        layout={{
-          initial: layout?.initial == "minimal" ? "centered" : "horizontal",
-          bp1: layout?.initial == "minimal" ? "centered" : "horizontal",
-        }}
+        layout={{ initial: "horizontal", bp1: "horizontal" }}
         css={{ gridArea: "b" }}
       />
     </Container>

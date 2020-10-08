@@ -1,4 +1,4 @@
-import { NavLink, RichText } from "components";
+import { NavLink, RichText, Title } from "components";
 import { Heading, SecondaryText } from "components/designSystem";
 import { styled } from "components/stitches";
 import { GetStaticProps } from "next";
@@ -40,8 +40,11 @@ export async function getStaticPaths(): Promise<Paths> {
   };
 }
 
-const Header = styled("header", {
+const PageTitle = styled("section", {
   marginBottom: "$2",
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 1fr)",
+  gridGap: "$2",
 
   variants: {
     alignment: {
@@ -55,25 +58,38 @@ const Header = styled("header", {
   },
 });
 
-const Footer = styled(Header, {
+const Footer = styled("div", {
+  textAlign: "center",
   marginTop: "$2",
+});
+
+const PostTitle = styled("div", {
+  gridColumn: "span 3",
 });
 
 export default function Post({ post }: { post: BlogPost }): ReactElement {
   return (
     <>
-      <Header alignment={{ initial: "left", bp3: "center" }}>
-        <Heading size="large">{post.title}</Heading>
-        <SecondaryText>
-          {post.date &&
-            formattedDate(post.date, {
-              month: "long",
-              year: "numeric",
-            })}
-        </SecondaryText>
-      </Header>
+      <PageTitle>
+        <Title
+          title="Post"
+          link={{ url: "/journal", text: "Back" }}
+          as="p"
+          hidden
+        />
+        <PostTitle>
+          <Heading size="large">{post.title}</Heading>
+          <SecondaryText>
+            {post.date &&
+              formattedDate(post.date, {
+                month: "long",
+                year: "numeric",
+              })}
+          </SecondaryText>
+        </PostTitle>
+      </PageTitle>
       <RichText source={post.content} />
-      <Footer alignment={{ initial: "left", bp3: "center" }}>
+      <Footer>
         <NavLink url="/journal">Back to Journal</NavLink>
       </Footer>
     </>
