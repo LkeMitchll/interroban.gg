@@ -39,7 +39,7 @@ export default function Journal({
   const recentTracks = useSWR("/api/music/top", fetcher).data;
   const LastWeek = useSWR("/api/music", fetcher).data;
   const stats = (
-    <PlainList>
+    <>
       <Table>
         <TableRow>
           <TableCell appearance="alternative">Total</TableCell>
@@ -50,13 +50,15 @@ export default function Journal({
           <TableCell>{blogPosts[0].date}</TableCell>
         </TableRow>
       </Table>
-      <li>
-        <NavLink url="/rss.xml">RSS Feed</NavLink>
-      </li>
-      <li>
-        <NavLink url="/api/posts">Posts API</NavLink>
-      </li>
-    </PlainList>
+      <PlainList>
+        <li>
+          <NavLink url="/rss.xml">RSS Feed</NavLink>
+        </li>
+        <li>
+          <NavLink url="/api/posts">Posts API</NavLink>
+        </li>
+      </PlainList>
+    </>
   );
 
   return (

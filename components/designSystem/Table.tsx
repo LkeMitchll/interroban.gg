@@ -25,6 +25,7 @@ export const TableCell = styled("td", {
       },
       alternative: {
         fontStyle: "italic",
+        paddingRight: "$_5",
       },
     },
   },

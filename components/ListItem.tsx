@@ -19,8 +19,15 @@ const Container = styled("li", {
 });
 
 const Divider = styled("div", {
-  display: "inline-block",
   verticalAlign: "text-top",
+
+  variants: {
+    appearance: {
+      inline: {
+        display: "inline-block",
+      },
+    },
+  },
 });
 
 export default function ListItem({
@@ -44,7 +51,7 @@ export default function ListItem({
         />
       ) : null}
       {top ? <TertiaryText margin="none">{top}</TertiaryText> : null}
-      <Divider>
+      <Divider appearance={image ? "inline" : null}>
         {url ? (
           <Link href={url} as={urlAs} passHref>
             <A

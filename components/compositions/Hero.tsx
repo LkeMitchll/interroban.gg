@@ -25,7 +25,7 @@ const Container = styled("div", {
       withStatsVertical: {
         gridTemplate: `"a a a ." auto
                       "b b b b" auto
-                      "c c . ." auto / 1fr 1fr 1fr 1fr`,
+                      "c c c ." auto / 1fr 1fr 1fr 1fr`,
         marginBottom: "$3",
         gridColumnGap: "$2",
       },
