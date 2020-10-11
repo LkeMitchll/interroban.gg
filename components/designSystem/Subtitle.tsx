@@ -1,3 +1,4 @@
+import { TCssWithBreakpoints } from "@stitches/react";
 import { ReactElement } from "react";
 import { styled } from "tokens";
 
@@ -25,15 +26,17 @@ interface SubtitleProps {
   children: React.ReactNode;
   level?: keyof JSX.IntrinsicElements;
   margin?: "none" | "small";
+  css?: TCssWithBreakpoints<any>;
 }
 
 export default function Subtitle({
   children,
   level,
   margin = "none",
+  css,
 }: SubtitleProps): ReactElement {
   return (
-    <Tag margin={margin} as={level}>
+    <Tag margin={margin} as={level} css={css}>
       {children}
     </Tag>
   );

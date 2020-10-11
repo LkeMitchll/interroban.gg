@@ -1,6 +1,6 @@
-import { Title } from "components";
-import { Footnote, Image, Small, P } from "designSystem";
-import { styled } from "tokens";
+import { Title, Markdown } from "components";
+import { Footnote, Image, Small } from "designSystem";
+import { css, styled } from "tokens";
 import { ReactElement } from "react";
 import { Asset } from "services/contentful.types";
 
@@ -54,6 +54,10 @@ export default function Hero({
   intro?: string;
   stats?: ReactElement;
 }): ReactElement {
+  const introWrapper = css({
+    gridArea: "b",
+    paddingRight: "$2",
+  });
   return (
     <Container
       layout={
@@ -67,15 +71,7 @@ export default function Hero({
         link={{ url: "/", text: "Back" }}
         css={{ gridArea: "a" }}
       />
-      {intro ? (
-        <P
-          margin="medium"
-          padding={stats ? "right" : "none"}
-          css={{ gridArea: "b" }}
-        >
-          {intro}
-        </P>
-      ) : null}
+      {intro ? <Markdown className={introWrapper} source={intro} /> : null}
       {stats && <StatsContainer>{stats}</StatsContainer>}
       {image ? (
         <>

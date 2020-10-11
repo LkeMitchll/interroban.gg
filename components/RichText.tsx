@@ -19,6 +19,7 @@ import {
   Footnote,
   BulletList,
   Heading,
+  Subtitle,
 } from "designSystem";
 
 type RichTextProps = {
@@ -140,6 +141,11 @@ const options = {
       <Heading as="h2" css={{ gridArea: "auto / c" }} size="small">
         {children}
       </Heading>
+    ),
+    [BLOCKS.HEADING_3]: (_: Heading2, children: RichTextChildren) => (
+      <Subtitle level="h3" css={{ gridArea: "auto / c" }}>
+        {children}
+      </Subtitle>
     ),
     [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
       <BulletList css={{ gridArea: "auto / c" }}>{children}</BulletList>
