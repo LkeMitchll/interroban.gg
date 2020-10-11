@@ -17,21 +17,21 @@ const Container = styled("div", {
         marginBottom: "$2",
       },
       horizontal: {
-        gridTemplate: `"a b b b" auto
-                       "f b b b"/ 1fr 1fr 1fr 1fr`,
+        gridTemplate: `"a b b ." auto
+                       "f b b ."/ 1fr 1fr 1fr 1fr`,
         marginBottom: "$2",
         gridGap: "$2",
       },
       withStatsVertical: {
         gridTemplate: `"a a a ." auto
                       "b b b b" auto
-                      "c c c ." auto / 1fr 1fr 1fr 1fr`,
+                      "c c . ." auto / 1fr 1fr 1fr 1fr`,
         marginBottom: "$3",
         gridColumnGap: "$2",
       },
       withStatsHorizontal: {
-        gridTemplate: `"a b b c" auto
-                       "f b b c"/ 1fr 1fr 1fr 1fr`,
+        gridTemplate: `"a . b b" auto
+                       "f f c ."/ 1fr 1fr 1fr 1fr`,
         marginBottom: "$3",
         gridGap: "$2",
       },
