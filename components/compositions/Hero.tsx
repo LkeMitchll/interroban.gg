@@ -87,7 +87,7 @@ export default function Hero({
           />
 
           <Footnote position="hero" css={{ gridArea: "f" }}>
-            <Small>Image: {image.desc}</Small>
+            <Small as="figcaption">Image: {image.desc}</Small>
           </Footnote>
         </>
       ) : null}

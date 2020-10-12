@@ -9,6 +9,7 @@ import {
   Hyperlink,
   Heading2,
 } from "@contentful/rich-text-types";
+import { Asset } from "services/contentful.types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { styled } from "tokens";
 import {
@@ -69,15 +70,21 @@ const SubContainer = styled("section", {
 
 function footnote(node: Inline): ReactNode {
   const content = node.data.target.fields.content;
-  const image = node.data.target.fields?.image?.fields;
+  const rawImage = node.data.target.fields?.image.fields;
+  const image: Asset = {
+    url: rawImage.file.url,
+    width: rawImage.file.details.image.width,
+    height: rawImage.file.details.image.height,
+    desc: rawImage.description,
+  };
 
   const footnoteOptions = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (_: Paragraph, children: RichTextChildren) => {
         return (
           <>
-            <ResponsiveImage image={image.file} sizes={ImageSizes.quarter} />
-            <Small>Image: {children}</Small>
+            <ResponsiveImage image={image} sizes={ImageSizes.quarter} />
+            <Small as="figcaption">Image: {children}</Small>
           </>
         );
       },

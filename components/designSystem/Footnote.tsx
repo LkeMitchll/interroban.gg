@@ -1,7 +1,8 @@
 import { styled } from "tokens";
 
-const Footnote = styled("aside", {
+const Footnote = styled("figure", {
   gridRow: "auto",
+  margin: "$0",
 
   variants: {
     position: {

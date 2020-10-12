@@ -55,14 +55,16 @@ export default function NavLink({
           state={active ? "active" : "inactive"}
           target="_blank"
           rel="noreferrer"
+          tabIndex={0}
         >
           {children}
         </A>
       ) : (
-        <Link href={url}>
+        <Link href={url} passHref={true}>
           <A
             decoration={plain ? "plain" : "underline"}
             state={active ? "active" : "inactive"}
+            tabIndex={0}
           >
             {children}
           </A>

@@ -1,4 +1,4 @@
-import NavLink from "next/link";
+import Link from "next/link";
 import { styled } from "tokens";
 import { Heading } from "designSystem";
 import { ReactElement } from "react";
@@ -22,8 +22,8 @@ export default function Logo({
 }): ReactElement {
   return (
     <Container css={css}>
-      <NavLink href="/">
-        <A href="#">
+      <Link href="/" tabIndex="0" passHref>
+        <A aria-label="Home" tabIndex={0}>
           <Heading
             size="large"
             margin="none"
@@ -35,7 +35,7 @@ export default function Logo({
             Luke Mitchell <Secondary>Product Designer</Secondary>
           </Heading>
         </A>
-      </NavLink>
+      </Link>
     </Container>
   );
 }
