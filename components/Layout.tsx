@@ -17,12 +17,28 @@ export default function Layout({
 }): ReactElement {
   const router = useRouter();
   const isBlogPost = router.route === "/post/[slug]";
+
   return (
     <>
       <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link href="/images/favicon.svg" rel="icon" type="image/svg+xml" />
         <link color="#000" href="/images/favicon.svg" rel="mask-icon" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="preconnect" href="https://images.ctfassets.net" />
+        <link
+          rel="preload"
+          href="fonts/pitch-pitch-web-semibold-italic.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="fonts/pitch-pitch-web-semibold-italic.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin=""
+        />
       </Head>
 
       <Header />
