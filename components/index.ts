@@ -11,6 +11,7 @@ import Bookmark from "./Bookmark";
 import Roundup from "./Roundup";
 import Splitter from "./Splitter";
 import Project from "./Project";
+import ResponsiveImage from "./ResponsiveImage";
 
 export {
   Layout,
@@ -26,4 +27,5 @@ export {
   Roundup,
   Splitter,
   Project,
+  ResponsiveImage,
 };

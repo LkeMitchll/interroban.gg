@@ -1,8 +1,10 @@
 import { Title, Markdown } from "components";
-import { Footnote, Image, Small } from "designSystem";
+import { Footnote, Small } from "designSystem";
 import { css, styled } from "tokens";
 import { ReactElement } from "react";
 import { Asset } from "services/contentful.types";
+import ResponsiveImage from "components/ResponsiveImage";
+import { ImageSizes } from "helpers/image";
 
 const Container = styled("div", {
   display: "grid",
@@ -17,8 +19,8 @@ const Container = styled("div", {
         marginBottom: "$2",
       },
       horizontal: {
-        gridTemplate: `"a b b ." auto
-                       "f b b ."/ 1fr 1fr 1fr 1fr`,
+        gridTemplate: `"a b b i" auto
+                       "f b b i"/ 1fr 1fr 1fr 1fr`,
         marginBottom: "$2",
         gridGap: "$2",
       },
@@ -75,12 +77,13 @@ export default function Hero({
       {stats && <StatsContainer>{stats}</StatsContainer>}
       {image ? (
         <>
-          <Image
-            src={`${image.url}?w=${Math.round(image.width / 4)}&q=50`}
-            alt={image.desc}
-            width={Math.round(image.width / 4)}
-            height={Math.round(image.height / 4)}
-            css={{ gridArea: "b" }}
+          <ResponsiveImage
+            image={image}
+            sizes={ImageSizes.SixtyPercent}
+            css={{
+              gridArea: "b",
+              bp2: { gridArea: "b-start / b-start / i-end / i-end" },
+            }}
           />
 
           <Footnote position="hero" css={{ gridArea: "f" }}>

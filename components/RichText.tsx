@@ -14,13 +14,14 @@ import { styled } from "tokens";
 import {
   P,
   Small,
-  Image,
   A,
   Footnote,
   BulletList,
   Heading,
   Subtitle,
 } from "designSystem";
+import ResponsiveImage from "./ResponsiveImage";
+import { ImageSizes } from "helpers/image";
 
 type RichTextProps = {
   source?: Document;
@@ -75,13 +76,7 @@ function footnote(node: Inline): ReactNode {
       [BLOCKS.PARAGRAPH]: (_: Paragraph, children: RichTextChildren) => {
         return (
           <>
-            <Image
-              src={image.file.url}
-              alt={image.description}
-              width={image.width}
-              height={image.height}
-              margin="none"
-            />
+            <ResponsiveImage image={image.file} sizes={ImageSizes.quarter} />
             <Small>Image: {children}</Small>
           </>
         );

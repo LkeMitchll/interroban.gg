@@ -1,8 +1,10 @@
 import { styled } from "tokens";
 import { Asset, List } from "services/contentful.types";
 import { ReactElement } from "react";
-import { Image, P, PlainList, Heading, Subtitle } from "designSystem";
+import { P, PlainList, Heading, Subtitle } from "designSystem";
 import { ListItem } from "components";
+import ResponsiveImage from "components/ResponsiveImage";
+import { ImageSizes } from "helpers/image";
 
 interface HistoryProps {
   experience: List;
@@ -81,11 +83,9 @@ export default function History({
         </P>
       </Summary>
       <div>
-        <Image
-          src={`${headshot.url}?w=${Math.round(headshot.width / 6)}&q=50`}
-          alt={headshot.desc}
-          width={Math.round(headshot.width / 6)}
-          height={Math.round(headshot.height / 6)}
+        <ResponsiveImage
+          image={headshot}
+          sizes={ImageSizes.quarter}
           css={{ width: "80%" }}
         />
       </div>
