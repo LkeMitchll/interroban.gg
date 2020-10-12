@@ -1,4 +1,4 @@
-import { RichText } from "components";
+import { PageMeta, RichText } from "components";
 import { Hero } from "compositions";
 import { GetStaticProps } from "next";
 import { ReactElement } from "react";
@@ -14,6 +14,7 @@ export const getStaticProps: GetStaticProps = async ({}) => {
 export default function UsesPage({ page }: { page: Page }): ReactElement {
   return (
     <>
+      <PageMeta title={page.title} />
       <Hero title={page.title} intro={page.description} />
       <RichText source={page.content} />
     </>

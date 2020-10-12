@@ -1,4 +1,4 @@
-import { NavLink, RichText, Title } from "components";
+import { NavLink, PageMeta, RichText, Title } from "components";
 import { Heading, SecondaryText } from "components/designSystem";
 import { styled } from "components/stitches";
 import { GetStaticProps } from "next";
@@ -70,6 +70,7 @@ const PostTitle = styled("div", {
 export default function Post({ post }: { post: BlogPost }): ReactElement {
   return (
     <>
+      <PageMeta title={post.title} description={post.description} />
       <PageTitle>
         <Title
           title="Post"

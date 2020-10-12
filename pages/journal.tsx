@@ -1,4 +1,4 @@
-import { NavLink, Splitter } from "components";
+import { NavLink, PageMeta, Splitter } from "components";
 import { Hero, Listening, Now, Posts, Reading } from "compositions";
 import { ContentAPI } from "services/contentful";
 import { GetStaticProps } from "next";
@@ -63,6 +63,7 @@ export default function Journal({
 
   return (
     <>
+      <PageMeta title={page.title} />
       <Hero title={page.title} intro={page.description} stats={stats} />
       <Splitter
         col1={<Now entry={journalEntry} />}

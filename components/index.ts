@@ -12,6 +12,7 @@ import Roundup from "./Roundup";
 import Splitter from "./Splitter";
 import Project from "./Project";
 import ResponsiveImage from "./ResponsiveImage";
+import PageMeta from "./PageMeta";
 
 export {
   Layout,
@@ -28,4 +29,5 @@ export {
   Splitter,
   Project,
   ResponsiveImage,
+  PageMeta,
 };

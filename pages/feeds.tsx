@@ -1,4 +1,4 @@
-import { ListItem, NavLink } from "components";
+import { ListItem, NavLink, PageMeta } from "components";
 import { Hero } from "components/compositions";
 import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
 import { css } from "components/stitches";
@@ -65,6 +65,7 @@ export default function FeedsPage({
 
   return (
     <>
+      <PageMeta title={page.title} />
       <Hero title={page.title} stats={stats} intro={page.description} />
       <PlainList className={Wrapper}>
         {feeds.map((feed) => (

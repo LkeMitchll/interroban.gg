@@ -8,7 +8,7 @@ import {
 } from "services/contentful.types";
 import { ReactElement } from "react";
 import { Hero, Bookmarks as AllBookmarks, Roundups } from "compositions";
-import { NavLink, Splitter } from "components";
+import { NavLink, PageMeta, Splitter } from "components";
 import { Table, TableRow, TableCell } from "designSystem";
 import { formattedDate } from "helpers/date";
 
@@ -62,6 +62,7 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
   );
   return (
     <>
+      <PageMeta title={page.title} />
       <Hero title={page.title} stats={stats} intro={page.description} />
       <Splitter col1={bookmarkList} col2={roundupList} reverse />
     </>

@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { ContentAPI } from "services/contentful";
 import { Hero, History } from "compositions";
-import { RichText } from "components";
+import { RichText, PageMeta } from "components";
 import { ReactElement } from "react";
 import { Page, List, Asset } from "services/contentful.types";
 
@@ -29,6 +29,7 @@ export default function AboutPage({
 }: PageProps): ReactElement {
   return (
     <>
+      <PageMeta title={page.title} />
       <Hero image={hero} title={page.title} />
       <RichText source={page.content} />
       <History experience={experience} headshot={headshot} />

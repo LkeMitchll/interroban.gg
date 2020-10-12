@@ -20,7 +20,9 @@ export default function Layout({
   return (
     <>
       <Head>
-        <title>Luke Mitchell</title>
+        <link href="/images/favicon.svg" rel="icon" type="image/svg+xml" />
+        <link color="#000" href="/images/favicon.svg" rel="mask-icon" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <Header />

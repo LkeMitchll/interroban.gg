@@ -9,7 +9,7 @@ import {
   Page,
   Project as ProjectType,
 } from "services/contentful.types";
-import { Splitter, Project, NavLink } from "components";
+import { Splitter, Project, NavLink, PageMeta } from "components";
 import { Heading } from "designSystem";
 import { styled } from "components/stitches";
 
@@ -44,6 +44,7 @@ const Home = ({
 }: HomeProps): ReactElement => {
   return (
     <>
+      <PageMeta title={page.title} />
       <Intro content={page} />
       <Splitter
         col1={

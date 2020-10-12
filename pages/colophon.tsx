@@ -3,7 +3,7 @@ import { ContentAPI } from "services/contentful";
 import { Page } from "services/contentful.types";
 import { Hero } from "compositions";
 import { GetStaticProps } from "next";
-import { RichText } from "components";
+import { PageMeta, RichText } from "components";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
@@ -18,6 +18,7 @@ interface ColophonProps {
 export default function Colophon({ page }: ColophonProps): ReactElement {
   return (
     <>
+      <PageMeta title={page.title} />
       <Hero title={page.title} intro={page.description} />
       <RichText source={page.content} />
     </>
