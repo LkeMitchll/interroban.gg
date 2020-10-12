@@ -27,7 +27,8 @@
     "react-dom": "16.13.1",
     "react-markdown": "^4.3.1",
     "react-transition-group": "^4.4.1",
-    "swr": "^0.3.2"
+    "swr": "^0.3.2",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@contentful/rich-text-types": "^14.1.1",

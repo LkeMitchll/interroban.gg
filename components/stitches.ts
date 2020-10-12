@@ -62,6 +62,13 @@ export const theme = {
   },
 };
 
+const darkTheme = {
+  $primary: Color(36, 37, 92, 1),
+  $secondary: Color(36, 13, 63, 1),
+  faded: Color(36, 13, 63, 0.5),
+  $bg: "#192018",
+};
+
 export const { styled, css } = createStyled({
   tokens: theme,
   breakpoints: {
@@ -72,3 +79,5 @@ export const { styled, css } = createStyled({
     bp4: (rule) => `@media (min-width: 1600px) { ${rule} }`,
   },
 });
+
+export const darkThemeClass = css.theme({ colors: darkTheme });

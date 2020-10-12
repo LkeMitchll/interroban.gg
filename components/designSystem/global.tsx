@@ -6,7 +6,6 @@ const GlobalStyles = (): ReactElement => (
     {`
       html {
         font-size: 16px;
-        background-color: ${theme.colors.$bg};
       }
 
       body {
