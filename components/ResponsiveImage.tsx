@@ -31,6 +31,7 @@ export default function ResponsiveImage({
         width={image.width}
         height={image.height}
         css={{ gridArea: "image" }}
+        loading="lazy"
       />
     </Wrapper>
   );
