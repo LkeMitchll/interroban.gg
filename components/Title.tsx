@@ -37,7 +37,11 @@ const Title = ({
           {title}
         </Heading>
       )}
-      {link ? <NavLink url={link.url}>{link.text}</NavLink> : null}
+      {link ? (
+        <NavLink url={link.url} decoration="underline">
+          {link.text}
+        </NavLink>
+      ) : null}
     </Header>
   );
 };

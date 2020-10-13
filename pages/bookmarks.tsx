@@ -57,7 +57,9 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
           </TableCell>
         </TableRow>
       </Table>
-      <NavLink url="/api/bookmarks">Bookmarks API</NavLink>
+      <NavLink url="/api/bookmarks" decoration="underline">
+        Bookmarks API
+      </NavLink>
     </div>
   );
   return (

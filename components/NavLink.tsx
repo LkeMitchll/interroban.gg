@@ -27,22 +27,27 @@ const A = styled("a", {
       active: {
         fontStyle: "italic",
       },
+      disabled: {
+        opacity: "0.8",
+        cursor: "not-allowed",
+        pointerEvents: "none",
+      },
     },
   },
 });
 
 interface NavLinkProps {
   children: React.ReactNode;
-  url: string;
-  plain?: boolean;
-  active?: boolean;
+  url?: string;
+  state?: "active" | "inactive" | "disabled";
+  decoration?: "plain" | "underline";
 }
 
 export default function NavLink({
   children,
   url,
-  plain,
-  active,
+  state,
+  decoration,
 }: NavLinkProps): ReactElement {
   const external =
     url.startsWith("http") || url.startsWith("mailto") || url.startsWith("#");
@@ -51,8 +56,8 @@ export default function NavLink({
       {external ? (
         <A
           href={url}
-          decoration={plain ? "plain" : "underline"}
-          state={active ? "active" : "inactive"}
+          decoration={decoration}
+          state={state}
           target="_blank"
           rel="noreferrer"
           tabIndex={0}
@@ -61,11 +66,7 @@ export default function NavLink({
         </A>
       ) : (
         <Link href={url} passHref={true}>
-          <A
-            decoration={plain ? "plain" : "underline"}
-            state={active ? "active" : "inactive"}
-            tabIndex={0}
-          >
+          <A decoration={decoration} state={state} tabIndex={0}>
             {children}
           </A>
         </Link>

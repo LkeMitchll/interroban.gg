@@ -52,10 +52,14 @@ export default function Journal({
       </Table>
       <PlainList>
         <li>
-          <NavLink url="/rss.xml">RSS Feed</NavLink>
+          <NavLink url="/rss.xml" decoration="underline">
+            RSS Feed
+          </NavLink>
         </li>
         <li>
-          <NavLink url="/api/posts">Posts API</NavLink>
+          <NavLink url="/api/posts" decoration="underline">
+            Posts API
+          </NavLink>
         </li>
       </PlainList>
     </>

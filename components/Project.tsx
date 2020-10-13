@@ -1,9 +1,10 @@
 import { ReactElement } from "react";
 import { styled } from "tokens";
-import { Heading, Small } from "designSystem";
+import { Heading, P, Small } from "designSystem";
 import { Asset, Project as ProjectType } from "services/contentful.types";
 import RichText from "./RichText";
 import ResponsiveImage from "./ResponsiveImage";
+import NavLink from "./NavLink";
 
 const Container = styled("div", {
   display: "grid",
@@ -40,7 +41,12 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
         <Heading as="h3" margin="tiny" size="small">
           {data.title}
         </Heading>
-        <Small>{data.blurb}</Small>
+        <P>
+          <Small>{data.blurb}</Small>
+        </P>
+        <NavLink url="#" state="disabled" decoration="underline">
+          Case Study Soon
+        </NavLink>
       </div>
       <div>
         <RichText source={data.content} unwrapped />

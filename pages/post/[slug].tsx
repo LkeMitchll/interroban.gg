@@ -90,7 +90,9 @@ export default function Post({ post }: { post: BlogPost }): ReactElement {
       </PageTitle>
       <RichText source={post.content} />
       <Footer>
-        <NavLink url="/journal">Back to Journal</NavLink>
+        <NavLink url="/journal" decoration="underline">
+          Back to Journal
+        </NavLink>
       </Footer>
     </>
   );

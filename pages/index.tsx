@@ -50,13 +50,17 @@ const Home = ({
         col1={
           <>
             <Posts title="Recent Posts" posts={posts} as="h2" />
-            <NavLink url="/journal">See all</NavLink>
+            <NavLink url="/journal" decoration="underline">
+              See all
+            </NavLink>
           </>
         }
         col2={
           <>
             <Bookmarks title="Recent Bookmarks" posts={bookmarks} as="h2" />
-            <NavLink url="/bookmarks">See all</NavLink>
+            <NavLink url="/bookmarks" decoration="underline">
+              See all
+            </NavLink>
           </>
         }
         margin="large"

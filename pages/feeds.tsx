@@ -44,7 +44,9 @@ export default function FeedsPage({
           </TableCell>
         </TableRow>
       </Table>
-      <NavLink url="/api/feeds">Feeds API</NavLink>
+      <NavLink url="/api/feeds" decoration="underline">
+        Feeds API
+      </NavLink>
     </>
   );
   const Wrapper = css({

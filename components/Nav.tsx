@@ -40,17 +40,29 @@ export default function Nav({
   return (
     <List css={css} layout={layout}>
       <Item>
-        <NavLink url="/about" active={currentPage == "/about"}>
+        <NavLink
+          url="/about"
+          state={currentPage == "/about" ? "active" : "inactive"}
+          decoration="underline"
+        >
           About
         </NavLink>
       </Item>
       <Item>
-        <NavLink url="/journal" active={currentPage == "/journal"}>
+        <NavLink
+          url="/journal"
+          state={currentPage == "/journal" ? "active" : "inactive"}
+          decoration="underline"
+        >
           Journal
         </NavLink>
       </Item>
       <Item>
-        <NavLink url="/bookmarks" active={currentPage == "/bookmarks"}>
+        <NavLink
+          url="/bookmarks"
+          state={currentPage == "/bookmarks" ? "active" : "inactive"}
+          decoration="underline"
+        >
           Bookmarks
         </NavLink>
       </Item>
