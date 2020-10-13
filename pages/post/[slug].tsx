@@ -43,16 +43,15 @@ export async function getStaticPaths(): Promise<Paths> {
 const PageTitle = styled("section", {
   marginBottom: "$2",
   display: "grid",
-  gridTemplateColumns: "repeat(4, 1fr)",
-  gridGap: "$2",
+  gridColumnGap: "$2",
 
   variants: {
-    alignment: {
-      center: {
-        textAlign: "center",
+    layout: {
+      oneCol: {
+        gridTemplateColumns: "1fr",
       },
-      left: {
-        textAlign: "left",
+      fourCol: {
+        gridTemplateColumns: "repeat(4, 1fr)",
       },
     },
   },
@@ -71,7 +70,7 @@ export default function Post({ post }: { post: BlogPost }): ReactElement {
   return (
     <>
       <PageMeta title={post.title} description={post.description} />
-      <PageTitle>
+      <PageTitle layout={{ initial: "oneCol", bp3: "fourCol" }}>
         <Title
           title="Post"
           link={{ url: "/journal", text: "Back" }}
