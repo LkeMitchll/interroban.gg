@@ -18,6 +18,9 @@ const Container = styled("div", {
 
   variants: {
     layout: {
+      oneCol: {
+        gridTemplateColumns: "1fr",
+      },
       twoCol: {
         gridTemplateColumns: "repeat(2, 1fr)",
       },
@@ -38,6 +41,9 @@ const Summary = styled("div", {
   variants: {
     layout: {
       single: {
+        gridColumn: "1 / 1",
+      },
+      medium: {
         gridColumn: "1 / 3",
       },
       full: {
@@ -71,8 +77,8 @@ export default function History({
     "Sales Support",
   ];
   return (
-    <Container layout={{ initial: "twoCol", bp3: "fourCol" }}>
-      <Summary layout={{ initial: "single", bp3: "full" }}>
+    <Container layout={{ initial: "oneCol", bp1: "twoCol", bp3: "fourCol" }}>
+      <Summary layout={{ initial: "single", bp1: "medium", bp3: "full" }}>
         <Heading as="h3" size="small">
           Career
         </Heading>
