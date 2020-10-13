@@ -6,3 +6,10 @@ export function formattedDate(
   const niceDate = new Intl.DateTimeFormat("en-US", options).format(input);
   return niceDate;
 }
+
+export function dateToEpochWithOffset(time: number, offset: number): string {
+  const date = new Date();
+  date.setHours(time);
+  date.setDate(date.getDate() - date.getDay() - offset);
+  return Math.round(date.valueOf() / 1000).toString();
+}
