@@ -27,14 +27,14 @@ export default function Layout({
         <link rel="preconnect" href="https://images.ctfassets.net" />
         <link
           rel="preload"
-          href="fonts/pitch-pitch-web-semibold-italic.woff2"
+          href="fonts/pitch-web-semibold-italic.woff2"
           as="font"
           type="font/woff2"
           crossOrigin=""
         />
         <link
           rel="preload"
-          href="fonts/pitch-pitch-web-semibold-italic.woff"
+          href="fonts/pitch-web-semibold-italic.woff"
           as="font"
           type="font/woff"
           crossOrigin=""
