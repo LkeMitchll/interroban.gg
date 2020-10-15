@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
   useDarkMode(undefined, {
     classNameDark: darkThemeClass,
     classNameLight: "theme-default",
+    storageKey: null,
   });
 
   return (
