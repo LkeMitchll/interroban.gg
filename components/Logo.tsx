@@ -22,7 +22,7 @@ export default function Logo({
 }): ReactElement {
   return (
     <Container css={css}>
-      <Link href="/" tabIndex="0" passHref>
+      <Link href="/" passHref>
         <A aria-label="Home" tabIndex={0}>
           <Heading
             size="large"
