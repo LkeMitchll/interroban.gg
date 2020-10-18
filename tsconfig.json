@@ -24,7 +24,7 @@
       "designSystem/*": ["components/designSystem/*"],
       "services/*": ["services/*"],
       "helpers/*": ["helpers/*"],
-      "tokens": ["components/stitches"]
+      "stitches": ["components/stitches"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

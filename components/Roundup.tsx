@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { Bookmark, Roundup as Type } from "services/contentful.types";
 import { A, NumberedList, P } from "./designSystem";
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const Item = styled("li", {
   marginBottom: "$2",

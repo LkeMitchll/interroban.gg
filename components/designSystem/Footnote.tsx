@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const Footnote = styled("figure", {
   gridRow: "auto",

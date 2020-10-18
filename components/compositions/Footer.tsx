@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { PlainList, TertiaryText, Subtitle, Small } from "designSystem";
 import { NavLink, Nav } from "components";
 import { ReactElement } from "react";

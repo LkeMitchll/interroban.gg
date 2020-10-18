@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { NavLink } from "components";
 import { ReactElement } from "react";
 import { TCssWithBreakpoints } from "@stitches/react";

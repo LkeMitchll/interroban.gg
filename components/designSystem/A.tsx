@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const A = styled("a", {
   color: "$primary",

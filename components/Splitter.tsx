@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const Container = styled("section", {
   display: "grid",

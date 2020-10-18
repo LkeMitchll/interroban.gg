@@ -1,4 +1,4 @@
-import { theme } from "tokens";
+import { theme } from "stitches";
 import { ReactElement } from "react";
 
 const GlobalStyles = (): ReactElement => (

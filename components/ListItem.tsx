@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { ReactElement } from "react";
 import { A, Image, P, SecondaryText, TertiaryText } from "designSystem";
 import Link from "next/link";

@@ -1,6 +1,6 @@
 import React from "react";
 import NextDocument, { DocumentContext, Html } from "next/document";
-import { css } from "tokens";
+import { css } from "stitches";
 
 export default class Document extends NextDocument {
   static async getInitialProps(ctx: DocumentContext): Promise<any> {

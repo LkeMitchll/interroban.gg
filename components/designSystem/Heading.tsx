@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const Heading = styled("h1", {
   color: "$primary",

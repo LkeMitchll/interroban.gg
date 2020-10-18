@@ -1,6 +1,6 @@
 import { TCssWithBreakpoints } from "@stitches/react";
 import { ReactElement } from "react";
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const Tag = styled("h2", {
   color: "$primary",

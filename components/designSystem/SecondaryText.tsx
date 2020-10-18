@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const SecondaryText = styled("p", {
   fontFamily: "$serif",

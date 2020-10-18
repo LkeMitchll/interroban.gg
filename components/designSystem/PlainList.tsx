@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const PlainList = styled("ul", {
   padding: "$0",

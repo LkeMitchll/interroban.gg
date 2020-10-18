@@ -3,7 +3,7 @@ import { SecondaryText, Heading } from "designSystem";
 import { ReactElement } from "react";
 import { JournalEntry } from "services/contentful.types";
 import { formattedDate } from "helpers/date";
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const Container = styled("div", {
   paddingRight: "$2",

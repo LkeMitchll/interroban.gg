@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { Heading, P, Small } from "designSystem";
 import { Asset, Project as ProjectType } from "services/contentful.types";
 import RichText from "./RichText";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { Heading } from "designSystem";
 import { ReactElement } from "react";
 

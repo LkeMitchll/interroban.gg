@@ -1,6 +1,6 @@
 import { Title, Markdown } from "components";
 import { Footnote, Small } from "designSystem";
-import { css, styled } from "tokens";
+import { css, styled } from "stitches";
 import { ReactElement } from "react";
 import { Asset } from "services/contentful.types";
 import ResponsiveImage from "components/ResponsiveImage";

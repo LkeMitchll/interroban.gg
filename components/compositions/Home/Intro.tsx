@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { Markdown, Title } from "components";
 import { ReactElement } from "react";
 import { Page } from "services/contentful.types";

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { Transition } from "components";
 import { Header, Footer } from "compositions";
 import { ReactElement } from "react";

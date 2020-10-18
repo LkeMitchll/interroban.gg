@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 
 const Image = styled("img", {
   marginBottom: "$1",

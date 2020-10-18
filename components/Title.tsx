@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { Heading } from "designSystem";
 import { NavLink } from "components";
 import { ReactElement } from "react";

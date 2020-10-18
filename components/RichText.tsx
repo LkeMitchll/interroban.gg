@@ -11,7 +11,7 @@ import {
 } from "@contentful/rich-text-types";
 import { Asset } from "services/contentful.types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { styled } from "tokens";
+import { styled } from "stitches";
 import {
   P,
   Small,

@@ -1,4 +1,4 @@
-import { styled } from "tokens";
+import { styled } from "stitches";
 import { Asset, List } from "services/contentful.types";
 import { ReactElement } from "react";
 import { P, PlainList, Heading, Subtitle } from "designSystem";
