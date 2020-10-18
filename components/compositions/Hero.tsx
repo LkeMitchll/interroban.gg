@@ -57,8 +57,13 @@ export default function Hero({
   stats?: ReactElement;
 }): ReactElement {
   const introWrapper = css({
-    gridArea: "b",
+    gridColumn: "b",
+    gridRow: image ? "4" : "b",
     paddingRight: "$2",
+
+    bp2: {
+      gridRow: image ? "3" : "b",
+    },
   });
   return (
     <Container
