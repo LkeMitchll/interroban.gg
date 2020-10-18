@@ -1,18 +1,19 @@
-import Layout from "./Layout";
-import Nav from "./Nav";
-import Logo from "./Logo";
-import Title from "./Title";
-import Markdown from "./Markdown";
-import NavLink from "./NavLink";
-import RichText from "./RichText";
-import ListItem from "./ListItem";
-import Transition from "./Transition";
+import BlockQuote from "./BlockQuote";
 import Bookmark from "./Bookmark";
-import Roundup from "./Roundup";
-import Splitter from "./Splitter";
+import Layout from "./Layout";
+import ListItem from "./ListItem";
+import Logo from "./Logo";
+import Markdown from "./Markdown";
+import Nav from "./Nav";
+import NavLink from "./NavLink";
+import PageMeta from "./PageMeta";
 import Project from "./Project";
 import ResponsiveImage from "./ResponsiveImage";
-import PageMeta from "./PageMeta";
+import RichText from "./RichText";
+import Roundup from "./Roundup";
+import Splitter from "./Splitter";
+import Title from "./Title";
+import Transition from "./Transition";
 
 export {
   Layout,
@@ -30,4 +31,5 @@ export {
   Project,
   ResponsiveImage,
   PageMeta,
+  BlockQuote,
 };

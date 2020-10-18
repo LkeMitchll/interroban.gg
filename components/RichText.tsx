@@ -23,6 +23,7 @@ import {
 } from "designSystem";
 import ResponsiveImage from "./ResponsiveImage";
 import { ImageSizes } from "helpers/image";
+import { BlockQuote } from "components";
 
 type RichTextProps = {
   source?: Document;
@@ -151,6 +152,9 @@ const options = {
     ),
     [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
       <BulletList css={{ gridArea: "auto / c" }}>{children}</BulletList>
+    ),
+    [BLOCKS.QUOTE]: (_: Block, children: RichTextChildren) => (
+      <BlockQuote css={{ gridArea: "auto / c" }}>{children}</BlockQuote>
     ),
     [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
       return <A href={node.data.uri}>{children}</A>;
