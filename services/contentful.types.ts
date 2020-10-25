@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Document } from "@contentful/rich-text-types";
 
 export type Page = {
@@ -70,3 +71,5 @@ export type Project = {
   image: Asset;
   content: Document;
 };
+
+export type RichTextChildren = Array<string | ReactNode>;
