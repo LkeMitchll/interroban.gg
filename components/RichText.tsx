@@ -44,7 +44,11 @@ const options = {
       return generateFootnotes(node, children);
     },
     [BLOCKS.HEADING_2]: (_: Heading2, children: RichTextChildren) => (
-      <Heading as="h2" css={{ gridArea: "auto / c" }} size="small">
+      <Heading
+        as="h2"
+        css={{ gridArea: "auto / c", marginTop: "$1" }}
+        size="small"
+      >
         {children}
       </Heading>
     ),
