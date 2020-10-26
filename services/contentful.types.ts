@@ -12,14 +12,22 @@ export type Bookmark = {
   id: string;
   title: string;
   url: string;
-  tag: string;
+  tag:
+    | "Web design"
+    | "Music"
+    | "Book"
+    | "Article"
+    | "Resource"
+    | "App"
+    | "Inspiration"
+    | "Project";
   date: Date;
   notes?: string;
 };
 
 export type List = {
-  title: string;
-  items: Array<any>;
+  title?: string | undefined;
+  items: (Job | Project | ReadingEntry)[];
 };
 
 export type Job = {

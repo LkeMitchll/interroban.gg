@@ -1,5 +1,5 @@
 import { styled } from "stitches";
-import { Asset, List } from "services/contentful.types";
+import { Asset, List, Job } from "services/contentful.types";
 import { ReactElement } from "react";
 import { P, PlainList, Heading, Subtitle } from "designSystem";
 import { ListItem } from "components";
@@ -100,12 +100,12 @@ export default function History({
           {experience.title}
         </Subtitle>
         <PlainList>
-          {experience.items.map((item) => (
+          {experience.items.map((item: Job) => (
             <ListItem
               key={item.id}
-              top={item.period}
+              top={item.period ? item.period : null}
               title={item.title}
-              subtitle={item.company}
+              subtitle={item.company ? item.company : null}
             />
           ))}
         </PlainList>
