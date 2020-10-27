@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
-import { styled } from "stitches";
 import { Heading, P, Small } from "designSystem";
-import { Asset, Project as ProjectType } from "services/contentful.types";
-import RichText from "./RichText";
-import ResponsiveImage from "./ResponsiveImage";
+import { ReactElement } from "react";
+import { Project as ProjectType } from "services/contentful.types";
+import { styled } from "stitches";
 import NavLink from "./NavLink";
+import ResponsiveImage from "./ResponsiveImage";
+import RichText from "./RichText";
 
 const Container = styled("div", {
   display: "grid",
@@ -33,10 +33,7 @@ const Container = styled("div", {
 export default function Project({ data }: { data: ProjectType }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
-      <ResponsiveImage
-        image={data.image as Asset}
-        css={{ gridArea: "image" }}
-      />
+      <ResponsiveImage image={data.image} css={{ gridArea: "image" }} />
       <div>
         <Heading as="h3" margin="tiny" size="small">
           {data.title}

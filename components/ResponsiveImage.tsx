@@ -1,11 +1,13 @@
 import { ReactElement } from "react";
-import { Image } from "designSystem";
+import Image from "next/image";
 import { Asset } from "services/contentful.types";
-import { ImageSrc, ImageSizes } from "helpers/image";
+import { ImageSizes } from "helpers/image";
 import { TCssWithBreakpoints } from "@stitches/react";
 import { styled } from "./stitches";
 
-const Wrapper = styled("picture", { display: "block" });
+const Wrapper = styled("div", {
+  " div": { width: "100% !important" },
+});
 
 export default function ResponsiveImage({
   image,
@@ -18,20 +20,12 @@ export default function ResponsiveImage({
 }): ReactElement {
   return (
     <Wrapper css={css}>
-      <source
-        type="image/webp"
-        srcSet={ImageSrc(image, "webp")}
-        sizes={sizes ? sizes : ImageSizes.fullWidth}
-      />
       <Image
-        srcSet={ImageSrc(image, "jpg")}
-        sizes={sizes ? sizes : ImageSizes.fullWidth}
-        src={image.url}
-        alt={image.desc}
+        src={`https:${image.url}`}
         width={image.width}
         height={image.height}
-        css={{ gridArea: "image" }}
-        loading="lazy"
+        sizes={sizes ? sizes : ImageSizes.fullWidth}
+        quality="90"
       />
     </Wrapper>
   );
