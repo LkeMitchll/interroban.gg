@@ -26,6 +26,7 @@ export default function ResponsiveImage({
         height={image.height}
         sizes={sizes ? sizes : ImageSizes.fullWidth}
         quality="90"
+        alt={image.desc}
       />
     </Wrapper>
   );
