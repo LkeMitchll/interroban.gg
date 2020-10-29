@@ -29,7 +29,8 @@ export default function Posts({
               month: "long",
               year: "numeric",
             })}
-            url={`/post/${post.slug}`}
+            url={`/post/[slug]`}
+            urlAs={`/post/${post.slug}`}
           />
         ))}
       </PlainList>
