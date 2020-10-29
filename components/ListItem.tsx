@@ -8,7 +8,6 @@ interface ListItemProps {
   top?: string;
   title: string;
   url?: string;
-  urlAs?: string;
   subtitle: string;
   image?: CoverArt;
   external?: boolean;
@@ -34,7 +33,6 @@ export default function ListItem({
   top,
   title,
   url,
-  urlAs,
   subtitle,
   image,
   external,
@@ -53,7 +51,7 @@ export default function ListItem({
       {top ? <TertiaryText margin="none">{top}</TertiaryText> : null}
       <Divider appearance={image ? "inline" : null}>
         {url ? (
-          <Link href={url} as={urlAs} passHref>
+          <Link href={url} passHref>
             <A
               target={external ? "_blank" : null}
               rel={external ? "noreferrer" : null}
