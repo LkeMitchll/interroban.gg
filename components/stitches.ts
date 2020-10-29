@@ -36,9 +36,10 @@ export const theme = {
   },
   fonts: {
     $system: "system-ui",
-    $sans: "GT America Extended",
-    $serif: "Blanco",
-    $mono: "Pitch",
+    $sans:
+      "'GT America Extended', ‘Helvetica Neue’, Helvetica, Arial, sans-serif",
+    $serif: "'Blanco', Georgia, 'Times New Roman', Times, serif",
+    $mono: "'Pitch', Monaco, ‘Courier New’, Courier, monospace",
   },
   letterSpacings: {
     $logo: "-0.5px",
