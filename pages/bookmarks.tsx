@@ -42,20 +42,22 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
   const stats = (
     <div>
       <Table>
-        <TableRow>
-          <TableCell appearance="alternative">Total</TableCell>
-          <TableCell>{posts.length}</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell appearance="alternative">Updated</TableCell>
-          <TableCell>
-            {formattedDate(posts[0].date, {
-              day: "numeric",
-              month: "numeric",
-              year: "numeric",
-            })}
-          </TableCell>
-        </TableRow>
+        <tbody>
+          <TableRow>
+            <TableCell appearance="alternative">Total</TableCell>
+            <TableCell>{posts.length}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell appearance="alternative">Updated</TableCell>
+            <TableCell>
+              {formattedDate(posts[0].date, {
+                day: "numeric",
+                month: "numeric",
+                year: "numeric",
+              })}
+            </TableCell>
+          </TableRow>
+        </tbody>
       </Table>
       <NavLink url="/api/bookmarks" decoration="underline">
         Bookmarks API

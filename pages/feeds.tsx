@@ -29,20 +29,22 @@ export default function FeedsPage({
   const stats = (
     <>
       <Table>
-        <TableRow>
-          <TableCell appearance="alternative">Total</TableCell>
-          <TableCell>{feeds.length}</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell appearance="alternative">Updated</TableCell>
-          <TableCell>
-            {formattedDate(feeds[0].created_at, {
-              day: "numeric",
-              month: "numeric",
-              year: "numeric",
-            })}
-          </TableCell>
-        </TableRow>
+        <tbody>
+          <TableRow>
+            <TableCell appearance="alternative">Total</TableCell>
+            <TableCell>{feeds.length}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell appearance="alternative">Updated</TableCell>
+            <TableCell>
+              {formattedDate(feeds[0].created_at, {
+                day: "numeric",
+                month: "numeric",
+                year: "numeric",
+              })}
+            </TableCell>
+          </TableRow>
+        </tbody>
       </Table>
       <NavLink url="/api/feeds" decoration="underline">
         Feeds API

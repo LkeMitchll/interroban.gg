@@ -41,14 +41,16 @@ export default function Journal({
   const stats = (
     <>
       <Table>
-        <TableRow>
-          <TableCell appearance="alternative">Total</TableCell>
-          <TableCell>{blogPosts.length} Posts</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell appearance="alternative">Updated</TableCell>
-          <TableCell>{blogPosts[0].date}</TableCell>
-        </TableRow>
+        <tbody>
+          <TableRow>
+            <TableCell appearance="alternative">Total</TableCell>
+            <TableCell>{blogPosts.length} Posts</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell appearance="alternative">Updated</TableCell>
+            <TableCell>{blogPosts[0].date}</TableCell>
+          </TableRow>
+        </tbody>
       </Table>
       <PlainList>
         <li>
