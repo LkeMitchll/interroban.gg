@@ -5,9 +5,7 @@ import { ImageSizes } from "helpers/image";
 import { TCssWithBreakpoints } from "@stitches/react";
 import { styled } from "./stitches";
 
-const Wrapper = styled("div", {
-  " div": { width: "100% !important" },
-});
+const Wrapper = styled("div", {});
 
 export default function ResponsiveImage({
   image,
@@ -26,6 +24,7 @@ export default function ResponsiveImage({
         height={image.height}
         sizes={sizes ? sizes : ImageSizes.fullWidth}
         quality="90"
+        layout="responsive"
         alt={image.desc}
       />
     </Wrapper>
