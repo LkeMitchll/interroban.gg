@@ -27,11 +27,6 @@ const A = styled("a", {
       active: {
         fontStyle: "italic",
       },
-      disabled: {
-        opacity: "0.8",
-        cursor: "not-allowed",
-        pointerEvents: "none",
-      },
     },
   },
 });
@@ -39,7 +34,7 @@ const A = styled("a", {
 interface NavLinkProps {
   children: React.ReactNode;
   url?: string;
-  state?: "active" | "inactive" | "disabled";
+  state?: "active" | "inactive";
   decoration?: "plain" | "underline";
 }
 

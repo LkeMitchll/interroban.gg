@@ -2,7 +2,6 @@ import { Heading, P, Small } from "designSystem";
 import { ReactElement } from "react";
 import { Project as ProjectType } from "services/contentful.types";
 import { styled } from "stitches";
-import NavLink from "./NavLink";
 import ResponsiveImage from "./ResponsiveImage";
 import RichText from "./RichText";
 
@@ -41,9 +40,6 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
         <P>
           <Small>{data.blurb}</Small>
         </P>
-        <NavLink url="#" state="disabled" decoration="underline">
-          Case Study Soon
-        </NavLink>
       </div>
       <div>
         <RichText source={data.content} unwrapped />
