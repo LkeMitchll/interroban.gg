@@ -29,21 +29,29 @@ const Container = styled("div", {
   },
 });
 
+const Column = styled("div", {
+  marginTop: "$0",
+
+  bp2: {
+    marginTop: "$1",
+  },
+});
+
 export default function Project({ data }: { data: ProjectType }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
       <ResponsiveImage image={data.image} css={{ gridArea: "image" }} />
-      <div>
+      <Column>
         <Heading as="h3" margin="tiny" size="small">
           {data.title}
         </Heading>
         <P>
           <Small>{data.blurb}</Small>
         </P>
-      </div>
-      <div>
+      </Column>
+      <Column>
         <RichText source={data.content} unwrapped />
-      </div>
+      </Column>
     </Container>
   );
 }
