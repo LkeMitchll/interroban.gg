@@ -9,6 +9,11 @@ const Container = styled("div", {
   display: "grid",
   gridColumnGap: "$2",
   gridRowGap: "$1",
+  marginBottom: "$2",
+
+  ":last-of-type": {
+    marginBottom: "$0",
+  },
 
   variants: {
     layout: {
