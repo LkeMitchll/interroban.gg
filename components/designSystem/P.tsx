@@ -25,6 +25,9 @@ const P = styled("p", {
       relaxed: {
         lineHeight: "$relaxed",
       },
+      crushed: {
+        lineHeight: "$crushed",
+      },
     },
   },
 });

@@ -50,7 +50,7 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
         <Heading as="h3" margin="tiny" size="small">
           {data.title}
         </Heading>
-        <P>
+        <P lineHeight="crushed" margin="none">
           <Small>{data.blurb}</Small>
         </P>
       </Column>
