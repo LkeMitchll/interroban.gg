@@ -23,10 +23,12 @@ const SubContainer = styled("section", {
       vertical: {
         gridArea: "auto / c",
         gridTemplateColumns: "repeat(3, 1fr)",
+        gridTemplateAreas: `"c c c"`,
       },
       horizontal: {
         gridArea: "auto / c / auto / f",
         gridTemplateColumns: "repeat(3, 1fr)",
+        gridTemplateAreas: `"c c f"`,
       },
     },
   },
@@ -84,19 +86,12 @@ export function generateFootnotes(
 
   if (footnotes.length !== 0) {
     return (
-      <SubContainer layout={{ initial: "vertical", bp2: "horizontal" }}>
-        <P
-          css={{
-            gridArea: "1 / 1 / 1 / 4",
-            bp3: { gridColumnEnd: "3" },
-          }}
-        >
-          {children}
-        </P>
+      <SubContainer layout={{ initial: "vertical", bp3: "horizontal" }}>
+        <P>{children}</P>
         {footnotes}
       </SubContainer>
     );
   } else {
-    return <P css={{ gridArea: "auto / c" }}>{children}</P>;
+    return <P>{children}</P>;
   }
 }

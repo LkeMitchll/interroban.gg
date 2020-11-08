@@ -26,6 +26,10 @@ const Content = styled("article", {
   gridRowGap: "$1",
   position: "relative",
 
+  " *": {
+    gridColumn: "c",
+  },
+
   variants: {
     layout: {
       small: {
@@ -53,15 +57,13 @@ const options = {
       </Heading>
     ),
     [BLOCKS.HEADING_3]: (_: Heading2, children: RichTextChildren) => (
-      <Subtitle level="h3" css={{ gridArea: "auto / c" }}>
-        {children}
-      </Subtitle>
+      <Subtitle level="h3">{children}</Subtitle>
     ),
     [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
-      <BulletList css={{ gridArea: "auto / c" }}>{children}</BulletList>
+      <BulletList>{children}</BulletList>
     ),
     [BLOCKS.QUOTE]: (_: Block, children: RichTextChildren) => (
-      <BlockQuote css={{ gridArea: "auto / c" }}>{children}</BlockQuote>
+      <BlockQuote>{children}</BlockQuote>
     ),
     [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
       return <A href={node.data.uri}>{children}</A>;
