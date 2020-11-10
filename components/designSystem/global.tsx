@@ -4,6 +4,60 @@ import { ReactElement } from "react";
 const GlobalStyles = (): ReactElement => (
   <style global jsx>
     {`
+      @font-face {
+        font-family: "GT America Extended";
+        font-weight: 600;
+        font-style: bold;
+        font-display: swap;
+        src: url(/fonts/GT-America-Extended-Medium.subset.woff2) format("woff2"),
+          url(/fonts/GT-America-Extended-Medium.subset.woff) format("woff");
+      }
+
+      @font-face {
+        font-family: "Blanco";
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: url(/fonts/Blanco-Regular.subset.woff2) format("woff2"),
+          url(/fonts/Blanco-Regular.subset.woff) format("woff");
+      }
+
+      @font-face {
+        font-family: "Blanco";
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+        src: url(/fonts/Blanco-Italic.subset.woff2) format("woff2"),
+          url(/fonts/Blanco-Italic.subset.woff) format("woff");
+      }
+
+      @font-face {
+        font-family: "Blanco";
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        src: url(/fonts/Blanco-Medium.subset.woff2) format("woff2"),
+          url(/fonts/Blanco-Medium.subset.woff) format("woff");
+      }
+
+      @font-face {
+        font-family: "Pitch";
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        src: url(/fonts/pitch-web-semibold.subset.woff2) format("woff2"),
+          url(/fonts/pitch-web-semibold.subset.woff) format("woff");
+      }
+
+      @font-face {
+        font-family: "Pitch";
+        font-weight: 600;
+        font-style: italic;
+        font-display: swap;
+        src: url(/fonts/pitch-web-semibold-italic.subset.woff2) format("woff2"),
+          url(/fonts/pitch-web-semibold-italic.subset.woff) format("woff");
+      }
+
       html {
         font-size: 16px;
       }
