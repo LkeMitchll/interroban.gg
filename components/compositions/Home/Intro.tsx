@@ -23,7 +23,7 @@ const Container = styled("section", {
 export default function About({ content }: { content?: Page }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
-      <Title title="About Me" link={{ text: "Read more", url: "/about" }} />
+      <Title title="About Me" link={{ text: "More /about", url: "/about" }} />
       <RichText source={content.description} unwrapped />
     </Container>
   );
