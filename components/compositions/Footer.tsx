@@ -80,7 +80,11 @@ export default function Footer(): ReactElement {
       <PlainList>
         {links.map((link: Record<"title" | "url", string>, i: number) => (
           <Item key={i}>
-            <NavLink url={link.url} decoration="plain">
+            <NavLink
+              url={link.url}
+              margin={{ initial: "medium", bp2: "small" }}
+              decoration="plain"
+            >
               {link.title}
             </NavLink>
           </Item>

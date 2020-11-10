@@ -44,6 +44,7 @@ export default function Nav({
           url="/about"
           state={currentPage == "/about" ? "active" : "inactive"}
           decoration="underline"
+          margin={{ initial: "medium", bp2: "small" }}
         >
           About
         </NavLink>
@@ -53,6 +54,7 @@ export default function Nav({
           url="/journal"
           state={currentPage == "/journal" ? "active" : "inactive"}
           decoration="underline"
+          margin={{ initial: "medium", bp2: "small" }}
         >
           Journal
         </NavLink>
@@ -62,6 +64,7 @@ export default function Nav({
           url="/bookmarks"
           state={currentPage == "/bookmarks" ? "active" : "inactive"}
           decoration="underline"
+          margin={{ initial: "medium", bp2: "small" }}
         >
           Bookmarks
         </NavLink>
