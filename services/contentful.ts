@@ -151,7 +151,7 @@ export class ContentAPI {
       const page = {
         id: entry.sys.id,
         title: entry.fields.title,
-        description: entry.fields.description,
+        description: entry.fields.descriptionRich,
         content: entry.fields.content ? entry.fields.content : null,
       };
       return page;

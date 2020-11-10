@@ -1,10 +1,11 @@
-import { Title, Markdown } from "components";
+import { Title, RichText } from "components";
 import { Footnote, Small } from "designSystem";
 import { css, styled } from "stitches";
 import { ReactElement } from "react";
 import { Asset } from "services/contentful.types";
 import ResponsiveImage from "components/ResponsiveImage";
 import { ImageSizes } from "helpers/image";
+import { Document } from "@contentful/rich-text-types";
 
 const Container = styled("div", {
   display: "grid",
@@ -53,7 +54,7 @@ export default function Hero({
 }: {
   image?: Asset;
   title: string;
-  intro?: string;
+  intro?: Document;
   stats?: ReactElement;
 }): ReactElement {
   const introWrapper = css({
@@ -65,6 +66,7 @@ export default function Hero({
       gridRow: image ? "3" : "b",
     },
   });
+
   return (
     <Container
       layout={
@@ -78,7 +80,11 @@ export default function Hero({
         link={{ url: "/", text: "Back" }}
         css={{ gridArea: "a" }}
       />
-      {intro ? <Markdown className={introWrapper} source={intro} /> : null}
+      {intro ? (
+        <div className={introWrapper}>
+          <RichText source={intro} unwrapped />
+        </div>
+      ) : null}
       {stats && <StatsContainer>{stats}</StatsContainer>}
       {image ? (
         <>

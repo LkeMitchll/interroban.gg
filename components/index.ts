@@ -3,7 +3,6 @@ import Bookmark from "./Bookmark";
 import Layout from "./Layout";
 import ListItem from "./ListItem";
 import Logo from "./Logo";
-import Markdown from "./Markdown";
 import Nav from "./Nav";
 import NavLink from "./NavLink";
 import PageMeta from "./PageMeta";
@@ -20,7 +19,6 @@ export {
   Nav,
   Logo,
   Title,
-  Markdown,
   NavLink,
   RichText,
   ListItem,

@@ -4,7 +4,7 @@ import { Document } from "@contentful/rich-text-types";
 export type Page = {
   id: string;
   title: string;
-  description: string;
+  description: Document;
   content?: Document;
 };
 

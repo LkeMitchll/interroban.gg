@@ -1,5 +1,5 @@
 import { styled } from "stitches";
-import { Markdown, Title } from "components";
+import { RichText, Title } from "components";
 import { ReactElement } from "react";
 import { Page } from "services/contentful.types";
 
@@ -24,7 +24,7 @@ export default function About({ content }: { content?: Page }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
       <Title title="About Me" link={{ text: "Read more", url: "/about" }} />
-      <Markdown source={content.description} />
+      <RichText source={content.description} unwrapped />
     </Container>
   );
 }
