@@ -17,6 +17,7 @@ export default function Layout({
 }): ReactElement {
   const router = useRouter();
   const isBlogPost = router.route === "/post/[slug]";
+  const fontFiles = ["Blanco-Medium", "pitch-web-semibold-italic"];
 
   return (
     <>
@@ -25,20 +26,16 @@ export default function Layout({
         <link href="/images/favicon.svg" rel="icon" type="image/svg+xml" />
         <link color="#000" href="/images/favicon.svg" rel="mask-icon" />
         <link rel="preconnect" href="https://images.ctfassets.net" />
-        <link
-          rel="preload"
-          href="fonts/Blanco-Medium.subset.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="fonts/pitch-web-semibold-italic.subset.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
+        {fontFiles.map((font, i) => (
+          <link
+            key={i}
+            rel="preload"
+            href={`fonts/${font}.subset.woff2`}
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
+        ))}
       </Head>
 
       <Header />
