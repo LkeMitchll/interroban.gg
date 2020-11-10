@@ -64,6 +64,13 @@ export type BlogPost = {
   description: string;
 };
 
+export type BlogPostPreview = {
+  id: string;
+  title: string;
+  slug: string;
+  date: Date;
+};
+
 export type ReadingEntry = {
   id: string;
   title: string;

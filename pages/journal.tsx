@@ -3,7 +3,7 @@ import { Hero, Listening, Now, Posts, Reading } from "compositions";
 import { ContentAPI } from "services/contentful";
 import { GetStaticProps } from "next";
 import { ReactElement } from "react";
-import { BlogPost, JournalEntry, Page } from "services/contentful.types";
+import { BlogPostPreview, JournalEntry, Page } from "services/contentful.types";
 import useSWR from "swr";
 import generateRss from "helpers/rss";
 import fs from "fs";
@@ -17,16 +17,18 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   const journalEntry = await api.fetchJournalEntry();
   const blogPosts = await api.fetchBlogPosts();
   const readingEntries = await api.fetchList("2uust09L73V2AcXwl3F80h");
-  const rss = generateRss(blogPosts);
 
+  const blogPostsFull = await api.fetchBlogPostsFull();
+  const rss = generateRss(blogPostsFull);
   fs.writeFileSync("./public/rss.xml", rss);
+
   return { props: { page, journalEntry, blogPosts, readingEntries } };
 };
 
 interface JournalProps {
   page: Page;
   journalEntry: JournalEntry;
-  blogPosts: BlogPost[];
+  blogPosts: BlogPostPreview[];
   readingEntries: any;
 }
 

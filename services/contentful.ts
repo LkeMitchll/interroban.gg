@@ -13,6 +13,7 @@ import {
   Roundup,
   JournalEntry,
   BlogPost,
+  BlogPostPreview,
   ReadingEntry,
   Project,
 } from "./contentful.types";
@@ -100,7 +101,17 @@ export class ContentAPI {
     };
   };
 
-  convertBlogPost = (rawData: Entry<any>): BlogPost => {
+  convertBlogPreviewPost = (rawData: Entry<any>): BlogPostPreview => {
+    const rawPost = rawData.fields;
+    return {
+      id: rawData.sys.id,
+      title: rawPost.title ? rawPost.title : null,
+      slug: rawPost.slug ? rawPost.slug : null,
+      date: rawPost.date ? rawPost.date : null,
+    };
+  };
+
+  convertBlogFullPost = (rawData: Entry<any>): BlogPost => {
     const rawPost = rawData.fields;
     return {
       id: rawData.sys.id,
@@ -152,6 +163,7 @@ export class ContentAPI {
       .getEntries({
         content_type: "blogPost",
         order: "-fields.publishDate",
+        "sys.createdAt[gte]": "2020-01-01T00:00:00Z",
         limit: limit,
       })
       .then((result) => {
@@ -183,12 +195,14 @@ export class ContentAPI {
         limit: 1,
       })
       .then((result) => {
-        const posts = result.items.map((post) => this.convertBlogPost(post));
+        const posts = result.items.map((post) =>
+          this.convertBlogFullPost(post),
+        );
         return posts[0];
       });
   }
 
-  async fetchBlogPosts(limit = 100): Promise<BlogPost[]> {
+  async fetchBlogPosts(limit = 100): Promise<BlogPostPreview[]> {
     return await this.client
       .getEntries({
         content_type: "post",
@@ -196,7 +210,24 @@ export class ContentAPI {
         limit: limit,
       })
       .then((result) => {
-        const posts = result.items.map((post) => this.convertBlogPost(post));
+        const posts = result.items.map((post) =>
+          this.convertBlogPreviewPost(post),
+        );
+        return posts;
+      });
+  }
+
+  async fetchBlogPostsFull(limit = 100): Promise<BlogPost[]> {
+    return await this.client
+      .getEntries({
+        content_type: "post",
+        order: "-fields.date",
+        limit: limit,
+      })
+      .then((result) => {
+        const posts = result.items.map((post) =>
+          this.convertBlogFullPost(post),
+        );
         return posts;
       });
   }
