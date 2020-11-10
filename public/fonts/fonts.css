@@ -21,8 +21,8 @@
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url(/fonts/Blanco-Italic.woff2) format("woff2"),
-    url(/fonts/Blanco-Italic.woff) format("woff");
+  src: url(/fonts/Blanco-Italic.subset.woff2) format("woff2"),
+    url(/fonts/Blanco-Italic.subset.woff) format("woff");
 }
 
 @font-face {
@@ -30,8 +30,8 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url(/fonts/Blanco-Medium.woff2) format("woff2"),
-    url(/fonts/Blanco-Medium.woff) format("woff");
+  src: url(/fonts/Blanco-Medium.subset.woff2) format("woff2"),
+    url(/fonts/Blanco-Medium.subset.woff) format("woff");
 }
 
 @font-face {
@@ -39,8 +39,8 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url(/fonts/pitch-web-semibold.woff2) format("woff2"),
-    url(/fonts/pitch-web-semibold.woff) format("woff");
+  src: url(/fonts/pitch-web-semibold.subset.woff2) format("woff2"),
+    url(/fonts/pitch-web-semibold.subset.woff) format("woff");
 }
 
 @font-face {
@@ -48,6 +48,6 @@
   font-weight: 600;
   font-style: italic;
   font-display: swap;
-  src: url(/fonts/pitch-web-semibold-italic.woff2) format("woff2"),
-    url(/fonts/pitch-web-semibold-italic.woff) format("woff");
+  src: url(/fonts/pitch-web-semibold-italic.subset.woff2) format("woff2"),
+    url(/fonts/pitch-web-semibold-italic.subset.woff) format("woff");
 }
