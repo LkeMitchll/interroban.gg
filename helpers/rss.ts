@@ -1,11 +1,10 @@
 import { BlogPost } from "services/contentful.types";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { encodeXML } from "entities";
 
 const generateRssItem = (post: BlogPost): string => `
   <item>
     <guid>https://interroban.gg/post/${post.slug}</guid>
-    <title>${encodeXML(post.title)}</title>
+    <title><![CDATA[${post.title}]]></title>
     <link>http://interroban.gg/post/${post.slug}</link>
     <description>
       <![CDATA[${documentToHtmlString(post.content)}]]>
