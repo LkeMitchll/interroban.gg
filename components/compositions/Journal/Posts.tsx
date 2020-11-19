@@ -1,4 +1,4 @@
-import { ListItem } from "components";
+import { ListItem, ArrowLink } from "components";
 import { Heading, PlainList } from "designSystem";
 import { ReactElement } from "react";
 import { BlogPostPreview } from "services/contentful.types";
@@ -16,7 +16,7 @@ export default function Posts({
   size?: "small" | "large";
 }): ReactElement {
   return (
-    <div>
+    <>
       <Heading as={as ? as : "h3"} margin="medium" size={size ? size : "large"}>
         {title}
       </Heading>
@@ -33,6 +33,7 @@ export default function Posts({
           />
         ))}
       </PlainList>
-    </div>
+      <ArrowLink url="/journal" text="See all" />
+    </>
   );
 }

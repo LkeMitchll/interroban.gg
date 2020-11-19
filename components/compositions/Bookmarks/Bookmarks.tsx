@@ -1,5 +1,5 @@
 import { PlainList, Heading } from "designSystem";
-import { Bookmark as Item } from "components";
+import { Bookmark as Item, ArrowLink } from "components";
 import { ReactElement } from "react";
 import { Bookmark } from "services/contentful.types";
 
@@ -25,6 +25,7 @@ export default function List({
           <Item key={entry.id} data={entry} />
         ))}
       </PlainList>
+      <ArrowLink url="/bookmarks" text="See all" />
     </>
   );
 }

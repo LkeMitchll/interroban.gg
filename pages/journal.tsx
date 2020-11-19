@@ -1,4 +1,4 @@
-import { NavLink, PageMeta, Splitter } from "components";
+import { ArrowLink, PageMeta, Splitter } from "components";
 import { Hero, Listening, Now, Posts, Reading } from "compositions";
 import { ContentAPI } from "services/contentful";
 import { GetStaticProps } from "next";
@@ -56,14 +56,10 @@ export default function Journal({
       </Table>
       <PlainList>
         <li>
-          <NavLink url="/rss.xml" decoration="underline">
-            RSS Feed
-          </NavLink>
+          <ArrowLink url="/rss.xml" text="RSS Feed" />
         </li>
         <li>
-          <NavLink url="/api/posts" decoration="underline">
-            Posts API
-          </NavLink>
+          <ArrowLink url="/api/posts" text="Posts API" />
         </li>
       </PlainList>
     </>

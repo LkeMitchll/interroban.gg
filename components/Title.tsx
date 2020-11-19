@@ -1,6 +1,6 @@
 import { styled } from "stitches";
 import { Heading } from "designSystem";
-import { NavLink } from "components";
+import { ArrowLink } from "components";
 import { ReactElement } from "react";
 import { TCssWithBreakpoints } from "@stitches/react";
 
@@ -37,11 +37,7 @@ const Title = ({
           {title}
         </Heading>
       )}
-      {link ? (
-        <NavLink url={link.url} decoration="underline">
-          {link.text}
-        </NavLink>
-      ) : null}
+      {link ? <ArrowLink url={link.url} text={link.text} /> : null}
     </Header>
   );
 };

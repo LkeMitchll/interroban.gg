@@ -8,7 +8,7 @@ import {
 } from "services/contentful.types";
 import { ReactElement } from "react";
 import { Hero, Bookmarks as AllBookmarks, Roundups } from "compositions";
-import { NavLink, PageMeta, Splitter } from "components";
+import { ArrowLink, PageMeta, Splitter } from "components";
 import { Table, TableRow, TableCell } from "designSystem";
 import { formattedDate } from "helpers/date";
 
@@ -59,9 +59,7 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
           </TableRow>
         </tbody>
       </Table>
-      <NavLink url="/api/bookmarks" decoration="underline">
-        Bookmarks API
-      </NavLink>
+      <ArrowLink url="/api/bookmarks" text="Bookmarks API" />
     </div>
   );
   return (

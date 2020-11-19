@@ -9,7 +9,7 @@ import {
   Page,
   Project as ProjectType,
 } from "services/contentful.types";
-import { Splitter, Project, NavLink, PageMeta } from "components";
+import { Splitter, Project, PageMeta } from "components";
 import { Heading } from "designSystem";
 import { styled } from "components/stitches";
 
@@ -47,22 +47,8 @@ const Home = ({
       <PageMeta title={page.title} />
       <Intro content={page} />
       <Splitter
-        col1={
-          <>
-            <Posts title="Recent Posts" posts={posts} as="h2" />
-            <NavLink url="/journal" decoration="underline">
-              See all
-            </NavLink>
-          </>
-        }
-        col2={
-          <>
-            <Bookmarks title="Recent Bookmarks" posts={bookmarks} as="h2" />
-            <NavLink url="/bookmarks" decoration="underline">
-              See all
-            </NavLink>
-          </>
-        }
+        col1={<Posts title="Recent Posts" posts={posts} as="h2" />}
+        col2={<Bookmarks title="Recent Bookmarks" posts={bookmarks} as="h2" />}
         margin="large"
       />
       <section>

@@ -8,16 +8,18 @@ const A = styled("a", {
   fontSize: "$3",
   textDecoration: "none",
   cursor: "pointer",
+  transition: "border-color 0.25s ease",
 
   ":hover": {
     fontStyle: "italic",
+    borderColor: "$secondary",
   },
 
   variants: {
     decoration: {
       plain: {},
       underline: {
-        borderBottom: "$1 solid $primary",
+        borderBottom: "$1 solid $faded",
       },
     },
     margin: {
@@ -36,6 +38,7 @@ const A = styled("a", {
       },
       active: {
         fontStyle: "italic",
+        borderColor: "$secondary",
       },
     },
   },
@@ -43,7 +46,7 @@ const A = styled("a", {
 
 interface NavLinkProps {
   children: React.ReactNode;
-  url?: string;
+  url: string;
   state?: "active" | "inactive";
   decoration?: "plain" | "underline";
   margin?: any;

@@ -1,4 +1,4 @@
-import { ListItem, NavLink, PageMeta } from "components";
+import { ArrowLink, ListItem, PageMeta } from "components";
 import { Hero } from "components/compositions";
 import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
 import { css } from "components/stitches";
@@ -46,9 +46,7 @@ export default function FeedsPage({
           </TableRow>
         </tbody>
       </Table>
-      <NavLink url="/api/feeds" decoration="underline">
-        Feeds API
-      </NavLink>
+      <ArrowLink url="/api/feeds" text="/api/feeds" />
     </>
   );
   const Wrapper = css({

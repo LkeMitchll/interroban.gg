@@ -13,6 +13,7 @@ import Roundup from "./Roundup";
 import Splitter from "./Splitter";
 import Title from "./Title";
 import Transition from "./Transition";
+import ArrowLink from "./ArrowLink";
 
 export {
   Layout,
@@ -30,4 +31,5 @@ export {
   ResponsiveImage,
   PageMeta,
   BlockQuote,
+  ArrowLink,
 };
