@@ -92,7 +92,7 @@ export default function History({
         <ResponsiveImage
           image={headshot}
           sizes={ImageSizes.quarter}
-          css={{ width: "60%", bp3: { width: "80%" } }}
+          styles={{ width: "60%", bp3: { width: "80%" } }}
         />
       </div>
       <div>

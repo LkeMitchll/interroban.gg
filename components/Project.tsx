@@ -45,7 +45,7 @@ const Column = styled("div", {
 export default function Project({ data }: { data: ProjectType }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
-      <ResponsiveImage image={data.image} css={{ gridArea: "image" }} />
+      <ResponsiveImage image={data.image} styles={{ gridArea: "image" }} />
       <Column>
         <Heading as="h3" margin="tiny" size="small">
           {data.title}

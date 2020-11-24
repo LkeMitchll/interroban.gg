@@ -3,29 +3,34 @@ import Image from "next/image";
 import { Asset } from "services/contentful.types";
 import { ImageSizes } from "helpers/image";
 import { TCssWithBreakpoints } from "@stitches/react";
-import { styled } from "./stitches";
+import { styled, css } from "./stitches";
 
 const Wrapper = styled("div", {});
 
 export default function ResponsiveImage({
   image,
-  css,
+  styles,
   sizes,
 }: {
   image: Asset;
-  css?: TCssWithBreakpoints<any>;
+  styles?: TCssWithBreakpoints<any>;
   sizes?: string;
+  priority?: boolean;
 }): ReactElement {
+  const imageStyle = css({
+    backgroundColor: "$faded",
+  });
+
   return (
-    <Wrapper css={css}>
+    <Wrapper css={styles}>
       <Image
         src={`https:${image.url}`}
         width={image.width}
         height={image.height}
         sizes={sizes ? sizes : ImageSizes.fullWidth}
-        quality="90"
         layout="responsive"
         alt={image.desc}
+        className={imageStyle.toString()}
       />
     </Wrapper>
   );

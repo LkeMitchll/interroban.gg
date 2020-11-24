@@ -91,7 +91,7 @@ export default function Hero({
           <ResponsiveImage
             image={image}
             sizes={ImageSizes.SixtyPercent}
-            css={{
+            styles={{
               gridArea: "b",
               bp2: { gridArea: "b-start / b-start / i-end / i-end" },
             }}
