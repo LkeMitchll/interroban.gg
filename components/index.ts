@@ -12,7 +12,6 @@ import RichText from "./RichText";
 import Roundup from "./Roundup";
 import Splitter from "./Splitter";
 import Title from "./Title";
-import Transition from "./Transition";
 import ArrowLink from "./ArrowLink";
 
 export {
@@ -23,7 +22,6 @@ export {
   NavLink,
   RichText,
   ListItem,
-  Transition,
   Bookmark,
   Roundup,
   Splitter,

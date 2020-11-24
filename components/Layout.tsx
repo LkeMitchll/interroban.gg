@@ -1,14 +1,9 @@
 import Head from "next/head";
-import { styled } from "stitches";
-import { Transition } from "components";
+import { css } from "stitches";
 import { Header, Footer } from "compositions";
 import { ReactElement } from "react";
 import { useRouter } from "next/router";
-
-const Main = styled("main", {
-  marginTop: "$3",
-  marginBottom: "$3",
-});
+import { motion } from "framer-motion";
 
 export default function Layout({
   children,
@@ -17,7 +12,15 @@ export default function Layout({
 }): ReactElement {
   const router = useRouter();
   const isBlogPost = router.route === "/post/[slug]";
-  const fontFiles = ["Blanco-Medium", "pitch-web-semibold-italic"];
+  const fontFiles = [
+    "Blanco-Regular",
+    "pitch-web-semibold",
+    "GT-America-Extended-Medium",
+  ];
+  const Main = css({
+    marginTop: "$3",
+    marginBottom: "$3",
+  });
 
   return (
     <>
@@ -38,9 +41,19 @@ export default function Layout({
       </Head>
 
       <Header />
-      <Transition location={router.asPath}>
-        <Main>{children}</Main>
-      </Transition>
+      <motion.main
+        key={router.route}
+        initial="pageInitial"
+        animate="pageLoaded"
+        transition={{ duration: 0.5 }}
+        variants={{
+          pageInitial: { opacity: 0 },
+          pageLoaded: { opacity: 1 },
+        }}
+        className={Main.toString()}
+      >
+        {children}
+      </motion.main>
       {!isBlogPost ? <Footer /> : null}
     </>
   );
