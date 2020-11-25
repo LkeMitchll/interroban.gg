@@ -1,5 +1,5 @@
-import { ArrowLink, Hero, ListItem, PageMeta } from "components";
-import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
+import { ArrowLink, Hero, ListItem, PageMeta, StatsTable } from "components";
+import { PlainList } from "components/designSystem";
 import { formattedDate } from "helpers/date";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
@@ -27,24 +27,19 @@ export default function FeedsPage({
 }): ReactElement {
   const stats = (
     <>
-      <Table>
-        <tbody>
-          <TableRow>
-            <TableCell appearance="alternative">Total</TableCell>
-            <TableCell>{feeds.length}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell appearance="alternative">Updated</TableCell>
-            <TableCell>
-              {formattedDate(feeds[0].created_at, {
-                day: "numeric",
-                month: "numeric",
-                year: "numeric",
-              })}
-            </TableCell>
-          </TableRow>
-        </tbody>
-      </Table>
+      <StatsTable
+        data={[
+          { label: "Total", data: feeds.length },
+          {
+            label: "Updated",
+            data: formattedDate(feeds[0].created_at, {
+              day: "numeric",
+              month: "numeric",
+              year: "numeric",
+            }),
+          },
+        ]}
+      />
       <ArrowLink url="/api/feeds" text="/api/feeds" />
     </>
   );

@@ -18,6 +18,7 @@ import Listening from "./Listening";
 import Now from "./Now";
 import Roundups from "./Roundups";
 import TextList from "./TextList";
+import StatsTable from "./StatsTable";
 
 export {
   Layout,
@@ -40,4 +41,5 @@ export {
   Now,
   Roundups,
   TextList,
+  StatsTable,
 };

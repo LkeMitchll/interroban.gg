@@ -4,16 +4,17 @@ import {
   PageMeta,
   Roundups,
   Splitter,
+  StatsTable,
   TextList,
 } from "components";
-import { Table, TableCell, TableRow, Button } from "designSystem";
+import { Button } from "designSystem";
 import { formattedDate } from "helpers/date";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
+import { useState } from "react";
 import { ContentAPI } from "services/contentful";
 import type { Asset, Bookmark, Page, Roundup } from "services/contentful.types";
 import useSWR from "swr";
-import { useState } from "react";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -43,7 +44,7 @@ const BookmarksPage = ({
     `/api/bookmarks/${pageNumber}`,
     fetcher,
   );
-  const isEmpty = data?.length < 1;
+  const pageIsEmpty = data?.length < 1;
   const latestRoundup = roundups[0];
 
   function handleClick(): any {
@@ -57,27 +58,22 @@ const BookmarksPage = ({
       <Hero
         title={page.title}
         stats={
-          <div>
-            <Table>
-              <tbody>
-                <TableRow>
-                  <TableCell appearance="alternative">Total</TableCell>
-                  <TableCell>{posts.length}</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell appearance="alternative">Updated</TableCell>
-                  <TableCell>
-                    {formattedDate(posts[0].date, {
-                      day: "numeric",
-                      month: "numeric",
-                      year: "numeric",
-                    })}
-                  </TableCell>
-                </TableRow>
-              </tbody>
-            </Table>
+          <>
+            <StatsTable
+              data={[
+                { label: "Total", data: posts.length },
+                {
+                  label: "Updated",
+                  data: formattedDate(posts[0].date, {
+                    day: "numeric",
+                    month: "numeric",
+                    year: "numeric",
+                  }),
+                },
+              ]}
+            />
             <ArrowLink url="/api/bookmarks" text="Bookmarks API" />
-          </div>
+          </>
         }
         intro={page.description}
       />
@@ -91,14 +87,14 @@ const BookmarksPage = ({
               titleSize="small"
             />
             <Button
-              disabled={isValidating || isEmpty}
+              disabled={isValidating || pageIsEmpty}
               onClick={() => handleClick()}
             >
               {isValidating
                 ? "Loading..."
                 : error
                 ? "Error loading bookmarks"
-                : isEmpty
+                : pageIsEmpty
                 ? "No more bookmarks"
                 : "Load more bookmarks"}
             </Button>

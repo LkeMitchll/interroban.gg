@@ -5,9 +5,10 @@ import {
   Now,
   PageMeta,
   Splitter,
+  StatsTable,
   TextList,
 } from "components";
-import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
+import { PlainList } from "components/designSystem";
 import fs from "fs";
 import generateRss from "helpers/rss";
 import type { GetStaticProps } from "next";
@@ -53,18 +54,12 @@ export default function Journal({
   const LastWeek = useSWR("/api/music", fetcher).data;
   const stats = (
     <>
-      <Table>
-        <tbody>
-          <TableRow>
-            <TableCell appearance="alternative">Total</TableCell>
-            <TableCell>{blogPosts.length} Posts</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell appearance="alternative">Updated</TableCell>
-            <TableCell>{blogPosts[0].date}</TableCell>
-          </TableRow>
-        </tbody>
-      </Table>
+      <StatsTable
+        data={[
+          { label: "Total", data: `${blogPosts.length} Posts` },
+          { label: "Updated", data: blogPosts[0].date },
+        ]}
+      />
       <PlainList>
         <li>
           <ArrowLink url="/rss.xml" text="RSS Feed" />
