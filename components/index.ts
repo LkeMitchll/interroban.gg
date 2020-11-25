@@ -1,5 +1,3 @@
-import BlockQuote from "./BlockQuote";
-import Bookmark from "./Bookmark";
 import Layout from "./Layout";
 import ListItem from "./ListItem";
 import Logo from "./Logo";
@@ -13,6 +11,17 @@ import Roundup from "./Roundup";
 import Splitter from "./Splitter";
 import Title from "./Title";
 import ArrowLink from "./ArrowLink";
+import Hero from "./Hero";
+import History from "./History";
+import SiteHeader from "./SiteHeader";
+import SiteFooter from "./SiteFooter";
+import Bookmarks from "./Bookmarks";
+import Intro from "./Intro";
+import Posts from "./Posts";
+import Listening from "./Listening";
+import Now from "./Now";
+import Reading from "./Reading";
+import Roundups from "./Roundups";
 
 export {
   Layout,
@@ -22,12 +31,21 @@ export {
   NavLink,
   RichText,
   ListItem,
-  Bookmark,
   Roundup,
   Splitter,
   Project,
   ResponsiveImage,
   PageMeta,
-  BlockQuote,
   ArrowLink,
+  Hero,
+  History,
+  SiteHeader,
+  SiteFooter,
+  Bookmarks,
+  Intro,
+  Posts,
+  Listening,
+  Now,
+  Reading,
+  Roundups,
 };

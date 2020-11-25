@@ -1,17 +1,23 @@
-import { GetStaticProps } from "next";
-import { ContentAPI } from "services/contentful";
-import { Bookmarks, Intro, Posts } from "compositions";
-import { ReactElement } from "react";
 import {
+  Bookmarks,
+  Intro,
+  PageMeta,
+  Posts,
+  Project,
+  Splitter,
+} from "components";
+import { Heading } from "designSystem";
+import type { GetStaticProps } from "next";
+import type { ReactElement } from "react";
+import { ContentAPI } from "services/contentful";
+import type {
   BlogPost,
   Bookmark,
   List,
   Page,
-  Project as ProjectType,
+  Project as TProject,
 } from "services/contentful.types";
-import { Splitter, Project, PageMeta } from "components";
-import { Heading } from "designSystem";
-import { styled } from "components/stitches";
+import { styled } from "stitches";
 
 interface HomeProps {
   page: Page;
@@ -55,7 +61,7 @@ const Home = ({
         <Heading as="h2" size="large">
           Selected Work <Beta>beta</Beta>
         </Heading>
-        {projects.items.map((project: ProjectType) => (
+        {projects.items.map((project: TProject) => (
           <Project key={project.id} data={project} />
         ))}
       </section>

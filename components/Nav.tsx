@@ -1,8 +1,8 @@
-import { styled } from "stitches";
+import type { TCssWithBreakpoints } from "@stitches/react";
 import { NavLink } from "components";
-import { ReactElement } from "react";
-import { TCssWithBreakpoints } from "@stitches/react";
 import { useRouter } from "next/router";
+import type { ReactElement } from "react";
+import { styled } from "stitches";
 
 const List = styled("ul", {
   display: "flex",

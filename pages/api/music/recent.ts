@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { MusicAPI } from "services/spotify";
-import { PlayHistoryObject, Track } from "services/spotify.types";
+import type { PlayHistoryObject, Track } from "services/spotify.types";
 
 export default async (
   _req: NextApiRequest,

@@ -1,4 +1,4 @@
-import { Feed } from "services/feedbin.types";
+import type { Feed } from "services/feedbin.types";
 
 export class FeedAPI {
   apiEndpoint: string;

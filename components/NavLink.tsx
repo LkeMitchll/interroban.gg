@@ -1,6 +1,6 @@
 import Link from "next/link";
+import type { ReactElement } from "react";
 import { styled } from "stitches";
-import { ReactElement } from "react";
 
 const A = styled("a", {
   color: "$primary",

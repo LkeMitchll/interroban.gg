@@ -1,11 +1,11 @@
-import { Title, RichText } from "components";
-import { Footnote, Small } from "designSystem";
-import { css, styled } from "stitches";
-import { ReactElement } from "react";
-import { Asset } from "services/contentful.types";
+import type { Document } from "@contentful/rich-text-types";
+import { RichText, Title } from "components";
 import ResponsiveImage from "components/ResponsiveImage";
+import { Footnote, Small } from "designSystem";
 import { ImageSizes } from "helpers/image";
-import { Document } from "@contentful/rich-text-types";
+import type { ReactElement } from "react";
+import type { Asset } from "services/contentful.types";
+import { css, styled } from "stitches";
 
 const Container = styled("div", {
   display: "grid",

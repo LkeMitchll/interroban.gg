@@ -1,11 +1,11 @@
 import { NavLink, PageMeta, RichText, Title } from "components";
-import { Heading, SecondaryText } from "components/designSystem";
-import { styled } from "components/stitches";
-import { GetStaticProps } from "next";
-import { ReactElement } from "react";
-import { ContentAPI } from "services/contentful";
-import { BlogPost } from "services/contentful.types";
+import { Heading, SecondaryText } from "designSystem";
 import { formattedDate } from "helpers/date";
+import { GetStaticProps } from "next";
+import type { ReactElement } from "react";
+import { ContentAPI } from "services/contentful";
+import type { BlogPost } from "services/contentful.types";
+import { styled } from "stitches";
 
 type Params = {
   params: {

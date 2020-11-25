@@ -1,7 +1,7 @@
-import type { AppProps } from "next/app";
-import type { ReactElement } from "react";
 import { Layout } from "components";
 import { GlobalStyles } from "designSystem";
+import type { AppProps } from "next/app";
+import type { ReactElement } from "react";
 import { darkThemeClass } from "stitches";
 import useDarkMode from "use-dark-mode";
 

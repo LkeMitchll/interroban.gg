@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { FeedAPI } from "services/feedbin";
-import { Feed } from "services/feedbin.types";
+import type { Feed } from "services/feedbin.types";
 
 export default async (
   _req: NextApiRequest,

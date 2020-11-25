@@ -1,5 +1,5 @@
-import { BlogPost } from "services/contentful.types";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { BlogPost } from "services/contentful.types";
 
 const generateRssItem = (post: BlogPost): string => `
   <item>

@@ -1,10 +1,10 @@
-import { styled } from "stitches";
-import { Asset, List, Job } from "services/contentful.types";
-import { ReactElement } from "react";
-import { P, PlainList, Heading, Subtitle } from "designSystem";
 import { ListItem } from "components";
 import ResponsiveImage from "components/ResponsiveImage";
+import { Heading, P, PlainList, Subtitle } from "designSystem";
 import { ImageSizes } from "helpers/image";
+import type { ReactElement } from "react";
+import type { Asset, Job, List } from "services/contentful.types";
+import { styled } from "stitches";
 
 interface HistoryProps {
   experience: List;
@@ -96,7 +96,7 @@ export default function History({
         />
       </div>
       <div>
-        <Subtitle level="h4" margin="small">
+        <Subtitle as="h4" margin="small">
           {experience.title}
         </Subtitle>
         <PlainList>
@@ -111,7 +111,7 @@ export default function History({
         </PlainList>
       </div>
       <div>
-        <Subtitle level="h4" margin="small">
+        <Subtitle as="h4" margin="small">
           Select Clients
         </Subtitle>
         <PlainList lineHeight="relaxed">
@@ -121,7 +121,7 @@ export default function History({
         </PlainList>
       </div>
       <div>
-        <Subtitle level="h4" margin="small">
+        <Subtitle as="h4" margin="small">
           Skills
         </Subtitle>
         <PlainList lineHeight="relaxed">

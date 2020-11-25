@@ -1,9 +1,8 @@
-import { GetStaticProps } from "next";
+import { Hero, History, PageMeta, RichText } from "components";
+import type { GetStaticProps } from "next";
+import type { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
-import { Hero, History } from "compositions";
-import { RichText, PageMeta } from "components";
-import { ReactElement } from "react";
-import { Page, List, Asset } from "services/contentful.types";
+import type { Asset, List, Page } from "services/contentful.types";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();

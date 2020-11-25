@@ -1,16 +1,22 @@
-import { GetStaticProps } from "next";
-import { ContentAPI } from "services/contentful";
 import {
+  ArrowLink,
+  Bookmarks,
+  Hero,
+  PageMeta,
+  Roundups,
+  Splitter,
+} from "components";
+import { Table, TableCell, TableRow } from "designSystem";
+import { formattedDate } from "helpers/date";
+import type { GetStaticProps } from "next";
+import type { ReactElement } from "react";
+import { ContentAPI } from "services/contentful";
+import type {
   Asset,
   Bookmark,
   Page,
-  Roundup as RoundupType,
+  Roundup as TRoundup,
 } from "services/contentful.types";
-import { ReactElement } from "react";
-import { Hero, Bookmarks as AllBookmarks, Roundups } from "compositions";
-import { ArrowLink, PageMeta, Splitter } from "components";
-import { Table, TableRow, TableCell } from "designSystem";
-import { formattedDate } from "helpers/date";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
@@ -23,14 +29,18 @@ export const getStaticProps: GetStaticProps = async ({}) => {
 interface BookmarksProps {
   posts: Bookmark[];
   page: Page;
-  roundups: RoundupType[];
+  roundups: TRoundup[];
   image: Asset;
 }
 
-const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
+const BookmarksPage = ({
+  posts,
+  page,
+  roundups,
+}: BookmarksProps): ReactElement => {
   const latestRoundup = roundups[0];
   const bookmarkList = (
-    <AllBookmarks
+    <Bookmarks
       title="All Bookmarks"
       as="h3"
       size="small"
@@ -71,4 +81,4 @@ const Bookmarks = ({ posts, page, roundups }: BookmarksProps): ReactElement => {
   );
 };
 
-export default Bookmarks;
+export default BookmarksPage;

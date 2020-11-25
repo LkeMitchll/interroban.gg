@@ -1,13 +1,25 @@
-import { ArrowLink, PageMeta, Splitter } from "components";
-import { Hero, Listening, Now, Posts, Reading } from "compositions";
-import { ContentAPI } from "services/contentful";
-import { GetStaticProps } from "next";
-import { ReactElement } from "react";
-import { BlogPostPreview, JournalEntry, Page } from "services/contentful.types";
-import useSWR from "swr";
-import generateRss from "helpers/rss";
-import fs from "fs";
+import {
+  ArrowLink,
+  Hero,
+  Listening,
+  Now,
+  PageMeta,
+  Posts,
+  Reading,
+  Splitter,
+} from "components";
 import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
+import fs from "fs";
+import generateRss from "helpers/rss";
+import type { GetStaticProps } from "next";
+import type { ReactElement } from "react";
+import { ContentAPI } from "services/contentful";
+import type {
+  BlogPostPreview,
+  JournalEntry,
+  Page,
+} from "services/contentful.types";
+import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

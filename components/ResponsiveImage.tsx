@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
-import Image from "next/image";
-import { Asset } from "services/contentful.types";
+import type { TCssWithBreakpoints } from "@stitches/react";
 import { ImageSizes } from "helpers/image";
-import { TCssWithBreakpoints } from "@stitches/react";
-import { styled, css } from "./stitches";
+import Image from "next/image";
+import type { ReactElement } from "react";
+import type { Asset } from "services/contentful.types";
+import { css, styled } from "stitches";
 
 const Wrapper = styled("div", {});
 

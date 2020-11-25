@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { ContentAPI } from "services/contentful";
-import { Roundup } from "services/contentful.types";
+import type { Roundup } from "services/contentful.types";
 
 export default async (
   _req: NextApiRequest,

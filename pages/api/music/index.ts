@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { dateToEpochWithOffset } from "helpers/date";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { LastFMAPI } from "services/last-fm";
-import {
+import type {
+  MusicTotals,
   RecentTracks,
   WeeklyAlbumChart,
-  MusicTotals,
 } from "services/last-fm.types";
-import { dateToEpochWithOffset } from "helpers/date";
 
 export default async (
   _req: NextApiRequest,

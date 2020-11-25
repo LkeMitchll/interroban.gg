@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { css } from "stitches";
-import { Header, Footer } from "compositions";
-import { ReactElement } from "react";
-import { useRouter } from "next/router";
+import { SiteFooter, SiteHeader } from "components";
 import { motion } from "framer-motion";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import type { ReactElement } from "react";
+import { css } from "stitches";
 
 export default function Layout({
   children,
@@ -40,7 +40,7 @@ export default function Layout({
         ))}
       </Head>
 
-      <Header />
+      <SiteHeader />
       <motion.main
         key={router.route}
         initial="pageInitial"
@@ -54,7 +54,7 @@ export default function Layout({
       >
         {children}
       </motion.main>
-      {!isBlogPost ? <Footer /> : null}
+      {!isBlogPost ? <SiteFooter /> : null}
     </>
   );
 }

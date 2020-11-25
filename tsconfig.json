@@ -18,13 +18,11 @@
       "public/*": ["public/*"],
       "components": ["components/index"],
       "components/*": ["components/*"],
-      "compositions": ["components/compositions/index"],
-      "compositions/*": ["components/compositions/*"],
       "designSystem": ["components/designSystem/index"],
       "designSystem/*": ["components/designSystem/*"],
       "services/*": ["services/*"],
       "helpers/*": ["helpers/*"],
-      "stitches": ["components/stitches"]
+      "stitches": ["components/designSystem/stitches"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

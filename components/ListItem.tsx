@@ -1,8 +1,8 @@
-import { styled } from "stitches";
-import { ReactElement } from "react";
 import { A, Image, P, SecondaryText, TertiaryText } from "designSystem";
 import Link from "next/link";
-import { CoverArt } from "services/spotify.types";
+import type { ReactElement } from "react";
+import type { CoverArt } from "services/spotify.types";
+import { styled } from "stitches";
 
 interface ListItemProps {
   top?: string;

@@ -1,7 +1,7 @@
+import { Nav, NavLink } from "components";
+import { PlainList, Small, Subtitle, TertiaryText } from "designSystem";
+import type { ReactElement } from "react";
 import { styled } from "stitches";
-import { PlainList, TertiaryText, Subtitle, Small } from "designSystem";
-import { NavLink, Nav } from "components";
-import { ReactElement } from "react";
 
 const Container = styled("footer", {
   display: "grid",
@@ -63,14 +63,14 @@ const CopyNotice = styled("div", {
   gridColumn: "1/3",
 });
 
-export default function Footer(): ReactElement {
+export default function SiteFooter(): ReactElement {
   type FooterLink = {
     url: string;
     title: string;
   };
 
   const Title = (content: string) => (
-    <Subtitle level="h4" margin="small">
+    <Subtitle as="h4" margin="small">
       {content}
     </Subtitle>
   );

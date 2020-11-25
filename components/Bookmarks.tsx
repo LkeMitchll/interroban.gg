@@ -1,7 +1,7 @@
-import { PlainList, Heading } from "designSystem";
-import { Bookmark as Item, ArrowLink } from "components";
-import { ReactElement } from "react";
-import { Bookmark } from "services/contentful.types";
+import { ArrowLink, ListItem } from "components";
+import { Heading, PlainList } from "designSystem";
+import type { ReactElement } from "react";
+import type { Bookmark } from "services/contentful.types";
 
 export default function List({
   posts,
@@ -22,7 +22,13 @@ export default function List({
       </Heading>
       <PlainList>
         {posts.map((entry) => (
-          <Item key={entry.id} data={entry} />
+          <ListItem
+            key={entry.id}
+            title={entry.title}
+            url={entry.url}
+            subtitle={`${entry.tag}`}
+            external
+          />
         ))}
       </PlainList>
       <ArrowLink url="/bookmarks" text="See all" />

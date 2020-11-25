@@ -1,6 +1,6 @@
-import { A, Heading, NumberedList, P, SecondaryText } from "designSystem";
 import { ListItem } from "components";
-import { ReactElement } from "react";
+import { A, Heading, NumberedList, P, SecondaryText } from "designSystem";
+import type { ReactElement } from "react";
 import { MusicTotals } from "services/last-fm.types";
 import { Track } from "services/spotify.types";
 

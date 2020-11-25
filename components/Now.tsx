@@ -1,8 +1,8 @@
 import { RichText } from "components";
-import { SecondaryText, Heading } from "designSystem";
-import { ReactElement } from "react";
-import { JournalEntry } from "services/contentful.types";
+import { Heading, SecondaryText } from "designSystem";
 import { formattedDate } from "helpers/date";
+import type { ReactElement } from "react";
+import { JournalEntry } from "services/contentful.types";
 import { styled } from "stitches";
 
 const Container = styled("div", {

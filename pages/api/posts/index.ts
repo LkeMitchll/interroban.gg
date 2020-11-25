@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { ContentAPI } from "services/contentful";
 
 type ShortBlogPost = {

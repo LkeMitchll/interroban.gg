@@ -1,8 +1,8 @@
-import { styled } from "stitches";
-import { Heading } from "designSystem";
+import type { TCssWithBreakpoints } from "@stitches/react";
 import { ArrowLink } from "components";
-import { ReactElement } from "react";
-import { TCssWithBreakpoints } from "@stitches/react";
+import { Heading } from "designSystem";
+import type { ReactElement } from "react";
+import { styled } from "stitches";
 
 type TitleLink = "url" | "text";
 

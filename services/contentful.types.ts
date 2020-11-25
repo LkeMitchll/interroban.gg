@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Document } from "@contentful/rich-text-types";
+import type { ReactNode } from "react";
+import type { Document } from "@contentful/rich-text-types";
 
 export type Page = {
   id: string;

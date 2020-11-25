@@ -1,4 +1,4 @@
-import { styled } from "components/stitches";
+import { styled } from "stitches";
 
 export const Table = styled("table", {
   fontFamily: "$mono",

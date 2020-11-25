@@ -1,21 +1,21 @@
 import {
+  Asset as ContentfulAsset,
   ContentfulClientApi,
   createClient,
   Entry,
-  Asset as ContentfulAsset,
 } from "contentful";
-import {
-  Page,
-  Bookmark,
-  List,
-  Job,
+import type {
   Asset,
-  Roundup,
-  JournalEntry,
   BlogPost,
   BlogPostPreview,
-  ReadingEntry,
+  Bookmark,
+  Job,
+  JournalEntry,
+  List,
+  Page,
   Project,
+  ReadingEntry,
+  Roundup,
 } from "./contentful.types";
 
 export class ContentAPI {

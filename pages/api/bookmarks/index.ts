@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { ContentAPI } from "services/contentful";
-import { Bookmark } from "services/contentful.types";
+import type { Bookmark } from "services/contentful.types";
 
 export default async (
   _req: NextApiRequest,

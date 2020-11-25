@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
 import Head from "next/head";
+import type { ReactElement } from "react";
 
 export default function PageMeta({
   title,

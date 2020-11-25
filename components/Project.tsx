@@ -1,6 +1,6 @@
 import { Heading, P, Small } from "designSystem";
-import { ReactElement } from "react";
-import { Project as ProjectType } from "services/contentful.types";
+import type { ReactElement } from "react";
+import type { Project as ProjectType } from "services/contentful.types";
 import { styled } from "stitches";
 import ResponsiveImage from "./ResponsiveImage";
 import RichText from "./RichText";

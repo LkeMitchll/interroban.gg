@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import type { ReactElement } from "react";
-import NavLink from "./NavLink";
 import { theme } from "stitches";
+import NavLink from "./NavLink";
 
 export default function Arrow({
   url,

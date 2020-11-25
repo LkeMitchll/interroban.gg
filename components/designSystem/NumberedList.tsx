@@ -1,4 +1,4 @@
-import { styled } from "components/stitches";
+import { styled } from "stitches";
 
 const NumberedList = styled("ol", {
   fontFamily: "$serif",

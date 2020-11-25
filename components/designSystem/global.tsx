@@ -1,5 +1,5 @@
 import { theme } from "stitches";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 const GlobalStyles = (): ReactElement => (
   <style global jsx>

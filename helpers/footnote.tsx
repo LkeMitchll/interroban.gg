@@ -1,16 +1,11 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import {
-  BLOCKS,
-  Hyperlink,
-  Inline,
-  INLINES,
-  Paragraph,
-} from "@contentful/rich-text-types";
+import type { Hyperlink, Inline, Paragraph } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { ResponsiveImage } from "components";
 import { A, Footnote, P, Small } from "designSystem";
 import { ImageSizes } from "helpers/image";
-import { ReactNode } from "react";
-import { Asset, RichTextChildren } from "services/contentful.types";
+import type { ReactNode } from "react";
+import type { Asset, RichTextChildren } from "services/contentful.types";
 import { styled } from "stitches";
 
 const SubContainer = styled("section", {

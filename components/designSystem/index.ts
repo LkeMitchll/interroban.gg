@@ -12,6 +12,7 @@ import Footnote from "./Footnote";
 import LargeText from "./LargeText";
 import NumberedList from "./NumberedList";
 import BulletList from "./BulletList";
+import BlockQuote from "./BlockQuote";
 import { Table, TableRow, TableCell } from "./Table";
 
 export {
@@ -29,6 +30,7 @@ export {
   LargeText,
   NumberedList,
   BulletList,
+  BlockQuote,
   Table,
   TableRow,
   TableCell,

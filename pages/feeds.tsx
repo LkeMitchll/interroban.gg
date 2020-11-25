@@ -1,14 +1,13 @@
-import { ArrowLink, ListItem, PageMeta } from "components";
-import { Hero } from "components/compositions";
+import { ArrowLink, Hero, ListItem, PageMeta } from "components";
 import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
-import { css } from "components/stitches";
 import { formattedDate } from "helpers/date";
-import { GetStaticProps } from "next";
-import { ReactElement } from "react";
+import type { GetStaticProps } from "next";
+import type { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
-import { Page } from "services/contentful.types";
+import type { Page } from "services/contentful.types";
 import { FeedAPI } from "services/feedbin";
-import { Feed } from "services/feedbin.types";
+import type { Feed } from "services/feedbin.types";
+import { css } from "stitches";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();

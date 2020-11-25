@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { styled } from "stitches";
 import { Heading } from "designSystem";
-import { ReactElement } from "react";
+import Link from "next/link";
+import type { ReactElement } from "react";
+import { styled } from "stitches";
 
 const Container = styled("div", {
   display: "flex",

@@ -1,8 +1,8 @@
-import { ListItem, ArrowLink } from "components";
+import { ArrowLink, ListItem } from "components";
 import { Heading, PlainList } from "designSystem";
-import { ReactElement } from "react";
-import { BlogPostPreview } from "services/contentful.types";
 import { formattedDate } from "helpers/date";
+import type { ReactElement } from "react";
+import type { BlogPostPreview } from "services/contentful.types";
 
 export default function Posts({
   posts,

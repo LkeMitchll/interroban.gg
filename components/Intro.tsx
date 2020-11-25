@@ -1,7 +1,7 @@
-import { styled } from "stitches";
 import { RichText, Title } from "components";
-import { ReactElement } from "react";
-import { Page } from "services/contentful.types";
+import type { ReactElement } from "react";
+import type { Page } from "services/contentful.types";
+import { styled } from "stitches";
 
 const Container = styled("section", {
   display: "grid",

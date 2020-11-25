@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
-import { Bookmark, Roundup as Type } from "services/contentful.types";
-import { A, NumberedList, P } from "./designSystem";
+import type { ReactElement } from "react";
+import type { Bookmark, Roundup as TRoundup } from "services/contentful.types";
 import { styled } from "stitches";
+import { A, NumberedList, P } from "./designSystem";
 
 const Item = styled("li", {
   marginBottom: "$2",
@@ -12,7 +12,7 @@ const Item = styled("li", {
   },
 });
 
-export default function Roundup({ data }: { data: Type }): ReactElement {
+export default function Roundup({ data }: { data: TRoundup }): ReactElement {
   return (
     <NumberedList>
       {data.links.map((link: Bookmark) => (

@@ -1,6 +1,6 @@
-import { styled } from "stitches";
 import { Logo, Nav } from "components";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
+import { styled } from "stitches";
 
 const Container = styled("nav", {
   display: "grid",
@@ -26,7 +26,7 @@ const Container = styled("nav", {
   },
 });
 
-export default function Header({
+export default function SiteHeader({
   layout,
 }: {
   layout?: Record<any, any>;

@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
 import { Heading, PlainList } from "components/designSystem";
-import { ReadingEntry } from "services/contentful.types";
 import ListItem from "components/ListItem";
+import type { ReactElement } from "react";
+import type { ReadingEntry } from "services/contentful.types";
 
 export default function Reading({
   title,

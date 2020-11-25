@@ -1,18 +1,16 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import {
+import type {
   Block,
-  BLOCKS,
   Document,
   Heading2,
   Hyperlink,
   Inline,
-  INLINES,
   Paragraph,
 } from "@contentful/rich-text-types";
-import { BlockQuote } from "components";
-import { A, BulletList, Heading, Subtitle } from "designSystem";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { A, BlockQuote, BulletList, Heading, Subtitle } from "designSystem";
 import { footnote, generateFootnotes } from "helpers/footnote";
-import { RichTextChildren } from "services/contentful.types";
+import type { RichTextChildren } from "services/contentful.types";
 import { styled } from "stitches";
 
 type RichTextProps = {
@@ -57,7 +55,7 @@ const options = {
       </Heading>
     ),
     [BLOCKS.HEADING_3]: (_: Heading2, children: RichTextChildren) => (
-      <Subtitle level="h3">{children}</Subtitle>
+      <Subtitle as="h3">{children}</Subtitle>
     ),
     [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
       <BulletList>{children}</BulletList>
