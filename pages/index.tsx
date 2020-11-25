@@ -1,6 +1,6 @@
 import {
   Bookmarks,
-  Intro,
+  Hero,
   PageMeta,
   Posts,
   Project,
@@ -51,7 +51,15 @@ const Home = ({
   return (
     <>
       <PageMeta title={page.title} />
-      <Intro content={page} />
+      <Hero
+        title="About Me"
+        intro={page.description}
+        layoutOverride={{
+          initial: "withStatsVertical",
+          bp2: "withStatsHorizontal",
+        }}
+        linkOverride={{ url: "/about", text: "Read more" }}
+      />
       <Splitter
         col1={<Posts title="Recent Posts" posts={posts} as="h2" />}
         col2={<Bookmarks title="Recent Bookmarks" posts={bookmarks} as="h2" />}

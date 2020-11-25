@@ -15,7 +15,6 @@ import History from "./History";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import Bookmarks from "./Bookmarks";
-import Intro from "./Intro";
 import Posts from "./Posts";
 import Listening from "./Listening";
 import Now from "./Now";
@@ -40,7 +39,6 @@ export {
   SiteHeader,
   SiteFooter,
   Bookmarks,
-  Intro,
   Posts,
   Listening,
   Now,

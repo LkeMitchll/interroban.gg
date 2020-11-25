@@ -1,11 +1,12 @@
 import type { Document } from "@contentful/rich-text-types";
+import type { TCssWithBreakpoints } from "@stitches/react";
 import { RichText, Title } from "components";
 import ResponsiveImage from "components/ResponsiveImage";
 import { Footnote, Small } from "designSystem";
 import { ImageSizes } from "helpers/image";
 import type { ReactElement } from "react";
 import type { Asset } from "services/contentful.types";
-import { css, styled } from "stitches";
+import { styled } from "stitches";
 
 const Container = styled("div", {
   display: "grid",
@@ -46,44 +47,57 @@ const StatsContainer = styled("div", {
   gridArea: "c",
 });
 
+const IntroWrapper = styled("div", {
+  gridColumn: "b",
+  paddingRight: "$2",
+});
+
 export default function Hero({
   image,
   title,
   intro,
   stats,
+  layoutOverride,
+  linkOverride,
 }: {
   image?: Asset;
   title: string;
   intro?: Document;
   stats?: ReactElement;
+  layoutOverride?: TCssWithBreakpoints<any>;
+  linkOverride?: Record<"url" | "text", string>;
 }): ReactElement {
-  const introWrapper = css({
-    gridColumn: "b",
-    gridRow: image ? "4" : "b",
-    paddingRight: "$2",
-
-    bp2: {
-      gridRow: image ? "3" : "b",
-    },
-  });
+  const containerLayout = (): any => {
+    if (layoutOverride) {
+      return layoutOverride;
+    } else {
+      if (stats) {
+        return { initial: "withStatsVertical", bp2: "withStatsHorizontal" };
+      } else {
+        return { initial: "vertical", bp2: "horizontal" };
+      }
+    }
+  };
 
   return (
-    <Container
-      layout={
-        stats
-          ? { initial: "withStatsVertical", bp2: "withStatsHorizontal" }
-          : { initial: "vertical", bp2: "horizontal" }
-      }
-    >
+    <Container layout={containerLayout()}>
       <Title
         title={title}
-        link={{ url: "/", text: "Back" }}
+        link={linkOverride ? linkOverride : { url: "/", text: "Back" }}
         css={{ gridArea: "a" }}
       />
       {intro ? (
-        <div className={introWrapper}>
+        <IntroWrapper
+          css={{
+            gridRow: image ? "4" : "b",
+
+            bp2: {
+              gridRow: image ? "3" : "b",
+            },
+          }}
+        >
           <RichText source={intro} unwrapped />
-        </div>
+        </IntroWrapper>
       ) : null}
       {stats && <StatsContainer>{stats}</StatsContainer>}
       {image ? (
