@@ -16,7 +16,7 @@ export default async (
   res: NextApiResponse<ShortBlogPost[]>,
 ): Promise<any> => {
   const api = new ContentAPI();
-  const posts = (await api.fetchBlogPosts()) as ShortBlogPost[];
+  const posts = (await api.fetchBlogPostsFull()) as ShortBlogPost[];
   posts.map((post) => {
     delete post.content;
     post.url = "https://interroban.gg/post/" + post.slug;

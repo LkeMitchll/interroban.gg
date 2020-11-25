@@ -39,6 +39,7 @@ export class ContentAPI {
       title: rawPost.title,
       url: rawPost.url,
       tag: rawPost.tag,
+      subtitle: rawPost.tag,
       date: rawPost.publishDate,
       notes: rawPost.notes ? rawPost.notes : null,
     };
@@ -64,6 +65,7 @@ export class ContentAPI {
       type: rawReadingEntry.type,
       author: rawReadingEntry.author,
       url: rawReadingEntry.url,
+      subtitle: `${rawReadingEntry.type} - ${rawReadingEntry.author}`,
     };
   };
 
@@ -108,6 +110,8 @@ export class ContentAPI {
       title: rawPost.title ? rawPost.title : null,
       slug: rawPost.slug ? rawPost.slug : null,
       date: rawPost.date ? rawPost.date : null,
+      url: rawPost.slug ? `/post/${rawPost.slug}` : null,
+      subtitle: rawPost.date ? rawPost.date : null,
     };
   };
 
@@ -151,7 +155,9 @@ export class ContentAPI {
       const page = {
         id: entry.sys.id,
         title: entry.fields.title,
-        description: entry.fields.descriptionRich,
+        description: entry.fields.descriptionRich
+          ? entry.fields.descriptionRich
+          : null,
         content: entry.fields.content ? entry.fields.content : null,
       };
       return page;

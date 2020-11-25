@@ -1,10 +1,10 @@
 import {
   ArrowLink,
-  Bookmarks,
   Hero,
   PageMeta,
   Roundups,
   Splitter,
+  TextList,
 } from "components";
 import { Table, TableCell, TableRow } from "designSystem";
 import { formattedDate } from "helpers/date";
@@ -40,12 +40,11 @@ const BookmarksPage = ({
 }: BookmarksProps): ReactElement => {
   const latestRoundup = roundups[0];
   const bookmarkList = (
-    <Bookmarks
+    <TextList
       title="All Bookmarks"
-      as="h3"
-      size="small"
-      posts={posts}
-      compact
+      items={posts}
+      titleTag="h3"
+      titleSize="small"
     />
   );
   const roundupList = <Roundups roundup={latestRoundup} />;

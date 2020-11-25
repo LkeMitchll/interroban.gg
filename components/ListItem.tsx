@@ -8,7 +8,7 @@ interface ListItemProps {
   top?: string;
   title: string;
   url?: string;
-  subtitle: string;
+  subtitle: string | Date;
   image?: CoverArt;
   external?: boolean;
 }

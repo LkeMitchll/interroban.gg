@@ -14,12 +14,10 @@ import Hero from "./Hero";
 import History from "./History";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
-import Bookmarks from "./Bookmarks";
-import Posts from "./Posts";
 import Listening from "./Listening";
 import Now from "./Now";
-import Reading from "./Reading";
 import Roundups from "./Roundups";
+import TextList from "./TextList";
 
 export {
   Layout,
@@ -38,10 +36,8 @@ export {
   History,
   SiteHeader,
   SiteFooter,
-  Bookmarks,
-  Posts,
   Listening,
   Now,
-  Reading,
   Roundups,
+  TextList,
 };

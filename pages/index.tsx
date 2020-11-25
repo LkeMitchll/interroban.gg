@@ -1,17 +1,10 @@
-import {
-  Bookmarks,
-  Hero,
-  PageMeta,
-  Posts,
-  Project,
-  Splitter,
-} from "components";
+import { Hero, PageMeta, Project, Splitter, TextList } from "components";
 import { Heading } from "designSystem";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
 import type {
-  BlogPost,
+  BlogPostPreview,
   Bookmark,
   List,
   Page,
@@ -21,14 +14,14 @@ import { styled } from "stitches";
 
 interface HomeProps {
   page: Page;
-  posts: BlogPost[];
+  posts: BlogPostPreview[];
   bookmarks: Bookmark[];
   projects: List;
 }
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
-  const page = await api.fetchPage("gs1BugZQXA8mN7DniEOFx");
+  const page = await api.fetchPage("3PVdf7SKLVY2peVTFh0ft");
   const posts = await api.fetchBlogPosts(3);
   const bookmarks = await api.fetchBookmarks(3);
   const projects = await api.fetchList("1UfYIu858cZdZuMjgejpRG");
@@ -61,8 +54,24 @@ const Home = ({
         linkOverride={{ url: "/about", text: "Read more" }}
       />
       <Splitter
-        col1={<Posts title="Recent Posts" posts={posts} as="h2" />}
-        col2={<Bookmarks title="Recent Bookmarks" posts={bookmarks} as="h2" />}
+        col1={
+          <TextList
+            title="Recent Posts"
+            items={posts}
+            titleTag="h2"
+            titleSize="small"
+            link={{ url: "/journal", text: "See more" }}
+          />
+        }
+        col2={
+          <TextList
+            title="Recent Bookmarks"
+            items={bookmarks}
+            titleTag="h2"
+            titleSize="small"
+            link={{ url: "/bookmarks", text: "See more" }}
+          />
+        }
         margin="large"
       />
       <section>

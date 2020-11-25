@@ -4,25 +4,28 @@ import type { Document } from "@contentful/rich-text-types";
 export type Page = {
   id: string;
   title: string;
-  description: Document;
+  description?: Document;
   content?: Document;
 };
+
+type BookmarkTag =
+  | "Web design"
+  | "Music"
+  | "Book"
+  | "Article"
+  | "Resource"
+  | "App"
+  | "Inspiration"
+  | "Project";
 
 export type Bookmark = {
   id: string;
   title: string;
   url: string;
-  tag:
-    | "Web design"
-    | "Music"
-    | "Book"
-    | "Article"
-    | "Resource"
-    | "App"
-    | "Inspiration"
-    | "Project";
+  tag: BookmarkTag;
   date: Date;
   notes?: string;
+  subtitle: BookmarkTag;
 };
 
 export type List = {
@@ -69,6 +72,8 @@ export type BlogPostPreview = {
   title: string;
   slug: string;
   date: Date;
+  url: string;
+  subtitle: Date;
 };
 
 export type ReadingEntry = {
@@ -77,6 +82,7 @@ export type ReadingEntry = {
   type: "Book" | "Article";
   author: string;
   url: string;
+  subtitle: string;
 };
 
 export type Project = {

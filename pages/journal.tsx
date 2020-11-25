@@ -4,9 +4,8 @@ import {
   Listening,
   Now,
   PageMeta,
-  Posts,
-  Reading,
   Splitter,
+  TextList,
 } from "components";
 import { PlainList, Table, TableCell, TableRow } from "components/designSystem";
 import fs from "fs";
@@ -83,14 +82,27 @@ export default function Journal({
       <Hero title={page.title} intro={page.description} stats={stats} />
       <Splitter
         col1={<Now entry={journalEntry} />}
-        col2={<Posts title="Recent Posts" posts={blogPosts} size="small" />}
+        col2={
+          <TextList
+            title="Recent Posts"
+            items={blogPosts}
+            titleTag="h2"
+            titleSize="small"
+          />
+        }
         reverse
         margin="large"
       />
       <Splitter
         col1={<Listening totals={LastWeek} tracks={recentTracks} />}
         col2={
-          <Reading title={readingEntries.title} items={readingEntries.items} />
+          <TextList
+            title={readingEntries.title}
+            items={readingEntries.items}
+            titleTag="h2"
+            titleSize="small"
+            externalLinks
+          />
         }
       />
     </>
