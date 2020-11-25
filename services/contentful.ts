@@ -164,13 +164,13 @@ export class ContentAPI {
     });
   }
 
-  async fetchBookmarks(limit = 1000): Promise<Bookmark[]> {
+  async fetchBookmarks(limit = 10, skip = 0): Promise<Bookmark[]> {
     return await this.client
       .getEntries({
         content_type: "blogPost",
         order: "-fields.publishDate",
-        "sys.createdAt[gte]": "2020-01-01T00:00:00Z",
         limit: limit,
+        skip: skip,
       })
       .then((result) => {
         const posts = result.items.map((entry) => this.convertBookmark(entry));

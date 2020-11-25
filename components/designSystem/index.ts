@@ -14,6 +14,7 @@ import NumberedList from "./NumberedList";
 import BulletList from "./BulletList";
 import BlockQuote from "./BlockQuote";
 import { Table, TableRow, TableCell } from "./Table";
+import Button from "./Button";
 
 export {
   GlobalStyles,
@@ -34,4 +35,5 @@ export {
   Table,
   TableRow,
   TableCell,
+  Button,
 };

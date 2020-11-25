@@ -7,6 +7,6 @@ export default async (
   res: NextApiResponse<Bookmark[]>,
 ): Promise<any> => {
   const api = new ContentAPI();
-  const bookmarks = await api.fetchBookmarks();
+  const bookmarks = await api.fetchBookmarks(1000, 0);
   res.status(200).json(bookmarks);
 };
