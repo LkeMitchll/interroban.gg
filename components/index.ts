@@ -7,7 +7,6 @@ import PageMeta from "./PageMeta";
 import Project from "./Project";
 import ResponsiveImage from "./ResponsiveImage";
 import RichText from "./RichText";
-import Roundup from "./Roundup";
 import Splitter from "./Splitter";
 import Title from "./Title";
 import ArrowLink from "./ArrowLink";
@@ -31,7 +30,6 @@ export {
   NavLink,
   RichText,
   ListItem,
-  Roundup,
   Splitter,
   Project,
   ResponsiveImage,
