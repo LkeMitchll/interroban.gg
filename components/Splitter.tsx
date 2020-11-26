@@ -4,7 +4,7 @@ import { styled } from "stitches";
 const Container = styled("section", {
   display: "grid",
   gridColumnGap: "$2",
-  gridRowGap: "$2_5",
+  gridRowGap: "$3",
 
   variants: {
     layout: {
