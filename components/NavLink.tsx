@@ -71,13 +71,12 @@ export default function NavLink({
           state={state}
           target="_blank"
           rel="noreferrer"
-          tabIndex={0}
         >
           {children}
         </A>
       ) : (
         <Link href={url} passHref={true}>
-          <A decoration={decoration} margin={margin} state={state} tabIndex={0}>
+          <A decoration={decoration} margin={margin} state={state}>
             {children}
           </A>
         </Link>

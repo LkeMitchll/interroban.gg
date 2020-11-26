@@ -73,6 +73,13 @@ const GlobalStyles = (): ReactElement => (
         font-feature-settings: "case" on;
       }
 
+      *:focus {
+        outline-color: ${theme.colors.$faded};
+        outline-style: none;
+        outline-width: 0;
+        border-bottom: 2px solid ${theme.colors.$secondary};
+      }
+
       @media screen and (min-width: 600px) {
         html {
           font-size: calc(18px + 2 * ((100vw - 320px) / 680));

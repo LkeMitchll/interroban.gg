@@ -10,12 +10,7 @@ const Secondary = styled("span", {
 export default function Logo(): ReactElement {
   return (
     <Link href="/" passHref>
-      <A
-        css={{ gridArea: "a" }}
-        appearance="plain"
-        aria-label="Home"
-        tabIndex={0}
-      >
+      <A css={{ gridArea: "a" }} appearance="plain" aria-label="Home">
         <Heading
           size="large"
           margin="none"
