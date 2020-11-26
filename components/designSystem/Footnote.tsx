@@ -9,6 +9,7 @@ const Footnote = styled("figure", {
       aside: {
         gridArea: "1 / 3",
         position: "absolute",
+        paddingLeft: "$1",
       },
       below: {
         gridColumn: "1 / 3",
