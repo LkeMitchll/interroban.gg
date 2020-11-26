@@ -35,9 +35,14 @@ const Container = styled("div", {
       },
       withStatsHorizontal: {
         gridTemplate: `"a . b b" auto
-                       "f f c ."/ 1fr 1fr 1fr 1fr`,
+                       "f f c c"/ 1fr 1fr 1fr 1fr`,
         marginBottom: "$3",
         gridGap: "$2",
+
+        bp3: {
+          gridTemplate: `"a . b b" auto
+                        "f f c ."/ 1fr 1fr 1fr 1fr`,
+        },
       },
     },
   },
