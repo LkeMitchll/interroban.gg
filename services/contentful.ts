@@ -17,6 +17,7 @@ import type {
   ReadingEntry,
   Roundup,
 } from "./contentful.types";
+import { formattedDate } from "helpers/date";
 
 export class ContentAPI {
   client: ContentfulClientApi;
@@ -111,7 +112,12 @@ export class ContentAPI {
       slug: rawPost.slug ? rawPost.slug : null,
       date: rawPost.date ? rawPost.date : null,
       url: rawPost.slug ? `/post/${rawPost.slug}` : null,
-      subtitle: rawPost.date ? rawPost.date : null,
+      subtitle: rawPost.date
+        ? formattedDate(rawPost.date, {
+            month: "short",
+            year: "numeric",
+          })
+        : null,
     };
   };
 

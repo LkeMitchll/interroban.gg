@@ -73,7 +73,7 @@ export type BlogPostPreview = {
   slug: string;
   date: Date;
   url: string;
-  subtitle: Date;
+  subtitle: string;
 };
 
 export type ReadingEntry = {

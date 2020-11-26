@@ -76,8 +76,7 @@ export default function Journal({
       <PageMeta title={page.title} />
       <Hero title={page.title} intro={page.description} stats={stats} />
       <Splitter
-        col1={<Now entry={journalEntry} />}
-        col2={
+        col1={
           <TextList
             title="Recent Posts"
             items={blogPosts}
@@ -85,6 +84,7 @@ export default function Journal({
             titleSize="small"
           />
         }
+        col2={<Now entry={journalEntry} />}
         reverse
         margin="large"
       />
