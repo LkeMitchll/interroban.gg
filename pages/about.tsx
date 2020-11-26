@@ -27,11 +27,11 @@ export default function AboutPage({
   headshot,
 }: PageProps): ReactElement {
   return (
-    <>
+    <article>
       <PageMeta title={page.title} />
       <Hero image={hero} title={page.title} />
       <RichText source={page.content} />
       <History experience={experience} headshot={headshot} />
-    </>
+    </article>
   );
 }

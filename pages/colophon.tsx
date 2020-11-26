@@ -16,10 +16,10 @@ interface ColophonProps {
 
 export default function Colophon({ page }: ColophonProps): ReactElement {
   return (
-    <>
+    <article>
       <PageMeta title={page.title} />
       <Hero title={page.title} intro={page.description} />
       <RichText source={page.content} />
-    </>
+    </article>
   );
 }

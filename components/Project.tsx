@@ -5,7 +5,7 @@ import { styled } from "stitches";
 import ResponsiveImage from "./ResponsiveImage";
 import RichText from "./RichText";
 
-const Container = styled("div", {
+const Container = styled("article", {
   display: "grid",
   gridColumnGap: "$2",
   gridRowGap: "$1",
@@ -34,7 +34,7 @@ const Container = styled("div", {
   },
 });
 
-const Column = styled("div", {
+const Column = styled("section", {
   marginTop: "$0",
 
   bp2: {
@@ -46,7 +46,7 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
   return (
     <Container layout={{ initial: "vertical", bp2: "horizontal" }}>
       <ResponsiveImage image={data.image} styles={{ gridArea: "image" }} />
-      <Column>
+      <Column as="header">
         <Heading as="h3" margin="tiny" size="small">
           {data.title}
         </Heading>

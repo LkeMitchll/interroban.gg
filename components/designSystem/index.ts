@@ -15,6 +15,7 @@ import BulletList from "./BulletList";
 import BlockQuote from "./BlockQuote";
 import { Table, TableRow, TableCell } from "./Table";
 import Button from "./Button";
+import Figure from "./Figure";
 
 export {
   GlobalStyles,
@@ -36,4 +37,5 @@ export {
   TableRow,
   TableCell,
   Button,
+  Figure,
 };

@@ -40,7 +40,7 @@ export async function getStaticPaths(): Promise<Paths> {
   };
 }
 
-const PageTitle = styled("section", {
+const PageTitle = styled("header", {
   marginBottom: "$2",
   display: "grid",
   gridColumnGap: "$2",
@@ -57,18 +57,18 @@ const PageTitle = styled("section", {
   },
 });
 
-const Footer = styled("div", {
+const Footer = styled("footer", {
   textAlign: "center",
   marginTop: "$2",
 });
 
-const PostTitle = styled("div", {
+const PostTitle = styled("section", {
   gridColumn: "span 3",
 });
 
 export default function Post({ post }: { post: BlogPost }): ReactElement {
   return (
-    <>
+    <article>
       <PageMeta title={post.title} description={post.description} />
       <PageTitle layout={{ initial: "oneCol", bp3: "fourCol" }}>
         <Title
@@ -94,6 +94,6 @@ export default function Post({ post }: { post: BlogPost }): ReactElement {
           Back to Journal
         </NavLink>
       </Footer>
-    </>
+    </article>
   );
 }

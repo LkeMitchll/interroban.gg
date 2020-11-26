@@ -5,17 +5,19 @@ import type { ReactElement } from "react";
 import type { Asset } from "services/contentful.types";
 import { css, styled } from "stitches";
 
-const Wrapper = styled("div", { marginBottom: "$1" });
+const Wrapper = styled("figure", { margin: "$0 $0 $1" });
 
 export default function ResponsiveImage({
   image,
   styles,
   sizes,
+  wrapperTag,
 }: {
   image: Asset;
   styles?: TCssWithBreakpoints<any>;
   sizes?: string;
   priority?: boolean;
+  wrapperTag?: "div" | "figure";
 }): ReactElement {
   const imageStyle = css({
     backgroundColor: "$faded",
@@ -23,7 +25,7 @@ export default function ResponsiveImage({
   });
 
   return (
-    <Wrapper css={styles}>
+    <Wrapper as={wrapperTag} css={styles}>
       <Image
         src={`https:${image.url}`}
         width={image.width}

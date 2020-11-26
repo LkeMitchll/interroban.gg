@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { styled } from "stitches";
 
-const Container = styled("section", {
+const Container = styled("article", {
   display: "grid",
   gridColumnGap: "$2",
   gridRowGap: "$3",
@@ -21,7 +21,7 @@ const Container = styled("section", {
   },
 });
 
-const Column = styled("div", {
+const Column = styled("section", {
   variants: {
     position: {
       first: {

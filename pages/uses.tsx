@@ -19,10 +19,10 @@ export default function UsesPage({
   heroImage: Asset;
 }): ReactElement {
   return (
-    <>
+    <article>
       <PageMeta title={page.title} />
       <Hero title={page.title} image={heroImage} intro={page.description} />
       <RichText source={page.content} />
-    </>
+    </article>
   );
 }

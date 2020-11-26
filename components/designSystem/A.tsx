@@ -11,6 +11,14 @@ const A = styled("a", {
         fontSize: "$3",
       },
     },
+    appearance: {
+      underline: {
+        textDecoration: "underline",
+      },
+      plain: {
+        textDecoration: "none",
+      },
+    },
   },
 });
 

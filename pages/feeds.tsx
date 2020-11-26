@@ -60,7 +60,7 @@ export default function FeedsPage({
   });
 
   return (
-    <>
+    <article>
       <PageMeta title={page.title} />
       <Hero title={page.title} stats={stats} intro={page.description} />
       <PlainList className={Wrapper}>
@@ -76,6 +76,6 @@ export default function FeedsPage({
           />
         ))}
       </PlainList>
-    </>
+    </article>
   );
 }

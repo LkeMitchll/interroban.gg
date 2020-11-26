@@ -76,6 +76,7 @@ const RichText = ({ source, unwrapped }: RichTextProps): JSX.Element => {
     <>
       {!unwrapped ? (
         <Content
+          as="section"
           layout={{
             initial: "small",
             bp3: "footNoteRight",

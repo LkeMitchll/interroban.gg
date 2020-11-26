@@ -8,7 +8,7 @@ import type { ReactElement } from "react";
 import type { Asset } from "services/contentful.types";
 import { styled } from "stitches";
 
-const Container = styled("div", {
+const Container = styled("header", {
   display: "grid",
   position: "relative",
 
@@ -48,11 +48,11 @@ const Container = styled("div", {
   },
 });
 
-const StatsContainer = styled("div", {
+const StatsContainer = styled("section", {
   gridArea: "c",
 });
 
-const IntroWrapper = styled("div", {
+const IntroWrapper = styled("section", {
   gridColumn: "b",
   paddingRight: "$2",
 });
@@ -116,7 +116,7 @@ export default function Hero({
             }}
           />
 
-          <Footnote position="hero" css={{ gridArea: "f" }}>
+          <Footnote as="aside" position="hero" css={{ gridArea: "f" }}>
             <Small as="figcaption">Image: {image.desc}</Small>
           </Footnote>
         </>

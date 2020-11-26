@@ -74,14 +74,14 @@ const Home = ({
         }
         margin="large"
       />
-      <section>
+      <article>
         <Heading as="h2" size="large">
           Selected Work <Beta>beta</Beta>
         </Heading>
         {projects.items.map((project: TProject) => (
           <Project key={project.id} data={project} />
         ))}
-      </section>
+      </article>
     </>
   );
 };

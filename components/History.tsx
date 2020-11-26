@@ -11,7 +11,7 @@ interface HistoryProps {
   headshot: Asset;
 }
 
-const Container = styled("div", {
+const Container = styled("section", {
   display: "grid",
   gridGap: "$2",
   marginTop: "$3",
@@ -36,7 +36,7 @@ const Item = styled("li", {
   fontsize: "$1",
 });
 
-const Summary = styled("div", {
+const Summary = styled("header", {
   marginBottom: "$2",
   variants: {
     layout: {

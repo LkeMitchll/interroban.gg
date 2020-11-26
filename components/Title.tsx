@@ -14,7 +14,7 @@ interface TitleProps {
   hidden?: boolean;
 }
 
-const Header = styled("header", {
+const Header = styled("nav", {
   marginBottom: "$2",
 });
 

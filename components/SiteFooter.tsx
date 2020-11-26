@@ -59,7 +59,7 @@ const Item = styled("li", {
   },
 });
 
-const CopyNotice = styled("div", {
+const CopyNotice = styled("aside", {
   gridColumn: "1/3",
 });
 
@@ -117,7 +117,12 @@ export default function SiteFooter(): ReactElement {
       <Column
         position={{ initial: "threeCol", bp1: "horizontal", bp2: "oneCol" }}
       >
-        <Small display="block" margin={{ initial: "small", bp1: "none" }}>
+        <Small
+          as="h4"
+          display="block"
+          margin={{ initial: "small", bp1: "none" }}
+          aria-label="Site navigation"
+        >
           Luke Mitchell &mdash; <br />
           Product Designer
         </Small>

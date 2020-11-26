@@ -33,7 +33,7 @@ export default function SiteHeader({
 }): ReactElement {
   return (
     <Container layout={layout ? layout : { initial: "tiny", bp1: "small" }}>
-      {layout?.initial == "minimal" ? null : <Logo css={{ gridArea: "a" }} />}
+      {layout?.initial == "minimal" ? null : <Logo />}
       <Nav
         layout={{ initial: "horizontal", bp1: "horizontal" }}
         css={{ gridArea: "b" }}

@@ -2,7 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import type { Hyperlink, Inline, Paragraph } from "@contentful/rich-text-types";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { ResponsiveImage } from "components";
-import { A, Footnote, P, Small } from "designSystem";
+import { A, Footnote, P, Small, Figure } from "designSystem";
 import { ImageSizes } from "helpers/image";
 import type { ReactNode } from "react";
 import type { Asset, RichTextChildren } from "services/contentful.types";
@@ -43,10 +43,14 @@ export function footnote(node: Inline): ReactNode {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (_: Paragraph, children: RichTextChildren) => {
         return (
-          <>
-            <ResponsiveImage image={image} sizes={ImageSizes.quarter} />
+          <Figure>
+            <ResponsiveImage
+              wrapperTag="div"
+              image={image}
+              sizes={ImageSizes.quarter}
+            />
             <Small as="figcaption">Image: {children}</Small>
-          </>
+          </Figure>
         );
       },
       [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
@@ -59,7 +63,7 @@ export function footnote(node: Inline): ReactNode {
     },
   };
   return (
-    <Footnote position={{ initial: "below", bp3: "aside" }}>
+    <Footnote as="aside" position={{ initial: "below", bp3: "aside" }}>
       {documentToReactComponents(content, footnoteOptions)}
     </Footnote>
   );
