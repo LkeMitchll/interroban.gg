@@ -5,7 +5,7 @@ import type { ReactElement } from "react";
 import type { Asset } from "services/contentful.types";
 import { css, styled } from "stitches";
 
-const Wrapper = styled("div", {});
+const Wrapper = styled("div", { marginBottom: "$1" });
 
 export default function ResponsiveImage({
   image,
@@ -19,6 +19,7 @@ export default function ResponsiveImage({
 }): ReactElement {
   const imageStyle = css({
     backgroundColor: "$faded",
+    borderRadius: "$image",
   });
 
   return (
