@@ -85,8 +85,6 @@ export default function Journal({
           />
         }
         col2={<Now entry={journalEntry} />}
-        reverse
-        margin="large"
       />
       <Splitter
         col1={<Listening totals={LastWeek} tracks={recentTracks} />}

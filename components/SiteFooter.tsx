@@ -1,74 +1,20 @@
 import { Nav, NavLink } from "components";
-import { PlainList, Small, Subtitle, TertiaryText } from "designSystem";
+import {
+  Grid,
+  GridChild,
+  PlainList,
+  Small,
+  Subtitle,
+  TertiaryText,
+} from "designSystem";
 import type { ReactElement } from "react";
-import { styled } from "stitches";
 
-const Container = styled("footer", {
-  display: "grid",
-  gridGap: "$2",
-  marginBottom: "$2",
-
-  variants: {
-    layout: {
-      threeCol: {
-        gridTemplateColumns: "repeat(3, 1fr)",
-      },
-      fourCol: {
-        gridTemplateColumns: "repeat(4, 1fr)",
-      },
-    },
-  },
-});
-
-const Column = styled("div", {
-  gridColumn: "1",
-  variants: {
-    position: {
-      threeCol: {
-        gridColumn: "1 / 4",
-      },
-      oneCol: {
-        gridColumn: "1 / 2",
-        display: "inline",
-      },
-      horizontal: {
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gridGap: "$2",
-        alignItems: "flex-end",
-      },
-      auto: {
-        gridColumn: "auto",
-      },
-    },
-    alignment: {
-      bottom: {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-      },
-    },
-  },
-});
-
-const Item = styled("li", {
-  marginRight: "$2",
-
-  bp2: {
-    marginRight: "$0",
-  },
-});
-
-const CopyNotice = styled("aside", {
-  gridColumn: "1/3",
-});
+type FooterLink = {
+  url: string;
+  title: string;
+};
 
 export default function SiteFooter(): ReactElement {
-  type FooterLink = {
-    url: string;
-    title: string;
-  };
-
   const Title = (content: string) => (
     <Subtitle as="h4" margin="small">
       {content}
@@ -79,7 +25,7 @@ export default function SiteFooter(): ReactElement {
     return (
       <PlainList>
         {links.map((link: Record<"title" | "url", string>, i: number) => (
-          <Item key={i}>
+          <li key={i}>
             <NavLink
               url={link.url}
               margin={{ initial: "medium", bp2: "small" }}
@@ -87,7 +33,7 @@ export default function SiteFooter(): ReactElement {
             >
               {link.title}
             </NavLink>
-          </Item>
+          </li>
         ))}
       </PlainList>
     );
@@ -113,36 +59,38 @@ export default function SiteFooter(): ReactElement {
   ];
 
   return (
-    <Container layout={{ initial: "threeCol", bp2: "fourCol" }}>
-      <Column
-        position={{ initial: "threeCol", bp1: "horizontal", bp2: "oneCol" }}
-      >
-        <Small
-          as="h4"
-          display="block"
-          margin={{ initial: "small", bp1: "none" }}
-          aria-label="Site navigation"
-        >
+    <Grid as="footer">
+      <GridChild column={{ initial: "fullWidth", bp1: "firstHalf", bp2: "$1" }}>
+        <Small as="h4" display="block" aria-label="Site navigation">
           Luke Mitchell &mdash; <br />
           Product Designer
         </Small>
         <Nav layout={{ initial: "horizontal", bp2: "vertical" }} />
-      </Column>
-      <Column position="auto" alignment="bottom">
+      </GridChild>
+      <GridChild
+        column={{ initial: "fullWidth", bp1: "$1", bp2: "$2" }}
+        position="bottom"
+      >
         {Title("Information")}
         {List(InfoLinks)}
-      </Column>
-      <Column position="auto" alignment="bottom">
+      </GridChild>
+      <GridChild
+        column={{ initial: "fullWidth", bp1: "$2", bp2: "$3" }}
+        position="bottom"
+      >
         {Title("Contact")}
         {List(ContactLinks)}
-      </Column>
-      <Column position="auto" alignment="bottom">
+      </GridChild>
+      <GridChild
+        column={{ initial: "fullWidth", bp1: "$3", bp2: "$4" }}
+        position="bottom"
+      >
         {Title("Elsewhere")}
         {List(ElsewhereLinks)}
-      </Column>
-      <CopyNotice>
+      </GridChild>
+      <GridChild column="fullWidth">
         <TertiaryText>&copy; 2020, Luke Mitchell</TertiaryText>
-      </CopyNotice>
-    </Container>
+      </GridChild>
+    </Grid>
   );
 }

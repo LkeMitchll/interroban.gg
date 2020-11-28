@@ -12,7 +12,7 @@ export default function Listening({
   tracks: Track[];
 }): ReactElement {
   return (
-    <div>
+    <>
       <Heading as="h3" margin="medium" size="small">
         Listening
       </Heading>
@@ -50,6 +50,6 @@ export default function Listening({
       ) : (
         <P>Loading...</P>
       )}
-    </div>
+    </>
   );
 }

@@ -10,14 +10,12 @@ const Secondary = styled("span", {
 export default function Logo(): ReactElement {
   return (
     <Link href="/" passHref>
-      <A css={{ gridArea: "a" }} appearance="plain" aria-label="Home">
+      <A appearance="plain" aria-label="Home">
         <Heading
           size="large"
           margin="none"
-          css={{
-            letterSpacing: "$logo",
-            lineHeight: "$crushed",
-          }}
+          lineHeight="crushed"
+          letterSpacing="tight"
         >
           Luke Mitchell <Secondary>Product Designer</Secondary>
         </Heading>

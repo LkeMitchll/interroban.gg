@@ -47,10 +47,6 @@ const Home = ({
       <Hero
         title="About Me"
         intro={page.description}
-        layoutOverride={{
-          initial: "withStatsVertical",
-          bp2: "withStatsHorizontal",
-        }}
         linkOverride={{ url: "/about", text: "Read more" }}
       />
       <Splitter
@@ -72,7 +68,6 @@ const Home = ({
             link={{ url: "/bookmarks", text: "See more" }}
           />
         }
-        margin="large"
       />
       <article>
         <Heading as="h2" size="large">

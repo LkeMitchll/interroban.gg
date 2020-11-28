@@ -1,6 +1,7 @@
 import { A, Image, P, SecondaryText, TertiaryText } from "designSystem";
 import Link from "next/link";
 import type { ReactElement } from "react";
+import React from "react";
 import type { CoverArt } from "services/spotify.types";
 import { styled } from "stitches";
 
@@ -11,6 +12,7 @@ interface ListItemProps {
   subtitle: string | Date;
   image?: CoverArt;
   external?: boolean;
+  unwrapped?: boolean;
 }
 
 const Container = styled("li", {
@@ -36,9 +38,11 @@ export default function ListItem({
   subtitle,
   image,
   external,
+  unwrapped,
 }: ListItemProps): ReactElement {
+  const Wrapper = unwrapped ? React.Fragment : Container;
   return (
-    <Container>
+    <Wrapper>
       {image ? (
         <Image
           src={image.url}
@@ -66,6 +70,6 @@ export default function ListItem({
         )}
         <SecondaryText>{subtitle}</SecondaryText>
       </Divider>
-    </Container>
+    </Wrapper>
   );
 }

@@ -1,5 +1,5 @@
 import { ArrowLink, Hero, ListItem, PageMeta, StatsTable } from "components";
-import { PlainList } from "components/designSystem";
+import { Grid, GridChild, PlainList } from "components/designSystem";
 import { formattedDate } from "helpers/date";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
@@ -7,7 +7,6 @@ import { ContentAPI } from "services/contentful";
 import type { Page } from "services/contentful.types";
 import { FeedAPI } from "services/feedbin";
 import type { Feed } from "services/feedbin.types";
-import { css } from "stitches";
 
 export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
@@ -43,39 +42,30 @@ export default function FeedsPage({
       <ArrowLink url="/api/feeds" text="/api/feeds" />
     </>
   );
-  const Wrapper = css({
-    display: "grid",
-    gridColumnGap: "$2",
-    gridTemplateColumns: "1fr",
-
-    bp1: {
-      gridTemplateColumns: "repeat(2, 1fr)",
-    },
-    bp2: {
-      gridTemplateColumns: "repeat(3, 1fr)",
-    },
-    bp3: {
-      gridTemplateColumns: "repeat(4, 1fr)",
-    },
-  });
 
   return (
     <article>
       <PageMeta title={page.title} />
       <Hero title={page.title} stats={stats} intro={page.description} />
-      <PlainList className={Wrapper}>
+      <Grid as={PlainList}>
         {feeds.map((feed) => (
-          <ListItem
+          <GridChild
             key={feed.id}
-            title={feed.title}
-            url={feed.site_url}
-            subtitle={`Reading since: ${formattedDate(feed.created_at, {
-              month: "short",
-              year: "numeric",
-            })}`}
-          />
+            as="li"
+            column={{ initial: "fullWidth", bp2: "auto" }}
+          >
+            <ListItem
+              title={feed.title}
+              url={feed.site_url}
+              subtitle={`Reading since: ${formattedDate(feed.created_at, {
+                month: "short",
+                year: "numeric",
+              })}`}
+              unwrapped
+            />
+          </GridChild>
         ))}
-      </PlainList>
+      </Grid>
     </article>
   );
 }

@@ -29,6 +29,22 @@ const Heading = styled("h1", {
       medium: {
         marginBottom: "$2",
       },
+      top: {
+        marginTop: "$1",
+      },
+    },
+    lineHeight: {
+      default: {
+        lineHeight: "$default",
+      },
+      crushed: {
+        lineHeight: "$crushed",
+      },
+    },
+    letterSpacing: {
+      tight: {
+        letterSpacing: "$tight",
+      },
     },
   },
 });

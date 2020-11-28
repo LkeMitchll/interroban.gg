@@ -42,7 +42,7 @@ export const theme = {
     $mono: "'Pitch', Monaco, ‘Courier New’, Courier, monospace",
   },
   letterSpacings: {
-    $logo: "-0.5px",
+    $tight: "-0.5px",
   },
   lineHeights: {
     $default: "1.4",

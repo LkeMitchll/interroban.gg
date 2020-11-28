@@ -1,6 +1,6 @@
 import { ListItem } from "components";
 import ResponsiveImage from "components/ResponsiveImage";
-import { Heading, P, PlainList, Subtitle } from "designSystem";
+import { Grid, GridChild, Heading, P, PlainList, Subtitle } from "designSystem";
 import { ImageSizes } from "helpers/image";
 import type { ReactElement } from "react";
 import type { Asset, Job, List } from "services/contentful.types";
@@ -11,46 +11,9 @@ interface HistoryProps {
   headshot: Asset;
 }
 
-const Container = styled("section", {
-  display: "grid",
-  gridGap: "$2",
-  marginTop: "$3",
-
-  variants: {
-    layout: {
-      oneCol: {
-        gridTemplateColumns: "1fr",
-      },
-      twoCol: {
-        gridTemplateColumns: "repeat(2, 1fr)",
-      },
-      fourCol: {
-        gridTemplateColumns: "repeat(4, 1fr)",
-      },
-    },
-  },
-});
-
 const Item = styled("li", {
   fontFamily: "$serif",
   fontsize: "$1",
-});
-
-const Summary = styled("header", {
-  marginBottom: "$2",
-  variants: {
-    layout: {
-      single: {
-        gridColumn: "1 / 1",
-      },
-      medium: {
-        gridColumn: "1 / 3",
-      },
-      full: {
-        gridColumn: "2 / 5",
-      },
-    },
-  },
 });
 
 export default function History({
@@ -77,8 +40,8 @@ export default function History({
     "Sales Support",
   ];
   return (
-    <Container layout={{ initial: "oneCol", bp1: "twoCol", bp3: "fourCol" }}>
-      <Summary layout={{ initial: "single", bp1: "medium", bp3: "full" }}>
+    <Grid as="section">
+      <GridChild as="header" column={{ initial: "fullWidth", bp2: "center" }}>
         <Heading as="h3" size="small">
           Career
         </Heading>
@@ -87,15 +50,16 @@ export default function History({
           working with clients of all sizes, spanning many industries. If you
           think we could work together, please get in touch.
         </P>
-      </Summary>
-      <div>
-        <ResponsiveImage
-          image={headshot}
-          sizes={ImageSizes.quarter}
-          styles={{ width: "60%", bp3: { width: "80%" } }}
-        />
-      </div>
-      <div>
+      </GridChild>
+      <GridChild
+        as="figure"
+        column={{ initial: "fullWidth", bp1: "firstHalf", bp2: "$1" }}
+      >
+        <ResponsiveImage image={headshot} sizes={ImageSizes.quarter} />
+      </GridChild>
+      <GridChild
+        column={{ initial: "fullWidth", bp1: "secondHalf", bp2: "$2" }}
+      >
         <Subtitle as="h4" margin="small">
           {experience.title}
         </Subtitle>
@@ -109,8 +73,8 @@ export default function History({
             />
           ))}
         </PlainList>
-      </div>
-      <div>
+      </GridChild>
+      <GridChild column={{ initial: "fullWidth", bp1: "firstHalf", bp2: "$3" }}>
         <Subtitle as="h4" margin="small">
           Select Clients
         </Subtitle>
@@ -119,8 +83,10 @@ export default function History({
             <Item key={i}>{client}</Item>
           ))}
         </PlainList>
-      </div>
-      <div>
+      </GridChild>
+      <GridChild
+        column={{ initial: "fullWidth", bp1: "secondHalf", bp2: "$4" }}
+      >
         <Subtitle as="h4" margin="small">
           Skills
         </Subtitle>
@@ -129,7 +95,7 @@ export default function History({
             <Item key={i}>{skill}</Item>
           ))}
         </PlainList>
-      </div>
-    </Container>
+      </GridChild>
+    </Grid>
   );
 }

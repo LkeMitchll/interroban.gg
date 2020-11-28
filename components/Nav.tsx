@@ -1,4 +1,3 @@
-import type { TCssWithBreakpoints } from "@stitches/react";
 import { NavLink } from "components";
 import { useRouter } from "next/router";
 import type { ReactElement } from "react";
@@ -28,17 +27,11 @@ const Item = styled("li", {
   marginRight: "$2",
 });
 
-export default function Nav({
-  css,
-  layout,
-}: {
-  css?: TCssWithBreakpoints<any>;
-  layout?: any;
-}): ReactElement {
+export default function Nav({ layout }: { layout?: any }): ReactElement {
   const currentPage = useRouter().asPath;
 
   return (
-    <List css={css} layout={layout}>
+    <List layout={layout}>
       <Item>
         <NavLink
           url="/about"
