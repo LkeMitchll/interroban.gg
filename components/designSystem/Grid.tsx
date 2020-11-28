@@ -6,6 +6,9 @@ const Grid = styled("div", {
   gridColumnGap: "$2",
 
   variants: {
+    marginTop: {
+      $3: { marginTop: "$3" },
+    },
     marginBottom: {
       $1: { marginBottom: "$1" },
       $2: { marginBottom: "$2" },
