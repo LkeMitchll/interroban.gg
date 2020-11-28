@@ -32,7 +32,11 @@ export default function Hero({
           as="section"
           column={{
             initial: "fullWidth",
-            bp2: image || !stats ? "center" : "secondHalf",
+            bp2: linkOverride
+              ? "secondHalf"
+              : image || !stats
+              ? "center"
+              : "secondHalf",
           }}
         >
           <RichText source={intro} unwrapped />
