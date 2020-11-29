@@ -29,6 +29,21 @@ type RichTextProps = {
   unwrapped?: boolean;
 };
 
+const Wrapper = (props: any) => {
+  const { ...otherProps } = props;
+  return (
+    <GridChild
+      as="section"
+      column={{
+        initial: "fullWidth",
+        bp2: "threeQuarters",
+        bp3: "center",
+      }}
+      {...otherProps}
+    />
+  );
+};
+
 const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node: Paragraph, children: RichTextChildren) => {
@@ -42,37 +57,34 @@ const options = {
 
       return (
         <>
-          <GridChild
-            as="section"
-            column={{ initial: "fullWidth", bp2: "center" }}
-          >
+          <Wrapper>
             <P>{children}</P>
-          </GridChild>
+          </Wrapper>
           {footnotes && renderFootnotes(footnotes)}
         </>
       );
     },
     [BLOCKS.HEADING_2]: (_: Heading2, children: RichTextChildren) => (
-      <GridChild as="section" column={{ initial: "fullWidth", bp2: "center" }}>
+      <Wrapper>
         <Heading as="h2" margin="top" size="small">
           {children}
         </Heading>
-      </GridChild>
+      </Wrapper>
     ),
     [BLOCKS.HEADING_3]: (_: Heading2, children: RichTextChildren) => (
-      <GridChild as="section" column={{ initial: "fullWidth", bp2: "center" }}>
+      <Wrapper>
         <Subtitle as="h3">{children}</Subtitle>
-      </GridChild>
+      </Wrapper>
     ),
     [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
-      <GridChild as="section" column={{ initial: "fullWidth", bp2: "center" }}>
+      <Wrapper>
         <BulletList>{children}</BulletList>
-      </GridChild>
+      </Wrapper>
     ),
     [BLOCKS.QUOTE]: (_: Block, children: RichTextChildren) => (
-      <GridChild as="section" column={{ initial: "fullWidth", bp2: "center" }}>
+      <Wrapper>
         <BlockQuote>{children}</BlockQuote>
-      </GridChild>
+      </Wrapper>
     ),
     [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
       return <A href={node.data.uri}>{children}</A>;
@@ -109,7 +121,10 @@ const footnoteOptions = {
         footnoteOptions,
       );
       return (
-        <GridChild as={Footnote} column={{ initial: "fullWidth", bp2: "$4" }}>
+        <GridChild
+          as={Footnote}
+          column={{ initial: "fullWidth", bp2: "center", bp3: "$4" }}
+        >
           <ResponsiveImage image={image} sizes={ImageSizes.quarter} />
           {renderedCaptionNode}
         </GridChild>

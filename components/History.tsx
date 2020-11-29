@@ -49,7 +49,10 @@ export default function History({
   ];
   return (
     <Grid as="section">
-      <GridChild as="header" column={{ initial: "fullWidth", bp2: "center" }}>
+      <GridChild
+        as="header"
+        column={{ initial: "fullWidth", bp2: "threeQuarters", bp3: "center" }}
+      >
         <Heading as="h3" size="small">
           Career
         </Heading>
