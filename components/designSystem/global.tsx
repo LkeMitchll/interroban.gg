@@ -59,7 +59,7 @@ const GlobalStyles = (): ReactElement => (
       }
 
       html {
-        font-size: 16px;
+        font-size: 17px;
       }
 
       body {
