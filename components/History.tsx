@@ -1,6 +1,14 @@
 import { ListItem } from "components";
 import ResponsiveImage from "components/ResponsiveImage";
-import { Grid, GridChild, Heading, P, PlainList, Subtitle } from "designSystem";
+import {
+  Grid,
+  GridChild,
+  Heading,
+  P,
+  PlainList,
+  Subtitle,
+  Figure,
+} from "designSystem";
 import { ImageSizes } from "helpers/image";
 import type { ReactElement } from "react";
 import type { Asset, Job, List } from "services/contentful.types";
@@ -51,10 +59,7 @@ export default function History({
           think we could work together, please get in touch.
         </P>
       </GridChild>
-      <GridChild
-        as="figure"
-        column={{ initial: "fullWidth", bp1: "firstHalf", bp2: "$1" }}
-      >
+      <GridChild as={Figure} column={{ initial: "firstHalf", bp2: "$1" }}>
         <ResponsiveImage image={headshot} sizes={ImageSizes.quarter} />
       </GridChild>
       <GridChild
