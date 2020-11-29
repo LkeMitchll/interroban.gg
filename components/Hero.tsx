@@ -20,7 +20,10 @@ export default function Hero({
   linkOverride?: Record<"url" | "text", string>;
 }): ReactElement {
   return (
-    <Grid as="header" marginBottom={{ initial: "$1", bp2: "$3" }}>
+    <Grid
+      as="header"
+      marginBottom={{ initial: image ? "$1" : "$3", bp2: "$3" }}
+    >
       <GridChild as="nav" column={{ initial: "fullWidth", bp2: "$1" }}>
         <Title
           title={title}

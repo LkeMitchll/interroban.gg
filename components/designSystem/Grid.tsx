@@ -21,6 +21,9 @@ const Grid = styled("div", {
       small: {
         gridRowGap: "$1",
       },
+      large: {
+        gridRowGap: "$3",
+      },
     },
   },
 });
