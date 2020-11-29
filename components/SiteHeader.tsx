@@ -5,7 +5,7 @@ import { Grid, GridChild } from "./designSystem";
 export default function SiteHeader(): ReactElement {
   return (
     <Grid as="nav" marginTop="$3">
-      <GridChild column="firstHalf">
+      <GridChild column={{ initial: "fullWidth", bp2: "firstHalf" }}>
         <Logo />
       </GridChild>
       <GridChild column={{ initial: "fullWidth", bp2: "secondHalf" }}>
