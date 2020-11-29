@@ -10,7 +10,10 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
       <GridChild column="fullWidth" as={Figure}>
         <ResponsiveImage image={data.image} />
       </GridChild>
-      <GridChild column={{ initial: "fullWidth", bp2: "$1" }} as="header">
+      <GridChild
+        column={{ initial: "fullWidth", bp2: "center", bp3: "$1" }}
+        as="header"
+      >
         <Heading as="h3" margin="tiny" size="small">
           {data.title}
         </Heading>
@@ -18,7 +21,10 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
           <Small>{data.blurb}</Small>
         </P>
       </GridChild>
-      <GridChild column={{ initial: "fullWidth", bp2: "center" }} as="section">
+      <GridChild
+        column={{ initial: "fullWidth", bp2: "threeQuarters", bp3: "center" }}
+        as="section"
+      >
         <RichText source={data.content} unwrapped />
       </GridChild>
     </Grid>

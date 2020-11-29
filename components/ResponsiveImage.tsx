@@ -10,7 +10,6 @@ export default function ResponsiveImage({
 }: {
   image: Asset;
   sizes?: string;
-  priority?: boolean;
 }): ReactElement {
   const imageStyle = css({
     backgroundColor: "$faded",

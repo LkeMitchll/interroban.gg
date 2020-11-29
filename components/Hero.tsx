@@ -53,7 +53,7 @@ export default function Hero({
       {stats && (
         <GridChild
           as="section"
-          column={{ initial: "fullWidth", bp2: "secondHalf", bp3: "$3" }}
+          column={{ initial: "firstHalf", bp2: "secondHalf", bp3: "$3" }}
         >
           {stats}
         </GridChild>
