@@ -165,6 +165,11 @@ export class ContentAPI {
           ? entry.fields.descriptionRich
           : null,
         content: entry.fields.content ? entry.fields.content : null,
+        lastUpdate: formattedDate(new Date(entry.sys.updatedAt), {
+          day: "numeric",
+          month: "numeric",
+          year: "numeric",
+        }),
       };
       return page;
     });

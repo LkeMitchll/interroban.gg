@@ -48,6 +48,7 @@ const Home = ({
         title="About Me"
         intro={page.description}
         linkOverride={{ url: "/about", text: "Read more" }}
+        layoutOverride={{ initial: "fullWidth", bp2: "secondHalf" }}
       />
       <Splitter
         col1={

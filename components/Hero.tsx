@@ -12,12 +12,14 @@ export default function Hero({
   intro,
   stats,
   linkOverride,
+  layoutOverride,
 }: {
   title: string;
   image?: Asset;
   intro?: Document;
   stats?: ReactElement;
   linkOverride?: Record<"url" | "text", string>;
+  layoutOverride?: any;
 }): ReactElement {
   return (
     <Grid
@@ -33,19 +35,15 @@ export default function Hero({
       {intro ? (
         <GridChild
           as="section"
-          column={{
-            initial: "fullWidth",
-            bp2: linkOverride
-              ? "secondHalf"
-              : image || !stats
-              ? "threeQuarters"
-              : "secondHalf",
-            bp3: linkOverride
-              ? "secondHalf"
-              : image || !stats
-              ? "center"
-              : "secondHalf",
-          }}
+          column={
+            layoutOverride
+              ? layoutOverride
+              : {
+                  initial: "fullWidth",
+                  bp2: image || !stats ? "threeQuarters" : "secondHalf",
+                  bp3: image || !stats ? "center" : "secondHalf",
+                }
+          }
         >
           <RichText source={intro} unwrapped />
         </GridChild>
@@ -53,7 +51,11 @@ export default function Hero({
       {stats && (
         <GridChild
           as="section"
-          column={{ initial: "firstHalf", bp2: "secondHalf", bp3: "$3" }}
+          column={{
+            initial: "firstHalf",
+            bp2: image || layoutOverride ? "$2" : "secondHalf",
+            bp3: image || layoutOverride ? "$2" : "$3",
+          }}
         >
           {stats}
         </GridChild>

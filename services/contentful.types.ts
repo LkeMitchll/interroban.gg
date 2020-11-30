@@ -6,6 +6,7 @@ export type Page = {
   title: string;
   description?: Document;
   content?: Document;
+  lastUpdate: string;
 };
 
 type BookmarkTag =

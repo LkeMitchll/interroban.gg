@@ -1,4 +1,4 @@
-import { Hero, PageMeta, RichText } from "components";
+import { Hero, PageMeta, RichText, StatsTable } from "components";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
@@ -18,7 +18,21 @@ export default function Colophon({ page }: ColophonProps): ReactElement {
   return (
     <article>
       <PageMeta title={page.title} />
-      <Hero title={page.title} intro={page.description} />
+      <Hero
+        title={page.title}
+        intro={page.description}
+        stats={
+          <StatsTable
+            data={[
+              {
+                label: "Updated",
+                data: page.lastUpdate,
+              },
+            ]}
+          />
+        }
+        layoutOverride={{ initial: "fullWidth", bp2: "center" }}
+      />
       <RichText source={page.content} />
     </article>
   );
