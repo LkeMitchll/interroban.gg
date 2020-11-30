@@ -9,7 +9,6 @@ import TertiaryText from "./TertiaryText";
 import SecondaryText from "./SecondaryText";
 import Subtitle from "./Subtitle";
 import Footnote from "./Footnote";
-import LargeText from "./LargeText";
 import NumberedList from "./NumberedList";
 import BulletList from "./BulletList";
 import BlockQuote from "./BlockQuote";
@@ -32,7 +31,6 @@ export {
   SecondaryText,
   Subtitle,
   Footnote,
-  LargeText,
   NumberedList,
   BulletList,
   BlockQuote,
