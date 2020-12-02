@@ -1,4 +1,10 @@
 {
   "baseUrl": "http://localhost:3000",
-  "viewportWidth": 1300
+  "viewportWidth": 1300,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
+  "pluginsFile": false,
+  "supportFile": false
 }
