@@ -56,7 +56,7 @@ const Home = ({
             title="Recent Posts"
             items={posts}
             titleTag="h2"
-            titleSize="small"
+            titleSize="large"
             link={{ url: "/journal", text: "See more" }}
           />
         }
@@ -65,7 +65,7 @@ const Home = ({
             title="Recent Bookmarks"
             items={bookmarks}
             titleTag="h2"
-            titleSize="small"
+            titleSize="large"
             link={{ url: "/bookmarks", text: "See more" }}
           />
         }
