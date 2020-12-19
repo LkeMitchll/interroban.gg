@@ -27,11 +27,15 @@ const Item = styled("li", {
   marginRight: "$2",
 });
 
-export default function Nav({ layout }: { layout?: any }): ReactElement {
+export default function Nav({
+  footerLayout,
+}: {
+  footerLayout?: boolean;
+}): ReactElement {
   const currentPage = useRouter().asPath;
 
   return (
-    <List layout={layout}>
+    <List layout={footerLayout && { initial: "horizontal", bp2: "vertical" }}>
       <Item>
         <NavLink
           url="/about"

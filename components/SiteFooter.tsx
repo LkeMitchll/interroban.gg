@@ -65,7 +65,7 @@ export default function SiteFooter(): ReactElement {
           Luke Mitchell &mdash; <br />
           Product Designer
         </Small>
-        <Nav layout={{ initial: "horizontal", bp2: "vertical" }} />
+        <Nav footerLayout />
       </GridChild>
       <GridChild
         column={{ initial: "fullWidth", bp1: "$1", bp2: "$2" }}
