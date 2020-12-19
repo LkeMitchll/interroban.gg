@@ -20,9 +20,8 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
-    "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "react/react-in-jsx-scope": "off",
     "no-console": "warn",
   },
 };
