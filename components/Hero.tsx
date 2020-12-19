@@ -19,7 +19,7 @@ export default function Hero({
   intro?: Document;
   stats?: ReactElement;
   linkOverride?: Record<"url" | "text", string>;
-  layoutOverride?: any;
+  layoutOverride?: "center" | "secondHalf";
 }): ReactElement {
   return (
     <Grid
@@ -37,7 +37,7 @@ export default function Hero({
           as="section"
           column={
             layoutOverride
-              ? layoutOverride
+              ? { initial: "fullWidth", bp2: layoutOverride }
               : {
                   initial: "fullWidth",
                   bp2: image || !stats ? "threeQuarters" : "secondHalf",
