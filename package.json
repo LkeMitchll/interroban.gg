@@ -22,7 +22,7 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^14.1.1",
     "@contentful/rich-text-react-renderer": "^14.1.1",
-    "@stitches/react": "^0.0.2",
+    "@stitches/react": "0.0.3-canary.4",
     "contentful": "^7.14.6",
     "framer-motion": "^2.9.4",
     "next": "^10.0.0",

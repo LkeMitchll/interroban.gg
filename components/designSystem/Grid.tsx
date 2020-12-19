@@ -28,9 +28,4 @@ const Grid = styled("div", {
   },
 });
 
-Grid.defaultProps = {
-  gap: "default",
-  marginBottom: "$2",
-};
-
 export default Grid;
