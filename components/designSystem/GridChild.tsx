@@ -1,4 +1,7 @@
+import { StitchesVariants } from "@stitches/react";
 import { styled } from "./stitches";
+
+export type GridChildVariants = StitchesVariants<typeof GridChild>;
 
 const GridChild = styled("div", {
   variants: {

@@ -31,7 +31,7 @@ export default function Colophon({ page }: ColophonProps): ReactElement {
             ]}
           />
         }
-        layoutOverride="center"
+        layoutOverride={{ initial: "fullWidth", bp2: "center" }}
       />
       <RichText source={page.content} />
     </article>

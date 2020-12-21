@@ -5,6 +5,16 @@ import { Footnote, Grid, GridChild, Small } from "designSystem";
 import { ImageSizes } from "helpers/image";
 import type { ReactElement } from "react";
 import type { Asset } from "services/contentful.types";
+import type { GridChildVariants } from "designSystem/GridChild";
+
+type HeroProps = {
+  title: string;
+  image?: Asset;
+  intro?: Document;
+  stats?: ReactElement;
+  linkOverride?: Record<"url" | "text", string>;
+  layoutOverride?: GridChildVariants["column"];
+};
 
 export default function Hero({
   image,
@@ -13,14 +23,7 @@ export default function Hero({
   stats,
   linkOverride,
   layoutOverride,
-}: {
-  title: string;
-  image?: Asset;
-  intro?: Document;
-  stats?: ReactElement;
-  linkOverride?: Record<"url" | "text", string>;
-  layoutOverride?: "center" | "secondHalf";
-}): ReactElement {
+}: HeroProps): ReactElement {
   return (
     <Grid
       as="header"
@@ -37,7 +40,7 @@ export default function Hero({
           as="section"
           column={
             layoutOverride
-              ? { initial: "fullWidth", bp2: layoutOverride }
+              ? layoutOverride
               : {
                   initial: "fullWidth",
                   bp2: image || !stats ? "threeQuarters" : "secondHalf",
