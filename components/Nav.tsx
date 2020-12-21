@@ -40,7 +40,7 @@ export default function Nav({
         <NavLink
           url="/about"
           state={currentPage == "/about" ? "active" : "inactive"}
-          decoration="underline"
+          appearance="underline"
           margin={{ initial: "medium", bp2: "small" }}
         >
           About
@@ -50,7 +50,7 @@ export default function Nav({
         <NavLink
           url="/journal"
           state={currentPage == "/journal" ? "active" : "inactive"}
-          decoration="underline"
+          appearance="underline"
           margin={{ initial: "medium", bp2: "small" }}
         >
           Journal
@@ -60,7 +60,7 @@ export default function Nav({
         <NavLink
           url="/bookmarks"
           state={currentPage == "/bookmarks" ? "active" : "inactive"}
-          decoration="underline"
+          appearance="underline"
           margin={{ initial: "medium", bp2: "small" }}
         >
           Bookmarks

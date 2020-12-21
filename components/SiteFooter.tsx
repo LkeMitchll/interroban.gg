@@ -29,7 +29,7 @@ export default function SiteFooter(): ReactElement {
             <NavLink
               url={link.url}
               margin={{ initial: "medium", bp2: "small" }}
-              decoration="plain"
+              appearance="plain"
             >
               {link.title}
             </NavLink>

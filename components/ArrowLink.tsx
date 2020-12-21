@@ -33,7 +33,7 @@ export default function Arrow({
 
   return (
     <motion.div whileHover="hover" style={{ display: "inline" }}>
-      <NavLink url={url} decoration="underline">
+      <NavLink url={url} appearance="underline">
         {text}
       </NavLink>
       <svg

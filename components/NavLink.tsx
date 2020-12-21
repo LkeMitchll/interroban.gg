@@ -1,9 +1,12 @@
+import { StitchesProps } from "@stitches/react";
 import Link from "next/link";
+import { A } from "designSystem";
 import type { ReactElement } from "react";
 import { styled } from "stitches";
 
-const A = styled("a", {
-  color: "$primary",
+type NavLinkVariants = StitchesProps<typeof Anchor>;
+
+const Anchor = styled(A, {
   fontFamily: "$mono",
   fontSize: "$3",
   textDecoration: "none",
@@ -16,7 +19,7 @@ const A = styled("a", {
   },
 
   variants: {
-    decoration: {
+    appearance: {
       plain: {},
       underline: {
         borderBottom: "$1 solid $faded",
@@ -44,19 +47,16 @@ const A = styled("a", {
   },
 });
 
-interface NavLinkProps {
+type NavLinkProps = {
   children: React.ReactNode;
   url: string;
-  state?: "active" | "inactive";
-  decoration?: "plain" | "underline";
-  margin?: any;
-}
+} & NavLinkVariants;
 
 export default function NavLink({
   children,
   url,
   state,
-  decoration,
+  appearance,
   margin,
 }: NavLinkProps): ReactElement {
   const external =
@@ -64,21 +64,21 @@ export default function NavLink({
   return (
     <>
       {external ? (
-        <A
+        <Anchor
           href={url}
-          decoration={decoration}
+          appearance={appearance}
           margin={margin}
           state={state}
           target="_blank"
           rel="noreferrer"
         >
           {children}
-        </A>
+        </Anchor>
       ) : (
         <Link href={url} passHref={true}>
-          <A decoration={decoration} margin={margin} state={state}>
+          <Anchor appearance={appearance} margin={margin} state={state}>
             {children}
-          </A>
+          </Anchor>
         </Link>
       )}
     </>
