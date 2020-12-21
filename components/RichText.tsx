@@ -2,6 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import type {
   Block,
   Document,
+  TopLevelBlock,
   Heading2,
   Hyperlink,
   Inline,
@@ -22,14 +23,16 @@ import {
   Subtitle,
 } from "designSystem";
 import { ImageSizes } from "helpers/image";
+import { ReactNode } from "react";
 import type { Asset, RichTextChildren } from "services/contentful.types";
+import { GridChildProps } from "./designSystem/GridChild";
 
 type RichTextProps = {
   source?: Document;
   unwrapped?: boolean;
 };
 
-const Wrapper = (props: any) => {
+const Wrapper = (props: Exclude<GridChildProps, "as" | "column">) => {
   const { ...otherProps } = props;
   return (
     <GridChild
@@ -48,11 +51,12 @@ const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node: Paragraph, children: RichTextChildren) => {
       // Pop out inline-entries into new containers
-      let footnotes: any;
+      let footnotes: unknown;
       if (node.content.length > 1) {
-        footnotes = node.content.filter(
+        const filter = node.content.filter(
           (child) => child.nodeType == "embedded-entry-inline",
         );
+        footnotes = filter;
       }
 
       return (
@@ -60,7 +64,7 @@ const options = {
           <Wrapper>
             <P>{children}</P>
           </Wrapper>
-          {footnotes && renderFootnotes(footnotes)}
+          {footnotes && renderFootnotes(footnotes as Inline[])}
         </>
       );
     },
@@ -133,9 +137,16 @@ const footnoteOptions = {
   },
 };
 
-function renderFootnotes(node: any): any {
-  node = { content: node, data: {}, nodeType: "document" };
-  const renderedFootnoteNode = documentToReactComponents(node, footnoteOptions);
+function renderFootnotes(nodes: unknown): ReactNode {
+  const node = {
+    content: nodes as TopLevelBlock[],
+    data: {},
+    nodeType: BLOCKS.DOCUMENT,
+  };
+  const renderedFootnoteNode = documentToReactComponents(
+    node as Document,
+    footnoteOptions,
+  );
   return renderedFootnoteNode;
 }
 
