@@ -14,7 +14,7 @@ type ShortBlogPost = {
 export default async (
   _req: NextApiRequest,
   res: NextApiResponse<ShortBlogPost[]>,
-): Promise<any> => {
+): Promise<void> => {
   const api = new ContentAPI();
   const posts = (await api.fetchBlogPostsFull()) as ShortBlogPost[];
   posts.map((post) => {
