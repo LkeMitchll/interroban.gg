@@ -18,8 +18,10 @@ import type {
   BlogPostPreview,
   JournalEntry,
   Page,
+  List,
 } from "services/contentful.types";
 import useSWR from "swr";
+import type { TextListProps } from "components/TextList";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -41,7 +43,7 @@ interface JournalProps {
   page: Page;
   journalEntry: JournalEntry;
   blogPosts: BlogPostPreview[];
-  readingEntries: any;
+  readingEntries: List;
 }
 
 export default function Journal({
@@ -91,7 +93,7 @@ export default function Journal({
         col2={
           <TextList
             title={readingEntries.title}
-            items={readingEntries.items}
+            items={readingEntries.items as TextListProps["items"]}
             titleTag="h2"
             titleSize="small"
             externalLinks

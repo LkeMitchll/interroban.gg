@@ -7,7 +7,7 @@ import type {
 } from "services/contentful.types";
 import { Heading, PlainList } from "./designSystem";
 
-interface TextListProps {
+export interface TextListProps {
   title: string;
   items: Array<BlogPostPreview | Bookmark | ReadingEntry>;
   titleTag?: "h1" | "h2" | "h3";
