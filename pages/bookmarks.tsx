@@ -47,7 +47,7 @@ const BookmarksPage = ({
   const pageIsEmpty = data?.length < 1;
   const latestRoundup = roundups[0];
 
-  function handleClick(): any {
+  function handleClick(): void {
     updateItems(items.concat(data));
     updatePageNumber(pageNumber + 1);
   }
