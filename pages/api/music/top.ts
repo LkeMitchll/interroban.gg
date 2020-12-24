@@ -5,7 +5,7 @@ import type { Track } from "services/spotify.types";
 export default async (
   _req: NextApiRequest,
   res: NextApiResponse<Track[]>,
-): Promise<any> => {
+): Promise<void> => {
   const api = new MusicAPI();
   const response = await api.getTopTracks();
   const { items } = await response.json();

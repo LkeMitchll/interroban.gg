@@ -10,7 +10,7 @@ import type {
 export default async (
   _req: NextApiRequest,
   res: NextApiResponse<MusicTotals>,
-): Promise<any> => {
+): Promise<void> => {
   const api = new LastFMAPI();
   const lastSunday = dateToEpochWithOffset(0, 6);
   const lastFriday = dateToEpochWithOffset(23, 0);
