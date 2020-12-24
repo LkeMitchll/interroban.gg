@@ -46,7 +46,7 @@ export default function FeedsPage({
   return (
     <article>
       <PageMeta title={page.title} />
-      <Hero title={page.title} stats={stats} intro={page.description} />
+      <Hero title={page.title} stats={stats} intro={page.descriptionRich} />
       <Grid as={PlainList}>
         {feeds.map((feed) => (
           <GridChild

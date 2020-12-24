@@ -25,7 +25,7 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
         column={{ initial: "fullWidth", bp2: "threeQuarters", bp3: "center" }}
         as="section"
       >
-        <RichText source={data.content} unwrapped />
+        <RichText source={data.description} unwrapped />
       </GridChild>
     </Grid>
   );

@@ -24,7 +24,7 @@ export default function UsesPage({
       <Hero
         title={page.title}
         image={heroImage}
-        intro={page.description}
+        intro={page.descriptionRich}
         stats={
           <StatsTable
             data={[

@@ -46,7 +46,7 @@ const Home = ({
       <PageMeta title={page.title} />
       <Hero
         title="About Me"
-        intro={page.description}
+        intro={page.descriptionRich}
         linkOverride={{ url: "/about", text: "Read more" }}
         layoutOverride={{ initial: "fullWidth", bp2: "secondHalf" }}
       />

@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
 import type { Document } from "@contentful/rich-text-types";
 
+export type FixMe = any; // eslint-disable-line @typescript-eslint/no-explicit-any
+
 export type Page = {
   id: string;
   title: string;
-  description?: Document;
+  descriptionRich?: Document;
   content?: Document;
   lastUpdate: string;
 };
@@ -24,7 +26,7 @@ export type Bookmark = {
   title: string;
   url: string;
   tag: BookmarkTag;
-  date: Date;
+  publishDate: Date;
   notes?: string;
   subtitle: BookmarkTag;
 };
@@ -91,7 +93,7 @@ export type Project = {
   title: string;
   blurb: string;
   image: Asset;
-  content: Document;
+  description: Document;
 };
 
 export type RichTextChildren = Array<string | ReactNode>;

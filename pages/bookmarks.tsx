@@ -64,7 +64,7 @@ const BookmarksPage = ({
                 { label: "Total", data: posts.length },
                 {
                   label: "Updated",
-                  data: formattedDate(posts[0].date, {
+                  data: formattedDate(posts[0].publishDate, {
                     day: "numeric",
                     month: "numeric",
                     year: "numeric",
@@ -75,7 +75,7 @@ const BookmarksPage = ({
             <ArrowLink url="/api/bookmarks" text="Bookmarks API" />
           </>
         }
-        intro={page.description}
+        intro={page.descriptionRich}
       />
       <Splitter
         col1={

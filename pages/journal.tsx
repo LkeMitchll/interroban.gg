@@ -76,7 +76,7 @@ export default function Journal({
   return (
     <>
       <PageMeta title={page.title} />
-      <Hero title={page.title} intro={page.description} stats={stats} />
+      <Hero title={page.title} intro={page.descriptionRich} stats={stats} />
       <Splitter
         col1={
           <TextList
