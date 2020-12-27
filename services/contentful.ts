@@ -98,12 +98,14 @@ export class ContentAPI {
 
   convertRoundup = (rawData: Entry<Roundup>): Roundup => {
     const rawRoundup = rawData.fields;
+    const bookmarks = rawRoundup.links.map((bookmark: unknown) => {
+      return this.convertBookmark(bookmark as Entry<Bookmark>);
+    });
+
     return {
       id: rawData.sys.id,
       title: rawRoundup.title,
-      links: rawRoundup.links.map((link) => {
-        return link;
-      }),
+      links: bookmarks,
     };
   };
 
