@@ -4,6 +4,8 @@ const Grid = styled("div", {
   display: "grid",
   gridTemplateColumns: "repeat(4, 1fr)",
   gridColumnGap: "$2",
+  gridRowGap: "$2",
+  marginBottom: "$2",
 
   variants: {
     marginTop: {

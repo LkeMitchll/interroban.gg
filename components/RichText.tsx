@@ -102,7 +102,7 @@ const options = {
 const footnoteOptions = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_: Paragraph, children: RichTextChildren) => (
-      <Figcaption>{children}</Figcaption>
+      <Figcaption as="figcaption">{children}</Figcaption>
     ),
     [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
       return (
