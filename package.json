@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix --max-warnings 0"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix --max-warnings 0",
+    "test": "cypress run",
+    "test:watch": "cypress open"
   },
   "husky": {
     "hooks": {
@@ -38,8 +40,10 @@
     "@types/spotify-api": "^0.0.4",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
+    "cypress": "^6.2.0",
     "eslint": "^7.8.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "husky": "^4.2.5",
