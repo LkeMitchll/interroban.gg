@@ -1,4 +1,8 @@
-import type { BlogPost, Bookmark } from "../../services/contentful.types";
+import type {
+  BlogPost,
+  Bookmark,
+  Project,
+} from "../../services/contentful.types";
 
 describe("Homepage", () => {
   beforeEach(() => {
@@ -27,6 +31,17 @@ describe("Homepage", () => {
       recentBookmarks = response.body.slice(0, 3);
       recentBookmarks.forEach((bookmark) => {
         cy.get("a").should("contain.text", bookmark.title);
+      });
+    });
+  });
+
+  it("should display selected projects", () => {
+    let projects: Project[];
+
+    cy.request("GET", "/api/projects").then((response) => {
+      projects = response.body;
+      projects.forEach((project) => {
+        cy.get("h3").should("contain.text", project.title);
       });
     });
   });
