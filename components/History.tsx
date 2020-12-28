@@ -13,6 +13,8 @@ import { ImageSizes } from "helpers/image";
 import type { ReactElement } from "react";
 import type { Asset, Job, List } from "services/contentful.types";
 import { styled } from "stitches";
+import clientsData from "data/clients.json";
+import skillsData from "data/skills.json";
 
 interface HistoryProps {
   experience: List;
@@ -28,25 +30,6 @@ export default function History({
   experience,
   headshot,
 }: HistoryProps): ReactElement {
-  const clients = [
-    "DigitalOcean",
-    "Steel Warriors",
-    "Babylon Health",
-    "Deliveroo",
-    "Which?",
-    "UK Goverment",
-    "Koru Kids",
-  ];
-  const skills = [
-    "Art Direction",
-    "Product Design",
-    "Mentorship",
-    "Illustration",
-    "UI & UX Development",
-    "Project Management",
-    "Design Consultancy",
-    "Sales Support",
-  ];
   return (
     <Grid as="section">
       <GridChild
@@ -87,7 +70,7 @@ export default function History({
           Select Clients
         </Subtitle>
         <PlainList lineHeight="relaxed">
-          {clients.map((client, i) => (
+          {clientsData.clients.map((client: string, i: number) => (
             <Item key={i}>{client}</Item>
           ))}
         </PlainList>
@@ -99,7 +82,7 @@ export default function History({
           Skills
         </Subtitle>
         <PlainList lineHeight="relaxed">
-          {skills.map((skill, i) => (
+          {skillsData.skills.map((skill: string, i: number) => (
             <Item key={i}>{skill}</Item>
           ))}
         </PlainList>
