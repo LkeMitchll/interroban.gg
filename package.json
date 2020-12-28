@@ -13,7 +13,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && tsc"
+      "pre-commit": "lint-staged && tsc && yarn run test"
     }
   },
   "lint-staged": {
