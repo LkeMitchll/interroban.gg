@@ -5,7 +5,7 @@ import type {
 } from "../../services/contentful.types";
 
 describe("Homepage", () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit("/");
   });
 

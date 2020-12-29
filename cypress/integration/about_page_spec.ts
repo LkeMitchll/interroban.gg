@@ -1,7 +1,7 @@
 import { Job } from "../../services/contentful.types";
 
 describe("About Me", () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit("/about");
   });
 
