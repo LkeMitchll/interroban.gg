@@ -196,6 +196,17 @@ export class ContentAPI {
       });
   }
 
+  async fetchBookmarkTotal(): Promise<number> {
+    return await this.client
+      .getEntries({
+        content_type: "blogPost",
+        limit: 1000,
+      })
+      .then((result) => {
+        return result.total;
+      });
+  }
+
   async fetchRoundups(): Promise<Roundup[]> {
     return await this.client
       .getEntries({

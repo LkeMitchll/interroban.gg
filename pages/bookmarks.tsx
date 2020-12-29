@@ -8,7 +8,6 @@ import {
   TextList,
 } from "components";
 import { Button } from "designSystem";
-import { formattedDate } from "helpers/date";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
 import { useState } from "react";
@@ -22,12 +21,14 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   const api = new ContentAPI();
   const page = await api.fetchPage("4bctuwqdqxtWxfaNXPLqaI");
   const posts = await api.fetchBookmarks(10, 0);
+  const postTotal = await api.fetchBookmarkTotal();
   const roundups = await api.fetchRoundups();
-  return { props: { posts, page, roundups } };
+  return { props: { posts, postTotal, page, roundups } };
 };
 
 interface BookmarksProps {
   posts: Bookmark[];
+  postTotal: number;
   page: Page;
   roundups: Roundup[];
   image: Asset;
@@ -35,6 +36,7 @@ interface BookmarksProps {
 
 const BookmarksPage = ({
   posts,
+  postTotal,
   page,
   roundups,
 }: BookmarksProps): ReactElement => {
@@ -61,14 +63,10 @@ const BookmarksPage = ({
           <>
             <StatsTable
               data={[
-                { label: "Total", data: posts.length },
+                { label: "Total", data: postTotal },
                 {
                   label: "Updated",
-                  data: formattedDate(posts[0].publishDate, {
-                    day: "numeric",
-                    month: "numeric",
-                    year: "numeric",
-                  }),
+                  data: posts[0].publishDate,
                 },
               ]}
             />
@@ -89,6 +87,7 @@ const BookmarksPage = ({
             <Button
               disabled={isValidating || pageIsEmpty}
               onClick={() => handleClick()}
+              data-cy="bookmark-loader"
             >
               {isValidating
                 ? "Loading..."
