@@ -20,11 +20,10 @@ describe("About Me", () => {
     });
 
     it("should display the resume", () => {
-      let resume: Job[];
       cy.get("h4").should("contain.text", "Experience");
 
       cy.request("GET", "/api/resume").then((response) => {
-        resume = response.body;
+        const resume: Job[] = response.body;
         resume.forEach((job) => {
           cy.get("li").should("contain.text", job.title);
         });
