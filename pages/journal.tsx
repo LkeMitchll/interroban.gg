@@ -82,7 +82,7 @@ export default function Journal({
           <TextList
             title="Recent Posts"
             items={blogPosts}
-            titleTag="h2"
+            titleTag="h3"
             titleSize="small"
           />
         }
@@ -94,7 +94,7 @@ export default function Journal({
           <TextList
             title={readingEntries.title}
             items={readingEntries.items as TextListProps["items"]}
-            titleTag="h2"
+            titleTag="h3"
             titleSize="small"
             externalLinks
           />

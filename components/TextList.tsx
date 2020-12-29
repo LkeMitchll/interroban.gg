@@ -29,7 +29,7 @@ export default function TextList({
       <Heading as={titleTag} margin="medium" size={titleSize}>
         {title}
       </Heading>
-      <PlainList>
+      <PlainList data-cy={`${title} items`}>
         {items.map((item) => (
           <ListItem
             key={item.id}

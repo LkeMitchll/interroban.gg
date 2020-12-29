@@ -10,7 +10,7 @@ export default function Now({ entry }: { entry: JournalEntry }): ReactElement {
       <Heading as="h3" margin="medium" size="small">
         What I&apos;m doing now
       </Heading>
-      <section>
+      <section data-cy="now-content">
         <RichText source={entry.content} unwrapped />
       </section>
       <footer>
