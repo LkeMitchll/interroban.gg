@@ -14,10 +14,8 @@ describe("Homepage", () => {
   });
 
   it("should display recent posts", () => {
-    let recentPosts: BlogPost[];
-
     cy.request("GET", "/api/posts").then((response) => {
-      recentPosts = response.body.slice(0, 3);
+      const recentPosts: BlogPost[] = response.body.slice(0, 3);
       recentPosts.forEach((post) => {
         cy.get("a").should("contain.text", post.title);
       });
@@ -25,10 +23,10 @@ describe("Homepage", () => {
   });
 
   it("should display recent bookmarks", () => {
-    let recentBookmarks: Bookmark[];
+    cy.get("h2").should("contain.text", "Recent Posts");
 
     cy.request("GET", "/api/bookmarks").then((response) => {
-      recentBookmarks = response.body.slice(0, 3);
+      const recentBookmarks: Bookmark[] = response.body.slice(0, 3);
       recentBookmarks.forEach((bookmark) => {
         cy.get("a").should("contain.text", bookmark.title);
       });
@@ -36,10 +34,10 @@ describe("Homepage", () => {
   });
 
   it("should display selected projects", () => {
-    let projects: Project[];
+    cy.get("h2").should("contain.text", "Recent Bookmarks");
 
     cy.request("GET", "/api/projects").then((response) => {
-      projects = response.body;
+      const projects: Project[] = response.body;
       projects.forEach((project) => {
         cy.get("h3").should("contain.text", project.title);
       });
