@@ -155,7 +155,7 @@ const RichText = ({ source, unwrapped }: RichTextProps): JSX.Element => {
   return (
     <>
       {!unwrapped ? (
-        <Grid as="section" gap="small">
+        <Grid as="section" gap="small" data-cy="content">
           {renderedNode}
         </Grid>
       ) : (
