@@ -90,9 +90,11 @@ const options = {
         <BlockQuote>{children}</BlockQuote>
       </Wrapper>
     ),
-    [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
-      return <A href={node.data.uri}>{children}</A>;
-    },
+    [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => (
+      <A href={node.data.uri} target="_blank" rel="noreferrer">
+        {children}
+      </A>
+    ),
     [INLINES.EMBEDDED_ENTRY]: () => {
       return null;
     },
@@ -106,7 +108,7 @@ const footnoteOptions = {
     ),
     [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
       return (
-        <A href={node.data.uri} size="small">
+        <A href={node.data.uri} target="_blank" rel="noreferrer" size="small">
           {children}
         </A>
       );
