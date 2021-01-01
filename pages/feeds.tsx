@@ -62,6 +62,7 @@ export default function FeedsPage({
                 year: "numeric",
               })}`}
               unwrapped
+              external
             />
           </GridChild>
         ))}

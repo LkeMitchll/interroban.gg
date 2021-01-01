@@ -21,7 +21,9 @@ export default function List({ roundup }: { roundup: TRoundup }): ReactElement {
       <NumberedList>
         {roundup.links.map((link: Bookmark) => (
           <Item key={link.id}>
-            <A href={link.url}>{link.title}</A>
+            <A href={link.url} target="_blank" rel="noreferrer">
+              {link.title}
+            </A>
             <P>{link.notes}</P>
           </Item>
         ))}

@@ -67,6 +67,7 @@ const Home = ({
             titleTag="h2"
             titleSize="large"
             link={{ url: "/bookmarks", text: "See more" }}
+            externalLinks
           />
         }
       />

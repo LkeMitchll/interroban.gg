@@ -83,6 +83,7 @@ const BookmarksPage = ({
               items={items}
               titleTag="h3"
               titleSize="small"
+              externalLinks
             />
             <Button
               disabled={isValidating || pageIsEmpty}
