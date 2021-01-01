@@ -100,6 +100,7 @@ const BookmarksPage = ({
           </>
         }
         col2={<Roundups roundup={latestRoundup} />}
+        reversedOnMobile
       />
     </>
   );

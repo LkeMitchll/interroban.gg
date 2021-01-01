@@ -19,6 +19,7 @@ const GridChild = styled("div", {
       center: { gridColumn: "2 / span 2" },
     },
     row: {
+      $auto: { gridRow: "auto" },
       $1: { gridRow: "1" },
       $2: { gridRow: "2" },
       $3: { gridRow: "3" },
