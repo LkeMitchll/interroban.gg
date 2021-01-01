@@ -13,13 +13,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && tsc && yarn run test -r mocha-silent-reporter"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "eslint --fix --max-warnings 0"
-    ]
+      "eslint --max-warnings 0",
+      "tsc"
+    ],
+    "*": "cypress run -q -r mocha-silent-reporter"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^14.1.1",
