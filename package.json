@@ -13,7 +13,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && tsc && yarn run test"
+      "pre-commit": "lint-staged && tsc && yarn run test -r mocha-silent-reporter"
     }
   },
   "lint-staged": {
@@ -48,6 +48,7 @@
     "eslint-plugin-react": "^7.20.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.13",
+    "mocha-silent-reporter": "^1.0.0",
     "prettier": "^2.1.1",
     "typescript": "^4.0.2"
   }
