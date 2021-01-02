@@ -11,7 +11,6 @@ export default function Layout({
   children: React.ReactNode;
 }): ReactElement {
   const router = useRouter();
-  const isBlogPost = router.route === "/post/[slug]";
   const fontFiles = [
     "Blanco-Regular",
     "pitch-web-semibold",
@@ -54,7 +53,7 @@ export default function Layout({
       >
         {children}
       </motion.main>
-      {!isBlogPost ? <SiteFooter /> : null}
+      <SiteFooter />
     </>
   );
 }
