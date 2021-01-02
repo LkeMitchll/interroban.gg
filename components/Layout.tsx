@@ -32,7 +32,7 @@ export default function Layout({
           <link
             key={i}
             rel="preload"
-            href={`fonts/${font}.subset.woff2`}
+            href={`/fonts/${font}.subset.woff2`}
             as="font"
             type="font/woff2"
             crossOrigin=""
