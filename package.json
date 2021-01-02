@@ -13,14 +13,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && tsc --noEmit"
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --max-warnings 0",
-      "tsc"
-    ],
+    "*.{js,ts,tsx}": "eslint --max-warnings 0",
     "*": "cypress run -q -r mocha-silent-reporter"
   },
   "dependencies": {
