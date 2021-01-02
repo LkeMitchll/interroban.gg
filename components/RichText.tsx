@@ -130,6 +130,7 @@ const footnoteOptions = {
         <GridChild
           as={Footnote}
           column={{ initial: "firstHalf", bp2: "center", bp3: "$4" }}
+          css={{ bp3: { paddingLeft: "$1" } }}
         >
           <ResponsiveImage image={image} sizes={ImageSizes.quarter} />
           {renderedCaptionNode}

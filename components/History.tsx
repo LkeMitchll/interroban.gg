@@ -45,7 +45,11 @@ export default function History({
           think we could work together, please get in touch.
         </P>
       </GridChild>
-      <GridChild as={Figure} column={{ initial: "firstHalf", bp2: "$1" }}>
+      <GridChild
+        as={Figure}
+        column={{ initial: "firstHalf", bp2: "$1" }}
+        css={{ paddingRight: "$2" }}
+      >
         <ResponsiveImage image={headshot} sizes={ImageSizes.quarter} />
       </GridChild>
       <GridChild
