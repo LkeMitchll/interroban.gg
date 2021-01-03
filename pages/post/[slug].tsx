@@ -64,6 +64,11 @@ const Footer = styled("footer", {
 
 const PostTitle = styled("section", {
   gridColumn: "span 3",
+  marginTop: "$1",
+
+  bp3: {
+    marginTop: "$0",
+  },
 });
 
 export default function Post({ post }: { post: BlogPost }): ReactElement {
