@@ -30,26 +30,31 @@ describe("Bookmarks", () => {
     });
 
     it("should list 10 initial bookmarks", () => {
-      cy.request("/api/bookmarks/0").then((response) => {
-        const bookmark: Bookmark = response.body[0];
-        cy.get("li").should("contain.text", bookmark.title);
-      });
+      const bookmark: Bookmark = bookmarks.body[0];
+      cy.get("li").should("contain.text", bookmark.title);
     });
 
     it("should load 100 more bookmarks when button is clicked", () => {
-      cy.get("[data-cy='bookmark-loader']")
-        .should("exist")
-        .click()
-        .then(() => {
-          cy.request("/api/bookmarks/1").then((response) => {
-            const newBookmark: Bookmark = response.body[0];
-            cy.get("li").should("contain.text", newBookmark.title);
-          });
-        });
+      cy.intercept("/api/bookmarks/1", { fixture: "bookmarks.json" }).as(
+        "getPage",
+      );
+      cy.visit("/bookmarks");
+
+      cy.wait("@getPage").then((request) => {
+        cy.get("[data-cy='bookmark-loader']").click().click();
+        const newBookmark: Bookmark = request.response.body[0];
+        cy.get("li").should("contain.text", newBookmark.title);
+      });
     });
 
-    it.skip("should disable button when all bookmarks are loaded", () => {
-      return null;
+    it("should disable button when all bookmarks are loaded", () => {
+      cy.intercept("/api/bookmarks/1", []).as("getPage");
+      cy.visit("/bookmarks");
+
+      cy.get("[data-cy='bookmark-loader']").should(
+        "contain.text",
+        "No more bookmarks",
+      );
     });
   });
 });
