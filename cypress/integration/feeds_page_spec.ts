@@ -27,7 +27,7 @@ describe("Feeds", () => {
           day: "numeric",
           month: "numeric",
           year: "numeric",
-        }),
+        })
       );
     });
   });

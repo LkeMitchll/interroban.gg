@@ -44,7 +44,7 @@ const BookmarksPage = ({
   const [pageNumber, updatePageNumber] = useState(1);
   const { data, error, isValidating } = useSWR(
     `/api/bookmarks/${pageNumber}`,
-    fetcher,
+    fetcher
   );
   const pageIsEmpty = data?.length < 1;
   const latestRoundup = roundups[0];

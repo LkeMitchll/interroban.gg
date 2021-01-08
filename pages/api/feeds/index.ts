@@ -4,7 +4,7 @@ import type { Feed } from "services/feedbin.types";
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Feed[]>,
+  res: NextApiResponse<Feed[]>
 ): Promise<void> => {
   const api = new FeedAPI();
   const items = await api.fetchSubscriptions();

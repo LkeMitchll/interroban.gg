@@ -4,7 +4,7 @@ import type { Bookmark } from "services/contentful.types";
 
 export default async (
   req: NextApiRequest,
-  res: NextApiResponse<Bookmark[]>,
+  res: NextApiResponse<Bookmark[]>
 ): Promise<void> => {
   const skip =
     req.query.page != "1" ? parseInt(req.query.page as string) * 100 : 10;

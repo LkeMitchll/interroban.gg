@@ -36,7 +36,7 @@ describe("Bookmarks", () => {
 
     it("should load 100 more bookmarks when button is clicked", () => {
       cy.intercept("/api/bookmarks/1", { fixture: "bookmarks.json" }).as(
-        "getPage",
+        "getPage"
       );
       cy.visit("/bookmarks");
 
@@ -53,7 +53,7 @@ describe("Bookmarks", () => {
 
       cy.get("[data-cy='bookmark-loader']").should(
         "contain.text",
-        "No more bookmarks",
+        "No more bookmarks"
       );
     });
   });

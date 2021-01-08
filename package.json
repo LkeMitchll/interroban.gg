@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix --max-warnings 0",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
     "test": "cypress run -q",
     "test:watch": "cypress open"
   },
@@ -17,8 +17,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "eslint --max-warnings 0",
-    "*": "cypress run -q -r mocha-silent-reporter"
+    "*.{js,ts,tsx}": "eslint --max-warnings 0"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^14.1.1",

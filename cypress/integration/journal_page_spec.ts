@@ -50,7 +50,7 @@ describe("Journal", () => {
         const albums: number = response.body.albums;
         cy.get("a").should(
           "contain.text",
-          `${songs} songs, on ${albums} albums`,
+          `${songs} songs, on ${albums} albums`
         );
       });
     });

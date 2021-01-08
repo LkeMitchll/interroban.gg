@@ -82,14 +82,14 @@ export class ContentAPI {
 
   convertListItems = (
     type: string,
-    data: Entry<Job | ReadingEntry | Project>[],
+    data: Entry<Job | ReadingEntry | Project>[]
   ): Job[] | ReadingEntry[] | Project[] => {
     switch (type) {
       case "job":
         return data.map((item: Entry<Job>) => this.convertJob(item));
       case "readingEntry":
         return data.map((item: Entry<ReadingEntry>) =>
-          this.convertReadingEntry(item),
+          this.convertReadingEntry(item)
         );
       case "project":
         return data.map((item: Entry<Project>) => this.convertProject(item));
@@ -110,7 +110,7 @@ export class ContentAPI {
   };
 
   convertBlogPreviewPost = (
-    rawData: Entry<BlogPostPreview>,
+    rawData: Entry<BlogPostPreview>
   ): BlogPostPreview => {
     const rawPost = rawData.fields;
     return {
@@ -190,7 +190,7 @@ export class ContentAPI {
       })
       .then((result) => {
         const posts = result.items.map((entry) =>
-          this.convertBookmark(entry as Entry<Bookmark>),
+          this.convertBookmark(entry as Entry<Bookmark>)
         );
         return posts;
       });
@@ -216,7 +216,7 @@ export class ContentAPI {
       })
       .then((result) => {
         const roundups = result.items.map((roundup) =>
-          this.convertRoundup(roundup as Entry<Roundup>),
+          this.convertRoundup(roundup as Entry<Roundup>)
         );
         return roundups;
       });
@@ -231,7 +231,7 @@ export class ContentAPI {
       })
       .then((result) => {
         const posts = result.items.map((post) =>
-          this.convertBlogFullPost(post as Entry<BlogPost>),
+          this.convertBlogFullPost(post as Entry<BlogPost>)
         );
         return posts[0];
       });
@@ -246,7 +246,7 @@ export class ContentAPI {
       })
       .then((result) => {
         const posts = result.items.map((post) =>
-          this.convertBlogPreviewPost(post as Entry<BlogPostPreview>),
+          this.convertBlogPreviewPost(post as Entry<BlogPostPreview>)
         );
         return posts;
       });
@@ -261,7 +261,7 @@ export class ContentAPI {
       })
       .then((result) => {
         const posts = result.items.map((post) =>
-          this.convertBlogFullPost(post as Entry<BlogPost>),
+          this.convertBlogFullPost(post as Entry<BlogPost>)
         );
         return posts;
       });
@@ -276,7 +276,7 @@ export class ContentAPI {
       })
       .then((result) => {
         const entries = result.items.map((entry) =>
-          this.convertJournalEntry(entry as Entry<JournalEntry>),
+          this.convertJournalEntry(entry as Entry<JournalEntry>)
         );
         return entries[0];
       });

@@ -13,7 +13,7 @@ type ShortBlogPost = {
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<ShortBlogPost[]>,
+  res: NextApiResponse<ShortBlogPost[]>
 ): Promise<void> => {
   const api = new ContentAPI();
   const posts = (await api.fetchBlogPostsFull()) as ShortBlogPost[];

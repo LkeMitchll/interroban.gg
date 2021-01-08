@@ -54,7 +54,7 @@ const options = {
       let footnotes: unknown;
       if (node.content.length > 1) {
         const filter = node.content.filter(
-          (child) => child.nodeType == "embedded-entry-inline",
+          (child) => child.nodeType == "embedded-entry-inline"
         );
         footnotes = filter;
       }
@@ -124,7 +124,7 @@ const footnoteOptions = {
       const rawCaption = node.data.target.fields.content;
       const renderedCaptionNode = documentToReactComponents(
         rawCaption,
-        footnoteOptions,
+        footnoteOptions
       );
       return (
         <GridChild
@@ -148,7 +148,7 @@ function renderFootnotes(nodes: unknown): ReactNode {
   };
   const renderedFootnoteNode = documentToReactComponents(
     node as Document,
-    footnoteOptions,
+    footnoteOptions
   );
   return renderedFootnoteNode;
 }

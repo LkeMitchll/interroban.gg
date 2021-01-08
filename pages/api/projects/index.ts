@@ -4,7 +4,7 @@ import type { Project } from "services/contentful.types";
 
 export default async (
   _req: NextApiRequest,
-  res: NextApiResponse<Project[]>,
+  res: NextApiResponse<Project[]>
 ): Promise<void> => {
   const api = new ContentAPI();
   const response = await api.fetchList("1UfYIu858cZdZuMjgejpRG");

@@ -10,7 +10,7 @@ export class MusicAPI {
     this.apiEndpoint = "https://api.spotify.com/v1/me";
 
     this.credentials = Buffer.from(
-      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
+      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
     ).toString("base64");
 
     this.recentlyPlayedEndpoint = `${this.apiEndpoint}/player/recently-played`;
@@ -46,7 +46,7 @@ export class MusicAPI {
 
   async getTopTracks(): Promise<Response> {
     return this.request(
-      `${this.topTracksEndpoint}?time_range=short_term&limit=5`,
+      `${this.topTracksEndpoint}?time_range=short_term&limit=5`
     );
   }
 }

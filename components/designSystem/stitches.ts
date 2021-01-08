@@ -4,7 +4,7 @@ const Color = (
   hue: number,
   sat: number,
   light: number,
-  opacity: number,
+  opacity: number
 ): string => {
   return `hsla(${hue}, ${sat}%, ${light}%, ${opacity})`;
 };

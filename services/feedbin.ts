@@ -10,7 +10,7 @@ export class FeedAPI {
     this.subscriptionsEndpoint = `${this.apiEndpoint}subscriptions.json`;
 
     this.credentials = Buffer.from(
-      `${process.env.FEEDBIN_USER}:${process.env.FEEDBIN_PASS}`,
+      `${process.env.FEEDBIN_USER}:${process.env.FEEDBIN_PASS}`
     ).toString("base64");
   }
 

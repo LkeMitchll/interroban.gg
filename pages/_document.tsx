@@ -8,7 +8,7 @@ import { css } from "stitches";
 
 export default class Document extends NextDocument {
   static async getInitialProps(
-    ctx: DocumentContext,
+    ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
     const originalRenderPage = ctx.renderPage;
 
