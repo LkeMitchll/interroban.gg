@@ -20,6 +20,10 @@ const Small = styled("small", {
       },
     },
   },
+
+  ["> a"]: {
+    color: "$primary",
+  },
 });
 
 export default Small;

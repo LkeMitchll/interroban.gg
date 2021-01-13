@@ -20,6 +20,16 @@ import type {
 } from "./contentful.types";
 import { formattedDate } from "helpers/date";
 
+export function convertImage(rawData: ContentfulAsset): Asset {
+  const rawImage = rawData.fields;
+  return {
+    url: rawImage.file.url,
+    desc: rawImage.description,
+    width: rawImage.file.details.image.width,
+    height: rawImage.file.details.image.height,
+  };
+}
+
 export class ContentAPI {
   client: ContentfulClientApi;
 
@@ -145,19 +155,9 @@ export class ContentAPI {
     return {
       id: rawData.sys.id,
       title: rawProject.title,
-      image: this.convertImage(rawProject.image),
+      image: convertImage(rawProject.image),
       blurb: rawProject.blurb,
       description: rawProject.description,
-    };
-  };
-
-  convertImage = (rawData: ContentfulAsset): Asset => {
-    const rawImage = rawData.fields;
-    return {
-      url: rawImage.file.url,
-      desc: rawImage.description,
-      width: rawImage.file.details.image.width,
-      height: rawImage.file.details.image.height,
     };
   };
 
@@ -298,7 +298,7 @@ export class ContentAPI {
     return await this.client.getAsset(id).then((result) => {
       const asset: ContentfulAsset = result;
 
-      return this.convertImage(asset);
+      return convertImage(asset);
     });
   }
 

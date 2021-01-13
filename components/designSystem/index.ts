@@ -17,7 +17,6 @@ import Button from "./Button";
 import Figure from "./Figure";
 import Grid from "./Grid";
 import GridChild from "./GridChild";
-import Figcaption from "./Figcaption";
 
 export {
   GlobalStyles,
@@ -41,5 +40,4 @@ export {
   Figure,
   Grid,
   GridChild,
-  Figcaption,
 };

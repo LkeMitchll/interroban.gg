@@ -1,155 +1,122 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import type {
-  Block,
-  Document,
-  TopLevelBlock,
-  Heading2,
-  Hyperlink,
-  Inline,
-  Paragraph,
-} from "@contentful/rich-text-types";
+import type { Block, Document, Inline } from "@contentful/rich-text-types";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { ResponsiveImage } from "components";
 import {
   A,
   BlockQuote,
   BulletList,
-  Figcaption,
-  Footnote,
   Grid,
   GridChild,
   Heading,
   P,
+  Small,
   Subtitle,
 } from "designSystem";
 import { ImageSizes } from "helpers/image";
 import { ReactNode } from "react";
-import type { Asset, RichTextChildren } from "services/contentful.types";
-import { GridChildProps } from "./designSystem/GridChild";
+import { convertImage } from "services/contentful";
+import type { RichTextChildren } from "services/contentful.types";
+import { styled } from "./designSystem/stitches";
 
 type RichTextProps = {
-  source?: Document;
+  source: Document;
   unwrapped?: boolean;
 };
 
-const Wrapper = (props: Exclude<GridChildProps, "as" | "column">) => {
-  const { ...otherProps } = props;
-  return (
-    <GridChild
-      as="section"
-      column={{
-        initial: "fullWidth",
-        bp2: "threeQuarters",
-        bp3: "center",
-      }}
-      {...otherProps}
-    />
-  );
-};
+const FootnoteParent = styled("section", {
+  position: "relative",
+
+  ["> aside"]: {
+    margin: "$0",
+    bp3: {
+      position: "absolute",
+      width: "calc(50% - 1rem)",
+      right: "calc(-50% - 1rem)",
+      top: "0",
+    },
+  },
+});
 
 const options = {
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node: Paragraph, children: RichTextChildren) => {
-      // Pop out inline-entries into new containers
-      let footnotes: unknown;
-      if (node.content.length > 1) {
-        const filter = node.content.filter(
-          (child) => child.nodeType == "embedded-entry-inline"
-        );
-        footnotes = filter;
-      }
-
-      return (
-        <>
-          <Wrapper>
-            <P>{children}</P>
-          </Wrapper>
-          {footnotes && renderFootnotes(footnotes as Inline[])}
-        </>
-      );
+    [INLINES.EMBEDDED_ENTRY]: () => {
+      // Don't render footnotes immediately
+      return null;
     },
-    [BLOCKS.HEADING_2]: (_: Heading2, children: RichTextChildren) => (
-      <Wrapper>
-        <Heading as="h2" margin="top" size="small">
-          {children}
-        </Heading>
-      </Wrapper>
+    [BLOCKS.PARAGRAPH]: (node: Block, children: RichTextChildren) => {
+      // Pop out inline-entries into new containers
+      const footnotes = node.content.filter(
+        (child) => child.nodeType == "embedded-entry-inline"
+      );
+
+      if (footnotes.length > 0) {
+        return (
+          <FootnoteParent>
+            <P>{children}</P>
+            {footnotes && renderFootnotes(footnotes as Inline[])}
+          </FootnoteParent>
+        );
+      } else {
+        return <P>{children}</P>;
+      }
+    },
+    [BLOCKS.HEADING_2]: (_: Block, children: RichTextChildren) => (
+      <Heading as="h2" margin="top" size="small">
+        {children}
+      </Heading>
     ),
-    [BLOCKS.HEADING_3]: (_: Heading2, children: RichTextChildren) => (
-      <Wrapper>
-        <Subtitle as="h3">{children}</Subtitle>
-      </Wrapper>
+    [BLOCKS.HEADING_3]: (_: Block, children: RichTextChildren) => (
+      <Subtitle as="h3">{children}</Subtitle>
     ),
     [BLOCKS.UL_LIST]: (_: Block, children: RichTextChildren) => (
-      <Wrapper>
-        <BulletList>{children}</BulletList>
-      </Wrapper>
+      <BulletList>{children}</BulletList>
     ),
     [BLOCKS.QUOTE]: (_: Block, children: RichTextChildren) => (
-      <Wrapper>
-        <BlockQuote>{children}</BlockQuote>
-      </Wrapper>
+      <BlockQuote>{children}</BlockQuote>
     ),
-    [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => (
+    [INLINES.HYPERLINK]: (node: Inline, children: RichTextChildren) => (
       <A href={node.data.uri} target="_blank" rel="noreferrer">
         {children}
       </A>
     ),
-    [INLINES.EMBEDDED_ENTRY]: () => {
-      return null;
-    },
   },
 };
 
 const footnoteOptions = {
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (_: Paragraph, children: RichTextChildren) => (
-      <Figcaption as="figcaption">{children}</Figcaption>
+    [BLOCKS.PARAGRAPH]: (_: Block, children: RichTextChildren) => (
+      <P>
+        <Small>{children}</Small>
+      </P>
     ),
-    [INLINES.HYPERLINK]: (node: Hyperlink, children: RichTextChildren) => {
-      return (
-        <A href={node.data.uri} target="_blank" rel="noreferrer" size="small">
-          {children}
-        </A>
-      );
-    },
+    [BLOCKS.EMBEDDED_ENTRY]: (_: Block, children: RichTextChildren) => (
+      <aside>{children}</aside>
+    ),
     [INLINES.EMBEDDED_ENTRY]: (node: Inline) => {
-      const rawImage = node.data.target.fields.image.fields;
-      const image: Asset = {
-        url: rawImage.file.url,
-        desc: rawImage.description,
-        width: rawImage.file.details.image.width,
-        height: rawImage.file.details.image.height,
-      };
-      const rawCaption = node.data.target.fields.content;
+      const image = convertImage(node.data.target.fields.image);
       const renderedCaptionNode = documentToReactComponents(
-        rawCaption,
+        node.data.target.fields.content,
         footnoteOptions
       );
       return (
-        <GridChild
-          as={Footnote}
-          column={{ initial: "firstHalf", bp2: "center", bp3: "$4" }}
-          css={{ bp3: { paddingLeft: "$1" } }}
-        >
+        <>
           <ResponsiveImage image={image} sizes={ImageSizes.quarter} />
           {renderedCaptionNode}
-        </GridChild>
+        </>
       );
     },
   },
 };
 
-function renderFootnotes(nodes: unknown): ReactNode {
-  const node = {
-    content: nodes as TopLevelBlock[],
-    data: {},
+function renderFootnotes(nodes: Inline[]): ReactNode {
+  const doc: Document = {
+    content: [{ nodeType: BLOCKS.EMBEDDED_ENTRY, data: {}, content: nodes }],
     nodeType: BLOCKS.DOCUMENT,
+    data: {},
   };
-  const renderedFootnoteNode = documentToReactComponents(
-    node as Document,
-    footnoteOptions
-  );
+
+  const renderedFootnoteNode = documentToReactComponents(doc, footnoteOptions);
   return renderedFootnoteNode;
 }
 
@@ -159,7 +126,15 @@ const RichText = ({ source, unwrapped }: RichTextProps): JSX.Element => {
     <>
       {!unwrapped ? (
         <Grid as="section" gap="small" data-cy="content">
-          {renderedNode}
+          <GridChild
+            column={{
+              initial: "fullWidth",
+              bp2: "threeQuarters",
+              bp3: "center",
+            }}
+          >
+            {renderedNode}
+          </GridChild>
         </Grid>
       ) : (
         <>{renderedNode}</>
