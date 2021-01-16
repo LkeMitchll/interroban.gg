@@ -19,6 +19,7 @@ import Now from "./Now";
 import Roundups from "./Roundups";
 import TextList from "./TextList";
 import StatsTable from "./StatsTable";
+import Markdown from "./Markdown";
 
 export {
   Layout,
@@ -42,4 +43,5 @@ export {
   Roundups,
   TextList,
   StatsTable,
+  Markdown,
 };

@@ -17,6 +17,7 @@ import type {
   ReadingEntry,
   Roundup,
   FixMe,
+  MarkdownWithImage,
 } from "./contentful.types";
 import { formattedDate } from "helpers/date";
 
@@ -150,6 +151,24 @@ export class ContentAPI {
     };
   };
 
+  convertPage = (rawData: Entry<Page>): Page => {
+    const rawPage = rawData.fields;
+    return {
+      id: rawData.sys.id,
+      title: rawPage.title,
+      descriptionRich: rawPage.descriptionRich ? rawPage.descriptionRich : null,
+      content: rawPage.content ? rawPage.content : null,
+      contentMarkdown: rawPage.contentMarkdown
+        ? this.convertMarkdownWithImages(rawPage.contentMarkdown as FixMe)
+        : null,
+      lastUpdate: formattedDate(new Date(rawData.sys.updatedAt), {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+      }),
+    };
+  };
+
   convertProject = (rawData: Entry<FixMe>): Project => {
     const rawProject = rawData.fields;
     return {
@@ -161,7 +180,7 @@ export class ContentAPI {
     };
   };
 
-  convertMarkdownWithImages(rawData: string): Record<any, any> {
+  convertMarkdownWithImages(rawData: string): MarkdownWithImage {
     const withinParen = rawData.match(/\(.*?\)/g);
     const images = withinParen.filter(
       (string: string) => string.search("ctfassets") > 0
@@ -173,30 +192,9 @@ export class ContentAPI {
     return { markdown: rawData, images: imageID };
   }
 
-  convertMarkdownExample = (rawData: Entry<any>): any => {
-    const rawExample = rawData.fields;
-    return {
-      id: rawData.sys.id,
-      content: this.convertMarkdownWithImages(rawExample.marky),
-    };
-  };
-
   async fetchPage(id: string): Promise<Page> {
     return await this.client.getEntry(id).then((entry: Entry<Page>) => {
-      const page = {
-        id: entry.sys.id,
-        title: entry.fields.title,
-        descriptionRich: entry.fields.descriptionRich
-          ? entry.fields.descriptionRich
-          : null,
-        content: entry.fields.content ? entry.fields.content : null,
-        lastUpdate: formattedDate(new Date(entry.sys.updatedAt), {
-          day: "numeric",
-          month: "numeric",
-          year: "numeric",
-        }),
-      };
-      return page;
+      return this.convertPage(entry);
     });
   }
 
@@ -322,7 +320,9 @@ export class ContentAPI {
     });
   }
 
-  async fetchMultipleAssets(ids: Array<string>): Promise<any> {
+  async fetchMultipleAssets(
+    ids: Array<string>
+  ): Promise<Record<string, string>> {
     const assets = {};
     for (const image of ids) {
       const asset = await this.fetchAsset(image);
@@ -334,12 +334,6 @@ export class ContentAPI {
   async fetchProject(id: string): Promise<Project> {
     return await this.client.getEntry(id).then((result: Entry<Project>) => {
       return this.convertProject(result);
-    });
-  }
-
-  async fetchMarkdownExample(id: string): Promise<any> {
-    return await this.client.getEntry(id).then((result: Entry<any>) => {
-      return this.convertMarkdownExample(result);
     });
   }
 }

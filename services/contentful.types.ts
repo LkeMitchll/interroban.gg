@@ -3,11 +3,17 @@ import type { Document } from "@contentful/rich-text-types";
 
 export type FixMe = any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
+export type MarkdownWithImage = {
+  markdown: string;
+  images: string[];
+};
+
 export type Page = {
   id: string;
   title: string;
   descriptionRich?: Document;
   content?: Document;
+  contentMarkdown?: MarkdownWithImage;
   lastUpdate: string;
 };
 
