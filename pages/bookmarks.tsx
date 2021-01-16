@@ -73,7 +73,7 @@ const BookmarksPage = ({
             <ArrowLink url="/api/bookmarks" text="Bookmarks API" />
           </>
         }
-        intro={page.descriptionRich}
+        intro={page.descriptionMarkdown}
       />
       <Splitter
         col1={

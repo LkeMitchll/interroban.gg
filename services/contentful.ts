@@ -157,6 +157,9 @@ export class ContentAPI {
       id: rawData.sys.id,
       title: rawPage.title,
       descriptionRich: rawPage.descriptionRich ? rawPage.descriptionRich : null,
+      descriptionMarkdown: rawPage.descriptionMarkdown
+        ? rawPage.descriptionMarkdown
+        : null,
       content: rawPage.content ? rawPage.content : null,
       contentMarkdown: rawPage.contentMarkdown
         ? this.convertMarkdownWithImages(rawPage.contentMarkdown as FixMe)

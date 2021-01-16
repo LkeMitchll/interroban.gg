@@ -19,7 +19,8 @@ import { Asset } from "services/contentful.types";
 
 interface MarkdownProps {
   source: string;
-  images: Asset[];
+  images?: Asset[];
+  unwrapped?: boolean;
 }
 interface MarkdownRenderer {
   children: React.ReactNode;
@@ -60,7 +61,7 @@ const FootnoteParent = styled("section", {
   },
 });
 
-function Markdown({ source, images }: MarkdownProps): ReactElement {
+function Markdown({ source, images, unwrapped }: MarkdownProps): ReactElement {
   const renderers = {
     sectionWithFootnotes: (field: MarkdownRenderer) => {
       return <FootnoteParent>{field.children}</FootnoteParent>;
@@ -143,23 +144,34 @@ function Markdown({ source, images }: MarkdownProps): ReactElement {
   };
 
   return (
-    <Grid as="section">
-      <GridChild
-        as="section"
-        column={{
-          initial: "fullWidth",
-          bp2: "threeQuarters",
-          bp3: "center",
-        }}
-      >
+    <>
+      {!unwrapped ? (
+        <Grid as="section">
+          <GridChild
+            as="section"
+            column={{
+              initial: "fullWidth",
+              bp2: "threeQuarters",
+              bp3: "center",
+            }}
+          >
+            <ReactMarkdown
+              renderers={renderers}
+              plugins={[footnotes, customFootnotes]}
+            >
+              {source}
+            </ReactMarkdown>
+          </GridChild>
+        </Grid>
+      ) : (
         <ReactMarkdown
           renderers={renderers}
           plugins={[footnotes, customFootnotes]}
         >
           {source}
         </ReactMarkdown>
-      </GridChild>
-    </Grid>
+      )}
+    </>
   );
 }
 

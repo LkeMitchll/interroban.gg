@@ -1,5 +1,4 @@
-import type { Document } from "@contentful/rich-text-types";
-import { RichText, Title } from "components";
+import { Markdown, Title } from "components";
 import ResponsiveImage from "components/ResponsiveImage";
 import { Footnote, Grid, GridChild, Small } from "designSystem";
 import { ImageSizes } from "helpers/image";
@@ -10,7 +9,7 @@ import type { GridChildVariants } from "designSystem/GridChild";
 type HeroProps = {
   title: string;
   image?: Asset;
-  intro?: Document;
+  intro?: string;
   stats?: ReactElement;
   linkOverride?: Record<"url" | "text", string>;
   layoutOverride?: GridChildVariants["column"];
@@ -48,7 +47,7 @@ export default function Hero({
                 }
           }
         >
-          <RichText source={intro} unwrapped />
+          <Markdown source={intro} unwrapped />
         </GridChild>
       ) : null}
       {stats && (

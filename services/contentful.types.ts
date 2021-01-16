@@ -12,6 +12,7 @@ export type Page = {
   id: string;
   title: string;
   descriptionRich?: Document;
+  descriptionMarkdown?: string;
   content?: Document;
   contentMarkdown?: MarkdownWithImage;
   lastUpdate: string;

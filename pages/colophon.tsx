@@ -20,7 +20,7 @@ export default function Colophon({ page }: ColophonProps): ReactElement {
       <PageMeta title={page.title} />
       <Hero
         title={page.title}
-        intro={page.descriptionRich}
+        intro={page.descriptionMarkdown}
         stats={
           <StatsTable
             data={[
