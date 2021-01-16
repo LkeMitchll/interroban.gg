@@ -1,4 +1,4 @@
-import { Hero, PageMeta, RichText, StatsTable } from "components";
+import { Hero, PageMeta, Markdown, StatsTable } from "components";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
@@ -36,7 +36,7 @@ export default function UsesPage({
           />
         }
       />
-      <RichText source={page.content} />
+      <Markdown source={page.contentMarkdown.markdown} />
     </article>
   );
 }

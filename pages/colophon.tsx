@@ -1,4 +1,4 @@
-import { Hero, PageMeta, RichText, StatsTable } from "components";
+import { Hero, Markdown, PageMeta, StatsTable } from "components";
 import type { GetStaticProps } from "next";
 import type { ReactElement } from "react";
 import { ContentAPI } from "services/contentful";
@@ -33,7 +33,7 @@ export default function Colophon({ page }: ColophonProps): ReactElement {
         }
         layoutOverride={{ initial: "fullWidth", bp2: "center" }}
       />
-      <RichText source={page.content} />
+      <Markdown source={page.contentMarkdown.markdown} />
     </article>
   );
 }

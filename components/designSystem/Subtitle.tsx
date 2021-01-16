@@ -16,6 +16,9 @@ const Subtitle = styled("h2", {
       small: {
         marginBottom: "$1",
       },
+      medium: {
+        marginBottom: "$2",
+      },
     },
   },
 });

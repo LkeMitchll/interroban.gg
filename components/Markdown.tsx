@@ -88,7 +88,7 @@ function Markdown({ source, images, unwrapped }: MarkdownProps): ReactElement {
       );
     },
     paragraph: (field: MarkdownRenderer) => {
-      return <P>{field.children}</P>;
+      return <P margin="medium">{field.children}</P>;
     },
     blockquote: (field: MarkdownRenderer) => {
       return <BlockQuote>{field.children}</BlockQuote>;
@@ -115,30 +115,34 @@ function Markdown({ source, images, unwrapped }: MarkdownProps): ReactElement {
         case true:
           return <NumberedList>{field.children}</NumberedList>;
         case false:
-          return <BulletList>{field.children}</BulletList>;
+          return (
+            <BulletList css={{ marginBottom: "$2" }}>
+              {field.children}
+            </BulletList>
+          );
       }
     },
     listItem: (field: MarkdownRenderer) => {
-      return <li>{field.children}</li>;
+      return (
+        <li>
+          <P>{field.children}</P>
+        </li>
+      );
     },
     heading: (field: MarkdownRenderer) => {
       switch (field.level) {
-        case 1:
-          return (
-            <Heading as="h1" size="small">
-              {field.children}
-            </Heading>
-          );
         case 2:
           return (
-            <Heading as="h2" size="small">
+            <Heading as="h2" margin="medium" size="small">
               {field.children}
             </Heading>
           );
         case 3:
-          return <Subtitle as="h3">{field.children}</Subtitle>;
-        case 4:
-          return <Subtitle as="h4">{field.children}</Subtitle>;
+          return (
+            <Subtitle margin="medium" as="h3">
+              {field.children}
+            </Subtitle>
+          );
       }
     },
   };
