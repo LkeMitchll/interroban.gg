@@ -18,6 +18,11 @@ const A = styled("a", {
       plain: {
         textDecoration: "none",
       },
+      footnoteRef: {
+        textDecoration: "none",
+        fontFamily: "$mono",
+        padding: "$_25",
+      },
     },
   },
 });

@@ -9,12 +9,27 @@ export const customFootnotes = () => (tree: Node): void => {
     index: number,
     parent: Parent
   ) {
+    const indentifier = {
+      type: "strong",
+      children: [{ type: "text", value: `${node.identifier} ` }],
+    };
+    const backlink = {
+      type: "link",
+      backRef: true,
+      title: null,
+      url: `#ref_${node.identifier}`,
+      children: [{ type: "text", value: "↩" }],
+    };
     // remove definition from original position in tree
     parent.children.splice(index, 1);
     // save foonote definitions for later
     footnoteDefs[node.identifier as string] = node;
     // replace first-level paragraph with it's children
     node.children.splice(0, 1, ...node.children[0].children);
+    // add indentifier name
+    node.children[1].children.unshift(indentifier);
+    // add a backlink to the reference
+    node.children[1].children.push(backlink);
 
     return [visit.SKIP, index];
   });
