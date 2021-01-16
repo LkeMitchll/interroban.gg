@@ -161,6 +161,26 @@ export class ContentAPI {
     };
   };
 
+  convertMarkdownWithImages(rawData: string): Record<any, any> {
+    const withinParen = rawData.match(/\(.*?\)/g);
+    const images = withinParen.filter(
+      (string: string) => string.search("ctfassets") > 0
+    );
+    const imageID = images.map((image) => {
+      return image.split("/")[4];
+    });
+
+    return { markdown: rawData, images: imageID };
+  }
+
+  convertMarkdownExample = (rawData: Entry<any>): any => {
+    const rawExample = rawData.fields;
+    return {
+      id: rawData.sys.id,
+      content: this.convertMarkdownWithImages(rawExample.marky),
+    };
+  };
+
   async fetchPage(id: string): Promise<Page> {
     return await this.client.getEntry(id).then((entry: Entry<Page>) => {
       const page = {
@@ -302,9 +322,24 @@ export class ContentAPI {
     });
   }
 
+  async fetchMultipleAssets(ids: Array<string>): Promise<any> {
+    const assets = {};
+    for (const image of ids) {
+      const asset = await this.fetchAsset(image);
+      assets[image] = asset;
+    }
+    return assets;
+  }
+
   async fetchProject(id: string): Promise<Project> {
     return await this.client.getEntry(id).then((result: Entry<Project>) => {
       return this.convertProject(result);
+    });
+  }
+
+  async fetchMarkdownExample(id: string): Promise<any> {
+    return await this.client.getEntry(id).then((result: Entry<any>) => {
+      return this.convertMarkdownExample(result);
     });
   }
 }
