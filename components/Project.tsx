@@ -1,8 +1,8 @@
 import { Grid, GridChild, Heading, P, Small, Figure } from "designSystem";
 import type { ReactElement } from "react";
 import type { Project as ProjectType } from "services/contentful.types";
+import Markdown from "./Markdown";
 import ResponsiveImage from "./ResponsiveImage";
-import RichText from "./RichText";
 
 export default function Project({ data }: { data: ProjectType }): ReactElement {
   return (
@@ -25,7 +25,7 @@ export default function Project({ data }: { data: ProjectType }): ReactElement {
         column={{ initial: "fullWidth", bp2: "threeQuarters", bp3: "center" }}
         as="section"
       >
-        <RichText source={data.description} unwrapped />
+        <Markdown source={data.descriptionMarkdown} unwrapped />
       </GridChild>
     </Grid>
   );

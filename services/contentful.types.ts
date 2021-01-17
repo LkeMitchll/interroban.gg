@@ -103,6 +103,7 @@ export type Project = {
   blurb: string;
   image: Asset;
   description: Document;
+  descriptionMarkdown: string;
 };
 
 export type RichTextChildren = Array<string | ReactNode>;

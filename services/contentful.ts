@@ -182,6 +182,7 @@ export class ContentAPI {
       image: convertImage(rawProject.image),
       blurb: rawProject.blurb,
       description: rawProject.description,
+      descriptionMarkdown: rawProject.descriptionMarkdown,
     };
   };
 
