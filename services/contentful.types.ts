@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import type { Document } from "@contentful/rich-text-types";
 
 export type FixMe = any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
@@ -11,9 +10,7 @@ export type MarkdownWithImage = {
 export type Page = {
   id: string;
   title: string;
-  descriptionRich?: Document;
   descriptionMarkdown?: string;
-  content?: Document;
   contentMarkdown?: MarkdownWithImage;
   lastUpdate: string;
 };
@@ -64,7 +61,6 @@ export type Roundup = {
 };
 
 export type JournalEntry = {
-  content: Document;
   contentMarkdown: string;
   date: Date;
 };
@@ -74,7 +70,6 @@ export type BlogPost = {
   title: string;
   slug: string;
   date: Date;
-  content: Document;
   contentMarkdown: string;
   description: string;
 };
@@ -102,7 +97,6 @@ export type Project = {
   title: string;
   blurb: string;
   image: Asset;
-  description: Document;
   descriptionMarkdown: string;
 };
 

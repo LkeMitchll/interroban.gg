@@ -86,7 +86,6 @@ export class ContentAPI {
     const rawEntry = rawData.fields;
 
     return {
-      content: rawEntry.content,
       contentMarkdown: rawEntry.contentMarkdown,
       date: rawEntry.date,
     };
@@ -147,7 +146,6 @@ export class ContentAPI {
       title: rawPost.title ? rawPost.title : null,
       slug: rawPost.slug ? rawPost.slug : null,
       date: rawPost.date ? rawPost.date : null,
-      content: rawPost.content ? rawPost.content : null,
       contentMarkdown: rawPost.contentMarkdown ? rawPost.contentMarkdown : null,
       description: rawPost.description ? rawPost.description : null,
     };
@@ -158,11 +156,9 @@ export class ContentAPI {
     return {
       id: rawData.sys.id,
       title: rawPage.title,
-      descriptionRich: rawPage.descriptionRich ? rawPage.descriptionRich : null,
       descriptionMarkdown: rawPage.descriptionMarkdown
         ? rawPage.descriptionMarkdown
         : null,
-      content: rawPage.content ? rawPage.content : null,
       contentMarkdown: rawPage.contentMarkdown
         ? this.convertMarkdownWithImages(rawPage.contentMarkdown as FixMe)
         : null,
@@ -181,7 +177,6 @@ export class ContentAPI {
       title: rawProject.title,
       image: convertImage(rawProject.image),
       blurb: rawProject.blurb,
-      description: rawProject.description,
       descriptionMarkdown: rawProject.descriptionMarkdown,
     };
   };
