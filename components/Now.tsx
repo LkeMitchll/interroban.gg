@@ -1,8 +1,8 @@
-import { RichText } from "components";
 import { Heading, SecondaryText } from "designSystem";
 import { formattedDate } from "helpers/date";
 import type { ReactElement } from "react";
 import { JournalEntry } from "services/contentful.types";
+import Markdown from "./Markdown";
 
 export default function Now({ entry }: { entry: JournalEntry }): ReactElement {
   return (
@@ -11,7 +11,7 @@ export default function Now({ entry }: { entry: JournalEntry }): ReactElement {
         What I&apos;m doing now
       </Heading>
       <section data-cy="now-content">
-        <RichText source={entry.content} unwrapped />
+        <Markdown source={entry.contentMarkdown} unwrapped />
       </section>
       <footer>
         <SecondaryText>

@@ -65,6 +65,7 @@ export type Roundup = {
 
 export type JournalEntry = {
   content: Document;
+  contentMarkdown: string;
   date: Date;
 };
 

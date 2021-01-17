@@ -87,6 +87,7 @@ export class ContentAPI {
 
     return {
       content: rawEntry.content,
+      contentMarkdown: rawEntry.contentMarkdown,
       date: rawEntry.date,
     };
   };
