@@ -1,5 +1,22 @@
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { BlogPost } from "services/contentful.types";
+import unified from "unified";
+import markdown from "remark-parse";
+import footnotes from "remark-footnotes";
+import html from "remark-html";
+
+function convertToHTML(rawMarkdown: string): string {
+  let processedHtml: string;
+  unified()
+    .use(markdown)
+    .use(footnotes)
+    .use(html)
+    .process(rawMarkdown, (error, file) => {
+      if (error) throw error;
+      processedHtml = String(file);
+    });
+
+  return processedHtml;
+}
 
 const generateRssItem = (post: BlogPost): string => `
   <item>
@@ -7,7 +24,7 @@ const generateRssItem = (post: BlogPost): string => `
     <title><![CDATA[${post.title}]]></title>
     <link>http://interroban.gg/post/${post.slug}</link>
     <description>
-      <![CDATA[${documentToHtmlString(post.content)}]]>
+      <![CDATA[${convertToHTML(post.contentMarkdown)}]]>
     </description>
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
   </item>

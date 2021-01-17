@@ -6,7 +6,6 @@ import NavLink from "./NavLink";
 import PageMeta from "./PageMeta";
 import Project from "./Project";
 import ResponsiveImage from "./ResponsiveImage";
-import RichText from "./RichText";
 import Splitter from "./Splitter";
 import Title from "./Title";
 import ArrowLink from "./ArrowLink";
@@ -27,7 +26,6 @@ export {
   Logo,
   Title,
   NavLink,
-  RichText,
   ListItem,
   Splitter,
   Project,
