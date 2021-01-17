@@ -7,7 +7,7 @@ type ShortBlogPost = {
   slug: string;
   date: Date;
   url?: string;
-  content: null;
+  contentMarkdown: null;
   description: string;
 };
 
@@ -18,7 +18,7 @@ export default async (
   const api = new ContentAPI();
   const posts = (await api.fetchBlogPostsFull()) as ShortBlogPost[];
   posts.map((post) => {
-    delete post.content;
+    delete post.contentMarkdown;
     post.url = "https://interroban.gg/post/" + post.slug;
   });
   res.status(200).json(posts);

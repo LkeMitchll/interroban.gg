@@ -1,4 +1,4 @@
-import { NavLink, PageMeta, RichText, Title } from "components";
+import { NavLink, PageMeta, Markdown, Title } from "components";
 import { Heading, SecondaryText } from "designSystem";
 import { formattedDate } from "helpers/date";
 import { GetStaticProps } from "next";
@@ -93,7 +93,7 @@ export default function Post({ post }: { post: BlogPost }): ReactElement {
           </SecondaryText>
         </PostTitle>
       </PageTitle>
-      <RichText source={post.content} />
+      <Markdown source={post.contentMarkdown} />
       <Footer>
         <NavLink url="/journal" appearance="underline">
           Back to Journal

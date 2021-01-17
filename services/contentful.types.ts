@@ -74,6 +74,7 @@ export type BlogPost = {
   slug: string;
   date: Date;
   content: Document;
+  contentMarkdown: string;
   description: string;
 };
 

@@ -147,6 +147,7 @@ export class ContentAPI {
       slug: rawPost.slug ? rawPost.slug : null,
       date: rawPost.date ? rawPost.date : null,
       content: rawPost.content ? rawPost.content : null,
+      contentMarkdown: rawPost.contentMarkdown ? rawPost.contentMarkdown : null,
       description: rawPost.description ? rawPost.description : null,
     };
   };
