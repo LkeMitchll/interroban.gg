@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page title</title>
+  </head>
+  <body>
+    <h1>{{ contentful.fields.title }}</h1>
+
+    {% renderMarkdown contentful.fields.contentMarkdown %}
+  </body>
+</html>
