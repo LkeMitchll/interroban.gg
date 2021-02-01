@@ -9,7 +9,7 @@ layout: layout.html
 <section
   x-data="{ totals: {}, isLoading: true }"
   x-init="
-      fetch('https://warp-co.rs/https://interroban.gg/api/music')
+      fetch('/api/music-totals')
         .then(response =>  response.json())
         .then(json => { isLoading = false; totals = json })"
 >

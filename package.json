@@ -8,6 +8,7 @@
     "contentful": "^8.1.7",
     "dotenv": "^8.2.0",
     "mdast-util-to-hast": "^10.1.1",
+    "node-fetch": "^2.6.1",
     "prettier": "^2.2.1",
     "remark-footnotes": "^3.0.0",
     "remark-html": "^13.0.1",
