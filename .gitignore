@@ -1,3 +1,4 @@
 _site
 .env
 node_modules
+.netlify

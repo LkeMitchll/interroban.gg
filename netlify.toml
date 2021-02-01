@@ -1,0 +1,12 @@
+[build]
+  command = "yarn run build"
+  functions = "functions"
+  publish = "_site"
+
+[dev]
+  command = "yarn run dev:eleventy"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

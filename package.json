@@ -16,8 +16,9 @@
     "unist-util-visit": "^2.0.3"
   },
   "scripts": {
+    "build": "yarn run clean && ELEVENTY_ENV=production eleventy",
     "clean": "rm -rf _site",
-    "dev": "yarn run clean && ELEVENTY_ENV=development eleventy --serve",
-    "build": "yarn run clean && ELEVENTY_ENV=production eleventy"
+    "dev": "netlify dev",
+    "dev:eleventy": "yarn run clean && ELEVENTY_ENV=development eleventy --serve"
   }
 }
