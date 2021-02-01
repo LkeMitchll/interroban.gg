@@ -7,6 +7,6 @@
   command = "yarn run dev:eleventy"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  from = "/api/music/*"
+  to = "/.netlify/functions/music-:splat"
   status = 200

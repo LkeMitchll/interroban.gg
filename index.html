@@ -4,13 +4,4 @@ layout: layout.html
 
 <h1>{{ pages.about.fields.title }}</h1>
 
-<div
-  x-data="{ test: '' }"
-  x-init="fetch('/api/hello')
-        .then(response => response.text())
-        .then(text => test = text)"
->
-  <p x-text="test">Loading...</p>
-</div>
-
 {% renderMarkdown pages.about.fields.contentMarkdown %}

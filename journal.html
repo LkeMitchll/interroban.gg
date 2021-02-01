@@ -9,7 +9,7 @@ layout: layout.html
 <section
   x-data="{ totals: {}, isLoading: true }"
   x-init="
-      fetch('/api/music-totals')
+      fetch('/api/music/lastweek')
         .then(response =>  response.json())
         .then(json => { isLoading = false; totals = json })"
 >
