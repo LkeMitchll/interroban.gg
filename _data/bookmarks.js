@@ -5,11 +5,15 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = function () {
+module.exports = function (limit) {
   return client
-    .getEntry("gs1BugZQXA8mN7DniEOFx")
+    .getEntries({
+      content_type: "blogPost",
+      order: "-fields.publishDate",
+      limit: limit ? limit : 1000,
+    })
     .then((result) => {
-      return result;
+      return result.items;
     })
     .catch(console.error);
 };

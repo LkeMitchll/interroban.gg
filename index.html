@@ -2,6 +2,48 @@
 layout: layout.html
 ---
 
-<h1>{{ pages.about.fields.title }}</h1>
+{% assign page = pages | findByID: "3PVdf7SKLVY2peVTFh0ft" %}
+{% assign recentBookmarks = bookmarks | limit: 3 %}
 
-{% renderMarkdown pages.about.fields.contentMarkdown %}
+<header class="hero | grid">
+  <nav>
+    <h2>{{ page.fields.title }}</h2>
+    <a href="/about" class="link">Read more</a>
+  </nav>
+  <section class="measure">
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+</header>
+
+<article class="grid fifty-fifty">
+  <section>
+    <h2>Recent Posts</h2>
+    <ol class="flow gap-large" data-plain>
+      <li>
+        <a href="#">The Window</a>
+        <p class="color-secondary">
+          <time datetime="">January 2021</time>
+        </p>
+      </li>
+    </ol>
+    <footer>
+      <a href="/journal" class="link">See more</a>
+    </footer>
+  </section>
+  <section>
+    <h2>Recent Bookmarks</h2>
+    <ol class="flow gap-large" data-plain>
+      {% for bookmark in recentBookmarks %}
+      <li>
+        <a href="{{ bookmark.fields.url }}" target="_blank">{{ bookmark.fields.title }}</a>
+        <p class="color-secondary">
+          <em>{{ bookmark.fields.tag }}</em>
+        </p>
+      </li>
+      {% endfor %}
+    </ol>
+    <footer>
+      <a href="/bookmarks" class="link">See more</a>
+    </footer>
+  </section>
+</article>

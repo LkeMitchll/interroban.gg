@@ -8,6 +8,11 @@ var html = require("remark-html");
 var all = require("mdast-util-to-hast/lib/all");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("assets");
+
+  eleventyConfig.addFilter("findByID", require("./filters/findByID"));
+  eleventyConfig.addFilter("limit", require("./filters/limit"));
+
   eleventyConfig.addShortcode("renderMarkdown", (rawMarkdown) => {
     let result;
     unified()
