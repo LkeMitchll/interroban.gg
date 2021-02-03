@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: var(--space-large);
+  grid-row-gap: var(--space-large);
+}
+
+.grid > * {
+  grid-column: auto;
+}
+
+/* c: 50-50 */
+
+.fifty-fifty > * {
+  grid-column: 1 / span 4;
+}
+
+@media (min-width: 800px) {
+  .fifty-fifty > *:first-child {
+    grid-column: 1 / span 2;
+  }
+  .fifty-fifty > *:nth-child(2n) {
+    grid-column: 3 / span 2;
+  }
+}

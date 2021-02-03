@@ -1,0 +1,11 @@
+.link {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+  text-decoration: none;
+  transition: border-color 0.25s ease;
+  border-bottom: var(--border-width-default) solid var(--color-faded);
+}
+
+.link:hover {
+  border-color: var(--color-primary);
+}

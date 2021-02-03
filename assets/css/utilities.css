@@ -1,0 +1,33 @@
+/* u: Horizontal */
+
+.horizontal {
+  display: flex;
+}
+
+.horizontal[data-space="large"] > * {
+  margin-right: var(--space-large);
+}
+
+/* u: Flow */
+
+.flow > * + * {
+  margin-top: var(--flow-space, 2rem);
+}
+
+/* u: Measure */
+
+.measure {
+  max-width: var(--text-measure);
+}
+
+/* u: Color */
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+/* u: Gap */
+
+.gap-large {
+  margin-bottom: var(--space-large);
+}

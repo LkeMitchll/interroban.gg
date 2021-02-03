@@ -1,0 +1,21 @@
+.hero {
+  margin-bottom: var(--space-xx-large);
+}
+
+.hero nav {
+  grid-column: 1 / span 4;
+}
+
+.hero section {
+  grid-column: 1 / span 4;
+}
+
+@media (min-width: 800px) {
+  .hero nav {
+    grid-column: 1;
+  }
+
+  .hero section {
+    grid-column: 3 / span 2;
+  }
+}

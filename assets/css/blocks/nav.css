@@ -1,0 +1,19 @@
+.nav {
+  margin-top: var(--space-xx-large);
+  margin-bottom: var(--space-xx-large);
+}
+
+.nav ul {
+  grid-column: 1 / span 4;
+}
+
+.nav .headline {
+  grid-column: 1 / span 2;
+}
+
+@media (min-width: 800px) {
+  .nav ul {
+    grid-column: 3 / span 2;
+  }
+}
+

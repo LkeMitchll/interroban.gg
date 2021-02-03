@@ -1,0 +1,40 @@
+p {
+  color: var(--color-primary);
+  font-feature-settings: "ss01" on, "ss02" on;
+  line-height: var(--text-leading-default);
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.headline {
+  font-size: var(--text-size-large);
+  font-family: var(--text-sans);
+  line-height: var(--text-leading-heading);
+  text-decoration: none;
+  margin: 0 0 var(--space-large);
+}
+
+.headline[data-crushed] {
+  line-height: var(--text-leading-crushed);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+ul[data-plain],
+ol[data-plain] {
+  padding: 0;
+  list-style: none;
+}
