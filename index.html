@@ -4,6 +4,7 @@ layout: layout.html
 
 {% assign page = pages | findByID: "3PVdf7SKLVY2peVTFh0ft" %}
 {% assign recentBookmarks = bookmarks | limit: 3 %}
+{% assign recentPosts = posts | limit: 3 %}
 
 <header class="hero | grid">
   <nav>
@@ -19,12 +20,14 @@ layout: layout.html
   <section>
     <h2>Recent Posts</h2>
     <ol class="flow gap-large" data-plain>
+      {% for post in recentPosts %}
       <li>
-        <a href="#">The Window</a>
+        <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
         <p class="color-secondary">
-          <time datetime="">January 2021</time>
+          <time datetime="">{{ post.fields.date }}</time>
         </p>
       </li>
+      {% endfor %}
     </ol>
     <footer>
       <a href="/journal" class="link">See more</a>
