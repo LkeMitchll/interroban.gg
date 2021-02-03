@@ -4,7 +4,7 @@
   publish = "_site"
 
 [dev]
-  command = "yarn run dev:eleventy"
+  command = "yarn run dev:all"
 
 [[redirects]]
   from = "/api/music/*"
