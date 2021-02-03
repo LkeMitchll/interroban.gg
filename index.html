@@ -24,7 +24,7 @@ layout: layout.html
       <li>
         <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
         <p class="color-secondary">
-          <time datetime="">{{ post.fields.date }}</time>
+          <time datetime="{{ post.fields.date }}">{{ post.fields.date }}</time>
         </p>
       </li>
       {% endfor %}

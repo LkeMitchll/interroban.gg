@@ -10,7 +10,7 @@ layout: layout.html
       <li>
         <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
         <p class="color-secondary">
-          <time datetime="">{{ post.fields.date }}</time>
+        <time datetime="{{ post.fields.date }}">{{ post.fields.date }}</time>
         </p>
       </li>
       {% endfor %}
@@ -27,27 +27,32 @@ layout: layout.html
   </section>
 </article>
 
-<h3>Last week</h3>
-<section x-data="{ totals: {}, isLoading: true }" x-init="
+<article class="grid fifty-fifty">
+  <section>
+    <h3>Last week</h3>
+    <section x-data="{ totals: {}, isLoading: true }" x-init="
       fetch('/api/music/lastweek')
         .then(response =>  response.json())
         .then(json => { isLoading = false; totals = json })">
-  <p x-show="isLoading">Loading...</p>
-  <p x-show="totals.tracks" x-text="`${totals.tracks} Tracks, from ${totals.albums} Albums`"></p>
-</section>
+      <p x-show="isLoading">Loading...</p>
+      <p x-show="totals.tracks" x-text="`${totals.tracks} Tracks, from ${totals.albums} Albums`"></p>
+    </section>
 
-<h3>Top tracks (this month)</h3>
-<ul x-data="{ tracks: [], isLoading: true }" x-init="
+    <h3>Top tracks (this month)</h3>
+    <ul x-data="{ tracks: [], isLoading: true }" x-init="
       fetch('https://warp-co.rs/https://interroban.gg/api/music/top')
         .then(response =>  response.json())
         .then(json => { isLoading = false; tracks = json })">
-  <li x-show="isLoading">Loading...</li>
-  <template x-for="track in tracks" :key="track.id">
-    <li>
-      <p x-text="track.title"></p>
-      <p x-text="track.album"></p>
-      <p x-text="track.artist"></p>
-      <img x-bind:src="track.cover.url" width="50" />
-    </li>
-  </template>
-</ul>
+      <li x-show="isLoading">Loading...</li>
+      <template x-for="track in tracks" :key="track.id">
+        <li>
+          <p x-text="track.title"></p>
+          <p x-text="track.album"></p>
+          <p x-text="track.artist"></p>
+          <img x-bind:src="track.cover.url" width="50" />
+        </li>
+      </template>
+    </ul>
+  </section>
+  <section></section>
+</article>
