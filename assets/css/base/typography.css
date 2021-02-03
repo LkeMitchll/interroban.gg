@@ -42,3 +42,7 @@ ol[data-plain] {
 time {
   font-style: italic;
 }
+
+small {
+  font-size: var(--text-size-small);
+}

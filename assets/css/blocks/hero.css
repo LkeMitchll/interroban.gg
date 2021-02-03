@@ -2,20 +2,31 @@
   margin-bottom: var(--space-xx-large);
 }
 
-.hero nav {
-  grid-column: 1 / span 4;
-}
-
-.hero section {
+.hero nav,
+.hero section,
+.hero img,
+.hero footer {
   grid-column: 1 / span 4;
 }
 
 @media (min-width: 800px) {
   .hero nav {
     grid-column: 1;
+    grid-row: 1;
   }
 
   .hero section {
     grid-column: 3 / span 2;
+  }
+
+  .hero img {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 2;
+  }
+
+  .hero footer {
+    grid-column: 1 / span 1;
+    grid-row: 2;
+    margin-top: auto;
   }
 }
