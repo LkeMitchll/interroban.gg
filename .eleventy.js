@@ -9,9 +9,11 @@ var all = require("mdast-util-to-hast/lib/all");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/fonts");
+  eleventyConfig.addWatchTarget("assets/**/*.css");
 
   eleventyConfig.addFilter("findByID", require("./filters/findByID"));
   eleventyConfig.addFilter("limit", require("./filters/limit"));
+  eleventyConfig.addFilter("formatDate", require("./filters/date"));
 
   eleventyConfig.addShortcode("renderMarkdown", (rawMarkdown) => {
     let result;

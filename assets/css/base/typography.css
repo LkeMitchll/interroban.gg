@@ -38,3 +38,7 @@ ol[data-plain] {
   padding: 0;
   list-style: none;
 }
+
+time {
+  font-style: italic;
+}

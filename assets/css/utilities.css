@@ -31,3 +31,7 @@
 .gap-large {
   margin-bottom: var(--space-large);
 }
+
+.gap-xx-large {
+  margin-bottom: var(--space-xx-large);
+}

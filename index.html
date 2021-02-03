@@ -17,14 +17,14 @@ layout: layout.html
 </header>
 
 <article class="grid fifty-fifty">
-  <section>
+  <section class="gap-xx-large">
     <h2>Recent Posts</h2>
     <ol class="flow gap-large" data-plain>
       {% for post in recentPosts %}
       <li>
         <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
         <p class="color-secondary">
-          <time datetime="{{ post.fields.date }}">{{ post.fields.date }}</time>
+        <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
         </p>
       </li>
       {% endfor %}
@@ -33,15 +33,15 @@ layout: layout.html
       <a href="/journal" class="link">See more</a>
     </footer>
   </section>
-  <section>
+  <section class="gap-xx-large">
     <h2>Recent Bookmarks</h2>
     <ol class="flow gap-large" data-plain>
       {% for bookmark in recentBookmarks %}
       <li>
         <a href="{{ bookmark.fields.url }}" target="_blank">{{ bookmark.fields.title }}</a>
-        <p class="color-secondary">
-          <em>{{ bookmark.fields.tag }}</em>
-        </p>
+            <p class="color-secondary">
+              <em>{{ bookmark.fields.tag }}</em>
+            </p>
       </li>
       {% endfor %}
     </ol>
