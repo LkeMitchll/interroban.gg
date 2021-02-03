@@ -87,14 +87,15 @@ html {
 }
 
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   background-color: var(--color-bg);
   color: var(--color-primary);
+  font-family: var(--text-serif);
+  font-feature-settings: "case" on;
   margin-top: var(--space-large);
   padding: 0 var(--space-default);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "case" on;
 }
 
 @media screen and (min-width: 600px) {
@@ -121,7 +122,6 @@ body {
 
 p {
   color: var(--color-primary);
-  font-family: var(--text-serif);
   font-feature-settings: "ss01" on, "ss02" on;
   line-height: var(--text-leading-default);
   padding: 0;
@@ -147,7 +147,6 @@ h6,
 }
 
 a {
-  font-family: var(--text-serif);
   color: var(--color-primary);
 }
 
