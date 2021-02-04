@@ -2,6 +2,18 @@
 layout: layout.html
 ---
 
+{% assign page = pages | findByID: "5sXnSwGVJePuWZpcOZvIML" %}
+
+<header class="hero | grid">
+  <nav>
+    <h2>{{ page.fields.title }}</h2>
+    <a href="/" class="link">Back</a>
+  </nav>
+  <section class="measure">
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+</header>
+
 <article class="grid fifty-fifty">
   <section>
     <h2>Recent Posts</h2>
@@ -10,7 +22,7 @@ layout: layout.html
       <li>
         <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
         <p class="color-secondary">
-        <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
+          <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
         </p>
       </li>
       {% endfor %}
