@@ -4,8 +4,14 @@
   display: flex;
 }
 
-.horizontal[data-space="large"] > * {
-  margin-right: var(--space-large);
+.horizontal > * {
+  margin-right: var(--gap, 2rem);
+}
+
+/* u: Align */
+
+.align {
+  align-items: center;
 }
 
 /* u: Flow */

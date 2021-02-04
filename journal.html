@@ -6,7 +6,7 @@ layout: layout.html
 
 <header class="hero | grid">
   <nav>
-    <h2>{{ page.fields.title }}</h2>
+    <h1>{{ page.fields.title }}</h1>
     <a href="/" class="link">Back</a>
   </nav>
   <section class="measure">
@@ -14,9 +14,9 @@ layout: layout.html
   </section>
 </header>
 
-<article class="grid fifty-fifty">
+<article class="grid fifty-fifty | gap-xx-large">
   <section>
-    <h2>Recent Posts</h2>
+    <h2 class="title">Recent Posts</h2>
     <ol class="flow gap-large" data-plain>
       {% for post in posts %}
       <li>
@@ -27,44 +27,53 @@ layout: layout.html
       </li>
       {% endfor %}
     </ol>
-    <footer>
-      <a href="/journal" class="link">See more</a>
-    </footer>
   </section>
-  <section>
-    <h2>What I'm doing now</h2>
-    <section>
+  <section class="flow">
+    <h2 class="title">What I'm doing now</h2>
+    <section class="flow">
       {% renderMarkdown now.fields.contentMarkdown %}
     </section>
+    <footer>
+      <time datetime="{{ now.fields.date }}">
+        Last updated &ndash; {{ now.fields.date | formatDate({month: "long", day: "numeric", year: "numeric"}) }}
+      </time>
+    </footer>
   </section>
 </article>
 
-<article class="grid fifty-fifty">
+<article class="grid fifty-fifty | gap-xx-large">
   <section>
-    <h3>Last week</h3>
+    <h2 class="title">Listening</h2>
+
     <section x-data="{ totals: {}, isLoading: true }" x-init="
       fetch('/api/music/lastweek')
         .then(response =>  response.json())
-        .then(json => { isLoading = false; totals = json })">
-      <p x-show="isLoading">Loading...</p>
-      <p x-show="totals.tracks" x-text="`${totals.tracks} Tracks, from ${totals.albums} Albums`"></p>
+        .then(json => { isLoading = false; totals = json })" class="gap-large">
+      <p>Last week I listened to
+        around
+        <p x-show="isLoading">Loading...</p>
+        <a href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A" target="_blank"
+          x-show="totals.tracks" x-text="`${totals.tracks} Tracks, from ${totals.albums} Albums`"></a>
+      </p>
     </section>
 
-    <h3>Top tracks (this month)</h3>
-    <ul x-data="{ tracks: [], isLoading: true }" x-init="
+    <h3 class="subtitle">Top tracks (this month)</h3>
+    <ol x-data="{ tracks: [], isLoading: true }" x-init="
       fetch('https://warp-co.rs/https://interroban.gg/api/music/top')
         .then(response =>  response.json())
-        .then(json => { isLoading = false; tracks = json })">
+        .then(json => { isLoading = false; tracks = json })" class="flow">
       <li x-show="isLoading">Loading...</li>
       <template x-for="track in tracks" :key="track.id">
-        <li>
-          <p x-text="track.title"></p>
-          <p x-text="track.album"></p>
-          <p x-text="track.artist"></p>
-          <img x-bind:src="track.cover.url" width="50" />
+        <li class="track">
+          <img x-bind:src="track.cover.url" x-bind:width="track.cover.width" x-bind:height="track.cover.height"
+            class="thumbnail" style="display: inline-block;" />
+          <div style="display: inline-block;" >
+            <a x-bind:href="track.url" x-text="track.title"></a>
+            <p x-text="track.artist"></p>
+          </div>
         </li>
       </template>
-    </ul>
+    </ol>
   </section>
   <section></section>
 </article>

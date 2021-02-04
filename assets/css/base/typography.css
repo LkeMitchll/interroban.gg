@@ -24,6 +24,16 @@ h6,
   line-height: var(--text-leading-crushed);
 }
 
+.title {
+  font-size: var(--text-size-default);
+}
+
+.subtitle {
+  font-size: var(--text-size-default);
+  font-family: var(--text-serif);
+  font-weight: bold;
+}
+
 a {
   color: var(--color-primary);
 }
@@ -31,6 +41,7 @@ a {
 ul,
 ol {
   margin: 0;
+  padding-left: 1.2em;
 }
 
 ul[data-plain],

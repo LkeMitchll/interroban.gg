@@ -1,0 +1,9 @@
+.track img,
+.track div {
+  vertical-align: text-top;
+  display: inline-block;
+}
+
+.track img {
+  margin: var(--space-tiny) var(--space-default) 0;
+}
