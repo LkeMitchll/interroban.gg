@@ -39,7 +39,7 @@ title: Product Designer
     <ol class="flow gap-large" data-plain>
       {% for bookmark in recentBookmarks %}
       <li>
-        <a href="{{ bookmark.fields.url }}" target="_blank">{{ bookmark.fields.title }}</a>
+        <a href="{{ bookmark.fields.url }}" target="_blank" rel="noreferrer">{{ bookmark.fields.title }}</a>
         <p class="color-secondary">
           <em>{{ bookmark.fields.tag }}</em>
         </p>

@@ -53,7 +53,7 @@ title: Journal
       <p>Last week I listened to
         around
         <p x-show="isLoading">Loading...</p>
-        <a href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A" target="_blank"
+        <a href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A" target="_blank" rel="noreferrer"
           x-show="totals.tracks" x-text="`${totals.tracks} Tracks, from ${totals.albums} Albums`"></a>
       </p>
     </section>
@@ -68,7 +68,7 @@ title: Journal
         <li class="track">
           <img x-bind:src="track.cover.url" x-bind:width="track.cover.width" x-bind:height="track.cover.height"
             class="thumbnail" style="display: inline-block;" />
-          <div style="display: inline-block;" >
+          <div style="display: inline-block;">
             <a x-bind:href="track.url" x-text="track.title"></a>
             <p x-text="track.artist"></p>
           </div>
