@@ -26,3 +26,12 @@
   --radii-default: 2px;
   --border-width-default: 1px;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: hsla(36, 37%, 92%, 1);
+    --color-secondary: hsla(36, 13%, 63%, 1);
+    --color-faded: hsla(36, 13%, 63%, 0.5);
+    --color-bg: #192018;
+  }
+}
