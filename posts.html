@@ -7,6 +7,4 @@ permalink: "post/{{ post.fields.slug }}/"
 layout: layout.html
 ---
 
-<article>
-  {% renderMarkdown post.fields.contentMarkdown %}
-</article>
+<article>{% renderMarkdown post.fields.contentMarkdown %}</article>

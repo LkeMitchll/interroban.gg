@@ -2,18 +2,15 @@
 layout: layout.html
 ---
 
-{% assign heroImage = assets | findByID: "5ZI6Cx1N7O5KG8ikkg1wv7" %}
-{% assign page = pages | findByID: "gs1BugZQXA8mN7DniEOFx" %}
+{% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
+{% set page = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
 
 <header class="hero | grid">
   <nav>
     <h2>{{ page.fields.title }}</h2>
     <a href="/" class="link">Back</a>
   </nav>
-  <img
-    src="{{ heroImage.fields.file.url }}"
-    alt="{{ heroImage.fields.description }}"
-  />
+  <img src="{{ heroImage.fields.file.url }}" alt="{{ heroImage.fields.description }}" />
   <footer>
     <p>
       <small><strong>Image</strong> {{ heroImage.fields.description }}</small>

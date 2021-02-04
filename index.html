@@ -2,9 +2,9 @@
 layout: layout.html
 ---
 
-{% assign page = pages | findByID: "3PVdf7SKLVY2peVTFh0ft" %}
-{% assign recentBookmarks = bookmarks | limit: 3 %}
-{% assign recentPosts = posts | limit: 3 %}
+{% set page = pages | findByID("3PVdf7SKLVY2peVTFh0ft") %}
+{% set recentBookmarks = bookmarks | limit(3) %}
+{% set recentPosts = posts | limit(3) %}
 
 <header class="hero | grid">
   <nav>
@@ -24,7 +24,7 @@ layout: layout.html
       <li>
         <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
         <p class="color-secondary">
-        <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
+          <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
         </p>
       </li>
       {% endfor %}
@@ -39,9 +39,9 @@ layout: layout.html
       {% for bookmark in recentBookmarks %}
       <li>
         <a href="{{ bookmark.fields.url }}" target="_blank">{{ bookmark.fields.title }}</a>
-            <p class="color-secondary">
-              <em>{{ bookmark.fields.tag }}</em>
-            </p>
+        <p class="color-secondary">
+          <em>{{ bookmark.fields.tag }}</em>
+        </p>
       </li>
       {% endfor %}
     </ol>

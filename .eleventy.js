@@ -38,9 +38,11 @@ module.exports = function (eleventyConfig) {
       })
       .process(rawMarkdown, function (err, output) {
         if (err) throw err;
-        result = output;
+        result = output.contents;
       });
 
     return result;
   });
+
+  return { htmlTemplateEngine: "njk" };
 };
