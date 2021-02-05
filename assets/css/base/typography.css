@@ -44,10 +44,24 @@ ol {
   padding-left: 1.2em;
 }
 
+ul {
+  list-style: circle;
+}
+
+li {
+  padding-left: var(--space-small);
+  margin-bottom: var(--space-small);
+}
+
+
 ul[data-plain],
 ol[data-plain] {
   padding: 0;
   list-style: none;
+}
+
+*[data-plain] li {
+  padding: 0;
 }
 
 time {
@@ -57,4 +71,9 @@ time {
 small {
   font-size: var(--text-size-small);
   line-height: var(--text-leading-crushed);
+}
+
+.tertiary-text {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
 }

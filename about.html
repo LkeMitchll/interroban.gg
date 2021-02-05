@@ -5,6 +5,8 @@ title: About Me
 
 {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
 {% set page = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
+{% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
+{% set headshot = assets | findByID("67CIdWsQZqjaJkMPMxOjnQ") %}
 
 <header class="grid | hero">
   <nav>
@@ -20,3 +22,45 @@ title: About Me
 </header>
 
 <article class="grid | markdown | gap-xx-large">{% renderMarkdown page.fields.contentMarkdown %}</article>
+
+<article class="grid columns | gap-xx-large">
+  <header>
+    <h2>Career</h2>
+    <p>
+      I&apos;ve been a designer for (almost) 10 years, gaining experience
+      working with clients of all sizes, spanning many industries. If you
+      think we could work together, please get in touch.
+    </p>
+  </header>
+  <section>
+    <img src="{{ headshot.fields.file.url }}" alt="{{ headshot.fields.description }}" style="width: 70%" />
+  </section>
+  <section>
+    <h3 class="subtitle">{{ experience.fields.title }}</h3>
+    <ul class="flow" data-plain>
+      {% for job in experience.fields.items %}
+      <li>
+        <p class="tertiary-text color-secondary">{{ job.fields.period }}</p>
+        <p>{{ job.fields.title }}</p>
+        <p><em>{{ job.fields.company }}</em></p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section>
+    <h3 class="subtitle">Clients</h3>
+    <ul class="flow" style="--flow-space: var(--space-small)" data-plain>
+      {% for client in clients.clients %}
+      <li>{{ client }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section>
+    <h3 class="subtitle">Skills</h3>
+    <ul class="flow" style="--flow-space: var(--space-small)" data-plain>
+      {% for skill in skills.skills %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+</article>
