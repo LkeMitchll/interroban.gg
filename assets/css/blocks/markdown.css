@@ -1,0 +1,59 @@
+.markdown * {
+  grid-column: 1 / span 4;
+}
+
+/* Footnote */
+.markdown aside {
+  width: calc(50%);
+  font-size: var(--text-size-small);
+  margin-top: var(--space-large);
+}
+
+/* Footnote: image */
+.markdown aside img {
+  margin-bottom: var(--space-default);
+}
+
+/* Footnote: ref, title & backlink */
+.markdown aside strong:first-of-type,
+.markdown aside a:last-of-type,
+.markdown sup a {
+  color: var(--color-secondary);
+  font-size: var(--text-size-small);
+  font-family: var(--text-mono);
+  text-decoration: none;
+}
+
+/* Footnote: backlink */
+.markdown aside a:last-of-type {
+  margin-left: 0.5em;
+}
+
+@media (min-width: 800px) {
+  .markdown * {
+    grid-column: 1 / span 3;
+  }
+
+  .markdown section {
+    position: relative;
+  }
+
+  .markdown aside {
+    position: absolute;
+    right: calc(-33.33% - 1rem);
+    width: calc(33.33% - 1rem);
+    top: 0;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .markdown * {
+    grid-column: 2 / span 2;
+  }
+
+  .markdown aside {
+    right: calc(-50% - 1rem);
+    width: calc(50% - 1rem);
+  }
+}

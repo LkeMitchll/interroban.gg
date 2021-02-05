@@ -3,6 +3,18 @@ layout: layout.html
 title: Bookmarks
 ---
 
+{% set page = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
+
+<header class="hero | grid">
+  <nav>
+    <h1>{{ page.fields.title }}</h1>
+    <a href="/" class="link">Back</a>
+  </nav>
+  <section class="measure">
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+</header>
+
 <article class="grid fifty-fifty">
   <section>
     <h2>All Bookmarks</h2>

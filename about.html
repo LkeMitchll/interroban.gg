@@ -6,7 +6,7 @@ title: About Me
 {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
 {% set page = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
 
-<header class="hero | grid">
+<header class="grid | hero">
   <nav>
     <h2>{{ page.fields.title }}</h2>
     <a href="/" class="link">Back</a>
@@ -19,4 +19,4 @@ title: About Me
   </footer>
 </header>
 
-<article class="markdown">{% renderMarkdown page.fields.contentMarkdown %}</article>
+<article class="grid | markdown | gap-xx-large">{% renderMarkdown page.fields.contentMarkdown %}</article>

@@ -17,6 +17,7 @@ body {
 img {
   display: block;
   width: 100%;
+  border-radius: var(--radii-default);
 }
 
 @media screen and (min-width: 600px) {

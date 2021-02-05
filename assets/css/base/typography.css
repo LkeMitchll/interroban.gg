@@ -56,4 +56,5 @@ time {
 
 small {
   font-size: var(--text-size-small);
+  line-height: var(--text-leading-crushed);
 }
