@@ -1,0 +1,90 @@
+.accordian {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+}
+
+.accordian > summary {
+  list-style-type: none;
+  margin-bottom: var(--space-default);
+}
+
+.accordian > summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordian > summary::after {
+  content: "►";
+  margin-left: var(--space-default);
+  color: var(--color-secondary);
+  font-size: 0.8em;
+}
+
+.accordian[open] > summary::after {
+  content: "▼";
+}
+
+.accordian ol {
+  padding-left: var(--space-default);
+  border-left: 1px dotted var(--color-faded);
+  counter-reset: item;
+  margin-bottom: var(--space-default);
+  margin-left: var(--space-tiny);
+  list-style: none;
+}
+
+.accordian li {
+  display: flex;
+}
+
+.accordian li > * {
+  display: inline-block;
+  margin-right: var(--space-default);
+  margin-top: 0;
+}
+
+.accordian li > a {
+  min-width: 120px;
+}
+
+.accordian li > p {
+  display: block;
+  margin-top: var(--space-tiny);
+}
+
+.accordian li::before {
+  content: "1." counters(item, ".") " ";
+  counter-increment: item;
+  margin-right: var(--space-default);
+  color: var(--color-secondary);
+}
+
+.accordian:nth-of-type(2) li::before {
+  content: "2." counters(item, ".") " ";
+}
+
+.accordian:nth-of-type(3) li::before {
+  content: "3." counters(item, ".") " ";
+}
+
+.accordian:nth-of-type(4) li::before {
+  content: "4." counters(item, ".") " ";
+}
+
+@media (min-width: 800px) {
+  .accordian li {
+    display: block;
+  }
+}
+
+@media (min-width: 1000px) {
+  .accordian li {
+    display: flex;
+  }
+
+  .accordian li > p {
+    margin-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+  }
+}
