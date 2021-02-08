@@ -4,26 +4,11 @@
 }
 
 .accordian > summary {
-  list-style-type: none;
   margin-bottom: var(--space-default);
 }
 
-.accordian > summary::-webkit-details-marker {
-  display: none;
-}
-
-.accordian > summary::after {
-  content: "►";
-  margin-left: var(--space-default);
-  color: var(--color-secondary);
-  font-size: 0.8em;
-}
-
-.accordian[open] > summary::after {
-  content: "▼";
-}
-
-.accordian ol {
+.accordian ol,
+.accordian ul {
   padding-left: var(--space-default);
   border-left: 1px dotted var(--color-faded);
   counter-reset: item;
@@ -34,6 +19,7 @@
 
 .accordian li {
   display: flex;
+  padding-left: var(--space-default);
 }
 
 .accordian li > * {
@@ -62,12 +48,9 @@
   content: "2." counters(item, ".") " ";
 }
 
-.accordian:nth-of-type(3) li::before {
-  content: "3." counters(item, ".") " ";
-}
-
-.accordian:nth-of-type(4) li::before {
-  content: "4." counters(item, ".") " ";
+.accordian:nth-of-type(3n) li::before,
+.accordian:nth-of-type(4n) li::before {
+  display: none;
 }
 
 @media (min-width: 800px) {

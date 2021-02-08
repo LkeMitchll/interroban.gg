@@ -34,6 +34,13 @@ h6,
   font-weight: bold;
 }
 
+.tertiary-title {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+  font-style: italic;
+  margin-bottom: var(--space-small);
+}
+
 a {
   color: var(--color-primary);
 }
@@ -56,7 +63,6 @@ li {
   padding-left: var(--space-small);
   margin-bottom: var(--space-small);
 }
-
 
 ul[data-plain],
 ol[data-plain] {
