@@ -1,0 +1,9 @@
+.placeholder-image rect,
+.placeholder-text rect {
+  fill: var(--color-faded);
+}
+
+.placeholder-text {
+  display: block;
+  margin: var(--space-tiny) 0;
+}
