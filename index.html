@@ -9,14 +9,13 @@ title: Product Designer
 
 <header class="hero | grid">
   <nav>
-    <h2>{{ page.fields.title }}</h2>
-    <a href="/about" class="link">More about me</a>
+    {% include "_includes/site_index.html" %}
   </nav>
   <section class="measure">
+    <h2>{{ page.fields.title }}</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
   <section class="flow" style="--flow-space: 1rem">
-    {% include "_includes/site_index.html" %}
   </section>
 </header>
 

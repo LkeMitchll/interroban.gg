@@ -11,7 +11,7 @@
 
 @media (min-width: 800px) {
   .hero nav {
-    grid-column: 1;
+    grid-column: 1 / span 2;
     grid-row: 1;
   }
 
