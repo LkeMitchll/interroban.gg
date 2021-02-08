@@ -1,5 +1,11 @@
 .fifty-fifty > * {
   grid-column: 1 / span 4;
+  grid-row: auto;
+}
+
+/* Swap item order for smaller screens */
+.fifty-fifty[data-swap] > *:nth-child(2) {
+  grid-row: 1;
 }
 
 @media (min-width: 800px) {
