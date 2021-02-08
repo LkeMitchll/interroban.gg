@@ -1,20 +1,7 @@
-.accordian {
-  font-family: var(--text-mono);
-  font-size: var(--text-size-small);
-}
-
-.accordian > summary {
-  margin-bottom: var(--space-default);
-}
-
-.accordian ol,
-.accordian ul {
-  padding-left: var(--space-default);
+.accordian ol {
   border-left: 1px dotted var(--color-faded);
   counter-reset: item;
-  margin-bottom: var(--space-default);
   margin-left: var(--space-tiny);
-  list-style: none;
 }
 
 .accordian li {
@@ -23,51 +10,26 @@
 }
 
 .accordian li > * {
-  display: inline-block;
   margin-right: var(--space-default);
   margin-top: 0;
 }
 
-.accordian li > div {
-  min-width: 120px;
-}
-
 .accordian li > p {
-  display: block;
-  margin-top: var(--space-tiny);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
 }
 
 .accordian li::before {
-  content: "1." counters(item, ".") " ";
   counter-increment: item;
   margin-right: var(--space-default);
   color: var(--color-secondary);
 }
 
+.accordian:nth-of-type(1) li::before {
+  content: "1." counters(item, ".") " ";
+}
+
 .accordian:nth-of-type(2) li::before {
   content: "2." counters(item, ".") " ";
-}
-
-.accordian:nth-of-type(3n) li::before,
-.accordian:nth-of-type(4n) li::before {
-  display: none;
-}
-
-@media (min-width: 800px) {
-  .accordian li {
-    display: block;
-  }
-}
-
-@media (min-width: 1000px) {
-  .accordian li {
-    display: flex;
-  }
-
-  .accordian li > p {
-    margin-top: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: pre;
-  }
 }

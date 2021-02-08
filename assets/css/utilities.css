@@ -33,6 +33,10 @@
 }
 
 /* u: Gap */
+.gap {
+  margin-bottom: var(--space-default);
+}
+
 .gap-small {
   margin-bottom: var(--space-small);
 }
