@@ -1,4 +1,4 @@
 module.exports = function (array, limit) {
-  array = array.slice(0, limit);
+  array = limit < 2 ? array[0] : array.slice(0, limit);
   return array;
 };

@@ -4,6 +4,7 @@ title: Bookmarks
 ---
 
 {% set page = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
+{% set roundup = roundups | limit(1) %}
 
 <header class="hero | grid">
   <nav>
@@ -17,7 +18,7 @@ title: Bookmarks
 
 <article class="grid fifty-fifty">
   <section>
-    <h2>All Bookmarks</h2>
+    <h2 class="title">All Bookmarks</h2>
     <ol class="flow gap-large" data-plain>
       {% for bookmark in bookmarks %}
       <li>
@@ -33,6 +34,16 @@ title: Bookmarks
     </footer>
   </section>
   <section>
-    <h2>Favourites</h2>
+    <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
+    {{ roundup.fields | log }}
+    <ul class="flow" data-plain>
+      {% for bookmark in roundup.fields.links %}
+      <li>
+        <a class="gap-small" href="{{ bookmark.fields.url }}" target="_blank"
+          rel="noreferrer">{{ bookmark.fields.title }}</a>
+        <p><em>{{ bookmark.fields.tag }}</em> &ndash; {{ bookmark.fields.notes }}</p>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
 </article>
