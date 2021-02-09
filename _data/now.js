@@ -5,15 +5,12 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = function () {
+module.exports = async function now() {
   return client
     .getEntries({
       content_type: "journalEntry",
       order: "-fields.date",
       limit: 1,
     })
-    .then((result) => {
-      return result.items[0];
-    })
-    .catch(console.error);
+    .then((result) => result.items[0]);
 };

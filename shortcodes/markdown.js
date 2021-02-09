@@ -1,11 +1,11 @@
-var unified = require("unified");
-var markdown = require("remark-parse");
-var footnotes = require("remark-footnotes");
-var customFootnotes = require("../helpers/footnotes");
-var html = require("remark-html");
-var all = require("mdast-util-to-hast/lib/all");
+const unified = require("unified");
+const markdown = require("remark-parse");
+const footnotes = require("remark-footnotes");
+const html = require("remark-html");
+const all = require("mdast-util-to-hast/lib/all");
+const customFootnotes = require("../helpers/footnotes");
 
-module.exports = function (rawMarkdown) {
+module.exports = function renderMarkdown(rawMarkdown) {
   let result;
   unified()
     .use(markdown)
@@ -13,20 +13,14 @@ module.exports = function (rawMarkdown) {
     .use(customFootnotes)
     .use(html, {
       handlers: {
-        sectionWithFootnotes: (h, node) => {
-          return h(node, "section", all(h, node));
-        },
+        sectionWithFootnotes: (h, node) => h(node, "section", all(h, node)),
         customFootnoteDefinition: (h, node) => {
-          return h(
-            node,
-            "aside",
-            { id: "fn-" + node.identifier },
-            all(h, node)
-          );
+          const id = `fn-${node.identifier}`;
+          return h(node, "aside", { id }, all(h, node));
         },
       },
     })
-    .process(rawMarkdown, function (err, output) {
+    .process(rawMarkdown, (err, output) => {
       if (err) throw err;
       result = output.contents;
     });

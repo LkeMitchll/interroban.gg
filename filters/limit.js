@@ -1,4 +1,4 @@
-module.exports = function (array, limit) {
-  array = limit < 2 ? array[0] : array.slice(0, limit);
+module.exports = function limit(data, amount) {
+  const array = amount < 2 ? data[0] : data.slice(0, amount);
   return array;
 };

@@ -5,14 +5,11 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = function () {
+module.exports = async function roundups() {
   return client
     .getEntries({
       content_type: "roundup",
       order: "-fields.date",
     })
-    .then((result) => {
-      return result.items;
-    })
-    .catch(console.error);
+    .then((result) => result.items);
 };

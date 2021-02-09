@@ -1,18 +1,14 @@
-var visit = require("unist-util-visit");
+const visit = require("unist-util-visit");
 
-module.exports = customFootnotes;
-
-function customFootnotes() {
-  return transformer;
-
+module.exports = function customFootnotes() {
   function transformer(tree) {
     const footnoteDefs = {};
-    visit(tree, "footnoteDefinition", definitionVisitor);
 
-    function definitionVisitor(node, index, parent) {
+    function definitionVisitor(currentNode, index, parent) {
+      const node = currentNode;
       const indentifier = {
         type: "strong",
-        children: [{ type: "text", value: `${node.identifier} ` }],
+        children: [{ type: "text", value: `${node.identifier} ` }],
       };
       const backlink = {
         type: "link",
@@ -37,9 +33,8 @@ function customFootnotes() {
       return [visit.SKIP, index];
     }
 
-    visit(tree, "footnoteReference", referenceVisitor);
-
-    function referenceVisitor(node, index, parent) {
+    function referenceVisitor(node, _, parentNode) {
+      const parent = parentNode;
       // rename the node type
       parent.type = "sectionWithFootnotes";
       // collect existing children into a paragraph
@@ -54,5 +49,10 @@ function customFootnotes() {
       // add the relevant footnote definition
       parent.children.push(footnoteDefs[node.identifier]);
     }
+
+    visit(tree, "footnoteDefinition", definitionVisitor);
+    visit(tree, "footnoteReference", referenceVisitor);
   }
-}
+
+  return transformer;
+};

@@ -35,7 +35,6 @@ title: Bookmarks
   </section>
   <section>
     <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
-    {{ roundup.fields | log }}
     <ul class="flow" data-plain>
       {% for bookmark in roundup.fields.links %}
       <li>

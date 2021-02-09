@@ -5,15 +5,12 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = function (limit) {
+module.exports = async function bookmarks(limit) {
   return client
     .getEntries({
       content_type: "blogPost",
       order: "-fields.publishDate",
-      limit: limit ? limit : 1000,
+      limit: limit || 1000,
     })
-    .then((result) => {
-      return result.items;
-    })
-    .catch(console.error);
+    .then((result) => result.items);
 };

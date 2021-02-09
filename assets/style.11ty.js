@@ -1,26 +1,28 @@
 const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
+const importPlugin = require("postcss-import");
+const autoprefixerPlugin = require("autoprefixer");
+const nanoPlugin = require("cssnano");
 
 const fileName = "./style.css";
 
-module.exports = class {
+module.exports = class Style {
   async data() {
-    const rawFilepath = path.join(__dirname, fileName);
+    this.rawFilepath = path.join(__dirname, fileName);
     return {
       permalink: `assets/${fileName}`,
-      rawFilepath,
-      rawCss: await fs.readFileSync(rawFilepath),
+      rawFilepath: this.rawFilepath,
+      rawCss: fs.readFileSync(this.rawFilepath),
     };
   }
 
   async render({ rawCss, rawFilepath }) {
-    return await postcss([
-      require("postcss-import"),
-      require("autoprefixer"),
-      require("cssnano"),
-    ])
-      .process(rawCss, { from: rawFilepath })
+    this.rawCss = rawCss;
+    this.rawFilepath = rawFilepath;
+
+    return postcss([importPlugin, autoprefixerPlugin, nanoPlugin])
+      .process(this.rawCss, { from: this.rawFilepath })
       .then((result) => result.css);
   }
 };

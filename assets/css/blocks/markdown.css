@@ -16,8 +16,8 @@
 
 /* Footnote: ref, title & backlink */
 .markdown aside strong:first-of-type,
-.markdown aside a:last-of-type,
-.markdown sup a {
+.markdown sup a,
+.markdown aside a:last-of-type {
   color: var(--color-secondary);
   font-size: var(--text-size-small);
   font-family: var(--text-mono);

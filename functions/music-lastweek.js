@@ -13,8 +13,8 @@ class LastFMAPI {
       api_key: this.apiKey,
       user: this.username,
       format: "json",
-      from: from,
-      to: to,
+      from,
+      to,
     };
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
@@ -28,8 +28,8 @@ class LastFMAPI {
       api_key: this.apiKey,
       user: this.username,
       format: "json",
-      from: from,
-      to: to,
+      from,
+      to,
     };
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
@@ -61,6 +61,6 @@ exports.handler = async () => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ tracks: tracks, albums: albums }),
+    body: JSON.stringify({ tracks, albums }),
   };
 };

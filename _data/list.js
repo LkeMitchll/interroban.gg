@@ -5,11 +5,8 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = function () {
+module.exports = async function list() {
   return client
     .getEntries({ content_type: "list" })
-    .then((result) => {
-      return result.items;
-    })
-    .catch(console.error);
+    .then((result) => result.items);
 };

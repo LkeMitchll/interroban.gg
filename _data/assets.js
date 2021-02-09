@@ -5,11 +5,6 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = function () {
-  return client
-    .getAssets()
-    .then((result) => {
-      return result.items;
-    })
-    .catch(console.error);
+module.exports = async function assets() {
+  return client.getAssets().then((result) => result.items);
 };
