@@ -2,6 +2,7 @@
 @import "css/base/fonts.css";
 @import "css/base/global.css";
 @import "css/base/typography.css";
+@import "css/base/tables.css";
 
 @import "css/compositions/grid.css";
 @import "css/compositions/fifty-fifty.css";

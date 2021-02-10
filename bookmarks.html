@@ -4,6 +4,7 @@ title: Bookmarks
 ---
 
 {% set page = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
+{% set lastUpdate = bookmarks | limit(1) %}
 {% set roundup = roundups | limit(1) %}
 
 <header class="hero | grid">
@@ -13,6 +14,23 @@ title: Bookmarks
   </nav>
   <section class="measure">
     {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+  <section class="flow" style="--flow-space: 1rem">
+    <table class="tertiary-text">
+      <thead>
+        <th>Total</th>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ bookmarks|length }}</td>
+          <td>{{ lastUpdate.fields.publishDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <footer>
+      <a href="#" target="_blank" referrer="noreferrer" class="link">JSON Feed</a>
+    </footer>
   </section>
 </header>
 
