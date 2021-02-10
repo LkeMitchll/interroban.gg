@@ -7,13 +7,30 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="{{ title }}" name="title" />
-    <meta content="{{ title }}" name="twitter:title" />
-    <meta content="{{ description }}" name="description" />
-    <meta content="{{ description }}" name="twitter:description" />
-    <meta content="{{ description }}" property="og:description" />
+    <meta
+      content="Luke Mitchell | {{ post.fields.title if post.fields.title else title }}"
+      name="title"
+    />
+    <meta
+      content="Luke Mitchell | {{ post.fields.title if post.fields.title else title }}"
+      name="twitter:title"
+    />
+    <meta
+      content="{{ post.fields.description if post.fields.description else description }}"
+      name="description"
+    />
+    <meta
+      content="{{ post.fields.description if post.fields.description else description }}"
+      name="twitter:description"
+    />
+    <meta
+      content="{{ post.fields.description if post.fields.description else description }}"
+      property="og:description"
+    />
     <meta content="en" property="og:locale" />
-    <title>Luke Mitchell | {{ title }}</title>
+    <title>
+      Luke Mitchell | {{ post.fields.title if post.fields.title else title }}
+    </title>
     <link
       rel="preload"
       href="/assets/fonts/GT-America-Extended-Medium.subset.woff2"
