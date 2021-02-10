@@ -48,3 +48,9 @@
 .gap-xx-large {
   margin-bottom: var(--space-xx-large);
 }
+
+/* u: Leading */
+
+.leading-crushed {
+  line-height: var(--text-leading-crushed);
+}
