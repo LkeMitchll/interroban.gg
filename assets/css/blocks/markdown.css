@@ -2,6 +2,11 @@
   grid-column: 1 / span 4;
 }
 
+.markdown h2 {
+  font-size: var(--text-size-default);
+  margin-bottom: 0;
+}
+
 /* Footnote */
 .markdown aside {
   width: calc(50%);

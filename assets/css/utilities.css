@@ -54,3 +54,10 @@
 .leading-crushed {
   line-height: var(--text-leading-crushed);
 }
+
+/* u: Text */
+
+.tertiary-text {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+}
