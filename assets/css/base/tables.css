@@ -22,4 +22,5 @@ th {
   box-sizing: border-box;
   font-style: italic;
   padding-right: var(--space-default);
+  padding-left: 0;
 }

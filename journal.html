@@ -15,6 +15,30 @@ alpine: true
   <section class="measure">
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
+  <section class="flow" style="--flow-space: 1rem">
+    <table class="tertiary-text">
+      <thead>
+        <th>Total</th>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ posts | length }} Posts</td>
+          <td>{{ now.fields.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <footer>
+      <ul data-plain>
+        <li>
+          <a href="#" class="link">RSS Feed</a>
+        </li>
+        <li>
+          <a href="#" class="link">JSON Feed</a>
+        </li>
+      </ul>
+    </footer>
+  </section>
 </header>
 
 <article class="grid fifty-fifty | gap-xx-large">
