@@ -1,0 +1,20 @@
+---
+layout: layout.html
+title: Colophon
+---
+
+{% set page = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
+
+<header class="grid | hero">
+  <nav>
+    <h2>{{ page.fields.title }}</h2>
+    <a href="/" class="link">Back</a>
+  </nav>
+  <section class="measure">
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+</header>
+
+<article class="grid | markdown | gap-xx-large">
+  {% renderMarkdown page.fields.contentMarkdown %}
+</article>

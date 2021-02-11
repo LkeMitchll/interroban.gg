@@ -19,6 +19,11 @@
     grid-column: 3 / span 2;
   }
 
+  .hero img + section {
+    grid-column: 1 / span 3;
+    margin-top: var(--space-large);
+  }
+
   .hero[data-layout="left"] section {
     grid-column: 1 / span 2;
   }
@@ -32,5 +37,12 @@
     grid-column: 1 / span 1;
     grid-row: 2;
     margin-top: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero img + section {
+    grid-column: 2 / span 2;
+    margin-top: 0;
   }
 }

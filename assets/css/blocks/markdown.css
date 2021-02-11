@@ -2,9 +2,14 @@
   grid-column: 1 / span 4;
 }
 
-.markdown h2 {
+.markdown h2,
+.markdown h3 {
   font-size: var(--text-size-default);
   margin-bottom: 0;
+}
+
+.markdown h3 {
+  font-family: var(--text-serif);
 }
 
 /* Footnote */

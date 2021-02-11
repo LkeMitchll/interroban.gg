@@ -1,0 +1,27 @@
+---
+layout: layout.html
+title: Colophon
+---
+
+{% set heroImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
+{% set page = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
+
+<header class="grid | hero">
+  <nav>
+    <h2>{{ page.fields.title }}</h2>
+    <a href="/" class="link">Back</a>
+  </nav>
+  <img src="{{ heroImage.fields.file.url }}" alt="{{ heroImage.fields.description }}" />
+  <section class="measure">
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+  <footer>
+    <p class="leading-crushed">
+      <small><strong>Image</strong> {{ heroImage.fields.description }}</small>
+    </p>
+  </footer>
+</header>
+
+<article class="grid | markdown | gap-xx-large">
+  {% renderMarkdown page.fields.contentMarkdown %}
+</article>
