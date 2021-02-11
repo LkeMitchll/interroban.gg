@@ -1,0 +1,10 @@
+.footer div,
+.footer div:last-of-type {
+  grid-column: 1 / span 4;
+}
+
+@media (min-width: 700px) {
+  .footer div {
+    grid-column: auto;
+  }
+}

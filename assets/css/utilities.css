@@ -20,6 +20,12 @@
   margin-top: var(--flow-space, 2rem);
 }
 
+/* u: Push */
+
+.push-down {
+  margin-top: auto;
+}
+
 /* u: Measure */
 
 .measure {
@@ -45,6 +51,10 @@
   margin-bottom: var(--space-large);
 }
 
+.gap-x-large {
+  margin-bottom: var(--space-x-large);
+}
+
 .gap-xx-large {
   margin-bottom: var(--space-xx-large);
 }
@@ -59,5 +69,9 @@
 
 .tertiary-text {
   font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+}
+
+.small-text {
   font-size: var(--text-size-small);
 }
