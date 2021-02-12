@@ -15,6 +15,21 @@ title: Colophon
   </section>
 </header>
 
-<article class="grid | markdown | gap-xx-large">
-  {% renderMarkdown page.fields.contentMarkdown %}
+<article class="grid | fifty-fifty | gap-xx-large">
+  <section>
+    <h2 class="title">Updates</h2>
+    <ol class="flow gap-large" data-plain>
+      {% for post in metaPosts %}
+      <li>
+        <a href="/colophon/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
+        <p class="color-secondary">
+          <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
+        </p>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  <section class="markdown | flow">
+    {% renderMarkdown page.fields.contentMarkdown %}
+  </section>
 </article>

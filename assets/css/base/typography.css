@@ -105,3 +105,11 @@ blockquote + ul > * {
 blockquote + ul li::before {
   content: "\2014\00a0";
 }
+
+code {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+  border-radius: 2px;
+  padding: 0.1em var(--space-tiny);
+  background-color: var(--color-faded);
+}

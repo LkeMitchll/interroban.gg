@@ -1,0 +1,19 @@
+---
+pagination:
+  data: metaPosts
+  size: 1
+  alias: post
+permalink: "colophon/post/{{ post.fields.slug }}/"
+layout: layout.html
+---
+
+<header class="hero | grid">
+  <nav>
+    <h1>{{ post.fields.title }}</h1>
+    <a href="/" class="link">Back</a>
+  </nav>
+</header>
+
+<article class="grid | markdown | gap-xx-large">
+  {% renderMarkdown post.fields.contentMarkdown %}
+</article>

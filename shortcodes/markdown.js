@@ -1,5 +1,6 @@
 const unified = require("unified");
 const markdown = require("remark-parse");
+const externalLinks = require("remark-external-links");
 const footnotes = require("remark-footnotes");
 const html = require("remark-html");
 const all = require("mdast-util-to-hast/lib/all");
@@ -9,10 +10,12 @@ module.exports = function renderMarkdown(rawMarkdown) {
   let result;
   unified()
     .use(markdown)
+    .use(externalLinks)
     .use(footnotes)
     .use(customFootnotes)
     .use(html, {
       handlers: {
+        abbr: null,
         sectionWithFootnotes: (h, node) => h(node, "section", all(h, node)),
         customFootnoteDefinition: (h, node) => {
           const id = `fn-${node.identifier}`;

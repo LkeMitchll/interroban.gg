@@ -6,7 +6,11 @@ module.exports = function customFootnotes() {
 
     function definitionVisitor(currentNode, index, parent) {
       const node = currentNode;
-      const indentifier = {
+      const footnoteContainsImage = node.children.filter(
+        (child) => child.children[0].type === "image",
+      );
+
+      const identifier = {
         type: "strong",
         children: [{ type: "text", value: `${node.identifier} ` }],
       };
@@ -17,6 +21,7 @@ module.exports = function customFootnotes() {
         url: `#fnref-${node.identifier}`,
         children: [{ type: "text", value: "↩" }],
       };
+
       // rename the node type
       node.type = "customFootnoteDefinition";
       // remove definition from original position in tree
@@ -25,10 +30,18 @@ module.exports = function customFootnotes() {
       footnoteDefs[node.identifier] = node;
       // replace first-level paragraph with it's children
       node.children.splice(0, 1, ...node.children[0].children);
-      // add indentifier name
-      node.children[1].children.unshift(indentifier);
-      // add a backlink to the reference
-      node.children[1].children.push(backlink);
+      if (footnoteContainsImage.length > 0) {
+        // add identifier name
+        node.children[1].children.unshift(identifier);
+        // add a backlink to the reference
+        node.children[1].children.push(backlink);
+      } else {
+        node.children = [{ type: "paragraph", children: node.children }];
+        // add identifier name
+        node.children[0].children.unshift(identifier);
+        // add a backlink to the reference
+        node.children[0].children.push(backlink);
+      }
 
       return [visit.SKIP, index];
     }
