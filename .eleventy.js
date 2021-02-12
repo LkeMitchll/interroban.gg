@@ -9,6 +9,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("findByID", require("./filters/findByID"));
   eleventyConfig.addFilter("limit", require("./filters/limit"));
   eleventyConfig.addFilter("formatDate", require("./filters/date"));
+  eleventyConfig.addFilter("JSONStringify", function (data) {
+    const json = JSON.stringify(
+      data.map((item) => {
+        return item.fields;
+      })
+    );
+    return json;
+  });
 
   eleventyConfig.addShortcode(
     "renderMarkdown",
