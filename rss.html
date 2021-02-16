@@ -35,7 +35,8 @@
       <id>{{ absolutePostUrl }}</id>
       <summary>{{ post.fields.description }}</summary>
       <content type="html">
-        {% renderMarkdown post.fields.contentMarkdown %}
+        {% set postContent %}{% renderMarkdown post.fields.contentMarkdown %}{% endset %}
+        {{ postContent | string }}
       </content>
     </entry>
   {%- endfor %}
