@@ -86,7 +86,7 @@ alpine: true
 
     <h3 class="subtitle">Top tracks (this month)</h3>
     <ol x-data="{ tracks: [], isLoading: true }" x-init="
-      fetch('https://warp-co.rs/https://interroban.gg/api/music/top')
+      fetch('/api/music/top')
         .then(response =>  response.json())
         .then(json => { isLoading = false; tracks = json })" class="flow">
       <template x-for="i in 5">
