@@ -1,9 +1,8 @@
 require("dotenv").config();
-const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
   const config = { htmlTemplateEngine: "njk" };
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
   eleventyConfig.addPassthroughCopy("assets/fonts");
   eleventyConfig.addWatchTarget("assets/**/*.css");
@@ -12,14 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("limit", require("./filters/limit"));
   eleventyConfig.addFilter("formatDate", require("./filters/date"));
   eleventyConfig.addFilter("toDateObj", require("./filters/toDateObj"));
-  eleventyConfig.addFilter("JSONStringify", function (data) {
-    const json = JSON.stringify(
-      data.map((item) => {
-        return item.fields;
-      })
-    );
-    return json;
-  });
+  eleventyConfig.addFilter("JSONStringify", require("./filters/json"));
 
   eleventyConfig.addShortcode(
     "renderMarkdown",
