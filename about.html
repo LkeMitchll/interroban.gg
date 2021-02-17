@@ -13,7 +13,7 @@ title: About Me
     <h2>{{ page.fields.title }}</h2>
     <a href="/" class="link">Back</a>
   </nav>
-  <img src="{{ heroImage.fields.file.url }}" alt="{{ heroImage.fields.description }}" />
+  {% responsiveImage heroImage, "threeQuarters" %}
   <footer>
     <p class="measure | leading-crushed">
       <small><strong>Image</strong> {{ heroImage.fields.description }}</small>
@@ -21,7 +21,7 @@ title: About Me
   </footer>
 </header>
 
-<article class="grid | markdown | gap-xx-large">{% renderMarkdown page.fields.contentMarkdown %}</article>
+<article class="grid | markdown | gap-xx-large">{% renderMarkdown page.fields.contentMarkdown, assets %}</article>
 
 <article class="grid columns | gap-xx-large">
   <header>
@@ -33,7 +33,7 @@ title: About Me
     </p>
   </header>
   <section>
-    <img src="{{ headshot.fields.file.url }}" alt="{{ headshot.fields.description }}" style="width: 70%" />
+    {% responsiveImage headshot, "oneCol" %}
   </section>
   <section>
     <h3 class="subtitle">{{ experience.fields.title }}</h3>

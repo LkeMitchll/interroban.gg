@@ -6,7 +6,10 @@ const html = require("remark-html");
 const all = require("mdast-util-to-hast/lib/all");
 const customFootnotes = require("../helpers/footnotes");
 
-module.exports = function renderMarkdown(rawMarkdown) {
+const findByID = require("../filters/findByID");
+const responsiveImage = require("./responsiveImage");
+
+module.exports = function renderMarkdown(rawMarkdown, assets) {
   let result;
   unified()
     .use(markdown)
@@ -20,6 +23,12 @@ module.exports = function renderMarkdown(rawMarkdown) {
         customFootnoteDefinition: (h, node) => {
           const id = `fn-${node.identifier}`;
           return h(node, "aside", { id }, all(h, node));
+        },
+        image: (h, node) => {
+          const imageID = node.url.split("/")[4];
+          const imageObject = findByID(assets, imageID);
+          const imageAttrs = responsiveImage(imageObject, "oneCol", true);
+          return h(node, "img", { ...imageAttrs }, all(h, node));
         },
       },
     })

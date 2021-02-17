@@ -25,6 +25,10 @@ module.exports = function (eleventyConfig) {
     "renderMarkdown",
     require("./shortcodes/markdown")
   );
+  eleventyConfig.addShortcode(
+    "responsiveImage",
+    require("./shortcodes/responsiveImage")
+  );
 
   return config;
 };

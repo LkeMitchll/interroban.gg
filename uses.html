@@ -11,7 +11,7 @@ title: Colophon
     <h2>{{ page.fields.title }}</h2>
     <a href="/" class="link">Back</a>
   </nav>
-  <img src="{{ heroImage.fields.file.url }}" alt="{{ heroImage.fields.description }}" />
+  {% responsiveImage heroImage, "threeQuarters" %}
   <section class="measure">
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>

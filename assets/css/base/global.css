@@ -18,6 +18,8 @@ img {
   display: block;
   width: 100%;
   border-radius: var(--radii-default);
+  height: auto;
+  background-color: var(--color-faded);
 }
 
 @media screen and (min-width: 600px) {
