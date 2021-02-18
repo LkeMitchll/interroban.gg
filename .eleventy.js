@@ -1,5 +1,9 @@
 require("dotenv").config();
 
+const fs = require("fs");
+const path = require("path");
+const postcss = require("postcss");
+
 module.exports = function (eleventyConfig) {
   const config = { htmlTemplateEngine: "njk" };
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
@@ -13,6 +17,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("toDateObj", require("./filters/toDateObj"));
   eleventyConfig.addFilter("JSONStringify", require("./filters/json"));
 
+  eleventyConfig.addAsyncShortcode("postcss", async () => {
+    const filepath = path.join(__dirname, "./assets/style.css");
+    const rawCss = fs.readFileSync(filepath);
+
+    return await postcss([
+      require("postcss-import"),
+      require("autoprefixer"),
+      require("cssnano"),
+    ])
+      .process(rawCss, { from: filepath })
+      .then((result) => result.css);
+  });
   eleventyConfig.addShortcode(
     "renderMarkdown",
     require("./shortcodes/markdown")
