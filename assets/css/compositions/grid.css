@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: var(--space-large);
   grid-row-gap: var(--space-large);
+  position: relative;
 }
 
 .grid > * {

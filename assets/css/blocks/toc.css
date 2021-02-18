@@ -1,0 +1,34 @@
+.toc {
+  --flow-space: var(--space-small);
+}
+
+.toc h2 {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+  font-style: italic;
+}
+
+.toc ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: item;
+}
+
+.toc li {
+  padding: 0;
+}
+
+.toc li::before {
+  counter-increment: item;
+  content: "1." counters(item, ".") " ";
+  margin-right: var(--space-default);
+}
+
+@media (min-width: 1000px) {
+  .toc {
+    grid-column: 1;
+    position: sticky;
+    top: var(--space-default);
+    height: 0;
+  }
+}
