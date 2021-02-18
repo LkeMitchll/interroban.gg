@@ -1,7 +1,15 @@
 .accordian ol {
+  --flow-space: var(--space-default);
+
   border-left: 1px dotted var(--color-faded);
   counter-reset: item;
   margin-left: var(--space-tiny);
+}
+
+@media (min-width: 800px) {
+  .accordian ol {
+    --flow-space: var(--space-small);
+  }
 }
 
 .accordian li {
