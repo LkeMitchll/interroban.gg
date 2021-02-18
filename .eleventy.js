@@ -36,4 +36,14 @@ module.exports = function (eleventyConfig) {
     "responsiveImage",
     require("./shortcodes/responsiveImage")
   );
+
+  eleventyConfig.on("beforeWatch", (changedFile) => {
+    // Trigger hot-reload for changed CSS
+    const isCSSFile = changedFile.filter((file) => file.includes("css"));
+    // When a CSS file changes 'touch' the layout file
+    const time = new Date();
+    if (isCSSFile.length > 0) {
+      fs.utimesSync("./_includes/layout.njk", time, time);
+    }
+  });
 };
