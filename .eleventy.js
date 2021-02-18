@@ -5,7 +5,6 @@ const path = require("path");
 const postcss = require("postcss");
 
 module.exports = function (eleventyConfig) {
-  const config = { htmlTemplateEngine: "njk" };
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
   eleventyConfig.addPassthroughCopy("assets/fonts");
@@ -37,6 +36,4 @@ module.exports = function (eleventyConfig) {
     "responsiveImage",
     require("./shortcodes/responsiveImage")
   );
-
-  return config;
 };
