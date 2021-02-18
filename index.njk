@@ -7,13 +7,15 @@ title: Product Designer
 {% set recentBookmarks = bookmarks | limit(3) %}
 {% set recentPosts = posts | limit(3) %}
 
-<header class="hero | grid" data-layout="left">
-  <section class="measure">
+<header class="hero | grid fifty-fifty" >
+  <section class="flow">
     <h2>Welcome</h2>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
-  <section class="flow" style="--flow-space: 1rem">
-    {% include "_includes/site_index.njk" %}
+  <section class="measure flow" style="--flow-space: var(--space-x-large)">
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <div>
+      {% include "_includes/site_index.njk" %}
+    </div>
   </section>
 </header>
 
