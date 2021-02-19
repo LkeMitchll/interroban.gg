@@ -20,7 +20,7 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self" />
   <link href="https://www.interroban.gg/journal" />
-  <updated>{{ posts[0].fields.date | toDateObj | dateToRfc3339 }}</updated>
+  <updated>{{ posts[0].fields.date | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
@@ -31,7 +31,7 @@
     <entry>
       <title>{{ post.fields.title }}</title>
       <link href="{{ absolutePostUrl }}" />
-      <updated>{{ post.fields.date | toDateObj | dateToRfc3339 }}</updated>
+      <updated>{{ post.fields.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
       <summary>{{ post.fields.description }}</summary>
       <content type="html">

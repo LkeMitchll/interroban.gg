@@ -11,5 +11,12 @@ module.exports = async function posts() {
       content_type: "post",
       order: "-fields.date",
     })
-    .then((result) => result.items);
+    .then((result) => {
+      /* eslint no-param-reassign: "off" */
+      result.items.forEach((item) => {
+        const date = new Date(item.fields.date);
+        item.fields.date = date;
+      });
+      return result.items;
+    });
 };
