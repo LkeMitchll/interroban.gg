@@ -1,3 +1,7 @@
+.track {
+  padding: 0;
+}
+
 .track img,
 .track .placeholder-image,
 .track div {
