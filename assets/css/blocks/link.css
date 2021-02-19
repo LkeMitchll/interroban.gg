@@ -8,4 +8,5 @@
 
 .link:hover {
   border-color: var(--color-primary);
+  font-style: italic;
 }
