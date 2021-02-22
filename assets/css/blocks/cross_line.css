@@ -1,0 +1,24 @@
+.cross-line {
+  background-color: var(--color-accent);
+  padding: var(--space-x-large);
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
+
+.cross-line .headline {
+  font-size: var(--text-size-x-large);
+  max-width: 20em;
+}
+
+@media (min-width: 800px) {
+  .cross-line {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .cross-line .headline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

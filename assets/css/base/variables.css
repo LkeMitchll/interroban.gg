@@ -4,6 +4,7 @@
   --color-faded: hsla(115, 13%, 11%, 0.2);
   --color-x-faded: hsla(115, 13%, 11%, 0.05);
   --color-bg: hsla(84, 100%, 99%, 1);
+  --color-accent: whitesmoke;
   --space-tiny: 0.25rem;
   --space-small: 0.5rem;
   --space-default: 1rem;
@@ -12,6 +13,7 @@
   --space-xx-large: 6rem;
   --text-size-default: 1rem;
   --text-size-large: 1.2rem;
+  --text-size-x-large: 1.5rem;
   --text-size-small: 0.75rem;
   --text-weight-normal: 400;
   --text-weight-bold: 600;
