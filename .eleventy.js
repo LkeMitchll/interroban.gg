@@ -10,6 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("limit", require("./filters/limit"));
   eleventyConfig.addFilter("formatDate", require("./filters/date"));
   eleventyConfig.addFilter("JSONStringify", require("./filters/json"));
+  eleventyConfig.addFilter("fosterFamily", require("./filters/fosterFamily"));
 
   eleventyConfig.addShortcode(
     "renderMarkdown",

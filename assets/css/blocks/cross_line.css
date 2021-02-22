@@ -1,13 +1,18 @@
 .cross-line {
-  background-color: var(--color-accent);
   padding: var(--space-x-large);
   margin-left: -3rem;
   margin-right: -3rem;
+  border-top: 1px dotted var(--color-faded);
+  border-bottom: 1px dotted var(--color-faded);
 }
 
 .cross-line .headline {
   font-size: var(--text-size-x-large);
   max-width: 20em;
+}
+
+.cross-line br {
+  display: none;
 }
 
 @media (min-width: 800px) {
@@ -20,5 +25,9 @@
   .cross-line .headline {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .cross-line br {
+    display: initial;
   }
 }

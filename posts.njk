@@ -8,7 +8,7 @@ layout: layout.njk
 ---
 
 <header class="cross-line | gap-x-large">
-  <h1 class="headline">{{ post.fields.title }}</h1>
+  <h1 class="headline">{{ post.fields.title | fosterFamily | safe }}</h1>
   <a href="/journal" class="link">Back</a>
 </header>
 
