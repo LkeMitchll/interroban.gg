@@ -1,7 +1,12 @@
 html {
   font-size: 17px;
-  border-bottom: 4px solid var(--color-secondary);
   border-top: 4px solid var(--color-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    border: 0;
+  }
 }
 
 body {
