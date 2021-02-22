@@ -1,10 +1,10 @@
 [build]
   command = "yarn run build"
-  functions = "functions"
   publish = "_site"
 
 [dev]
   command = "yarn run dev:all"
+  autoLaunch = false
 
 [[redirects]]
   from = "/api/music/*"
