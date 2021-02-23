@@ -25,9 +25,15 @@ title: Product Designer
     <ol class="flow gap-large" data-plain>
       {% for post in recentPosts %}
       <li>
-        <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
+        <a
+          href="/post/{{ post.fields.slug }}/"
+          aria-label="Post: {{ post.fields.title }}"
+        >
+          {{ post.fields.title }}
+        </a>
         <p class="color-secondary">
-          <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
+          <span class="visually-hidden">Published:</span>
+          <em>{{ post.fields.date | formatDate }}</em>
         </p>
       </li>
       {% endfor %}
@@ -41,8 +47,16 @@ title: Product Designer
     <ol class="flow gap-large" data-plain>
       {% for bookmark in recentBookmarks %}
       <li>
-        <a href="{{ bookmark.fields.url }}" target="_blank" rel="noreferrer">{{ bookmark.fields.title }}</a>
+        <a
+          href="{{ bookmark.fields.url }}"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Bookmark: {{ bookmark.fields.title }}"
+        >
+          {{ bookmark.fields.title }}
+        </a>
         <p class="color-secondary">
+          <span class="visually-hidden">Type:</span>
           <em>{{ bookmark.fields.tag }}</em>
         </p>
       </li>
