@@ -59,6 +59,12 @@
   margin-bottom: var(--space-xx-large);
 }
 
+/* u: Pad */
+
+.pad-r-large {
+  padding-right: var(--space-large);
+}
+
 /* u: Leading */
 
 .leading-crushed {
