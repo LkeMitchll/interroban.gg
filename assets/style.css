@@ -9,8 +9,6 @@
 @import "css/compositions/columns.css";
 @import "css/compositions/quarters.css";
 
-@import "css/utilities.css";
-
 @import "css/blocks/link.css";
 @import "css/blocks/nav.css";
 @import "css/blocks/footer.css";
@@ -22,3 +20,6 @@
 @import "css/blocks/accordian.css";
 @import "css/blocks/toc.css";
 @import "css/blocks/cross_line.css";
+
+@import "css/utilities.css";
+
