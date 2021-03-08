@@ -23,12 +23,3 @@
   content: "1." counters(item, ".") " ";
   margin-right: var(--space-default);
 }
-
-@media (min-width: 1000px) {
-  .toc {
-    grid-column: 1;
-    position: sticky;
-    top: var(--space-default);
-    height: 0;
-  }
-}
