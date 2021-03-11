@@ -12,6 +12,7 @@ body {
   margin-top: var(--space-large);
   padding: 0 var(--space-default);
   text-rendering: optimizeLegibility;
+  line-height: 1.5;
 }
 
 img {
@@ -24,7 +25,7 @@ img {
 
 @media screen and (min-width: 600px) {
   html {
-    font-size: calc(18px + 2 * ((100vw - 320px) / 680));
+    font-size: 18px;
   }
 
   body {
@@ -34,10 +35,16 @@ img {
 
 @media screen and (min-width: 1600px) {
   html {
-    font-size: 21px;
+    font-size: 1.1vw;
   }
 
   body {
     padding: 0 15vw;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 1vw;
   }
 }

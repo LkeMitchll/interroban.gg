@@ -5,35 +5,39 @@ title: Feeds
 
 {% set page = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
 
-<header class="hero | grid">
+<header class="grid | gap-x-large">
   <nav>
-    <h1>{{ page.fields.title }}</h1>
-    <a href="/" class="link" aria-label="Back to homepage">Back</a>
+    <a href="/" class="link">Back to index</a>
   </nav>
   <section class="measure">
+    <h2>{{ page.fields.title }}</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
-  <section class="flow" style="--flow-space: 1rem">
-    <table class="tertiary-text">
-      <thead>
-        <th>Total</th>
-        <th>Updated</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ feeds | length }} Subscriptions</td>
-          <td>{{ feeds[0].created_at | formatDate({})}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <table class="tertiary-text">
+    <thead>
+      <th>Total</th>
+      <th>Updated</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ feeds | length }} Subscriptions</td>
+        <td>{{ feeds[0].created_at | formatDate({})}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
 </header>
 
-<article class="gap-xx-large">
-  <ul class="grid | quarters" data-plain>
+<article class="grid | gap-xx-large">
+  <ul class="grid columns" style="--position: 2; --cols: 2" data-plain>
     {% for feed in feeds %}
     <li>
-      <a href="{{ feed.site_url }}" target="_blank" rel="noreferrer">{{ feed.title }}</a>
+      <a href="{{ feed.site_url }}"
+         target="_blank"
+         rel="noreferrer"
+      >
+        {{ feed.title }}
+      </a>
       <p class="color-secondary">
         <time datetime="{{ feed.created_at }}">
           Reading since:

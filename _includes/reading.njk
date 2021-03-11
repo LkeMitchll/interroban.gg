@@ -1,0 +1,22 @@
+{% set recentlyRead = list | findByID("2uust09L73V2AcXwl3F80h") %}
+
+<section>
+  <h2 class="title">{{ recentlyRead.fields.title }}</h2>
+  <ul class="flow gap-large" data-plain>
+    {% for item in recentlyRead.fields.items %}
+    <li>
+      <a href="{{ item.fields.url }}"
+          target="_blank"
+          rel="noreferrer"
+      >
+        {{ item.fields.title }}
+      </a>
+      <p class="color-secondary">
+        <em>
+          {{ item.fields.type }}&mdash;{{ item.fields.author }}
+        </em>
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

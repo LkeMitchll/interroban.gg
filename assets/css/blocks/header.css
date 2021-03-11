@@ -1,0 +1,12 @@
+.header {
+  padding-top: var(--space-x-large);
+}
+
+.header .headline,
+.header li {
+  margin-bottom: 0;
+}
+
+.header .horizontal {
+  align-items: flex-end;
+}

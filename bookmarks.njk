@@ -7,15 +7,15 @@ title: Bookmarks
 {% set lastUpdate = bookmarks | limit(1) %}
 {% set roundup = roundups | limit(1) %}
 
-<header class="hero | grid">
+<header class="grid | gap-xx-large">
   <nav>
-    <h1>{{ page.fields.title }}</h1>
-    <a href="/" class="link" aria-label="Back to homepage">Back</a>
+    <a href="/" class="link">Back to index</a>
   </nav>
-  <section class="measure">
+  <div class="measure flow">
+    <h1>{{ page.fields.title }}</h1>
     {% renderMarkdown page.fields.descriptionMarkdown %}
-  </section>
-  <section class="flow" style="--flow-space: 1rem">
+  </div>
+  <div class="flow" style="--flow-space: var(--space-small);">
     <table class="tertiary-text">
       <thead>
         <th>Total</th>
@@ -29,38 +29,68 @@ title: Bookmarks
       </tbody>
     </table>
     <footer>
-      <a href="/api/bookmarks.json" target="_blank" referrer="noreferrer" class="link">JSON Feed</a>
+      <a href="/api/bookmarks.json"
+         target="_blank"
+         referrer="noreferrer"
+         class="link"
+      >
+        JSON Feed
+      </a>
     </footer>
-  </section>
+  </div>
+  <hr />
 </header>
 
-<article class="grid fifty-fifty" data-swap>
-  <section>
-    <h2 class="title">All Bookmarks</h2>
-    <ol class="flow gap-large" data-plain>
-      {% for bookmark in bookmarks %}
-      <li>
-        <a href="{{ bookmark.fields.url }}" target="_blank" rel="noreferrer">{{ bookmark.fields.title }}</a>
-        <p class="color-secondary">
-          <em>{{ bookmark.fields.tag }}</em>
-        </p>
-      </li>
-      {% endfor %}
+<article class="grid | gap-xx-large">
+  <nav class="toc | flow | tertiary-text">
+    <h2>Table of contents</h2>
+    <ol data-plain>
+      <li><a href="#faves">Favourites</a></li>
+      <li><a href="#bookmarks">All Bookmarks</a></li>
     </ol>
-    <footer>
-      <a href="/bookmarks" class="link">See more</a>
-    </footer>
-  </section>
+  </nav>
   <section>
-    <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
-    <ul class="flow" data-plain>
-      {% for bookmark in roundup.fields.links %}
-      <li>
-        <a class="gap-small" href="{{ bookmark.fields.url }}" target="_blank"
-          rel="noreferrer">{{ bookmark.fields.title }}</a>
-        <p><em>{{ bookmark.fields.tag }}</em> &ndash; {{ bookmark.fields.notes }}</p>
-      </li>
-      {% endfor %}
-    </ul>
+    <section class="gap-xx-large">
+      <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
+      <ul class="measure flow" data-plain>
+        {% for bookmark in roundup.fields.links %}
+        <li>
+          <a class="gap-small"
+             href="{{ bookmark.fields.url }}"
+             target="_blank"
+             rel="noreferrer"
+          >
+            {{ bookmark.fields.title }}
+          </a>
+          <p>
+            <em>{{ bookmark.fields.tag }}</em> &ndash;
+            {{ bookmark.fields.notes }}
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="title">All Bookmarks</h2>
+      <ol class="measure flow gap-large" data-plain>
+        {% for bookmark in bookmarks %}
+        <li>
+          <a href="{{ bookmark.fields.url }}"
+             target="_blank"
+             rel="noreferrer"
+          >
+            {{ bookmark.fields.title }}
+          </a>
+          <p class="color-secondary">
+            <em>{{ bookmark.fields.tag }}</em>
+          </p>
+        </li>
+        {% endfor %}
+      </ol>
+      <footer>
+        <a href="/bookmarks" class="link">See more</a>
+      </footer>
+    </section>
   </section>
 </article>

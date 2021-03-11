@@ -8,20 +8,36 @@ title: Uses
 
 <header class="grid | hero | gap-x-large">
   <nav>
-    <h2>{{ page.fields.title }}</h2>
-    <a href="/" class="link" aria-label="Back to homepage">Back</a>
+    <a href="/" class="link">Back to index</a>
   </nav>
-  {% responsiveImage heroImage, "threeQuarters" %}
   <section class="measure">
+    <h2>{{ page.fields.title }}</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
-  <footer>
-    <p class="leading-crushed">
-      <small><strong>Image</strong> {{ heroImage.fields.description }}</small>
-    </p>
-  </footer>
+  <table class="tertiary-text">
+    <thead>
+      <th>Updated</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
 </header>
 
-<article class="grid | markdown | gap-xx-large">
-  {% renderMarkdown page.fields.contentMarkdown %}
+<article class="grid reversed | gap-x-large">
+  {% responsiveImage heroImage, "threeQuarters" %}
+  <p class="measure | push-down leading-crushed">
+    <small>
+      <strong>Image</strong> {{ heroImage.fields.description }}
+    </small>
+  </p>
+</article>
+
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow" style="--position: 2">
+    {% renderMarkdown page.fields.contentMarkdown %}
+  </section>
 </article>

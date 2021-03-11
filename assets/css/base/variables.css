@@ -23,9 +23,10 @@
   --text-leading-heading: 1.3;
   --text-leading-crushed: 1.1;
   --text-leading-relaxed: 1.6;
-  --text-measure: 30rem;
+  --text-measure: 50ch;
   --radii-default: 2px;
   --border-width-default: 1px;
+  --border-default: 1px dotted var(--color-faded);
 }
 
 @media (prefers-color-scheme: dark) {

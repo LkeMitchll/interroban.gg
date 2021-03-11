@@ -83,8 +83,8 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
     {% endif %}
   </head>
   <body>
-    <nav class="grid | nav">
-      <a href="/" class="headline" data-crushed aria-label="Go to home page">
+    <nav class="grid | header | gap-xx-large">
+      <a href="/" class="headline" data-lh="crushed" aria-label="Go to home page">
         Luke Mitchell<br />Product Designer
       </a>
       <ul class="horizontal" data-space="large" data-plain>
@@ -98,9 +98,9 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
       {{ content | safe }}
     </main>
 
-    <footer class="grid | footer | gap-x-large">
+    <footer class="grid | gap-x-large">
       <div>
-        <h3 class="subtitle | gap-small small-text">
+        <h3 class="subtitle | small-text gap-small">
           Luke Mitchell &mdash;<br />
           Product Designer
         </h3>
@@ -110,69 +110,71 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
           <li><a class="link" href="/bookmarks">Bookmarks</a></li>
         </ul>
       </div>
-      <div class="push-down">
-        <h3 class="subtitle | gap-small">Information</h3>
-        <ul data-plain>
-          <li><a class="link" href="/colophon">Colophon</a></li>
-          <li><a class="link" href="/Uses">Uses</a></li>
-          <li><a class="link" href="/Feeds">Feeds</a></li>
-        </ul>
-      </div>
-      <div class="push-down">
-        <h3 class="subtitle | gap-small">Contact</h3>
-        <ul data-plain>
-          <li><a class="link" href="mailto:luke@interroban.gg">Email</a></li>
-          <li>
-            <a
-              class="link"
-              href="https://www.twitter.com/lkemitchll"
-              target="_blank"
-              rel="noreferrer"
-              >Twitter</a
-            >
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://www.linkedin.com/in/luke-mitchell-69ba421b3/"
-              target="_blank"
-              rel="noreferrer"
-              >LinkedIn</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="push-down">
-        <h3 class="subtitle | gap-small">Elsewhere</h3>
-        <ul data-plain>
-          <li>
-            <a
-              class="link"
-              href="https://dribbble.com/Interrobang"
-              target="_blank"
-              rel="noreferrer"
-              >Dribbble</a
-            >
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://www.pinterest.co.uk/lkemitchll/pins/"
-              target="_blank"
-              rel="noreferrer"
-              >Pinterest</a
-            >
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://www.github.com/lkemitchll"
-              target="_blank"
-              rel="noreferrer"
-              >GitHub</a
-            >
-          </li>
-        </ul>
+      <div class="grid | columns" style="--cols: 3">
+        <div class="push-down">
+          <h3 class="subtitle | gap-small">Information</h3>
+          <ul data-plain>
+            <li><a class="link" href="/colophon">Colophon</a></li>
+            <li><a class="link" href="/Uses">Uses</a></li>
+            <li><a class="link" href="/Feeds">Feeds</a></li>
+          </ul>
+        </div>
+        <div class="push-down">
+          <h3 class="subtitle | gap-small">Contact</h3>
+          <ul data-plain>
+            <li><a class="link" href="mailto:luke@interroban.gg">Email</a></li>
+            <li>
+              <a
+                class="link"
+                href="https://www.twitter.com/lkemitchll"
+                target="_blank"
+                rel="noreferrer"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://www.linkedin.com/in/luke-mitchell-69ba421b3/"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="push-down">
+          <h3 class="subtitle | gap-small">Elsewhere</h3>
+          <ul data-plain>
+            <li>
+              <a
+                class="link"
+                href="https://dribbble.com/Interrobang"
+                target="_blank"
+                rel="noreferrer"
+                >Dribbble</a
+              >
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://www.pinterest.co.uk/lkemitchll/pins/"
+                target="_blank"
+                rel="noreferrer"
+                >Pinterest</a
+              >
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://www.github.com/lkemitchll"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
       <div>
         <p class="tertiary-text"><small>&copy; 2021, Luke Mitchell</small></p>

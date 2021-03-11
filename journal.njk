@@ -5,17 +5,16 @@ alpine: true
 ---
 
 {% set page = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
-{% set recentlyRead = list | findByID("2uust09L73V2AcXwl3F80h") %}
 
-<header class="hero | grid">
+<header class="grid | gap-xx-large">
   <nav>
-    <h1>{{ page.fields.title }}</h1>
-    <a href="/" class="link" aria-label="Back to homepage">Back</a>
+    <a href="/" class="link">Back to index</a>
   </nav>
-  <section class="measure">
+  <div class="measure flow" style="--flow-space: var(--space-default)">
+    <h1>{{ page.fields.title }}</h1>
     {% renderMarkdown page.fields.descriptionMarkdown %}
-  </section>
-  <section class="flow" style="--flow-space: 1rem">
+  </div>
+  <div class="flow" style="--flow-space: var(--space-small);">
     <table class="tertiary-text">
       <thead>
         <th>Total</th>
@@ -34,100 +33,61 @@ alpine: true
           <a href="/rss.xml" class="link">RSS Feed</a>
         </li>
         <li>
-          <a href="/api/posts.json" class="link">JSON Feed</a>
+          <a href="/api/posts.json"
+             target="_blank"
+             referrer="noreferrer"
+             class="link"
+             >
+             JSON Feed
+          </a>
         </li>
       </ul>
     </footer>
-  </section>
+  </div>
+  <hr />
 </header>
 
-<article class="grid fifty-fifty | gap-xx-large">
-  <section>
-    <h2 class="title">Recent Posts</h2>
-    <ol class="flow gap-large" data-plain>
-      {% for post in posts %}
-      <li>
-        <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
-        <p class="color-secondary">
-          <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
-        </p>
-      </li>
-      {% endfor %}
+<article class="grid | gap-xx-large">
+  <nav class="toc | flow | tertiary-text">
+    <h2>Table of contents</h2>
+    <ol data-plain>
+      <li><a href="#now">Now</a></li>
+      <li><a href="#posts">Posts</a></li>
+      <li><a href="#listening">Listening</a></li>
+      <li><a href="#reading">Reading</a></li>
     </ol>
-  </section>
-  <section class="flow">
-    <h2 class="title">What I'm doing now</h2>
-    <section class="flow">
-      {% renderMarkdown now.fields.contentMarkdown %}
-    </section>
-    <footer>
-      <time datetime="{{ now.fields.date }}">
-        Last updated &ndash; {{ now.fields.date | formatDate({month: "long", day: "numeric", year: "numeric"}) }}
-      </time>
-    </footer>
-  </section>
-</article>
-
-<article class="grid fifty-fifty | gap-xx-large">
+  </nav>
   <section>
-    <h2 class="title">Listening</h2>
-
-    <section x-data="{ totals: {}, isLoading: true }" x-init="
-      fetch('/api/music/lastweek')
-        .then(response =>  response.json())
-        .then(json => { isLoading = false; totals = json })" class="gap-large">
-      <p>Last week I listened to
-        around
-        <p x-show="isLoading">Loading...</p>
-        <a href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A" target="_blank" rel="noreferrer"
-          x-show="totals.tracks" x-text="`${totals.tracks} Tracks, from ${totals.albums} Albums`"></a>
-      </p>
+    <section class="flow | gap-xx-large">
+      <h2 class="title">Now</h2>
+      <section class="markdown | measure flow">
+        {% renderMarkdown now.fields.contentMarkdown %}
+      </section>
+      <footer>
+        <time datetime="{{ now.fields.date }}">
+          Last updated &ndash;
+          {{ now.fields.date | formatDate({month: "long", day: "numeric", year: "numeric"}) }}
+        </time>
+      </footer>
     </section>
 
-    <h3 class="subtitle">Top tracks (this month)</h3>
-    <ol x-data="{ tracks: [], isLoading: true }" x-init="
-      fetch('/api/music/top')
-        .then(response =>  response.json())
-        .then(json => { isLoading = false; tracks = json })" class="flow">
-      <template x-for="i in 5">
-        <li x-show="isLoading" class="track">
-          <svg width="50" height="50" class="placeholder-image thumbnail">
-            <rect width="50" height="50" />
-          </svg>
-          <div>
-            <svg width="100" height="19" class="placeholder-text">
-              <rect width="100" height="19" />
-            </svg>
-            <svg width="70" height="19" class="placeholder-text">
-              <rect width="70" height="19" />
-            </svg>
-          </div>
+    <section class="gap-xx-large">
+      <h2 class="title">Posts</h2>
+      <ol class="flow gap-large" data-plain>
+        {% for post in posts %}
+        <li>
+          <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
+          <p class="color-secondary">
+            <time datetime="{{ post.fields.date }}">
+              {{ post.fields.date | formatDate }}
+            </time>
+          </p>
         </li>
-      </template>
-      <template x-for="track in tracks" :key="track.id">
-        <li class="track">
-          <img x-bind:src="track.cover.url" x-bind:width="track.cover.width" x-bind:height="track.cover.height"
-            class="thumbnail" style="display: inline-block;" />
-          <div>
-            <a x-bind:href="track.url" x-text="track.title"></a>
-            <p x-text="track.artist"></p>
-          </div>
-        </li>
-      </template>
-    </ol>
-  </section>
-  <section>
-    <h2 class="title">{{ recentlyRead.fields.title }}</h2>
+        {% endfor %}
+      </ol>
+    </section>
 
-    <ul class="flow gap-large" data-plain>
-      {% for item in recentlyRead.fields.items %}
-      <li>
-        <a href="{{ item.fields.url }}" target="_blank" rel="noreferrer">{{ item.fields.title }}</a>
-        <p class="color-secondary">
-          <em>{{ item.fields.type }}&mdash;{{ item.fields.author }}</em>
-        </p>
-      </li>
-      {% endfor %}
-    </ul>
+    {% include "_includes/listening.njk" %}
+    {% include "_includes/reading.njk" %}
   </section>
 </article>

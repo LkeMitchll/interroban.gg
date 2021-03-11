@@ -1,0 +1,9 @@
+@media (min-width: 700px) {
+  .columns {
+    grid-template-columns: repeat(var(--cols, 4), 1fr);
+  }
+
+  .columns * {
+    grid-column: auto;
+  }
+}

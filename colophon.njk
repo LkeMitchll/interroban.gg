@@ -5,31 +5,55 @@ title: Colophon
 
 {% set page = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
 
-<header class="grid | hero">
+<header class="grid | gap-xx-large">
   <nav>
-    <h2>{{ page.fields.title }}</h2>
-    <a href="/" class="link" aria-label="Back to homepage">Back</a>
+    <a href="/" class="link">Back to index</a>
   </nav>
   <section class="measure">
+    <h2>{{ page.fields.title }}</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
+  <table class="tertiary-text">
+    <thead>
+      <th>Updated</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
 </header>
 
-<article class="grid | fifty-fifty | gap-xx-large">
-  <section>
-    <h2 class="title">Updates</h2>
-    <ol class="flow gap-large" data-plain>
-      {% for post in metaPosts %}
-      <li>
-        <a href="/colophon/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
-        <p class="color-secondary">
-          <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
-        </p>
-      </li>
-      {% endfor %}
+<article class="grid | gap-xx-large">
+  <nav class="toc | flow | tertiary-text">
+    <h2>Table of contents</h2>
+    <ol data-plain>
+      <li><a href="#updates">Recent Updates</a></li>
+      <li><a href="#notes">Notes</a></li>
     </ol>
-  </section>
-  <section class="markdown | flow">
-    {% renderMarkdown page.fields.contentMarkdown %}
+  </nav>
+  <section>
+    <div class="gap-large">
+      <h2 class="title">Updates</h2>
+      <ol class="flow gap-large" data-plain>
+        {% for post in metaPosts %}
+        <li>
+          <a href="/colophon/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
+          <p class="color-secondary">
+            <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
+          </p>
+        </li>
+        {% endfor %}
+      </ol>
+      <details class="accordian | tertiary-text | gap-x-large">
+        <summary>Recent commits</summary>
+      </details>
+      <hr />
+    </div>
+    <section class="markdown | measure flow">
+      {% renderMarkdown page.fields.contentMarkdown %}
+    </section>
   </section>
 </article>

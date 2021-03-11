@@ -10,9 +10,11 @@
 
 /* Footnote */
 .markdown aside {
-  width: calc(50%);
+  width: 33.33%;
   font-size: var(--text-size-small);
   margin-top: var(--space-large);
+  padding-left: var(--space-large);
+  border-left: 1px solid gainsboro;
 }
 
 /* Footnote: image */
@@ -37,21 +39,12 @@
 
 @media (min-width: 800px) {
   .markdown section {
-    position: relative;
+    display: flex;
+    width: 130%;
   }
 
   .markdown aside {
-    position: absolute;
-    right: calc(-33.33% - 1rem);
-    width: calc(33.33% - 1rem);
-    top: 0;
     margin-top: 0;
-  }
-}
-
-@media (min-width: 1000px) {
-  .markdown aside {
-    right: calc(-50% - 1rem);
-    width: calc(50% - 1rem);
+    margin-left: var(--space-large);
   }
 }

@@ -3,3 +3,13 @@
   grid-column-gap: var(--space-large);
   grid-row-gap: var(--space-large);
 }
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: minmax(min(33vw, 25ch), 1fr) minmax(min(66vw, 30ch), 3fr);
+  }
+
+  .grid * {
+    grid-column: var(--position, auto);
+  }
+}
