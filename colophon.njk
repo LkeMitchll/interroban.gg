@@ -13,28 +13,31 @@ title: Colophon
     <h2>{{ page.fields.title }}</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
-  <table class="tertiary-text">
-    <thead>
-      <th>Updated</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <hr />
-</header>
-
-<article class="grid | gap-xx-large">
-  <nav class="toc | flow | tertiary-text">
-    <h2>Table of contents</h2>
-    <ol data-plain>
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
+    <table class="tertiary-text">
+      <thead>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <nav class="toc | push-down | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <ol class="horizontal" data-plain>
       <li><a href="#updates">Recent Updates</a></li>
       <li><a href="#notes">Notes</a></li>
     </ol>
+    <hr />
   </nav>
-  <section>
+</header>
+
+<article class="grid | gap-xx-large">
+  <section style="--position: 2">
     <div class="gap-large">
       <h2 class="title">Updates</h2>
       <ol class="flow gap-large" data-plain>

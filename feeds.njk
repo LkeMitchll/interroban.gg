@@ -13,18 +13,21 @@ title: Feeds
     <h2>{{ page.fields.title }}</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </section>
-  <table class="tertiary-text">
-    <thead>
-      <th>Total</th>
-      <th>Updated</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ feeds | length }} Subscriptions</td>
-        <td>{{ feeds[0].created_at | formatDate({})}}</td>
-      </tr>
-    </tbody>
+  <div class="toc | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <table class="tertiary-text">
+      <thead>
+        <th>Total</th>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ feeds | length }} Subscriptions</td>
+          <td>{{ feeds[0].created_at | formatDate({})}}</td>
+        </tr>
+      </tbody>
   </table>
+  </div>
   <hr/>
 </header>
 

@@ -15,16 +15,19 @@ title: About Me
     <h2>{{ page.fields.title }}</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </div>
-  <table class="tertiary-text">
-    <thead>
-      <th>Updated</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
+    <table class="tertiary-text">
+      <thead>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <hr />
 </header>
 

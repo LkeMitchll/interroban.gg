@@ -6,7 +6,7 @@ alpine: true
 
 {% set page = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
 
-<header class="grid | gap-xx-large">
+<header class="grid | gap-x-large">
   <nav>
     <a href="/" class="link">Back to index</a>
   </nav>
@@ -14,7 +14,8 @@ alpine: true
     <h1>{{ page.fields.title }}</h1>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </div>
-  <div class="flow" style="--flow-space: var(--space-small);">
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
     <table class="tertiary-text">
       <thead>
         <th>Total</th>
@@ -27,37 +28,37 @@ alpine: true
         </tr>
       </tbody>
     </table>
-    <footer>
-      <ul data-plain>
-        <li>
-          <a href="/rss.xml" class="link">RSS Feed</a>
-        </li>
-        <li>
-          <a href="/api/posts.json"
-             target="_blank"
-             referrer="noreferrer"
-             class="link"
-             >
-             JSON Feed
-          </a>
-        </li>
-      </ul>
-    </footer>
   </div>
-  <hr />
-</header>
-
-<article class="grid | gap-xx-large">
-  <nav class="toc | flow | tertiary-text">
-    <h2>Table of contents</h2>
-    <ol data-plain>
+  <nav class="toc | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <ol class="horizontal" data-plain>
       <li><a href="#now">Now</a></li>
       <li><a href="#posts">Posts</a></li>
       <li><a href="#listening">Listening</a></li>
       <li><a href="#reading">Reading</a></li>
     </ol>
+    <hr />
   </nav>
-  <section>
+  <footer>
+    <ul data-plain>
+      <li>
+        <a href="/rss.xml" class="link">RSS Feed</a>
+      </li>
+      <li>
+        <a href="/api/posts.json"
+            target="_blank"
+            referrer="noreferrer"
+            class="link"
+            >
+            JSON Feed
+        </a>
+      </li>
+    </ul>
+  </footer>
+</header>
+
+<article class="grid | gap-xx-large">
+  <section style="--position: 2">
     <section class="flow | gap-xx-large">
       <h2 class="title">Now</h2>
       <section class="markdown | measure flow">

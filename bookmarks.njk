@@ -7,7 +7,7 @@ title: Bookmarks
 {% set lastUpdate = bookmarks | limit(1) %}
 {% set roundup = roundups | limit(1) %}
 
-<header class="grid | gap-xx-large">
+<header class="grid | gap-x-large">
   <nav>
     <a href="/" class="link">Back to index</a>
   </nav>
@@ -15,7 +15,8 @@ title: Bookmarks
     <h1>{{ page.fields.title }}</h1>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </div>
-  <div class="flow" style="--flow-space: var(--space-small);">
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
     <table class="tertiary-text">
       <thead>
         <th>Total</th>
@@ -28,28 +29,28 @@ title: Bookmarks
         </tr>
       </tbody>
     </table>
-    <footer>
-      <a href="/api/bookmarks.json"
-         target="_blank"
-         referrer="noreferrer"
-         class="link"
-      >
-        JSON Feed
-      </a>
-    </footer>
   </div>
-  <hr />
-</header>
-
-<article class="grid | gap-xx-large">
-  <nav class="toc | flow | tertiary-text">
-    <h2>Table of contents</h2>
-    <ol data-plain>
+  <nav class="toc | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <ol class="horizontal" data-plain>
       <li><a href="#faves">Favourites</a></li>
       <li><a href="#bookmarks">All Bookmarks</a></li>
     </ol>
+    <hr />
   </nav>
-  <section>
+  <footer>
+    <a href="/api/bookmarks.json"
+        target="_blank"
+        referrer="noreferrer"
+        class="link"
+    >
+      JSON Feed
+    </a>
+  </footer>
+</header>
+
+<article class="grid | gap-xx-large">
+  <section style="--position: 2">
     <section class="gap-xx-large">
       <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
       <ul class="measure flow" data-plain>
