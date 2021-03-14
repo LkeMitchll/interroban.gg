@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@octokit/core": "^3.3.0",
     "autoprefixer": "^10.2.4",
     "contentful": "^8.1.7",
     "cssnano": "^4.1.10",

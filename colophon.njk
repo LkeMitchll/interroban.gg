@@ -52,6 +52,19 @@ title: Colophon
       </ol>
       <details class="accordian | tertiary-text | gap-x-large">
         <summary>Recent commits</summary>
+        <ol class="flow" style="--flow-space: var(--space-default)" data-plain>
+          {% for commit in github %}
+          <li>
+            <p><code>{{ commit.sha }}</code></p>
+            <a href="{{ commit.url }}" target="_blank" rel="noreferrer">{{ commit. message }}</a>
+            <p>
+              <time datetime="{{ commit.date }}">
+                {{ commit.date | formatDate({ month: "numeric", day: "numeric", year: "numeric" }) }}
+              </time>
+            </p>
+          </li>
+          {% endfor %}
+        </ol>
       </details>
       <hr />
     </div>

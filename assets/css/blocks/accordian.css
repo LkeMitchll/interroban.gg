@@ -13,7 +13,6 @@
 }
 
 .accordian li {
-  display: flex;
   padding-left: var(--space-default);
 }
 
@@ -22,22 +21,16 @@
   margin-top: 0;
 }
 
-.accordian li > p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: pre;
-}
-
-.accordian li::before {
+.accordian[data-numbered] li::before {
   counter-increment: item;
   margin-right: var(--space-default);
   color: var(--color-secondary);
 }
 
-.accordian:nth-of-type(1) li::before {
+.accordian[data-numbered]:nth-of-type(1) li::before {
   content: "1." counters(item, ".") " ";
 }
 
-.accordian:nth-of-type(2) li::before {
+.accordian[data-numbered]:nth-of-type(2) li::before {
   content: "2." counters(item, ".") " ";
 }
