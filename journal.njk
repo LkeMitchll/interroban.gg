@@ -10,7 +10,7 @@ alpine: true
   <nav>
     <a href="/" class="link">Back to index</a>
   </nav>
-  <div class="measure flow" style="--flow-space: var(--space-default)">
+  <div class="measure flow | gap" style="--flow-space: var(--space-default)">
     <h1>{{ page.fields.title }}</h1>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </div>
