@@ -38,7 +38,7 @@ title: Colophon
 
 <article class="grid | gap-xx-large">
   <section style="--position: 2">
-    <div class="gap-large">
+    <div id="updates" class="gap-large">
       <h2 class="title">Updates</h2>
       <ol class="flow gap-large" data-plain>
         {% for post in metaPosts %}
@@ -55,7 +55,7 @@ title: Colophon
       </details>
       <hr />
     </div>
-    <section class="markdown | measure flow">
+    <section id="notes" class="markdown | measure flow">
       {% renderMarkdown page.fields.contentMarkdown %}
     </section>
   </section>

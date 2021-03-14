@@ -51,7 +51,7 @@ title: Bookmarks
 
 <article class="grid | gap-xx-large">
   <section style="--position: 2">
-    <section class="gap-xx-large">
+    <section id="faves" class="gap-xx-large">
       <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
       <ul class="measure flow" data-plain>
         {% for bookmark in roundup.fields.links %}
@@ -72,7 +72,7 @@ title: Bookmarks
       </ul>
     </section>
 
-    <section>
+    <section id="bookmarks">
       <h2 class="title">All Bookmarks</h2>
       <ol class="measure flow gap-large" data-plain>
         {% for bookmark in bookmarks %}
