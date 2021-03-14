@@ -38,13 +38,23 @@ title: Uses
   </nav>
 </header>
 
-<article class="grid reversed | gap-x-large">
-  {% responsiveImage heroImage, "threeQuarters" %}
-  <p class="measure | push-down leading-crushed">
-    <small>
-      <strong>Image</strong> {{ heroImage.fields.description }}
-    </small>
-  </p>
+<article class="grid fifty-fifty | gap-x-large">
+  <section class="flow">
+    {% responsiveImage heroImage, "half" %}
+    <p class="measure | leading-crushed">
+      <small>
+        <strong>Image</strong> {{ heroImage.fields.description }}
+      </small>
+    </p>
+  </section>
+  <section class="flow">
+    {% responsiveImage heroImage, "half" %}
+    <p class="measure | leading-crushed">
+      <small>
+        <strong>Image</strong> {{ heroImage.fields.description }}
+      </small>
+    </p>
+  </section>
 </article>
 
 <article class="grid | gap-xx-large">

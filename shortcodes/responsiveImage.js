@@ -8,6 +8,10 @@ module.exports = function responsiveImage(imageSrc, size, asObject = false) {
       sizes: "(min-width: 800px) 65vw, (min-width: 1600px) 50vw, 90vw",
       widths: [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],
     },
+    half: {
+      sizes: "(min-width: 800px) 43vw, (min-width: 1600px) 33vw, 90vw",
+      widths: [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],
+    },
     oneCol: {
       sizes: "(min-width: 800px) 20vw, 70vw",
       widths: [400, 600, 800],
