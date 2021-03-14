@@ -3,7 +3,8 @@ layout: layout.html
 title: Uses
 ---
 
-{% set heroImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
+{% set deskImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
+{% set macImage = assets | findByID("4tfwXMS2ViqOr2nrmxNrJ4") %}
 {% set page = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
 
 <header class="grid | hero | gap-x-large">
@@ -40,18 +41,18 @@ title: Uses
 
 <article class="grid fifty-fifty | gap-x-large">
   <section class="flow">
-    {% responsiveImage heroImage, "half" %}
+    {% responsiveImage deskImage, "half" %}
     <p class="measure | leading-crushed">
       <small>
-        <strong>Image</strong> {{ heroImage.fields.description }}
+        <strong>Image</strong> {{ deskImage.fields.description }}
       </small>
     </p>
   </section>
   <section class="flow">
-    {% responsiveImage heroImage, "half" %}
+    {% responsiveImage macImage, "half" %}
     <p class="measure | leading-crushed">
       <small>
-        <strong>Image</strong> {{ heroImage.fields.description }}
+        <strong>Image</strong> {{ macImage.fields.description }}
       </small>
     </p>
   </section>
