@@ -24,7 +24,7 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
     .use(customFootnotes)
     .use(html, {
       handlers: {
-        TOC: (h, node) => h(node, "nav", { class: "toc | flow | tertiary-text" }, all(h, node)),
+        TOC: (h, node) => h(node, "nav", all(h, node)),
         sectionWithFootnotes: (h, node) => h(node, "section", all(h, node)),
         customFootnoteDefinition: (h, node) => {
           const id = `fn-${node.identifier}`;
