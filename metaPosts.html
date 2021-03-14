@@ -1,15 +1,15 @@
 ---
 pagination:
-  data: posts
+  data: metaPosts
   size: 1
   alias: post
-permalink: "post/{{ post.fields.slug }}/"
-layout: layout.njk
+permalink: "colophon/post/{{ post.fields.slug }}/"
+layout: layout.html
 ---
 
 <header class="grid | gap-x-large">
   <nav>
-    <a href="/" class="link">Back to index</a>
+    <a href="/colophon" class="link">Back to colophon</a>
   </nav>
   <h1 class="headline | measure">{{ post.fields.title }}</h1>
 </header>

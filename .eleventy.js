@@ -20,4 +20,8 @@ module.exports = function (eleventyConfig) {
     "responsiveImage",
     require("./shortcodes/responsiveImage")
   );
+
+  return {
+    htmlTemplateEngine: "njk",
+  };
 };
