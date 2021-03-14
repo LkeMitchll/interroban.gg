@@ -1,7 +1,6 @@
 .markdown h2,
 .markdown h3 {
   font-size: var(--text-size-default);
-  margin-bottom: 0;
 }
 
 .markdown h3 {
