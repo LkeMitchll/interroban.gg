@@ -51,8 +51,8 @@ title: Colophon
         {% endfor %}
       </ol>
       <details class="accordian | tertiary-text | gap-x-large">
-        <summary>Recent commits</summary>
-        <ol class="flow" style="--flow-space: var(--space-default)" data-plain>
+        <summary class="gap">Recent commits</summary>
+        <ol class="flow gap" data-plain>
           {% for commit in github %}
           <li>
             <p><code>{{ commit.sha }}</code></p>
@@ -65,10 +65,17 @@ title: Colophon
           </li>
           {% endfor %}
         </ol>
+        <a href="http://www.github.com/lkemitchll/interroban.gg/commits"
+           target="_blank"
+           rel="noopener noreferrer"
+        >
+          See all commits
+        </a>
       </details>
       <hr />
     </div>
     <section id="notes" class="markdown | measure flow">
+      <h2 class="title">Notes</h2>
       {% renderMarkdown page.fields.contentMarkdown %}
     </section>
   </section>

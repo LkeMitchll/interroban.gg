@@ -45,10 +45,6 @@ a {
   color: var(--color-primary);
 }
 
-a + p {
-  margin-top: var(--space-tiny);
-}
-
 ul,
 ol {
   margin: 0;

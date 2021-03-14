@@ -6,19 +6,8 @@
   margin-left: var(--space-tiny);
 }
 
-@media (min-width: 800px) {
-  .accordian ol {
-    --flow-space: var(--space-small);
-  }
-}
-
 .accordian li {
   padding-left: var(--space-default);
-}
-
-.accordian li > * {
-  margin-right: var(--space-default);
-  margin-top: 0;
 }
 
 .accordian[data-numbered] li::before {
