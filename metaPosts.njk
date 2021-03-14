@@ -7,11 +7,15 @@ permalink: "colophon/post/{{ post.fields.slug }}/"
 layout: layout.njk
 ---
 
-<header class="cross-line | gap-x-large">
-  <h1 class="headline">{{ post.fields.title }}</h1>
-  <a href="/colophon" class="link" aria-label="Back to colophon page">Back</a>
+<header class="grid | gap-x-large">
+  <nav>
+    <a href="/colophon" class="link">Back to colophon</a>
+  </nav>
+  <h1 class="headline | measure">{{ post.fields.title }}</h1>
 </header>
 
-<article class="grid | markdown | gap-xx-large">
-  {% renderMarkdown post.fields.contentMarkdown %}
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow" style="--position: 2">
+    {% renderMarkdown post.fields.contentMarkdown %}
+  </section>
 </article>

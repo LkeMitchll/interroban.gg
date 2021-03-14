@@ -7,11 +7,15 @@ permalink: "post/{{ post.fields.slug }}/"
 layout: layout.njk
 ---
 
-<header class="cross-line | gap-x-large">
-  <h1 class="headline">{{ post.fields.title | fosterFamily | safe }}</h1>
-  <a href="/journal" class="link" aria-label="Back to journal">Back</a>
+<header class="grid | gap-x-large">
+  <nav>
+    <a href="/" class="link">Back to index</a>
+  </nav>
+  <h1 class="headline | measure">{{ post.fields.title }}</h1>
 </header>
 
-<article class="grid | markdown | gap-xx-large">
-  {% renderMarkdown post.fields.contentMarkdown %}
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow" style="--position: 2">
+    {% renderMarkdown post.fields.contentMarkdown %}
+  </section>
 </article>
