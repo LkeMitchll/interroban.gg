@@ -10,11 +10,12 @@
 
 /* Footnote */
 .markdown aside {
-  width: 33.33%;
   font-size: var(--text-size-small);
   margin-top: var(--space-large);
-  padding-left: var(--space-large);
-  border-left: 1px solid gainsboro;
+  padding-left: var(--space-default);
+  border-left: 1px solid var(--color-faded);
+  height: intrinsic;
+  width: 50%;
 }
 
 /* Footnote: image */
@@ -37,14 +38,28 @@
   margin-left: 0.5em;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .markdown section {
     display: flex;
+  }
+
+  .markdown section > p {
+    flex-basis: 66.66%;
+  }
+
+  .markdown aside {
+    flex-basis: 33.33%;
+    margin-top: 0;
+    margin-left: var(--space-large);
+  }
+}
+
+@media (min-width: 1100px) {
+  .markdown section {
     width: 130%;
   }
 
   .markdown aside {
-    margin-top: 0;
-    margin-left: var(--space-large);
+    padding-left: var(--space-large);
   }
 }
