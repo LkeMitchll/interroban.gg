@@ -16,4 +16,5 @@
 
 .track div {
   display: inline-block;
+  max-width: 66.66%;
 }
