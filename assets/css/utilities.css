@@ -52,11 +52,21 @@
 }
 
 .gap-x-large {
-  margin-bottom: var(--space-x-large);
+  margin-bottom: var(--space-large);
 }
 
 .gap-xx-large {
-  margin-bottom: var(--space-xx-large);
+  margin-bottom: var(--space-x-large);
+}
+
+@media (min-width: 800px) {
+  .gap-x-large {
+    margin-bottom: var(--space-x-large);
+  }
+
+  .gap-xx-large {
+    margin-bottom: var(--space-xx-large);
+  }
 }
 
 /* u: Pad */
