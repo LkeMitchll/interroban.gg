@@ -1,0 +1,64 @@
+.markdown h2,
+.markdown h3 {
+  font-size: var(--text-size-default);
+}
+
+.markdown h3 {
+  font-family: var(--text-serif);
+}
+
+/* Footnote */
+.markdown aside {
+  font-size: var(--text-size-small);
+  margin-top: var(--space-large);
+  padding-left: var(--space-default);
+  border-left: 1px solid var(--color-faded);
+  height: intrinsic;
+  width: 50%;
+}
+
+/* Footnote: image */
+.markdown aside img {
+  margin-bottom: var(--space-default);
+}
+
+/* Footnote: ref, title & backlink */
+.markdown aside strong:first-of-type,
+.markdown sup a,
+.markdown aside a:last-of-type {
+  color: var(--color-secondary);
+  font-size: var(--text-size-small);
+  font-family: var(--text-mono);
+  text-decoration: none;
+}
+
+/* Footnote: backlink */
+.markdown aside a:last-of-type {
+  margin-left: 0.5em;
+}
+
+@media (min-width: 900px) {
+  .markdown section {
+    display: flex;
+  }
+
+  .markdown section > p {
+    flex-basis: 66.66%;
+  }
+
+  .markdown aside {
+    flex-basis: 33.33%;
+    margin-top: 0;
+    margin-left: var(--space-large);
+  }
+}
+
+@media (min-width: 1100px) {
+  .markdown section {
+    width: 130%;
+  }
+
+  .markdown aside {
+    padding-left: var(--space-large);
+  }
+}

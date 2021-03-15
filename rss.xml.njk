@@ -1,0 +1,43 @@
+---json
+{
+  "permalink": "rss.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Luke Mitchell | Product Designer",
+    "subtitle": "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.",
+    "url": "https://www.interroban.gg/post/",
+    "feedUrl": "https://www.interroban.gg/rss.xml",
+    "author": {
+      "name": "Luke Mitchell",
+      "email": "luke@interroban.gg"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ metadata.feedUrl }}" rel="self" />
+  <link href="https://www.interroban.gg/journal" />
+  <updated>{{ posts[0].fields.date | dateToRfc3339 }}</updated>
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in posts %}
+    {% set absolutePostUrl %}{{ post.fields.slug | url | absoluteUrl(metadata.url) }}{% endset %}
+    <entry>
+      <title>{{ post.fields.title }}</title>
+      <link href="{{ absolutePostUrl }}" />
+      <updated>{{ post.fields.date | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <summary>{{ post.fields.description }}</summary>
+      <content type="html">
+        {% set postContent %}{% renderMarkdown post.fields.contentMarkdown %}{% endset %}
+        {{ postContent | string }}
+      </content>
+    </entry>
+  {%- endfor %}
+</feed>

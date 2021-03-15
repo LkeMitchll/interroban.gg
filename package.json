@@ -1,0 +1,47 @@
+{
+  "name": "interrobang-11ty",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@octokit/core": "^3.3.0",
+    "autoprefixer": "^10.2.4",
+    "contentful": "^8.1.7",
+    "cssnano": "^4.1.10",
+    "mdast-util-to-hast": "^10.1.1",
+    "node-fetch": "^2.6.1",
+    "postcss": "^8.2.4",
+    "postcss-import": "^14.0.0",
+    "remark-abbr": "^1.4.0",
+    "remark-external-links": "^8.0.0",
+    "remark-footnotes": "^3.0.0",
+    "remark-html": "^13.0.1",
+    "remark-parse": "^9.0.0",
+    "remark-slug": "^6.0.0",
+    "unified": "^9.2.0",
+    "unist-util-visit": "^2.0.3"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.9.0",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "scripts": {
+    "build": "npm-run-all -s clean build:*",
+    "build:eleventy": "ELEVENTY_ENV=production eleventy",
+    "clean": "rm -rf _site",
+    "dev": "netlify dev",
+    "dev:all": "npm-run-all -p clean dev:eleventy",
+    "dev:eleventy": "eleventy --serve",
+    "lint": "npm-run-all -s lint:*",
+    "lint:stylelint": "stylelint ./assets/css",
+    "lint:eslint": "eslint ."
+  }
+}

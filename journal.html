@@ -1,0 +1,95 @@
+---
+layout: layout.html
+title: Journal
+alpine: true
+---
+
+{% set page = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
+
+<header class="grid | gap-x-large">
+  <nav>
+    <a href="/" class="link">Back to index</a>
+  </nav>
+  <div class="measure flow | gap" style="--flow-space: var(--space-default)">
+    <h1>{{ page.fields.title }}</h1>
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </div>
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
+    <table class="tertiary-text">
+      <thead>
+        <th>Total</th>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ posts | length }} Posts</td>
+          <td>{{ now.fields.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <nav class="toc | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <ol class="horizontal" data-plain>
+      <li><a href="#now">Now</a></li>
+      <li><a href="#posts">Posts</a></li>
+      <li><a href="#listening">Listening</a></li>
+      <li><a href="#reading">Reading</a></li>
+    </ol>
+    <hr />
+  </nav>
+</header>
+
+<article class="grid | gap-xx-large">
+  <div>
+    <h2 class="tertiary-title | gap">Feeds</h2>
+    <ul data-plain>
+      <li>
+        <a href="/rss.xml" class="link">RSS Feed</a>
+      </li>
+      <li>
+        <a href="/api/posts.json"
+           target="_blank"
+           referrer="noreferrer"
+           class="link"
+           >
+           JSON Feed
+        </a>
+      </li>
+    </ul>
+  </div>
+  <section>
+    <section id="now" class="flow | gap-xx-large">
+      <h2 class="title">Now</h2>
+      <section class="markdown | measure flow">
+        {% renderMarkdown now.fields.contentMarkdown %}
+      </section>
+      <footer>
+        <time datetime="{{ now.fields.date }}">
+          Last updated &ndash;
+          {{ now.fields.date | formatDate({month: "long", day: "numeric", year: "numeric"}) }}
+        </time>
+      </footer>
+    </section>
+
+    <section id="posts" class="gap-xx-large">
+      <h2 class="title">Posts</h2>
+      <ol class="flow gap-large" data-plain>
+        {% for post in posts %}
+        <li>
+          <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
+          <p class="color-secondary">
+            <time datetime="{{ post.fields.date }}">
+              {{ post.fields.date | formatDate }}
+            </time>
+          </p>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    {% include "_includes/listening.html" %}
+    {% include "_includes/reading.html" %}
+  </section>
+</article>

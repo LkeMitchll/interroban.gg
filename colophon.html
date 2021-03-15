@@ -1,0 +1,82 @@
+---
+layout: layout.html
+title: Colophon
+---
+
+{% set page = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
+
+<header class="grid | gap-xx-large">
+  <nav>
+    <a href="/" class="link">Back to index</a>
+  </nav>
+  <section class="measure | gap">
+    <h2>{{ page.fields.title }}</h2>
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
+    <table class="tertiary-text">
+      <thead>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <nav class="toc | push-down | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <ol class="horizontal" data-plain>
+      <li><a href="#updates">Recent Updates</a></li>
+      <li><a href="#notes">Notes</a></li>
+    </ol>
+    <hr />
+  </nav>
+</header>
+
+<article class="grid | gap-xx-large">
+  <section style="--position: 2">
+    <div id="updates" class="gap-large">
+      <h2 class="title">Updates</h2>
+      <ol class="flow gap-large" data-plain>
+        {% for post in metaPosts %}
+        <li>
+          <a href="/colophon/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
+          <p class="color-secondary">
+            <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
+          </p>
+        </li>
+        {% endfor %}
+      </ol>
+      <details class="accordian | tertiary-text | gap-x-large">
+        <summary class="gap">Recent commits</summary>
+        <ol class="flow gap" data-plain>
+          {% for commit in github %}
+          <li>
+            <p><code>{{ commit.sha }}</code></p>
+            <a href="{{ commit.url }}" target="_blank" rel="noreferrer">{{ commit. message }}</a>
+            <p>
+              <time datetime="{{ commit.date }}">
+                {{ commit.date | formatDate({ month: "numeric", day: "numeric", year: "numeric" }) }}
+              </time>
+            </p>
+          </li>
+          {% endfor %}
+        </ol>
+        <a href="http://www.github.com/lkemitchll/interroban.gg/commits"
+           target="_blank"
+           rel="noopener noreferrer"
+        >
+          See all commits
+        </a>
+      </details>
+      <hr />
+    </div>
+    <section id="notes" class="markdown | measure flow">
+      <h2 class="title">Notes</h2>
+      {% renderMarkdown page.fields.contentMarkdown %}
+    </section>
+  </section>
+</article>

@@ -1,0 +1,75 @@
+---
+layout: layout.html
+title: Product Designer
+---
+
+{% set page = pages | findByID("5yo7fjGQhLhhuup6PUZlMU") %}
+{% set recentBookmarks = bookmarks | limit(3) %}
+{% set recentPosts = posts | limit(3) %}
+
+<header class="grid | gap-xx-large">
+  <div class="measure flow" style="--position: 2">
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <div>
+      {% include "_includes/site_index.html" %}
+    </div>
+  </div>
+</header>
+
+<article class="grid">
+  <nav class="toc | flow | tertiary-text">
+    <h2 class="tertiary-title">Table of contents</h2>
+    <ol data-plain>
+      <li><a href="#posts">Recent Posts</a></li>
+      <li><a href="#bookmarks">Recent Bookmarks</a></li>
+    </ol>
+  </nav>
+  <section class="gap-xx-large">
+    <section id="posts" class="gap-x-large">
+      <h2>Recent Posts</h2>
+      <ol class="flow | gap-large" data-plain>
+        {% for post in recentPosts %}
+        <li>
+          <a
+            href="/post/{{ post.fields.slug }}/"
+            aria-label="Post: {{ post.fields.title }}"
+          >
+            {{ post.fields.title }}
+          </a>
+          <p class="color-secondary">
+            <span class="visually-hidden">Published:</span>
+            <em>{{ post.fields.date | formatDate }}</em>
+          </p>
+        </li>
+        {% endfor %}
+      </ol>
+      <footer>
+        <a href="/journal" class="link">See all Posts</a>
+      </footer>
+    </section>
+    <section id="bookmarks">
+      <h1>Recent Bookmarks</h2>
+      <ol class="flow | gap-large" data-plain>
+        {% for bookmark in recentBookmarks %}
+        <li>
+          <a
+            href="{{ bookmark.fields.url }}"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Bookmark: {{ bookmark.fields.title }}"
+          >
+            {{ bookmark.fields.title }}
+          </a>
+          <p class="color-secondary">
+            <span class="visually-hidden">Type:</span>
+            <em>{{ bookmark.fields.tag }}</em>
+          </p>
+        </li>
+        {% endfor %}
+      </ol>
+      <footer>
+        <a href="/bookmarks" class="link">See all Bookmarks</a>
+      </footer>
+    </section>
+  </section>
+</article>

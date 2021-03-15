@@ -1,0 +1,26 @@
+table {
+  display: flex;
+}
+
+thead,
+tr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+th,
+td {
+  width: 100%;
+  padding: var(--space-tiny);
+  text-align: left;
+  border-bottom: 1px dotted var(--color-faded);
+}
+
+th {
+  color: var(--color-secondary);
+  box-sizing: border-box;
+  font-style: italic;
+  padding-right: var(--space-default);
+  padding-left: 0;
+}

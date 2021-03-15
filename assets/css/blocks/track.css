@@ -1,0 +1,19 @@
+.track {
+  padding: 0;
+}
+
+.track img,
+.track .placeholder-image,
+.track div {
+  vertical-align: text-top;
+  display: inline-block;
+}
+
+.track img,
+.track .placeholder-image {
+  margin: var(--space-tiny) var(--space-default) 0;
+}
+
+.track div {
+  display: inline-block;
+}

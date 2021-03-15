@@ -1,0 +1,65 @@
+---
+layout: layout.html
+title: Uses
+---
+
+{% set deskImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
+{% set macImage = assets | findByID("4tfwXMS2ViqOr2nrmxNrJ4") %}
+{% set page = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
+
+<header class="grid | hero | gap-x-large">
+  <nav>
+    <a href="/" class="link">Back to index</a>
+  </nav>
+  <section class="measure | gap">
+    <h2>{{ page.fields.title }}</h2>
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </section>
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
+    <table class="tertiary-text | push-down">
+      <thead>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <nav class="toc | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <ol class="horizontal" data-plain>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#development">Development</a></li>
+      <li><a href="#general">General</a></li>
+    </ol>
+    <hr />
+  </nav>
+</header>
+
+<article class="grid fifty-fifty | gap-x-large">
+  <section class="flow">
+    {% responsiveImage deskImage, "half" %}
+    <p class="measure | leading-crushed">
+      <small>
+        <strong>Image</strong> {{ deskImage.fields.description }}
+      </small>
+    </p>
+  </section>
+  <section class="flow">
+    {% responsiveImage macImage, "half" %}
+    <p class="measure | leading-crushed">
+      <small>
+        <strong>Image</strong> {{ macImage.fields.description }}
+      </small>
+    </p>
+  </section>
+</article>
+
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow" style="--position: 2">
+    {% renderMarkdown page.fields.contentMarkdown %}
+  </section>
+</article>

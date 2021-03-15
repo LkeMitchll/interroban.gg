@@ -1,0 +1,184 @@
+---
+description: "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer."
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Luke Mitchell | {{ post.fields.title if post.fields.title else title }}"
+      name="title"
+    />
+    <meta
+      content="Luke Mitchell | {{ post.fields.title if post.fields.title else title }}"
+      name="twitter:title"
+    />
+    <meta
+      content="{{ post.fields.description if post.fields.description else description }}"
+      name="description"
+    />
+    <meta
+      content="{{ post.fields.description if post.fields.description else description }}"
+      name="twitter:description"
+    />
+    <meta
+      content="{{ post.fields.description if post.fields.description else description }}"
+      property="og:description"
+    />
+    <meta content="en" property="og:locale" />
+    <title>
+      Luke Mitchell | {{ post.fields.title if post.fields.title else title }}
+    </title>
+    <link
+      rel="preload"
+      href="/assets/fonts/GT-America-Extended-Medium.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Blanco-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Blanco-Medium.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Blanco-Italic.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/pitch-web-semibold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/pitch-web-semibold-italic.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://images.ctfassets.net" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    {% if alpine %}
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+      defer
+    ></script>
+    {% endif %}
+  </head>
+  <body>
+    <nav class="grid | header | gap-xx-large">
+      <a href="/" class="headline" data-lh="crushed" aria-label="Go to home page">
+        Luke Mitchell<br />Product Designer
+      </a>
+      <ul class="horizontal" data-space="large" data-plain>
+        <li><a href="/about/" class="link">About</a></li>
+        <li><a href="/journal/" class="link">Journal</a></li>
+        <li><a href="/bookmarks/" class="link">Bookmarks</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer class="grid | gap-x-large">
+      <div>
+        <h3 class="subtitle | small-text gap-small">
+          Luke Mitchell &mdash;<br />
+          Product Designer
+        </h3>
+        <ul data-plain>
+          <li><a class="link" href="/about">About</a></li>
+          <li><a class="link" href="/journal">Journal</a></li>
+          <li><a class="link" href="/bookmarks">Bookmarks</a></li>
+        </ul>
+      </div>
+      <div class="grid | columns" style="--cols: 3">
+        <div class="push-down">
+          <h3 class="subtitle | gap-small">Information</h3>
+          <ul data-plain>
+            <li><a class="link" href="/colophon">Colophon</a></li>
+            <li><a class="link" href="/Uses">Uses</a></li>
+            <li><a class="link" href="/Feeds">Feeds</a></li>
+          </ul>
+        </div>
+        <div class="push-down">
+          <h3 class="subtitle | gap-small">Contact</h3>
+          <ul data-plain>
+            <li><a class="link" href="mailto:luke@interroban.gg">Email</a></li>
+            <li>
+              <a
+                class="link"
+                href="https://www.twitter.com/lkemitchll"
+                target="_blank"
+                rel="noreferrer"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://www.linkedin.com/in/luke-mitchell-69ba421b3/"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="push-down">
+          <h3 class="subtitle | gap-small">Elsewhere</h3>
+          <ul data-plain>
+            <li>
+              <a
+                class="link"
+                href="https://dribbble.com/Interrobang"
+                target="_blank"
+                rel="noreferrer"
+                >Dribbble</a
+              >
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://www.pinterest.co.uk/lkemitchll/pins/"
+                target="_blank"
+                rel="noreferrer"
+                >Pinterest</a
+              >
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://www.github.com/lkemitchll"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <p class="tertiary-text"><small>&copy; 2021, Luke Mitchell</small></p>
+      </div>
+    </footer>
+  </body>
+</html>

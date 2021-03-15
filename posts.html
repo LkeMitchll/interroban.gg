@@ -1,0 +1,21 @@
+---
+pagination:
+  data: posts
+  size: 1
+  alias: post
+permalink: "post/{{ post.fields.slug }}/"
+layout: layout.html
+---
+
+<header class="grid | gap-x-large">
+  <nav>
+    <a href="/" class="link">Back to index</a>
+  </nav>
+  <h1 class="headline | measure">{{ post.fields.title }}</h1>
+</header>
+
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow" style="--position: 2">
+    {% renderMarkdown post.fields.contentMarkdown %}
+  </section>
+</article>

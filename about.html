@@ -1,0 +1,88 @@
+---
+layout: layout.html
+title: About Me
+---
+
+{% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
+{% set page = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
+{% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
+
+<header class="grid | gap-x-large">
+  <nav>
+    <a href="/" class="link">Back to index</a>
+  </nav>
+  <div class="measure">
+    <h2>{{ page.fields.title }}</h2>
+    {% renderMarkdown page.fields.descriptionMarkdown %}
+  </div>
+  <div>
+    <h2 class="tertiary-title | gap">Information</h2>
+    <table class="tertiary-text">
+      <thead>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
+</header>
+
+<article class="grid reversed | gap-x-large">
+  {% responsiveImage heroImage, "threeQuarters" %}
+  <p class="measure | push-down leading-crushed">
+    <small>
+      <strong>Image</strong> {{ heroImage.fields.description }}
+    </small>
+  </p>
+</article>
+
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow" style="--position: 2">
+    {% renderMarkdown page.fields.contentMarkdown, assets %}
+  </section>
+</article>
+
+<article class="grid | flow | gap-xx-large">
+  <header class="measure" style="--position: 2">
+    <h2>Career</h2>
+    <p>
+      I&apos;ve been a designer for (almost) 10 years, gaining experience
+      working with clients of all sizes, spanning many industries. If you
+      think we could work together, please get in touch.
+    </p>
+  </header>
+  <section class="grid columns" style="--position: 2; --cols: 3">
+    <section>
+      <h3 class="subtitle">{{ experience.fields.title }}</h3>
+      <ul class="flow" data-plain>
+        {% for job in experience.fields.items %}
+        <li>
+          <p class="tertiary-text color-secondary">{{ job.fields.period }}</p>
+          <p>{{ job.fields.title }}</p>
+          <p><em>{{ job.fields.company }}</em></p>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h3 class="subtitle">Clients</h3>
+      <ul class="flow" style="--flow-space: var(--space-small)" data-plain>
+        {% for client in clients.clients %}
+        <li>{{ client }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h3 class="subtitle">Skills</h3>
+      <ul class="flow" style="--flow-space: var(--space-small)" data-plain>
+        {% for skill in skills.skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </section>
+</article>

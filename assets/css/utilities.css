@@ -1,0 +1,103 @@
+/* u: Horizontal */
+
+.horizontal {
+  display: flex;
+}
+
+.horizontal > * {
+  margin-right: var(--gap, 2rem);
+}
+
+/* u: Align */
+
+.align {
+  align-items: center;
+}
+
+/* u: Flow */
+
+.flow > * + * {
+  margin-top: var(--flow-space, 2rem);
+}
+
+/* u: Push */
+
+.push-down {
+  margin-top: auto;
+}
+
+/* u: Measure */
+
+.measure {
+  max-width: var(--text-measure);
+}
+
+/* u: Color */
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+/* u: Gap */
+.gap {
+  margin-bottom: var(--space-default);
+}
+
+.gap-small {
+  margin-bottom: var(--space-small);
+}
+
+.gap-large {
+  margin-bottom: var(--space-large);
+}
+
+.gap-x-large {
+  margin-bottom: var(--space-x-large);
+}
+
+.gap-xx-large {
+  margin-bottom: var(--space-xx-large);
+}
+
+/* u: Pad */
+
+.pad-r-large {
+  padding-right: var(--space-large);
+}
+
+/* u: Leading */
+
+.leading-crushed {
+  line-height: var(--text-leading-crushed);
+}
+
+/* u: Text */
+
+.tertiary-text {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+}
+
+.small-text {
+  font-size: var(--text-size-small);
+}
+
+/* u: Visibility */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* u: Ellipsis */
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}

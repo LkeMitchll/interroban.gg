@@ -1,0 +1,6 @@
+.toc {
+  --flow-space: var(--space-small);
+
+  display: flex;
+  flex-direction: column;
+}
