@@ -1,6 +1,7 @@
 [build]
   command = "yarn run build"
   publish = "_site"
+  functions = "src/functions"
 
 [dev]
   command = "yarn run dev:all"

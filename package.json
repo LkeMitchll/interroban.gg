@@ -42,7 +42,7 @@
     "dev:all": "npm-run-all -p clean dev:eleventy",
     "dev:eleventy": "eleventy --serve",
     "lint": "npm-run-all -s lint:*",
-    "lint:stylelint": "stylelint ./assets/css",
-    "lint:eslint": "eslint ."
+    "lint:stylelint": "stylelint ./src/assets/css",
+    "lint:eslint": "eslint ./src"
   }
 }

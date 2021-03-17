@@ -3,26 +3,28 @@ require("dotenv").config();
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
-  eleventyConfig.addPassthroughCopy("assets/fonts");
-  eleventyConfig.addPassthroughCopy("assets/images");
-  eleventyConfig.addWatchTarget("assets/**/*.css");
+  eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("./src/assets/images");
+  eleventyConfig.addWatchTarget("./src/assets/**/*.css");
 
-  eleventyConfig.addFilter("findByID", require("./filters/findByID"));
-  eleventyConfig.addFilter("limit", require("./filters/limit"));
-  eleventyConfig.addFilter("formatDate", require("./filters/date"));
-  eleventyConfig.addFilter("JSONStringify", require("./filters/json"));
-  eleventyConfig.addFilter("fosterFamily", require("./filters/fosterFamily"));
+  eleventyConfig.addFilter("findByID", require("./src/filters/findByID"));
+  eleventyConfig.addFilter("limit", require("./src/filters/limit"));
+  eleventyConfig.addFilter("formatDate", require("./src/filters/date"));
+  eleventyConfig.addFilter("JSONStringify", require("./src/filters/json"));
 
   eleventyConfig.addShortcode(
     "renderMarkdown",
-    require("./shortcodes/markdown")
+    require("./src/shortcodes/markdown")
   );
   eleventyConfig.addShortcode(
     "responsiveImage",
-    require("./shortcodes/responsiveImage")
+    require("./src/shortcodes/responsiveImage")
   );
 
   return {
     htmlTemplateEngine: "njk",
+    dir: {
+      input: "src",
+    },
   };
 };

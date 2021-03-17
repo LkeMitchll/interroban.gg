@@ -39,6 +39,7 @@
 }
 
 /* u: Gap */
+
 .gap {
   margin-bottom: var(--space-default);
 }
