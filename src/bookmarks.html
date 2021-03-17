@@ -57,15 +57,18 @@ title: Bookmarks
       <ul class="measure flow" data-plain>
         {% for bookmark in roundup.fields.links %}
         <li>
-          <a class="gap-small"
-             href="{{ bookmark.fields.url }}"
-             target="_blank"
-             rel="noreferrer"
-          >
-            {{ bookmark.fields.title }}
-          </a>
+          <div class="gap-small">
+            <p>
+              <em>{{ bookmark.fields.tag }}</em>
+            </p>
+            <a href="{{ bookmark.fields.url }}"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {{ bookmark.fields.title }}
+            </a>
+          </div>
           <p>
-            <em>{{ bookmark.fields.tag }}</em> &ndash;
             {{ bookmark.fields.notes }}
           </p>
         </li>
