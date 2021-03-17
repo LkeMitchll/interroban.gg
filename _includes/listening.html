@@ -20,7 +20,7 @@
   </section>
 
   <h3 class="subtitle">Top tracks (this month)</h3>
-  <ol 
+  <ol
     x-data="{ tracks: [], isLoading: true }"
     x-init="fetch('/api/music/top')
               .then(response =>  response.json())

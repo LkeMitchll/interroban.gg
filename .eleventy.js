@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
   eleventyConfig.addPassthroughCopy("assets/fonts");
+  eleventyConfig.addPassthroughCopy("assets/images");
   eleventyConfig.addWatchTarget("assets/**/*.css");
 
   eleventyConfig.addFilter("findByID", require("./filters/findByID"));
