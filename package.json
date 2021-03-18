@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "curlylint": "^0.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -43,6 +44,7 @@
     "dev:eleventy": "eleventy --serve",
     "lint": "npm-run-all -s lint:*",
     "lint:stylelint": "stylelint ./src/assets/css",
-    "lint:eslint": "eslint ./src"
+    "lint:eslint": "eslint ./src",
+    "lint:html": "curlylint ./src"
   }
 }

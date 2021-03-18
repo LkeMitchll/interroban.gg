@@ -1434,6 +1434,11 @@ csso@^4.0.2:
   dependencies:
     css-tree "^1.1.2"
 
+curlylint@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/curlylint/-/curlylint-0.1.0.tgz#73c9491f62945b8b1218882556b64f569d9179d7"
+  integrity sha512-7j+J693BJS+N23YjLhR4XyWYtlJW46WMz+rZ/OljZmerzSKPMDKQ4tROsUUnBtXbzN7CJs3d4W6rxMdLC3vQXw==
+
 date-time@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/date-time/-/date-time-0.1.1.tgz#ed2f6d93d9790ce2fd66d5b5ff3edd5bbcbf3b07"
