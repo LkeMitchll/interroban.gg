@@ -109,6 +109,7 @@ pre {
   border-radius: 2px;
   padding: 0.1em var(--space-tiny);
   background-color: var(--color-x-faded);
+  overflow-x: scroll;
 }
 
 pre code {
