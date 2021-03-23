@@ -1,26 +1,30 @@
-require("dotenv").config();
+import { config } from "dotenv";
+import pluginRSS from "@11ty/eleventy-plugin-rss";
+import pluginReadingTime from "eleventy-plugin-reading-time";
+import findByID from "./src/filters/findByID";
+import limit from "./src/filters/limit";
+import date from "./src/filters/date";
+import JsonStringify from "./src/filters/json";
+import markdown from "./src/shortcodes/markdown";
+import responsiveImage from "./src/shortcodes/responsiveImage";
 
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
-  eleventyConfig.addPlugin(require("eleventy-plugin-reading-time"));
+config();
+
+const siteConfig = (eleventyConfig) => {
+  eleventyConfig.addPlugin(pluginRSS);
+  eleventyConfig.addPlugin(pluginReadingTime);
 
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
   eleventyConfig.addPassthroughCopy("./src/assets/images");
   eleventyConfig.addWatchTarget("./src/assets/**/*.css");
 
-  eleventyConfig.addFilter("findByID", require("./src/filters/findByID"));
-  eleventyConfig.addFilter("limit", require("./src/filters/limit"));
-  eleventyConfig.addFilter("formatDate", require("./src/filters/date"));
-  eleventyConfig.addFilter("JSONStringify", require("./src/filters/json"));
+  eleventyConfig.addFilter("findByID", findByID);
+  eleventyConfig.addFilter("limit", limit);
+  eleventyConfig.addFilter("formatDate", date);
+  eleventyConfig.addFilter("JSONStringify", JsonStringify);
 
-  eleventyConfig.addShortcode(
-    "renderMarkdown",
-    require("./src/shortcodes/markdown")
-  );
-  eleventyConfig.addShortcode(
-    "responsiveImage",
-    require("./src/shortcodes/responsiveImage")
-  );
+  eleventyConfig.addShortcode("renderMarkdown", markdown);
+  eleventyConfig.addShortcode("responsiveImage", responsiveImage);
 
   return {
     htmlTemplateEngine: "njk",
@@ -29,3 +33,5 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
+
+export default siteConfig;

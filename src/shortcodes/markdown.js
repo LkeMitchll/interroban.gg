@@ -1,16 +1,16 @@
-const unified = require("unified");
-const markdown = require("remark-parse");
-const externalLinks = require("remark-external-links");
-const slug = require("remark-slug");
-const footnotes = require("remark-footnotes");
-const html = require("remark-html");
-const all = require("mdast-util-to-hast/lib/all");
-const customFootnotes = require("../helpers/footnotes");
+import unified from "unified";
+import markdown from "remark-parse";
+import externalLinks from "remark-external-links";
+import slug from "remark-slug";
+import footnotes from "remark-footnotes";
+import html from "remark-html";
+import all from "mdast-util-to-hast/lib/all";
+import customFootnotes from "../helpers/footnotes";
 
-const findByID = require("../filters/findByID");
-const responsiveImage = require("./responsiveImage");
+import findByID from "../filters/findByID";
+import responsiveImage from "./responsiveImage";
 
-module.exports = function renderMarkdown(rawMarkdown, assets) {
+const renderMarkdown = (rawMarkdown, assets) => {
   let result;
   unified()
     .use(markdown)
@@ -40,3 +40,5 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
 
   return result;
 };
+
+export default renderMarkdown;

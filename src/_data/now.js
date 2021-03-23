@@ -1,11 +1,11 @@
-const contentful = require("contentful");
+import { createClient } from "contentful";
 
-const client = contentful.createClient({
+const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = async function now() {
+async function now() {
   return client
     .getEntries({
       content_type: "journalEntry",
@@ -13,4 +13,6 @@ module.exports = async function now() {
       limit: 1,
     })
     .then((result) => result.items[0]);
-};
+}
+
+export default now();

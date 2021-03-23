@@ -1,15 +1,17 @@
-const contentful = require("contentful");
+import { createClient } from "contentful";
 
-const client = contentful.createClient({
+const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = async function metaPosts() {
+async function metaPosts() {
   return client
     .getEntries({
       content_type: "metaPost",
       order: "-fields.date",
     })
     .then((result) => result.items);
-};
+}
+
+export default metaPosts();

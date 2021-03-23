@@ -1,6 +1,6 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-module.exports = async function feeds() {
+async function feeds() {
   const apiEndpoint = "https://api.feedbin.com/v2/";
   const subscriptionsEndpoint = `${apiEndpoint}subscriptions.json`;
 
@@ -18,4 +18,6 @@ module.exports = async function feeds() {
   const response = await request.json();
 
   return response;
-};
+}
+
+export default feeds();

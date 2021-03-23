@@ -1,11 +1,11 @@
-const contentful = require("contentful");
+import { createClient } from "contentful";
 
-const client = contentful.createClient({
+const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-module.exports = async function bookmarks(limit) {
+async function bookmarks(limit) {
   return client
     .getEntries({
       content_type: "blogPost",
@@ -13,4 +13,6 @@ module.exports = async function bookmarks(limit) {
       limit: limit || 1000,
     })
     .then((result) => result.items);
-};
+}
+
+export default bookmarks();

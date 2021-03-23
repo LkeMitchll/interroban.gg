@@ -1,6 +1,6 @@
-const visit = require("unist-util-visit");
+import visit from "unist-util-visit";
 
-module.exports = function customFootnotes() {
+const customFootnotes = () => {
   function transformer(tree) {
     const footnoteDefs = {};
 
@@ -69,3 +69,5 @@ module.exports = function customFootnotes() {
 
   return transformer;
 };
+
+export default customFootnotes;

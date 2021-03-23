@@ -1,4 +1,4 @@
-module.exports = function responsiveImage(imageSrc, size, asObject = false) {
+const responsiveImage = (imageSrc, size, asObject = false) => {
   const imgUrl = imageSrc.fields.file.url;
   const imgWidth = imageSrc.fields.file.details.image.width;
   const imgHeight = imageSrc.fields.file.details.image.height;
@@ -44,3 +44,5 @@ module.exports = function responsiveImage(imageSrc, size, asObject = false) {
                width="${imgWidth}"
                height="${imgHeight}" />`;
 };
+
+export default responsiveImage;
