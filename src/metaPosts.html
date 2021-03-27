@@ -11,7 +11,32 @@ layout: layout.html
   <nav>
     <a href="/colophon" class="link">Back to colophon</a>
   </nav>
-  <h1 class="headline | measure">{{ post.fields.title }}</h1>
+  <div>
+    <h1 class="headline | measure | gap-small">{{ post.fields.title }}</h1>
+    <p class="color-secondary">
+      <time datetime="{{ post.fields.date }}">
+        {{ post.fields.date | formatDate }}
+      </time>
+    </p>
+  </div>
+  <div>
+    <h2 class="tertiary-title | gap">Post Stats.</h2>
+    <table class="tertiary-text">
+      <thead>
+        <th>Updated</th>
+        <th>Reading time</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ post.sys.updatedAt | formatDate({}) }}</td>
+        </tr>
+        <tr>
+          <td>{{ post.fields.contentMarkdown | readingTime }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
 </header>
 
 <article class="grid | gap-xx-large">
