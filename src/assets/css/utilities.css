@@ -1,11 +1,19 @@
 /* u: Horizontal */
 
-.horizontal {
+.horizontal,
+.sm-horizontal {
   display: flex;
 }
 
-.horizontal > * {
+.horizontal > *,
+.sm-horizontal > * {
   margin-right: var(--gap, 2rem);
+}
+
+@media (min-width: 800px) {
+  .sm-horizontal {
+    display: block;
+  }
 }
 
 /* u: Align */

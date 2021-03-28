@@ -32,9 +32,9 @@ title: Bookmarks
   </div>
   <nav class="toc | tertiary-text">
     <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="horizontal" data-plain>
-      <li><a href="#faves">Favourites</a></li>
-      <li><a href="#bookmarks">All Bookmarks</a></li>
+    <ol class="horizontal | gap" data-plain>
+      <li><a class="link" href="#faves">Favourites</a></li>
+      <li><a class="link" href="#bookmarks">All Bookmarks</a></li>
     </ol>
     <hr />
   </nav>
@@ -43,13 +43,16 @@ title: Bookmarks
 <article class="grid | gap-xx-large">
   <div>
     <h2 class="tertiary-title | gap">Feeds</h2>
-    <a href="/api/bookmarks.json"
-        target="_blank"
-        referrer="noreferrer"
-        class="link"
-    >
-      JSON Feed (All)
-    </a>
+    <div class="gap">
+      <a href="/api/bookmarks.json"
+          target="_blank"
+          referrer="noreferrer"
+          class="link"
+      >
+        JSON Feed (All)
+      </a>
+    </div>
+    <hr />
   </div>
   <section>
     <section id="faves" class="gap-xx-large">

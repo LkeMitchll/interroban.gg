@@ -17,9 +17,13 @@ title: Colophon
     <h2 class="tertiary-title | gap">Information</h2>
     <table class="tertiary-text">
       <thead>
+        <th>Total</th>
         <th>Updated</th>
       </thead>
       <tbody>
+        <tr>
+          <td>{{ metaPosts | length }} Posts</td>
+        </tr>
         <tr>
           <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
         </tr>
@@ -28,9 +32,9 @@ title: Colophon
   </div>
   <nav class="toc | push-down | tertiary-text">
     <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="horizontal" data-plain>
-      <li><a href="#updates">Recent Updates</a></li>
-      <li><a href="#notes">Notes</a></li>
+    <ol class="horizontal | gap" data-plain>
+      <li><a class="link" href="#updates">Recent Updates</a></li>
+      <li><a class="link" href="#notes">Notes</a></li>
     </ol>
     <hr />
   </nav>

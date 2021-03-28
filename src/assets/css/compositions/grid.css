@@ -8,6 +8,7 @@
 @media (min-width: 800px) {
   .grid {
     grid-template-columns: minmax(min(33vw, 25ch), 1fr) minmax(min(66vw, 30ch), 3fr);
+    grid-column-gap: var(--space-x-large);
   }
 
   .grid * {
