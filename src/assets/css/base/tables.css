@@ -3,10 +3,19 @@ table {
 }
 
 thead,
+tbody {
+  flex-grow: 1;
+}
+
+thead,
 tr {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+tr {
+  width: 100%;
 }
 
 th,
