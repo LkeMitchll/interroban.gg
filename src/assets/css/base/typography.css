@@ -6,6 +6,12 @@ p {
   margin: 0;
 }
 
+.small-caps {
+  font-weight: normal;
+  font-feature-settings: "smcp" 1;
+  text-transform: lowercase;
+}
+
 h1,
 h2,
 h3,

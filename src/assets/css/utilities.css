@@ -80,6 +80,10 @@
 
 /* u: Pad */
 
+.pad-r-small {
+  padding-right: var(--space-small);
+}
+
 .pad-r-large {
   padding-right: var(--space-large);
 }
