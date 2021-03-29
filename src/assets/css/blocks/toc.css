@@ -1,6 +1,8 @@
 .toc {
   --flow-space: var(--space-small);
+  --gap: var(--space-default);
 
+  max-width: 70ch;
   display: flex;
   flex-direction: column;
 }

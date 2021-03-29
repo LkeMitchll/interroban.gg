@@ -10,6 +10,10 @@
   margin-right: var(--gap, 2rem);
 }
 
+.horizontal *:last-child {
+  margin-right: 0;
+}
+
 @media (min-width: 800px) {
   .sm-horizontal {
     display: block;
@@ -123,4 +127,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: pre;
+}
+
+/* u: Grow */
+
+.grow {
+  flex-grow: 1;
 }

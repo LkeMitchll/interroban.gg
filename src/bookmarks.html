@@ -15,9 +15,9 @@ title: Bookmarks
     <h1>{{ page.fields.title }}</h1>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </div>
-  <div>
-    <h2 class="tertiary-title | gap">Information</h2>
-    <table class="tertiary-text">
+  <div class="flow" style="--flow-space: var(--space-default)">
+    <h2 class="tertiary-title | gap">Statistics</h2>
+    <table class="tertiary-text | gap-large">
       <thead>
         <th>Total</th>
         <th>Updated</th>
@@ -29,32 +29,50 @@ title: Bookmarks
         </tr>
       </tbody>
     </table>
+    <ul class="horizontal | gap" data-plain>
+      <li>
+        <span class="tertiary-text | pad-r-small">&rarr;</span>
+        <a href="/api/bookmarks.json"
+            target="_blank"
+            referrer="noreferrer"
+            class="link"
+        >
+          JSON Feed
+        </a>
+      </li>
+    </ul>
+    <hr />
   </div>
   <nav class="toc | tertiary-text">
     <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="horizontal | gap" data-plain>
-      <li><a class="link" href="#faves">Favourites</a></li>
-      <li><a class="link" href="#bookmarks">All Bookmarks</a></li>
+    <ol class="gap" data-plain>
+      <li class="horizontal">
+        <p>1.</p>
+        <hr class="grow">
+        <p class="link" href="#faves">Favourites</p>
+      </li>
+      <li class="horizontal">
+        <p>2.</p>
+        <hr class="grow">
+        <p class="link" href="#bookmarks">2021</p>
+      </li>
+      <li class="horizontal">
+        <p>3.</p>
+        <hr class="grow">
+        <p class="link" href="#bookmarks">2020</p>
+      </li>
+      <li class="horizontal">
+        <p>4.</p>
+        <hr class="grow">
+        <p class="link" href="#bookmarks">Archive</p>
+      </li>
     </ol>
     <hr />
   </nav>
 </header>
 
 <article class="grid | gap-xx-large">
-  <div>
-    <h2 class="tertiary-title | gap">Feeds</h2>
-    <div class="gap">
-      <a href="/api/bookmarks.json"
-          target="_blank"
-          referrer="noreferrer"
-          class="link"
-      >
-        JSON Feed (All)
-      </a>
-    </div>
-    <hr />
-  </div>
-  <section>
+  <section style="--position: 2;">
     <section id="faves" class="gap-xx-large">
       <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
       <ul class="measure flow" data-plain>

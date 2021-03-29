@@ -8,15 +8,15 @@ alpine: true
 
 <header class="grid | gap-x-large">
   <nav>
-    <a href="/" class="link">Back to index</a>
+    <a href="/" class="link"><span class="tertiary-text | pad-r-small">&larr;</span>Back to index</a>
   </nav>
   <div class="measure flow | gap" style="--flow-space: var(--space-default)">
     <h1>{{ page.fields.title }}</h1>
     {% renderMarkdown page.fields.descriptionMarkdown %}
   </div>
-  <div>
-    <h2 class="tertiary-title | gap">Information</h2>
-    <table class="tertiary-text">
+  <div class="flow" style="--flow-space: var(--space-default)">
+    <h2 class="tertiary-title">Statistics</h2>
+    <table class="tertiary-text | gap-large">
       <thead>
         <th>Total</th>
         <th>Updated</th>
@@ -28,27 +28,13 @@ alpine: true
         </tr>
       </tbody>
     </table>
-  </div>
-  <nav class="toc | tertiary-text">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="horizontal | gap" data-plain>
-      <li><a class="link" href="#now">Now</a></li>
-      <li><a class="link" href="#posts">Posts</a></li>
-      <li><a class="link" href="#listening">Listening</a></li>
-      <li><a class="link" href="#reading">Reading</a></li>
-    </ol>
-    <hr />
-  </nav>
-</header>
-
-<article class="grid | gap-xx-large">
-  <div>
-    <h2 class="tertiary-title | gap">Feeds</h2>
-    <ul class="sm-horizontal | gap" data-plain>
+    <ul class="horizontal" data-plain>
       <li>
+        <span class="tertiary-text | pad-r-small">&rarr;</span>
         <a href="/rss.xml" class="link">RSS Feed</a>
       </li>
       <li>
+        <span class="tertiary-text | pad-r-small">&rarr;</span>
         <a href="/api/posts.json"
            target="_blank"
            referrer="noreferrer"
@@ -60,7 +46,36 @@ alpine: true
     </ul>
     <hr />
   </div>
-  <section>
+  <nav class="toc | tertiary-text">
+    <h2 class="tertiary-title | gap">Table of contents</h2>
+    <ol class="gap" data-plain>
+      <li class="horizontal">
+        <p>1.</p>
+        <hr class="grow" />
+        <a class="link" href="#now">Now</a>
+      </li>
+      <li class="horizontal">
+        <p>2.</p>
+        <hr class="grow" />
+        <a class="link" href="#posts">Posts</a>
+      </li>
+      <li class="horizontal">
+        <p>3.</p>
+        <hr class="grow" />
+        <a class="link" href="#listening">Listening</a>
+      </li>
+      <li class="horizontal">
+        <p>4.</p>
+        <hr class="grow" />
+        <a class="link" href="#reading">Reading</a>
+      </li>
+    </ol>
+    <hr />
+  </nav>
+</header>
+
+<article class="grid | gap-xx-large">
+  <section style="--position: 2">
     <section id="now" class="flow | gap-xx-large">
       <h2 class="title">Now</h2>
       <section class="markdown | measure flow">
