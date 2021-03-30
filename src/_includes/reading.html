@@ -2,7 +2,7 @@
 
 <section id="reading">
   <h2 class="title">{{ recentlyRead.fields.title }}</h2>
-  <ul class="flow gap-large" data-plain>
+  <ul class="flow gap-large" data-appearance="plain">
     {% for item in recentlyRead.fields.items %}
     <li>
       <a href="{{ item.fields.url }}"

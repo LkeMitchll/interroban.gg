@@ -26,7 +26,7 @@
   --text-measure: 50ch;
   --radii-default: 2px;
   --border-width-default: 1px;
-  --border-default: 1px dotted var(--color-faded);
+  --border-default: var(--border-width-default) dotted var(--color-faded);
 }
 
 @media (prefers-color-scheme: dark) {

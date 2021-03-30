@@ -20,12 +20,6 @@
   }
 }
 
-/* u: Align */
-
-.align {
-  align-items: center;
-}
-
 /* u: Flow */
 
 .flow > * + * {

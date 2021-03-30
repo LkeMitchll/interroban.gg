@@ -26,10 +26,6 @@ h6,
   margin: 0 0 var(--space-large);
 }
 
-.headline[data-lh="crushed"] {
-  line-height: var(--text-leading-crushed);
-}
-
 .title {
   font-size: var(--text-size-default);
 }
@@ -66,13 +62,13 @@ li {
   margin-bottom: var(--space-small);
 }
 
-ul[data-plain],
-ol[data-plain] {
+ul[data-appearance="plain"],
+ol[data-appearance="plain"] {
   padding: 0;
   list-style: none;
 }
 
-*[data-plain] li {
+*[data-appearance="plain"] li {
   padding: 0;
 }
 
@@ -88,7 +84,7 @@ small {
 blockquote {
   margin: 0 0 0 -1rem;
   padding-left: var(--space-default);
-  border-left: 1px solid var(--color-faded);
+  border-left: var(--border-default);
   color: var(--color-secondary);
   font-style: italic;
 }

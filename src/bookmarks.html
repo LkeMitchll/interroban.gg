@@ -29,7 +29,7 @@ title: Bookmarks
         </tr>
       </tbody>
     </table>
-    <ul class="horizontal | gap" data-plain>
+    <ul class="horizontal | gap" data-appearance="plain">
       <li>
         <span class="tertiary-text | pad-r-small">&rarr;</span>
         <a href="/api/bookmarks.json"
@@ -45,7 +45,7 @@ title: Bookmarks
   </div>
   <nav class="toc | tertiary-text">
     <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="gap" data-plain>
+    <ol class="gap" data-appearance="plain">
       <li class="horizontal">
         <p>1.</p>
         <hr class="grow">
@@ -75,7 +75,7 @@ title: Bookmarks
   <section style="--position: 2;">
     <section id="faves" class="gap-xx-large">
       <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
-      <ul class="measure flow" data-plain>
+      <ul class="measure flow" data-appearance="plain">
         {% for bookmark in roundup.fields.links %}
         <li>
           <div class="gap-small">
@@ -99,7 +99,7 @@ title: Bookmarks
 
     <section id="bookmarks">
       <h2 class="title">All Bookmarks</h2>
-      <ol class="measure flow gap-large" data-plain>
+      <ol class="measure flow gap-large" data-appearance="plain">
         {% for bookmark in bookmarks %}
         <li>
           <a href="{{ bookmark.fields.url }}"

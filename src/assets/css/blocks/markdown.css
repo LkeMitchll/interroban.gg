@@ -12,7 +12,7 @@
   font-size: var(--text-size-small);
   margin-top: var(--space-large);
   padding-left: var(--space-default);
-  border-left: 1px solid var(--color-faded);
+  border-left: var(--border-default);
   height: intrinsic;
   width: 50%;
 }

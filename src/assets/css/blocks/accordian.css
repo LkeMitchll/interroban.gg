@@ -1,7 +1,7 @@
 .accordian ol {
   --flow-space: var(--space-default);
 
-  border-left: 1px dotted var(--color-faded);
+  border-left: var(--border-default);
   counter-reset: item;
   margin-left: var(--space-tiny);
 }

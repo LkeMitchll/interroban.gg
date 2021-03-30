@@ -20,7 +20,7 @@ title: Product Designer
 <article class="grid">
   <nav class="toc | flow | tertiary-text">
     <h2 class="tertiary-title">Table of contents</h2>
-    <ol class="flow | gap" style="--flow-space: var(--space-default)" data-plain>
+    <ol class="flow | gap" style="--flow-space: var(--space-default)" data-appearance="plain">
       <li><a class="link" href="#posts">Recent Posts</a></li>
       <li><a class="link" href="#bookmarks">Recent Bookmarks</a></li>
     </ol>
@@ -29,7 +29,7 @@ title: Product Designer
   <section class="gap-xx-large">
     <section id="posts" class="gap-x-large">
       <h2>Recent Posts</h2>
-      <ol class="flow | gap-large" data-plain>
+      <ol class="flow | gap-large" data-appearance="plain">
         {% for post in recentPosts %}
         <li>
           <a
@@ -51,7 +51,7 @@ title: Product Designer
     </section>
     <section id="bookmarks">
       <h2>Recent Bookmarks</h2>
-      <ol class="flow | gap-large" data-plain>
+      <ol class="flow | gap-large" data-appearance="plain">
         {% for bookmark in recentBookmarks %}
         <li>
           <a

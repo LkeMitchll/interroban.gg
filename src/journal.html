@@ -28,7 +28,7 @@ alpine: true
         </tr>
       </tbody>
     </table>
-    <ul class="horizontal" data-plain>
+    <ul class="horizontal" data-appearance="plain">
       <li>
         <span class="tertiary-text | pad-r-small">&rarr;</span>
         <a href="/rss.xml" class="link">RSS Feed</a>
@@ -48,7 +48,7 @@ alpine: true
   </div>
   <nav class="toc | tertiary-text">
     <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="gap" data-plain>
+    <ol class="gap" data-appearance="plain">
       <li class="horizontal">
         <p>1.</p>
         <hr class="grow" />
@@ -91,7 +91,7 @@ alpine: true
 
     <section id="posts" class="gap-xx-large">
       <h2 class="title">Posts</h2>
-      <ol class="flow gap-large" data-plain>
+      <ol class="flow gap-large" data-appearance="plain">
         {% for post in posts %}
         <li>
           <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>

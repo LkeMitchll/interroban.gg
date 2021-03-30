@@ -58,7 +58,7 @@ title: About Me
   <section class="grid columns" style="--position: 2; --cols: 3">
     <section>
       <h3 class="subtitle">{{ experience.fields.title }}</h3>
-      <ul class="flow" data-plain>
+      <ul class="flow" data-appearance="plain">
         {% for job in experience.fields.items %}
         <li>
           <p class="tertiary-text color-secondary">{{ job.fields.period }}</p>
@@ -70,7 +70,7 @@ title: About Me
     </section>
     <section>
       <h3 class="subtitle">Clients</h3>
-      <ul class="flow" style="--flow-space: var(--space-small)" data-plain>
+      <ul class="flow" style="--flow-space: var(--space-small)" data-appearance="plain">
         {% for client in clients.clients %}
         <li>{{ client }}</li>
         {% endfor %}
@@ -78,7 +78,7 @@ title: About Me
     </section>
     <section>
       <h3 class="subtitle">Skills</h3>
-      <ul class="flow" style="--flow-space: var(--space-small)" data-plain>
+      <ul class="flow" style="--flow-space: var(--space-small)" data-appearance="plain">
         {% for skill in skills.skills %}
         <li>{{ skill }}</li>
         {% endfor %}

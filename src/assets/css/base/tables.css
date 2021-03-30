@@ -23,7 +23,7 @@ td {
   width: 100%;
   padding: var(--space-tiny);
   text-align: left;
-  border-bottom: 1px dotted var(--color-faded);
+  border-bottom: var(--border-default);
 }
 
 th {
