@@ -1,5 +1,5 @@
 html {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
   font-family: var(--text-serif);
   font-feature-settings: "case" on;
   margin-top: var(--space-large);
-  padding: 0 var(--space-default);
+  padding: 0 var(--space-small);
   text-rendering: optimizeLegibility;
   line-height: 1.5;
 }
@@ -21,6 +21,16 @@ img {
   border-radius: var(--radii-default);
   height: auto;
   background-color: var(--color-faded);
+}
+
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    padding: 0 var(--space-default);
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -35,7 +45,7 @@ img {
 
 @media screen and (min-width: 1600px) {
   html {
-    font-size: 1.2vw;
+    font-size: 1.15vw;
   }
 
   body {
