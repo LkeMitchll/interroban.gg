@@ -10,6 +10,28 @@
   padding-left: var(--space-default);
 }
 
+.accordian a {
+  margin-right: var(--space-default);
+}
+
+.accordian hr {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .accordian ol {
+    padding-left: var(--space-default);
+  }
+
+  .accordian a {
+    margin-right: var(--space-large);
+  }
+
+  .accordian hr {
+    display: block;
+  }
+}
+
 .accordian[data-numbered] li::before {
   counter-increment: item;
   margin-right: var(--space-default);

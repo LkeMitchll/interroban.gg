@@ -121,14 +121,6 @@
   width: 1px;
 }
 
-/* u: Ellipsis */
-
-.ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: pre;
-}
-
 /* u: Grow */
 
 .grow {
