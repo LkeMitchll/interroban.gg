@@ -8,13 +8,18 @@ title: Product Designer
 {% set recentPosts = posts | limit(3) %}
 
 <header class="grid | gap-xx-large">
-  <div class="measure flow" style="--position: 2">
+  <nav>
+    <p class="tertiary-text">
+      <span class="color-secondary">v4</span>
+      <span class="color-secondary"> / </span>
+      <a href="/" class="link">Home</a>
+    </p>
+  </nav>
+  <div class="measure flow">
+    <h2>Welcome</h2>
     {% renderMarkdown page.fields.descriptionMarkdown %}
-    <div>
-      {% include "src/_includes/site_index.html" %}
-    </div>
+    {% include "src/_includes/site_index.html" %}
   </div>
-  <hr style="--position: 2" />
 </header>
 
 <article class="grid">
