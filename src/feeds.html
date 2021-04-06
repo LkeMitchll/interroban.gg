@@ -23,7 +23,7 @@ title: Feeds
       <tbody>
         <tr>
           <td>{{ feeds | length }} Subscriptions</td>
-          <td>{{ feeds[0].created_at | formatDate({})}}</td>
+          <td>{{ feeds[0].created_at | formatDate }}</td>
         </tr>
       </tbody>
   </table>
@@ -44,7 +44,7 @@ title: Feeds
       <p class="color-secondary">
         <time datetime="{{ feed.created_at }}">
           Reading since:
-          {{ feed.created_at | formatDate({month: "short", year: "numeric"}) }}
+          {{ feed.created_at | formatDate("medium") }}
         </time>
       </p>
     </li>

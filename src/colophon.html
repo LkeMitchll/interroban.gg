@@ -25,7 +25,7 @@ title: Colophon
           <td>{{ metaPosts | length }} Posts</td>
         </tr>
         <tr>
-          <td>{{ page.sys.updatedAt | formatDate({}) }}</td>
+          <td>{{ page.sys.updatedAt | formatDate }}</td>
         </tr>
       </tbody>
     </table>
@@ -58,7 +58,7 @@ title: Colophon
         <li>
           <a href="/colophon/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
           <p class="color-secondary">
-            <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate }}</time>
+            <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate("long") }}</time>
           </p>
         </li>
         {% endfor %}
@@ -72,7 +72,7 @@ title: Colophon
             <a href="{{ commit.url }}" target="_blank" rel="noreferrer">{{ commit. message }}</a>
             <p>
               <time datetime="{{ commit.date }}">
-                {{ commit.date | formatDate({ month: "numeric", day: "numeric", year: "numeric" }) }}
+                {{ commit.date | formatDate }}
               </time>
             </p>
           </li>

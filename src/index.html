@@ -45,7 +45,7 @@ title: Product Designer
           </a>
           <p class="color-secondary">
             <span class="visually-hidden">Published:</span>
-            <em>{{ post.fields.date | formatDate }}</em>
+            <em>{{ post.sys.createdAt | formatDate("long") }}</em>
           </p>
         </li>
         {% endfor %}

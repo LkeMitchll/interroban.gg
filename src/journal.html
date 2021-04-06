@@ -30,7 +30,7 @@ alpine: true
       <tbody>
         <tr>
           <td>{{ posts | length }} Posts</td>
-          <td>{{ now.fields.date }}</td>
+          <td>{{ now.sys.updatedAt | formatDate }}</td>
         </tr>
       </tbody>
     </table>
@@ -90,7 +90,7 @@ alpine: true
       <footer>
         <time datetime="{{ now.fields.date }}">
           Last updated &ndash;
-          {{ now.fields.date | formatDate({month: "long", day: "numeric", year: "numeric"}) }}
+          {{ now.fields.date | formatDate }}
         </time>
       </footer>
     </section>
@@ -103,7 +103,7 @@ alpine: true
           <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
           <p class="color-secondary">
             <time datetime="{{ post.fields.date }}">
-              {{ post.fields.date | formatDate }}
+              {{ post.fields.date | formatDate("long") }}
             </time>
           </p>
         </li>

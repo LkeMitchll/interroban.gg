@@ -1,3 +1,9 @@
+/* u: Flow */
+
+.flow > * + * {
+  margin-top: var(--flow-space, 2rem);
+}
+
 /* u: Horizontal */
 
 .horizontal,
@@ -18,12 +24,6 @@
   .sm-horizontal {
     display: block;
   }
-}
-
-/* u: Flow */
-
-.flow > * + * {
-  margin-top: var(--flow-space, 2rem);
 }
 
 /* u: Push */

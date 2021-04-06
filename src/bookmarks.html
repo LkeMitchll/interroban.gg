@@ -31,8 +31,8 @@ title: Bookmarks
       </thead>
       <tbody>
         <tr>
-          <td>{{ total | sum }}</td>
-          <td>{{ lastUpdate.fields.publishDate }}</td>
+          <td>{{ total | sum }} Bookmarks</td>
+          <td>{{ lastUpdate.fields.publishDate | formatDate }}</td>
         </tr>
       </tbody>
     </table>

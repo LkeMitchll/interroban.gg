@@ -15,7 +15,7 @@ layout: layout.html
     <h1 class="headline | measure | gap-small">{{ post.fields.title }}</h1>
     <p class="color-secondary">
       <time datetime="{{ post.fields.date }}">
-        {{ post.fields.date | formatDate }}
+      {{ post.fields.date | formatDate("long") }}
       </time>
     </p>
   </div>
@@ -28,7 +28,7 @@ layout: layout.html
       </thead>
       <tbody>
         <tr>
-          <td>{{ post.sys.updatedAt | formatDate({}) }}</td>
+          <td>{{ post.sys.updatedAt | formatDate }}</td>
         </tr>
         <tr>
           <td>{{ post.fields.contentMarkdown | readingTime }}</td>
