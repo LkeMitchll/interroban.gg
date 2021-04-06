@@ -4,8 +4,10 @@ title: Bookmarks
 ---
 
 {% set page = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
-{% set lastUpdate = bookmarks | limit(1) %}
+{% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
 {% set roundup = roundups | limit(1) %}
+{% set total = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length,bookmarks[2].bookmarks.length] %}
+
 
 <header class="grid | gap-x-large">
   <nav>
@@ -30,7 +32,7 @@ title: Bookmarks
       </thead>
       <tbody>
         <tr>
-          <td>{{ bookmarks | length }}</td>
+          <td>{{ total | sum }}</td>
           <td>{{ lastUpdate.fields.publishDate }}</td>
         </tr>
       </tbody>
@@ -55,74 +57,68 @@ title: Bookmarks
       <li class="horizontal">
         <p>1.</p>
         <hr class="grow">
-        <p class="link" href="#faves">Favourites</p>
+        <a class="link" href="#faves">Favourites</a>
       </li>
-      <li class="horizontal">
-        <p>2.</p>
-        <hr class="grow">
-        <p class="link" href="#bookmarks">2021</p>
-      </li>
-      <li class="horizontal">
-        <p>3.</p>
-        <hr class="grow">
-        <p class="link" href="#bookmarks">2020</p>
-      </li>
-      <li class="horizontal">
-        <p>4.</p>
-        <hr class="grow">
-        <p class="link" href="#bookmarks">Archive</p>
-      </li>
+      {% for timePeriod in bookmarks %}
+        <li class="horizontal">
+          <p>{{ loop.index + 1 }}</p>
+          <hr class="grow">
+          <a class="link" href="#{{ timePeriod.title | lower }}">{{ timePeriod.title }}</a>
+        </li>
+      {% endfor %}
     </ol>
     <hr />
   </nav>
 </header>
 
 <article class="grid | gap-xx-large">
-  <section style="--position: 2;">
-    <section id="faves" class="gap-xx-large">
-      <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
-      <ul class="measure flow" data-appearance="plain">
-        {% for bookmark in roundup.fields.links %}
-        <li>
-          <div class="gap-small">
-            <p>
-              <em>{{ bookmark.fields.tag }}</em>
-            </p>
-            <a href="{{ bookmark.fields.url }}"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {{ bookmark.fields.title }}
-            </a>
-          </div>
+  <section id="faves" class="gap-xx-large" style="--position: 2;">
+    <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
+    <ul class="measure flow" data-appearance="plain">
+      {{roundup.fields.links | log}}
+      {% for bookmark in roundup.fields.links %}
+      <li>
+        <div class="gap-small">
           <p>
-            {{ bookmark.fields.notes }}
+            <em>{{ bookmark.fields.tag }}</em>
           </p>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-
-    <section id="bookmarks">
-      <h2 class="title">All Bookmarks</h2>
-      <ol class="measure flow gap-large" data-appearance="plain">
-        {% for bookmark in bookmarks %}
-        <li>
           <a href="{{ bookmark.fields.url }}"
-             target="_blank"
-             rel="noreferrer"
+            target="_blank"
+            rel="noreferrer"
           >
             {{ bookmark.fields.title }}
           </a>
-          <p class="color-secondary">
-            <em>{{ bookmark.fields.tag }}</em>
-          </p>
-        </li>
-        {% endfor %}
-      </ol>
-      <footer>
-        <a href="/bookmarks" class="link">See more</a>
-      </footer>
-    </section>
+        </div>
+        <p>
+          {{ bookmark.fields.notes }}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
+
+
+  <header style="--position: 2">
+    <h2 class="title">Bookmarks</h2>
+  </header>
+  {% for timePeriod in bookmarks %}
+    <div>
+      <h3 id="{{ timePeriod.title | lower }}" class="subtitle">{{ timePeriod.title }}</h3>
+    </div>
+    <ol class="measure flow gap-large" data-appearance="plain">
+      {% for bookmark in timePeriod.bookmarks %}
+      <li>
+        <a href="{{ bookmark.fields.url }}"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {{ bookmark.fields.title }}
+        </a>
+        <p class="color-secondary">
+          <em>{{ bookmark.fields.tag }}</em>
+        </p>
+      </li>
+      {% endfor %}
+    </ol>
+  {% endfor %}
 </article>

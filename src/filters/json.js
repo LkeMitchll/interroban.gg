@@ -1,5 +1,5 @@
 const JSONStringify = (data) => {
-  const json = JSON.stringify(data.map((item) => item.fields));
+  const json = JSON.stringify(data);
   return json;
 };
 
