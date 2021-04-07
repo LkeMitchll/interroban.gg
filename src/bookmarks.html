@@ -3,24 +3,16 @@ layout: layout.html
 title: Bookmarks
 ---
 
-{% set page = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
+{% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
 {% set total = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length,bookmarks[2].bookmarks.length] %}
 {% set roundup = roundups | limit(1) %}
 
 <header id="top" class="grid | gap-x-large">
-  <nav>
-    <p class="tertiary-text">
-      <span class="color-secondary">v4</span>
-      <span class="color-secondary"> / </span>
-      <a href="/" class="link">...</a>
-      <span class="color-secondary"> / </span>
-      <a href="/bookmarks" class="link">Bookmarks</a>
-    </p>
-  </nav>
+  {% breadcrumb page.filePathStem, "Bookmarks" %}
   <div class="measure flow | gap">
-    <h1>{{ page.fields.title }}</h1>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <h1>{{ content.fields.title }}</h1>
+    {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div class="flow" style="--flow-space: var(--space-default)">
     <h2 class="tertiary-title | gap">Statistics</h2>

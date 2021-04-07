@@ -3,21 +3,13 @@ layout: layout.html
 title: Feeds
 ---
 
-{% set page = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
+{% set content = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
 
 <header class="grid | gap-x-large">
-  <nav>
-    <p class="tertiary-text">
-      <span class="color-secondary">v4</span>
-      <span class="color-secondary"> / </span>
-      <a href="/" class="link">...</a>
-      <span class="color-secondary"> / </span>
-      <a href="/feeds" class="link">Feeds</a>
-    </p>
-  </nav>
+  {% breadcrumb page.filePathStem, "Feeds" %}
   <section class="measure">
-    <h2>{{ page.fields.title }}</h2>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <h2>{{ content.fields.title }}</h2>
+    {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
   <div class="toc | tertiary-text">
     <h2 class="tertiary-title | gap">Table of contents</h2>

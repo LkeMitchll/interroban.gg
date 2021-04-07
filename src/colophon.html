@@ -3,21 +3,13 @@ layout: layout.html
 title: Colophon
 ---
 
-{% set page = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
+{% set content = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
 
 <header class="grid | gap-xx-large">
-  <nav>
-    <p class="tertiary-text">
-      <span class="color-secondary">v4</span>
-      <span class="color-secondary"> / </span>
-      <a href="/" class="link">...</a>
-      <span class="color-secondary"> / </span>
-      <a href="/colophon" class="link">Colophon</a>
-    </p>
-  </nav>
+  {% breadcrumb page.filePathStem, "Colophon" %}
   <section class="measure | gap">
-    <h2>{{ page.fields.title }}</h2>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <h2>{{ content.fields.title }}</h2>
+    {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
   <div>
     <h2 class="tertiary-title | gap">Statistics</h2>
@@ -31,7 +23,7 @@ title: Colophon
           <td>{{ metaPosts | length }} Posts</td>
         </tr>
         <tr>
-          <td>{{ page.sys.updatedAt | formatDate }}</td>
+          <td>{{ content.sys.updatedAt | formatDate }}</td>
         </tr>
       </tbody>
     </table>
@@ -95,7 +87,7 @@ title: Colophon
     </div>
     <section id="notes" class="markdown | measure flow">
       <h2 class="title">Notes</h2>
-      {% renderMarkdown page.fields.contentMarkdown %}
+      {% renderMarkdown content.fields.contentMarkdown %}
     </section>
   </section>
 </article>

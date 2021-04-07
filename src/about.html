@@ -4,22 +4,14 @@ title: About Me
 ---
 
 {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
-{% set page = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
+{% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
 {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
 
 <header class="grid | gap-x-large">
-  <nav>
-    <p class="tertiary-text">
-      <span class="color-secondary">v4</span>
-      <span class="color-secondary"> / </span>
-      <a href="/" class="link">...</a>
-      <span class="color-secondary"> / </span>
-      <a href="/about" class="link">About</a>
-    </p>
-  </nav>
+  {% breadcrumb page.filePathStem, "About" %}
   <div class="measure">
-    <h2>{{ page.fields.title }}</h2>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <h2>{{ content.fields.title }}</h2>
+    {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div>
     <h2 class="tertiary-title | gap">Statistics</h2>
@@ -29,7 +21,7 @@ title: About Me
       </thead>
       <tbody>
         <tr>
-          <td>{{ page.sys.updatedAt | formatDate }}</td>
+          <td>{{ content.sys.updatedAt | formatDate }}</td>
         </tr>
       </tbody>
     </table>
@@ -48,7 +40,7 @@ title: About Me
 
 <article class="grid | gap-xx-large">
   <section class="markdown | measure flow" style="--position: 2">
-    {% renderMarkdown page.fields.contentMarkdown, assets %}
+    {% renderMarkdown content.fields.contentMarkdown, assets %}
   </section>
 </article>
 

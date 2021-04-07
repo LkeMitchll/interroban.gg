@@ -4,21 +4,13 @@ title: Journal
 alpine: true
 ---
 
-{% set page = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
+{% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
 
 <header class="grid | gap-x-large">
-  <nav>
-    <p class="tertiary-text">
-      <span class="color-secondary">v4</span>
-      <span class="color-secondary"> / </span>
-      <a href="/" class="link">...</a>
-      <span class="color-secondary"> / </span>
-      <a href="/journal" class="link">Journal</a>
-    </p>
-  </nav>
+  {%  breadcrumb page.filePathStem, "Journal" %}
   <div class="measure flow | gap" style="--flow-space: var(--space-default)">
-    <h1>{{ page.fields.title }}</h1>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <h1>{{ content.fields.title }}</h1>
+    {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div class="flow" style="--flow-space: var(--space-default)">
     <h2 class="tertiary-title">Statistics</h2>

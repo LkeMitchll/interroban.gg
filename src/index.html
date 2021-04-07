@@ -3,21 +3,15 @@ layout: layout.html
 title: Product Designer
 ---
 
-{% set page = pages | findByID("5yo7fjGQhLhhuup6PUZlMU") %}
+{% set content = pages | findByID("5yo7fjGQhLhhuup6PUZlMU") %}
 {% set recentBookmarks = bookmarks[0].bookmarks | limit(3) %}
 {% set recentPosts = posts | limit(3) %}
 
 <header class="grid | gap-xx-large">
-  <nav>
-    <p class="tertiary-text">
-      <span class="color-secondary">v4</span>
-      <span class="color-secondary"> / </span>
-      <a href="/" class="link">Home</a>
-    </p>
-  </nav>
+  {% breadcrumb page.url, "Home" %}
   <div class="measure flow">
     <h2>Welcome</h2>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
+    {% renderMarkdown content.fields.descriptionMarkdown %}
     {% include "src/_includes/site_index.html" %}
   </div>
 </header>

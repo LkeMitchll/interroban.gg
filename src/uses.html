@@ -5,21 +5,13 @@ title: Uses
 
 {% set deskImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
 {% set macImage = assets | findByID("4tfwXMS2ViqOr2nrmxNrJ4") %}
-{% set page = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
+{% set content = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
 
 <header class="grid | hero | gap-x-large">
-  <nav>
-    <p class="tertiary-text">
-      <span class="color-secondary">v4</span>
-      <span class="color-secondary"> / </span>
-      <a href="/" class="link">...</a>
-      <span class="color-secondary"> / </span>
-      <a href="/uses" class="link">Uses</a>
-    </p>
-  </nav>
+  {% breadcrumb page.filePathStem, "Uses" %}
   <section class="measure | gap">
-    <h2>{{ page.fields.title }}</h2>
-    {% renderMarkdown page.fields.descriptionMarkdown %}
+    <h2>{{ content.fields.title }}</h2>
+    {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
   <div>
     <h2 class="tertiary-title | gap">Statistics</h2>
@@ -29,7 +21,7 @@ title: Uses
       </thead>
       <tbody>
         <tr>
-          <td>{{ page.sys.updatedAt | formatDate }}</td>
+          <td>{{ content.sys.updatedAt | formatDate }}</td>
         </tr>
       </tbody>
     </table>
@@ -78,6 +70,6 @@ title: Uses
 
 <article class="grid | gap-xx-large">
   <section class="markdown | measure flow" style="--position: 2">
-    {% renderMarkdown page.fields.contentMarkdown %}
+    {% renderMarkdown content.fields.contentMarkdown %}
   </section>
 </article>
