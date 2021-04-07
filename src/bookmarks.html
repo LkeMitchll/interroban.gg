@@ -5,11 +5,10 @@ title: Bookmarks
 
 {% set page = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
-{% set roundup = roundups | limit(1) %}
 {% set total = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length,bookmarks[2].bookmarks.length] %}
+{% set roundup = roundups | limit(1) %}
 
-
-<header class="grid | gap-x-large">
+<header id="top" class="grid | gap-x-large">
   <nav>
     <p class="tertiary-text">
       <span class="color-secondary">v4</span>
@@ -75,7 +74,6 @@ title: Bookmarks
   <section id="faves" class="gap-xx-large" style="--position: 2;">
     <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
     <ul class="measure flow" data-appearance="plain">
-      {{roundup.fields.links | log}}
       {% for bookmark in roundup.fields.links %}
       <li>
         <div class="gap-small">
@@ -103,7 +101,10 @@ title: Bookmarks
   </header>
   {% for timePeriod in bookmarks %}
     <div>
-      <h3 id="{{ timePeriod.title | lower }}" class="subtitle">{{ timePeriod.title }}</h3>
+      <h3 id="{{ timePeriod.title | lower }}" class="subtitle | gap-small">
+        {{ timePeriod.title }}
+      </h3>
+      <a href="#top" class="link">Back to top</a>
     </div>
     <ol class="measure flow gap-large" data-appearance="plain">
       {% for bookmark in timePeriod.bookmarks %}
