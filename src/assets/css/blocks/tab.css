@@ -1,0 +1,7 @@
+@media (min-width: 800px) {
+  .tab {
+    text-align: right;
+    padding-right: var(--space-default);
+    border-right: var(--border-default);
+  }
+}

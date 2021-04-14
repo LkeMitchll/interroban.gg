@@ -35,14 +35,17 @@ async function bookmarks(limit) {
   return [
     {
       title: "2021",
+      total: thisYear.length,
       bookmarks: thisYear,
     },
     {
       title: "2020",
+      total: lastYear.length,
       bookmarks: lastYear,
     },
     {
       title: "Archive",
+      total: archive.length,
       bookmarks: archive,
     },
   ];

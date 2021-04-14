@@ -52,7 +52,7 @@ title: Bookmarks
       </li>
       {% for timePeriod in bookmarks %}
         <li class="horizontal">
-          <p>{{ loop.index + 1 }}</p>
+          <p>{{ loop.index + 1 }}.</p>
           <hr class="grow">
           <a class="link" href="#{{ timePeriod.title | lower }}">{{ timePeriod.title }}</a>
         </li>
@@ -62,9 +62,15 @@ title: Bookmarks
   </nav>
 </header>
 
-<article class="grid | gap-xx-large">
-  <section id="faves" class="gap-xx-large" style="--position: 2;">
-    <h2 class="title">Favourites &ndash; {{ roundup.fields.title }}</h2>
+<article class="grid | gap-x-large">
+  <header style="--position: 2">
+    <h2 class="title | gap-small">Favourites</h2>
+  </header>
+  <div class="tab">
+    <h3 class="subtitle | gap-small">{{ roundup.fields.title }}</h3>
+    <a href="#top" class="link">Back to top</a>
+  </div>
+  <section id="faves">
     <ul class="measure flow" data-appearance="plain">
       {% for bookmark in roundup.fields.links %}
       <li>
@@ -86,16 +92,18 @@ title: Bookmarks
       {% endfor %}
     </ul>
   </section>
+</article>
 
-
+<article class="grid | gap-xx-large">
   <header style="--position: 2">
-    <h2 class="title">Bookmarks</h2>
+    <h2 class="title | gap-small">Bookmarks</h2>
   </header>
   {% for timePeriod in bookmarks %}
-    <div>
+    <div class="tab">
       <h3 id="{{ timePeriod.title | lower }}" class="subtitle | gap-small">
         {{ timePeriod.title }}
       </h3>
+      <p class="tertiary-text"><em>Total</em>: {{ timePeriod.total }}</p>
       <a href="#top" class="link">Back to top</a>
     </div>
     <ol class="measure flow gap-large" data-appearance="plain">
