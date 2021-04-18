@@ -89,18 +89,7 @@ alpine: true
 
     <section id="posts" class="gap-xx-large">
       <h2 class="title">Posts</h2>
-      <ol class="flow gap-large" data-appearance="plain">
-        {% for post in posts %}
-        <li>
-          <a href="/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
-          <p class="color-secondary">
-            <time datetime="{{ post.fields.date }}">
-              {{ post.fields.date | formatDate("long") }}
-            </time>
-          </p>
-        </li>
-        {% endfor %}
-      </ol>
+      {% include "src/_includes/posts.html" %}
     </section>
 
     {% include "src/_includes/listening.html" %}

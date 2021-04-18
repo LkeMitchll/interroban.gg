@@ -1,0 +1,22 @@
+<details class="accordian | tertiary-text | gap-x-large">
+  <summary class="gap">Recent commits</summary>
+  <ol class="flow gap" data-appearance="plain">
+    {% for commit in github %}
+    <li>
+      <p>#<code>{{ commit.sha }}</code></p>
+      <a href="{{ commit.url }}" target="_blank" rel="noreferrer">{{ commit. message }}</a>
+      <p>
+        <time datetime="{{ commit.date }}">
+          {{ commit.date | formatDate }}
+        </time>
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+  <a href="http://www.github.com/lkemitchll/interroban.gg/commits"
+      target="_blank"
+      rel="noopener noreferrer"
+  >
+    See all commits
+  </a>
+</details>

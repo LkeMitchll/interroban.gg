@@ -1,0 +1,16 @@
+<ol class="flow | gap-large" data-appearance="plain">
+  {% for post in posts %}
+  <li>
+    <a
+      href="/post/{{ post.fields.slug }}/"
+      aria-label="Post: {{ post.fields.title }}"
+    >
+      {{ post.fields.title }}
+    </a>
+    <p class="color-secondary">
+      <span class="visually-hidden">Published:</span>
+      <em>{{ post.sys.createdAt | formatDate("long") }}</em>
+    </p>
+  </li>
+  {% endfor %}
+</ol>

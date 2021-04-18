@@ -5,7 +5,7 @@ title: Bookmarks
 
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
-{% set total = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length,bookmarks[2].bookmarks.length] %}
+{% set totals = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length,bookmarks[2].bookmarks.length] %}
 {% set roundup = roundups | limit(1) %}
 
 <header id="top" class="grid | gap-x-large">
@@ -23,7 +23,7 @@ title: Bookmarks
       </thead>
       <tbody>
         <tr>
-          <td>{{ total | sum }} Bookmarks</td>
+          <td>{{ totals | sum }} Bookmarks</td>
           <td>{{ lastUpdate.fields.publishDate | formatDate }}</td>
         </tr>
       </tbody>
@@ -71,26 +71,8 @@ title: Bookmarks
     <a href="#top" class="link">Back to top</a>
   </div>
   <section id="faves">
-    <ul class="measure flow" data-appearance="plain">
-      {% for bookmark in roundup.fields.links %}
-      <li>
-        <div class="gap-small">
-          <p>
-            <em>{{ bookmark.fields.tag }}</em>
-          </p>
-          <a href="{{ bookmark.fields.url }}"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {{ bookmark.fields.title }}
-          </a>
-        </div>
-        <p>
-          {{ bookmark.fields.notes }}
-        </p>
-      </li>
-      {% endfor %}
-    </ul>
+    {% set favouriteBookmarks = roundup.fields.links %}
+    {% include "src/_includes/favouriteBookmarks.html" %}
   </section>
 </article>
 
@@ -99,6 +81,7 @@ title: Bookmarks
     <h2 class="title | gap-small">Bookmarks</h2>
   </header>
   {% for timePeriod in bookmarks %}
+    {% set bookmarks = timePeriod.bookmarks %}
     <div class="tab">
       <h3 id="{{ timePeriod.title | lower }}" class="subtitle | gap-small">
         {{ timePeriod.title }}
@@ -106,20 +89,6 @@ title: Bookmarks
       <p class="tertiary-text"><em>Total</em>: {{ timePeriod.total }}</p>
       <a href="#top" class="link">Back to top</a>
     </div>
-    <ol class="measure flow gap-large" data-appearance="plain">
-      {% for bookmark in timePeriod.bookmarks %}
-      <li>
-        <a href="{{ bookmark.fields.url }}"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {{ bookmark.fields.title }}
-        </a>
-        <p class="color-secondary">
-          <em>{{ bookmark.fields.tag }}</em>
-        </p>
-      </li>
-      {% endfor %}
-    </ol>
+    {% include "src/_includes/bookmarks.html" %}
   {% endfor %}
 </article>

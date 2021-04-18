@@ -4,6 +4,7 @@ title: Colophon
 ---
 
 {% set content = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
+{% set posts = metaPosts %}
 
 <header class="grid | gap-xx-large">
   {% breadcrumb page.filePathStem, "Colophon" %}
@@ -51,38 +52,8 @@ title: Colophon
   <section style="--position: 2">
     <div id="updates" class="gap-large">
       <h2 class="title">Updates</h2>
-      <ol class="flow gap-large" data-appearance="plain">
-        {% for post in metaPosts %}
-        <li>
-          <a href="/colophon/post/{{ post.fields.slug }}/">{{ post.fields.title }}</a>
-          <p class="color-secondary">
-            <time datetime="{{ post.fields.date }}">{{ post.fields.date | formatDate("long") }}</time>
-          </p>
-        </li>
-        {% endfor %}
-      </ol>
-      <details class="accordian | tertiary-text | gap-x-large">
-        <summary class="gap">Recent commits</summary>
-        <ol class="flow gap" data-appearance="plain">
-          {% for commit in github %}
-          <li>
-            <p>#<code>{{ commit.sha }}</code></p>
-            <a href="{{ commit.url }}" target="_blank" rel="noreferrer">{{ commit. message }}</a>
-            <p>
-              <time datetime="{{ commit.date }}">
-                {{ commit.date | formatDate }}
-              </time>
-            </p>
-          </li>
-          {% endfor %}
-        </ol>
-        <a href="http://www.github.com/lkemitchll/interroban.gg/commits"
-           target="_blank"
-           rel="noopener noreferrer"
-        >
-          See all commits
-        </a>
-      </details>
+      {% include "src/_includes/posts.html" %}
+      {% include "src/_includes/commits.html" %}
       <hr />
     </div>
     <section id="notes" class="markdown | measure flow">

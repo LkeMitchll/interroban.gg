@@ -4,8 +4,8 @@ title: Product Designer
 ---
 
 {% set content = pages | findByID("5yo7fjGQhLhhuup6PUZlMU") %}
-{% set recentBookmarks = bookmarks[0].bookmarks | limit(3) %}
-{% set recentPosts = posts | limit(3) %}
+{% set bookmarks = bookmarks[0].bookmarks | limit(3) %}
+{% set posts = posts | limit(3) %}
 
 <header class="grid | gap-xx-large">
   {% breadcrumb page.url, "Home" %}
@@ -28,46 +28,14 @@ title: Product Designer
   <section class="gap-xx-large">
     <section id="posts" class="gap-x-large">
       <h2>Recent Posts</h2>
-      <ol class="flow | gap-large" data-appearance="plain">
-        {% for post in recentPosts %}
-        <li>
-          <a
-            href="/post/{{ post.fields.slug }}/"
-            aria-label="Post: {{ post.fields.title }}"
-          >
-            {{ post.fields.title }}
-          </a>
-          <p class="color-secondary">
-            <span class="visually-hidden">Published:</span>
-            <em>{{ post.sys.createdAt | formatDate("long") }}</em>
-          </p>
-        </li>
-        {% endfor %}
-      </ol>
+      {% include "src/_includes/posts.html" %}
       <footer>
         <a href="/journal" class="link">See all Posts</a>
       </footer>
     </section>
     <section id="bookmarks">
       <h2>Recent Bookmarks</h2>
-      <ol class="flow | gap-large" data-appearance="plain">
-        {% for bookmark in recentBookmarks %}
-        <li>
-          <a
-            href="{{ bookmark.fields.url }}"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Bookmark: {{ bookmark.fields.title }}"
-          >
-            {{ bookmark.fields.title }}
-          </a>
-          <p class="color-secondary">
-            <span class="visually-hidden">Type:</span>
-            <em>{{ bookmark.fields.tag }}</em>
-          </p>
-        </li>
-        {% endfor %}
-      </ol>
+      {% include "src/_includes/bookmarks.html" %}
       <footer>
         <a href="/bookmarks" class="link">See all Bookmarks</a>
       </footer>
