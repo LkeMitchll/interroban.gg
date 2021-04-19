@@ -1,0 +1,78 @@
+{
+  "pages": [
+    {
+      "name": "General",
+      "pages": [
+        {
+          "name": "Work",
+          "url": "/work",
+          "description": "Coming soon..."
+        },
+        {
+          "name": "About",
+          "url": "/about",
+          "description": "Read more about me."
+        },
+        {
+          "name": "Journal",
+          "url": "/journal",
+          "description": "A blog, audio-visual tracker."
+        },
+        {
+          "name": "Bookmarks",
+          "url": "/bookmarks",
+          "description": "A list of interesting links."
+        }
+      ]
+    },
+    {
+      "name": "Information",
+      "pages": [
+        {
+          "name": "Colophon",
+          "url": "/colophon",
+          "description": "A meta blog."
+        },
+        {
+          "name": "Uses",
+          "url": "/uses",
+          "description": "A list of my current equipment."
+        },
+        {
+          "name": "Feeds",
+          "url": "/feeds",
+          "description": "A list of RSS feeds I follow."
+        }
+      ]
+    }
+  ],
+  "contact": [
+    {
+      "name": "Email",
+      "url": "mailto:luke@interroban.gg"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://www.twitter.com/lkemitchll"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/luke-mitchell-69ba421b3/"
+    }
+
+  ],
+  "elsewhere": [
+    {
+      "name": "Dribbble",
+      "url": "https://dribbble.com/Interrobang"
+    },
+    {
+      "name": "Savee",
+      "url": "https://savee.it/interrobang/"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://www.github.com/lkemitchll"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<h2 class="tertiary-title | gap color-secondary">Site Index</h2>
+
+{% for category in navigation.pages %}
+  <details class="accordian | tertiary-text" data-numbered {% if loop.index <= 1 %}open{% endif %}>
+  <summary class="gap">{{ loop.index }}. {{ category.name }}</summary>
+    <ol class="flow | gap" data-appearance="plain">
+      {% for page in category.pages %}
+        <li class="horizontal">
+          <a class="link" href="{{ page.url }}">{{ page.name }}</a>
+          <hr class="grow" />
+          <p class="color-secondary">{{ page.description }}</p>
+        </li>
+      {% endfor %}
+    </ol>
+  </details>
+{% endfor %}
+
+<details class="accordian | tertiary-text">
+  <summary class="gap">3. Contact</summary>
+  <ol class="horizontal gap" data-appearance="plain">
+    {% for contactMethod in navigation.contact %}
+      <li>
+        <a class="link" href="{{ contactMethod.url }}" target="_blank" rel="noreferrer">
+          {{ contactMethod.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+</details>
+
+<details class="accordian | tertiary-text">
+  <summary class="gap">4. Elsewhere</summary>
+  <ol class="horizontal gap" data-appearance="plain">
+    {% for externalLink in navigation.elsewhere %}
+      <li>
+        <a class="link" href="{{ externalLink.url }}" target="_blank" rel="noreferrer">
+          {{ externalLink.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+</details>
