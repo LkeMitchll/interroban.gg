@@ -1,13 +1,8 @@
 {
-  "pages": [
+  "routes": [
     {
       "name": "General",
       "pages": [
-        {
-          "name": "Work",
-          "url": "/work",
-          "description": "Coming soon..."
-        },
         {
           "name": "About",
           "url": "/about",
@@ -46,33 +41,38 @@
       ]
     }
   ],
-  "contact": [
-    {
-      "name": "Email",
-      "url": "mailto:luke@interroban.gg"
-    },
-    {
-      "name": "Twitter",
-      "url": "https://www.twitter.com/lkemitchll"
-    },
-    {
-      "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/luke-mitchell-69ba421b3/"
-    }
-
-  ],
-  "elsewhere": [
-    {
-      "name": "Dribbble",
-      "url": "https://dribbble.com/Interrobang"
-    },
-    {
-      "name": "Savee",
-      "url": "https://savee.it/interrobang/"
-    },
-    {
-      "name": "GitHub",
-      "url": "https://www.github.com/lkemitchll"
-    }
-  ]
+  "contact": {
+    "name": "Contact",
+    "pages": [
+      {
+        "name": "Email",
+        "url": "mailto:luke@interroban.gg"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://www.twitter.com/lkemitchll"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/luke-mitchell-69ba421b3/"
+      }
+    ]
+  },
+  "elsewhere": {
+    "name": "Elsewhere",
+    "pages": [
+      {
+        "name": "Dribbble",
+        "url": "https://dribbble.com/Interrobang"
+      },
+      {
+        "name": "Savee",
+        "url": "https://savee.it/interrobang/"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://www.github.com/lkemitchll"
+      }
+    ]
+  }
 }

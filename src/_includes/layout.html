@@ -93,9 +93,9 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
         Luke Mitchell<br />Product Designer
       </a>
       <ul class="horizontal" data-space="large" data-appearance="plain">
-        <li><a href="/about/" class="link">About</a></li>
-        <li><a href="/journal/" class="link">Journal</a></li>
-        <li><a href="/bookmarks/" class="link">Bookmarks</a></li>
+        {% for page in navigation.routes[0].pages %}
+          <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+        {% endfor %}
       </ul>
     </nav>
 
@@ -110,81 +110,23 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
           Product Designer
         </p>
         <ul data-appearance="plain">
-          <li><a class="link" href="/about">About</a></li>
-          <li><a class="link" href="/journal">Journal</a></li>
-          <li><a class="link" href="/bookmarks">Bookmarks</a></li>
+          {% for page in navigation.routes[0].pages %}
+            <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="grid | columns" style="--cols: 3">
+        {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
+        {% for category in footerCategories %}
         <div class="push-down">
-          <p class="subtitle | gap-small">Information</p>
+          <p class="subtitle | gap-small">{{ category.name }}</p>
           <ul data-appearance="plain">
-            <li><a class="link" href="/colophon">Colophon</a></li>
-            <li><a class="link" href="/Uses">Uses</a></li>
-            <li><a class="link" href="/Feeds">Feeds</a></li>
+            {% for page in category.pages %}
+              <li><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
+            {% endfor %}
           </ul>
         </div>
-        <div class="push-down">
-          <p class="subtitle | gap-small">Contact</p>
-          <ul data-appearance="plain">
-            <li><a class="link" href="mailto:luke@interroban.gg">Email</a></li>
-            <li>
-              <a
-                class="link"
-                href="https://www.twitter.com/lkemitchll"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                class="link"
-                href="https://www.linkedin.com/in/luke-mitchell-69ba421b3/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="push-down">
-          <p class="subtitle | gap-small">Elsewhere</p>
-          <ul data-appearance="plain">
-            <li>
-              <a
-                class="link"
-                href="https://dribbble.com/Interrobang"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Dribbble
-              </a>
-            </li>
-            <li>
-              <a
-                class="link"
-                href="https://savee.it/interrobang/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Savee
-              </a>
-            </li>
-            <li>
-              <a
-                class="link"
-                href="https://www.github.com/lkemitchll"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-            </li>
-          </ul>
-        </div>
+        {% endfor %}
       </div>
       <div>
         <p class="tertiary-text"><small>&copy; 2021, Luke Mitchell</small></p>
