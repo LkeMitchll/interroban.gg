@@ -32,6 +32,10 @@
   margin-top: auto;
 }
 
+.push-apart {
+  justify-content: space-between;
+}
+
 /* u: Measure */
 
 .measure {

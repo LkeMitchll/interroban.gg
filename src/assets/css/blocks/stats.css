@@ -1,0 +1,9 @@
+.stats {
+  max-width: 70ch;
+}
+
+.stats li {
+  border-bottom: var(--border-default);
+  padding-bottom: var(--space-tiny);
+  margin-bottom: var(--space-tiny);
+}

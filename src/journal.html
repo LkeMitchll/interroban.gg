@@ -14,18 +14,18 @@ alpine: true
   </div>
   <div class="flow" style="--flow-space: var(--space-default)">
     <h2 class="tertiary-title">Statistics</h2>
-    <table class="tertiary-text | gap-large">
-      <thead>
-        <th>Total</th>
-        <th>Updated</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ posts | length }} Posts</td>
-          <td>{{ now.sys.updatedAt | formatDate }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <ul class="stats | tertiary-text | gap-large" data-appearance="plain">
+      <li>
+        <p class="horizontal push-apart">
+          <em>Total</em><span>{{ posts | length }} Posts</span>
+        </p>
+      </li>
+      <li>
+        <p class="horizontal push-apart">
+          <em>Updated</em><span>{{ now.sys.updatedAt | formatDate }}</span>
+        </p>
+      </li>
+    </ul>
     <ul class="horizontal" data-appearance="plain">
       <li>
         <span class="tertiary-text | pad-r-small">&rarr;</span>
@@ -33,12 +33,8 @@ alpine: true
       </li>
       <li>
         <span class="tertiary-text | pad-r-small">&rarr;</span>
-        <a href="/api/posts.json"
-           target="_blank"
-           referrer="noreferrer"
-           class="link"
-           >
-           JSON Feed
+        <a href="/api/posts.json" target="_blank" referrer="noreferrer" class="link">
+          JSON Feed
         </a>
       </li>
     </ul>
@@ -46,27 +42,15 @@ alpine: true
   </div>
   <nav class="toc | tertiary-text">
     <h2 class="tertiary-title | gap">Table of contents</h2>
+    {% set toc = ["Now", "Posts", "Listening", "Reading"] %}
     <ol class="gap" data-appearance="plain">
-      <li class="horizontal">
-        <p>1.</p>
-        <hr class="grow" />
-        <a class="link" href="#now">Now</a>
-      </li>
-      <li class="horizontal">
-        <p>2.</p>
-        <hr class="grow" />
-        <a class="link" href="#posts">Posts</a>
-      </li>
-      <li class="horizontal">
-        <p>3.</p>
-        <hr class="grow" />
-        <a class="link" href="#listening">Listening</a>
-      </li>
-      <li class="horizontal">
-        <p>4.</p>
-        <hr class="grow" />
-        <a class="link" href="#reading">Reading</a>
-      </li>
+      {% for heading in toc %}
+        <li class="horizontal">
+        <p>{{ loop.index }}.</p>
+          <hr class="grow" />
+          <a class="link" href="#{{ heading | lower }}">{{ heading }}</a>
+        </li>
+      {% endfor %}
     </ol>
     <hr />
   </nav>
