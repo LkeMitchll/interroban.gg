@@ -4,56 +4,26 @@ title: Journal
 alpine: true
 ---
 
+{% from 'src/_includes/stats.html' import stats %}
+{% from 'src/_includes/metaLink.html' import metaLink %}
 {% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
 
 <header class="grid | gap-x-large">
-  {%  breadcrumb page.filePathStem, "Journal" %}
+  {% breadcrumb page.filePathStem, "Journal" %}
   <div class="measure flow | gap" style="--flow-space: var(--space-default)">
     <h1>{{ content.fields.title }}</h1>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div class="flow" style="--flow-space: var(--space-default)">
-    <h2 class="tertiary-title">Statistics</h2>
-    <ul class="stats | tertiary-text | gap-large" data-appearance="plain">
-      <li>
-        <p class="horizontal push-apart">
-          <em>Total</em><span>{{ posts | length }} Posts</span>
-        </p>
-      </li>
-      <li>
-        <p class="horizontal push-apart">
-          <em>Updated</em><span>{{ now.sys.updatedAt | formatDate }}</span>
-        </p>
-      </li>
-    </ul>
+    {{ stats(posts, "Posts", now.sys.updatedAt) }}
     <ul class="horizontal" data-appearance="plain">
-      <li>
-        <span class="tertiary-text | pad-r-small">&rarr;</span>
-        <a href="/rss.xml" class="link">RSS Feed</a>
-      </li>
-      <li>
-        <span class="tertiary-text | pad-r-small">&rarr;</span>
-        <a href="/api/posts.json" target="_blank" referrer="noreferrer" class="link">
-          JSON Feed
-        </a>
-      </li>
+      {{ metaLink("RSS Feed", "/rss.xml", external = false) }}
+      {{ metaLink("JSON Feed", "/api/posts.json") }}
     </ul>
     <hr />
   </div>
-  <nav class="toc | tertiary-text">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    {% set toc = ["Now", "Posts", "Listening", "Reading"] %}
-    <ol class="gap" data-appearance="plain">
-      {% for heading in toc %}
-        <li class="horizontal">
-        <p>{{ loop.index }}.</p>
-          <hr class="grow" />
-          <a class="link" href="#{{ heading | lower }}">{{ heading }}</a>
-        </li>
-      {% endfor %}
-    </ol>
-    <hr />
-  </nav>
+  {% set toc = ["Now", "Posts", "Listening", "Reading"] %}
+  {% include "src/_includes/toc.html" %}
 </header>
 
 <article class="grid | gap-xx-large">
