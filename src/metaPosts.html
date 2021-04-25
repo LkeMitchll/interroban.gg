@@ -7,6 +7,8 @@ permalink: "colophon/post/{{ post.fields.slug }}/"
 layout: layout.html
 ---
 
+{% from 'src/_includes/stats.html' import stats %}
+
 <header class="grid | gap-x-large">
   {% breadcrumb page.url, "Post", "/colophon" %}
   <div>
@@ -17,22 +19,9 @@ layout: layout.html
       </time>
     </p>
   </div>
-  <div>
-    <h2 class="tertiary-title | gap">Statistics</h2>
-    <table class="tertiary-text">
-      <thead>
-        <th>Updated</th>
-        <th>Reading time</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ post.sys.updatedAt | formatDate }}</td>
-        </tr>
-        <tr>
-          <td>{{ post.fields.contentMarkdown | readingTime }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flow" style="--flow-space: var(--space-default)">
+    {{ stats(updatedDate = post.sys.updatedAt, readableContent = post.fields.contentMarkdown ) }}
+    <hr />
   </div>
   <hr />
 </header>
