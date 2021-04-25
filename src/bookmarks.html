@@ -8,7 +8,7 @@ title: Bookmarks
 
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
-{% set totals = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length,bookmarks[2].bookmarks.length] %}
+{% set totals = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length, bookmarks[2].bookmarks.length] %}
 {% set roundup = roundups | limit(1) %}
 
 <header id="top" class="grid | gap-x-large">
@@ -18,7 +18,8 @@ title: Bookmarks
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div class="flow" style="--flow-space: var(--space-default)">
-    {{ stats(totals, "Bookmarks", lastUpdate.fields.publishDate) }}
+    {% set total = totals | sum %}
+    {{ stats(total, "Bookmarks", lastUpdate.fields.publishDate) }}
     <ul class="horizontal | gap" data-appearance="plain">
       {{ metaLink("JSON Feed", "/api/bookmarks.json") }}
     </ul>

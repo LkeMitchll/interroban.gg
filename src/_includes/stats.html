@@ -4,7 +4,11 @@
     {% if totalCount %}
       <li>
         <p class="horizontal push-apart">
-          <em>Total</em><span>{{ totalCount | length }} {{ totalSuffix }}</span>
+          {% if totalCount >= 1 %}
+            <em>Total</em><span>{{ totalCount }} {{ totalSuffix }}</span>
+          {% else %}
+            <em>Total</em><span>{{ totalCount | length }} {{ totalSuffix }}</span>
+          {% endif %}
         </p>
       </li>
     {% endif %}
