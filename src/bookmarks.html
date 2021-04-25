@@ -3,6 +3,9 @@ layout: layout.html
 title: Bookmarks
 ---
 
+{% from 'src/_includes/stats.html' import stats %}
+{% from 'src/_includes/metaLink.html' import metaLink %}
+
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
 {% set totals = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length,bookmarks[2].bookmarks.length] %}
@@ -15,51 +18,14 @@ title: Bookmarks
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div class="flow" style="--flow-space: var(--space-default)">
-    <h2 class="tertiary-title | gap">Statistics</h2>
-    <table class="tertiary-text | gap-large">
-      <thead>
-        <th>Total</th>
-        <th>Updated</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ totals | sum }} Bookmarks</td>
-          <td>{{ lastUpdate.fields.publishDate | formatDate }}</td>
-        </tr>
-      </tbody>
-    </table>
+    {{ stats(totals, "Bookmarks", lastUpdate.fields.publishDate) }}
     <ul class="horizontal | gap" data-appearance="plain">
-      <li>
-        <span class="tertiary-text | pad-r-small">&rarr;</span>
-        <a href="/api/bookmarks.json"
-            target="_blank"
-            referrer="noreferrer"
-            class="link"
-        >
-          JSON Feed
-        </a>
-      </li>
+      {{ metaLink("JSON Feed", "/api/bookmarks.json") }}
     </ul>
     <hr />
   </div>
-  <nav class="toc | tertiary-text">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="gap" data-appearance="plain">
-      <li class="horizontal">
-        <p>1.</p>
-        <hr class="grow">
-        <a class="link" href="#faves">Favourites</a>
-      </li>
-      {% for timePeriod in bookmarks %}
-        <li class="horizontal">
-          <p>{{ loop.index + 1 }}.</p>
-          <hr class="grow">
-          <a class="link" href="#{{ timePeriod.title | lower }}">{{ timePeriod.title }}</a>
-        </li>
-      {% endfor %}
-    </ol>
-    <hr />
-  </nav>
+  {% set toc = ["Favourites", "2021", "2020", "Archive"] %}
+  {% include "src/_includes/toc.html" %}
 </header>
 
 <article class="grid | gap-x-large">
@@ -70,7 +36,7 @@ title: Bookmarks
     <h3 class="subtitle | gap-small">{{ roundup.fields.title }}</h3>
     <a href="#top" class="link">Back to top</a>
   </div>
-  <section id="faves">
+  <section id="favourites">
     {% set favouriteBookmarks = roundup.fields.links %}
     {% include "src/_includes/favouriteBookmarks.html" %}
   </section>

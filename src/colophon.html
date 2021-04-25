@@ -3,6 +3,8 @@ layout: layout.html
 title: Colophon
 ---
 
+{% from 'src/_includes/stats.html' import stats %}
+
 {% set content = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
 {% set posts = metaPosts %}
 
@@ -12,40 +14,12 @@ title: Colophon
     <h2>{{ content.fields.title }}</h2>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div>
-    <h2 class="tertiary-title | gap">Statistics</h2>
-    <table class="tertiary-text | gap-large">
-      <thead>
-        <th>Total</th>
-        <th>Updated</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ metaPosts | length }} Posts</td>
-        </tr>
-        <tr>
-          <td>{{ content.sys.updatedAt | formatDate }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flow" style="--flow-space: var(--space-default)">
+    {{ stats(metaPosts, "Posts", content.sys.updatedAt) }}
     <hr />
   </div>
-  <nav class="toc | push-down | tertiary-text">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="gap-large" data-appearance="plain">
-      <li class="horizontal">
-        <p>1.</p>
-        <hr class="grow">
-        <a class="link" href="#updates">Recent Updates</a>
-      </li>
-      <li class="horizontal">
-        <p>2.</p>
-        <hr class="grow">
-        <a class="link" href="#notes">Notes</a>
-      </li>
-    </ol>
-    <hr />
-  </nav>
+  {% set toc = ["Updates", "Notes"] %}
+  {% include "src/_includes/toc.html" %}
 </header>
 
 <article class="grid | gap-xx-large">

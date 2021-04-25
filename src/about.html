@@ -3,6 +3,9 @@ layout: layout.html
 title: About Me
 ---
 
+{% from 'src/_includes/stats.html' import stats %}
+{% from 'src/_includes/metaLink.html' import metaLink %}
+
 {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
 {% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
 {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
@@ -14,71 +17,15 @@ title: About Me
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div class="flow" style="--flow-space: var(--space-default)">
-    <h2 class="tertiary-title">Statistics</h2>
-    <table class="tertiary-text | gap-large">
-      <thead>
-        <th>Updated</th>
-        <th>Reading time</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ content.sys.updatedAt | formatDate }}</td>
-        </tr>
-        <tr>
-          <td>{{ content.fields.contentMarkdown | readingTime }}</td>
-        </tr>
-      </tbody>
-    </table>
+    {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
     <ul class="horizontal" data-appearance="plain">
-      <li>
-        <span class="tertiary-text | pad-r-small">&rarr;</span>
-        <a href="mailto:luke@interroban.gg"
-           target="_blank"
-           referrer="noreferrer"
-           class="link"
-        >
-           Email
-        </a>
-      </li>
-      <li>
-        <span class="tertiary-text | pad-r-small">&rarr;</span>
-        <a href="https://twitter.com/lkemitchll"
-           target="_blank"
-           referrer="noreferrer"
-           class="link"
-        >
-           Twitter
-        </a>
-      </li>
+      {{ metaLink("Email", "mailto:luke@interroban.gg", external = false) }}
+      {{ metaLink("Twitter", "https://twitter.com/lkemitchll") }}
     </ul>
     <hr />
   </div>
-  <nav class="toc | tertiary-text">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="gap" data-appearance="plain">
-      <li class="horizontal">
-        <p>1.</p>
-        <hr class="grow" />
-        <a class="link" href="#history">History</a>
-      </li>
-      <li class="horizontal">
-        <p>2.</p>
-        <hr class="grow" />
-        <a class="link" href="#experience">Experience</a>
-      </li>
-      <li class="horizontal">
-        <p>3.</p>
-        <hr class="grow" />
-        <a class="link" href="#clients">Clients</a>
-      </li>
-      <li class="horizontal">
-        <p>4.</p>
-        <hr class="grow" />
-        <a class="link" href="#skills">Skills</a>
-      </li>
-    </ol>
-    <hr />
-  </nav>
+  {% set toc = ["History", "Experience", "Clients", "Skills"] %}
+  {% include "src/_includes/toc.html" %}
 </header>
 
 <article class="grid reversed | gap-x-large">

@@ -3,6 +3,8 @@ layout: layout.html
 title: Uses
 ---
 
+{% from 'src/_includes/stats.html' import stats %}
+
 {% set deskImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
 {% set macImage = assets | findByID("4tfwXMS2ViqOr2nrmxNrJ4") %}
 {% set content = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
@@ -13,40 +15,12 @@ title: Uses
     <h2>{{ content.fields.title }}</h2>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div>
-    <h2 class="tertiary-title | gap">Statistics</h2>
-    <table class="tertiary-text | push-down">
-      <thead>
-        <th>Updated</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ content.sys.updatedAt | formatDate }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flow" style="--flow-space: var(--space-default)">
+    {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
+    <hr>
   </div>
-  <nav class="toc | tertiary-text">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="gap-large" data-appearance="plain">
-      <li class="horizontal">
-        <p>1.</p>
-        <hr class="grow">
-        <a class="link" href="#design">Design</a>
-      </li>
-      <li class="horizontal">
-        <p>2.</p>
-        <hr class="grow">
-        <a class="link" href="#development">Development</a>
-      </li>
-      <li class="horizontal">
-        <p>3.</p>
-        <hr class="grow">
-        <a class="link" href="#general">General</a>
-      </li>
-    </ol>
-    <hr />
-  </nav>
+  {% set toc = ["Design", "Development", "General"] %}
+  {% include "src/_includes/toc.html" %}
 </header>
 
 <article class="grid fifty-fifty | gap-x-large">

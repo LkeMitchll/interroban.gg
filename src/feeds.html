@@ -3,6 +3,7 @@ layout: layout.html
 title: Feeds
 ---
 
+{% from 'src/_includes/stats.html' import stats %}
 {% set content = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
 
 <header class="grid | gap-x-large">
@@ -11,20 +12,9 @@ title: Feeds
     <h2>{{ content.fields.title }}</h2>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div class="toc | tertiary-text">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    <table class="tertiary-text">
-      <thead>
-        <th>Total</th>
-        <th>Updated</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ feeds | length }} Subscriptions</td>
-          <td>{{ feeds[0].created_at | formatDate }}</td>
-        </tr>
-      </tbody>
-  </table>
+  <div class="flow" style="--flow-space: var(--space-default)">
+    {{ stats(feeds, "Subscriptions", feeds[0].created_at) }}
+    <hr>
   </div>
   <hr/>
 </header>
