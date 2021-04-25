@@ -33,9 +33,9 @@ title: Bookmarks
   <header style="--position: 2">
     <h2 class="title | gap-small">Favourites</h2>
   </header>
-  <div class="tab">
-    <h3 class="subtitle | gap-small">{{ roundup.fields.title }}</h3>
-    <a href="#top" class="link">Back to top</a>
+  <div class="tab" data-appearance="unsticky">
+    <h3 class="subtitle">{{ roundup.fields.title }}</h3>
+    <a href="#top" class="link | push-right">Back to top</a>
   </div>
   <section id="favourites">
     {% set favouriteBookmarks = roundup.fields.links %}
@@ -50,7 +50,7 @@ title: Bookmarks
   {% for timePeriod in bookmarks %}
     {% set bookmarks = timePeriod.bookmarks %}
     <div class="tab">
-      <h3 id="{{ timePeriod.title | lower }}" class="subtitle | gap-small">
+      <h3 id="{{ timePeriod.title | lower }}" class="subtitle">
         {{ timePeriod.title }}
       </h3>
       <p class="tertiary-text"><em>Total</em>: {{ timePeriod.total }}</p>

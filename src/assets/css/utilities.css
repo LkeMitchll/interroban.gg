@@ -32,6 +32,10 @@
   margin-top: auto;
 }
 
+.push-right {
+  margin-left: auto;
+}
+
 .push-apart {
   justify-content: space-between;
 }
