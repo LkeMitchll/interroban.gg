@@ -11,6 +11,10 @@
   margin-left: -0.5rem;
 }
 
+.bookmark-header {
+  display: none;
+}
+
 @media (max-width: 800px) {
   .bookmark .flush-right {
     text-align: left;
