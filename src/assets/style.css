@@ -4,9 +4,7 @@
 @import "css/base/typography.css";
 
 @import "css/compositions/grid.css";
-@import "css/compositions/reversed.css";
 @import "css/compositions/columns.css";
-@import "css/compositions/fifty-fifty.css";
 
 @import "css/blocks/header.css";
 @import "css/blocks/link.css";
@@ -18,5 +16,8 @@
 @import "css/blocks/toc.css";
 @import "css/blocks/tab.css";
 @import "css/blocks/stats.css";
+@import "css/blocks/arrow-link.css";
+@import "css/blocks/bookmark.css";
+@import "css/blocks/masonry.css";
 
 @import "css/utilities.css";

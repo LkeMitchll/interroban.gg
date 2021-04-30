@@ -4,9 +4,11 @@
   --color-faded: hsla(115, 13%, 11%, 0.2);
   --color-x-faded: hsla(115, 13%, 11%, 0.05);
   --color-bg: hsla(84, 100%, 99%, 1);
+  --color-highlight: blueviolet;
   --space-tiny: 0.25rem;
   --space-small: 0.5rem;
   --space-default: 1rem;
+  --space-medium: 1.5rem;
   --space-large: 2rem;
   --space-x-large: 3rem;
   --space-xx-large: 6rem;
@@ -36,5 +38,6 @@
     --color-faded: hsla(36, 13%, 63%, 0.5);
     --color-x-faded: hsla(36, 13%, 63%, 0.05);
     --color-bg: hsla(173, 20%, 12%, 1);
+    --color-highlight: yellowgreen;
   }
 }

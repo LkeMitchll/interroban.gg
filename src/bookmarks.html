@@ -11,51 +11,33 @@ title: Bookmarks
 {% set totals = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length, bookmarks[2].bookmarks.length] %}
 {% set roundup = roundups | limit(1) %}
 
-<header id="top" class="grid | gap-x-large">
-  {% breadcrumb page.filePathStem, "Bookmarks" %}
+<header id="top" class="grid | gap-xx-large">
+  <h1 class="headline">{{ content.fields.title }}</h1>
   <div class="measure flow | gap">
-    <h1>{{ content.fields.title }}</h1>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="flow" style="--flow-space: var(--space-default)">
+  <div class="grid columns" style="--flow-space: var(--space-default)">
     {% set total = totals | sum %}
     {{ stats(total, "Bookmarks", lastUpdate.fields.publishDate) }}
-    <ul class="horizontal | gap" data-appearance="plain">
+    <ul data-appearance="plain">
       {{ metaLink("JSON Feed", "/api/bookmarks.json") }}
+      {{ metaLink("Suggest a bookmark", "mailto:luke@interroban.gg?subject=Bookmark%20suggestion", false) }}
     </ul>
-    <hr />
   </div>
-  {% set toc = ["Favourites", "2021", "2020", "Archive"] %}
-  {% include "src/_includes/toc.html" %}
 </header>
 
-<article class="grid | gap-x-large">
-  <header style="--position: 2">
-    <h2 class="title | gap-small">Favourites</h2>
-  </header>
-  <div class="tab" data-appearance="unsticky">
+{% set toc = ["Favourites", "2021", "2020", "Archive"] %}
+{% include "src/_includes/toc.html" %}
+
+<article id="favourites" class="grid | gap-x-large">
+  <h2 class="title | gap-small">Favourites</h2>
+  <section>
     <h3 class="subtitle">{{ roundup.fields.title }}</h3>
-    <a href="#top" class="link | push-right">Back to top</a>
-  </div>
-  <section id="favourites">
     {% set favouriteBookmarks = roundup.fields.links %}
     {% include "src/_includes/favouriteBookmarks.html" %}
   </section>
 </article>
 
-<article class="grid | gap-xx-large">
-  <header style="--position: 2">
-    <h2 class="title | gap-small">Bookmarks</h2>
-  </header>
-  {% for timePeriod in bookmarks %}
-    {% set bookmarks = timePeriod.bookmarks %}
-    <div class="tab">
-      <h3 id="{{ timePeriod.title | lower }}" class="subtitle">
-        {{ timePeriod.title }}
-      </h3>
-      <p class="tertiary-text"><em>Total</em>: {{ timePeriod.total }}</p>
-      <a href="#top" class="link">Back to top</a>
-    </div>
-    {% include "src/_includes/bookmarks.html" %}
-  {% endfor %}
+<article class="grid | gap-xx-large" style="--row-gap: var(--space-small)">
+  {% include "src/_includes/bookmark-table.html" %}
 </article>

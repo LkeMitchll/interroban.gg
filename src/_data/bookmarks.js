@@ -32,6 +32,19 @@ async function bookmarks(limit) {
     })
     .then((result) => result.items);
 
+  function numberEntries(entries, offset) {
+    entries.reverse().forEach((entry, i) => {
+      const bookmark = entry;
+      bookmark.fields.number = i + 1 + offset;
+    });
+    entries.reverse();
+    return entries;
+  }
+
+  numberEntries(thisYear, lastYear.length + archive.length);
+  numberEntries(lastYear, archive.length);
+  numberEntries(archive, 0);
+
   return [
     {
       title: "2021",

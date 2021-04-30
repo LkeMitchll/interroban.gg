@@ -1,9 +1,8 @@
 {% macro stats(totalCount, totalSuffix, updatedDate, readableContent) %}
-  <h2 class="tertiary-title">Statistics</h2>
-  <ul class="stats | tertiary-text | gap-large" data-appearance="plain">
+  <ul class="stats | tertiary-text" data-appearance="plain">
     {% if totalCount %}
       <li>
-        <p class="horizontal push-apart">
+        <p class="horizontal">
           {% if totalCount >= 1 %}
             <em>Total</em><span>{{ totalCount }} {{ totalSuffix }}</span>
           {% else %}
@@ -14,14 +13,14 @@
     {% endif %}
     {% if updatedDate %}
       <li>
-        <p class="horizontal push-apart">
+        <p class="horizontal">
           <em>Updated</em><span>{{ updatedDate | formatDate }}</span>
         </p>
       </li>
     {% endif %}
     {% if readableContent %}
       <li>
-        <p class="horizontal push-apart">
+        <p class="horizontal">
           <em>Reading time</em><span>{{ readableContent | readingTime }}</span>
         </p>
       </li>

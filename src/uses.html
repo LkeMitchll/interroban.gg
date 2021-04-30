@@ -10,20 +10,19 @@ title: Uses
 {% set content = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
 
 <header class="grid | hero | gap-x-large">
-  {% breadcrumb page.filePathStem, "Uses" %}
+  <h1 class="headline">{{ content.fields.title }}</h1>
   <section class="measure | gap">
-    <h2>{{ content.fields.title }}</h2>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
   <div class="flow" style="--flow-space: var(--space-default)">
     {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
-    <hr>
   </div>
-  {% set toc = ["Design", "Development", "General"] %}
-  {% include "src/_includes/toc.html" %}
 </header>
 
-<article class="grid fifty-fifty | gap-x-large">
+{% set toc = ["Design", "Development", "General"] %}
+{% include "src/_includes/toc.html" %}
+
+<article class="grid columns | gap-x-large" style="--cols: 2">
   <section class="flow">
     {% responsiveImage deskImage, "half" %}
     <p class="measure | leading-crushed">
@@ -43,7 +42,7 @@ title: Uses
 </article>
 
 <article class="grid | gap-xx-large">
-  <section class="markdown | measure flow" style="--position: 2">
+  <section class="markdown | measure flow">
     {% renderMarkdown content.fields.contentMarkdown %}
   </section>
 </article>

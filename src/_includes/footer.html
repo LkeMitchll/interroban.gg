@@ -1,0 +1,27 @@
+<footer class="grid columns | gap-x-large">
+  <div>
+    <p class="subtitle | small-text gap-small">
+      Luke Mitchell &mdash;<br />
+      Product Designer
+    </p>
+    <ul data-appearance="plain">
+      {% for page in navigation.routes[0].pages %}
+        <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
+  {% for category in footerCategories %}
+  <div class="push-down">
+    <p class="subtitle | gap-small">{{ category.name }}</p>
+    <ul data-appearance="plain">
+      {% for page in category.pages %}
+        <li><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+  <div>
+    <p class="tertiary-text"><small>&copy; 2021, Luke Mitchell</small></p>
+  </div>
+</footer>

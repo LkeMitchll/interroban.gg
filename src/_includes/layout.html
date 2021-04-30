@@ -2,135 +2,37 @@
 description: "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer."
 ---
 
+{% set pageTitle = post.fields.title if post.fields.title else title %}
+{% set pageDescription = post.fields.description if post.fields.description else description %}
+{% set fonts = ["GT-America-Extended-Medium", "Blanco-Regular", "Blanco-Medium", "Blanco-Italic", "pitch-web-semibold", "pitch-web-semibold-italic"] %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      content="Luke Mitchell | {{ post.fields.title if post.fields.title else title }}"
-      name="title"
-    />
-    <meta
-      content="Luke Mitchell | {{ post.fields.title if post.fields.title else title }}"
-      name="twitter:title"
-    />
-    <meta
-      content="{{ post.fields.description if post.fields.description else description }}"
-      name="description"
-    />
-    <meta
-      content="{{ post.fields.description if post.fields.description else description }}"
-      name="twitter:description"
-    />
-    <meta
-      content="{{ post.fields.description if post.fields.description else description }}"
-      property="og:description"
-    />
+    <meta content="Luke Mitchell | {{ pageTitle }}" name="title" />
+    <meta content="Luke Mitchell | {{ pageTitle }}" name="twitter:title" />
+    <meta content="{{ pageDescription }}" name="description" />
+    <meta content="{{ pageDescription }}" name="twitter:description" />
+    <meta content="{{ pageDescription }}" property="og:description" />
     <meta content="en" property="og:locale" />
-    <title>
-      Luke Mitchell | {{ post.fields.title if post.fields.title else title }}
-    </title>
+    <title>Luke Mitchell | {{ pageTitle }}</title>
     <link href="/assets/images/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link
-      rel="preload"
-      href="/assets/fonts/GT-America-Extended-Medium.subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin=""
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/Blanco-Regular.subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin=""
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/Blanco-Medium.subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin=""
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/Blanco-Italic.subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin=""
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/pitch-web-semibold.subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin=""
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/pitch-web-semibold-italic.subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin=""
-    />
+    {% for font in fonts %}
+      <link rel="preload" href="/assets/fonts/{{ font }}.subset.woff2" as="font" type="font/woff2" crossorigin="" />
+    {% endfor %}
     <link rel="preconnect" href="https://images.ctfassets.net" />
     <link rel="stylesheet" href="/assets/style.css" />
     {% if alpine %}
-    <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
-      defer
-    ></script>
+      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
     {% endif %}
   </head>
   <body>
-    <nav class="grid | header | gap-xx-large">
-      <a
-        href="/"
-        class="headline | lh-crushed"
-        aria-label="Go to home page"
-      >
-        Luke Mitchell<br />Product Designer
-      </a>
-      <ul class="horizontal" data-space="large" data-appearance="plain">
-        {% for page in navigation.routes[0].pages %}
-          <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-
+    {% include "src/_includes/nav.html" %}
     <main>
       {{ content | safe }}
     </main>
-
-    <footer class="grid | gap-x-large">
-      <div>
-        <p class="subtitle | small-text gap-small">
-          Luke Mitchell &mdash;<br />
-          Product Designer
-        </p>
-        <ul data-appearance="plain">
-          {% for page in navigation.routes[0].pages %}
-            <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="grid | columns" style="--cols: 3">
-        {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
-        {% for category in footerCategories %}
-        <div class="push-down">
-          <p class="subtitle | gap-small">{{ category.name }}</p>
-          <ul data-appearance="plain">
-            {% for page in category.pages %}
-              <li><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
-      </div>
-      <div>
-        <p class="tertiary-text"><small>&copy; 2021, Luke Mitchell</small></p>
-      </div>
-    </footer>
+    {% include "src/_includes/footer.html" %}
   </body>
 </html>

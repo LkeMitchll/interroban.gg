@@ -1,0 +1,10 @@
+<nav class="grid | header | gap-xx-large">
+  <a href="/" class="headline | lh-crushed" aria-label="Go to home page">
+    Luke Mitchell<br />Product Designer
+  </a>
+  <ul class="horizontal" data-space="large" data-appearance="plain">
+    {% for page in navigation.routes[0].pages %}
+      <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

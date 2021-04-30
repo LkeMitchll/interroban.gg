@@ -10,24 +10,14 @@ layout: layout.html
 {% from 'src/_includes/stats.html' import stats %}
 
 <header class="grid | gap-x-large">
-  {% breadcrumb page.url, "Post", "/journal" %}
-  <div>
-    <h1 class="headline | measure | gap-small">{{ post.fields.title }}</h1>
-    <p class="color-secondary">
-      <time datetime="{{ post.fields.date }}">
-      {{ post.fields.date | formatDate("long") }}
-      </time>
-    </p>
-  </div>
+  <h1 class="headline | measure | gap-small">{{ post.fields.title }}</h1>
   <div class="flow" style="--flow-space: var(--space-default)">
     {{ stats(updatedDate = post.sys.updatedAt, readableContent = post.fields.contentMarkdown ) }}
-    <hr />
   </div>
-  <hr />
 </header>
 
 <article class="grid | gap-xx-large">
-  <section class="markdown | measure flow" style="--position: 2">
+  <section class="markdown | measure flow">
     {% renderMarkdown post.fields.contentMarkdown %}
   </section>
 </article>

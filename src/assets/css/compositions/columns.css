@@ -6,4 +6,8 @@
   .columns * {
     grid-column: auto;
   }
+
+  .occupy-3 {
+    grid-column: 1 / 4;
+  }
 }

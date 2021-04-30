@@ -8,46 +8,63 @@ alpine: true
 {% from 'src/_includes/metaLink.html' import metaLink %}
 
 {% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
+{% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
+{% set scrapbook = savee | limit(50) %}
 
-<header class="grid | gap-x-large">
-  {% breadcrumb page.filePathStem, "Journal" %}
+<header class="grid | gap-xx-large">
+  <h1 class="headline">{{ content.fields.title }}</h1>
   <div class="measure flow | gap" style="--flow-space: var(--space-default)">
-    <h1>{{ content.fields.title }}</h1>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="flow" style="--flow-space: var(--space-default)">
+  <div class="grid columns" style="--flow-space: var(--space-default)">
     {{ stats(posts, "Posts", now.sys.updatedAt) }}
-    <ul class="horizontal" data-appearance="plain">
+    <ul data-appearance="plain">
       {{ metaLink("RSS Feed", "/rss.xml", external = false) }}
       {{ metaLink("JSON Feed", "/api/posts.json") }}
     </ul>
-    <hr />
   </div>
-  {% set toc = ["Now", "Posts", "Listening", "Reading"] %}
-  {% include "src/_includes/toc.html" %}
 </header>
 
-<article class="grid | gap-xx-large">
-  <section style="--position: 2">
-    <section id="now" class="flow | gap-xx-large">
-      <h2 class="title">Now</h2>
-      <section class="markdown | measure flow">
-        {% renderMarkdown now.fields.contentMarkdown %}
-      </section>
-      <footer>
-        <time datetime="{{ now.fields.date }}">
-          Last updated &ndash;
-          {{ now.fields.date | formatDate }}
-        </time>
-      </footer>
-    </section>
+{% include "src/_includes/toc.html" %}
 
-    <section id="posts" class="gap-xx-large">
-      <h2 class="title">Posts</h2>
-      {% include "src/_includes/posts.html" %}
+<article class="grid | gap-x-large">
+  <section id="now" class="flow | gap-x-large">
+    <h2 class="title">Now</h2>
+    <section class="markdown | measure flow">
+      {% renderMarkdown now.fields.contentMarkdown %}
     </section>
-
-    {% include "src/_includes/listening.html" %}
-    {% include "src/_includes/reading.html" %}
+    <footer>
+      <time datetime="{{ now.fields.date }}">
+        Last updated &ndash; {{ now.fields.date | formatDate }}
+      </time>
+    </footer>
   </section>
+
+  <section id="posts" class="gap-x-large">
+    <h2 class="title">Posts</h2>
+    {% include "src/_includes/posts.html" %}
+  </section>
+
+  {% include "src/_includes/listening.html" %}
+  {% include "src/_includes/reading.html" %}
 </article>
+
+<div class="grid | gap-xx-large">
+  <header>
+    <h2 id="scrapbook" class="title">Scrapbook</h2>
+    <p class="measure gap">
+      This is the last 50 images that have caught my eye. I collect them using
+      <a href="https://savee.it/interrobang/">Savee</a>, a Pinterest
+      alternative.
+    </p>
+    <p class="measure leading-crushed">
+      <small>
+        <strong class="small-caps | pad-r-small">Note</strong>
+        Each image is copyright of its respective owner. Reasonable effort has
+        been made to retain the source information, although this has not always
+        been possible. Clicking an image will open it's source (if known).
+      </small>
+    </p>
+  </header>
+  {% include "src/_includes/scrapbook.html" %}
+</div>

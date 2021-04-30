@@ -26,6 +26,10 @@ h6,
   margin: 0 0 var(--space-large);
 }
 
+.headline {
+  margin-bottom: 0;
+}
+
 .title {
   font-size: var(--text-size-default);
 }
@@ -115,8 +119,12 @@ pre {
 }
 
 pre code {
-  padding: 0;
   background-color: transparent;
+  tab-size: 2;
+}
+
+* + pre {
+  padding: var(--space-default);
 }
 
 hr {

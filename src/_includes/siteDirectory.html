@@ -1,31 +1,33 @@
 <h2 class="tertiary-title | gap color-secondary">Site Index</h2>
 
-{% for category in navigation.routes %}
-  <details class="accordian | tertiary-text" data-numbered {% if loop.index <= 1 %}open{% endif %}>
-  <summary class="gap">{{ loop.index }}. {{ category.name }}</summary>
-    <ol class="flow | gap" data-appearance="plain">
-      {% for page in category.pages %}
-        <li class="horizontal">
-          <a class="link" href="{{ page.url }}">{{ page.name }}</a>
-          <hr class="grow" />
-          <p class="color-secondary">{{ page.description }}</p>
-        </li>
-      {% endfor %}
-    </ol>
-  </details>
-{% endfor %}
+<div class="flow" style="--flow-space: var(--space-medium)">
+  {% for category in navigation.routes %}
+    <details class="accordian | tertiary-text" data-numbered {% if loop.index <= 1 %}open{% endif %}>
+    <summary class="gap">{{ loop.index }}. {{ category.name }}</summary>
+      <ol class="flow | gap" data-appearance="plain">
+        {% for page in category.pages %}
+          <li class="horizontal">
+            <a class="link" href="{{ page.url }}">{{ page.name }}</a>
+            <hr class="grow" />
+            <p class="color-secondary">{{ page.description }}</p>
+          </li>
+        {% endfor %}
+      </ol>
+    </details>
+  {% endfor %}
 
-{% for category in [navigation.contact, navigation.elsewhere] %}
-  <details class="accordian | tertiary-text" data-numbered>
-  <summary class="gap">{{ loop.index }}. {{ category.name }}</summary>
-    <ol class="horizontal | gap" data-appearance="plain">
-      {% for page in category.pages %}
-        <li class="horizontal">
-          <a class="link" href="{{ page.url }}" target="_blank" rel="noreferrer">
-            {{ page.name }}
-          </a>
-        </li>
-      {% endfor %}
-    </ol>
-  </details>
-{% endfor %}
+  {% for category in [navigation.contact, navigation.elsewhere] %}
+    <details class="accordian | tertiary-text" data-numbered>
+    <summary class="gap">{{ loop.index + 2 }}. {{ category.name }}</summary>
+      <ol class="horizontal | gap" data-appearance="plain">
+        {% for page in category.pages %}
+          <li class="horizontal">
+            <a class="link" href="{{ page.url }}" target="_blank" rel="noreferrer">
+              {{ page.name }}
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    </details>
+  {% endfor %}
+</div>

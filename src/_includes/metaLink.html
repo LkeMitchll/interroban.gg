@@ -1,6 +1,6 @@
 {% macro metaLink(text, url, external = true) %}
-  <li>
-    <span class="tertiary-text | pad-r-small">&rarr;</span>
+  <li class="arrow-link | tertiary-text">
+    <span class="pad-r-small">&rarr;</span>
     {% if external == true %}
       <a href="{{ url }}" target="_blank" referrer="noreferrer" class="link">
         {{ text }}

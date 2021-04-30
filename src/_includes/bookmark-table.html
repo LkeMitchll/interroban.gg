@@ -1,0 +1,46 @@
+<h2 class="title | gap-small">Bookmarks</h2>
+{% for timePeriod in bookmarks %} 
+  {% set bookmarks = timePeriod.bookmarks %}
+  <div class="tab">
+    <h3 id="{{ timePeriod.title | lower }}" class="tertiary-title">
+      {{ timePeriod.title }}
+    </h3>
+    <p class="tertiary-text | flush-right">
+      <em>Total</em>: {{ timePeriod.total }}
+    </p>
+    <div class="tertiary-text | flush-right">
+      <a href="#top" class="link">Back to top</a>
+    </div>
+  </div>
+  <div class="bookmark-header | tertiary-text | gap">
+    <p>ID</p>
+    <p>Link</p>
+    <p class="centered">Favourite?</p>
+    <p class="flush-right">Date</p>
+    <p class="flush-right">Type</p>
+  </div>
+  <ul data-appearance="plain">
+    {% for bookmark in bookmarks %}
+      <li class="bookmark | flow">
+        <p class="tertiary-text color-secondary" aria-label="Number {{ bookmark.fields.number }}">
+          N&ordm;{{ bookmark.fields.number }}
+        </p>
+        <a href="{{ bookmark.fields.url }}" target="_blank" rel="noreferrer">
+          {{ bookmark.fields.title }}
+        </a>
+        {% if bookmark.fields.notes %}
+          <p class="bookmark-dot">&bullet;</p>
+        {% else %}
+          <p class="bookmark-dot">&cir;</p>
+        {% endif %}
+        <p class="color-secondary tertiary-text flush-right">
+          <em>{{ bookmark.sys.createdAt | formatDate }}</em>
+        </p>
+        <p class="color-secondary tertiary-text flush-right">
+          <span class="visually-hidden">Type:</span>
+          <em class="bookmark-tag">{{ bookmark.fields.tag }}</em>
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}

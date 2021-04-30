@@ -7,20 +7,18 @@ title: Feeds
 {% set content = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
 
 <header class="grid | gap-x-large">
-  {% breadcrumb page.filePathStem, "Feeds" %}
+  <h1 class="headline">{{ content.fields.title }}</h1>
   <section class="measure">
-    <h2>{{ content.fields.title }}</h2>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
   <div class="flow" style="--flow-space: var(--space-default)">
     {{ stats(feeds, "Subscriptions", feeds[0].created_at) }}
-    <hr>
   </div>
   <hr/>
 </header>
 
 <article class="grid | gap-xx-large">
-  <ul class="grid columns" style="--position: 2; --cols: 2" data-appearance="plain">
+  <ul class="grid columns" style="--cols: 3" data-appearance="plain">
     {% for feed in feeds %}
     <li>
       <a href="{{ feed.site_url }}"

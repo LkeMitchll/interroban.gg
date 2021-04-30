@@ -8,22 +8,21 @@ title: Colophon
 {% set content = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
 {% set posts = metaPosts %}
 
-<header class="grid | gap-xx-large">
-  {% breadcrumb page.filePathStem, "Colophon" %}
+<header class="grid | gap-x-large">
+  <h1 class="headline">{{ content.fields.title }}</h1>
   <section class="measure | gap">
-    <h2>{{ content.fields.title }}</h2>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
   <div class="flow" style="--flow-space: var(--space-default)">
     {{ stats(metaPosts, "Posts", content.sys.updatedAt) }}
-    <hr />
   </div>
-  {% set toc = ["Updates", "Notes"] %}
-  {% include "src/_includes/toc.html" %}
 </header>
 
+{% set toc = ["Updates", "Notes"] %}
+{% include "src/_includes/toc.html" %}
+
 <article class="grid | gap-xx-large">
-  <section style="--position: 2">
+  <section>
     <div id="updates" class="gap-large">
       <h2 class="title">Updates</h2>
       {% set postParent = '/colophon' %}

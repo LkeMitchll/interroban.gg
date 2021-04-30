@@ -12,7 +12,7 @@ const customFootnotes = () => {
 
       const identifier = {
         type: "strong",
-        children: [{ type: "text", value: `${node.identifier} ` }],
+        children: [{ type: "text", value: `Nº${node.identifier} ` }],
       };
       const backlink = {
         type: "link",

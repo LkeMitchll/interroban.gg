@@ -111,6 +111,14 @@
   font-size: var(--text-size-small);
 }
 
+.flush-right {
+  text-align: right;
+}
+
+.centered {
+  text-align: center;
+}
+
 /* u: Visibility */
 
 .visually-hidden {

@@ -2,7 +2,7 @@
   --flow-space: var(--space-small);
   --gap: var(--space-default);
 
-  max-width: 70ch;
+  max-width: 65ch;
   display: flex;
   flex-direction: column;
 }

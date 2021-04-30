@@ -1,0 +1,8 @@
+.masonry {
+  columns: var(--cols, 4);
+  column-gap: var(--space-default);
+}
+
+.masonry * {
+  margin: 0 0 var(--space-default);
+}

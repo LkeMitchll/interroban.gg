@@ -7,7 +7,6 @@ import date from "./src/filters/date";
 import JsonStringify from "./src/filters/json";
 import markdown from "./src/shortcodes/markdown";
 import responsiveImage from "./src/shortcodes/responsiveImage";
-import breadcrumb from './src/shortcodes/breadcrumb';
 
 config();
 
@@ -26,7 +25,6 @@ const siteConfig = (eleventyConfig) => {
 
   eleventyConfig.addShortcode("renderMarkdown", markdown);
   eleventyConfig.addShortcode("responsiveImage", responsiveImage);
-  eleventyConfig.addShortcode("breadcrumb", breadcrumb);
 
   return {
     htmlTemplateEngine: "njk",

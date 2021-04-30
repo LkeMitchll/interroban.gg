@@ -1,5 +1,7 @@
 .tab {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-sizing: border-box;
   position: sticky;
   top: 0;
   padding: var(--space-default) 0;
@@ -8,32 +10,13 @@
   border-bottom: var(--border-default);
 }
 
-.tab[data-appearance="unsticky"] {
-  position: static;
+@media (min-width: 800px) {
+  .tab {
+    grid-template-columns: 4fr 1fr 1fr;
+    height: 60px;
+  }
 }
 
 .tab h3 {
   margin-bottom: 0;
-}
-
-.tab p {
-  margin: 0 var(--space-large) 0 auto;
-}
-
-@media (min-width: 800px) {
-  .tab {
-    text-align: right;
-    padding-right: var(--space-default);
-    border-right: var(--border-default);
-    display: block;
-    border-bottom: 0;
-  }
-
-  .tab h3 {
-    margin-bottom: var(--space-small);
-  }
-
-  .tab p {
-    margin: auto;
-  }
 }

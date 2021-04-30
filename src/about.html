@@ -11,40 +11,42 @@ title: About Me
 {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
 
 <header class="grid | gap-x-large">
-  {% breadcrumb page.filePathStem, "About" %}
+  <h1 class="headline">{{ content.fields.title }}</h1>
   <div class="measure">
-    <h2>{{ content.fields.title }}</h2>
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="flow" style="--flow-space: var(--space-default)">
+  <div class="grid columns" style="--flow-space: var(--space-default)">
     {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
-    <ul class="horizontal" data-appearance="plain">
+    <ul data-appearance="plain">
       {{ metaLink("Email", "mailto:luke@interroban.gg", external = false) }}
       {{ metaLink("Twitter", "https://twitter.com/lkemitchll") }}
     </ul>
-    <hr />
   </div>
-  {% set toc = ["History", "Experience", "Clients", "Skills"] %}
-  {% include "src/_includes/toc.html" %}
 </header>
 
-<article class="grid reversed | gap-x-large">
-  {% responsiveImage heroImage, "threeQuarters" %}
+<article class="grid columns | gap-x-large">
+  <div class="occupy-3">
+    {% responsiveImage heroImage, "threeQuarters" %}
+  </div>
   <p class="measure | push-down leading-crushed">
     <small>
-      <strong class="small-caps | pad-r-small">Image</strong> {{ heroImage.fields.description }}
+      <strong class="small-caps | pad-r-small">Image</strong>
+      {{ heroImage.fields.description }}
     </small>
   </p>
 </article>
 
+{% set toc = ["History", "Experience", "Clients", "Skills"] %}
+{% include "src/_includes/toc.html" %}
+
 <article class="grid | gap-xx-large">
-  <section class="markdown | measure flow" style="--position: 2">
+  <section class="markdown | measure flow">
     {% renderMarkdown content.fields.contentMarkdown, assets %}
   </section>
 </article>
 
 <article class="grid | flow | gap-xx-large">
-  <header class="measure" style="--position: 2">
+  <header class="measure">
     <h2>Career</h2>
     <p>
       I&apos;ve been a designer for (almost) 10 years, gaining experience
@@ -52,7 +54,7 @@ title: About Me
       think we could work together, please get in touch.
     </p>
   </header>
-  <section class="grid columns" style="--position: 2; --cols: 3">
+  <section class="grid columns">
     <section>
       <h3 id="experience" class="subtitle">{{ experience.fields.title }}</h3>
       <ul class="flow" data-appearance="plain">

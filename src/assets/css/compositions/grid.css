@@ -1,13 +1,11 @@
 .grid {
   display: grid;
-  grid-column-gap: var(--space-large);
-  grid-row-gap: var(--space-large);
-  grid-template-columns: minmax(min(33vw, 25ch), 1fr);
+  grid-column-gap: var(--gap, var(--space-large));
+  grid-row-gap: var(--row-gap, var(--space-large));
 }
 
 @media (min-width: 800px) {
   .grid {
-    grid-template-columns: minmax(min(33vw, 25ch), 1fr) minmax(min(66vw, 30ch), 3fr);
     grid-column-gap: var(--space-x-large);
   }
 
