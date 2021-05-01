@@ -1,6 +1,6 @@
 p {
   color: var(--color-primary);
-  font-feature-settings: "ss01" on, "ss02" on;
+  font-feature-settings: "ss01" on, "ss02" on, "onum" on;
   line-height: var(--text-leading-default);
   padding: 0;
   margin: 0;
@@ -10,6 +10,10 @@ p {
   font-weight: normal;
   font-feature-settings: "smcp" 1;
   text-transform: lowercase;
+}
+
+em {
+  font-feature-settings: "salt" on, "ss01" on, "ss06" on, "ss08" on;
 }
 
 h1,
@@ -24,6 +28,11 @@ h6,
   line-height: var(--text-leading-heading);
   text-decoration: none;
   margin: 0 0 var(--space-large);
+}
+
+.headline,
+.title {
+  font-feature-settings: "case" on;
 }
 
 .headline {
