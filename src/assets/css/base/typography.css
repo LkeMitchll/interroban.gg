@@ -9,7 +9,6 @@ p {
 .small-caps {
   font-weight: normal;
   font-feature-settings: "smcp" 1;
-  text-transform: lowercase;
 }
 
 em {
