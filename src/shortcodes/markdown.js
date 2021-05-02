@@ -6,6 +6,7 @@ import footnotes from "remark-footnotes";
 import html from "remark-html";
 import all from "mdast-util-to-hast/lib/all";
 import customFootnotes from "../helpers/footnotes";
+import references from "../helpers/references";
 
 import findByID from "../filters/findByID";
 import responsiveImage from "./responsiveImage";
@@ -14,10 +15,11 @@ const renderMarkdown = (rawMarkdown, assets) => {
   let result;
   unified()
     .use(markdown)
-    .use(externalLinks)
     .use(slug)
     .use(footnotes)
     .use(customFootnotes)
+    .use(references)
+    .use(externalLinks)
     .use(html, {
       handlers: {
         sectionWithFootnotes: (h, node) => h(node, "section", all(h, node)),
