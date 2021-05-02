@@ -1,4 +1,13 @@
 {
+  "clients": [
+    "DigitalOcean",
+    "Steel Warriors",
+    "Babylon Health",
+    "Deliveroo",
+    "Which?",
+    "UK Goverment",
+    "Koru Kids"
+  ],
   "skills": [
     "Art Direction",
     "Product Design",
