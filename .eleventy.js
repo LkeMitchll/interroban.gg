@@ -16,7 +16,7 @@ const siteConfig = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
   eleventyConfig.addPassthroughCopy("./src/assets/images");
-  eleventyConfig.addWatchTarget("./src/assets/**/*.css");
+  eleventyConfig.addWatchTarget("./src/css/**/*.css");
 
   eleventyConfig.addFilter("findByID", findByID);
   eleventyConfig.addFilter("limit", limit);
