@@ -1,11 +1,14 @@
+/* base */
 @import "base/variables.css";
 @import "base/fonts.css";
 @import "base/global.css";
 @import "base/typography.css";
 
+/* compositions */
 @import "compositions/grid.css";
 @import "compositions/columns.css";
 
+/* blocks */
 @import "blocks/header.css";
 @import "blocks/link.css";
 @import "blocks/thumbnail.css";
@@ -20,4 +23,5 @@
 @import "blocks/bookmark.css";
 @import "blocks/masonry.css";
 
+/* utilities */
 @import "utilities.css";

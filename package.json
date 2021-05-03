@@ -45,7 +45,7 @@
     "dev:all": "npm-run-all -p clean dev:eleventy",
     "dev:eleventy": "ELEVENTY_ENV=development node -r esm node_modules/.bin/eleventy --serve",
     "lint": "npm-run-all -s lint:*",
-    "lint:stylelint": "stylelint ./src/assets/css",
+    "lint:stylelint": "stylelint ./src/css",
     "lint:eslint": "eslint ./src",
     "lint:html": "curlylint ./src"
   }
