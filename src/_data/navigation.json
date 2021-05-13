@@ -4,6 +4,11 @@
       "name": "General",
       "pages": [
         {
+          "name": "Work",
+          "url": "/work",
+          "description": "A bit about my process"
+        },
+        {
           "name": "About",
           "url": "/about",
           "description": "Read more about me."
