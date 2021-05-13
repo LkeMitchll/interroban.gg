@@ -1,61 +1,33 @@
 <section id="listening" class="gap-x-large">
   <h2 class="title">Listening</h2>
-  <section
-    x-data="{ totals: {}, isLoading: true }"
-    x-init="fetch('/api/music/lastweek')
-              .then(response =>  response.json())
-              .then(json => { isLoading = false; totals = json })"
-    class="gap-large"
-  >
+  <section class="gap-large">
     <p>
       Last week I listened to around
-      <p x-show="isLoading">Loading...</p>
-      <a href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A"
-          target="_blank"
-          rel="noreferrer"
-          x-show="totals.tracks"
-          x-text="`${totals.tracks} Tracks, from ${totals.albums} Albums`"
-      ></a>
+      <br>
+      <a href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A" 
+         target="_blank"
+         rel="noreferrer">
+        {{ music.lastWeek.tracks }} Tracks, from {{ music.lastWeek.albums }} Albums
+      </a>
     </p>
   </section>
 
   <h3 class="subtitle">Top tracks (this month)</h3>
-  <ol
-    x-data="{ tracks: [], isLoading: true }"
-    x-init="fetch('/api/music/top')
-              .then(response =>  response.json())
-              .then(json => { isLoading = false; tracks = json })"
-    class="flow"
-  >
-    <template x-for="i in 5">
-      <li x-show="isLoading" class="track">
-        <svg width="50" height="50" class="placeholder-image thumbnail">
-          <rect width="50" height="50" />
-        </svg>
-        <div>
-          <svg width="100" height="19" class="placeholder-text">
-            <rect width="100" height="19" />
-          </svg>
-          <svg width="70" height="19" class="placeholder-text">
-            <rect width="70" height="19" />
-          </svg>
-        </div>
-      </li>
-    </template>
-    <template x-for="track in tracks" :key="track.id">
+  <ol class="flow">
+    {% for track in music.topTracks %}
       <li class="track">
-        <img
-          x-bind:src="track.cover.url"
-          x-bind:width="track.cover.width"
-          x-bind:height="track.cover.height"
-          class="thumbnail"
-          style="display: inline-block"
-        />
+        <img src="{{ track.cover.url }}"
+             alt="Cover art for {{ track.album }} by {{ track.artist }}"
+             width="{{ track.cover.width }}"
+             height="{{ track.cover.height }}"
+             class="thumbnail">
         <div>
-          <a x-bind:href="track.url" x-text="track.title"></a>
-          <p x-text="track.artist"></p>
+          <a href="{{ track.url }}" target="_blank" rel="noreferrer noopener">
+            {{ track.title }}
+          </a>
+          <p>{{ track.artist }}</p>
         </div>
       </li>
-    </template>
+    {% endfor %}
   </ol>
 </section>
