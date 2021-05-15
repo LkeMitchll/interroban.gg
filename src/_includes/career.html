@@ -1,0 +1,42 @@
+{% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
+
+<article class="grid | flow | gap-xx-large">
+  <header class="measure">
+    <h2 class="title">Career</h2>
+    <p>
+      I&apos;ve been a designer for (almost) 10 years, gaining experience
+      working with clients of all sizes, spanning many industries. If you
+      think we could work together, please get in touch.
+    </p>
+  </header>
+  <section class="grid columns">
+    <section>
+      <h3 id="experience" class="subtitle">{{ experience.fields.title }}</h3>
+      <ul class="flow" data-appearance="plain">
+        {% for job in experience.fields.items %}
+        <li>
+          <p class="tertiary-text color-secondary">{{ job.fields.period }}</p>
+          <p>{{ job.fields.title }}</p>
+          <p><em>{{ job.fields.company }}</em></p>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h3 id="clients" class="subtitle">Clients</h3>
+      <ul class="flow" style="--flow-space: var(--space-small)" data-appearance="plain">
+        {% for client in cv.clients %}
+        <li>{{ client }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h3 id="skills" class="subtitle">Skills</h3>
+      <ul class="flow" style="--flow-space: var(--space-small)" data-appearance="plain">
+        {% for skill in cv.skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </section>
+</article>

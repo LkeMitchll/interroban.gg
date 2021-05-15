@@ -1,0 +1,103 @@
+---
+layout: layout.html
+title: Work
+---
+
+{% from 'src/_includes/stats.html' import stats %}
+
+{% set heroImage = assets | findByID("4S2Y8rEVwSFdx8sHa134bJ") %}
+{% set discoverImage = assets | findByID("67sB2MPpzeoLerzcBcm6rk") %}
+{% set content = pages | findByID("6p5ij5nnguRIkYkOFcP8kc") %}
+
+<header class="grid | gap-xx-large">
+  <h1 class="headline">{{ content.fields.title }}</h1>
+  <div class="markdown | measure flow">
+    {% renderMarkdown content.fields.descriptionMarkdown %}
+  </div>
+  <div>
+    {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
+  </div>
+</header>
+
+<article class="grid | gap-x-large">
+  <h2 class="title | gap-small">Overview</h2>
+  <section class="markdown | measure flow"> 
+    <p>
+      As a product designer my aim is to help clients to build great solutions
+      for the people that need them. This means combining user-centred design
+      with business needs to discover the real problem, define the solution,
+      iterative, test, and refine the solution.
+    </p>
+    <p>
+      Over the years I have been strongly influenced by the 
+      <a href="https://www.designcouncil.org.uk/news-opinion/what-framework-innovation-design-councils-evolved-double-diamond">'Double Diamond'</a>
+      framework, the <a href="http://theleanstartup.com/book">'Lean'</a>
+      methodology, and many other <a href="https://en.wikipedia.org/wiki/Design_thinking">design thinking</a>
+      processes to form my own framework for project success. The process is
+      anything but linear, starting out uncertain and messy, gently becoming more
+      refined and focused as time goes on.
+    </p>
+  </section>
+  <img class="bg-default" src="{{ heroImage.fields.file.url }}" alt="{{ heroImage.fields.description }}" />
+  <p class="measure | push-down leading-crushed">
+    <small>
+      <strong class="small-caps | pad-r-small">Image</strong>
+      {{ heroImage.fields.description | safe }}
+    </small>
+  </p>
+</article>
+
+<article class="grid columns | gap-xx-large">
+  <section>
+    <header>
+      <p class="tertiary-text | gap-small">01</p>
+      <h3 class="title | gap">Discover</h3>
+    </header>
+    <p class="measure | leading-crushed gap"><small>First priority: Discover the who, the what, and why or the problem. Eliminate assumptions.</small></p>
+    <a class="link" href="#discover">Read more</a>
+  </section>
+  <section>
+    <header>
+      <p class="tertiary-text | gap-small">02</p>
+      <h3 class="title | gap">Define</h3>
+    </header>
+    <p class="measure | leading-crushed gap "><small>Understand the problem, decide what success looks like, and lay a foundation to build upon.</small></p>
+    <a class="link" href="#define">Read more</a>
+  </section>
+  <section>
+    <header>
+      <p class="tertiary-text | gap-small">03</p>
+      <h3 class="title | gap">Iterate</h3>
+    </header>
+    <p class="measure | leading-crushed gap "><small>Rapidly prototype and test skeletal ideas with the people that have the problem. Repeat to improve.</small></p>
+    <a class="link" href="#iterate">Read more</a>
+  </section>
+  <section>
+    <header>
+      <p class="tertiary-text | gap-small">04</p>
+      <h3 class="title | gap">Refine</h3>
+    </header>
+    <p class="measure | leading-crushed gap "><small>Give life to the skeletons. Construct the visual design system, and progressively enhance using data.</small></p>
+    <a class="link" href="#refine">Read more</a>
+  </section>
+</article>
+
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow">
+    {% renderMarkdown content.fields.contentMarkdown, assets %}
+  </section>
+</article>
+
+<article class="grid columns | gap-x-large">
+  <div class="occupy-3">
+    {% responsiveImage discoverImage, "threeQuarters" %}
+  </div>
+  <p class="measure | push-down leading-crushed">
+    <small>
+      <strong class="small-caps | pad-r-small">Image</strong>
+      {{ discoverImage.fields.description }}
+    </small>
+  </p>
+</article>
+
+{% include "src/_includes/career.html" %}
