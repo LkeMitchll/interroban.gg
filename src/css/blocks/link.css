@@ -10,3 +10,7 @@
   border-color: var(--color-primary);
   font-style: italic;
 }
+
+.link[aria-current] {
+  font-style: italic;
+}

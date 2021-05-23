@@ -3,8 +3,13 @@
     Luke Mitchell<br />Product Designer
   </a>
   <ul class="horizontal" data-space="large" data-appearance="plain">
+    {% set currentURL = "/" + page.fileSlug %}
     {% for page in navigation.routes[0].pages %}
-      <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+      <li>
+        <a href="{{ page.url }}" class="link" {{ "aria-current='page'" if currentURL == page.url }}>
+          {{ page.name }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </nav>
