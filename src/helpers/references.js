@@ -12,33 +12,37 @@ const referenceLinks = () => {
       ordered: true,
       children: [],
     };
+    function constructLink(node) {
+      const listItem = {
+        type: "listItem",
+        children: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                value: `${node.title} `,
+              },
+              {
+                type: "link",
+                url: node.url,
+                children: [{ type: "text", value: "→" }],
+              },
+            ],
+          },
+        ],
+      };
+      links.children.push(listItem);
+    }
 
     function visitor(currentNode) {
       if (currentNode.title) {
-        const listItem = {
-          type: "listItem",
-          children: [
-            {
-              type: "paragraph",
-              children: [
-                {
-                  type: "text",
-                  value: `${currentNode.title} `,
-                },
-                {
-                  type: "link",
-                  url: currentNode.url,
-                  children: [{ type: "text", value: "→" }],
-                },
-              ],
-            },
-          ],
-        };
-        links.children.push(listItem);
+        constructLink(currentNode);
       }
     }
 
-    visit(tree, "link", visitor);
+    visit(tree, /link|definition/, visitor);
+
     if (links.children.length) {
       tree.children.push({ type: "thematicBreak" });
       tree.children.push(title);
