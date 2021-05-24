@@ -43,7 +43,13 @@
 /* u: Measure */
 
 .measure {
-  max-width: var(--text-measure);
+  max-width: calc(100vw - var(--space-default) * 2);
+}
+
+@media (min-width: 600px) {
+  .measure {
+    max-width: var(--text-measure);
+  }
 }
 
 /* u: Color */

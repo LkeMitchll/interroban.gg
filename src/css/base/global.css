@@ -9,6 +9,7 @@ body {
   color: var(--color-primary);
   font-family: var(--text-serif);
   font-feature-settings: "case" on;
+  margin: 0;
   margin-top: var(--space-large);
   padding: 0 var(--space-small);
   text-rendering: optimizeLegibility;
