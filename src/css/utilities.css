@@ -110,6 +110,10 @@
   line-height: var(--text-leading-crushed);
 }
 
+.leading-small {
+  line-height: var(--text-leading-heading);
+}
+
 /* u: Text */
 
 .tertiary-text {
@@ -127,6 +131,10 @@
 
 .centered {
   text-align: center;
+}
+
+.inline {
+  display: inline;
 }
 
 /* u: Visibility */
