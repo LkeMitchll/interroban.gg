@@ -5,7 +5,6 @@ title: Journal
 
 {% from 'src/_includes/stats.html' import stats %}
 {% from 'src/_includes/metaLink.html' import metaLink %}
-
 {% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
 {% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
 {% set scrapbook = savee | limit(50) %}
@@ -32,6 +31,18 @@ title: Journal
     <section class="markdown | measure flow">
       {% renderMarkdown now.fields.contentMarkdown %}
     </section>
+    <details>
+      <summary class="gap">
+        <h3 class="subtitle | inline">Current Clients</h3>
+      </summary>
+      <aside>
+        <ul>
+          {% for client in now.fields.currentClients %}
+          <li>{{ client }}</li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </details>
     <footer>
       <time datetime="{{ now.fields.date }}">
         Last updated &ndash; {{ now.fields.date | formatDate }}
