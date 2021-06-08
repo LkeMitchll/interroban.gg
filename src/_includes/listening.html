@@ -1,5 +1,6 @@
 <section id="listening" class="gap-x-large">
   <h2 class="title">Listening</h2>
+  {{ music.lastWeek | log }}
 
   <section class="grid columns" style="--cols: 3">
     <div>
@@ -18,8 +19,10 @@
           <div class="horizontal">
             <p><em>Tracks</em></p>
             <p>
-              {{ music.lastWeek.tracks }}
-              <span class="color-positive">+10 &uarr;</span>
+              {{ music.lastWeek.tracks.total }}
+              <span class="color-{{ music.lastWeek.tracks.difference.type }}">
+                {{ music.lastWeek.tracks.difference.icon | safe }}
+              </span>
             </p>
           </div>
         </li>
@@ -27,8 +30,10 @@
           <div class="horizontal">
             <p><em>Albums</em></p>
             <p>
-              {{ music.lastWeek.albums }}
-              <span class="color-negative">-10 &darr;</span>
+              {{ music.lastWeek.albums.total }}
+              <span class="color-{{ music.lastWeek.albums.difference.type }}">
+                {{ music.lastWeek.albums.difference.icon | safe }}
+              </span>
             </p>
           </div>
         </li>

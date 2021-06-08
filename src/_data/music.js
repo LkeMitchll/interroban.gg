@@ -4,19 +4,45 @@ import dateToEpochWithOffset from "../helpers/dateEpochOffset";
 
 async function lastWeek() {
   const api = new LastFMAPI();
+  const comparisonStart = dateToEpochWithOffset(0, 12);
   const lastWeekStart = dateToEpochWithOffset(0, 6);
   const lastWeekEnd = dateToEpochWithOffset(23, 0);
 
-  const tracksResponse = await api.fetchTrackTotal(lastWeekStart, lastWeekEnd);
-  const albumsResponse = await api.fetchAlbumTotal(lastWeekStart, lastWeekEnd);
+  const comparisonTracks = await api
+    .fetchTrackTotal(comparisonStart, lastWeekStart)
+    .then((response) => response.json())
+    .then((json) => Number(json.recenttracks["@attr"].total));
+  const comparisonAlbums = await api
+    .fetchAlbumTotal(comparisonStart, lastWeekStart)
+    .then((response) => response.json())
+    .then((json) => json.weeklyalbumchart.album.length);
+  const lastWeekTracks = await api
+    .fetchTrackTotal(lastWeekStart, lastWeekEnd)
+    .then((response) => response.json())
+    .then((json) => Number(json.recenttracks["@attr"].total));
+  const lastWeekAlbums = await api
+    .fetchAlbumTotal(lastWeekStart, lastWeekEnd)
+    .then((response) => response.json())
+    .then((json) => json.weeklyalbumchart.album.length);
 
-  const tracksData = await tracksResponse.json();
-  const albumsData = await albumsResponse.json();
-
-  const tracks = tracksData.recenttracks["@attr"].total.toString();
-  const albums = albumsData.weeklyalbumchart.album.length.toString();
-
-  return { tracks, albums };
+  return {
+    tracks: {
+      total: lastWeekTracks,
+      difference: {
+        total: Math.abs(lastWeekTracks - comparisonTracks),
+        type: comparisonTracks > lastWeekTracks ? "negative" : "positive",
+        icon: comparisonTracks > lastWeekTracks ? "&darr;" : "&uarr;",
+      },
+    },
+    albums: {
+      total: lastWeekAlbums,
+      difference: {
+        total: Math.abs(lastWeekAlbums - comparisonAlbums),
+        type: comparisonAlbums > lastWeekAlbums ? "negative" : "positive",
+        icon: comparisonAlbums > lastWeekTracks ? "&darr;" : "&uarr;",
+      },
+    },
+  };
 }
 
 async function thisWeek() {
@@ -26,14 +52,15 @@ async function thisWeek() {
   const lastWeekEnd = dateToEpochWithOffset(23, 0);
   const now = Math.round(date.valueOf() / 1000).toString();
 
-  const tracksResponse = await api.fetchTrackTotal(lastWeekEnd, now);
-  const albumsResponse = await api.fetchAlbumTotal(lastWeekEnd, now);
+  const tracksResponse = await api
+    .fetchTrackTotal(lastWeekEnd, now)
+    .then((response) => response.json());
+  const albumsResponse = await api
+    .fetchAlbumTotal(lastWeekEnd, now)
+    .then((response) => response.json());
 
-  const tracksData = await tracksResponse.json();
-  const albumsData = await albumsResponse.json();
-
-  const tracks = tracksData.recenttracks["@attr"].total.toString();
-  const albums = albumsData.weeklyalbumchart.album.length.toString();
+  const tracks = tracksResponse.recenttracks["@attr"].total.toString();
+  const albums = albumsResponse.weeklyalbumchart.album.length.toString();
 
   return { tracks, albums };
 }
@@ -72,12 +99,26 @@ async function topArtists() {
   return items;
 }
 
+async function nowPlaying() {
+  const api = new SpotifyAPI();
+  const data = await api.getNowPlaying().then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP status ${response.status}`);
+    } else {
+      return response.json();
+    }
+  });
+
+  return data;
+}
+
 async function music() {
   return {
     lastWeek: await lastWeek(),
     thisWeek: await thisWeek(),
     topTracks: await topTracks(),
     topArtists: await topArtists(),
+    nowPlaying: await nowPlaying(),
   };
 }
 
