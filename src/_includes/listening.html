@@ -1,17 +1,9 @@
 <section id="listening" class="gap-x-large">
   <h2 class="title">Listening</h2>
-  {{ music.lastWeek | log }}
-
   <section class="grid columns" style="--cols: 3">
     <div>
       <h3 class="subtitle">Now Playing</h3>
-      <div class="now-playing track | gap-large">
-        <img src="" alt="" width="" height="" class="thumbnail" />
-        <div>
-          <a href="" target="_blank" rel="noreferrer noopener">Not Playing</a>
-          <p>Spotify</p>
-        </div>
-      </div>
+      {% include "src/_includes/now-playing.html" %}
       <hr class="gap-large" />
       <h3 class="subtitle">Last Week</h3>
       <ul class="stats | tertiary-text gap-large" style="--min: 0" data-appearance="plain">

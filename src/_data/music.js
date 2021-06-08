@@ -99,26 +99,12 @@ async function topArtists() {
   return items;
 }
 
-async function nowPlaying() {
-  const api = new SpotifyAPI();
-  const data = await api.getNowPlaying().then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP status ${response.status}`);
-    } else {
-      return response.json();
-    }
-  });
-
-  return data;
-}
-
 async function music() {
   return {
     lastWeek: await lastWeek(),
     thisWeek: await thisWeek(),
     topTracks: await topTracks(),
     topArtists: await topArtists(),
-    nowPlaying: await nowPlaying(),
   };
 }
 

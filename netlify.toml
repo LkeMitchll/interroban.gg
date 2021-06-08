@@ -1,0 +1,7 @@
+[build]
+  command = "yarn run build"
+  publish = "_site"
+
+[dev]
+  command = "yarn run dev:eleventy"
+  autoLaunch = false

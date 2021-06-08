@@ -1,0 +1,56 @@
+<script>
+  function nowPlaying() {
+    return {
+      track: {
+        title: "Nothing playing",
+        artist: "Spotify",
+        url: "https://open.spotify.com/user/lkemitchll",
+        cover: {
+          url: "/assets/images/favicon.svg",
+          alt: "Placeholder album art",
+          width: "100",
+          height: "100",
+        },
+      },
+      fetchData() {
+        fetch("/.netlify/functions/now-playing")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP status ${response.status}`);
+            } else {
+              return response.json();
+            }
+          })
+          .then((json) => {
+            this.track = json;
+          })
+          .catch((error) => null);
+      },
+    };
+  }
+</script>
+
+<div
+  class="now-playing track | gap-large"
+  x-data="nowPlaying()"
+  x-init="fetchData()"
+>
+  <img
+    x-bind:src="track.cover.url"
+    x-bind:alt="track.cover.alt"
+    x-bind:width="track.cover.width"
+    x-bind:height="track.cover.height"
+    class="thumbnail"
+  />
+  <div>
+    <a
+      x-bind:href="track.url"
+      target="_blank"
+      rel="noreferrer noopener"
+      x-text="track.title"
+    >
+      Title
+    </a>
+    <p class="small-text | color-secondary" x-text="track.artist">Artist</p>
+  </div>
+</div>

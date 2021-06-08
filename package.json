@@ -41,7 +41,7 @@
     "build": "npm-run-all -s clean build:*",
     "build:eleventy": "ELEVENTY_ENV=production node -r esm node_modules/.bin/eleventy",
     "clean": "rm -rf _site",
-    "dev": "npm-run-all -p clean dev:eleventy",
+    "dev": "netlify dev",
     "dev:eleventy": "ELEVENTY_ENV=development node -r esm node_modules/.bin/eleventy --serve",
     "lint": "npm-run-all -s lint:*",
     "lint:stylelint": "stylelint ./src/css",
