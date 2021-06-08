@@ -1,33 +1,102 @@
 <section id="listening" class="gap-x-large">
   <h2 class="title">Listening</h2>
-  <section class="gap-large">
-    <p>
-      Last week I listened to around
-      <br>
-      <a href="https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A" 
-         target="_blank"
-         rel="noreferrer">
-        {{ music.lastWeek.tracks }} Tracks, from {{ music.lastWeek.albums }} Albums
-      </a>
-    </p>
-  </section>
 
-  <h3 class="subtitle">Top tracks (this month)</h3>
-  <ol class="flow">
-    {% for track in music.topTracks %}
-      <li class="track">
-        <img src="{{ track.cover.url }}"
-             alt="Cover art for {{ track.album }} by {{ track.artist }}"
-             width="{{ track.cover.width }}"
-             height="{{ track.cover.height }}"
-             class="thumbnail">
+  <section class="grid columns" style="--cols: 3">
+    <div>
+      <h3 class="subtitle">Now Playing</h3>
+      <div class="now-playing track | gap-large">
+        <img src="" alt="" width="" height="" class="thumbnail" />
         <div>
-          <a href="{{ track.url }}" target="_blank" rel="noreferrer noopener">
-            {{ track.title }}
-          </a>
-          <p>{{ track.artist }}</p>
+          <a href="" target="_blank" rel="noreferrer noopener">Not Playing</a>
+          <p>Spotify</p>
         </div>
-      </li>
-    {% endfor %}
-  </ol>
+      </div>
+      <hr class="gap-large" />
+      <h3 class="subtitle">Last Week</h3>
+      <ul class="stats | tertiary-text gap-large" style="--min: 0" data-appearance="plain">
+        <li>
+          <div class="horizontal">
+            <p><em>Tracks</em></p>
+            <p>
+              {{ music.lastWeek.tracks }}
+              <span class="color-positive">+10 &uarr;</span>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="horizontal">
+            <p><em>Albums</em></p>
+            <p>
+              {{ music.lastWeek.albums }}
+              <span class="color-negative">-10 &darr;</span>
+            </p>
+          </div>
+        </li>
+      </ul>
+      <h3 class="subtitle">This Week (so far)</h3>
+      <ul class="stats | tertiary-text gap-large" style="--min: 0" data-appearance="plain">
+        <li>
+          <p class="horizontal">
+            <em>Tracks</em>
+            <span>{{ music.thisWeek.tracks }}</span>
+          </p>
+        </li>
+        <li>
+          <p class="horizontal">
+            <em>Albums</em>
+            <span>{{ music.thisWeek.albums }}</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="subtitle">Top tracks (this month)</h3>
+      <ol class="tracks | flow" data-appearance="plain">
+        {% for track in music.topTracks %}
+        <li class="track">
+          <img
+            src="{{ track.cover.url }}"
+            alt="{{ track.cover.alt }}"
+            width="{{ track.cover.width }}"
+            height="{{ track.cover.height }}"
+            class="thumbnail"
+          />
+          <div class="leading-small">
+            <a href="{{ track.url }}" target="_blank" rel="noreferrer noopener">
+              {{ track.title }}
+            </a>
+            <p class="small-text | color-secondary">{{ track.artist }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+
+    <div>
+      <h3 class="subtitle">Top artists (6 months)</h3>
+      <ol class="tracks | flow" data-appearance="plain">
+        {% for artist in music.topArtists %}
+        <li class="track">
+          <img
+            src="{{ artist.images[1].url }}"
+            alt=""
+            width="{{ artist.images[1].width }}"
+            height="{{ artist.images[1].height }}"
+            class="thumbnail"
+          />
+          <div class="leading-small">
+            <a
+              href="{{ artist.external_urls.spotify }}"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {{ artist.name }}
+            </a>
+            <p class="small-text | color-secondary">Artist</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
 </section>

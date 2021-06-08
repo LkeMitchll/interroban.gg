@@ -3,10 +3,6 @@
     grid-template-columns: repeat(var(--cols, 4), 1fr);
   }
 
-  .columns * {
-    grid-column: auto;
-  }
-
   .occupy-3 {
     grid-column: 1 / 4;
   }

@@ -6,10 +6,11 @@ export default class SpotifyAPI {
     this.apiEndpoint = "https://api.spotify.com/v1/me";
 
     this.credentials = Buffer.from(
-      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
+      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
     ).toString("base64");
 
     this.topTracksEndpoint = `${this.apiEndpoint}/top/tracks?time_range=short_term&limit=5`;
+    this.topArtistsEndpoint = `${this.apiEndpoint}/top/artists?limit=5`;
   }
 
   async getAccessToken() {
@@ -30,6 +31,17 @@ export default class SpotifyAPI {
     const { access_token } = await this.getAccessToken();
 
     return fetch(this.topTracksEndpoint, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+  }
+
+  async getTopArtists() {
+    /* eslint camelcase: "off" */
+    const { access_token } = await this.getAccessToken();
+
+    return fetch(this.topArtistsEndpoint, {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },

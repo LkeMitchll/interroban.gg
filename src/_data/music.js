@@ -4,11 +4,30 @@ import dateToEpochWithOffset from "../helpers/dateEpochOffset";
 
 async function lastWeek() {
   const api = new LastFMAPI();
-  const lastSunday = dateToEpochWithOffset(0, 6);
-  const lastFriday = dateToEpochWithOffset(23, 0);
+  const lastWeekStart = dateToEpochWithOffset(0, 6);
+  const lastWeekEnd = dateToEpochWithOffset(23, 0);
 
-  const tracksResponse = await api.fetchTrackTotal(lastSunday, lastFriday);
-  const albumsResponse = await api.fetchAlbumTotal(lastSunday, lastFriday);
+  const tracksResponse = await api.fetchTrackTotal(lastWeekStart, lastWeekEnd);
+  const albumsResponse = await api.fetchAlbumTotal(lastWeekStart, lastWeekEnd);
+
+  const tracksData = await tracksResponse.json();
+  const albumsData = await albumsResponse.json();
+
+  const tracks = tracksData.recenttracks["@attr"].total.toString();
+  const albums = albumsData.weeklyalbumchart.album.length.toString();
+
+  return { tracks, albums };
+}
+
+async function thisWeek() {
+  const api = new LastFMAPI();
+  const date = new Date();
+
+  const lastWeekEnd = dateToEpochWithOffset(23, 0);
+  const now = Math.round(date.valueOf() / 1000).toString();
+
+  const tracksResponse = await api.fetchTrackTotal(lastWeekEnd, now);
+  const albumsResponse = await api.fetchAlbumTotal(lastWeekEnd, now);
 
   const tracksData = await tracksResponse.json();
   const albumsData = await albumsResponse.json();
@@ -45,8 +64,21 @@ async function topTracks() {
   return tracks;
 }
 
+async function topArtists() {
+  const api = new SpotifyAPI();
+  const response = await api.getTopArtists();
+  const { items } = await response.json();
+
+  return items;
+}
+
 async function music() {
-  return { lastWeek: await lastWeek(), topTracks: await topTracks() };
+  return {
+    lastWeek: await lastWeek(),
+    thisWeek: await thisWeek(),
+    topTracks: await topTracks(),
+    topArtists: await topArtists(),
+  };
 }
 
 export default music;

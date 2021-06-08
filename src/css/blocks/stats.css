@@ -1,6 +1,6 @@
 .stats {
   max-width: 40ch;
-  min-width: 30ch;
+  min-width: var(--min, 30ch);
 }
 
 .stats li {

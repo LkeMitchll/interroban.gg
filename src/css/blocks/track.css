@@ -1,20 +1,40 @@
+.tracks {
+  counter-reset: tracks;
+}
+
 .track {
-  padding: 0;
+  counter-increment: tracks;
+  display: flex;
+  align-items: center;
 }
 
-.track img,
-.track .placeholder-image,
-.track div {
-  vertical-align: text-top;
-  display: inline-block;
+.track:not(.now-playing)::before {
+  content: counter(tracks);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  border: solid var(--border-width-default) var(--color-secondary);
+  margin-right: 1rem;
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+  flex-shrink: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
 }
 
-.track img,
-.track .placeholder-image {
-  margin: var(--space-tiny) var(--space-default) 0;
+@media (min-width: 700px) and (max-width: 1000px) {
+  .track:not(.now-playing) {
+    margin-left: -0.5rem;
+  }
+
+  .track:not(.now-playing) img {
+    margin-left: calc(-0.5rem - 1rem);
+  }
 }
 
-.track div {
-  display: inline-block;
-  max-width: 66.66%;
+.track img {
+  margin-right: var(--space-default);
 }

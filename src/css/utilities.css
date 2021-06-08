@@ -58,6 +58,14 @@
   color: var(--color-secondary);
 }
 
+.color-positive {
+  color: var(--color-positive);
+}
+
+.color-negative {
+  color: var(--color-negative);
+}
+
 .bg-default {
   background-color: var(--color-bg);
 }
