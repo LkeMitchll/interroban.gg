@@ -18,7 +18,9 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
     <meta content="{{ pageDescription }}" property="og:description" />
     <meta content="en" property="og:locale" />
     <title>Luke Mitchell | {{ pageTitle }}</title>
-    <link href="/assets/images/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     {% for font in fonts %}
       <link rel="preload" href="/assets/fonts/{{ font }}.subset.woff2" as="font" type="font/woff2" crossorigin="" />
     {% endfor %}
