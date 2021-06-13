@@ -26,7 +26,9 @@ async function lastWeek() {
     .then((json) => json.weeklyalbumchart.album.length);
 
   return {
+    title: "Last week",
     tracks: {
+      title: "Tracks",
       total: lastWeekTracks,
       difference: {
         total: Math.abs(lastWeekTracks - comparisonTracks),
@@ -35,6 +37,7 @@ async function lastWeek() {
       },
     },
     albums: {
+      title: "Albums",
       total: lastWeekAlbums,
       difference: {
         total: Math.abs(lastWeekAlbums - comparisonAlbums),
@@ -48,21 +51,29 @@ async function lastWeek() {
 async function thisWeek() {
   const api = new LastFMAPI();
   const date = new Date();
-
   const lastWeekEnd = dateToEpochWithOffset(23, 0);
   const now = Math.round(date.valueOf() / 1000).toString();
 
-  const tracksResponse = await api
+  const thisWeekTracks = await api
     .fetchTrackTotal(lastWeekEnd, now)
-    .then((response) => response.json());
-  const albumsResponse = await api
+    .then((response) => response.json())
+    .then((json) => json.recenttracks["@attr"].total);
+  const thisWeekAlbums = await api
     .fetchAlbumTotal(lastWeekEnd, now)
-    .then((response) => response.json());
+    .then((response) => response.json())
+    .then((json) => json.weeklyalbumchart.album.length);
 
-  const tracks = tracksResponse.recenttracks["@attr"].total.toString();
-  const albums = albumsResponse.weeklyalbumchart.album.length.toString();
-
-  return { tracks, albums };
+  return {
+    title: "This week (so far)",
+    tracks: {
+      title: "Tracks",
+      total: thisWeekTracks,
+    },
+    albums: {
+      title: "Albums",
+      total: thisWeekAlbums,
+    },
+  };
 }
 
 async function topTracks() {
@@ -72,7 +83,7 @@ async function topTracks() {
 
   const tracks = items.map((song) => {
     const artist = song.artists.map((_artist) => _artist.name).join(", ");
-    const track = {
+    return {
       id: song.id,
       artist,
       album: song.album.name,
@@ -85,7 +96,6 @@ async function topTracks() {
       },
       url: song.external_urls.spotify,
     };
-    return track;
   });
 
   return tracks;
@@ -96,7 +106,17 @@ async function topArtists() {
   const response = await api.getTopArtists();
   const { items } = await response.json();
 
-  return items;
+  return items.map((artist) => ({
+    id: artist.id,
+    name: artist.name,
+    image: {
+      url: artist.images[1].url,
+      width: artist.images[1].width,
+      height: artist.images[1].height,
+      alt: `Photograph of the artist ${artist.name}`,
+    },
+    url: artist.external_urls.spotify,
+  }));
 }
 
 async function music() {

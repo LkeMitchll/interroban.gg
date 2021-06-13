@@ -1,6 +1,8 @@
 <script>
+  // Alpine JS: Display Spotify now-playing data
   function nowPlaying() {
     return {
+      // Placeholder data
       track: {
         title: "Nothing playing",
         artist: "Spotify",
@@ -12,6 +14,7 @@
           height: "100",
         },
       },
+      // fetch data from Netlify function
       fetchData() {
         fetch("/.netlify/functions/now-playing")
           .then((response) => {

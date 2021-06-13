@@ -5,47 +5,26 @@
       <h3 class="subtitle">Now Playing</h3>
       {% include "src/_includes/now-playing.html" %}
       <hr class="gap-large" />
-      <h3 class="subtitle">Last Week</h3>
-      <ul class="stats | tertiary-text gap-large" style="--min: 0" data-appearance="plain">
-        <li>
-          <div class="horizontal">
-            <p><em>Tracks</em></p>
-            <p>
-              {{ music.lastWeek.tracks.total }}
-              <span class="color-{{ music.lastWeek.tracks.difference.type }}">
-                {{ music.lastWeek.tracks.difference.icon | safe }}
-              </span>
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="horizontal">
-            <p><em>Albums</em></p>
-            <p>
-              {{ music.lastWeek.albums.total }}
-              <span class="color-{{ music.lastWeek.albums.difference.type }}">
-                {{ music.lastWeek.albums.difference.icon | safe }}
-              </span>
-            </p>
-          </div>
-        </li>
-      </ul>
-      <h3 class="subtitle">This Week (so far)</h3>
-      <ul class="stats | tertiary-text gap-large" style="--min: 0" data-appearance="plain">
-        <li>
-          <p class="horizontal">
-            <em>Tracks</em>
-            <span>{{ music.thisWeek.tracks }}</span>
-          </p>
-        </li>
-        <li>
-          <p class="horizontal">
-            <em>Albums</em>
-            <span>{{ music.thisWeek.albums }}</span>
-          </p>
-        </li>
-      </ul>
+      {% for week in [music.lastWeek, music.thisWeek] %}
+      <h3 class="subtitle">{{ week.title }}</h3>
+        <ul class="stats | tertiary-text gap-large" style="--min: 0" data-appearance="plain">
+        {% for stat in [week.tracks, week.albums] %}
+          <li>
+            <div class="horizontal">
+            <p><em>{{ stat.title }}</em></p>
+              <p>
+                {{ stat.total }}
+                <span class="color-{{ music.lastWeek.tracks.difference.type }}">
+                  {{ stat.difference.icon | safe }}
+                </span>
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+        </ul>
+      {% endfor %}
     </div>
+
     <div>
       <h3 class="subtitle">Top tracks (this month)</h3>
       <ol class="tracks | flow" data-appearance="plain">
@@ -75,15 +54,15 @@
         {% for artist in music.topArtists %}
         <li class="track">
           <img
-            src="{{ artist.images[1].url }}"
-            alt=""
-            width="{{ artist.images[1].width }}"
-            height="{{ artist.images[1].height }}"
+            src="{{ artist.image.url }}"
+            alt="{{ artist.image.alt }}"
+            width="{{ artist.image.width }}"
+            height="{{ artist.image.height }}"
             class="thumbnail"
           />
           <div class="leading-small">
             <a
-              href="{{ artist.external_urls.spotify }}"
+              href="{{ artist.url }}"
               target="_blank"
               rel="noreferrer noopener"
             >
