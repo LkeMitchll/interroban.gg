@@ -1,6 +1,6 @@
 @media (min-width: 700px) {
   .columns {
-    grid-template-columns: repeat(var(--cols, 4), 1fr);
+    grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
   }
 
   .occupy-3 {
