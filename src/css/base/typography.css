@@ -6,11 +6,6 @@ p {
   margin: 0;
 }
 
-.small-caps {
-  font-weight: normal;
-  font-feature-settings: "smcp" 1;
-}
-
 em {
   font-feature-settings: "salt" on, "ss01" on, "ss06" on, "ss08" on;
 }

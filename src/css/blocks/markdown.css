@@ -26,6 +26,8 @@
 .markdown img + figcaption {
   counter-increment: image-number;
   margin-top: var(--space-default);
+  padding-left: var(--space-default);
+  border-left: var(--border-default);
 }
 
 .markdown img + figcaption p::before {

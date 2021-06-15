@@ -36,7 +36,7 @@ const renderMarkdown = (rawMarkdown, assets) => {
           return h(node, "img", { ...imageAttrs }, all(h, node));
         },
         imageWrapper: (h, node) => h(node, "section", all(h, node)),
-        figcaption: (h, node) => h(node, "figcaption", { class: "small-text" }, all(h, node)),
+        figcaption: (h, node) => h(node, "figcaption", { class: "small-text | measure" }, all(h, node)),
         image: (h, node) => {
           const imageID = node.url.split("/")[4];
           const imageObject = findByID(assets, imageID);
