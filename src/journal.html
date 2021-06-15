@@ -12,7 +12,7 @@ alpine: true
 
 <header class="grid | gap-xx-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <div class="measure flow | gap" style="--flow-space: var(--space-default)">
+  <div class="markdown | measure flow | gap" style="--flow-space: var(--space-default)">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div class="grid columns" style="--flow-space: var(--space-default)">
@@ -30,7 +30,7 @@ alpine: true
   <section id="now" class="flow | gap-x-large">
     <h2 class="title">Now</h2>
     <section class="markdown | measure flow">
-      {% renderMarkdown now.fields.contentMarkdown %}
+      {% renderMarkdown now.fields.contentMarkdown, assets %}
     </section>
     <details>
       <summary class="gap">
