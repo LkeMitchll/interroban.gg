@@ -9,6 +9,11 @@ const customFootnotes = () => {
       const footnoteContainsImage = node.children.filter(
         (child) => child.children[0].type === "image",
       );
+      node.children.forEach((child) => {
+        if (child.children[0].type === "image") {
+          child.children[0].type = "footnoteImage";
+        }
+      });
 
       const identifier = {
         type: "strong",

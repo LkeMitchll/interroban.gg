@@ -10,5 +10,6 @@ module.exports = {
   },
   rules: {
     quotes: [2, "double", { avoidEscape: true }],
+    "no-param-reassign": 0,
   },
 };

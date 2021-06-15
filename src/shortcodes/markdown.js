@@ -7,6 +7,7 @@ import html from "remark-html";
 import all from "mdast-util-to-hast/lib/all";
 import customFootnotes from "../helpers/footnotes";
 import references from "../helpers/references";
+import imagesWithCaptions from "../helpers/imagesWithCaptions";
 
 import findByID from "../filters/findByID";
 import responsiveImage from "./responsiveImage";
@@ -18,6 +19,7 @@ const renderMarkdown = (rawMarkdown, assets) => {
     .use(slug)
     .use(footnotes)
     .use(customFootnotes)
+    .use(imagesWithCaptions)
     .use(references)
     .use(externalLinks)
     .use(html, {
@@ -27,10 +29,22 @@ const renderMarkdown = (rawMarkdown, assets) => {
           const id = `fn-${node.identifier}`;
           return h(node, "aside", { id }, all(h, node));
         },
-        image: (h, node) => {
+        footnoteImage: (h, node) => {
           const imageID = node.url.split("/")[4];
           const imageObject = findByID(assets, imageID);
           const imageAttrs = responsiveImage(imageObject, "oneCol", true);
+          return h(node, "img", { ...imageAttrs }, all(h, node));
+        },
+        imageWrapper: (h, node) => h(node, "section", all(h, node)),
+        figcaption: (h, node) => h(node, "figcaption", { class: "small-text" }, all(h, node)),
+        image: (h, node) => {
+          const imageID = node.url.split("/")[4];
+          const imageObject = findByID(assets, imageID);
+          const imageAttrs = responsiveImage(
+            imageObject,
+            "threeQuarters",
+            true,
+          );
           return h(node, "img", { ...imageAttrs }, all(h, node));
         },
       },

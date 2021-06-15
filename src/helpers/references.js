@@ -41,7 +41,8 @@ const referenceLinks = () => {
       }
     }
 
-    visit(tree, /link|definition/, visitor);
+    visit(tree, "link", visitor);
+    visit(tree, "definition", visitor);
 
     if (links.children.length) {
       tree.children.push({ type: "thematicBreak" });
