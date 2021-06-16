@@ -11,10 +11,10 @@ title: Uses
 
 <header class="grid | hero | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <section class="measure | gap">
+  <section class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div class="flow" style="--flow-space: var(--space-default)">
+  <div>
     {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
   </div>
 </header>

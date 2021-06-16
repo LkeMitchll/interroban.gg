@@ -12,10 +12,10 @@ alpine: true
 
 <header class="grid | gap-xx-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <div class="markdown | measure flow | gap" style="--flow-space: var(--space-default)">
+  <div class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="grid columns" style="--flow-space: var(--space-default)">
+  <div class="grid columns | measure" style="--cols: 2;">
     {{ stats(posts, "Posts", now.sys.updatedAt) }}
     <ul data-appearance="plain">
       {{ metaLink("RSS Feed", "/rss.xml", external = false) }}
@@ -36,13 +36,13 @@ alpine: true
       <summary class="gap">
         <h3 class="subtitle | inline">Current Clients</h3>
       </summary>
-      <aside>
+      <div>
         <ul>
           {% for client in now.fields.currentClients %}
           <li>{{ client }}</li>
           {% endfor %}
         </ul>
-      </aside>
+      </div>
     </details>
     <footer>
       <time datetime="{{ now.fields.date }}">

@@ -13,10 +13,10 @@ title: Bookmarks
 
 <header id="top" class="grid | gap-xx-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <div class="measure flow | gap">
+  <div class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="grid columns" style="--flow-space: var(--space-default)">
+  <div class="grid columns | measure" style="--cols: 2;">
     {% set total = totals | sum %}
     {{ stats(total, "Bookmarks", lastUpdate.fields.publishDate) }}
     <ul data-appearance="plain">

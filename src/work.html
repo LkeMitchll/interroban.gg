@@ -11,7 +11,7 @@ title: Work
 
 <header class="grid | gap-xx-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <div class="markdown | measure flow">
+  <div class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <div>
@@ -89,12 +89,6 @@ title: Work
   </section>
 </article>
 
-<article class="grid | gap-xx-large">
-  <section class="markdown | measure flow">
-    {% renderMarkdown content.fields.contentMarkdown, assets %}
-  </section>
-</article>
-
 <article class="grid columns | gap-x-large">
   <div class="occupy-3">
     {% responsiveImage discoverImage, "threeQuarters" %}
@@ -107,4 +101,8 @@ title: Work
   </p>
 </article>
 
-{% include "src/_includes/career.html" %}
+<article class="grid | gap-xx-large">
+  <section class="markdown | measure flow">
+    {% renderMarkdown content.fields.contentMarkdown, assets %}
+  </section>
+</article>

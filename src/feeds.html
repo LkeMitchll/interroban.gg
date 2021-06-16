@@ -8,10 +8,10 @@ title: Feeds
 
 <header class="grid | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <section class="measure">
+  <section class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div class="flow" style="--flow-space: var(--space-default)">
+  <div>
     {{ stats(feeds, "Subscriptions", feeds[0].created_at) }}
   </div>
   <hr/>

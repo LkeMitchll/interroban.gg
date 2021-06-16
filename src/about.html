@@ -11,10 +11,10 @@ title: About Me
 
 <header class="grid | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <div class="measure">
+  <div class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="grid columns" style="--flow-space: var(--space-default)">
+  <div class="grid columns | measure" style="--cols: 2;">
     {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
     <ul data-appearance="plain">
       {{ metaLink("Email", "mailto:luke@interroban.gg", external = false) }}
