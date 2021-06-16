@@ -3,3 +3,9 @@
   padding: 0 var(--space-tiny);
   font-style: italic;
 }
+
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    color: var(--color-bg);
+  }
+}
