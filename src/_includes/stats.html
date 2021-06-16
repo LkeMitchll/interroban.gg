@@ -4,9 +4,9 @@
       <li>
         <p class="horizontal">
           {% if totalCount >= 1 %}
-            <em>Total</em><span>{{ totalCount }} {{ totalSuffix }}</span>
+            <em>Total</em><span class="push-right">{{ totalCount }} {{ totalSuffix }}</span>
           {% else %}
-            <em>Total</em><span>{{ totalCount | length }} {{ totalSuffix }}</span>
+            <em>Total</em><span class="push-right">{{ totalCount | length }} {{ totalSuffix }}</span>
           {% endif %}
         </p>
       </li>
@@ -14,14 +14,14 @@
     {% if updatedDate %}
       <li>
         <p class="horizontal">
-          <em>Updated</em><span>{{ updatedDate | formatDate }}</span>
+          <em>Updated</em><span class="push-right">{{ updatedDate | formatDate }}</span>
         </p>
       </li>
     {% endif %}
     {% if readableContent %}
       <li>
         <p class="horizontal">
-          <em>Reading time</em><span>{{ readableContent | readingTime }}</span>
+          <em>Reading time</em><span class="push-right">{{ readableContent | readingTime }}</span>
         </p>
       </li>
     {% endif %}
