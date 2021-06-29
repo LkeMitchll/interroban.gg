@@ -3,25 +3,22 @@ layout: layout.html
 title: Work
 ---
 
-{% from 'src/_includes/stats.html' import stats %}
 
 {% set heroImage = assets | findByID("4S2Y8rEVwSFdx8sHa134bJ") %}
 {% set discoverImage = assets | findByID("67sB2MPpzeoLerzcBcm6rk") %}
 {% set content = pages | findByID("6p5ij5nnguRIkYkOFcP8kc") %}
 
-<header class="grid | gap-xx-large">
+<header class="flow | gap-xx-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <div class="markdown | measure | gap">
+  <div class="markdown | flow measure">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div>
-    {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
-  </div>
+  <hr>
 </header>
 
 <article class="grid | gap-x-large">
   <h2 id="process" class="title | gap-small">Process</h2>
-  <section class="markdown | measure flow"> 
+  <section class="markdown | flow measure"> 
     <section>
       <p>
         My aim is to help clients to build great solutions for the people that

@@ -3,24 +3,21 @@ layout: layout.html
 title: About Me
 ---
 
-{% from 'src/_includes/stats.html' import stats %}
 {% from 'src/_includes/metaLink.html' import metaLink %}
 
 {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
 {% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
 
-<header class="grid | gap-x-large">
+<header class="flow | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
   <div class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="grid columns | measure" style="--cols: 2;">
-    {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
-    <ul data-appearance="plain">
-      {{ metaLink("Email", "mailto:luke@interroban.gg", external = false) }}
-      {{ metaLink("Twitter", "https://twitter.com/lkemitchll") }}
-    </ul>
-  </div>
+  <h3 class="subtitle">Contact me</h3>
+  <ul data-appearance="plain">
+    {{ metaLink("Email", "mailto:luke@interroban.gg", external = false) }}
+    {{ metaLink("Twitter", "https://twitter.com/lkemitchll") }}
+  </ul>
 </header>
 
 <article class="grid columns | gap-x-large">

@@ -3,27 +3,23 @@ layout: layout.html
 title: Bookmarks
 ---
 
-{% from 'src/_includes/stats.html' import stats %}
 {% from 'src/_includes/metaLink.html' import metaLink %}
 
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
-{% set totals = [bookmarks[0].bookmarks.length, bookmarks[1].bookmarks.length, bookmarks[2].bookmarks.length] %}
 {% set roundup = roundups | limit(1) %}
 
-<header id="top" class="grid | gap-xx-large">
+<header id="top" class="flow | gap-xx-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
   <div class="markdown | measure | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <div class="grid columns | measure" style="--cols: 2;">
-    {% set total = totals | sum %}
-    {{ stats(total, "Bookmarks", lastUpdate.fields.publishDate) }}
-    <ul data-appearance="plain">
-      {{ metaLink("JSON Feed", "/api/bookmarks.json") }}
-      {{ metaLink("Suggest a bookmark", "mailto:luke@interroban.gg?subject=Bookmark%20suggestion", false) }}
-    </ul>
-  </div>
+  <h3 class="subtitle">Feeds</h3>
+  <ul data-appearance="plain">
+    {{ metaLink("JSON Feed", "/api/bookmarks.json") }}
+    {{ metaLink("Suggest a bookmark", "mailto:luke@interroban.gg?subject=Bookmark%20suggestion", false) }}
+  </ul>
+  <hr>
 </header>
 
 {% set toc = ["Favourites", "2021", "2020", "Archive"] %}

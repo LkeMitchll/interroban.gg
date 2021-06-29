@@ -3,20 +3,17 @@ layout: layout.html
 title: Uses
 ---
 
-{% from 'src/_includes/stats.html' import stats %}
 
 {% set deskImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
 {% set macImage = assets | findByID("4tfwXMS2ViqOr2nrmxNrJ4") %}
 {% set content = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
 
-<header class="grid | hero | gap-x-large">
+<header class="flow | hero | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <section class="markdown | measure | gap">
+  <section class="markdown | measure">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div>
-    {{ stats(updatedDate = content.sys.updatedAt, readableContent = content.fields.contentMarkdown) }}
-  </div>
+  <hr>
 </header>
 
 {% set toc = ["Design", "Development", "General"] %}

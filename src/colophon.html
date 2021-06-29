@@ -3,19 +3,16 @@ layout: layout.html
 title: Colophon
 ---
 
-{% from 'src/_includes/stats.html' import stats %}
 
 {% set content = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
 {% set posts = metaPosts %}
 
-<header class="grid | gap-x-large">
+<header class="flow | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <section class="markdown | measure | gap">
+  <section class="markdown | measure">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div>
-    {{ stats(metaPosts, "Posts", content.sys.updatedAt) }}
-  </div>
+  <hr>
 </header>
 
 {% set toc = ["Updates", "Notes"] %}

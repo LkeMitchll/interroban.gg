@@ -3,17 +3,13 @@ layout: layout.html
 title: Feeds
 ---
 
-{% from 'src/_includes/stats.html' import stats %}
 {% set content = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
 
-<header class="grid | gap-x-large">
+<header class="flow | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <section class="markdown | measure | gap">
+  <section class="markdown | measure">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
-  <div>
-    {{ stats(feeds, "Subscriptions", feeds[0].created_at) }}
-  </div>
   <hr/>
 </header>
 
