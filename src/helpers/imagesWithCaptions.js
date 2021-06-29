@@ -1,8 +1,8 @@
-import visit from "unist-util-visit";
-import unified from "unified";
-import markdown from "remark-parse";
+const visit = require("unist-util-visit");
+const unified = require("unified");
+const markdown = require("remark-parse");
 
-const imagesWithCaptions = () => {
+module.exports = function imagesWithCaptions() {
   function transformer(tree) {
     function visitor(node, _, parentNode) {
       // rename the node type
@@ -24,5 +24,3 @@ const imagesWithCaptions = () => {
 
   return transformer;
 };
-
-export default imagesWithCaptions;

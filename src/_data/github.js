@@ -1,6 +1,6 @@
-import { Octokit } from "@octokit/core";
+const { Octokit } = require("@octokit/core");
 
-async function commits() {
+module.exports = async function commits() {
   const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
 
   const response = await octokit.request("GET /repos/{owner}/{repo}/commits", {
@@ -17,6 +17,4 @@ async function commits() {
   }));
 
   return sanitisedData;
-}
-
-export default commits();
+};

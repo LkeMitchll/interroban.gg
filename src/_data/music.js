@@ -1,6 +1,6 @@
-import SpotifyAPI from "../providers/spotify";
-import LastFMAPI from "../providers/lastfm";
-import dateToEpochWithOffset from "../helpers/dateEpochOffset";
+const SpotifyAPI = require("../providers/spotify");
+const LastFMAPI = require("../providers/lastfm");
+const dateToEpochWithOffset = require("../helpers/dateEpochOffset");
 
 async function lastWeek() {
   const api = new LastFMAPI();
@@ -119,13 +119,11 @@ async function topArtists() {
   }));
 }
 
-async function music() {
+module.exports = async function music() {
   return {
     lastWeek: await lastWeek(),
     thisWeek: await thisWeek(),
     topTracks: await topTracks(),
     topArtists: await topArtists(),
   };
-}
-
-export default music;
+};

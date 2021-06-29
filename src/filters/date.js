@@ -1,4 +1,4 @@
-const formattedDate = (date, template) => {
+module.exports = function formattedDate(date, template) {
   const input = new Date(date);
   const templates = {
     long: { month: "long", year: "numeric" },
@@ -7,9 +7,7 @@ const formattedDate = (date, template) => {
   };
   const niceDate = new Intl.DateTimeFormat(
     "en-US",
-    templates[template] || templates.short,
+    templates[template] || templates.short
   ).format(input);
   return niceDate;
 };
-
-export default formattedDate;

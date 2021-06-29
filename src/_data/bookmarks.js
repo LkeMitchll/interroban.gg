@@ -1,11 +1,11 @@
-import { createClient } from "contentful";
+const contentful = require("contentful");
 
-const client = createClient({
+const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-async function bookmarks(limit) {
+module.exports = async function bookmarks(limit) {
   const thisYear = await client
     .getEntries({
       content_type: "blogPost",
@@ -62,6 +62,4 @@ async function bookmarks(limit) {
       bookmarks: archive,
     },
   ];
-}
-
-export default bookmarks();
+};

@@ -1,6 +1,6 @@
-import visit from "unist-util-visit";
+const visit = require("unist-util-visit");
 
-const referenceLinks = () => {
+module.exports = function referenceLinks() {
   function transformer(tree) {
     const title = {
       type: "heading",
@@ -53,5 +53,3 @@ const referenceLinks = () => {
 
   return transformer;
 };
-
-export default referenceLinks;

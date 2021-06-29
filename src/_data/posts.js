@@ -1,11 +1,11 @@
-import { createClient } from "contentful";
+const contentful = require("contentful");
 
-const client = createClient({
+const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-async function posts() {
+module.exports = async function posts() {
   return client
     .getEntries({
       content_type: "post",
@@ -19,6 +19,4 @@ async function posts() {
       });
       return result.items;
     });
-}
-
-export default posts();
+};

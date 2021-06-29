@@ -1,16 +1,16 @@
-import { config } from "dotenv";
-import pluginRSS from "@11ty/eleventy-plugin-rss";
-import pluginReadingTime from "eleventy-plugin-reading-time";
-import findByID from "./src/filters/findByID";
-import limit from "./src/filters/limit";
-import date from "./src/filters/date";
-import JsonStringify from "./src/filters/json";
-import markdown from "./src/shortcodes/markdown";
-import responsiveImage from "./src/shortcodes/responsiveImage";
+require("dotenv").config();
+const pluginRSS = require("@11ty/eleventy-plugin-rss");
+const pluginReadingTime = require("eleventy-plugin-reading-time");
+const findByID = require("./src/filters/findByID");
+const limit = require("./src/filters/limit");
+const date = require("./src/filters/date");
+const JsonStringify = require("./src/filters/json");
+const markdown = require("./src/shortcodes/markdown");
+const responsiveImage = require("./src/shortcodes/responsiveImage");
 
 config();
 
-const siteConfig = (eleventyConfig) => {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRSS);
   eleventyConfig.addPlugin(pluginReadingTime);
 
@@ -33,5 +33,3 @@ const siteConfig = (eleventyConfig) => {
     },
   };
 };
-
-export default siteConfig;

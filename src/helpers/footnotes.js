@@ -1,13 +1,13 @@
-import visit from "unist-util-visit";
+const visit = require("unist-util-visit");
 
-const customFootnotes = () => {
+module.exports = function customFootnotes() {
   function transformer(tree) {
     const footnoteDefs = {};
 
     function definitionVisitor(currentNode, index, parent) {
       const node = currentNode;
       const footnoteContainsImage = node.children.filter(
-        (child) => child.children[0].type === "image",
+        (child) => child.children[0].type === "image"
       );
       node.children.forEach((child) => {
         if (child.children[0].type === "image") {
@@ -74,5 +74,3 @@ const customFootnotes = () => {
 
   return transformer;
 };
-
-export default customFootnotes;

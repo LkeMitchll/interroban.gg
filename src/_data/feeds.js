@@ -1,11 +1,11 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
-async function feeds() {
+module.exports = async function feeds() {
   const apiEndpoint = "https://api.feedbin.com/v2/";
   const subscriptionsEndpoint = `${apiEndpoint}subscriptions.json`;
 
   const credentials = Buffer.from(
-    `${process.env.FEEDBIN_USER}:${process.env.FEEDBIN_PASS}`,
+    `${process.env.FEEDBIN_USER}:${process.env.FEEDBIN_PASS}`
   ).toString("base64");
 
   const fetchFeeds = fetch(subscriptionsEndpoint, {
@@ -18,6 +18,4 @@ async function feeds() {
   const response = await request.json();
 
   return response;
-}
-
-export default feeds();
+};

@@ -1,6 +1,6 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
-async function saveeFeed() {
+module.exports = async function saveeFeed() {
   async function getFeed() {
     return fetch("https://api.savee.it/user/interrobang/items/", {
       headers: {
@@ -10,6 +10,4 @@ async function saveeFeed() {
   }
 
   return getFeed().then((json) => json.data);
-}
-
-export default saveeFeed;
+};

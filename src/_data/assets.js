@@ -1,12 +1,10 @@
-import { createClient } from "contentful";
+const contentful = require("contentful");
 
-const client = createClient({
+const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-async function assets() {
+module.exports = async function assets() {
   return client.getAssets().then((result) => result.items);
-}
-
-export default assets();
+};

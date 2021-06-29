@@ -1,6 +1,6 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
-export default class LastFMAPI {
+module.exports = class LastFMAPI {
   constructor() {
     this.apiEndpoint = "http://ws.audioscrobbler.com/2.0/";
     this.apiKey = process.env.LASTFM_API_KEY;
@@ -36,4 +36,4 @@ export default class LastFMAPI {
       .join("&");
     return fetch(`${this.apiEndpoint}?${params}`);
   }
-}
+};
