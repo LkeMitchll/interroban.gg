@@ -8,8 +8,6 @@ const JsonStringify = require("./src/filters/json");
 const markdown = require("./src/shortcodes/markdown");
 const responsiveImage = require("./src/shortcodes/responsiveImage");
 
-config();
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRSS);
   eleventyConfig.addPlugin(pluginReadingTime);
