@@ -13,6 +13,8 @@
 @import "blocks/thumbnail.css";
 @import "blocks/track.css";
 @import "blocks/markdown.css";
+@import "blocks/footnote.css";
+@import "blocks/figure.css";
 @import "blocks/accordian.css";
 @import "blocks/toc.css";
 @import "blocks/tab.css";

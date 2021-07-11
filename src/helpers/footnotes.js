@@ -16,11 +16,11 @@ module.exports = function customFootnotes() {
       });
 
       const identifier = {
-        type: "strong",
+        type: "footnoteTitle",
         children: [{ type: "text", value: `Nº${node.identifier} ` }],
       };
       const backlink = {
-        type: "link",
+        type: "footnoteBacklink",
         backRef: true,
         title: null,
         url: `#fnref-${node.identifier}`,

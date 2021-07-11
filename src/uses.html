@@ -10,7 +10,7 @@ title: Uses
 
 <header class="flow | hero | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <section class="markdown | measure">
+  <section class="markdown">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </section>
   <hr>
@@ -38,6 +38,6 @@ title: Uses
   </section>
 </article>
 
-<article class="markdown | measure flow | gap-xx-large">
+<article class="markdown | flow | gap-xx-large">
   {% renderMarkdown content.fields.contentMarkdown %}
 </article>

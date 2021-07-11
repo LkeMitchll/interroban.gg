@@ -2,6 +2,10 @@
   counter-reset: image-number;
 }
 
+.markdown :not(section) {
+  max-width: 50ch;
+}
+
 .markdown h2,
 .markdown h3 {
   font-size: var(--text-size-default);
@@ -21,83 +25,4 @@
 
 .markdown :not(h3) + ul {
   margin-top: 1rem;
-}
-
-.markdown img + figcaption {
-  counter-increment: image-number;
-  margin-top: var(--space-default);
-  padding-left: var(--space-default);
-  border-left: var(--border-default);
-}
-
-.markdown img + figcaption p::before {
-  color: var(--color-secondary);
-  content: "Fig N\00BA"counter(image-number) " ";
-  font-family: var(--text-mono);
-}
-
-/* Footnote */
-.markdown aside {
-  font-size: var(--text-size-small);
-  margin-top: var(--space-large);
-  padding-left: var(--space-default);
-  border-left: var(--border-default);
-  height: intrinsic;
-  width: 50%;
-}
-
-/* Footnote: image */
-.markdown aside img {
-  margin-bottom: var(--space-default);
-}
-
-/* Footnote: ref, title & backlink */
-
-.markdown sup a {
-  color: var(--color-highlight);
-}
-
-.markdown aside strong:first-of-type,
-.markdown sup a,
-.markdown aside a:last-of-type {
-  font-size: var(--text-size-small);
-  font-family: var(--text-mono);
-  text-decoration: none;
-}
-
-.markdown aside strong:first-of-type {
-  color: var(--color-secondary);
-}
-
-.markdown sup a::before {
-  content: "[";
-}
-
-.markdown sup a::after {
-  content: "]";
-}
-
-/* Footnote: backlink */
-.markdown aside a:last-of-type {
-  margin-left: 0.5em;
-}
-
-@media (min-width: 900px) {
-  .markdown section {
-    position: relative;
-    width: 160%;
-  }
-
-  .markdown section > p {
-    width: 66.66%;
-  }
-
-  .markdown aside {
-    margin-top: 0;
-    margin-left: var(--space-large);
-    position: absolute;
-    width: calc(33.33% - var(--space-large));
-    right: 0;
-    top: 0;
-  }
 }

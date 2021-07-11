@@ -24,23 +24,34 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
     .use(externalLinks)
     .use(html, {
       handlers: {
-        sectionWithFootnotes: (h, node) => h(node, "section", all(h, node)),
+        sectionWithFootnotes: (h, node) =>
+          h(node, "section", { class: "with-footnotes" }, all(h, node)),
         customFootnoteDefinition: (h, node) => {
           const id = `fn-${node.identifier}`;
           return h(node, "aside", { id }, all(h, node));
         },
+        footnoteTitle: (h, node) =>
+          h(node, "strong", { class: "footnote-title" }, all(h, node)),
+        footnoteBacklink: (h, node) =>
+          h(
+            node,
+            "a",
+            { href: node.url, class: "footnote-backlink" },
+            all(h, node)
+          ),
         footnoteImage: (h, node) => {
           const imageID = node.url.split("/")[4];
           const imageObject = findByID(assets, imageID);
           const imageAttrs = responsiveImage(imageObject, "oneCol", true);
           return h(node, "img", { ...imageAttrs }, all(h, node));
         },
-        imageWrapper: (h, node) => h(node, "section", all(h, node)),
+        imageWrapper: (h, node) =>
+          h(node, "section", { class: "figure | columns" }, all(h, node)),
         figcaption: (h, node) =>
           h(
             node,
             "figcaption",
-            { class: "small-text | measure" },
+            { class: "caption | small-text | measure" },
             all(h, node)
           ),
         image: (h, node) => {

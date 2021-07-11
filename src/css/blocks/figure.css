@@ -1,0 +1,26 @@
+.figure {
+  --row-gap: var(--space-default);
+}
+
+.figure img,
+.caption {
+  max-width: 100%;
+  grid-column: 1/4;
+}
+
+.caption * {
+  display: inline;
+}
+
+.caption {
+  grid-column: 1/3;
+  counter-increment: image-number;
+  padding-left: var(--space-default);
+  border-left: var(--border-default);
+}
+
+.caption::before {
+  color: var(--color-secondary);
+  content: "Fig N\00BA"counter(image-number) " ";
+  font-family: var(--text-mono);
+}

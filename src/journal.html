@@ -11,7 +11,7 @@ alpine: true
 
 <header class="flow | gap-xx-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
-  <div class="markdown | measure | gap">
+  <div class="markdown | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <h3 class="subtitle">Feeds</h3>
@@ -26,7 +26,7 @@ alpine: true
 
 <article id="now" class="flow | gap-xx-large">
   <h2 class="title">Now</h2>
-  <section class="markdown | measure flow">
+  <section class="markdown | flow">
     {% renderMarkdown now.fields.contentMarkdown, assets %}
   </section>
   <details>
