@@ -2,7 +2,7 @@
 
 <article id="reading" class="gap-xx-large">
   <h2 class="title">{{ recentlyRead.fields.title }}</h2>
-  <ul class="flow gap-large" data-appearance="plain">
+  <ul class="flow gap-large">
     {% for item in recentlyRead.fields.items %}
     <li>
       <a href="{{ item.fields.url }}"

@@ -23,6 +23,10 @@
   margin-top: var(--space-x-large);
 }
 
+.markdown ul {
+  list-style: circle;
+}
+
 .markdown :not(h3) + ul {
   margin-top: 1rem;
 }

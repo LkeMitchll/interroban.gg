@@ -7,7 +7,7 @@
       <hr class="gap-large" />
       {% for week in [music.lastWeek, music.thisWeek] %}
       <h3 class="subtitle">{{ week.title }}</h3>
-        <ul class="stats | tertiary-text gap-large" style="--min: 0" data-appearance="plain">
+        <ul class="stats | tertiary-text gap-large" style="--min: 0">
         {% for stat in [week.tracks, week.albums] %}
           <li>
             <div class="horizontal">
@@ -27,7 +27,7 @@
 
     <div>
       <h3 class="subtitle">Top tracks (this month)</h3>
-      <ol class="tracks | flow" data-appearance="plain">
+      <ol class="tracks | flow">
         {% for track in music.topTracks %}
         <li class="track">
           <img
@@ -50,7 +50,7 @@
 
     <div>
       <h3 class="subtitle">Top artists (6 months)</h3>
-      <ol class="tracks | flow" data-appearance="plain">
+      <ol class="tracks | flow">
         {% for artist in music.topArtists %}
         <li class="track">
           <img

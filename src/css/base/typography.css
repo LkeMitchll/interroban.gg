@@ -61,25 +61,12 @@ a {
 ul,
 ol {
   margin: 0;
-  padding-left: 1.2em;
-}
-
-ul {
-  list-style: circle;
-}
-
-li {
-  padding-left: var(--space-small);
-  margin-bottom: var(--space-small);
-}
-
-ul[data-appearance="plain"],
-ol[data-appearance="plain"] {
   padding: 0;
   list-style: none;
 }
 
-*[data-appearance="plain"] li {
+li {
+  margin-bottom: var(--space-small);
   padding: 0;
 }
 

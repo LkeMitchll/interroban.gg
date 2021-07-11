@@ -15,7 +15,7 @@ alpine: true
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <h3 class="subtitle">Feeds</h3>
-  <ul data-appearance="plain">
+  <ul>
     {{ metaLink("RSS Feed", "/rss.xml", external = false) }}
     {{ metaLink("JSON Feed", "/api/posts.json") }}
   </ul>

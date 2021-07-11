@@ -4,7 +4,7 @@
       Luke Mitchell &mdash;<br />
       Product Designer
     </p>
-    <ul data-appearance="plain">
+    <ul>
       {% for page in navigation.routes[0].pages %}
         <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
       {% endfor %}
@@ -14,7 +14,7 @@
   {% for category in footerCategories %}
   <div class="push-down">
     <p class="subtitle | gap-small">{{ category.name }}</p>
-    <ul data-appearance="plain">
+    <ul>
       {% for page in category.pages %}
         <li><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
       {% endfor %}
