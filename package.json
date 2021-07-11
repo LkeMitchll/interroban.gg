@@ -41,7 +41,7 @@
     "build:eleventy": "eleventy",
     "clean": "rm -rf _site",
     "dev": "netlify dev",
-    "dev:eleventy": "eleventy --incremental --serve",
+    "dev:eleventy": "eleventy --serve",
     "lint": "npm-run-all -s lint:*",
     "lint:stylelint": "stylelint ./src/css",
     "lint:eslint": "eslint ./src",
