@@ -13,23 +13,21 @@ title: Feeds
   <hr/>
 </header>
 
-<article class="grid | gap-xx-large">
-  <ul class="grid columns" style="--cols: 3" data-appearance="plain">
-    {% for feed in feeds %}
-    <li>
-      <a href="{{ feed.site_url }}"
-         target="_blank"
-         rel="noreferrer"
-      >
-        {{ feed.title }}
-      </a>
-      <p class="color-secondary">
-        <time datetime="{{ feed.created_at }}">
-          Reading since:
-          {{ feed.created_at | formatDate("medium") }}
-        </time>
-      </p>
-    </li>
-    {% endfor %}
-  </ul>
-</article>
+<ul class="columns | gap-xx-large" style="--cols: 3" data-appearance="plain">
+  {% for feed in feeds %}
+  <li>
+    <a href="{{ feed.site_url }}"
+        target="_blank"
+        rel="noreferrer"
+    >
+      {{ feed.title }}
+    </a>
+    <p class="color-secondary">
+      <time datetime="{{ feed.created_at }}">
+        Reading since:
+        {{ feed.created_at | formatDate("medium") }}
+      </time>
+    </p>
+  </li>
+  {% endfor %}
+</ul>

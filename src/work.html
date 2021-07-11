@@ -16,7 +16,7 @@ title: Work
   <hr>
 </header>
 
-<article class="grid | gap-x-large">
+<article class="flow | gap-x-large">
   <h2 id="process" class="title | gap-small">Process</h2>
   <section class="markdown | flow measure"> 
     <section>
@@ -51,7 +51,7 @@ title: Work
   </p>
 </article>
 
-<article class="grid columns | gap-xx-large">
+<article class="columns | gap-xx-large">
   <section>
     <header>
       <p class="tertiary-text | gap-small">01</p>
@@ -86,7 +86,7 @@ title: Work
   </section>
 </article>
 
-<article class="grid columns | gap-x-large">
+<article class="columns | gap-x-large">
   <div class="occupy-3">
     {% responsiveImage discoverImage, "threeQuarters" %}
   </div>
@@ -98,8 +98,6 @@ title: Work
   </p>
 </article>
 
-<article class="grid | gap-xx-large">
-  <section class="markdown | measure flow">
-    {% renderMarkdown content.fields.contentMarkdown, assets %}
-  </section>
+<article class="markdown | measure flow | gap-xx-large">
+  {% renderMarkdown content.fields.contentMarkdown, assets %}
 </article>

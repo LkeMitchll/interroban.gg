@@ -18,18 +18,16 @@ title: Colophon
 {% set toc = ["Updates", "Notes"] %}
 {% include "src/_includes/toc.html" %}
 
-<article class="grid | gap-xx-large">
-  <section>
-    <div id="updates" class="gap-large">
-      <h2 class="title">Updates</h2>
-      {% set postParent = '/colophon' %}
-      {% include "src/_includes/posts.html" %}
-      {% include "src/_includes/commits.html" %}
-      <hr />
-    </div>
-    <section id="notes" class="markdown | measure flow">
-      <h2 class="title">Notes</h2>
-      {% renderMarkdown content.fields.contentMarkdown %}
-    </section>
+<article class="flow | gap-xx-large">
+  <div id="updates" class="gap-large">
+    <h2 class="title">Updates</h2>
+    {% set postParent = '/colophon' %}
+    {% include "src/_includes/posts.html" %}
+    {% include "src/_includes/commits.html" %}
+    <hr />
+  </div>
+  <section id="notes" class="markdown | measure flow">
+    <h2 class="title">Notes</h2>
+    {% renderMarkdown content.fields.contentMarkdown %}
   </section>
 </article>

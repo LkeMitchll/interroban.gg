@@ -5,7 +5,6 @@
 @import "base/typography.css";
 
 /* compositions */
-@import "compositions/grid.css";
 @import "compositions/columns.css";
 
 /* blocks */

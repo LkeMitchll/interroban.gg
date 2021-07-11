@@ -20,7 +20,7 @@ title: About Me
   </ul>
 </header>
 
-<article class="grid columns | gap-x-large">
+<article class="columns | gap-x-large">
   <div class="occupy-3">
     {% responsiveImage heroImage, "threeQuarters" %}
   </div>
@@ -35,10 +35,8 @@ title: About Me
 {% set toc = ["History", "Experience", "Clients", "Skills"] %}
 {% include "src/_includes/toc.html" %}
 
-<article class="grid | gap-xx-large">
-  <section class="markdown | measure flow">
-    {% renderMarkdown content.fields.contentMarkdown, assets %}
-  </section>
+<article class="markdown | flow measure | gap-xx-large">
+  {% renderMarkdown content.fields.contentMarkdown, assets %}
 </article>
 
 {% include "src/_includes/career.html" %}

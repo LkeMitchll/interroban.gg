@@ -1,6 +1,6 @@
 {% set recentlyRead = list | findByID("2uust09L73V2AcXwl3F80h") %}
 
-<section id="reading">
+<article id="reading" class="gap-xx-large">
   <h2 class="title">{{ recentlyRead.fields.title }}</h2>
   <ul class="flow gap-large" data-appearance="plain">
     {% for item in recentlyRead.fields.items %}
@@ -19,4 +19,4 @@
     </li>
     {% endfor %}
   </ul>
-</section>
+</article>

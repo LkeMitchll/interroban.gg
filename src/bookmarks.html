@@ -25,7 +25,7 @@ title: Bookmarks
 {% set toc = ["Favourites", "2021", "2020", "Archive"] %}
 {% include "src/_includes/toc.html" %}
 
-<article id="favourites" class="grid | gap-x-large">
+<article id="favourites" class="flow | gap-x-large">
   <h2 class="title | gap-small">Favourites</h2>
   <section>
     <h3 class="subtitle">{{ roundup.fields.title }}</h3>
@@ -34,6 +34,6 @@ title: Bookmarks
   </section>
 </article>
 
-<article class="grid | gap-xx-large" style="--row-gap: var(--space-small)">
+<article class="flow | gap-xx-large" style="--row-gap: var(--space-small)">
   {% include "src/_includes/bookmark-table.html" %}
 </article>

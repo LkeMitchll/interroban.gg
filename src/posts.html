@@ -9,15 +9,13 @@ layout: layout.html
 
 {% from 'src/_includes/stats.html' import stats %}
 
-<header class="grid | gap-x-large">
+<header class="flow | gap-x-large">
   <h1 class="headline | measure | gap-small">{{ post.fields.title }}</h1>
   <div class="flow" style="--flow-space: var(--space-default)">
     {{ stats(updatedDate = post.sys.updatedAt, readableContent = post.fields.contentMarkdown ) }}
   </div>
 </header>
 
-<article class="grid | gap-xx-large">
-  <section class="markdown | measure flow">
-    {% renderMarkdown post.fields.contentMarkdown %}
-  </section>
+<article class="markdown | measure flow | gap-xx-large">
+  {% renderMarkdown post.fields.contentMarkdown %}
 </article>

@@ -24,41 +24,39 @@ alpine: true
 
 {% include "src/_includes/toc.html" %}
 
-<article class="grid | gap-x-large">
-  <section id="now" class="flow | gap-x-large">
-    <h2 class="title">Now</h2>
-    <section class="markdown | measure flow">
-      {% renderMarkdown now.fields.contentMarkdown, assets %}
-    </section>
-    <details>
-      <summary class="gap">
-        <h3 class="subtitle | inline">Current Clients</h3>
-      </summary>
-      <div>
-        <ul>
-          {% for client in now.fields.currentClients %}
-          <li>{{ client }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </details>
-    <footer>
-      <time datetime="{{ now.fields.date }}">
-        Last updated &ndash; {{ now.fields.date | formatDate }}
-      </time>
-    </footer>
+<article id="now" class="flow | gap-xx-large">
+  <h2 class="title">Now</h2>
+  <section class="markdown | measure flow">
+    {% renderMarkdown now.fields.contentMarkdown, assets %}
   </section>
-
-  <section id="posts" class="gap-x-large">
-    <h2 class="title">Posts</h2>
-    {% include "src/_includes/posts.html" %}
-  </section>
-
-  {% include "src/_includes/listening.html" %}
-  {% include "src/_includes/reading.html" %}
+  <details>
+    <summary class="gap">
+      <h3 class="subtitle | inline">Current Clients</h3>
+    </summary>
+    <div>
+      <ul>
+        {% for client in now.fields.currentClients %}
+        <li>{{ client }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </details>
+  <footer>
+    <time datetime="{{ now.fields.date }}">
+      Last updated &ndash; {{ now.fields.date | formatDate }}
+    </time>
+  </footer>
 </article>
 
-<div class="grid | gap-xx-large">
+<article id="posts" class="flow | gap-xx-large">
+  <h2 class="title">Posts</h2>
+  {% include "src/_includes/posts.html" %}
+</article>
+
+{% include "src/_includes/listening.html" %}
+{% include "src/_includes/reading.html" %}
+
+<div class="flow | gap-xx-large">
   <header>
     <h2 id="scrapbook" class="title">Scrapbook</h2>
     <p class="measure gap">

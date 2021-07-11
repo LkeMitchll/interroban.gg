@@ -19,7 +19,7 @@ title: Uses
 {% set toc = ["Design", "Development", "General"] %}
 {% include "src/_includes/toc.html" %}
 
-<article class="grid columns | gap-x-large" style="--cols: 2">
+<article class="columns | gap-x-large" style="--cols: 2">
   <section class="flow">
     {% responsiveImage deskImage, "half" %}
     <p class="measure | leading-crushed">
@@ -38,8 +38,6 @@ title: Uses
   </section>
 </article>
 
-<article class="grid | gap-xx-large">
-  <section class="markdown | measure flow">
-    {% renderMarkdown content.fields.contentMarkdown %}
-  </section>
+<article class="markdown | measure flow | gap-xx-large">
+  {% renderMarkdown content.fields.contentMarkdown %}
 </article>

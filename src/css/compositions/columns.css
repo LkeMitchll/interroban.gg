@@ -1,6 +1,17 @@
+.columns {
+  display: grid;
+  grid-column-gap: var(--gap, var(--space-large));
+  grid-row-gap: var(--row-gap, var(--space-large));
+}
+
 @media (min-width: 700px) {
   .columns {
+    grid-column-gap: var(--space-x-large);
     grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
+  }
+
+  .columns * {
+    grid-column: var(--position, auto);
   }
 
   .occupy-3 {
