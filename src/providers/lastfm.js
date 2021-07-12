@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const Cache = require("@11ty/eleventy-cache-assets");
 
 module.exports = class LastFMAPI {
   constructor() {
@@ -19,7 +19,11 @@ module.exports = class LastFMAPI {
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
       .join("&");
-    return fetch(`${this.apiEndpoint}?${params}`);
+
+    return Cache(`${this.apiEndpoint}?${params}`, {
+      duration: "1h",
+      type: "json",
+    });
   }
 
   fetchAlbumTotal(from, to) {
@@ -34,6 +38,10 @@ module.exports = class LastFMAPI {
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
       .join("&");
-    return fetch(`${this.apiEndpoint}?${params}`);
+
+    return Cache(`${this.apiEndpoint}?${params}`, {
+      duration: "1h",
+      type: "json",
+    });
   }
 };

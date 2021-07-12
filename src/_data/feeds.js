@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const Cache = require("@11ty/eleventy-cache-assets");
 
 module.exports = async function feeds() {
   const apiEndpoint = "https://api.feedbin.com/v2/";
@@ -8,14 +8,17 @@ module.exports = async function feeds() {
     `${process.env.FEEDBIN_USER}:${process.env.FEEDBIN_PASS}`
   ).toString("base64");
 
-  const fetchFeeds = fetch(subscriptionsEndpoint, {
-    headers: {
-      Authorization: `Basic ${credentials}`,
-    },
-  });
+  async function getSubscriptions() {
+    return Cache(subscriptionsEndpoint, {
+      duration: "1d",
+      type: "json",
+      fetchOptions: {
+        headers: {
+          Authorization: `Basic ${credentials}`,
+        },
+      },
+    });
+  }
 
-  const request = await fetchFeeds;
-  const response = await request.json();
-
-  return response;
+  return getSubscriptions().then((json) => json);
 };

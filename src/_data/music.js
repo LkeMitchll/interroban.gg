@@ -10,19 +10,15 @@ async function lastWeek() {
 
   const comparisonTracks = await api
     .fetchTrackTotal(comparisonStart, lastWeekStart)
-    .then((response) => response.json())
     .then((json) => Number(json.recenttracks["@attr"].total));
   const comparisonAlbums = await api
     .fetchAlbumTotal(comparisonStart, lastWeekStart)
-    .then((response) => response.json())
     .then((json) => json.weeklyalbumchart.album.length);
   const lastWeekTracks = await api
     .fetchTrackTotal(lastWeekStart, lastWeekEnd)
-    .then((response) => response.json())
     .then((json) => Number(json.recenttracks["@attr"].total));
   const lastWeekAlbums = await api
     .fetchAlbumTotal(lastWeekStart, lastWeekEnd)
-    .then((response) => response.json())
     .then((json) => json.weeklyalbumchart.album.length);
 
   return {
@@ -51,16 +47,17 @@ async function lastWeek() {
 async function thisWeek() {
   const api = new LastFMAPI();
   const date = new Date();
+  date.setMinutes(0);
+  date.setSeconds(0);
+  date.setMilliseconds(0);
   const lastWeekEnd = dateToEpochWithOffset(23, 0);
   const now = Math.round(date.valueOf() / 1000).toString();
 
   const thisWeekTracks = await api
     .fetchTrackTotal(lastWeekEnd, now)
-    .then((response) => response.json())
     .then((json) => json.recenttracks["@attr"].total);
   const thisWeekAlbums = await api
     .fetchAlbumTotal(lastWeekEnd, now)
-    .then((response) => response.json())
     .then((json) => json.weeklyalbumchart.album.length);
 
   return {
@@ -79,9 +76,8 @@ async function thisWeek() {
 async function topTracks() {
   const api = new SpotifyAPI();
   const response = await api.getTopTracks();
-  const { items } = await response.json();
 
-  const tracks = items.map((song) => {
+  const tracks = response.items.map((song) => {
     const artist = song.artists.map((_artist) => _artist.name).join(", ");
     return {
       id: song.id,
@@ -104,9 +100,8 @@ async function topTracks() {
 async function topArtists() {
   const api = new SpotifyAPI();
   const response = await api.getTopArtists();
-  const { items } = await response.json();
 
-  return items.map((artist) => ({
+  return response.items.map((artist) => ({
     id: artist.id,
     name: artist.name,
     image: {

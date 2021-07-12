@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const Cache = require("@11ty/eleventy-cache-assets");
 
 module.exports = class SpotifyAPI {
   constructor() {
@@ -6,7 +7,7 @@ module.exports = class SpotifyAPI {
     this.apiEndpoint = "https://api.spotify.com/v1/me";
 
     this.credentials = Buffer.from(
-      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
+      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
     ).toString("base64");
 
     this.topTracksEndpoint = `${this.apiEndpoint}/top/tracks?time_range=short_term&limit=5`;
@@ -31,9 +32,13 @@ module.exports = class SpotifyAPI {
     /* eslint camelcase: "off" */
     const { access_token } = await this.getAccessToken();
 
-    return fetch(this.topTracksEndpoint, {
-      headers: {
-        Authorization: `Bearer ${access_token}`,
+    return Cache(this.topTracksEndpoint, {
+      duration: "1h",
+      type: "json",
+      fetchOptions: {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
       },
     });
   }
@@ -42,9 +47,13 @@ module.exports = class SpotifyAPI {
     /* eslint camelcase: "off" */
     const { access_token } = await this.getAccessToken();
 
-    return fetch(this.topArtistsEndpoint, {
-      headers: {
-        Authorization: `Bearer ${access_token}`,
+    return Cache(this.topArtistsEndpoint, {
+      duration: "1h",
+      type: "json",
+      fetchOptions: {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
       },
     });
   }
