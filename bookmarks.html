@@ -3,7 +3,7 @@ layout: layout.html
 title: Bookmarks
 ---
 
-{% from 'src/_includes/metaLink.html' import metaLink %}
+{% from '_includes/metaLink.html' import metaLink %}
 
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
@@ -23,17 +23,17 @@ title: Bookmarks
 </header>
 
 {% set toc = ["Favourites", "2021", "2020", "Archive"] %}
-{% include "src/_includes/toc.html" %}
+{% include "_includes/toc.html" %}
 
 <article id="favourites" class="flow | gap-x-large">
   <h2 class="title | gap-small">Favourites</h2>
   <section>
     <h3 class="subtitle">{{ roundup.fields.title }}</h3>
     {% set favouriteBookmarks = roundup.fields.links %}
-    {% include "src/_includes/favouriteBookmarks.html" %}
+    {% include "_includes/favouriteBookmarks.html" %}
   </section>
 </article>
 
 <article class="flow | gap-xx-large" style="--row-gap: var(--space-small)">
-  {% include "src/_includes/bookmark-table.html" %}
+  {% include "_includes/bookmark-table.html" %}
 </article>

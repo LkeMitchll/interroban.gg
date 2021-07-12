@@ -10,13 +10,13 @@ title: Product Designer
   <h1 class="headline">Welcome</h1>
   <div class="measure flow">
     {% renderMarkdown content.fields.descriptionMarkdown %}
-    {% include "src/_includes/siteDirectory.html" %}
+    {% include "_includes/siteDirectory.html" %}
   </div>
 </header>
 
 <article class="flow | gap-x-large">
   <h2 class="title">Recent Posts</h2>
-  {% include "src/_includes/posts.html" %}
+  {% include "_includes/posts.html" %}
   <a href="/journal" class="link">See all Posts</a>
 </article>
 
@@ -24,6 +24,6 @@ title: Product Designer
   <h2 class="title">Recent Bookmarks</h2>
   {% set timePeriod = bookmarks[0] %}
   {% set bookmarks = timePeriod.bookmarks | limit(3) %}
-  {% include "src/_includes/bookmarks.html" %}
+  {% include "_includes/bookmarks.html" %}
   <a href="/bookmarks" class="link">See all Bookmarks</a>
 </article>

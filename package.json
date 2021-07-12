@@ -44,8 +44,8 @@
     "dev": "netlify dev",
     "dev:eleventy": "eleventy --serve",
     "lint": "npm-run-all -s lint:*",
-    "lint:stylelint": "stylelint ./src/css",
-    "lint:eslint": "eslint ./src",
-    "lint:html": "curlylint ./src"
+    "lint:stylelint": "stylelint ./css",
+    "lint:eslint": "eslint .",
+    "lint:html": "curlylint ."
   }
 }

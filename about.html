@@ -3,7 +3,7 @@ layout: layout.html
 title: About Me
 ---
 
-{% from 'src/_includes/metaLink.html' import metaLink %}
+{% from '_includes/metaLink.html' import metaLink %}
 
 {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
 {% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
@@ -33,10 +33,10 @@ title: About Me
 </article>
 
 {% set toc = ["History", "Experience", "Clients", "Skills"] %}
-{% include "src/_includes/toc.html" %}
+{% include "_includes/toc.html" %}
 
 <article class="markdown | flow | gap-large">
   {% renderMarkdown content.fields.contentMarkdown, assets %}
 </article>
 
-{% include "src/_includes/career.html" %}
+{% include "_includes/career.html" %}

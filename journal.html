@@ -4,7 +4,7 @@ title: Journal
 alpine: true
 ---
 
-{% from 'src/_includes/metaLink.html' import metaLink %}
+{% from '_includes/metaLink.html' import metaLink %}
 {% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
 {% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
 {% set scrapbook = savee | limit(50) %}
@@ -22,7 +22,7 @@ alpine: true
   <hr>
 </header>
 
-{% include "src/_includes/toc.html" %}
+{% include "_includes/toc.html" %}
 
 <article id="now" class="flow | gap-xx-large">
   <h2 class="title">Now</h2>
@@ -50,11 +50,11 @@ alpine: true
 
 <article id="posts" class="flow | gap-xx-large">
   <h2 class="title">Posts</h2>
-  {% include "src/_includes/posts.html" %}
+  {% include "_includes/posts.html" %}
 </article>
 
-{% include "src/_includes/listening.html" %}
-{% include "src/_includes/reading.html" %}
+{% include "_includes/listening.html" %}
+{% include "_includes/reading.html" %}
 
 <div class="flow | gap-xx-large">
   <header>
@@ -73,5 +73,5 @@ alpine: true
       </small>
     </p>
   </header>
-  {% include "src/_includes/scrapbook.html" %}
+  {% include "_includes/scrapbook.html" %}
 </div>

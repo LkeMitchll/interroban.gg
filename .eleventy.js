@@ -1,20 +1,21 @@
 require("dotenv").config();
+
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const pluginReadingTime = require("eleventy-plugin-reading-time");
-const findByID = require("./src/filters/findByID");
-const limit = require("./src/filters/limit");
-const date = require("./src/filters/date");
-const JsonStringify = require("./src/filters/json");
-const markdown = require("./src/shortcodes/markdown");
-const responsiveImage = require("./src/shortcodes/responsiveImage");
+const findByID = require("./filters/findByID");
+const limit = require("./filters/limit");
+const date = require("./filters/date");
+const JsonStringify = require("./filters/json");
+const markdown = require("./shortcodes/markdown");
+const responsiveImage = require("./shortcodes/responsiveImage");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRSS);
   eleventyConfig.addPlugin(pluginReadingTime);
 
-  eleventyConfig.addPassthroughCopy("./src/assets/fonts");
-  eleventyConfig.addPassthroughCopy("./src/assets/images");
-  eleventyConfig.addWatchTarget("./src/css/**/*.css");
+  eleventyConfig.addPassthroughCopy("./assets/fonts");
+  eleventyConfig.addPassthroughCopy("./assets/images");
+  eleventyConfig.addWatchTarget("./css/**/*.css");
 
   eleventyConfig.addFilter("findByID", findByID);
   eleventyConfig.addFilter("limit", limit);
@@ -26,8 +27,5 @@ module.exports = function (eleventyConfig) {
 
   return {
     htmlTemplateEngine: "njk",
-    dir: {
-      input: "src",
-    },
   };
 };
