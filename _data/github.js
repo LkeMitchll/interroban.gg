@@ -11,7 +11,7 @@ module.exports = async function commits() {
 
   const sanitisedData = response.data.map((child) => ({
     sha: child.sha.substr(0, 7),
-    message: child.commit.message,
+    message: child.commit.message.split("\n")[0],
     url: child.html_url,
     date: child.commit.committer.date,
   }));
