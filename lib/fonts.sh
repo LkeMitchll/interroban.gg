@@ -28,10 +28,19 @@ pyftsubset\
       U+2122,U+2190-21BB,U+2212,U+2215,U+F8FF,U+FEFF,U+FFFD" &&
 
 pyftsubset\
-      GT-America-Extended-Medium.woff2 \
-      --output-file="GT-America-Extended-Medium.subset.woff2" \
+      signifier-web-light.woff2 \
+      --output-file="signifier-web-light.subset.woff2" \
       --flavor=woff2 \
-      --layout-features="ccmp,locl,mark,mkmk,kern,liga,calt"\
+      --layout-features="ccmp,locl,kern,liga,calt"\
+      --unicodes="U+0000-00A0,U+00A2-00A9,U+00AC-00AE,U+00B0-00B7,\
+      U+00B9-00BA,U+00BC-00BE,U+00D7,U+00F7,U+2000-206F,U+2074,U+20AC,\
+      U+2122,U+2190-21BB,U+2212,U+2215,U+F8FF,U+FEFF,U+FFFD" &&
+
+pyftsubset\
+      signifier-web-light-italic.woff2 \
+      --output-file="signifier-web-light-italic.subset.woff2" \
+      --flavor=woff2 \
+      --layout-features="ccmp,locl,kern,liga,calt"\
       --unicodes="U+0000-00A0,U+00A2-00A9,U+00AC-00AE,U+00B0-00B7,\
       U+00B9-00BA,U+00BC-00BE,U+00D7,U+00F7,U+2000-206F,U+2074,U+20AC,\
       U+2122,U+2190-21BB,U+2212,U+2215,U+F8FF,U+FEFF,U+FFFD" &&
