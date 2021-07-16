@@ -1,11 +1,11 @@
 ---
 layout: layout.html
 title: Uses
+theme: yellow
 ---
 
 
-{% set deskImage = assets | findByID("53QRaqT5sCB9hDJvRw8I8W") %}
-{% set macImage = assets | findByID("4tfwXMS2ViqOr2nrmxNrJ4") %}
+{% set deskImage = assets | findByID("1c4JuakaETS6Z15ssCSTEF") %}
 {% set content = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
 
 <header class="flow | hero | gap-x-large">
@@ -16,30 +16,15 @@ title: Uses
   <hr>
 </header>
 
-{% set toc = ["Design", "Development", "General"] %}
-{% include "_includes/toc.html" %}
-
-<article class="columns | gap-x-large" style="--cols: 2">
-  <section class="flow">
-    <div class="grayscale-image"> 
-      {% responsiveImage deskImage, "half" %}
-    </div>
-    <p class="measure | leading-crushed">
-      <small>
-        <strong class="tertiary-text | color-secondary">Image </strong> {{ deskImage.fields.description }}
-      </small>
-    </p>
-  </section>
-  <section class="flow">
-    <div class="grayscale-image"> 
-      {% responsiveImage macImage, "half" %}
-    </div>
-    <p class="measure | leading-crushed">
-      <small>
-        <strong class="tertiary-text | color-secondary">Image </strong> {{ macImage.fields.description }}
-      </small>
-    </p>
-  </section>
+<article class="columns | gap-x-large">
+  <div class="occupy-3 | grayscale-image"> 
+    {% responsiveImage deskImage, "half" %}
+  </div>
+  <p class="measure | push-down leading-crushed">
+    <small>
+      <strong class="tertiary-text | color-secondary">Image </strong> {{ deskImage.fields.description }}
+    </small>
+  </p>
 </article>
 
 <article class="markdown | flow | gap-xx-large">
