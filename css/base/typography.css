@@ -128,4 +128,5 @@ hr {
   margin: auto 0 0;
   height: 1px;
   border-bottom: var(--border-default);
+  opacity: 0.4;
 }
