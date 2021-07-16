@@ -43,3 +43,17 @@
     --color-highlight: yellowgreen;
   }
 }
+
+.green {
+  --color-primary: #455643;
+  --color-secondary: #455643;
+  --color-bg: #e7ffc8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .green {
+    --color-primary: #e7ffc8;
+    --color-secondary: #e7ffc8;
+    --color-bg: #455643;
+  }
+}

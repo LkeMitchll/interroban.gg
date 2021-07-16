@@ -7,7 +7,7 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
 {% set fonts = ["GT-America-Extended-Medium", "Blanco-Regular", "Blanco-Medium", "Blanco-Italic", "pitch-web-semibold", "pitch-web-semibold-italic"] %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="{{ theme }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,7 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
     <meta content="en" property="og:locale" />
     <title>Luke Mitchell | {{ pageTitle }}</title>
     <link rel="icon" href="/assets/images/favicon.ico">
-    <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     {% for font in fonts %}
       <link rel="preload" href="/assets/fonts/{{ font }}.subset.woff2" as="font" type="font/woff2" crossorigin="" />
