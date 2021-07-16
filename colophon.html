@@ -1,6 +1,7 @@
 ---
 layout: layout.html
 title: Colophon
+theme: pink
 ---
 
 
@@ -15,19 +16,15 @@ title: Colophon
   <hr>
 </header>
 
-{% set toc = ["Updates", "Notes"] %}
-{% include "_includes/toc.html" %}
-
 <article class="flow | gap-xx-large">
   <div id="updates" class="gap-large">
-    <h2 class="title">Updates</h2>
+    <h2>Updates</h2>
     {% set postParent = '/colophon' %}
     {% include "_includes/posts.html" %}
     {% include "_includes/commits.html" %}
     <hr />
   </div>
   <section id="notes" class="markdown | flow">
-    <h2 class="title">Notes</h2>
     {% renderMarkdown content.fields.contentMarkdown %}
   </section>
 </article>
