@@ -1,7 +1,6 @@
 :root {
   --color-primary: hsla(115, 13%, 11%, 0.8);
   --color-secondary: hsla(115, 13%, 30%, 1);
-  --color-faded: hsla(115, 13%, 11%, 0.2);
   --color-x-faded: hsla(115, 13%, 11%, 0.05);
   --color-bg: hsla(84, 100%, 99%, 1);
   --color-highlight: blueviolet;
@@ -30,14 +29,13 @@
   --text-measure: 50ch;
   --radii-default: 2px;
   --border-width-default: 1px;
-  --border-default: var(--border-width-default) dotted var(--color-faded);
+  --border-default: var(--border-width-default) dotted var(--color-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-primary: hsla(36, 37%, 92%, 1);
     --color-secondary: hsla(36, 13%, 63%, 1);
-    --color-faded: hsla(36, 13%, 63%, 0.5);
     --color-x-faded: hsla(36, 13%, 63%, 0.05);
     --color-bg: hsla(173, 20%, 12%, 1);
     --color-highlight: yellowgreen;

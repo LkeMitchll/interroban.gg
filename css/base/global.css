@@ -21,7 +21,7 @@ img {
   width: 100%;
   border-radius: var(--radii-default);
   height: auto;
-  background-color: var(--color-faded);
+  background-color: var(--color-secondary);
 }
 
 @media screen and (min-width: 400px) {

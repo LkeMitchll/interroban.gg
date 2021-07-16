@@ -3,7 +3,7 @@
 
   width: var(--size);
   height: var(--size);
-  background-color: var(--color-faded);
+  background-color: var(--color-secondary);
 }
 
 @media (min-width: 800px) {

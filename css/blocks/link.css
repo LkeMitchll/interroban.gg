@@ -3,7 +3,7 @@
   font-size: var(--text-size-small);
   text-decoration: none;
   transition: border-color 0.25s ease;
-  border-bottom: var(--border-width-default) solid var(--color-faded);
+  border-bottom: var(--border-width-default) solid var(--color-secondary);
 }
 
 .link:hover {
