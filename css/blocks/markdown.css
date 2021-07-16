@@ -29,6 +29,10 @@
   padding-left: var(--space-default);
 }
 
+.markdown .long-list {
+  columns: 2;
+}
+
 .markdown :not(h3) + ul {
   margin-top: 1rem;
 }

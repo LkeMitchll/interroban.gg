@@ -24,22 +24,51 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
     .use(externalLinks)
     .use(html, {
       handlers: {
-        sectionWithFootnotes: (h, node) => h(node, "section", { class: "with-footnotes" }, all(h, node)),
+        sectionWithFootnotes: (h, node) =>
+          h(node, "section", { class: "with-footnotes" }, all(h, node)),
         customFootnoteDefinition: (h, node) => {
           const id = `fn-${node.identifier}`;
           return h(node, "aside", { id }, all(h, node));
         },
-        footnoteTitle: (h, node) => h(node, "strong", { class: "footnote-title" }, all(h, node)),
-        footnoteBacklink: (h, node) => h(node, "a", { href: node.url, class: "footnote-backlink" }, all(h, node)),
+        footnoteTitle: (h, node) =>
+          h(node, "strong", { class: "footnote-title" }, all(h, node)),
+        footnoteBacklink: (h, node) =>
+          h(
+            node,
+            "a",
+            { href: node.url, class: "footnote-backlink" },
+            all(h, node)
+          ),
         footnoteImage: (h, node) => {
           const imageID = node.url.split("/")[4];
           const imageObject = findByID(assets, imageID);
           const imageAttrs = responsiveImage(imageObject, "oneCol", true);
           return h(node, "img", { ...imageAttrs }, all(h, node));
         },
-        imageContainer: (h, node) => h(node, "section", { class: "figure | columns" }, all(h, node)),
-        imageWrapper: (h, node) => h(node, "div", { class: "grayscale-image" }, all(h, node)),
-        figcaption: (h, node) => h(node, "figcaption", { class: "caption | small-text | measure" }, all(h, node)),
+        imageContainer: (h, node) =>
+          h(node, "section", { class: "figure | columns" }, all(h, node)),
+        imageWrapper: (h, node) =>
+          h(node, "div", { class: "grayscale-image" }, all(h, node)),
+        figcaption: (h, node) =>
+          h(
+            node,
+            "figcaption",
+            { class: "caption | small-text | measure" },
+            all(h, node)
+          ),
+        list: (h, node) => {
+          const isLong =
+            node.children.length >= 10 &&
+            node.children[0].children[0].children.length < 2;
+
+          const element = node.ordered ? "ol" : "ul";
+          return h(
+            node,
+            element,
+            { class: isLong ? "long-list" : "" },
+            all(h, node)
+          );
+        },
         image: (h, node) => {
           const imageID = node.url.split("/")[4];
           const imageObject = findByID(assets, imageID);
