@@ -25,6 +25,7 @@
 
 .markdown ul {
   list-style: circle;
+  padding-left: var(--space-default);
 }
 
 .markdown :not(h3) + ul {
