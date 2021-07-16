@@ -6,13 +6,11 @@
 
 /* u: Horizontal */
 
-.horizontal,
-.sm-horizontal {
+.horizontal {
   display: flex;
 }
 
-.horizontal > *,
-.sm-horizontal > * {
+.horizontal > * {
   margin-right: var(--gap, 2rem);
 }
 
@@ -34,10 +32,6 @@
 
 .push-right {
   margin-left: auto;
-}
-
-.push-apart {
-  justify-content: space-between;
 }
 
 /* u: Measure */
@@ -106,10 +100,6 @@
 
 .pad-r-small {
   padding-right: var(--space-small);
-}
-
-.pad-r-large {
-  padding-right: var(--space-large);
 }
 
 /* u: Leading */

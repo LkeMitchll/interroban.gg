@@ -19,8 +19,8 @@
   --text-size-small: 0.75rem;
   --text-weight-normal: 400;
   --text-weight-bold: 600;
-  --text-sans: "GT America Extended", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --text-serif: "Blanco", "Georgia", "Times New Roman", "Times", serif;
+  --text-display: "Signifier", "Georgia", "Times New Roman", "Times", serif;
+  --text-body: "Blanco", "Georgia", "Times New Roman", "Times", serif;
   --text-mono: "Pitch", "Monaco", "Courier New", "Courier", monospace;
   --text-leading-default: 1.5;
   --text-leading-heading: 1.3;

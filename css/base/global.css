@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-bg);
   color: var(--color-primary);
-  font-family: var(--text-serif);
+  font-family: var(--text-body);
   font-feature-settings: "case" on;
   margin: 0;
   margin-top: var(--space-large);
@@ -19,7 +19,6 @@ body {
 img {
   display: block;
   width: 100%;
-  border-radius: var(--radii-default);
   height: auto;
   background-color: var(--color-secondary);
 }
