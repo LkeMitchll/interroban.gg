@@ -3,7 +3,7 @@
   margin-top: var(--space-large);
   padding-left: var(--space-default);
   border-left: var(--border-default);
-  height: intrinsic;
+  height: min-content;
   max-width: 30ch;
 }
 
