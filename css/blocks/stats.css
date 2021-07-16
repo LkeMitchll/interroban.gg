@@ -1,5 +1,5 @@
 .stats {
-  max-width: 40ch;
+  max-width: 60ch;
   min-width: var(--min, 30ch);
 }
 
