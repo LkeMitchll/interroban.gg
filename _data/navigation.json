@@ -34,9 +34,9 @@
           "description": "A list of my current equipment."
         },
         {
-          "name": "Feeds",
+          "name": "Blogroll",
           "url": "/feeds",
-          "description": "A list of RSS feeds I follow."
+          "description": "A list of blogs I follow."
         }
       ]
     }
