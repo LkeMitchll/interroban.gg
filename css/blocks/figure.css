@@ -2,6 +2,7 @@
   --row-gap: var(--space-default);
 }
 
+.figure .grayscale-image,
 .figure img,
 .caption {
   max-width: 100%;

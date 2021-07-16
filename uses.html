@@ -21,7 +21,9 @@ title: Uses
 
 <article class="columns | gap-x-large" style="--cols: 2">
   <section class="flow">
-    {% responsiveImage deskImage, "half" %}
+    <div class="grayscale-image"> 
+      {% responsiveImage deskImage, "half" %}
+    </div>
     <p class="measure | leading-crushed">
       <small>
         <strong class="tertiary-text | color-secondary">Image </strong> {{ deskImage.fields.description }}
@@ -29,7 +31,9 @@ title: Uses
     </p>
   </section>
   <section class="flow">
-    {% responsiveImage macImage, "half" %}
+    <div class="grayscale-image"> 
+      {% responsiveImage macImage, "half" %}
+    </div>
     <p class="measure | leading-crushed">
       <small>
         <strong class="tertiary-text | color-secondary">Image </strong> {{ macImage.fields.description }}

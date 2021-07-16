@@ -22,7 +22,7 @@
 @import "blocks/arrow-link.css";
 @import "blocks/bookmark.css";
 @import "blocks/masonry.css";
-@import "blocks/highlight.css";
+@import "blocks/grayscale-image.css";
 
 /* utilities */
 @import "utilities.css";

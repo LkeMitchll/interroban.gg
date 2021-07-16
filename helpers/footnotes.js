@@ -36,6 +36,8 @@ module.exports = function customFootnotes() {
       // replace first-level paragraph with it's children
       node.children.splice(0, 1, ...node.children[0].children);
       if (footnoteContainsImage.length > 0) {
+        const image = node.children[0];
+        node.children[0] = { type: "imageWrapper", children: [image] };
         // add identifier name
         node.children[1].children.unshift(identifier);
         // add a backlink to the reference

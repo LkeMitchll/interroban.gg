@@ -37,7 +37,8 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
           const imageAttrs = responsiveImage(imageObject, "oneCol", true);
           return h(node, "img", { ...imageAttrs }, all(h, node));
         },
-        imageWrapper: (h, node) => h(node, "section", { class: "figure | columns" }, all(h, node)),
+        imageContainer: (h, node) => h(node, "section", { class: "figure | columns" }, all(h, node)),
+        imageWrapper: (h, node) => h(node, "div", { class: "grayscale-image" }, all(h, node)),
         figcaption: (h, node) => h(node, "figcaption", { class: "caption | small-text | measure" }, all(h, node)),
         image: (h, node) => {
           const imageID = node.url.split("/")[4];

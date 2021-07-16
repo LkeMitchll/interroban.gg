@@ -4,9 +4,9 @@ const markdown = require("remark-parse");
 
 module.exports = function imagesWithCaptions() {
   function transformer(tree) {
-    function visitor(node, _, parentNode) {
+    function visitor(node, index, parentNode) {
       // rename the node type
-      parentNode.type = "imageWrapper";
+      parentNode.type = "imageContainer";
       // if the image has a title, add it as a sibling
       if (node.title) {
         // convert to MDAST, parse
@@ -17,6 +17,11 @@ module.exports = function imagesWithCaptions() {
         };
         parentNode.children.push(caption);
       }
+      const container = {
+        type: "imageWrapper",
+        children: [node],
+      };
+      parentNode.children[index] = container;
     }
 
     visit(tree, "image", visitor);

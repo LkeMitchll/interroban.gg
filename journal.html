@@ -10,12 +10,11 @@ theme: yellow
 {% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
 {% set scrapbook = savee | limit(50) %}
 
-<header class="flow | gap-xx-large">
+<header class="flow | gap-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
   <div class="markdown | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
-  <h3 class="subtitle">Feeds</h3>
   <ul>
     {{ metaLink("RSS Feed", "/rss.xml", external = false) }}
     {{ metaLink("JSON Feed", "/api/posts.json") }}

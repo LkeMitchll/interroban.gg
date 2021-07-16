@@ -9,7 +9,7 @@ theme: green
 {% set discoverImage = assets | findByID("67sB2MPpzeoLerzcBcm6rk") %}
 {% set content = pages | findByID("6p5ij5nnguRIkYkOFcP8kc") %}
 
-<header class="flow | gap-xx-large">
+<header class="flow | gap-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
   <div class="markdown | flow measure">
     {% renderMarkdown content.fields.descriptionMarkdown %}
@@ -88,7 +88,7 @@ theme: green
 </article>
 
 <article class="columns | gap-x-large">
-  <div class="occupy-3">
+  <div class="grayscale-image | occupy-3">
     {% responsiveImage discoverImage, "threeQuarters" %}
   </div>
   <p class="measure | push-down leading-crushed">

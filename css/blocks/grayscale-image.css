@@ -1,0 +1,14 @@
+.grayscale-image {
+  background-color: var(--color-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .grayscale-image {
+    background-color: var(--color-primary);
+  }
+}
+
+.grayscale-image img {
+  mix-blend-mode: multiply;
+  filter: grayscale(1);
+}
