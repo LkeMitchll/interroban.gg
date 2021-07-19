@@ -24,9 +24,17 @@
   margin-top: var(--space-x-large);
 }
 
+.markdown ul,
+.markdown ol {
+  padding-left: var(--space-default);
+}
+
 .markdown ul {
   list-style: circle;
-  padding-left: var(--space-default);
+}
+
+.markdown ol {
+  list-style: decimal;
 }
 
 .markdown .long-list {
