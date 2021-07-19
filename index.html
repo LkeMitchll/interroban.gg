@@ -9,8 +9,10 @@ theme: green
 
 <header class="flow | gap-xx-large">
   <h1 class="headline">Welcome</h1>
-  <div class="measure flow">
+  <div class="measure flow | gap-x-large">
     {% renderMarkdown content.fields.descriptionMarkdown %}
+  </div>
+  <div class="measure">
     {% include "_includes/siteDirectory.html" %}
   </div>
 </header>
