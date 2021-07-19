@@ -14,7 +14,7 @@ theme: blue
   <hr/>
 </header>
 
-<ul class="columns | gap-xx-large" style="--cols: 3">
+<ul class="columns | gap-xx-large" style="--cols: 3; --row-gap: var(--space-small)">
   {% for feed in feeds %}
   <li>
     <a href="{{ feed.site_url }}"
@@ -23,12 +23,6 @@ theme: blue
     >
       {{ feed.title }}
     </a>
-    <p class="color-secondary">
-      <time datetime="{{ feed.created_at }}">
-        Reading since:
-        {{ feed.created_at | formatDate("medium") }}
-      </time>
-    </p>
   </li>
   {% endfor %}
 </ul>
