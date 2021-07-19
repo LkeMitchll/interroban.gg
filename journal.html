@@ -11,7 +11,7 @@ theme: yellow
 {% set scrapbook = savee | limit(50) %}
 
 <header class="flow | gap-large">
-  <h1 class="headline">{{ content.fields.title }}</h1>
+  <h1>{{ content.fields.title }}</h1>
   <div class="markdown | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
@@ -25,7 +25,7 @@ theme: yellow
 {% include "_includes/toc.html" %}
 
 <article id="now" class="flow | gap-xx-large">
-  <h2 class="title">Now</h2>
+  <h2>Now</h2>
   <section class="markdown | flow">
     {% renderMarkdown now.fields.contentMarkdown, assets %}
   </section>
@@ -49,16 +49,16 @@ theme: yellow
 </article>
 
 <article id="posts" class="flow | gap-xx-large">
-  <h2 class="title">Posts</h2>
+  <h2>Posts</h2>
   {% include "_includes/posts.html" %}
 </article>
 
 {% include "_includes/listening.html" %}
 {% include "_includes/reading.html" %}
 
-<div class="flow | gap-xx-large">
+<article id="scrapbook" class="flow | gap-xx-large">
   <header>
-    <h2 id="scrapbook" class="title">Scrapbook</h2>
+    <h2>Scrapbook</h2>
     <p class="measure gap">
       This is the last 50 images that have caught my eye. I collect them using
       <a href="https://savee.it/interrobang/">Savee</a>, a Pinterest

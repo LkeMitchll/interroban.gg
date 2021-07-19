@@ -1,7 +1,7 @@
 {% set recentlyRead = list | findByID("2uust09L73V2AcXwl3F80h") %}
 
 <article id="reading" class="gap-xx-large">
-  <h2 class="title">{{ recentlyRead.fields.title }}</h2>
+  <h2>{{ recentlyRead.fields.title }}</h2>
   <ul class="flow gap-large">
     {% for item in recentlyRead.fields.items %}
     <li>
