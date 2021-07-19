@@ -12,8 +12,3 @@
   mix-blend-mode: multiply;
   filter: grayscale(1);
 }
-
-.grayscale-image:hover img {
-  mix-blend-mode: normal;
-  filter: none;
-}
