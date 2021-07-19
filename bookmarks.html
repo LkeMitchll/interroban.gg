@@ -26,9 +26,8 @@ theme: blue
 {% include "_includes/toc.html" %}
 
 <article id="favourites" class="flow | gap-x-large">
-  <h2 class="title | gap-small">Favourites</h2>
+  <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
   <section>
-    <h3 class="subtitle">{{ roundup.fields.title }}</h3>
     {% set favouriteBookmarks = roundup.fields.links %}
     {% include "_includes/favouriteBookmarks.html" %}
   </section>
