@@ -25,6 +25,16 @@
   background-color: var(--color-bg);
 }
 
+.now-playing img {
+  background-color: var(--color-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .now-playing img {
+    background-color: var(--color-primary);
+  }
+}
+
 @media (min-width: 700px) and (max-width: 1000px) {
   .track:not(.now-playing) {
     margin-left: -0.5rem;
