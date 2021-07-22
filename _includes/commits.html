@@ -1,7 +1,7 @@
 <details class="accordian | tertiary-text | gap-x-large">
   <summary class="gap">Recent commits</summary>
   <ol class="flow gap">
-    {% for commit in github %}
+    {% for commit in commits %}
     <li>
       <p>#<code>{{ commit.sha }}</code></p>
       <a href="{{ commit.url }}" target="_blank" rel="noreferrer">{{ commit. message }}</a>

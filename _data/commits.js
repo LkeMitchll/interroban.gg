@@ -1,9 +1,7 @@
-const { Octokit } = require("@octokit/core");
+const github = require("../providers/github");
 
 module.exports = async function commits() {
-  const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
-
-  const response = await octokit.request("GET /repos/{owner}/{repo}/commits", {
+  const response = await github.client.request("GET /repos/{owner}/{repo}/commits", {
     owner: "lkemitchll",
     repo: "interroban.gg",
     per_page: 5,
