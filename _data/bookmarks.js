@@ -1,12 +1,7 @@
-const contentful = require("contentful");
-
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+const contentful = require("../providers/contentful");
 
 module.exports = async function bookmarks(limit) {
-  const thisYear = await client
+  const thisYear = await contentful.client
     .getEntries({
       content_type: "blogPost",
       order: "-fields.publishDate",
@@ -14,7 +9,7 @@ module.exports = async function bookmarks(limit) {
       "sys.createdAt[gte]": "2021-01-01T00:00:00Z",
     })
     .then((result) => result.items);
-  const lastYear = await client
+  const lastYear = await contentful.client
     .getEntries({
       content_type: "blogPost",
       order: "-fields.publishDate",
@@ -23,7 +18,7 @@ module.exports = async function bookmarks(limit) {
       "sys.createdAt[lte]": "2021-01-01T00:00:00Z",
     })
     .then((result) => result.items);
-  const archive = await client
+  const archive = await contentful.client
     .getEntries({
       content_type: "blogPost",
       order: "-fields.publishDate",
