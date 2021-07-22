@@ -5,7 +5,7 @@ const importPlugin = require("postcss-import");
 const autoprefixerPlugin = require("autoprefixer");
 const nanoPlugin = require("cssnano");
 
-const fileName = "./css/style.css";
+const fileName = "./style.css";
 
 module.exports = class Style {
   async data() {
