@@ -4,16 +4,9 @@ const dateToEpochWithOffset = require("../helpers/dateEpochOffset");
 
 async function lastWeek() {
   const api = new LastFMAPI();
-  const comparisonStart = dateToEpochWithOffset(0, 12);
   const lastWeekStart = dateToEpochWithOffset(0, 6);
   const lastWeekEnd = dateToEpochWithOffset(23, 0);
 
-  const comparisonTracks = await api
-    .fetchTrackTotal(comparisonStart, lastWeekStart)
-    .then((json) => Number(json.recenttracks["@attr"].total));
-  const comparisonAlbums = await api
-    .fetchAlbumTotal(comparisonStart, lastWeekStart)
-    .then((json) => json.weeklyalbumchart.album.length);
   const lastWeekTracks = await api
     .fetchTrackTotal(lastWeekStart, lastWeekEnd)
     .then((json) => Number(json.recenttracks["@attr"].total));
@@ -26,20 +19,10 @@ async function lastWeek() {
     tracks: {
       title: "Tracks",
       total: lastWeekTracks,
-      difference: {
-        total: Math.abs(lastWeekTracks - comparisonTracks),
-        type: comparisonTracks > lastWeekTracks ? "negative" : "positive",
-        icon: comparisonTracks > lastWeekTracks ? "&darr;" : "&uarr;",
-      },
     },
     albums: {
       title: "Albums",
       total: lastWeekAlbums,
-      difference: {
-        total: Math.abs(lastWeekAlbums - comparisonAlbums),
-        type: comparisonAlbums > lastWeekAlbums ? "negative" : "positive",
-        icon: comparisonAlbums > lastWeekTracks ? "&darr;" : "&uarr;",
-      },
     },
   };
 }
