@@ -10,7 +10,6 @@
 /* blocks */
 @import "blocks/header.css";
 @import "blocks/link.css";
-@import "blocks/thumbnail.css";
 @import "blocks/track.css";
 @import "blocks/markdown.css";
 @import "blocks/footnote.css";

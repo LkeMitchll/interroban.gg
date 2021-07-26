@@ -6,18 +6,18 @@
       {% include "_includes/now-playing.html" %}
       <hr class="gap-large" />
       {% for week in [music.lastWeek, music.thisWeek] %}
-      <h3 class="subtitle">{{ week.title }}</h3>
+        <h3 class="subtitle">{{ week.title }}</h3>
         <ul class="stats | tertiary-text gap-large" style="--min: 0">
-        {% for stat in [week.tracks, week.albums] %}
-          <li>
-            <div class="horizontal">
-            <p><em>{{ stat.title }}</em></p>
-              <p>
-                {{ stat.total }}
-              </p>
-            </div>
-          </li>
-        {% endfor %}
+          {% for stat in [week.tracks, week.albums] %}
+            <li>
+              <div class="horizontal">
+                <p><em>{{ stat.title }}</em></p>
+                <p>
+                  {{ stat.total }}
+                </p>
+              </div>
+            </li>
+          {% endfor %}
         </ul>
       {% endfor %}
     </div>
@@ -26,21 +26,14 @@
       <h3 class="subtitle">Top tracks (this month)</h3>
       <ol class="tracks | flow">
         {% for track in music.topTracks %}
-        <li class="track">
-          <img
-            src="{{ track.cover.url }}"
-            alt="{{ track.cover.alt }}"
-            width="{{ track.cover.width }}"
-            height="{{ track.cover.height }}"
-            class="thumbnail"
-          />
-          <div class="leading-small">
-            <a href="{{ track.url }}" target="_blank" rel="noreferrer noopener">
-              {{ track.title }}
-            </a>
-            <p class="small-text | color-secondary">{{ track.artist }}</p>
-          </div>
-        </li>
+          <li class="track">
+            <div>
+              <a href="{{ track.url }}" target="_blank" rel="noreferrer noopener">
+                {{ track.title }}
+              </a>
+              <p class="small-text | color-secondary">{{ track.artist }}</p>
+            </div>
+          </li>
         {% endfor %}
       </ol>
     </div>
@@ -49,25 +42,14 @@
       <h3 class="subtitle">Top artists (6 months)</h3>
       <ol class="tracks | flow">
         {% for artist in music.topArtists %}
-        <li class="track">
-          <img
-            src="{{ artist.image.url }}"
-            alt="{{ artist.image.alt }}"
-            width="{{ artist.image.width }}"
-            height="{{ artist.image.height }}"
-            class="thumbnail"
-          />
-          <div class="leading-small">
-            <a
-              href="{{ artist.url }}"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              {{ artist.name }}
-            </a>
-            <p class="small-text | color-secondary">Artist</p>
-          </div>
-        </li>
+          <li class="track">
+            <div>
+              <a href="{{ artist.url }}" target="_blank" rel="noreferrer noopener">
+                {{ artist.name }}
+              </a>
+              <p class="small-text | color-secondary">Artist</p>
+            </div>
+          </li>
         {% endfor %}
       </ol>
     </div>

@@ -20,12 +20,6 @@ exports.handler = async () => {
         body: JSON.stringify({
           title: json.item.name,
           artist,
-          cover: {
-            url: json.item.album.images[1].url,
-            width: json.item.album.images[1].width,
-            height: json.item.album.images[1].height,
-            alt: `Cover art for ${json.item.album.name} by ${artist}`,
-          },
           url: json.item.external_urls.spotify,
         }),
       };

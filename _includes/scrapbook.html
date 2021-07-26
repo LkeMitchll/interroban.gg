@@ -1,9 +1,17 @@
 <div class="masonry">
   {% for item in scrapbook %}
-    <figure>
-      <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}">
-        <img src="{{ item.image.thumbnail }}" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.name }}" />
-      </a>
-    </figure>
+  <figure>
+    <a
+      href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}"
+    >
+      <img
+        src="{{ item.image.thumbnail }}"
+        loading="lazy"
+        width="{{ item.image.width }}"
+        height="{{ item.image.height }}"
+        alt="{{ item.name }}"
+      />
+    </a>
+  </figure>
   {% endfor %}
 </div>

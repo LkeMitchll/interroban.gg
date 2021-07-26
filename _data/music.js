@@ -67,12 +67,6 @@ async function topTracks() {
       artist,
       album: song.album.name,
       title: song.name,
-      cover: {
-        url: song.album.images[1].url,
-        width: song.album.images[1].width,
-        height: song.album.images[1].height,
-        alt: `Cover art for ${song.album.name} by ${artist}`,
-      },
       url: song.external_urls.spotify,
     };
   });
@@ -87,12 +81,6 @@ async function topArtists() {
   return response.items.map((artist) => ({
     id: artist.id,
     name: artist.name,
-    image: {
-      url: artist.images[1].url,
-      width: artist.images[1].width,
-      height: artist.images[1].height,
-      alt: `Photograph of the artist ${artist.name}`,
-    },
     url: artist.external_urls.spotify,
   }));
 }
