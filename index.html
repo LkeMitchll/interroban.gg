@@ -18,17 +18,17 @@ theme: green
 </header>
 
 <article class="columns gap-xx-large" style="--cols:2"> 
-  <article class="flow | gap-x-large">
+  <section class="flow | gap-x-large">
     <h2 class="title">Recent Posts</h2>
     {% include "_includes/posts.html" %}
     <a href="/journal" class="link">See all Posts</a>
-  </article>
+  </section>
 
-  <article class="flow">
+  <section class="flow">
     <h2 class="title">Recent Bookmarks</h2>
     {% set timePeriod = bookmarks[0] %}
     {% set bookmarks = timePeriod.bookmarks | limit(3) %}
     {% include "_includes/bookmarks.html" %}
-    <a href="/bookmarks" class="link">See all Bookmarks</a>
-  </article>
+    <a href="/bookmarks/2021" class="link">See all Bookmarks</a>
+  </section>
 </article>
