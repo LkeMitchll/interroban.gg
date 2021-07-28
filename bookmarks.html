@@ -49,19 +49,22 @@ permalink: "bookmarks/{{ year.title }}.html"
 </article>
 {% endif %}
 
-<article class="flow | gap-x-large" style="--row-gap: var(--space-small)">
-  {% if year.current %}
-    <h2>{{ year.title }}</h2>
-  {% endif %}
-  {% set currentPage = page.url | replace("/bookmarks/", "") %}
+<article class="flow | gap-xx-large" style="--row-gap: var(--space-small)">
+  <header>
+    {% if year.current %}
+      <h2>{{ year.title }}</h2>
+    {% endif %}
 
-  <nav id="table">
-    <ul class="horizontal">
-      {% for year in bookmarks %}
-        <li><a class="link" href="/bookmarks/{{ year.title }}" {{ "aria-current='page'" if currentPage == year.title + ".html" }}>{{ year.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
+    {% set currentPage = page.url | replace("/bookmarks/", "") %}
+    <nav>
+      <p class="tertiary-text">Filter:</p>
+      <ul class="horizontal">
+        {% for year in bookmarks %}
+          <li><a class="link" href="/bookmarks/{{ year.title }}" {{ "aria-current='page'" if currentPage == year.title + ".html" }}>{{ year.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
 
   <ul class="flow">
     {% for bookmark in year.bookmarks %}
