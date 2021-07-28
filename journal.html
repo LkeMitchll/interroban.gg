@@ -5,7 +5,7 @@ alpine: true
 theme: yellow
 ---
 
-{% from '_includes/metaLink.html' import metaLink %}
+{% from "_includes/metaLink.html" import metaLink %}
 {% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
 {% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
 {% set scrapbook = savee | limit(50) %}
@@ -74,4 +74,4 @@ theme: yellow
     </p>
   </header>
   {% include "_includes/scrapbook.html" %}
-</div>
+</article>
