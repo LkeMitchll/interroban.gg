@@ -2,12 +2,10 @@
   font-family: var(--text-mono);
   font-size: var(--text-size-small);
   text-decoration: none;
-  transition: border-color 0.25s ease;
-  border-bottom: var(--border-width-default) solid var(--color-secondary);
+  border-bottom: var(--border-default);
 }
 
 .link:hover {
-  border-color: var(--color-primary);
   font-style: italic;
 }
 
