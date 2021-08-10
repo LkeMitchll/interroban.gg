@@ -1,4 +1,5 @@
 {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
+{% set awards = list | findByID("Bh8h6u3KSNupnkUX0okc8") %}
 
 <article class="flow | gap-xx-large">
   <header class="measure">
@@ -35,6 +36,17 @@
       <ul class="flow" style="--flow-space: var(--space-small)">
         {% for skill in cv.skills %}
         <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h3 id="recognition" class="subtitle">Recognition</h3>
+      <ul class="flow">
+        {% for award in awards.fields.items %}
+        <li>
+          <a href="{{ award.fields.url }}" target="_blank" rel="noopener noreferrer">{{ award.fields.title }}</a>
+          <p class="color-secondary">{{ award.fields.date | formatDate("long") }} </p>
+        </li>
         {% endfor %}
       </ul>
     </section>
