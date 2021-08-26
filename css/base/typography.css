@@ -51,9 +51,36 @@ h6,
 
 .tertiary-title {
   font-family: var(--text-mono);
-  font-size: var(--text-size-small);
   font-style: italic;
   margin-bottom: var(--space-small);
+}
+
+.tertiary-title,
+small,
+code,
+pre {
+  font-size: var(--text-size-small);
+}
+
+small {
+  line-height: var(--text-leading-crushed);
+}
+
+code,
+pre {
+  font-family: var(--text-mono);
+  border-radius: 2px;
+  padding: 0.1em var(--space-tiny);
+  overflow-x: scroll;
+}
+
+pre code {
+  background-color: transparent;
+  tab-size: 2;
+}
+
+* + pre {
+  padding: var(--space-default);
 }
 
 a {
@@ -76,51 +103,11 @@ time {
   font-style: italic;
 }
 
-small {
-  font-size: var(--text-size-small);
-  line-height: var(--text-leading-crushed);
-}
-
 blockquote {
   margin: 0 0 0 -1rem;
   padding-left: var(--space-default);
   border-left: var(--border-default);
-  color: var(--color-secondary);
   font-style: italic;
-}
-
-blockquote + ul {
-  list-style: none;
-  padding: 0;
-  font-size: var(--text-size-small);
-  margin-top: -1rem;
-}
-
-blockquote + ul > * {
-  padding: 0;
-}
-
-blockquote + ul li::before {
-  content: "\2014\00a0";
-}
-
-code,
-pre {
-  font-family: var(--text-mono);
-  font-size: var(--text-size-small);
-  border-radius: 2px;
-  padding: 0.1em var(--space-tiny);
-  background-color: var(--color-x-faded);
-  overflow-x: scroll;
-}
-
-pre code {
-  background-color: transparent;
-  tab-size: 2;
-}
-
-* + pre {
-  padding: var(--space-default);
 }
 
 hr {

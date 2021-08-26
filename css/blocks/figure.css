@@ -16,12 +16,9 @@
 .caption {
   grid-column: 1/3;
   counter-increment: image-number;
-  padding-left: var(--space-default);
-  border-left: var(--border-default);
 }
 
 .caption::before {
-  color: var(--color-secondary);
   content: "Fig N\00BA"counter(image-number) " ";
   font-family: var(--text-mono);
 }

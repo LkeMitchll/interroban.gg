@@ -20,7 +20,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
 
 @media screen and (min-width: 400px) {

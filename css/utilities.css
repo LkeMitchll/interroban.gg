@@ -46,16 +46,6 @@
   }
 }
 
-/* u: Color */
-
-.color-secondary {
-  color: var(--color-secondary);
-}
-
-.bg-default {
-  background-color: var(--color-bg);
-}
-
 /* u: Gap */
 
 .gap {
@@ -129,18 +119,6 @@
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-@media (min-width: 800px) {
-  .lg-visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
 }
 
 /* u: Grow */

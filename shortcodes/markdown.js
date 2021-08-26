@@ -27,10 +27,10 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
         sectionWithFootnotes: (h, node) => h(node, "section", { class: "with-footnotes" }, all(h, node)),
         customFootnoteDefinition: (h, node) => {
           const id = `fn-${node.identifier}`;
-          return h(node, "aside", { id }, all(h, node));
+          return h(node, "aside", { id, class: "small-text" }, all(h, node));
         },
-        footnoteTitle: (h, node) => h(node, "strong", { class: "footnote-title" }, all(h, node)),
-        footnoteBacklink: (h, node) => h(node, "a", { href: node.url, class: "footnote-backlink" }, all(h, node)),
+        footnoteTitle: (h, node) => h(node, "strong", { class: "footnote-title | tertiary-text" }, all(h, node)),
+        footnoteBacklink: (h, node) => h(node, "a", { href: node.url, class: "footnote-backlink | tertiary-text" }, all(h, node)),
         footnoteImage: (h, node) => {
           const imageID = node.url.split("/")[4];
           const imageObject = findByID(assets, imageID);

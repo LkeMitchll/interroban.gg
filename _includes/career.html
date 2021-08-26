@@ -16,7 +16,7 @@
       <ul class="flow">
         {% for job in experience.fields.items %}
         <li>
-          <p class="tertiary-text color-secondary">{{ job.fields.period }}</p>
+          <p class="tertiary-text">{{ job.fields.period }}</p>
           <p>{{ job.fields.title }}</p>
           <p><em>{{ job.fields.company }}</em></p>
         </li>
@@ -45,7 +45,7 @@
         {% for award in awards.fields.items %}
         <li>
           <a href="{{ award.fields.url }}" target="_blank" rel="noopener noreferrer">{{ award.fields.title }}</a>
-          <p class="color-secondary">{{ award.fields.date | formatDate("long") }} </p>
+          <p>{{ award.fields.date | formatDate("long") }} </p>
         </li>
         {% endfor %}
       </ul>

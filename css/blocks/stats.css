@@ -8,7 +8,3 @@
   padding-bottom: var(--space-tiny);
   margin-bottom: var(--space-tiny);
 }
-
-.stats li em {
-  color: var(--color-secondary);
-}

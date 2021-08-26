@@ -1,8 +1,7 @@
 .with-footnotes aside {
-  font-size: var(--text-size-small);
   margin-top: var(--space-large);
-  padding-left: var(--space-default);
   border-left: var(--border-default);
+  padding-left: var(--space-default);
   height: min-content;
   max-width: 30ch;
 }
@@ -27,15 +26,9 @@
   margin-left: 0.5em;
 }
 
-.footnote-title {
-  color: var(--color-secondary);
-}
-
 .footnote-title,
 .footnote-backlink,
 .footnote-ref {
-  font-size: var(--text-size-small);
-  font-family: var(--text-mono);
   text-decoration: none;
 }
 

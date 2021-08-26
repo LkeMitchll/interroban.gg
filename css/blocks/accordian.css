@@ -33,7 +33,6 @@
 .accordian[data-numbered] li::before {
   counter-increment: item;
   margin-right: var(--space-default);
-  color: var(--color-secondary);
 }
 
 .accordian[data-numbered]:nth-of-type(1) li::before {
