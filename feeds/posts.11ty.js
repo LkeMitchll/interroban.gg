@@ -22,7 +22,8 @@ class Posts {
     const wrapper = {
       version: "https://jsonfeed.org/version/1.1",
       title: "Luke Mitchell | Product Designer",
-      description: "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.",
+      description:
+        "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.",
       icon: "https://interroban.gg/assets/images/favicon.svg",
       favicon: "https://interroban.gg/assets/images/favicon.svg",
       authors: [{ name: "Luke Mitchell", url: "https://interroban.gg" }],

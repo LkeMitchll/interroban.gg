@@ -1,11 +1,14 @@
 const github = require("../providers/github");
 
 module.exports = async function commits() {
-  const response = await github.client.request("GET /repos/{owner}/{repo}/commits", {
-    owner: "lkemitchll",
-    repo: "interroban.gg",
-    per_page: 5,
-  });
+  const response = await github.client.request(
+    "GET /repos/{owner}/{repo}/commits",
+    {
+      owner: "lkemitchll",
+      repo: "interroban.gg",
+      per_page: 5,
+    }
+  );
 
   const sanitisedData = response.data.map((child) => ({
     sha: child.sha.substr(0, 7),

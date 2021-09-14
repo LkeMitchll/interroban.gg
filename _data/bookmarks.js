@@ -45,19 +45,19 @@ module.exports = async function bookmarks(limit) {
       title: "2021",
       total: thisYear.length,
       bookmarks: thisYear,
-      current: true
+      current: true,
     },
     {
       title: "2020",
       total: lastYear.length,
       bookmarks: lastYear,
-      current: false
+      current: false,
     },
     {
       title: "Archive",
       total: archive.length,
       bookmarks: archive,
-      current: false
+      current: false,
     },
   ];
 };

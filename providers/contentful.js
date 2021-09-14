@@ -6,5 +6,5 @@ const client = contentful.createClient({
 });
 
 module.exports = {
-  client
+  client,
 };
