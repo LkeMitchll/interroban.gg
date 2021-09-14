@@ -15,6 +15,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./assets/fonts");
   eleventyConfig.addPassthroughCopy("./assets/images");
+  eleventyConfig.addPassthroughCopy("./components/*.js");
   eleventyConfig.addWatchTarget("./css/**/*.css");
 
   eleventyConfig.addFilter("findByID", findByID);

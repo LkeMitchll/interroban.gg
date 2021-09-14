@@ -3,7 +3,7 @@
   <section class="columns" style="--cols: 3">
     <div>
       <h3 class="subtitle">Now Playing</h3>
-      {% include "_includes/now-playing.html" %}
+      {% include "components/now-playing.html" %}
       <hr class="gap-large" />
       {% for week in [music.lastWeek, music.thisWeek] %}
         <h3 class="subtitle">{{ week.title }}</h3>

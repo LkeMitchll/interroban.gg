@@ -1,0 +1,22 @@
+<script type="module" src="/components/now-playing.js"></script>
+
+<template id="now-playing">
+  <style>
+    div {
+      margin-bottom: var(--space-large);
+    }
+    a {
+      color: var(--color-primary);
+    }
+    p {
+      font-size: var(--text-size-small);
+      margin: 0;
+    }
+  </style>
+  <div>
+    <a id="title" target="_blank" rel="noreferrer noopener">Nothing playing</a>
+    <p id="artist" class="small-text">Spotify</p>
+  </div>
+</template>
+
+<now-playing url="/.netlify/functions/now-playing"></now-playing>
