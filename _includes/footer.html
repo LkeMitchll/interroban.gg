@@ -6,7 +6,7 @@
     </p>
     <ul>
       {% for page in navigation.routes[0].pages %}
-        <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+      <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
       {% endfor %}
     </ul>
   </div>
@@ -16,7 +16,7 @@
     <p class="subtitle | gap-small">{{ category.name }}</p>
     <ul>
       {% for page in category.pages %}
-        <li><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
+      <li><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
       {% endfor %}
     </ul>
   </div>

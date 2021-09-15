@@ -1,29 +1,29 @@
 {% macro stats(totalCount, totalSuffix, updatedDate, readableContent) %}
-  <ul class="stats | tertiary-text">
-    {% if totalCount %}
-      <li>
-        <p class="horizontal">
-          {% if totalCount >= 1 %}
-            <em>Total</em><span class="push-right">{{ totalCount }} {{ totalSuffix }}</span>
-          {% else %}
-            <em>Total</em><span class="push-right">{{ totalCount | length }} {{ totalSuffix }}</span>
-          {% endif %}
-        </p>
-      </li>
-    {% endif %}
-    {% if updatedDate %}
-      <li>
-        <p class="horizontal">
-          <em>Updated</em><span class="push-right">{{ updatedDate | formatDate }}</span>
-        </p>
-      </li>
-    {% endif %}
-    {% if readableContent %}
-      <li>
-        <p class="horizontal">
-          <em>Reading time</em><span class="push-right">{{ readableContent | readingTime }}</span>
-        </p>
-      </li>
-    {% endif %}
-  </ul>
+<ul class="stats | tertiary-text">
+  {% if totalCount %}
+  <li>
+    <p class="horizontal">
+      {% if totalCount >= 1 %}
+      <em>Total</em><span class="push-right">{{ totalCount }} {{ totalSuffix }}</span>
+      {% else %}
+      <em>Total</em><span class="push-right">{{ totalCount | length }} {{ totalSuffix }}</span>
+      {% endif %}
+    </p>
+  </li>
+  {% endif %}
+  {% if updatedDate %}
+  <li>
+    <p class="horizontal">
+      <em>Updated</em><span class="push-right">{{ updatedDate | formatDate }}</span>
+    </p>
+  </li>
+  {% endif %}
+  {% if readableContent %}
+  <li>
+    <p class="horizontal">
+      <em>Reading time</em><span class="push-right">{{ readableContent | readingTime }}</span>
+    </p>
+  </li>
+  {% endif %}
+</ul>
 {% endmacro %}

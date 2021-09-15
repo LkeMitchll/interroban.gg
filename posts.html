@@ -6,16 +6,13 @@ pagination:
 permalink: "post/{{ post.fields.slug }}/"
 layout: layout.html
 ---
-
 {% from '_includes/stats.html' import stats %}
-
 <header class="flow | gap-x-large">
   <h1 class="headline | measure | gap-large">{{ post.fields.title }}</h1>
   <div class="flow" style="--flow-space: var(--space-default)">
     {{ stats(updatedDate = post.sys.updatedAt, readableContent = post.fields.contentMarkdown ) }}
   </div>
 </header>
-
 <article class="markdown | flow | gap-xx-large">
   {% renderMarkdown post.fields.contentMarkdown %}
 </article>

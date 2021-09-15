@@ -1,9 +1,7 @@
 <div class="masonry">
   {% for item in scrapbook %}
   <figure>
-    <a
-      href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}"
-    >
+    <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}" >
       <img
         src="{{ item.image.thumbnail }}"
         loading="lazy"
@@ -11,7 +9,7 @@
         height="{{ item.image.height }}"
         alt="{{ item.name }}"
       />
-    </a>
-  </figure>
-  {% endfor %}
-</div>
+      </a>
+    </figure>
+    {% endfor %}
+  </div>
