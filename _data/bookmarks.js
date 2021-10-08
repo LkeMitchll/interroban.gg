@@ -5,7 +5,7 @@ module.exports = async function bookmarks(limit) {
     .getEntries({
       content_type: "blogPost",
       order: "-fields.publishDate",
-      limit: limit || 1000,
+      limit: 1000,
       "sys.createdAt[gte]": "2021-01-01T00:00:00Z",
     })
     .then((result) => result.items);
@@ -13,7 +13,7 @@ module.exports = async function bookmarks(limit) {
     .getEntries({
       content_type: "blogPost",
       order: "-fields.publishDate",
-      limit: limit || 1000,
+      limit: 1000,
       "sys.createdAt[gte]": "2020-01-01T00:00:00Z",
       "sys.createdAt[lte]": "2021-01-01T00:00:00Z",
     })
@@ -22,7 +22,7 @@ module.exports = async function bookmarks(limit) {
     .getEntries({
       content_type: "blogPost",
       order: "-fields.publishDate",
-      limit: limit || 1000,
+      limit: 1000,
       "sys.createdAt[lte]": "2020-01-01T00:00:00Z",
     })
     .then((result) => result.items);
