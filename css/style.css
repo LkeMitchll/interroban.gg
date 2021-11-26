@@ -6,6 +6,7 @@
 
 /* compositions */
 @import "compositions/columns.css";
+@import "compositions/masonry.css";
 
 /* blocks */
 @import "blocks/header.css";
@@ -16,11 +17,9 @@
 @import "blocks/figure.css";
 @import "blocks/accordian.css";
 @import "blocks/toc.css";
-@import "blocks/tab.css";
 @import "blocks/stats.css";
 @import "blocks/arrow-link.css";
 @import "blocks/bookmark.css";
-@import "blocks/masonry.css";
 @import "blocks/grayscale-image.css";
 
 /* utilities */

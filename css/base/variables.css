@@ -11,7 +11,6 @@
   --space-xx-large: 6rem;
   --text-size-default: 1rem;
   --text-size-large: 1.2rem;
-  --text-size-x-large: 1.5rem;
   --text-size-small: 0.75rem;
   --text-weight-normal: 400;
   --text-weight-bold: 600;
@@ -23,7 +22,6 @@
   --text-leading-crushed: 1.1;
   --text-leading-relaxed: 1.6;
   --text-measure: 50ch;
-  --radii-default: 2px;
   --border-width-default: 1px;
   --border-default: var(--border-width-default) dotted var(--color-primary);
 }
@@ -81,17 +79,5 @@
   .blue {
     --color-primary: #c8ffee;
     --color-bg: #434d56;
-  }
-}
-
-.gray {
-  --color-primary: #1f1f1f;
-  --color-bg: #dbdbdb;
-}
-
-@media (prefers-color-scheme: dark) {
-  .gray {
-    --color-primary: #dbdbdb;
-    --color-bg: #1f1f1f;
   }
 }
