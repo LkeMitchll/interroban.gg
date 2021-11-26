@@ -42,6 +42,12 @@ module.exports = async function bookmarks(limit) {
 
   return [
     {
+      title: "Current",
+      total: thisYear.length,
+      bookmarks: thisYear,
+      current: true,
+    },
+    {
       title: "2021",
       total: thisYear.length,
       bookmarks: thisYear,

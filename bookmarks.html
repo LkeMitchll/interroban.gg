@@ -6,24 +6,18 @@ pagination:
   data: bookmarks
   size: 1
   alias: year
-permalink: "bookmarks/{{ year.title }}.html"
+permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}/{% endif %}index.html"
 ---
 {% from '_includes/metaLink.html' import metaLink %}
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
 {% set roundup = roundups | limit(1) %}
+{% set currentPage = pagination.pages[pagination.pageNumber] %}
+
 <header class="flow | gap-large">
-  {% if year.current == false %}
-  <a class="link" href="/bookmarks/2021">Back to bookmarks</a>
-  {% endif %}
   <h1 class="headline">
-    {% if year.current %}
     {{ content.fields.title }}
-    {% else %}
-    {{ content.fields.title }} &mdash; {{ year.title }}
-    {% endif %}
   </h1>
-  {% if year.current %}
   <div class="markdown | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
@@ -32,10 +26,8 @@ permalink: "bookmarks/{{ year.title }}.html"
     {{ metaLink("JSON Feed", "/feeds/bookmarks.json") }}
     {{ metaLink("Suggest a bookmark", "mailto:luke@interroban.gg?subject=Bookmark%20suggestion", false) }}
   </ul>
-  {% endif %}
   <hr>
 </header>
-{% if year.current %}
 <article class="flow | gap-x-large">
   <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
   <section>
@@ -44,18 +36,20 @@ permalink: "bookmarks/{{ year.title }}.html"
   </section>
   <hr>
 </article>
-{% endif %}
-<article class="flow | gap-xx-large" style="--row-gap: var(--space-small)">
+<article id="content" class="flow | gap-xx-large" style="--row-gap: var(--space-small)">
   <header>
-    {% if year.current %}
-    <h2>{{ year.title }}</h2>
-    {% endif %}
-    {% set currentPage = page.url | replace("/bookmarks/", "") %}
+    <h2>{{ pagination.items[0].title }}</h2>
     <nav>
       <p class="tertiary-text">Filter:</p>
       <ul class="horizontal">
-        {% for year in bookmarks %}
-        <li><a class="link" href="/bookmarks/{{ year.title }}" {{ "aria-current='page'" if currentPage == year.title + ".html" }}>{{ year.title }}</a></li>
+        {% for page in pagination.pages %}
+          {% if page.title != "Current" %}
+            <li>
+              <a class="link" href="/bookmarks/{{ page.title }}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>
+                {{ page.title }}
+              </a>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </nav>
@@ -76,4 +70,19 @@ permalink: "bookmarks/{{ year.title }}.html"
     </li>
     {% endfor %}
   </ul>
+  <nav>
+    <p class="tertiary-text">Filter:</p>
+    <ul class="horizontal | gap">
+      {% for page in pagination.pages %}
+        {% if page.title != "Current" %}
+          <li>
+            <a class="link" href="/bookmarks/{{ page.title }}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>
+              {{ page.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <a href="#content" class="link">Back to top</a>
+  </nav>
 </article>
