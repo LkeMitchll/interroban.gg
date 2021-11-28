@@ -18,7 +18,7 @@ class Posts {
       id: bookmark.sys.id,
       content_html: `<p>Link: <a href="${bookmark.fields.url}">${bookmark.fields.title}</a></p><ul><li>Added: ${bookmark.fields.publishDate}</li><li>Tag: ${bookmark.fields.tag}</li></ul>`,
       url: bookmark.fields.url,
-      date_published: bookmark.sys.createdAt,
+      date_published: bookmark.fields.publishDate,
       title: bookmark.fields.title,
     }));
 

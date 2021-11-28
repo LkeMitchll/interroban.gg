@@ -20,7 +20,7 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self" />
   <link href="https://www.interroban.gg/bookmarks/2021" />
-  <updated>{{ bookmarks[0].bookmarks[0].sys.createdAt }}</updated>
+  <updated>{{ bookmarks[0].bookmarks[0].fields.publishDate }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
@@ -32,7 +32,7 @@
         <title>Bookmark: {{ bookmark.fields.title }}</title>
         <link href="{{ bookmark.fields.url }}" />
         <id>{{ bookmark.fields.url | url }}/</id>
-        <updated>{{ bookmark.sys.createdAt }}</updated>
+        <updated>{{ bookmark.fields.publishDate }}</updated>
         <summary>{{ bookmark.fields.title }}</summary>
         <content type="html">
           {% set content %}
