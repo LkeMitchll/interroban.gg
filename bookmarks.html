@@ -65,7 +65,7 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
       </a>
       <p class="tertiary-text">
         {{ bookmark.fields.tag }} &mdash;
-        {{ bookmark.sys.createdAt | formatDate }}
+        {{ bookmark.fields.publishDate | formatDate }}
       </p>
     </li>
     {% endfor %}
