@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.track:not(.now-playing)::before {
+.track::before {
   content: counter(tracks);
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 700px) and (max-width: 1000px) {
-  .track:not(.now-playing) {
+  .track {
     margin-left: -0.5rem;
   }
 }
