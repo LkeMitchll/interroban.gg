@@ -1,12 +1,12 @@
 ---
 pagination:
-  data: metaPosts
+  data: posts
   size: 1
   alias: post
-permalink: "colophon/post/{{ post.fields.slug }}/"
+permalink: "post/{{ post.fields.slug }}/"
 layout: layout.html
 ---
-{% from '_includes/stats.html' import stats %}
+{% from "./_includes/stats.html" import stats %}
 <header class="flow | gap-x-large">
   <h1 class="headline | measure | gap-large">{{ post.fields.title }}</h1>
   <div class="flow" style="--flow-space: var(--space-default)">
@@ -14,5 +14,5 @@ layout: layout.html
   </div>
 </header>
 <article class="markdown | flow | gap-xx-large">
-  {% renderMarkdown post.fields.contentMarkdown, assets %}
+  {% renderMarkdown post.fields.contentMarkdown %}
 </article>

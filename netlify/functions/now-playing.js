@@ -1,4 +1,4 @@
-const SpotifyAPI = require("../../providers/spotify");
+const SpotifyAPI = require("../../src/providers/spotify");
 
 exports.handler = async () => {
   const api = new SpotifyAPI();

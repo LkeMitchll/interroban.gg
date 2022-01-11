@@ -8,7 +8,7 @@ pagination:
   alias: year
 permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}/{% endif %}index.html"
 ---
-{% from '_includes/metaLink.html' import metaLink %}
+{% from "./_includes/metaLink.html" import metaLink %}
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
 {% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
 {% set roundup = roundups | limit(1) %}
@@ -32,7 +32,7 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
   <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
   <section>
     {% set favouriteBookmarks = roundup.fields.links %}
-    {% include "_includes/favouriteBookmarks.html" %}
+    {% include "./_includes/favouriteBookmarks.html" %}
   </section>
   <hr>
 </article>
