@@ -8,11 +8,8 @@ pagination:
   alias: year
 permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}/{% endif %}index.html"
 ---
-{% from "./_includes/metaLink.html" import metaLink %}
+
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
-{% set lastUpdate = bookmarks[0].bookmarks | limit(1) %}
-{% set roundup = roundups | limit(1) %}
-{% set currentPage = pagination.pages[pagination.pageNumber] %}
 
 <header class="flow | gap-large">
   <h1 class="headline">
@@ -22,12 +19,15 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <ul>
+    {% from "./_includes/metaLink.html" import metaLink %}
     {{ metaLink("RSS Feed", "/feeds/bookmarks.xml") }}
     {{ metaLink("JSON Feed", "/feeds/bookmarks.json") }}
     {{ metaLink("Suggest a bookmark", "mailto:luke@interroban.gg?subject=Bookmark%20suggestion", false) }}
   </ul>
   <hr>
 </header>
+
+{% set roundup = roundups | limit(1) %}
 <article class="flow | gap-x-large">
   <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
   <section>
@@ -36,12 +36,14 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
   </section>
   <hr>
 </article>
+
 <article id="content" class="flow | gap-xx-large" style="--row-gap: var(--space-small)">
   <header>
     <h2>{{ pagination.items[0].title }}</h2>
     <nav>
       <p class="tertiary-text">Filter:</p>
       <ul class="horizontal">
+        {% set currentPage = pagination.pages[pagination.pageNumber] %}
         {% for page in pagination.pages %}
           {% if page.title != "Current" %}
             <li>

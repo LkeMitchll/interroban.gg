@@ -2,8 +2,9 @@
 layout: layout.html
 theme: green
 ---
+
 {% set content = pages | findByID("5yo7fjGQhLhhuup6PUZlMU") %}
-{% set posts = posts | limit(3) %}
+
 <header class="flow | gap-xx-large">
   <h1 class="headline">Welcome</h1>
   <div class="measure flow | gap-x-large">
@@ -13,9 +14,11 @@ theme: green
     {% include "./_includes/siteDirectory.html" %}
   </div>
 </header>
+
 <article class="columns gap-xx-large" style="--cols:2">
   <section class="flow | gap-x-large">
     <h2 class="title">Recent Posts</h2>
+    {% set posts = posts | limit(3) %}
     {% include "./_includes/posts.html" %}
     <a href="/journal" class="link">See all Posts</a>
   </section>

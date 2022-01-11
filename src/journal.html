@@ -3,22 +3,25 @@ layout: layout.html
 title: Journal
 theme: yellow
 ---
-{% from "./_includes/metaLink.html" import metaLink %}
+
 {% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
-{% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
-{% set scrapbook = savee | limit(50) %}
+
 <header class="flow | gap-large">
   <h1>{{ content.fields.title }}</h1>
   <div class="markdown | gap">
     {% renderMarkdown content.fields.descriptionMarkdown %}
   </div>
   <ul>
+    {% from "./_includes/metaLink.html" import metaLink %}
     {{ metaLink("RSS Feed", "/rss.xml", external = false) }}
     {{ metaLink("JSON Feed", "/feeds/posts.json", external = false) }}
   </ul>
   <hr>
 </header>
+
+{% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
 {% include "./_includes/toc.html" %}
+
 <article id="now" class="flow | gap-xx-large">
   <h2>Now</h2>
   <section class="markdown | flow">
@@ -42,12 +45,16 @@ theme: yellow
     </time>
   </footer>
 </article>
+
 <article id="posts" class="flow | gap-xx-large">
   <h2>Posts</h2>
   {% include "./_includes/posts.html" %}
 </article>
+
 {% include "./_includes/listening.html" %}
 {% include "./_includes/reading.html" %}
+
+{% set scrapbook = savee | limit(50) %}
 <article id="scrapbook" class="flow | gap-xx-large">
   <header>
     <h2>Scrapbook</h2>

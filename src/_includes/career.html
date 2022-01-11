@@ -1,5 +1,3 @@
-{% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
-{% set awards = list | findByID("Bh8h6u3KSNupnkUX0okc8") %}
 <article class="flow | gap-xx-large">
   <header class="measure">
     <h2 class="title">Career</h2>
@@ -13,6 +11,7 @@
     <section>
       <h3 id="experience" class="subtitle">{{ experience.fields.title }}</h3>
       <ul class="flow">
+        {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
         {% for job in experience.fields.items %}
         <li>
           <p class="tertiary-text">{{ job.fields.period }}</p>
@@ -41,6 +40,7 @@
     <section>
       <h3 id="recognition" class="subtitle">Recognition</h3>
       <ul class="flow">
+        {% set awards = list | findByID("Bh8h6u3KSNupnkUX0okc8") %}
         {% for award in awards.fields.items %}
         <li>
           <a href="{{ award.fields.url }}" target="_blank" rel="noopener noreferrer">{{ award.fields.title }}</a>

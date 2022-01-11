@@ -3,7 +3,9 @@ layout: layout.html
 title: Blogroll
 theme: blue
 ---
+
 {% set content = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
+
 <header class="flow | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
   <section class="markdown">
@@ -11,13 +13,11 @@ theme: blue
   </section>
   <hr/>
 </header>
+
 <ul class="columns | gap-xx-large" style="--cols: 3; --row-gap: var(--space-small)">
   {% for feed in feeds %}
   <li>
-    <a href="{{ feed.site_url }}"
-        target="_blank"
-        rel="noreferrer"
-    >
+    <a href="{{ feed.site_url }}" target="_blank" rel="noreferrer">
       {{ feed.title }}
     </a>
   </li>
