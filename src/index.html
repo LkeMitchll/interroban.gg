@@ -15,14 +15,14 @@ theme: green
   </div>
 </header>
 
-<article class="columns gap-xx-large" style="--cols:2">
-  <section class="flow | gap-x-large">
+<article class="columns | gap-xx-large" data-cols="2">
+  <section class="gap-x-large">
     <h2 class="title">Recent Posts</h2>
     {% set posts = posts | limit(3) %}
     {% include "./_includes/posts.html" %}
     <a href="/journal" class="link">See all Posts</a>
   </section>
-  <section class="flow">
+  <section>
     <h2 class="title">Recent Bookmarks</h2>
     {% set timePeriod = bookmarks[0] %}
     {% set bookmarks = timePeriod.bookmarks | limit(3) %}

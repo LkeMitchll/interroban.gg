@@ -9,9 +9,9 @@
   </header>
   <section class="columns">
     <section>
+      {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
       <h3 id="experience" class="subtitle">{{ experience.fields.title }}</h3>
       <ul class="flow">
-        {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
         {% for job in experience.fields.items %}
         <li>
           <p class="tertiary-text">{{ job.fields.period }}</p>
@@ -23,7 +23,7 @@
     </section>
     <section>
       <h3 id="clients" class="subtitle">Clients</h3>
-      <ul class="flow" style="--flow-space: var(--space-small)">
+      <ul>
         {% for client in cv.clients %}
         <li>{{ client }}</li>
         {% endfor %}
@@ -31,7 +31,7 @@
     </section>
     <section>
       <h3 id="skills" class="subtitle">Skills</h3>
-      <ul class="flow" style="--flow-space: var(--space-small)">
+      <ul>
         {% for skill in cv.skills %}
         <li>{{ skill }}</li>
         {% endfor %}

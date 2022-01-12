@@ -14,7 +14,7 @@ theme: blue
   <hr/>
 </header>
 
-<ul class="columns | gap-xx-large" style="--cols: 3; --row-gap: var(--space-small)">
+<ul class="columns | gap-xx-large" data-cols="3">
   {% for feed in feeds %}
   <li>
     <a href="{{ feed.site_url }}" target="_blank" rel="noreferrer">

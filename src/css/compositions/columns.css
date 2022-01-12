@@ -10,6 +10,14 @@
     grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
   }
 
+  .columns[data-cols="2"] {
+    --cols: 2;
+  }
+
+  .columns[data-cols="3"] {
+    --cols: 3;
+  }
+
   .columns * {
     grid-column: var(--position, auto);
   }

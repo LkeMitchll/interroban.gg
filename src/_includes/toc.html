@@ -1,14 +1,12 @@
-<nav class="toc columns | tertiary-text gap-x-large">
-  <div class="occupy-3">
-    <h2 class="tertiary-title | gap">Table of contents</h2>
-    <ol class="gap">
-      {% for heading in toc %}
-      <li class="horizontal">
-        <p>{{ loop.index }}.</p>
-        <hr class="grow" />
-        <a class="link" href="#{{ heading | lower }}">{{ heading }}</a>
-      </li>
-      {% endfor %}
-    </ol>
-  </div>
+<nav class="flow | toc | tertiary-text gap-x-large">
+  <h2 class="tertiary-title">Table of contents</h2>
+  <ol class="gap">
+    {% for heading in toc %}
+    <li class="horizontal">
+      <p>{{ loop.index }}.</p>
+      <hr class="grow" />
+      <a class="link" href="#{{ heading | lower }}">{{ heading }}</a>
+    </li>
+    {% endfor %}
+  </ol>
 </nav>

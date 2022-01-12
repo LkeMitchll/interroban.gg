@@ -1,13 +1,13 @@
 <article id="listening" class="gap-xx-large">
   <h2>Listening</h2>
-  <section class="columns" style="--cols: 3">
+  <section class="columns" data-cols="3">
     <div>
       <h3 class="subtitle">Now Playing</h3>
       {% include "../components/now-playing.html" %}
       <hr class="gap-large" />
       {% for week in [music.lastWeek, music.thisWeek] %}
       <h3 class="subtitle">{{ week.title }}</h3>
-      <ul class="stats | tertiary-text gap-large" style="--min: 0">
+      <ul class="stats | tertiary-text gap-large">
         {% for stat in [week.tracks, week.albums] %}
         <li>
           <div class="horizontal">
