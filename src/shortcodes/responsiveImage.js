@@ -31,6 +31,8 @@ module.exports = function responsiveImage(imageSrc, size, asObject = false) {
     return {
       src: fallback,
       srcset: sources,
+      sizes: `${viewportWidths[size].sizes}`,
+      loading: "lazy",
       alt: imageSrc.fields.description,
       width: imgWidth,
       height: imgHeight,
