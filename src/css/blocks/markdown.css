@@ -8,6 +8,7 @@
 
 .markdown h2 {
   font-size: var(--text-size-large);
+  font-style: italic;
 }
 
 .markdown h3 {

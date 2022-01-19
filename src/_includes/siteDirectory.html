@@ -1,4 +1,4 @@
-<div class="flow">
+<div>
   {% for category in navigation.routes %}
   <details class="accordian | tertiary-text" data-numbered {% if loop.index <= 1 %}open{% endif %}>
     <summary class="gap">{{ loop.index }}. {{ category.name }}</summary>

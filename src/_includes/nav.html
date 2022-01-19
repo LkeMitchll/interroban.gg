@@ -4,10 +4,14 @@
     <em>Product Designer</em>
   </a>
   <ul class="horizontal" data-space="large">
-    {% set currentURL = "/" + page.fileSlug %}
+    {% if page.url == "/" %}
+      {% set currentURL = "/#about" %}
+    {% else %}
+      {% set currentURL = "/" + page.fileSlug %}
+    {% endif %}
     {% for page in navigation.routes[0].pages %}
     <li>
-      <a href="{{ page.url }}" class="link" {{ "aria-current='page'" if currentURL == page.url }}>
+      <a href="{{ page.url }}" class="link" {{ "aria-current='page'" if (currentURL == page.url) }}>
         {{ page.name }}
       </a>
     </li>

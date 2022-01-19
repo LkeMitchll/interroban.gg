@@ -5,7 +5,7 @@
       "pages": [
         {
           "name": "About",
-          "url": "/about",
+          "url": "/#about",
           "description": "Read more about me."
         },
         {
