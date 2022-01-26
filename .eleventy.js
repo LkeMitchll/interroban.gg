@@ -7,10 +7,6 @@ const limit = require("./src/_filters/limit");
 const date = require("./src/_filters/date");
 const markdown = require("./src/_shortcodes/markdown");
 const responsiveImage = require("./src/_shortcodes/responsiveImage");
-const postcss = require("postcss");
-const importPlugin = require("postcss-import");
-const autoprefixerPlugin = require("autoprefixer");
-const nanoPlugin = require("cssnano");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRSS);
@@ -27,23 +23,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("renderMarkdown", markdown);
   eleventyConfig.addShortcode("responsiveImage", responsiveImage);
-
-  // PostCSS comile via .pcss file extension
-  eleventyConfig.addTemplateFormats("pcss");
-  eleventyConfig.addExtension("pcss", {
-    outputFileExtension: "css",
-
-    compile: async function (inputContent, inputPath) {
-      let plugins = [importPlugin, autoprefixerPlugin, nanoPlugin];
-      let result = await postcss(plugins)
-        .process(inputContent, { from: inputPath })
-        .then((result) => result.css);
-
-      return async () => {
-        return result;
-      };
-    },
-  });
 
   return {
     dir: {

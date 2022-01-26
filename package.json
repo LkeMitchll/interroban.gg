@@ -16,6 +16,7 @@
     "mdast-util-to-hast": "^10.1.1",
     "node-fetch": "^2.6.1",
     "postcss": "^8.2.10",
+    "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.0",
     "remark-abbr": "^1.4.0",
     "remark-external-links": "^8.0.0",
@@ -40,15 +41,17 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
-    "build": "npm-run-all -s clean build:*",
-    "build:eleventy": "eleventy",
     "clean": "rm -rf _site",
-    "dev": "npm-run-all -s clean dev:netlify",
+    "build": "npm-run-all clean build:*",
+    "build:eleventy": "eleventy",
+    "build:postcss": "postcss src/css/index.css -o _site/css/site.css --config ./postcss.config.js",
+    "dev": "npm-run-all clean --parallel dev:netlify dev:postcss",
     "dev:netlify": "netlify dev",
     "dev:eleventy": "eleventy --serve",
-    "lint": "npm-run-all -s lint:*",
-    "lint:stylelint": "stylelint ./css",
-    "lint:eslint": "eslint .",
-    "lint:html": "curlylint ."
+    "dev:postcss": "postcss src/css/index.css -o _site/css/site.css --config ./postcss.config.js -w",
+    "lint": "npm-run-all lint:*",
+    "lint:stylelint": "stylelint ./src/css",
+    "lint:eslint": "eslint ./src",
+    "lint:html": "curlylint ./src"
   }
 }
