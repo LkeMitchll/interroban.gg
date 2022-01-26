@@ -12,5 +12,5 @@ layout: layout.html
   {{ stats(updatedDate = post.sys.updatedAt, readableContent = post.fields.contentMarkdown ) }}
 </header>
 <article class="markdown | flow | gap-xx-large">
-  {% renderMarkdown post.fields.contentMarkdown %}
+  {% markdown post.fields.contentMarkdown %}
 </article>

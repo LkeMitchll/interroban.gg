@@ -5,6 +5,7 @@ module.exports = async function roundups() {
     .getEntries({
       content_type: "roundup",
       order: "-fields.date",
+      limit: 1,
     })
-    .then((result) => result.items);
+    .then((result) => result.items[0]);
 };

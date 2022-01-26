@@ -16,7 +16,7 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
     {{ content.fields.title }}
   </h1>
   <div class="markdown | gap">
-    {% renderMarkdown content.fields.descriptionMarkdown %}
+    {% markdown content.fields.descriptionMarkdown %}
   </div>
   <ul>
     {% from "./_includes/metaLink.html" import metaLink %}
@@ -27,7 +27,7 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
   <hr>
 </header>
 
-{% set roundup = roundups | limit(1) %}
+{% set roundup = roundups %}
 <article class="flow | gap-x-large">
   <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
   <section>

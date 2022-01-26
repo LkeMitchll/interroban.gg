@@ -9,7 +9,7 @@ theme: green
 <header class="flow | gap-x-large">
   <h1 class="headline">{{ content.fields.title }}</h1>
   <section class="markdown">
-    {% renderMarkdown content.fields.descriptionMarkdown %}
+    {% markdown content.fields.descriptionMarkdown %}
   </section>
   <hr>
 </header>
@@ -24,6 +24,6 @@ theme: green
     <hr />
   </div>
   <section id="notes" class="markdown | flow">
-    {% renderMarkdown content.fields.contentMarkdown %}
+    {% markdown content.fields.contentMarkdown %}
   </section>
 </article>

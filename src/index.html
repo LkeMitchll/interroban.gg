@@ -9,7 +9,7 @@ theme: pink
   <div class="columns | gap-x-large">
     <div class="grayscale-image | occupy-3">
       {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
-      {% responsiveImage heroImage, "threeQuarters" %}
+      {% image heroImage, "threeQuarters" %}
     </div>
     <p class="measure | push-down leading-crushed">
       <small>
@@ -19,7 +19,7 @@ theme: pink
     </p>
   </div>
   <div class="measure flow | gap-x-large">
-    {% renderMarkdown intro.fields.descriptionMarkdown %}
+    {% markdown intro.fields.descriptionMarkdown %}
   </div>
   <div class="measure | gap-x-large">
     {% include "./_includes/siteDirectory.html" %}
@@ -34,7 +34,7 @@ theme: pink
   {% include "./_includes/toc.html" %}
 
   <div class="markdown | flow">
-    {% renderMarkdown content.fields.contentMarkdown, assets %}
+    {% markdown content.fields.contentMarkdown, assets %}
   </div>
 </article>
 

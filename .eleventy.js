@@ -3,7 +3,6 @@ require("dotenv").config();
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const pluginReadingTime = require("eleventy-plugin-reading-time");
 const findByID = require("./src/_filters/findByID");
-const limit = require("./src/_filters/limit");
 const date = require("./src/_filters/date");
 const markdown = require("./src/_shortcodes/markdown");
 const responsiveImage = require("./src/_shortcodes/responsiveImage");
@@ -18,11 +17,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/css/");
 
   eleventyConfig.addFilter("findByID", findByID);
-  eleventyConfig.addFilter("limit", limit);
   eleventyConfig.addFilter("formatDate", date);
 
-  eleventyConfig.addShortcode("renderMarkdown", markdown);
-  eleventyConfig.addShortcode("responsiveImage", responsiveImage);
+  eleventyConfig.addShortcode("markdown", markdown);
+  eleventyConfig.addShortcode("image", responsiveImage);
 
   return {
     dir: {

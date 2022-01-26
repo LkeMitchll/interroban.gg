@@ -12,7 +12,7 @@ class Posts {
   render(data) {
     const posts = data.posts.map((post) => ({
       id: post.sys.id,
-      content_html: this.renderMarkdown(post.fields.contentMarkdown),
+      content_html: this.markdown(post.fields.contentMarkdown),
       url: `https://interroban.gg/posts/${post.fields.slug}`,
       summary: post.fields.description,
       date_published: post.sys.createdAt,

@@ -9,7 +9,7 @@ theme: yellow
 <header class="flow | gap-large">
   <h1>{{ content.fields.title }}</h1>
   <div class="markdown | gap">
-    {% renderMarkdown content.fields.descriptionMarkdown %}
+    {% markdown content.fields.descriptionMarkdown %}
   </div>
   <ul>
     {% from "./_includes/metaLink.html" import metaLink %}
@@ -25,7 +25,7 @@ theme: yellow
 <article id="now" class="flow | gap-xx-large">
   <h2>Now</h2>
   <section class="markdown | flow">
-    {% renderMarkdown now.fields.contentMarkdown, assets %}
+    {% markdown now.fields.contentMarkdown, assets %}
   </section>
   <details>
     <summary class="gap">
@@ -53,7 +53,7 @@ theme: yellow
 
 {% include "./_includes/listening.html" %}
 
-{% set scrapbook = savee | limit(50) %}
+{% set scrapbook = savee %}
 <article id="scrapbook" class="flow | gap-xx-large">
   <header>
     <h2>Scrapbook</h2>
