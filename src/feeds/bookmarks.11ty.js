@@ -31,7 +31,7 @@ class Posts {
       favicon: "https://interroban.gg/assets/images/favicon.svg",
       authors: [{ name: "Luke Mitchell", url: "https://interroban.gg" }],
       language: "en",
-      home_page_url: "https://interroban.gg/bookmarks/2021",
+      home_page_url: "https://interroban.gg/bookmarks",
       feed_url: "https://interroban.gg/feeds/bookmarks.json",
       items: bookmarks,
     };
