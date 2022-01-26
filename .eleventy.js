@@ -2,11 +2,11 @@ require("dotenv").config();
 
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const pluginReadingTime = require("eleventy-plugin-reading-time");
-const findByID = require("./src/filters/findByID");
-const limit = require("./src/filters/limit");
-const date = require("./src/filters/date");
-const markdown = require("./src/shortcodes/markdown");
-const responsiveImage = require("./src/shortcodes/responsiveImage");
+const findByID = require("./src/_filters/findByID");
+const limit = require("./src/_filters/limit");
+const date = require("./src/_filters/date");
+const markdown = require("./src/_shortcodes/markdown");
+const responsiveImage = require("./src/_shortcodes/responsiveImage");
 const postcss = require("postcss");
 const importPlugin = require("postcss-import");
 const autoprefixerPlugin = require("autoprefixer");

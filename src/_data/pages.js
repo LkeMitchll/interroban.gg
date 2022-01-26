@@ -1,4 +1,4 @@
-const contentful = require("../providers/contentful");
+const contentful = require("../_providers/contentful");
 
 module.exports = async function pages() {
   return contentful.client

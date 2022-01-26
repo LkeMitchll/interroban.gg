@@ -1,4 +1,4 @@
-const FeedbinAPI = require("../providers/feedbin");
+const FeedbinAPI = require("../_providers/feedbin");
 
 module.exports = async function feeds() {
   const api = new FeedbinAPI();

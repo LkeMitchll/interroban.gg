@@ -1,4 +1,4 @@
-const github = require("../providers/github");
+const github = require("../_providers/github");
 
 module.exports = async function commits() {
   const response = await github.client.request(

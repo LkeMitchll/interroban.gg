@@ -5,12 +5,13 @@ const slug = require("remark-slug");
 const footnotes = require("remark-footnotes");
 const html = require("remark-html");
 const all = require("mdast-util-to-hast/lib/all");
-const customFootnotes = require("../helpers/footnotes");
-const references = require("../helpers/references");
-const imagesWithCaptions = require("../helpers/imagesWithCaptions");
 
-const findByID = require("../filters/findByID");
-const responsiveImage = require("./responsiveImage");
+const customFootnotes = require("./footnotes");
+const references = require("./references");
+const imagesWithCaptions = require("./imagesWithCaptions");
+
+const findByID = require("../../_filters/findByID");
+const responsiveImage = require("../responsiveImage");
 
 module.exports = function renderMarkdown(rawMarkdown, assets) {
   let result;

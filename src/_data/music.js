@@ -1,5 +1,5 @@
-const SpotifyAPI = require("../providers/spotify");
-const LastFMAPI = require("../providers/lastfm");
+const SpotifyAPI = require("../_providers/spotify");
+const LastFMAPI = require("../_providers/lastfm");
 
 function dateToEpochWithOffset(time, offset) {
   const date = new Date();
