@@ -1,22 +1,22 @@
 <footer class="columns | gap-x-large">
   <div>
-    <p class="subtitle | small-text gap-small leading-small">
+    <p class="subtitle | small-text gap leading-small">
       Luke Mitchell &mdash;<br />
       Product Designer
     </p>
     <ul>
       {% for page in navigation.routes[0].pages %}
-      <li><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+      <li class="gap"><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
       {% endfor %}
     </ul>
   </div>
   {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
   {% for category in footerCategories %}
   <div class="push-down">
-    <p class="subtitle | gap-small">{{ category.name }}</p>
+    <p class="subtitle | gap">{{ category.name }}</p>
     <ul>
       {% for page in category.pages %}
-      <li><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
+      <li class="gap"><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
       {% endfor %}
     </ul>
   </div>

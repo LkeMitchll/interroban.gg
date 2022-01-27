@@ -1,10 +1,10 @@
 <div>
   {% for category in navigation.routes %}
   <details class="accordian | tertiary-text" data-numbered {% if loop.index <= 1 %}open{% endif %}>
-    <summary class="gap">{{ loop.index }}. {{ category.name }}</summary>
-    <ol class="flow | gap">
+    <summary class="gap-medium">{{ loop.index }}. {{ category.name }}</summary>
+    <ol>
       {% for page in category.pages %}
-      <li class="horizontal">
+      <li class="horizontal | gap-medium">
         <a class="link" href="{{ page.url }}">{{ page.name }}</a>
         <hr class="grow" />
         <p>{{ page.description }}</p>
@@ -15,8 +15,8 @@
   {% endfor %}
   {% for category in [navigation.contact, navigation.elsewhere] %}
   <details class="accordian | tertiary-text" data-numbered>
-    <summary class="gap">{{ loop.index + 2 }}. {{ category.name }}</summary>
-    <ol class="horizontal | gap">
+    <summary class="gap-medium">{{ loop.index + 2 }}. {{ category.name }}</summary>
+    <ol class="horizontal | gap-medium">
       {% for page in category.pages %}
       <li class="horizontal">
         <a class="link" href="{{ page.url }}" target="_blank" rel="noreferrer">

@@ -2,7 +2,7 @@
   <h2 class="tertiary-title">Table of contents</h2>
   <ol class="gap">
     {% for heading in toc %}
-    <li class="horizontal">
+    <li class="horizontal | gap">
       <p>{{ loop.index }}.</p>
       <hr class="grow" />
       <a class="link" href="#{{ heading | lower }}">{{ heading }}</a>
