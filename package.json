@@ -14,7 +14,7 @@
     "cssnano": "^5.0.6",
     "eleventy-plugin-reading-time": "^0.0.1",
     "mdast-util-to-hast": "^10.1.1",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "postcss": "^8.2.10",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.0",
