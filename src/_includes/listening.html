@@ -7,9 +7,9 @@
       <hr class="gap-large" />
       {% for week in [music.lastWeek, music.thisWeek] %}
       <h3 class="subtitle">{{ week.title }}</h3>
-      <ul class="stats | tertiary-text gap-large">
+      <ul class="tertiary-text gap-large">
         {% for stat in [week.tracks, week.albums] %}
-        <li>
+        <li class="border">
           <div class="horizontal">
             <p><em>{{ stat.title }}</em></p>
             <p>

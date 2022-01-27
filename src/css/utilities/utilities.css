@@ -124,3 +124,9 @@
 .grow {
   flex-grow: 1;
 }
+
+/* u: Border */
+
+.border {
+  border-bottom: var(--border-default);
+}
