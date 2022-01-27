@@ -6,19 +6,15 @@ module.exports = function responsiveImage(imageSrc, size, asObject = false) {
   const viewportWidths = {
     threeQuarters: {
       sizes: "(min-width: 800px) 65vw, (min-width: 1600px) 50vw, 90vw",
-      widths: [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],
-    },
-    half: {
-      sizes: "(min-width: 800px) 43vw, (min-width: 1600px) 33vw, 90vw",
-      widths: [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],
+      widths: [400, 600, 800, 1000, 1200, 1400],
     },
     oneCol: {
-      sizes: "(min-width: 800px) 20vw, 70vw",
-      widths: [400, 600, 800],
+      sizes: "(min-width: 800px) 14vw, 35vw",
+      widths: [400, 600],
     },
   };
 
-  const quality = 90;
+  const quality = 80;
   const fallback = `${imgUrl}?w=800&q=${quality}`;
   const sources = [];
 
