@@ -23,6 +23,10 @@ img {
   background-color: var(--color-primary);
 }
 
+figure {
+  margin: 0;
+}
+
 @media screen and (min-width: 400px) {
   html {
     font-size: 16px;

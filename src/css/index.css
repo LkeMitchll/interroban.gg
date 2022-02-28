@@ -14,7 +14,7 @@
 @import "blocks/link.css";
 @import "blocks/track.css";
 @import "blocks/markdown.css";
-@import "blocks/footnote.css";
+@import "blocks/sidenote.css";
 @import "blocks/figure.css";
 @import "blocks/accordian.css";
 @import "blocks/toc.css";

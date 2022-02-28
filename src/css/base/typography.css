@@ -69,18 +69,14 @@ small {
 code,
 pre {
   font-family: var(--text-mono);
-  border-radius: 2px;
-  padding: 0.1em var(--space-tiny);
   overflow-x: scroll;
 }
 
-pre code {
-  background-color: transparent;
-  tab-size: 2;
-}
-
-* + pre {
+pre {
   padding: var(--space-default);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  max-width: 60ch;
 }
 
 a {
@@ -104,10 +100,9 @@ time {
 }
 
 blockquote {
-  margin: 0 0 0 -1rem;
+  margin: 0;
   padding-left: var(--space-default);
   border-left: var(--border-default);
-  font-style: italic;
 }
 
 hr {
@@ -115,5 +110,4 @@ hr {
   margin: auto 0 0;
   height: 1px;
   border-bottom: var(--border-default);
-  opacity: 0.4;
 }

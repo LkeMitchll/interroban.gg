@@ -2,27 +2,8 @@
   counter-reset: image-number;
 }
 
-.markdown :not(section) {
-  max-width: 50ch;
-}
-
-.markdown h2 {
-  font-size: var(--text-size-large);
-  font-style: italic;
-}
-
-.markdown h3 {
-  font-size: var(--text-size-default);
-  font-family: var(--text-body);
-  font-weight: bold;
-}
-
-.markdown h3 + * {
-  margin-top: -1rem;
-}
-
-.markdown * + h2 {
-  margin-top: var(--space-x-large);
+.markdown :not(section, aside, figure, figcaption, pre) {
+  max-width: var(--text-measure);
 }
 
 .markdown ul,
@@ -36,12 +17,4 @@
 
 .markdown ol {
   list-style: decimal;
-}
-
-.markdown .long-list {
-  columns: 2;
-}
-
-.markdown :not(h3) + ul {
-  margin-top: 1rem;
 }
