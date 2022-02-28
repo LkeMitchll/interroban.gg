@@ -1,6 +1,6 @@
 const contentful = require("../_providers/contentful");
 
-module.exports = async function bookmarks(limit) {
+module.exports = async function bookmarks() {
   const thisYear = await contentful.client
     .getEntries({
       content_type: "blogPost",
