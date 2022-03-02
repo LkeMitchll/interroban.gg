@@ -1,69 +1,42 @@
 const contentful = require("../_providers/contentful");
 
 module.exports = async function bookmarks() {
-  const thisYear = await contentful.client
-    .getEntries({
-      content_type: "blogPost",
-      order: "-fields.publishDate",
-      limit: 1000,
-      "sys.createdAt[gte]": "2021-01-01T00:00:00Z",
-    })
-    .then((result) => result.items);
-  const lastYear = await contentful.client
-    .getEntries({
-      content_type: "blogPost",
-      order: "-fields.publishDate",
-      limit: 1000,
-      "sys.createdAt[gte]": "2020-01-01T00:00:00Z",
-      "sys.createdAt[lte]": "2021-01-01T00:00:00Z",
-    })
-    .then((result) => result.items);
-  const archive = await contentful.client
-    .getEntries({
-      content_type: "blogPost",
-      order: "-fields.publishDate",
-      limit: 1000,
-      "sys.createdAt[lte]": "2020-01-01T00:00:00Z",
-    })
-    .then((result) => result.items);
-
-  function numberEntries(entries, offset) {
-    entries.reverse().forEach((entry, i) => {
-      const bookmark = entry;
-      bookmark.fields.number = i + 1 + offset;
-    });
-    entries.reverse();
-    return entries;
-  }
-
-  numberEntries(thisYear, lastYear.length + archive.length);
-  numberEntries(lastYear, archive.length);
-  numberEntries(archive, 0);
-
-  return [
-    {
-      title: "Current",
-      total: thisYear.length,
-      bookmarks: thisYear,
-      current: true,
-    },
-    {
-      title: "2021",
-      total: thisYear.length,
-      bookmarks: thisYear,
-      current: true,
-    },
-    {
-      title: "2020",
-      total: lastYear.length,
-      bookmarks: lastYear,
-      current: false,
-    },
-    {
-      title: "Archive",
-      total: archive.length,
-      bookmarks: archive,
-      current: false,
-    },
+  const data = [
+    { title: "Current", bookmarks: [] },
+    { title: "2022", bookmarks: [] },
+    { title: "2021", bookmarks: [] },
+    { title: "2020", bookmarks: [] },
+    { title: "Archive", bookmarks: [] },
   ];
+  const entries = await contentful.client
+    .getEntries({
+      content_type: "blogPost",
+      order: "-fields.publishDate",
+      limit: 1000,
+    })
+    .then((result) => result.items);
+
+  // Number the entries
+  entries.reverse().forEach((entry, i) => {
+    entry.fields.number = i + 1;
+  });
+  entries.reverse();
+
+  // Sort the entries into year sorted arrays
+  entries.forEach((entry) => {
+    const year = entry.fields.publishDate.split("-")[0];
+
+    if (year === "2022") {
+      data[0].bookmarks.push(entry);
+      data[1].bookmarks.push(entry);
+    } else if (year === "2021") {
+      data[2].bookmarks.push(entry);
+    } else if (year === "2020") {
+      data[3].bookmarks.push(entry);
+    } else {
+      data[4].bookmarks.push(entry);
+    }
+  });
+
+  return data;
 };
