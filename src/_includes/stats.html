@@ -1,16 +1,5 @@
-{% macro stats(totalCount, totalSuffix, updatedDate, readableContent) %}
-<ul class="measure | tertiary-text">
-  {% if totalCount %}
-  <li class="border">
-    <p class="horizontal">
-      {% if totalCount >= 1 %}
-      <em>Total</em><span class="push-right">{{ totalCount }} {{ totalSuffix }}</span>
-      {% else %}
-      <em>Total</em><span class="push-right">{{ totalCount | length }} {{ totalSuffix }}</span>
-      {% endif %}
-    </p>
-  </li>
-  {% endif %}
+{% macro stats(updatedDate, readableContent) %}
+<ul class="measure tertiary-text">
   {% if updatedDate %}
   <li class="border">
     <p class="horizontal">

@@ -13,16 +13,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1rem;
-  height: 1rem;
+  width: var(--space-default);
+  height: var(--space-default);
   border-radius: 100%;
   border: solid var(--border-width-default) var(--color-primary);
-  margin-right: 1rem;
+  margin-right: var(--space-default);
   font-family: var(--text-mono);
   font-size: var(--text-size-small);
-  flex-shrink: 0;
-  z-index: 100;
-  background-color: var(--color-bg);
 }
 
 @media (min-width: 700px) and (max-width: 1000px) {

@@ -5,8 +5,8 @@ theme: pink
 ---
 
 {% set intro = pages | findByID("5yo7fjGQhLhhuup6PUZlMU") %}
-<header class="flow">
-  <div class="columns | gap-x-large">
+<header class="flow | gap-x-large">
+  <div class="columns">
     <div class="grayscale-image | occupy-3">
       {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
       {% image heroImage, "threeQuarters" %}
@@ -18,7 +18,7 @@ theme: pink
       </small>
     </p>
   </div>
-  <div class="measure flow | gap-x-large">
+  <div class="measure | gap-x-large">
     {% markdown intro.fields.descriptionMarkdown %}
   </div>
   <div class="measure | gap-x-large">
@@ -28,7 +28,7 @@ theme: pink
 </header>
 
 {% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
-<article class="pad-t-large gap-large" id="about">
+<article class="gap-large" id="about">
   <h1>About</h1>
   {% set toc = ["History", "Experience", "Clients", "Skills", "Recognition"] %}
   {% include "./_includes/toc.html" %}

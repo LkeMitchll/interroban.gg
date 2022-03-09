@@ -1,12 +1,16 @@
 <footer class="columns | gap-x-large">
   <div>
-    <p class="subtitle | small-text gap leading-small">
-      Luke Mitchell &mdash;<br />
-      Product Designer
+    <p class="subtitle | gap leading-crushed">
+      <small>
+        Luke Mitchell &mdash;<br />
+        Product Designer
+      </small>
     </p>
     <ul>
       {% for page in navigation.routes[0].pages %}
-      <li class="gap"><a href="{{ page.url }}" class="link">{{ page.name }}</a></li>
+      <li class="gap">
+        <a href="{{ page.url }}" class="link">{{ page.name }}</a>
+      </li>
       {% endfor %}
     </ul>
   </div>
@@ -16,7 +20,9 @@
     <p class="subtitle | gap">{{ category.name }}</p>
     <ul>
       {% for page in category.pages %}
-      <li class="gap"><a class="link" href="{{ page.url }}">{{ page.name }}</a></li>
+      <li class="gap">
+        <a class="link" href="{{ page.url }}">{{ page.name }}</a>
+      </li>
       {% endfor %}
     </ul>
   </div>

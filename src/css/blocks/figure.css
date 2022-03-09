@@ -21,4 +21,5 @@
 .caption::before {
   content: "Fig N\00BA"counter(image-number) " ";
   font-family: var(--text-mono);
+  font-size: var(--text-size-small);
 }

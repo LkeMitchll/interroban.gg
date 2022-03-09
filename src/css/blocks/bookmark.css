@@ -1,16 +1,12 @@
 @media (min-width: 800px) {
   .bookmark {
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
     border-bottom: var(--border-default);
     padding-bottom: var(--space-small);
   }
 
   .bookmark * {
     margin-right: var(--space-large);
-  }
-
-  .bookmark *:nth-child(2) {
-    flex-basis: 50%;
   }
 }

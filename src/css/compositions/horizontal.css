@@ -1,0 +1,11 @@
+.horizontal {
+  display: flex;
+}
+
+.horizontal > * {
+  margin-right: var(--gap, 2rem);
+}
+
+.horizontal *:last-child {
+  margin-right: 0;
+}

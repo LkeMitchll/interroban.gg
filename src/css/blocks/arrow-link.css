@@ -1,3 +1,4 @@
-.columns .arrow-link {
-  min-width: 30ch;
+.arrow-link::before {
+  content: "\2192";
+  padding-right: var(--space-small);
 }

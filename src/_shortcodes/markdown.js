@@ -166,8 +166,10 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
                 <div class="grayscale-image">
                   ${responsiveImage(imageObject, "threeQuarters")}
                 </div>
-                <figcaption class="caption | small-text | measure">
-                  ${imageObject.fields.description}
+                <figcaption class="caption | measure">
+                  <small>
+                    ${imageObject.fields.description}
+                  </small>
                 </figcaption>
               </figure>`;
     }

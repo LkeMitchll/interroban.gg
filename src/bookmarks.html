@@ -19,10 +19,21 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
     {% markdown content.fields.descriptionMarkdown %}
   </div>
   <ul>
-    {% from "./_includes/metaLink.html" import metaLink %}
-    {{ metaLink("RSS Feed", "/feeds/bookmarks.xml") }}
-    {{ metaLink("JSON Feed", "/feeds/bookmarks.json") }}
-    {{ metaLink("Suggest a bookmark", "mailto:luke@interroban.gg?subject=Bookmark%20suggestion", false) }}
+    <li class="arrow-link | tertiary-text gap">
+      <a href="/feeds/bookmarks.xml" target="_blank" referrer="noreferrer" class="link">
+        RSS Feed
+      </a>
+    </li>
+    <li class="arrow-link | tertiary-text gap">
+      <a href="/feeds/bookmarks.json" target="_blank" referrer="noreferrer" class="link">
+        JSON Feed
+      </a>
+    </li>
+    <li class="arrow-link | tertiary-text gap">
+      <a href="mailto:luke@interroban.gg?subject=Bookmark%20suggestion" target="_blank" referrer="noreferrer" class="link">
+        Suggest a bookmark
+      </a>
+    </li>
   </ul>
   <hr>
 </header>
@@ -65,7 +76,7 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
       <a href="{{ bookmark.fields.url }}" target="_blank" rel="noreferrer">
         {{ bookmark.fields.title }}
       </a>
-      <p class="tertiary-text">
+      <p class="tertiary-text push-right">
         {{ bookmark.fields.tag }} &mdash;
         {{ bookmark.fields.publishDate | formatDate }}
       </p>

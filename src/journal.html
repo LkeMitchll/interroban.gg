@@ -12,9 +12,16 @@ theme: yellow
     {% markdown content.fields.descriptionMarkdown %}
   </div>
   <ul>
-    {% from "./_includes/metaLink.html" import metaLink %}
-    {{ metaLink("RSS Feed", "/rss.xml", external = false) }}
-    {{ metaLink("JSON Feed", "/feeds/posts.json", external = false) }}
+    <li class="arrow-link | tertiary-text gap">
+      <a href="/rss.xml" target="_blank" referrer="noreferrer" class="link">
+        RSS Feed
+      </a>
+    </li>
+    <li class="arrow-link | tertiary-text gap">
+      <a href="/feeds/posts.json" target="_blank" referrer="noreferrer" class="link">
+        JSON Feed
+      </a>
+    </li>
   </ul>
   <hr>
 </header>
