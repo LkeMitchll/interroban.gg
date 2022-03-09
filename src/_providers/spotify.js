@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 module.exports = class SpotifyAPI {
   constructor() {
