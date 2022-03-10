@@ -18,7 +18,11 @@
     grid-column: var(--position, auto);
   }
 
-  .occupy-3 {
+  .col-two-thirds {
     grid-column: 1 / 4;
+  }
+
+  .col-4 {
+    grid-column: 4 / 5;
   }
 }
