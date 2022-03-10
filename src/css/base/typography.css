@@ -47,6 +47,7 @@ h6,
   font-size: var(--text-size-default);
   font-family: var(--text-body);
   font-weight: bold;
+  opacity: 0.9;
 }
 
 .tertiary-title {
