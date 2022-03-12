@@ -15,5 +15,5 @@ module.exports = async function saveeFeed() {
     });
   }
 
-  return getFeed().then((json) => json.data.splice(50));
+  return getFeed().then((json) => json.data.splice(0, 50));
 };
