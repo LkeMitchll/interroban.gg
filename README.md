@@ -15,16 +15,20 @@ This is a [Eleventy (11ty)](https://www.11ty.dev) project.
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js v17+
+
 First, install the bundle:
 
 ```bash
-yarn install
+npm install
 ```
 
 Next, build the site:
 
 ```bash
-yarn run build
+npm run build
 ```
 
 To run a development environment:
@@ -39,7 +43,7 @@ netlify link
 ...then run:
 
 ```bash
-yarn run dev
+npm run dev
 ```
 
 Open [http://localhost:8888](http://localhost:8888) with your browser to see

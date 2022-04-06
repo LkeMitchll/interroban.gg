@@ -1,7 +1,7 @@
 [build]
-  command = "yarn run build"
+  command = "npm run build"
   publish = "_site"
 
 [dev]
-  command = "yarn run dev:eleventy"
+  command = "npm run dev:eleventy"
   autoLaunch = false
