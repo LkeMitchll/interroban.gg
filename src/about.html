@@ -1,0 +1,65 @@
+---
+layout: layout.html
+title: About
+theme: yellow
+---
+
+<h1 class="banner">
+  <em>About&mdash;</em>I've been a designer for 10 years, gaining experience
+  working with clients of all sizes, spanning many industries.
+</h1>
+<hr class="gap-large">
+
+{% set toc = ["History", "Experience", "Clients", "Skills", "Recognition"] %}
+{% include "./_includes/toc.html" %}
+
+<article class="markdown | flow gap-xx-large" id="about">
+  {% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
+  {% markdown content.fields.contentMarkdown, assets %}
+</article>
+
+<article class="columns | gap-xx-large">
+  <div>
+    {% set experience = cv.experience %}
+    <h3 id="experience" class="subtitle">Experience</h3>
+    <ul class="flow">
+      {% for job in experience %}
+      <li>
+        <p class="tertiary-text">{{ job.period }}</p>
+        <p>{{ job.title }}</p>
+        <p><em>{{ job.employer }}</em></p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3 id="clients" class="subtitle">Clients</h3>
+    <ul>
+      {% for client in cv.clients %}
+        <li>{{ client }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3 id="skills" class="subtitle">Skills</h3>
+    <ul>
+      {% for skill in cv.skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3 id="recognition" class="subtitle">Recognition</h3>
+    <ul class="flow">
+      {% set awards = cv.recognition %}
+      {% for award in awards %}
+        <li>
+          <a href="{{ award.url }}" target="_blank" rel="noopener noreferrer">
+            {{ award.source }}
+          </a>
+          <p>{{ award.date }} </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</article>

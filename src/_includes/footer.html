@@ -1,11 +1,6 @@
-<footer class="columns | gap-x-large">
+<footer class="columns | gap-xx-large">
   <div>
-    <p class="subtitle | gap leading-crushed">
-      <small>
-        Luke Mitchell &mdash;<br />
-        Product Designer
-      </small>
-    </p>
+    <p class="subtitle | gap">General</p>
     <ul>
       {% for page in navigation.routes[0].pages %}
       <li class="gap">
@@ -16,7 +11,7 @@
   </div>
   {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
   {% for category in footerCategories %}
-  <div class="push-down">
+  <div>
     <p class="subtitle | gap">{{ category.name }}</p>
     <ul>
       {% for page in category.pages %}
@@ -27,6 +22,9 @@
     </ul>
   </div>
   {% endfor %}
+</footer>
+
+<footer class="columns | gap-x-large">
   <div>
     <p class="tertiary-text">
       <small>&copy; {{ dates.currentYear() }}, Luke Mitchell</small>

@@ -4,63 +4,38 @@ title: Journal
 theme: green
 ---
 
-{% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
+<h1 class="banner">
+  <em>Journal&mdash;</em>what I've been doing recently, a blog, a scrapbook,
+  and a place to show what I am currently listening to and reading. It's also a
+  bit of playground to grab data from a few services I like.
+</h1>
+<hr class="gap-large">
 
-<header class="flow | gap-large">
-  <h1>{{ content.fields.title }}</h1>
-  <div class="markdown | gap">
-    {% markdown content.fields.descriptionMarkdown %}
-  </div>
-  <ul>
-    <li class="arrow-link | tertiary-text gap">
-      <a href="/rss.xml" target="_blank" referrer="noreferrer" class="link">
-        RSS Feed
-      </a>
-    </li>
-    <li class="arrow-link | tertiary-text gap">
-      <a href="/feeds/posts.json" target="_blank" referrer="noreferrer" class="link">
-        JSON Feed
-      </a>
-    </li>
-  </ul>
-  <hr>
-</header>
-
-{% set toc = ["Now", "Posts", "Listening", "Scrapbook"] %}
+{% set toc = ["Blog", "Listening", "Scrapbook"] %}
 {% include "./_includes/toc.html" %}
 
-<article id="now" class="flow | gap-xx-large">
-  <h2>Now</h2>
-  <section class="markdown | flow">
-    {% markdown now.fields.contentMarkdown, assets %}
-  </section>
-  <details>
-    <summary class="gap">
-      <h3 class="subtitle | inline">Current Clients</h3>
-    </summary>
-    <div>
-      <ul>
-        {% for client in now.fields.currentClients %}
-        <li>{{ client }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-  </details>
-  <footer>
-    <time datetime="{{ now.fields.date }}">
-      Last updated &ndash; {{ now.fields.date | formatDate }}
-    </time>
-  </footer>
-</article>
+<article id="blog" class="gap-xx-large">
+  <header class="flow | gap-large">
+    <h2>Blog</h2>
+    <ul>
+      <li class="arrow-link | tertiary-text gap">
+        <a href="/rss.xml" target="_blank" referrer="noreferrer" class="link">
+          RSS Feed
+        </a>
+      </li>
+      <li class="arrow-link | tertiary-text gap">
+        <a href="/feeds/posts.json" target="_blank" referrer="noreferrer" class="link">
+          JSON Feed
+        </a>
+      </li>
+    </ul>
+  </header>
 
-<article id="posts" class="gap-xx-large">
-  <h2>Posts</h2>
   {% include "./_includes/posts.html" %}
 </article>
 
 {% include "./_includes/listening.html" %}
 
-{% set scrapbook = savee %}
 <article id="scrapbook" class="flow | gap-xx-large">
   <header>
     <h2>Scrapbook</h2>
@@ -78,5 +53,6 @@ theme: green
       </small>
     </p>
   </header>
+
   {% include "./_includes/scrapbook.html" %}
 </article>

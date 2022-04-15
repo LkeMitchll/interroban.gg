@@ -1,15 +1,14 @@
 <ol class="flow | gap-large">
   {% for post in posts %}
-  <li>
+  <li class="horizontal">
     <a
       href="{{ postParent }}/post/{{ post.fields.slug }}/"
       aria-label="Post: {{ post.fields.title }}"
     >
       {{ post.fields.title }}
     </a>
-    <p>
-      <em>{{ post.sys.createdAt | formatDate("long") }}</em>
-    </p>
+    <hr class="grow" />
+    <p class="tertiary-text">{{ post.sys.createdAt | formatDate("long") }}</p>
   </li>
   {% endfor %}
 </ol>

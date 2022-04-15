@@ -4,7 +4,14 @@ title: Product Designer
 theme: pink
 ---
 
-{% set intro = pages | findByID("5yo7fjGQhLhhuup6PUZlMU") %}
+<h1 class="banner | gap-x-large">
+  <em>Luke Mitchell&mdash;</em>digital product designer, design director,
+  <em>&amp;</em> user experience engineer for 
+  <a href="https://www.thoughtbot.com" target="_blank">thoughtbot</a>.
+  Specialising in design strategy, process, <em>&amp;</em> systems across
+  multiple industries for 10 years.
+</h1>
+
 <header class="flow | gap-x-large">
   <div class="columns">
     <div class="grayscale-image | col-two-thirds">
@@ -18,24 +25,4 @@ theme: pink
       </small>
     </p>
   </div>
-  <div class="measure | gap-x-large">
-    {% markdown intro.fields.descriptionMarkdown %}
-  </div>
-  <div class="measure | gap-x-large">
-    {% include "./_includes/siteDirectory.html" %}
-  </div>
-  <hr class="gap-large" />
 </header>
-
-{% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
-<article class="gap-large" id="about">
-  <h1>About</h1>
-  {% set toc = ["History", "Experience", "Clients", "Skills", "Recognition"] %}
-  {% include "./_includes/toc.html" %}
-
-  <div class="markdown | flow">
-    {% markdown content.fields.contentMarkdown, assets %}
-  </div>
-</article>
-
-{% include "./_includes/career.html" %}

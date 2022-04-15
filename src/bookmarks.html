@@ -9,15 +9,15 @@ pagination:
 permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}/{% endif %}index.html"
 ---
 
-{% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
+<h1 class="banner">
+  <em>Bookmarks&mdash;</em>I try and keep track of all the interesting things I
+  find on my travels around the web. Because the internet never stops changing,
+  as this list gets older things will begin to decay and disappear. So this
+  isn’t an archive as such, it’s a log.
+</h1>
+<hr class="gap-large">
 
 <header class="flow | gap-large">
-  <h1 class="headline">
-    {{ content.fields.title }}
-  </h1>
-  <div class="markdown | gap">
-    {% markdown content.fields.descriptionMarkdown %}
-  </div>
   <ul>
     <li class="arrow-link | tertiary-text gap">
       <a href="/feeds/bookmarks.xml" target="_blank" referrer="noreferrer" class="link">
@@ -29,44 +29,11 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
         JSON Feed
       </a>
     </li>
-    <li class="arrow-link | tertiary-text gap">
-      <a href="mailto:luke@interroban.gg?subject=Bookmark%20suggestion" target="_blank" referrer="noreferrer" class="link">
-        Suggest a bookmark
-      </a>
-    </li>
   </ul>
   <hr>
 </header>
 
-{% set roundup = roundups %}
-<article class="flow | gap-x-large">
-  <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
-  <section>
-    {% set favouriteBookmarks = roundup.fields.links %}
-    {% include "./_includes/favouriteBookmarks.html" %}
-  </section>
-  <hr>
-</article>
-
 <article id="content" class="flow | gap-xx-large">
-  <header>
-    <h2>{{ pagination.items[0].title }}</h2>
-    <nav>
-      <p class="tertiary-text">Filter:</p>
-      <ul class="horizontal">
-        {% set currentPage = pagination.pages[pagination.pageNumber] %}
-        {% for page in pagination.pages %}
-          {% if page.title != "Current" %}
-            <li>
-              <a class="link" href="/bookmarks/{{ page.title }}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>
-                {{ page.title }}
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </nav>
-  </header>
   <ul class="flow">
     {% for bookmark in year.bookmarks %}
     <li class="bookmark">
@@ -84,7 +51,7 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
     {% endfor %}
   </ul>
   <nav>
-    <p class="tertiary-text">Filter:</p>
+    <p class="tertiary-text">More:</p>
     <ul class="horizontal | gap">
       {% for page in pagination.pages %}
         {% if page.title != "Current" %}

@@ -32,7 +32,9 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
     <link rel="stylesheet" href="/css/site.css" />
   </head>
   <body>
-    {% include "./nav.html" %}
+    {% if page.url !== "/" %}
+      <a class="link | inline-block gap-large" href="/">&larr; Back</a>
+    {% endif %}
     <main>
       {{ content | safe }}
     </main>
