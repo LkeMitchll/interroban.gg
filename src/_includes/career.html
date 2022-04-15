@@ -9,14 +9,14 @@
   </header>
   <section class="columns">
     <section>
-      {% set experience = list | findByID("4GpYef6usWILucVp1ZYNi9") %}
-      <h3 id="experience" class="subtitle">{{ experience.fields.title }}</h3>
+      {% set experience = cv.experience %}
+      <h3 id="experience" class="subtitle">Experience</h3>
       <ul class="flow">
-        {% for job in experience.fields.items %}
+        {% for job in experience %}
         <li>
-          <p class="tertiary-text">{{ job.fields.period }}</p>
-          <p>{{ job.fields.title }}</p>
-          <p><em>{{ job.fields.company }}</em></p>
+          <p class="tertiary-text">{{ job.period }}</p>
+          <p>{{ job.title }}</p>
+          <p><em>{{ job.employer }}</em></p>
         </li>
         {% endfor %}
       </ul>
@@ -40,11 +40,11 @@
     <section>
       <h3 id="recognition" class="subtitle">Recognition</h3>
       <ul class="flow">
-        {% set awards = list | findByID("Bh8h6u3KSNupnkUX0okc8") %}
-        {% for award in awards.fields.items %}
+        {% set awards = cv.recognition %}
+        {% for award in awards %}
         <li>
-          <a href="{{ award.fields.url }}" target="_blank" rel="noopener noreferrer">{{ award.fields.title }}</a>
-          <p>{{ award.fields.date | formatDate("long") }} </p>
+          <a href="{{ award.url }}" target="_blank" rel="noopener noreferrer">{{ award.source }}</a>
+          <p>{{ award.date }} </p>
         </li>
         {% endfor %}
       </ul>

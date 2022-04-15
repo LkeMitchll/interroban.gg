@@ -1,4 +1,26 @@
 {
+  "experience": [
+    {
+      "title": "Design Director",
+      "period": "2020—",
+      "employer": "thoughtbot"
+    },
+    {
+      "title": "Senior Product Designer",
+      "period": "2016—2020",
+      "employer": "thoughtbot"
+    },
+    {
+      "title": "Digital Designer",
+      "period": "2015—2016",
+      "employer": "Condiment / Inn Style"
+    },
+    {
+      "title": "Graphic Designer",
+      "period": "2011—2013",
+      "employer": "Condiment / Inn Style"
+    }
+  ],
   "clients": [
     "DigitalOcean",
     "Steel Warriors",
@@ -17,5 +39,32 @@
     "Project Management",
     "Design Consultancy",
     "Sales Support"
+  ],
+  "recognition": [
+    {
+      "source": "Typewolf",
+      "url": "https://www.typewolf.com/site-of-the-day/luke-mitchell",
+      "date": "August 2021"
+    },
+    {
+      "source": "Minimal Gallery",
+      "url": "https://minimal.gallery/luke-mitchell/",
+      "date": "August 2021"
+    },
+    {
+      "source": "MaxiBestOf",
+      "url": "https://maxibestof.one/websites/32150-luke-mitchell",
+      "date": "August 2021"
+    },
+    {
+      "source": "The Gallery",
+      "url": "https://thegallery.io/",
+      "date": "August 2021"
+    },
+    {
+      "source": "Lapa Ninja",
+      "url": "https://www.lapa.ninja/post/interroban/",
+      "date": "December 2021"
+    }
   ]
 }
