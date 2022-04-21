@@ -9,35 +9,34 @@
           to Apple Music, this section will look a bit strange until then.
         </small>
       </p>
-      <h3 class="subtitle">Now Playing</h3>
-      {% include "../_includes/now-playing.html" %}
-      <hr class="gap-large" />
-      {% for week in [music.lastWeek, music.thisWeek] %}
-      <h3 class="subtitle">{{ week.title }}</h3>
-      <ul class="tertiary-text gap-large">
-        {% for stat in [week.tracks, week.albums] %}
-        <li class="border">
-          <div class="horizontal">
-            <p><em>{{ stat.title }}</em></p>
-            <p>
-              {{ stat.total }}
-            </p>
-          </div>
-        </li>
+      <div>
+        {% for week in [music.lastWeek, music.thisWeek] %}
+          <h3 class="subtitle">{{ week.title }}</h3>
+          <ul class="tertiary-text gap-large">
+            {% for stat in [week.tracks, week.albums] %}
+              <li class="border">
+                <div class="horizontal">
+                  <p><em>{{ stat.title }}</em></p>
+                  <p>
+                    {{ stat.total }}
+                  </p>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
         {% endfor %}
-      </ul>
-      {% endfor %}
+      </div>
     </div>
     <div>
-      <h3 class="subtitle">Top tracks (this month)</h3>
+      <h3 class="subtitle">Top albums (3 months)</h3>
       <ol class="tracks | flow">
-        {% for track in music.topTracks %}
+        {% for album in music.topAlbums %}
         <li class="track">
           <div>
-            <a href="{{ track.url }}" target="_blank" rel="noreferrer noopener">
-              {{ track.title }}
+            <a href="{{ album.url }}" target="_blank" rel="noreferrer noopener">
+              {{ album.title }}
             </a>
-            <p><small>{{ track.artist }}</small></p>
+            <p><small>{{ album.artist }}</small></p>
           </div>
         </li>
         {% endfor %}

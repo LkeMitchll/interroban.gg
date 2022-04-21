@@ -26,6 +26,44 @@ module.exports = class LastFMAPI {
     });
   }
 
+  fetchTopAlbums() {
+    const options = {
+      method: "user.gettopalbums",
+      api_key: this.apiKey,
+      user: this.username,
+      format: "json",
+      period: "3month",
+      limit: 5,
+    };
+    const params = Object.entries(options)
+      .map(([key, val]) => `${key}=${val}`)
+      .join("&");
+
+    return Cache(`${this.apiEndpoint}?${params}`, {
+      duration: "1h",
+      type: "json",
+    });
+  }
+
+  fetchTopArtists() {
+    const options = {
+      method: "user.gettopartists",
+      api_key: this.apiKey,
+      user: this.username,
+      format: "json",
+      period: "6month",
+      limit: 5,
+    };
+    const params = Object.entries(options)
+      .map(([key, val]) => `${key}=${val}`)
+      .join("&");
+
+    return Cache(`${this.apiEndpoint}?${params}`, {
+      duration: "1h",
+      type: "json",
+    });
+  }
+
   fetchAlbumTotal(from, to) {
     const options = {
       method: "user.getweeklyalbumchart",

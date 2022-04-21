@@ -1,4 +1,3 @@
-const SpotifyAPI = require("../_providers/spotify");
 const LastFMAPI = require("../_providers/lastfm");
 
 function dateToEpochWithOffset(time, offset) {
@@ -65,32 +64,28 @@ async function thisWeek() {
   };
 }
 
-async function topTracks() {
-  const api = new SpotifyAPI();
-  const response = await api.getTopTracks();
-
-  const tracks = response.items.map((song) => {
-    const artist = song.artists.map((_artist) => _artist.name).join(", ");
-    return {
-      id: song.id,
-      artist,
-      album: song.album.name,
-      title: song.name,
-      url: song.external_urls.spotify,
-    };
-  });
-
-  return tracks;
+async function topAlbums() {
+  const api = new LastFMAPI();
+  const response = await api
+    .fetchTopAlbums()
+    .then((json) => json.topalbums.album);
+  return response.map((album) => ({
+    id: album.mbid,
+    title: album.name,
+    artist: album.artist.name,
+    url: album.url,
+  }));
 }
 
 async function topArtists() {
-  const api = new SpotifyAPI();
-  const response = await api.getTopArtists();
-
-  return response.items.map((artist) => ({
-    id: artist.id,
+  const api = new LastFMAPI();
+  const response = await api
+    .fetchTopArtists()
+    .then((json) => json.topartists.artist);
+  return response.map((artist) => ({
+    id: artist.mbid,
     name: artist.name,
-    url: artist.external_urls.spotify,
+    url: artist.url,
   }));
 }
 
@@ -98,7 +93,7 @@ module.exports = async function music() {
   return {
     lastWeek: await lastWeek(),
     thisWeek: await thisWeek(),
-    topTracks: await topTracks(),
+    topAlbums: await topAlbums(),
     topArtists: await topArtists(),
   };
 };
