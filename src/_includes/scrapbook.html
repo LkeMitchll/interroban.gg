@@ -1,15 +1,34 @@
-<div class="masonry">
-  {% for item in savee %}
-  <figure>
-    <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}" >
-      <img
-        src="{{ item.image.thumbnail }}"
-        loading="lazy"
-        width="{{ item.image.width }}"
-        height="{{ item.image.height }}"
-        alt="{{ item.name }}"
-      />
-    </a>
-  </figure>
-  {% endfor %}
-</div>
+<article id="scrapbook" class="flow | gap-xx-large">
+  <header>
+    <h2>Scrapbook</h2>
+    <p class="measure gap">
+      This is the last 50 images that have caught my eye. I collect them using
+      <a href="https://savee.it/interrobang/">Savee</a>, a Pinterest
+      alternative.
+    </p>
+    <p class="measure leading-crushed">
+      <small>
+        <strong class="tertiary-text">NOTE </strong>
+        Each image is copyright of its respective owner. Reasonable effort has
+        been made to retain the source information, although this has not always
+        been possible. Clicking an image will open it's source (if known).
+      </small>
+    </p>
+  </header>
+
+  <div class="masonry">
+    {% for item in savee %}
+    <figure>
+      <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}" >
+        <img
+          src="{{ item.image.thumbnail }}"
+          loading="lazy"
+          width="{{ item.image.width }}"
+          height="{{ item.image.height }}"
+          alt="{{ item.name }}"
+        />
+      </a>
+    </figure>
+    {% endfor %}
+  </div>
+</article>

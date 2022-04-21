@@ -12,7 +12,7 @@ theme: green
 <hr class="gap-large">
 
 {% set toc = ["Blog", "Listening", "Scrapbook"] %}
-{% include "./_includes/toc.html" %}
+{% include "toc.html" %}
 
 <article id="blog" class="gap-xx-large">
   <header class="flow | gap-large">
@@ -31,28 +31,9 @@ theme: green
     </ul>
   </header>
 
-  {% include "./_includes/posts.html" %}
+  {% include "posts.html" %}
 </article>
 
-{% include "./_includes/listening.html" %}
+{% include "listening.html" %}
 
-<article id="scrapbook" class="flow | gap-xx-large">
-  <header>
-    <h2>Scrapbook</h2>
-    <p class="measure gap">
-      This is the last 50 images that have caught my eye. I collect them using
-      <a href="https://savee.it/interrobang/">Savee</a>, a Pinterest
-      alternative.
-    </p>
-    <p class="measure leading-crushed">
-      <small>
-        <strong class="tertiary-text">NOTE </strong>
-        Each image is copyright of its respective owner. Reasonable effort has
-        been made to retain the source information, although this has not always
-        been possible. Clicking an image will open it's source (if known).
-      </small>
-    </p>
-  </header>
-
-  {% include "./_includes/scrapbook.html" %}
-</article>
+{% include "scrapbook.html" %}
