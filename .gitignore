@@ -2,6 +2,4 @@ _site
 .env
 node_modules
 .netlify
-lib/*.woff
-lib/*.woff2
 .cache
