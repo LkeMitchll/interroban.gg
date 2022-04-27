@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy": "^2.0.0-canary.8",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@octokit/core": "^3.3.0",
@@ -20,7 +20,8 @@
     "node-fetch": "^2.6.1",
     "postcss": "^8.2.10",
     "postcss-cli": "^9.1.0",
-    "postcss-import": "^14.0.0"
+    "postcss-import": "^14.0.0",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

@@ -1,0 +1,11 @@
+@media (max-width: 900px) {
+  .movies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .movies {
+    --cols: 6;
+  }
+}

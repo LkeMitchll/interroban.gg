@@ -13,8 +13,10 @@ module.exports = function (eleventyConfig) {
 
   const findByID = require("./src/_filters/findByID");
   const date = require("./src/_filters/date");
+  const stars = require("./src/_filters/stars");
   eleventyConfig.addFilter("findByID", findByID);
   eleventyConfig.addFilter("formatDate", date);
+  eleventyConfig.addFilter("starRating", stars);
 
   const responsiveImage = require("./src/_shortcodes/responsiveImage");
   const markdown = require("./src/_shortcodes/markdown");

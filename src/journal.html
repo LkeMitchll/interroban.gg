@@ -6,12 +6,12 @@ theme: green
 
 <h1 class="banner">
   <em>Journal&mdash;</em>what I've been doing recently, a blog, a scrapbook,
-  and a place to show what I am currently listening to and reading. It's also a
+  and a place to show what I am currently listening to and watching. It's also a
   bit of playground to grab data from a few services I like.
 </h1>
 <hr class="gap-large">
 
-{% set toc = ["Blog", "Listening", "Scrapbook"] %}
+{% set toc = ["Blog", "Listening", "Watching", "Scrapbook"] %}
 {% include "toc.html" %}
 
 <article id="blog" class="gap-xx-large">
@@ -37,5 +37,28 @@ theme: green
 </article>
 
 {% include "listening.html" %}
+
+<article id="watching" class="gap-xx-large">
+  <header class="gap-large">
+    <h2>Watching</h2>
+    <p class="measure">
+      The last 6 movies that I've watched and (hopefully) enjoyed, I record the
+      ratings with <a href="https://letterboxd.com" target="_blank">Letterboxd.</a>
+    </p>
+  </header>
+
+  <ol class="movies | columns">
+    {% for movie in movies %}
+      <li>
+        <a href="{{ movie.url }}" target="_blank">
+        <img src="{{ movie.poster }}" width="100" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
+        </a>
+        <div>
+          <p class="stars | gap-small">{{ movie.rating | starRating | safe }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+</article>
 
 {% include "scrapbook.html" %}

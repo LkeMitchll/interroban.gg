@@ -20,6 +20,8 @@
 @import "blocks/markdown.css";
 @import "blocks/sidenote.css";
 @import "blocks/track.css";
+@import "blocks/movies.css";
+@import "blocks/stars.css";
 
 /* utilities */
 @import "utilities/utilities.css";
