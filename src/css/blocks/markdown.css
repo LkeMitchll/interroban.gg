@@ -2,7 +2,7 @@
   counter-reset: image-number;
 }
 
-.markdown :not(section, aside, figure, figcaption, pre) {
+.markdown :not(section, aside, figure, figcaption, pre, img) {
   max-width: var(--text-measure);
 }
 
