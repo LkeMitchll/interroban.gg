@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@octokit/core": "^3.3.0",
@@ -39,8 +39,7 @@
     "build": "npm-run-all clean build:*",
     "build:eleventy": "eleventy",
     "build:postcss": "postcss src/css/index.css -o _site/css/site.css --config ./postcss.config.js",
-    "dev": "npm-run-all clean --parallel dev:netlify dev:postcss",
-    "dev:netlify": "netlify dev",
+    "dev": "npm-run-all clean --parallel dev:eleventy dev:postcss",
     "dev:eleventy": "eleventy --serve",
     "dev:postcss": "postcss src/css/index.css -o _site/css/site.css --config ./postcss.config.js -w",
     "lint": "npm-run-all lint:*",
