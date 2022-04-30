@@ -1,0 +1,17 @@
+.post {
+  flex-direction: column;
+}
+
+.post hr {
+  opacity: 0;
+}
+
+@media (min-width: 800px) {
+  .post {
+    flex-direction: row;
+  }
+
+  .post hr {
+    opacity: 1;
+  }
+}
