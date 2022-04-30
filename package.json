@@ -13,6 +13,7 @@
     "contentful": "^8.1.7",
     "cssnano": "^5.0.6",
     "eleventy-plugin-reading-time": "^0.0.1",
+    "markdown-it": "^13.0.0",
     "markdown-it-external-links": "^0.0.6",
     "markdown-it-modify-token": "^1.0.2",
     "markdown-it-named-headings": "^1.1.0",
