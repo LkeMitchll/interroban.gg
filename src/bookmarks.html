@@ -44,6 +44,7 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
         {{ bookmark.fields.title }}
       </a>
       <p class="tertiary-text push-right">
+        {% if bookmark.fields.notes %}★{% endif %}
         {{ bookmark.fields.tag }} &mdash;
         {{ bookmark.fields.publishDate | formatDate }}
       </p>
