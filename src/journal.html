@@ -51,7 +51,7 @@ theme: green
     {% for movie in movies %}
       <li>
         <a href="{{ movie.url }}" target="_blank">
-        <img src="{{ movie.poster }}" width="100" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
+        <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
         </a>
         <div>
           <p class="stars | gap-small">{{ movie.rating | starRating | safe }}</p>
