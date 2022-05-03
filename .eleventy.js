@@ -23,10 +23,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("image", responsiveImage);
   eleventyConfig.addShortcode("markdown", markdown);
 
+  eleventyConfig.addExtension("md", {
+    compile: async function (inputContent) {
+      const assets = await require("./src/_data/assets")();
+      return function () {
+        return markdown(inputContent, assets);
+      };
+    },
+  });
+
   return {
     dir: {
       input: "src",
     },
     htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
   };
 };

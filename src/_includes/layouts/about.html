@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layouts/default.html
 title: About
 theme: yellow
 ---
@@ -14,8 +14,7 @@ theme: yellow
 {% include "toc.html" %}
 
 <article class="markdown | flow gap-xx-large" id="about">
-  {% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
-  {% markdown content.fields.contentMarkdown, assets %}
+  {{ content | safe }}
 </article>
 
 <article class="columns | gap-xx-large">
