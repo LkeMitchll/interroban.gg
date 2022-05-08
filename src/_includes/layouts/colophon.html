@@ -4,12 +4,14 @@ title: Colophon
 theme: green
 ---
 
-{% set content = pages | findByID("3TxaAfROQOMMOtj5U6E4qG") %}
-
 <header class="flow | gap-x-large">
-  <h1 class="headline">{{ content.fields.title }}</h1>
+  <h1 class="headline">Colophon</h1>
   <section class="markdown">
-    {% markdown content.fields.descriptionMarkdown %}
+    <p>
+      This is a development blog, also a list of people, resources and tools
+      that have made this site what it is. Check back regularly, as I try to keep
+      this up-to-date, when I get time.
+    </p>
   </section>
   <hr>
 </header>
@@ -17,13 +19,12 @@ theme: green
 <article class="flow | gap-xx-large">
   <div id="updates" class="gap-large">
     <h2>Updates</h2>
-    {% set posts = metaPosts %}
-    {% set postParent = '/colophon' %}
+    {% set posts = collections.metapost %}
     {% include "posts.html" %}
     {% include "commits.html" %}
     <hr />
   </div>
   <section id="notes" class="markdown | flow">
-    {% markdown content.fields.contentMarkdown %}
+    {{ content | safe }}
   </section>
 </article>
