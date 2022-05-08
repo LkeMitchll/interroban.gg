@@ -1,6 +1,10 @@
 ---
+id: 72rv3ehgZyfrAUKYMVTrRJ
 title: Good Case Studies
-description: I'm currently thinking about writing case studies for my work, I didn't know where to start, so I did what I do when starting any project, some research; I needed to define what I think makes a good case study.
+description: > 
+  I'm currently thinking about writing case studies for my work, I didn't know
+  where to start, so I did what I do when starting any project, some research;
+  I needed to define what I think makes a good case study.
 date: 2021-07-25
 ---
 
@@ -20,7 +24,11 @@ Firstly, introduce the project, include: Who the client is. Why they approached
 you. What problem they were facing. This adds historical context to the work
 and why it was needed in the first place.
 
-Next give an overview of the phases of the project for example: [Discover, Define, Develop, Deliver](https://www.designcouncil.org.uk/news-opinion/what-framework-innovation-design-councils-evolved-double-diamond "The 'Double Diamond' framework — Design Council"). Include what they meant to you for this project.
+Next give an overview of the phases of the project for example:
+[Discover, Define, Develop, Deliver][dddd]. Include what they meant to you for
+this project.
+
+[dddd]: https://www.designcouncil.org.uk/news-opinion/what-framework-innovation-design-councils-evolved-double-diamond
 
 The rest of the case study should document all the steps taken from the
 beginning to the end, each step should tell the reader: what you did, how you
@@ -52,7 +60,9 @@ is relevant and easy to understand the polish can come second.
 
 Any imagery should aid the content itself it's a good idea to keep relevant
 images and text together. Try not to dominate the text with giant images that
-overtake everything else, especially if they are decorative ^[I'm not keen on mockups of phones floating in the air at funny angles, it makes it hard to see the details.].
+overtake everything else, especially if they are decorative ^[I'm not keen on
+mockups of phones floating in the air at funny angles, it makes it hard to see
+the details.].
 
 I like to see photographs of things happening, especially if you can show the
 team working together on a problem.
@@ -72,7 +82,11 @@ reader.
 Try to avoid treating every image same, context is important, for example
 comparing images is easier when they are side-by-side. Loosening the grid can
 add character and a sense of creative 'chaos' to a collection of early stage
-sketches ^[The [Font Review Journal](https://fontreviewjournal.com/untitled-sans/) and the design notes for [Blanco](https://www.fostertype.com/retail-type/blanco#notes) do this beautifully.].
+sketches ^[The [Font Review Journal][frj] and the design notes for
+[Blanco][blanco] do this beautifully.].
+
+[frj]: https://fontreviewjournal.com/untitled-sans/
+[blanco]:  https://www.fostertype.com/retail-type/blanco#notes
 
 The typography should have a personality that does not shout over the top of
 the content, but is capable of singing to an audience when needed. The
@@ -97,7 +111,7 @@ may not consider to be 100% successful or worthy of sharing publicly. I find
 that being honest can show me more about a designer than pixel-perfect imagery,
 after all nobody is perfect, and projects rarely go 100% to plan in the real
 world. Somebody who can open up is willing to  demonstrate how they handle the
-twists and turns that projects can take. 
+twists and turns that projects can take.
 
 It's OK to talk about the things you *wish* you did during the project, or
 might try next time, this tells me that you learn by mistakes, and constantly
@@ -106,7 +120,9 @@ learning.
 It's OK to take some credit for things that you did not create as a sole
 contributor, teamwork is important.
 
-Don’t skip over 'invisible work', after all [thinking is work](https://daneden.me/blog/2021/thinking-is-work).
+Don’t skip over 'invisible work', after all [thinking is work][dan].
+
+[dan]: https://daneden.me/blog/2021/thinking-is-work
 
 Remember that this is *my* opinion of what a good case-study looks like. **If
 you're using this post as guide to get a job please investigate what the

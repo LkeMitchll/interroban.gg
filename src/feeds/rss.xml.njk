@@ -20,22 +20,22 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self" />
   <link href="https://www.interroban.gg/journal" />
-  <updated>{{ posts[0].fields.date | dateToRfc3339 }}</updated>
+  <updated>{{ collections.post[0].data.date | dateToRfc3339 }}</updated>
   <id>https://www.interroban.gg</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in posts %}
-    {% set absolutePostUrl %}{{ post.fields.slug | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- for post in collections.post %}
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
     <entry>
-      <title>{{ post.fields.title }}</title>
+      <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}" />
-      <updated>{{ post.fields.date | dateToRfc3339 }}</updated>
+      <updated>{{ post.data.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
-      <summary>{{ post.fields.description }}</summary>
+      <summary>{{ post.data.description }}</summary>
       <content type="html">
-        {% set postContent %}{% markdown post.fields.contentMarkdown %}{% endset %}
+        {% set postContent %}{% markdown post.template.frontMatter.content %}{% endset %}
         {{ postContent | string }}
       </content>
     </entry>
