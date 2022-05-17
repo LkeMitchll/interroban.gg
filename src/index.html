@@ -12,17 +12,30 @@ theme: pink
   multiple industries for 10 years.
 </h1>
 
-<header class="flow | gap-x-large">
-  <div class="columns">
-    <div class="grayscale-image | col-two-thirds">
-      {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
-      {% image heroImage, "threeQuarters" %}
-    </div>
-    <p class="measure | push-down leading-crushed">
-      <small>
-        <strong class="tertiary-text">Image </strong>
-        {{ heroImage.fields.description }}
-      </small>
-    </p>
+<nav class="gap-xx-large">
+  <ol class="flow">
+    {% for page in navigation.routes[0].pages %}
+    <li class="horizontal">
+      <p class="horizontal">
+        <span class="tertiary-text">{{ loop.index }}.</span>
+        <a href="{{ page.url }}" class="link">{{ page.name }}</a>
+      </p>
+      <hr class="grow" />
+      <p class="tertiary-text">{{ page.description }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+</nav>
+
+<figure class="columns flow | gap-xx-large">
+  <div class="grayscale-image | col-two-thirds">
+    {% set heroImage = assets | findByID("5ZI6Cx1N7O5KG8ikkg1wv7") %}
+    {% image heroImage, "threeQuarters" %}
   </div>
-</header>
+  <figcaption class="measure | push-down leading-crushed">
+    <small>
+      <strong class="tertiary-text">Image </strong>
+      {{ heroImage.fields.description }}
+    </small>
+  </figcaption>
+</figure>
