@@ -1,41 +1,32 @@
-const contentful = require("../_providers/contentful");
+const Cache = require("@11ty/eleventy-fetch");
 
 module.exports = async function bookmarks() {
-  const data = [
-    { title: "Current", bookmarks: [] },
-    { title: "2022", bookmarks: [] },
-    { title: "2021", bookmarks: [] },
-    { title: "2020", bookmarks: [] },
-    { title: "Archive", bookmarks: [] },
-  ];
-  const entries = await contentful.client
-    .getEntries({
-      content_type: "blogPost",
-      order: "-fields.publishDate",
-      limit: 1000,
-    })
-    .then((result) => result.items);
+  const credentials = Buffer.from(
+    `${process.env.BOOKMARKS_USER}:${process.env.BOOKMARKS_PASSWORD}`
+  ).toString("base64");
 
-  // Number the entries
-  entries.reverse().forEach((entry, i) => {
-    entry.fields.number = i + 1;
-  });
-  entries.reverse();
+  const data = await Cache(`${process.env.BOOKMARKS_URL}/bookmarks`, {
+    duration: "1d",
+    type: "json",
+    fetchOptions: {
+      headers: {
+        Authorization: `Basic ${credentials}`,
+      },
+    },
+  }).then((json) => {
+    const result = {};
+    json.forEach((entry, i) => {
+      entry.number = i;
+      const date = new Date(entry.date);
+      const year = date.getFullYear();
+      if (typeof result[year] === "undefined") {
+        result[year] = [];
+      }
+      result[year].push(entry);
+    });
 
-  // Sort the entries into year sorted arrays
-  entries.forEach((entry) => {
-    const year = entry.fields.publishDate.split("-")[0];
-
-    if (year === "2022") {
-      data[0].bookmarks.push(entry);
-      data[1].bookmarks.push(entry);
-    } else if (year === "2021") {
-      data[2].bookmarks.push(entry);
-    } else if (year === "2020") {
-      data[3].bookmarks.push(entry);
-    } else {
-      data[4].bookmarks.push(entry);
-    }
+    result.current = result["2022"];
+    return result;
   });
 
   return data;

@@ -6,9 +6,8 @@ pagination:
   data: bookmarks
   size: 1
   alias: year
-permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}/{% endif %}index.html"
+permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% endif %}index.html"
 ---
-
 <h1 class="banner">
   <em>Bookmarks&mdash;</em>I try and keep track of all the interesting things I
   find on my travels around the web. Because the internet never stops changing,
@@ -35,18 +34,18 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
 
 <article id="content" class="flow | gap-xx-large">
   <ul class="flow">
-    {% for bookmark in year.bookmarks %}
+    {% for bookmark in bookmarks[year] | reverse %}
     <li class="bookmark">
       <p class="tertiary-text">
-        N&ordm; {{ bookmark.fields.number }}
+        N&ordm; {{ bookmark.number }}
       </p>
-      <a href="{{ bookmark.fields.url }}" target="_blank" rel="noreferrer">
-        {{ bookmark.fields.title }}
+      <a href="{{ bookmark.url }}" target="_blank" rel="noreferrer">
+        {{ bookmark.title }}
       </a>
       <p class="tertiary-text push-right">
-        {% if bookmark.fields.notes %}★{% endif %}
-        {{ bookmark.fields.tag }} &mdash;
-        {{ bookmark.fields.publishDate | formatDate }}
+        {% if bookmark.favourite %}★{% endif %}
+        {{ bookmark.tag }} &mdash;
+        {{ bookmark.date | formatDate }}
       </p>
     </li>
     {% endfor %}
@@ -54,11 +53,11 @@ permalink: "bookmarks/{% if pagination.pageNumber > 0 %}{{ year.title | lower }}
   <nav>
     <p class="tertiary-text">More:</p>
     <ul class="horizontal | gap">
-      {% for page in pagination.pages %}
-        {% if page.title != "Current" %}
+      {% for page in pagination.pages | reverse %}
+        {% if page !== "current" %}
           <li>
-            <a class="link" href="/bookmarks/{{ page.title }}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>
-              {{ page.title }}
+            <a class="link" href="/bookmarks/{{ page }}#content">
+              {{ page }}
             </a>
           </li>
         {% endif %}
