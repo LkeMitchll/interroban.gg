@@ -21,9 +21,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dePaginate", depaginate);
 
   const responsiveImage = require("./src/_shortcodes/responsiveImage");
-  const markdown = require("./src/_shortcodes/markdown");
+  const markdown = require("./src/_parsers/markdown");
   eleventyConfig.addShortcode("image", responsiveImage);
-  eleventyConfig.addShortcode("markdown", markdown);
 
   eleventyConfig.addExtension("md", {
     compile: async function (inputContent) {

@@ -35,8 +35,8 @@
       <id>{{ absolutePostUrl }}</id>
       <summary>{{ post.data.description }}</summary>
       <content type="html">
-        {% set postContent %}{% markdown post.template.frontMatter.content %}{% endset %}
-        {{ postContent | string }}
+        {% set postContent %}{{ post._templateContent }}{% endset %}
+        {{ postContent | safe }}
       </content>
     </entry>
   {%- endfor %}

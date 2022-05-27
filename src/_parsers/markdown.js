@@ -6,7 +6,7 @@ const externalLinksPlugin = require("markdown-it-external-links");
 const Token = require("markdown-it/lib/token");
 
 const findByID = require("../_filters/findByID");
-const responsiveImage = require("./responsiveImage");
+const responsiveImage = require("../_shortcodes/responsiveImage");
 
 function containsSidenote(token) {
   return (
