@@ -19,7 +19,7 @@ theme: green
 <article class="flow | gap-xx-large">
   <div id="updates" class="gap-large">
     <h2>Updates</h2>
-    {% set posts = collections.metapost %}
+    {% set posts = collections.metapost | reverse %}
     {% include "posts.html" %}
     {% include "commits.html" %}
     <hr />
