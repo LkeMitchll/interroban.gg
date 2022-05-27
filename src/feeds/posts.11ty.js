@@ -1,6 +1,8 @@
+/* eslint no-underscore-dangle: 0 */
 class Posts {
   constructor() {
     this.filename = "posts.json";
+    this.result = [];
   }
 
   data() {
@@ -10,13 +12,15 @@ class Posts {
   }
 
   render(data) {
-    const posts = data.posts.map((post) => ({
-      id: post.sys.id,
-      content_html: this.markdown(post.fields.contentMarkdown),
-      url: `https://interroban.gg/posts/${post.fields.slug}`,
-      summary: post.fields.description,
-      date_published: post.sys.createdAt,
-      title: post.fields.title,
+    const posts = data.collections.post;
+    posts.reverse();
+    this.result = posts.map((post) => ({
+      id: post.data.page.fileSlug,
+      content_html: post.data._templateContent,
+      url: `https://interroban.gg${post.url}`,
+      summary: post.data.description,
+      date_published: post.data.date,
+      title: post.data.title,
     }));
 
     const wrapper = {
@@ -30,7 +34,7 @@ class Posts {
       language: "en",
       home_page_url: "https://interroban.gg",
       feed_url: "https://interroban.gg/feeds/posts.json",
-      items: posts,
+      items: this.result,
     };
 
     return JSON.stringify(wrapper);

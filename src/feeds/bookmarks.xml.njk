@@ -5,7 +5,7 @@
   "metadata": {
     "title": "Luke Mitchell | Bookmarks",
     "subtitle": "I try and keep track of all the interesting things I find on my travels around the web. Because the internet never stops changing, as this list gets older things will begin to decay and disappear. So this isn’t an archive as such, it’s a log.",
-    "url": "https://www.interroban.gg/bookmarks/2021",
+    "url": "https://www.interroban.gg/bookmarks",
     "feedUrl": "https://www.interroban.gg/feeds/bookmarks.xml",
     "author": {
       "name": "Luke Mitchell",
@@ -20,31 +20,29 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self" />
   <link href="https://www.interroban.gg/bookmarks" />
-  <updated>{{ bookmarks[0].bookmarks[0].fields.publishDate }}</updated>
+  <updated>{{ bookmarks[0].date }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for year in bookmarks %}
-    {%- for bookmark in year.bookmarks %}
-      <entry>
-        <title>Bookmark: {{ bookmark.fields.title }}</title>
-        <link href="{{ bookmark.fields.url }}" />
-        <id>{{ bookmark.fields.url | url }}/</id>
-        <updated>{{ bookmark.fields.publishDate }}</updated>
-        <summary>{{ bookmark.fields.title }}</summary>
-        <content type="html">
-          {% set content %}
-            <p>Link: <a href="{{ bookmark.fields.url }}">{{ bookmark.fields.title }}</a></p>
-            <ul>
-              <li>Added: {{ bookmark.fields.publishDate }}</li>
-              <li>Tag: {{ bookmark.fields.tag }}</li>
-            </ul>
-          {% endset %}
-          {{ content | string }}
-        </content>
-      </entry>
-    {%- endfor %}
-  {%- endfor %}
+  {% for bookmark in bookmarks | dePaginate %}
+    <entry>
+      <title>Bookmark: {{ bookmark.title }}</title>
+      <link href="{{ bookmark.url }}" />
+      <id>{{ bookmark.url | url }}/</id>
+      <updated>{{ bookmark.date }}</updated>
+      <summary>{{ bookmark.title }}</summary>
+      <content type="html">
+        {% set content %}
+          <p>Link: <a href="{{ bookmark.url }}">{{ bookmark.title }}</a></p>
+          <ul>
+            <li>Added: {{ bookmark.date }}</li>
+            <li>Tag: {{ bookmark.tag }}</li>
+          </ul>
+        {% endset %}
+        {{ content | string }}
+      </content>
+    </entry>
+  {% endfor %}
 </feed>

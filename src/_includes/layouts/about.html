@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layouts/default.html
 title: About
 theme: yellow
 ---
@@ -13,9 +13,21 @@ theme: yellow
 {% set toc = ["History", "Experience", "Clients", "Skills", "Recognition"] %}
 {% include "toc.html" %}
 
+<figure class="columns flow | gap-xx-large">
+  <div class="grayscale-image | col-two-thirds">
+    {% set heroImage = assets | findByID("67sB2MPpzeoLerzcBcm6rk") %}
+    {% image heroImage, "threeQuarters" %}
+  </div>
+  <figcaption class="measure | push-down leading-crushed">
+    <small>
+      <strong class="tertiary-text">Image </strong>
+      {{ heroImage.fields.description }}
+    </small>
+  </figcaption>
+</figure>
+
 <article class="markdown | flow gap-xx-large" id="about">
-  {% set content = pages | findByID("gs1BugZQXA8mN7DniEOFx") %}
-  {% markdown content.fields.contentMarkdown, assets %}
+  {{ content | safe }}
 </article>
 
 <article class="columns | gap-xx-large">

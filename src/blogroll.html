@@ -1,15 +1,17 @@
 ---
-layout: layout.html
+layout: layouts/default.html
 title: Blogroll
 theme: blue
 ---
 
-{% set content = pages | findByID("3xhMUYmeQZf3KrXmlutr9k") %}
-
 <header class="flow | gap-x-large">
-  <h1 class="headline">{{ content.fields.title }}</h1>
+  <h1 class="headline">Blogroll</h1>
   <section class="markdown">
-    {% markdown content.fields.descriptionMarkdown %}
+    <p>
+      This is a list coming straight from Feedbin, of all the RSS feeds, and
+      email newsletters that I read and enjoy regularly, this should update
+      'magically' as I add new subscriptions.
+    </p>
   </section>
   <hr/>
 </header>

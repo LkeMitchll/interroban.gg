@@ -1,0 +1,12 @@
+---
+layout: layouts/default.html
+---
+
+{% from "stats.html" import stats %}
+<header class="flow | gap-x-large">
+  <h1 class="headline | measure | gap-large">{{ title }}</h1>
+  {{ stats(updatedDate = date, readableContent = content ) }}
+</header>
+<article class="markdown | flow | gap-xx-large">
+  {{ content | safe }}
+</article>

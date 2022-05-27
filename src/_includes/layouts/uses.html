@@ -1,15 +1,18 @@
 ---
-layout: layout.html
+layout: layouts/default.html
 title: Uses
 theme: yellow
 ---
 
-{% set content = pages | findByID("5SoTrD2jI0S0AhFkkEDheb") %}
-
 <header class="flow | hero | gap-x-large">
-  <h1 class="headline">{{ content.fields.title }}</h1>
+  <h1 class="headline">Uses</h1>
   <section class="markdown">
-    {% markdown content.fields.descriptionMarkdown %}
+    <p>
+      This is a fairly living list of my design, development and personal setups.
+      Including software, hardware and as much detail in between. This page
+      follows many of those who have contributed to
+      <a href="https://uses.tech" target="_blank">uses.tech</a>
+    </p>
   </section>
   <hr>
 </header>
@@ -27,5 +30,5 @@ theme: yellow
 </article>
 
 <article class="markdown | flow | gap-xx-large">
-  {% markdown content.fields.contentMarkdown %}
+  {{ content | safe }}
 </article>

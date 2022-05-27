@@ -1,3 +1,5 @@
+const dePaginate = require("../_filters/dePaginated.js");
+
 class Posts {
   constructor() {
     this.filename = "bookmarks.json";
@@ -11,15 +13,14 @@ class Posts {
   }
 
   render(data) {
-    data.bookmarks.forEach((year) => {
-      this.combinedData.push(...year.bookmarks);
-    });
+    this.combinedData = dePaginate(data.bookmarks);
+
     const bookmarks = this.combinedData.map((bookmark) => ({
-      id: bookmark.sys.id,
-      content_html: `<p>Link: <a href="${bookmark.fields.url}">${bookmark.fields.title}</a></p><ul><li>Added: ${bookmark.fields.publishDate}</li><li>Tag: ${bookmark.fields.tag}</li></ul>`,
-      url: bookmark.fields.url,
-      date_published: bookmark.fields.publishDate,
-      title: bookmark.fields.title,
+      id: bookmark.id,
+      content_html: `<p>Link: <a href="${bookmark.url}">${bookmark.title}</a></p><ul><li>Added: ${bookmark.date}</li><li>Tag: ${bookmark.tag}</li></ul>`,
+      url: bookmark.url,
+      date_published: bookmark.date,
+      title: bookmark.title,
     }));
 
     const wrapper = {
