@@ -1,7 +1,7 @@
 ---
-id: Zrdp5uWLn62X7xcYJdqgW
 title: Converting to Markdown
-description: Converting the site to use markdown instead of Contentful rich text.
+description: > 
+  Converting the site to use markdown instead of Contentful rich text.
 date: 2021-02-05
 ---
 
