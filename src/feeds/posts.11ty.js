@@ -10,8 +10,10 @@ class Posts {
   }
 
   render(data) {
-    const posts = data.collections.post.map((post) => ({
-      id: post.data.id,
+    const posts = data.collections.post;
+    posts.reverse();
+    const result = posts.map((post) => ({
+      id: post.data.page.fileSlug,
       content_html: this.markdown(post.template.frontMatter.content),
       url: `https://interroban.gg${post.url}`,
       summary: post.data.description,
@@ -30,7 +32,7 @@ class Posts {
       language: "en",
       home_page_url: "https://interroban.gg",
       feed_url: "https://interroban.gg/feeds/posts.json",
-      items: posts,
+      items: result,
     };
 
     return JSON.stringify(wrapper);
