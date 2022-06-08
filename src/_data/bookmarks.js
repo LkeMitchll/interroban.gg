@@ -5,7 +5,7 @@ module.exports = async function bookmarks() {
     `${process.env.BOOKMARKS_USER}:${process.env.BOOKMARKS_PASSWORD}`
   ).toString("base64");
 
-  const data = await Cache(`${process.env.BOOKMARKS_URL}/bookmarks`, {
+  const data = await Cache(`${process.env.BOOKMARKS_URL}/bookmarks?filter=published`, {
     duration: "1d",
     type: "json",
     fetchOptions: {
