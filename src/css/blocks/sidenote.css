@@ -1,5 +1,11 @@
+.with-sidenotes sup {
+  font-family: var(--text-mono);
+  font-size: var(--text-size-small);
+}
+
 .sidenote-ref {
   color: var(--color-highlight);
+  text-decoration: none;
 }
 
 .sidenote {
