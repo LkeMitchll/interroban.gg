@@ -15,6 +15,6 @@
   list-style: circle;
 }
 
-.markdown ol {
+.markdown ol:not(.footnotes-list) {
   list-style: decimal;
 }

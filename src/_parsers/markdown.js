@@ -1,6 +1,6 @@
 const markdownIt = require("markdown-it");
 const modifyTokenPlugin = require("markdown-it-modify-token");
-const sidenotePlugin = require("markdown-it-sidenote");
+const sidenotePlugin = require("markdown-it-footnote-here");
 const namedHeadingsPlugin = require("markdown-it-named-headings");
 const externalLinksPlugin = require("markdown-it-external-links");
 const Token = require("markdown-it/lib/token");
@@ -11,7 +11,7 @@ const responsiveImage = require("../_shortcodes/responsiveImage");
 function containsSidenote(token) {
   return (
     token.children &&
-    token.children.some((child) => child.type === "sidenote_ref")
+    token.children.some((child) => child.type === "footnote_ref")
   );
 }
 
@@ -49,13 +49,13 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
 
   // Pop sidenote images out of paragraph tags
   markdownLib.core.ruler.after(
-    "sidenote_tail",
+    "inline",
     "sidenote_image",
     function replace(state) {
       const { tokens } = state;
 
       tokens.forEach((token, id) => {
-        if (token.type === "sidenote_open") {
+        if (token.type === "footnote_open") {
           const content = tokens[id + 2];
           if (content.children[0].type === "image") {
             // pop image out of stack
@@ -71,7 +71,7 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
 
   // Wrap sidenotes with a <section>
   markdownLib.core.ruler.after(
-    "sidenote_tail",
+    "inline",
     "sidenote_wrapper",
     function replace(state) {
       const { tokens } = state;
@@ -94,11 +94,11 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
 
         if (token.meta && token.meta.sidenote_wrapper_open_after) {
           // If another sidenote section follows this one.
-          if (token.type === "sidenote_close") {
+          if (token.type === "footnote_close") {
             newState.push(wrapperClose);
           }
           newState.push(wrapperOpen);
-        } else if (token.type === "sidenote_close") {
+        } else if (token.type === "footnote_close") {
           newState.push(wrapperClose);
         }
       });
@@ -107,7 +107,7 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
     }
   );
 
-  // Add "No.x" label to sidenote content
+  // Add custom number and backlink
   markdownLib.core.ruler.after(
     "sidenote_wrapper",
     "sidenote_label",
@@ -115,9 +115,9 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
       const { tokens } = state;
 
       tokens.forEach((token, id) => {
-        if (token.type === "sidenote_anchor") {
-          const sidenoteID = token.meta.id + 1;
-          const { children } = tokens[id - 1];
+        if (token.type === "footnote_open") {
+          const sidenoteID = token.meta.label;
+          const { children } = tokens[id + 2];
 
           // Build the label tokens
           const labelOpen = new Token("strong_open", "strong", 1);
@@ -133,23 +133,28 @@ module.exports = function renderMarkdown(rawMarkdown, assets) {
           } else {
             children.splice(0, 0, ...label);
           }
+
+          const linkOpen = new Token("link_open", "a", 1);
+          const linkClose = new Token("link_close", "a", -1);
+          const linkContent = new Token("text", "", 0);
+          linkOpen.attrs = [
+            ["href", `#fn${sidenoteID}`],
+            ["class", "sidenote-backlink | tertiary-text"],
+          ];
+          linkContent.content = "↩";
+          const link = [linkOpen, linkContent, linkClose];
+
+          children.push(...link);
         }
       });
     }
   );
 
   // Customise sidenote reference link
-  markdownLib.renderer.rules.sidenote_ref = (tokens, idx) => {
+  markdownLib.renderer.rules.footnote_ref = (tokens, idx) => {
     const token = tokens[idx];
     const id = token.meta.id + 1;
     return `<sup id="fnref${id}"><a href="#fn${id}" class="sidenote-ref">${id}</a></sup>`;
-  };
-
-  // Customise sidenote backlink
-  markdownLib.renderer.rules.sidenote_anchor = (tokens, idx) => {
-    const token = tokens[idx];
-    const id = token.meta.id + 1;
-    return `<a href="#fnref${id}" class="sidenote-backlink | tertiary-text">↩</a>`;
   };
 
   // Custom image rendering

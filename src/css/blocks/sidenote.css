@@ -8,7 +8,11 @@
   text-decoration: none;
 }
 
-.sidenote {
+.footnotes-list {
+  list-style: none;
+}
+
+.footnote-item {
   margin-top: var(--space-large);
   border-left: var(--border-default);
   padding-left: var(--space-default);
@@ -16,7 +20,7 @@
   max-width: 30ch;
 }
 
-.sidenote img {
+.footnote-item img {
   margin-bottom: var(--space-default);
 }
 
@@ -31,7 +35,7 @@
     grid-column-gap: var(--space-x-large);
   }
 
-  .sidenote {
+  .footnote-item {
     margin-top: 0;
     height: fit-content;
   }

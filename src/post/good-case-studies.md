@@ -60,9 +60,10 @@ is relevant and easy to understand the polish can come second.
 
 Any imagery should aid the content itself it's a good idea to keep relevant
 images and text together. Try not to dominate the text with giant images that
-overtake everything else, especially if they are decorative ^[I'm not keen on
-mockups of phones floating in the air at funny angles, it makes it hard to see
-the details.].
+overtake everything else, especially if they are decorative [^1].
+
+[^1]: I'm not keen on mockups of phones floating in the air at funny angles, it
+  makes it hard to see the details.
 
 I like to see photographs of things happening, especially if you can show the
 team working together on a problem.
@@ -82,8 +83,10 @@ reader.
 Try to avoid treating every image same, context is important, for example
 comparing images is easier when they are side-by-side. Loosening the grid can
 add character and a sense of creative 'chaos' to a collection of early stage
-sketches ^[The [Font Review Journal][frj] and the design notes for
-[Blanco][blanco] do this beautifully.].
+sketches [^2].
+
+[^2]: The [Font Review Journal][frj] and the design notes for [Blanco][blanco]
+  do this beautifully.
 
 [frj]: https://fontreviewjournal.com/untitled-sans/
 [blanco]:  https://www.fostertype.com/retail-type/blanco#notes

@@ -12,9 +12,10 @@ Until now I’ve been taking my markdown and manually converting it to
 Contentful’s flavour of rich text, the default WYSIWYG editor field. Rich text
 is _okay_ but it’s not as simple as markdown, and there’s no way to write it
 outside of Contentful itself. Luckily Contentful does support markdown, so in
-the spirit of reducing friction ^[[Brian Lovin][brian] recently gave some
-excellent pointers for making personal sites more updatable.] I thought I would
+the spirit of reducing friction [^1] I thought I would
 make the switch.
+
+[^1]: [Brian Lovin][brian] recently gave some excellent pointers for making personal sites more updatable.
 
 [brian]: https://brianlovin.com/overthought/reasons-you-arent-updating-your-personal-site 
 
@@ -30,8 +31,7 @@ This isn’t as simple as it would seem, for a few reasons:
 
 ## Footnotes in the margin
 
-My markdown renderer of choice [remark] ^[[remark] is a Markdown processor
-powered by plugins.] helpfully has a [footnotes plugin][footplug] which removes
+My markdown renderer of choice [remark] [^2] helpfully has a [footnotes plugin][footplug] which removes
 a lot of the upfront work. Unfortunately it formats the footnotes
 traditionally—inline links, with the definitions at the bottom of the page—I
 want my footnotes in the margin, next to the correct paragraph. The solution
@@ -39,6 +39,8 @@ was to write my own remark plugin. The [plugin][custom] traverses the remark
 tree, moves the definitions to become a sibling of the footnote reference, and
 then wraps the result in a new ‘paragraphWithFootnotes’ node. Finally I can
 tell remark how to [render] that custom node.
+
+[^2]: [remark] is a Markdown processor powered by plugins.
 
 [remark]: https://remark.js.org
 [footplug]: https://github.com/remarkjs/remark-footnotes
