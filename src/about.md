@@ -17,17 +17,20 @@ Design, it took me a while to work out what it was.
 [^1]: [Clacton-on-Sea, Essex][cos]
   – Former tourist hotspot, otherwise a normal seaside town in the UK.
 
+[cos]: https://en.wikipedia.org/wiki/Clacton-on-Sea
+
 ![Clacton-on-sea, 1905](//images.ctfassets.net/6ijc0o3ju06b/5ttfehDL4Sxvg3aOhLgUW8/ecc9140ea82ec21e24b083782ca56a10/clacton-on-sea_1905.jpg "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, via Wikimedia Commons (Public Domain), Modifications: Cropped.")
 
 While aimlessly googling “What do graphic designers do” I found a small forum
 of enthusiasts (the name of which I never remembered, if it still exists) who
 were swapping images of their favourite pieces of design. One commenter posted
 a blurry snapshot of what I’d eventually learn was ‘Watching Words Move’ [^2]
+It amazed me, it is simple, playful and expressive, constructed solely from
+words, in a single typeface.
 
 [^2]: ![Watching Words Move][wwmi]
     [Watching Words Move][wwm] – Robert Brownjohn, Ivan Chermayeff & Tom
-    Geismar. It amazed me, it is simple, playful and expressive, constructed
-    solely from words, in a single typeface.
+    Geismar.
 
 [wwmi]: //images.ctfassets.net/6ijc0o3ju06b/7v3RrzDwrLGLwoCSqsfoxb/7ad7025add5a785e5eff5bd9857f1cc5/watching-words-move-02.jpg
 [wwm]: http://robertbrownjohn.com/featured-work/watching-words-move-4/

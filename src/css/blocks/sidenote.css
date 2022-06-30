@@ -8,8 +8,9 @@
   text-decoration: none;
 }
 
-.footnotes-list {
+ol.footnotes-list {
   list-style: none;
+  padding-left: 0;
 }
 
 .footnote-item {
@@ -31,7 +32,7 @@
 @media (min-width: 900px) {
   .with-sidenotes {
     display: grid;
-    grid-template-columns: fit-content(var(--text-measure)) 25%;
+    grid-template-columns: fit-content(var(--text-measure)) 1fr 1fr;
     grid-column-gap: var(--space-x-large);
   }
 
