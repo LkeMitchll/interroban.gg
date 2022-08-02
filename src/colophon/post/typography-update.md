@@ -14,12 +14,14 @@ While I was experimenting with pastel and warm theme palettes I kept feeling lik
 
 ## Finding a replacement
 
-Early on I knew that I needed to find a serif to pair with Blanco, which I was nervous about — it's not common to pair two different serifs, and not something I have lots of practice in — I ended up with two candidates: [Self Modern](https://bretagnebretagne.fr/font/self-modern-regular/ "Self Modern: designed by Lucas Le Bihan and published through Bretagne in 2016"), and [Signifier](https://klim.co.nz/retail-fonts/signifier/ "Signifier: designed by Kris Sowersby and published through Klim Type Foundry in 2020") [^1]. Self is round, friendly, and warm, while Signifier is sharper, and more confident. After experimenting with both I found that Self worked well enough, but did suffer from contrast issues in the lighter weights, upping the weight was too much. Signifier clicked immediately, at times feeling like an unofficial display family of Blanco, different enough to stand apart, but similar enough to gel together.
+Early on I knew that I needed to find a serif to pair with Blanco, which I was nervous about — it's not common to pair two different serifs, and not something I have lots of practice in — I ended up with two candidates: [Self Modern](https://bretagnebretagne.fr/font/self-modern-regular/ "Self Modern: designed by Lucas Le Bihan and published through Bretagne in 2016"), and [Signifier](https://klim.co.nz/retail-fonts/signifier/ "Signifier: designed by Kris Sowersby and published through Klim Type Foundry in 2020") [1](#sn-1). Self is round, friendly, and warm, while Signifier is sharper, and more confident. After experimenting with both I found that Self worked well enough, but did suffer from contrast issues in the lighter weights, upping the weight was too much. Signifier clicked immediately, at times feeling like an unofficial display family of Blanco, different enough to stand apart, but similar enough to gel together.
 
-[^1]: ![self-signifier](//images.ctfassets.net/6ijc0o3ju06b/4qIY206KtgSuhQKf836JO8/f5282c73b06f42c62b51ef9c35d98a53/self-signifier.png) 
-  [Self Modern](https://bretagnebretagne.fr/font/self-modern-regular/) Italic
-  (left), [Signifier](https://klim.co.nz/retail-fonts/signifier/) Light Italic
-  (right)
+
+{% sidenote 1 %}
+  {% image "a71618d4-f073-4e1a-9201-629600f52025", "Comparison of the Self Modern and Signifier fonts", "small" %}
+
+  _Nº1_ [Self Modern](https://bretagnebretagne.fr/font/self-modern-regular/) Italic (left), [Signifier](https://klim.co.nz/retail-fonts/signifier/) Light Italic (right)
+{% endsidenote %}
 
 While reading about Signifier I found a deeper connection between it, and my work:
 

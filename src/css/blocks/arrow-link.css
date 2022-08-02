@@ -1,4 +1,0 @@
-.arrow-link::before {
-  content: "\2192";
-  padding-right: var(--space-small);
-}

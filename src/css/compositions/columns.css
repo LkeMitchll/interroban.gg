@@ -1,7 +1,6 @@
 .columns {
   display: grid;
-  grid-column-gap: var(--gap, var(--space-large));
-  grid-row-gap: var(--row-gap, var(--space-large));
+  grid-gap: var(--row-gap, var(--space-large)) var(--gap, var(--space-large));
 }
 
 @media (min-width: 700px) {
@@ -18,7 +17,7 @@
     grid-column: var(--position, auto);
   }
 
-  .col-two-thirds {
+  .columns .grayscale-image[data-image-size="large"] {
     grid-column: 1 / 4;
   }
 

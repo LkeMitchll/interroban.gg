@@ -43,7 +43,8 @@ The [Source Code](https://github.com/LkeMitchll/interroban.gg) is hosted on GitH
 - I combined [This tutorial](https://www.11ty.dev/docs/quicktips/inline-css/) in the Eleventy docs with PostCSS for a simple, extendable style pipeline.
 - The [Eleventy RSS plugin](https://www.11ty.dev/docs/plugins/rss/) avoided lots of RSS headaches.
 - Piccalilli wrote a [simple tutorial](https://piccalil.li/quick-tip/create-json-feed-eleventy) on outputting JSON from Eleventy.
-- I was also helped along the way by [tea-tack](https://github.com/mattwaler/tea-stack) and [eleventyone](https://github.com/philhawksworth/eleventyone).
+- I was also helped along the way by [tea-stack](https://github.com/mattwaler/tea-stack) and [eleventyone](https://github.com/philhawksworth/eleventyone).
+- I was also heavily insipred by [Aleksandr Hovhannisyan](https://www.aleksandrhovhannisyan.com/blog/custom-markdown-components-in-11ty/) when I was working how to build sidenotes.
 
 ## Typography
 

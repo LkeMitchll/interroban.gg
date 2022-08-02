@@ -60,10 +60,12 @@ is relevant and easy to understand the polish can come second.
 
 Any imagery should aid the content itself it's a good idea to keep relevant
 images and text together. Try not to dominate the text with giant images that
-overtake everything else, especially if they are decorative [^1].
+overtake everything else, especially if they are decorative [1](#sn-1).
 
-[^1]: I'm not keen on mockups of phones floating in the air at funny angles, it
+{% sidenote 1 %}
+  _Nº1_ I'm not keen on mockups of phones floating in the air at funny angles, it
   makes it hard to see the details.
+{% endsidenote %}
 
 I like to see photographs of things happening, especially if you can show the
 team working together on a problem.
@@ -83,13 +85,13 @@ reader.
 Try to avoid treating every image same, context is important, for example
 comparing images is easier when they are side-by-side. Loosening the grid can
 add character and a sense of creative 'chaos' to a collection of early stage
-sketches [^2].
+sketches [2](#sn-2).
 
-[^2]: The [Font Review Journal][frj] and the design notes for [Blanco][blanco]
+{% sidenote 2 %}
+  _Nº2_ The [Font Review Journal](https://fontreviewjournal.com/untitled-sans/) and the
+  design notes for [Blanco](https://www.fostertype.com/retail-type/blanco#notes)
   do this beautifully.
-
-[frj]: https://fontreviewjournal.com/untitled-sans/
-[blanco]:  https://www.fostertype.com/retail-type/blanco#notes
+{% endsidenote %}
 
 The typography should have a personality that does not shout over the top of
 the content, but is capable of singing to an audience when needed. The

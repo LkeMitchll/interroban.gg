@@ -11,27 +11,42 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/components/*.js");
   eleventyConfig.addWatchTarget("src/css/");
 
-  const findByID = require("./src/_filters/findByID");
   const date = require("./src/_filters/date");
   const stars = require("./src/_filters/stars");
   const depaginate = require("./src/_filters/dePaginated");
-  eleventyConfig.addFilter("findByID", findByID);
   eleventyConfig.addFilter("formatDate", date);
   eleventyConfig.addFilter("starRating", stars);
   eleventyConfig.addFilter("dePaginate", depaginate);
 
   const responsiveImage = require("./src/_shortcodes/responsiveImage");
-  const markdown = require("./src/_parsers/markdown");
-  eleventyConfig.addShortcode("image", responsiveImage);
+  eleventyConfig.addAsyncShortcode("image", responsiveImage);
 
-  eleventyConfig.addExtension("md", {
-    compile: async function (inputContent) {
-      const assets = await require("./src/_data/assets")();
-      return function () {
-        return markdown(inputContent, assets);
-      };
-    },
+  const md = require("markdown-it");
+  eleventyConfig.addPairedShortcode("sidenote", (content, number) => {
+    const result = md({ html: true }).render(content);
+    return `<aside id="sn-${number}" class="sidenote">
+              <div class="sidenote__content">
+                <small>
+                  ${result}
+                </small>
+              </div>
+            </aside>`;
   });
+
+  const namedHeadingsPlugin = require("markdown-it-named-headings");
+  const classesPlugin = require("@toycode/markdown-it-class");
+  const externalLinksPlugin = require("markdown-it-external-links");
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib
+      .use(namedHeadingsPlugin)
+      .use(classesPlugin, { h2: "title", h3: "subtitle" })
+      .use(externalLinksPlugin, {
+        externalClassName: null,
+        externalTarget: "_blank",
+        externalRel: "nofollow noopener noreferrer",
+        internalDomains: ["interroban.gg", "localhost"],
+      })
+  );
 
   return {
     dir: {

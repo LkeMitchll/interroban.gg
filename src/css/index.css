@@ -11,11 +11,9 @@
 @import "compositions/horizontal.css";
 
 /* blocks */
-@import "blocks/arrow-link.css";
 @import "blocks/banner.css";
 @import "blocks/bookmark.css";
 @import "blocks/post.css";
-@import "blocks/figure.css";
 @import "blocks/grayscale-image.css";
 @import "blocks/link.css";
 @import "blocks/markdown.css";

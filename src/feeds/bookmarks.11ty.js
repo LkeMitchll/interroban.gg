@@ -1,4 +1,4 @@
-const dePaginate = require("../_filters/dePaginated.js");
+const dePaginate = require("../_filters/dePaginated");
 
 class Posts {
   constructor() {

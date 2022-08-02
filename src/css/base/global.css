@@ -12,7 +12,7 @@ body {
   margin: 0;
   margin-top: var(--space-large);
   padding: 0 var(--space-small);
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   line-height: 1.5;
 }
 

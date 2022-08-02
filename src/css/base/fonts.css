@@ -1,55 +1,57 @@
 @font-face {
-  font-family: "Blanco";
+  font-family: Blanco;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url(/assets/fonts/Blanco-Regular.subset.woff2) format("woff2");
+  src: url("/assets/fonts/Blanco-Regular.subset.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Blanco";
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-  src: url(/assets/fonts/Blanco-Italic.subset.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Blanco";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  src: url(/assets/fonts/Blanco-Medium.subset.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Pitch";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  src: url(/assets/fonts/pitch-web-semibold.subset.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Pitch";
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-  src: url(/assets/fonts/pitch-web-semibold-italic.subset.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Signifier";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url(/assets/fonts/signifier-web-light.subset.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Signifier";
+  font-family: Blanco;
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url(/assets/fonts/signifier-web-light-italic.subset.woff2) format("woff2");
+  src: url("/assets/fonts/Blanco-Italic.subset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Blanco;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/Blanco-Medium.subset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pitch;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/pitch-web-semibold.subset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pitch;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/pitch-web-semibold-italic.subset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Signifier;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/signifier-web-light.subset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Signifier;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src:
+    url("/assets/fonts/signifier-web-light-italic.subset.woff2")
+    format("woff2");
 }

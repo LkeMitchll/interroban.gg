@@ -10,8 +10,7 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
-    quotes: [2, "double", { avoidEscape: true }],
+    "prettier/prettier": "error",
     "no-param-reassign": 0,
-    "comma-dangle": 0,
   },
 };

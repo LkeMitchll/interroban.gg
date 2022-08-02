@@ -4,7 +4,7 @@ layout: layouts/about.html
 
 ## History
 
-I grew up in a small coastal town in the east of England [^1]. Not much happens
+I grew up in a small coastal town in the east of England [1](#sn-1). Not much happens
 in a town like that, but the beaches are nice. My choices at school were pretty
 limited, my favourite subjects were Computing, Media Studies, and Art -
 ‘design’ wasn’t something anyone was familiar with. Regardless I loved building
@@ -14,26 +14,26 @@ determined that ‘something’ should be ‘something’ I’d like, and that w
 include my hobbies. I eventually started researching this thing called Graphic
 Design, it took me a while to work out what it was.
 
-[^1]: [Clacton-on-Sea, Essex][cos]
-  – Former tourist hotspot, otherwise a normal seaside town in the UK.
+{% sidenote 1 %}
+  _Nº1_ [Clacton-on-Sea, Essex](https://en.wikipedia.org/wiki/Clacton-on-Sea) –
+  Former tourist hotspot, otherwise a normal seaside town in the UK.
+{% endsidenote %}
 
-[cos]: https://en.wikipedia.org/wiki/Clacton-on-Sea
-
-![Clacton-on-sea, 1905](//images.ctfassets.net/6ijc0o3ju06b/5ttfehDL4Sxvg3aOhLgUW8/ecc9140ea82ec21e24b083782ca56a10/clacton-on-sea_1905.jpg "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, via Wikimedia Commons (Public Domain), Modifications: Cropped.")
+{% image "b46d0c2e-45a5-48d8-ba41-7ad421ec6189", "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, Public domain, via Wikimedia Commons" %}
 
 While aimlessly googling “What do graphic designers do” I found a small forum
 of enthusiasts (the name of which I never remembered, if it still exists) who
 were swapping images of their favourite pieces of design. One commenter posted
-a blurry snapshot of what I’d eventually learn was ‘Watching Words Move’ [^2]
+a blurry snapshot of what I’d eventually learn was ‘Watching Words Move’ [2](#sn-2)
 It amazed me, it is simple, playful and expressive, constructed solely from
 words, in a single typeface.
 
-[^2]: ![Watching Words Move][wwmi]
-    [Watching Words Move][wwm] – Robert Brownjohn, Ivan Chermayeff & Tom
-    Geismar.
+{% sidenote 2 %}
+  {% image "49311ea1-8de0-47ed-b4e7-25ba4ad920f4", "Page from 'Watching Words Move' – Robert Brownjohn, Ivan Chermayeff & Tom Geismar ", "small" %}
 
-[wwmi]: //images.ctfassets.net/6ijc0o3ju06b/7v3RrzDwrLGLwoCSqsfoxb/7ad7025add5a785e5eff5bd9857f1cc5/watching-words-move-02.jpg
-[wwm]: http://robertbrownjohn.com/featured-work/watching-words-move-4/
+  _Nº2_ [Watching Words Move](http://robertbrownjohn.com/featured-work/watching-words-move-4/) –
+  Robert Brownjohn, Ivan Chermayeff & Tom Geismar.
+{% endsidenote %}
 
 A few years later, sat at a desk of a small design agency, I was again
 Googling: “What do Service Designers do?”, “What do Product Designers do?”. I
@@ -46,10 +46,11 @@ me.
 A few more years later I’m happiest doing a little bit of everything that takes
 an idea and turns it into a working product or service. In my spare time (not
 chasing my toddler around) I tinker with new web technologies, read as much as
-I can about design, walk, and fawn over photos of brutalist architecture [^3].
+I can about design, walk, and fawn over photos of brutalist architecture [3](#sn-3).
 
-[^3]: ![Barbican Estate][bei]
-    I know the [Barbican Estate][be] like the back of my hand
+{% sidenote 3 %}
+  {% image "ce45ef02-1378-4321-87c4-d57237d509ca", "Photo of the Barbican Estate", "small" %}
 
-[bei]: //images.ctfassets.net/6ijc0o3ju06b/79Hu9IUGsrBGNX5Mi6wvp0/f7e67105234cb73530540eba2229e719/18645109_317534235346261_6803231053017251840_n.jpg
-[be]: https://en.wikipedia.org/wiki/Barbican_Estate
+  _Nº3_ I know the [Barbican Estate](https://en.wikipedia.org/wiki/Barbican_Estate)
+  like the back of my hand
+{% endsidenote %}

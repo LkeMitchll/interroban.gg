@@ -17,14 +17,13 @@ theme: yellow
   <hr>
 </header>
 
-{% set deskImage = assets | findByID("1c4JuakaETS6Z15ssCSTEF") %}
 <article class="columns | gap-x-large">
-  <div class="col-two-thirds | grayscale-image">
-    {% image deskImage, "threeQuarters" %}
-  </div>
+  {% image "24bf2f60-1f04-47c5-b15a-5ebf461fa8c1", "A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise lamp, and my IKEA Bekant sit-stand desk." %}
   <p class="measure | push-down leading-crushed">
     <small>
-      <strong class="tertiary-text">Image </strong> {{ deskImage.fields.description }}
+      <strong class="tertiary-text">Image </strong>
+      A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise
+      lamp, and my IKEA Bekant sit-stand desk.
     </small>
   </p>
 </article>

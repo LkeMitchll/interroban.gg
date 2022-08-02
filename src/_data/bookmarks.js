@@ -5,15 +5,18 @@ module.exports = async function bookmarks() {
     `${process.env.BOOKMARKS_USER}:${process.env.BOOKMARKS_PASSWORD}`
   ).toString("base64");
 
-  const data = await Cache(`${process.env.BOOKMARKS_URL}/bookmarks?filter=published`, {
-    duration: "1d",
-    type: "json",
-    fetchOptions: {
-      headers: {
-        Authorization: `Basic ${credentials}`,
+  const data = await Cache(
+    `${process.env.BOOKMARKS_URL}/bookmarks?filter=published`,
+    {
+      duration: "1d",
+      type: "json",
+      fetchOptions: {
+        headers: {
+          Authorization: `Basic ${credentials}`,
+        },
       },
-    },
-  }).then((json) => {
+    }
+  ).then((json) => {
     const result = {};
     json.forEach((entry, i) => {
       entry.number = i;

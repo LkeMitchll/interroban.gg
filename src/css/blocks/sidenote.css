@@ -1,43 +1,35 @@
-.with-sidenotes sup {
-  font-family: var(--text-mono);
-  font-size: var(--text-size-small);
-}
-
-.sidenote-ref {
-  color: var(--color-highlight);
-  text-decoration: none;
-}
-
-ol.footnotes-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.footnote-item {
-  margin-top: var(--space-large);
-  border-left: var(--border-default);
-  padding-left: var(--space-default);
-  font-size: var(--text-size-small);
+.sidenote {
+  position: relative;
   max-width: 30ch;
 }
 
-.footnote-item img {
+.sidenote img {
   margin-bottom: var(--space-default);
 }
 
-.sidenote-backlink {
-  margin-left: var(--space-small);
+.sidenote em {
+  font-family: var(--text-mono);
+  font-style: normal;
+  font-size: var(--text-size-small);
+  margin-right: var(--space-tiny);
 }
 
-@media (min-width: 900px) {
-  .with-sidenotes {
-    display: grid;
-    grid-template-columns: fit-content(var(--text-measure)) 1fr 1fr;
-    grid-column-gap: var(--space-x-large);
-  }
+.sidenote__content {
+  border-left: var(--border-default);
+  padding-left: var(--space-default);
+}
 
-  .footnote-item {
-    margin-top: 0;
-    height: fit-content;
+.sidenote + p {
+  display: none;
+}
+
+.sidenote + p:last-child {
+  display: initial;
+  margin-bottom: var(--space-xx-large);
+}
+
+@media screen and (min-width: 600px) {
+  .sidenote__content {
+    position: absolute;
   }
 }

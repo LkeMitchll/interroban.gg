@@ -5,11 +5,11 @@ designer, and UI developer.
 
 This site pulls data from:
 
-- Contentful: CMS
 - last.fm: Music stats
 - FeedBin: Subscribed feed stats
 - GitHub: Commit history
 - Savee: Images for the scrapbook
+- Uploadcare: Image CDN
 
 This is a [Eleventy (11ty)](https://www.11ty.dev) project.
 

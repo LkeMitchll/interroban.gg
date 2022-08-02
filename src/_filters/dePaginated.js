@@ -6,5 +6,5 @@ module.exports = function dePaginated(input) {
   });
   result = result.reverse();
 
-  return result
+  return result;
 };
