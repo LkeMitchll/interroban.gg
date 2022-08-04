@@ -1,10 +1,15 @@
 <details class="tertiary-text | gap-x-large">
-  <summary class="gap">Recent commits</summary>
+  <summary class="gap">Recent changes</summary>
   <ol class="flow gap">
     {% for commit in commits %}
     <li>
-      <p>#<code>{{ commit.sha }}</code></p>
-      <a href="{{ commit.url }}" target="_blank" rel="noreferrer">{{ commit. message }}</a>
+      <p>#<code>{{ commit.hash }}</code></p>
+      <a href="https://github.com/LkeMitchll/interroban.gg/commit/{{ commit.hash }}"
+         target="_blank"
+         rel="noreferrer"
+      >
+        {{ commit.message }}
+      </a>
       <p>
         <time datetime="{{ commit.date }}">
           {{ commit.date | formatDate }}
@@ -14,9 +19,9 @@
     {% endfor %}
   </ol>
   <a href="http://www.github.com/lkemitchll/interroban.gg/commits"
-      target="_blank"
-      rel="noopener noreferrer"
+     target="_blank"
+     rel="noopener noreferrer"
   >
-    See all commits
+    See all changes
   </a>
 </details>

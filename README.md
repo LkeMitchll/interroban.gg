@@ -7,8 +7,8 @@ This site pulls data from:
 
 - last.fm: Music stats
 - FeedBin: Subscribed feed stats
-- GitHub: Commit history
 - Savee: Images for the scrapbook
+- Letterboxd: Recently watched movies
 - Uploadcare: Image CDN
 
 This is a [Eleventy (11ty)](https://www.11ty.dev) project.
@@ -18,6 +18,8 @@ This is a [Eleventy (11ty)](https://www.11ty.dev) project.
 ### Prerequisites
 
 - Node.js v17+
+
+### Build
 
 First, install the bundle:
 
@@ -30,6 +32,8 @@ Next, build the site:
 ```bash
 npm run build
 ```
+
+### Development
 
 To run a development environment:
 

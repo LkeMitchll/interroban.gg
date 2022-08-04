@@ -1,28 +1,33 @@
+// Setup .env file
 require("dotenv").config();
 
-module.exports = function (eleventyConfig) {
+module.exports = function (eleventy) {
+  // Eleventy plugins
   const pluginRSS = require("@11ty/eleventy-plugin-rss");
   const pluginReadingTime = require("eleventy-plugin-reading-time");
-  eleventyConfig.addPlugin(pluginRSS);
-  eleventyConfig.addPlugin(pluginReadingTime);
+  eleventy.addPlugin(pluginRSS);
+  eleventy.addPlugin(pluginReadingTime);
 
-  eleventyConfig.addPassthroughCopy("src/assets/fonts");
-  eleventyConfig.addPassthroughCopy("src/assets/images");
-  eleventyConfig.addPassthroughCopy("src/components/*.js");
-  eleventyConfig.addWatchTarget("src/css/");
+  // Passthrough copying
+  eleventy.addPassthroughCopy("src/assets/fonts");
+  eleventy.addPassthroughCopy("src/assets/images");
+  eleventy.addPassthroughCopy("src/components/*.js");
+  eleventy.addWatchTarget("src/css/");
 
+  // Custom filters
   const date = require("./src/_filters/date");
   const stars = require("./src/_filters/stars");
   const depaginate = require("./src/_filters/dePaginated");
-  eleventyConfig.addFilter("formatDate", date);
-  eleventyConfig.addFilter("starRating", stars);
-  eleventyConfig.addFilter("dePaginate", depaginate);
+  eleventy.addFilter("formatDate", date);
+  eleventy.addFilter("starRating", stars);
+  eleventy.addFilter("dePaginate", depaginate);
 
+  // Custom shortcodes
   const responsiveImage = require("./src/_shortcodes/responsiveImage");
-  eleventyConfig.addAsyncShortcode("image", responsiveImage);
+  eleventy.addAsyncShortcode("image", responsiveImage);
 
   const md = require("markdown-it");
-  eleventyConfig.addPairedShortcode("sidenote", (content, number) => {
+  eleventy.addPairedShortcode("sidenote", (content, number) => {
     const result = md({ html: true }).render(content);
     return `<aside id="sn-${number}" class="sidenote">
               <div class="sidenote__content">
@@ -33,10 +38,11 @@ module.exports = function (eleventyConfig) {
             </aside>`;
   });
 
+  // Custom markdown renderer
   const namedHeadingsPlugin = require("markdown-it-named-headings");
   const classesPlugin = require("@toycode/markdown-it-class");
   const externalLinksPlugin = require("markdown-it-external-links");
-  eleventyConfig.amendLibrary("md", (mdLib) =>
+  eleventy.amendLibrary("md", (mdLib) =>
     mdLib
       .use(namedHeadingsPlugin)
       .use(classesPlugin, { h2: "title", h3: "subtitle" })
@@ -48,6 +54,7 @@ module.exports = function (eleventyConfig) {
       })
   );
 
+  // Options
   return {
     dir: {
       input: "src",

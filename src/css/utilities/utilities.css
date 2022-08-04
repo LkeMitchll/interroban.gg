@@ -34,10 +34,6 @@
   margin-bottom: var(--space-small);
 }
 
-.gap-medium {
-  margin-bottom: var(--space-medium);
-}
-
 .gap-large {
   margin-bottom: var(--space-large);
 }

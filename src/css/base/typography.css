@@ -10,16 +10,9 @@ em {
   font-feature-settings: "salt" on, "ss01" on, "ss06" on, "ss08" on;
 }
 
-sup {
-  line-height: 1;
-}
-
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 .headline {
   font-size: var(--text-size-large);
   font-family: var(--text-display);

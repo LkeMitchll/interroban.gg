@@ -6,7 +6,8 @@ layout: layouts/default.html
 <header class="flow | gap-x-large">
   <h1 class="headline | measure | gap-large">{{ title }}</h1>
   {{ stats(updatedDate = date, readableContent = content ) }}
+  {% include "commits.html" %}
 </header>
-<article class="markdown | flow | gap-xx-large">
+<article class="markdown | flow | gap-x-large">
   {{ content | safe }}
 </article>
