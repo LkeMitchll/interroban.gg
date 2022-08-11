@@ -32,15 +32,42 @@
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0"
   },
+  "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2021": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "no-param-reassign": 0
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "selector-class-pattern": null
+    }
+  },
   "scripts": {
     "clean": "npm-run-all clean:*",
     "clean:build": "rm -rf _site",
     "build": "npm-run-all clean build:*",
     "build:eleventy": "eleventy",
-    "build:postcss": "postcss src/css/index.css -o _site/css/site.css --config ./postcss.config.js",
+    "build:postcss": "postcss src/css/index.css -u postcss-import -u cssnano -o _site/css/site.css --no-map",
     "dev": "npm-run-all clean --parallel dev:eleventy dev:postcss",
     "dev:eleventy": "eleventy --serve",
-    "dev:postcss": "postcss src/css/index.css -o _site/css/site.css --config ./postcss.config.js -w",
+    "dev:postcss": "postcss src/css/index.css -u postcss-import -o _site/css/site.css --watch",
     "lint": "npm-run-all lint:*",
     "lint:stylelint": "stylelint ./src/css",
     "lint:eslint": "eslint ./src"
