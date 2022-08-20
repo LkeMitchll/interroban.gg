@@ -2,6 +2,12 @@
 layout: layouts/colophon.html
 ---
 
+## Impact
+
+Approximately **{{ carbon.c }}g** of CO₂  is produced every time someone visits
+this website. Which is cleaner than **{{ carbon.p }}%** of websites tested by
+[websitecarbon.com](https://www.websitecarbon.com/website/interroban-gg/).
+
 ## Design
 
 Special thanks go to:
