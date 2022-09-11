@@ -25,7 +25,7 @@ module.exports = async function responsiveImage(
   };
 
   viewportWidths[size].widths.forEach((width) => {
-    const source = `${imgUrl}/-/resize/${width}x/-/quality/${quality}/-/format/webp/ ${width}w`;
+    const source = `${imgUrl}/-/resize/${width}x/-/grayscale/-/quality/${quality}/-/format/webp/ ${width}w`;
     sources.push(source);
   });
 
