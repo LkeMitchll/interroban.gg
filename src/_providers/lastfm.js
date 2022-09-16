@@ -1,85 +1,85 @@
-const Cache = require("@11ty/eleventy-fetch");
+const Cache = require('@11ty/eleventy-fetch');
 
 module.exports = class LastFMAPI {
   constructor() {
-    this.apiEndpoint = "http://ws.audioscrobbler.com/2.0/";
+    this.apiEndpoint = 'http://ws.audioscrobbler.com/2.0/';
     this.apiKey = process.env.LASTFM_API_KEY;
-    this.username = "luke--mitchell";
+    this.username = 'luke--mitchell';
   }
 
   fetchTrackTotal(from, to) {
     const options = {
-      method: "user.getrecenttracks",
+      method: 'user.getrecenttracks',
       api_key: this.apiKey,
       user: this.username,
-      format: "json",
+      format: 'json',
       from,
       to,
     };
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
-      .join("&");
+      .join('&');
 
     return Cache(`${this.apiEndpoint}?${params}`, {
-      duration: "1h",
-      type: "json",
+      duration: '1h',
+      type: 'json',
     });
   }
 
   fetchTopAlbums() {
     const options = {
-      method: "user.gettopalbums",
+      method: 'user.gettopalbums',
       api_key: this.apiKey,
       user: this.username,
-      format: "json",
-      period: "3month",
+      format: 'json',
+      period: '3month',
       limit: 5,
     };
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
-      .join("&");
+      .join('&');
 
     return Cache(`${this.apiEndpoint}?${params}`, {
-      duration: "1h",
-      type: "json",
+      duration: '1h',
+      type: 'json',
     });
   }
 
   fetchTopArtists() {
     const options = {
-      method: "user.gettopartists",
+      method: 'user.gettopartists',
       api_key: this.apiKey,
       user: this.username,
-      format: "json",
-      period: "6month",
+      format: 'json',
+      period: '6month',
       limit: 5,
     };
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
-      .join("&");
+      .join('&');
 
     return Cache(`${this.apiEndpoint}?${params}`, {
-      duration: "1h",
-      type: "json",
+      duration: '1h',
+      type: 'json',
     });
   }
 
   fetchAlbumTotal(from, to) {
     const options = {
-      method: "user.getweeklyalbumchart",
+      method: 'user.getweeklyalbumchart',
       api_key: this.apiKey,
       user: this.username,
-      format: "json",
+      format: 'json',
       from,
       to,
     };
     const params = Object.entries(options)
       .map(([key, val]) => `${key}=${val}`)
-      .join("&");
+      .join('&');
 
     return Cache(`${this.apiEndpoint}?${params}`, {
-      duration: "1h",
-      type: "json",
+      duration: '1h',
+      type: 'json',
     });
   }
 };

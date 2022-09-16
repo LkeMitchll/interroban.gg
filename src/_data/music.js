@@ -1,4 +1,4 @@
-const LastFMAPI = require("../_providers/lastfm");
+const LastFMAPI = require('../_providers/lastfm');
 
 function dateToEpochWithOffset(time, offset) {
   const date = new Date();
@@ -17,19 +17,19 @@ async function lastWeek() {
 
   const lastWeekTracks = await api
     .fetchTrackTotal(lastWeekStart, lastWeekEnd)
-    .then((json) => Number(json.recenttracks["@attr"].total));
+    .then((json) => Number(json.recenttracks['@attr'].total));
   const lastWeekAlbums = await api
     .fetchAlbumTotal(lastWeekStart, lastWeekEnd)
     .then((json) => json.weeklyalbumchart.album.length);
 
   return {
-    title: "Last week",
+    title: 'Last week',
     tracks: {
-      title: "Tracks",
+      title: 'Tracks',
       total: lastWeekTracks,
     },
     albums: {
-      title: "Albums",
+      title: 'Albums',
       total: lastWeekAlbums,
     },
   };
@@ -46,19 +46,19 @@ async function thisWeek() {
 
   const thisWeekTracks = await api
     .fetchTrackTotal(lastWeekEnd, now)
-    .then((json) => json.recenttracks["@attr"].total);
+    .then((json) => json.recenttracks['@attr'].total);
   const thisWeekAlbums = await api
     .fetchAlbumTotal(lastWeekEnd, now)
     .then((json) => json.weeklyalbumchart.album.length);
 
   return {
-    title: "This week (so far)",
+    title: 'This week (so far)',
     tracks: {
-      title: "Tracks",
+      title: 'Tracks',
       total: thisWeekTracks,
     },
     albums: {
-      title: "Albums",
+      title: 'Albums',
       total: thisWeekAlbums,
     },
   };

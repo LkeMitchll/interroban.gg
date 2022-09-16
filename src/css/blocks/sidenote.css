@@ -14,7 +14,8 @@
   margin-right: var(--space-tiny);
 }
 
-.sidenote__content {
+.sidenote small {
+  display: block;
   border-left: var(--border-default);
   padding-left: var(--space-default);
 }
@@ -29,7 +30,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .sidenote__content {
+  .sidenote small {
     position: absolute;
   }
 }

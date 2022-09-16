@@ -1,7 +1,7 @@
 // Setup .env file
 require("dotenv").config();
 
-module.exports = function (eleventy) {
+module.exports = function(eleventy) {
   // Eleventy plugins
   const pluginRSS = require("@11ty/eleventy-plugin-rss");
   const pluginReadingTime = require("eleventy-plugin-reading-time");
@@ -30,11 +30,9 @@ module.exports = function (eleventy) {
   eleventy.addPairedShortcode("sidenote", (content, number) => {
     const result = md({ html: true }).render(content);
     return `<aside id="sn-${number}" class="sidenote">
-              <div class="sidenote__content">
-                <small>
-                  ${result}
-                </small>
-              </div>
+              <small>
+                ${result}
+              </small>
             </aside>`;
   });
 

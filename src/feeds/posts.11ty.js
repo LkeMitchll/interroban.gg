@@ -1,7 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 class Posts {
   constructor() {
-    this.filename = "posts.json";
+    this.filename = 'posts.json';
     this.result = [];
   }
 
@@ -24,16 +24,16 @@ class Posts {
     }));
 
     const wrapper = {
-      version: "https://jsonfeed.org/version/1.1",
-      title: "Luke Mitchell | Product Designer",
+      version: 'https://jsonfeed.org/version/1.1',
+      title: 'Luke Mitchell | Product Designer',
       description:
-        "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.",
-      icon: "https://interroban.gg/assets/images/favicon.svg",
-      favicon: "https://interroban.gg/assets/images/favicon.svg",
-      authors: [{ name: "Luke Mitchell", url: "https://interroban.gg" }],
-      language: "en",
-      home_page_url: "https://interroban.gg",
-      feed_url: "https://interroban.gg/feeds/posts.json",
+        'Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.',
+      icon: 'https://interroban.gg/assets/images/favicon.svg',
+      favicon: 'https://interroban.gg/assets/images/favicon.svg',
+      authors: [{ name: 'Luke Mitchell', url: 'https://interroban.gg' }],
+      language: 'en',
+      home_page_url: 'https://interroban.gg',
+      feed_url: 'https://interroban.gg/feeds/posts.json',
       items: this.result,
     };
 

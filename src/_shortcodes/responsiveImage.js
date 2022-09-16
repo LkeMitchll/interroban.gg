@@ -1,25 +1,25 @@
-const fetch = require("@11ty/eleventy-fetch");
+const fetch = require('@11ty/eleventy-fetch');
 
 module.exports = async function responsiveImage(
   imgUUID,
   imgAlt,
-  size = "large"
+  size = 'large',
 ) {
   const imgUrl = `https://ucarecdn.com/${imgUUID}`;
-  const imgMeta = await fetch(`${imgUrl}/-/json/`, { type: "json" }).then(
-    (response) => response
+  const imgMeta = await fetch(`${imgUrl}/-/json/`, { type: 'json' }).then(
+    (response) => response,
   );
-  const quality = "smart";
+  const quality = 'smart';
   const fallback = `${imgUrl}/-/resize/800x/quality/${quality}/`;
   const sources = [];
 
   const viewportWidths = {
     large: {
-      sizes: "(min-width: 800px) 65vw, (min-width: 1600px) 50vw, 90vw",
+      sizes: '(min-width: 800px) 65vw, (min-width: 1600px) 50vw, 90vw',
       widths: [400, 600, 800, 1000, 1200, 1400],
     },
     small: {
-      sizes: "(min-width: 800px) 14vw, 35vw",
+      sizes: '(min-width: 800px) 14vw, 35vw',
       widths: [400, 600],
     },
   };

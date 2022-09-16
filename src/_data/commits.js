@@ -1,4 +1,4 @@
-const git = require("simple-git")();
+const git = require('simple-git')();
 
 module.exports = async function commits() {
   try {

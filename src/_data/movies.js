@@ -1,4 +1,4 @@
-const LetterboxdAPI = require("../_providers/letterboxd");
+const LetterboxdAPI = require('../_providers/letterboxd');
 
 module.exports = async function movies() {
   const api = new LetterboxdAPI();
