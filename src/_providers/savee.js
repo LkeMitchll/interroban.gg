@@ -2,7 +2,7 @@ const Cache = require("@11ty/eleventy-fetch");
 
 module.exports = class SaveeAPI {
   constructor() {
-    this.url = "https://api.savee.it/user/interrobang/items/";
+    this.url = "https://savee.it/api/graphql/";
   }
 
   async getItems() {
@@ -10,9 +10,32 @@ module.exports = class SaveeAPI {
       duration: "1d",
       type: "json",
       fetchOptions: {
+        method: "POST",
         headers: {
-          "Auth-Token": null,
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          query: `{
+            userByUsername(username: "interrobang") {
+              items(limit: 50) {
+                items {
+                  _id
+                  url
+                  name
+                  pageURL
+                  asset {
+                    _id
+                    image {
+                      thumbnail
+                      width
+                      ratio
+                    }
+                  }
+                }
+              }
+            }
+          }`,
+        }),
       },
     });
   }

@@ -21,10 +21,10 @@
     <figure>
       <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}" >
         <img
-          src="{{ item.image.thumbnail }}"
+          src="{{ item.asset.image.thumbnail }}"
           loading="lazy"
-          width="{{ item.image.width }}"
-          height="{{ item.image.height }}"
+          width="{{ item.asset.image.width }}"
+          height="{{ item.asset.image.height }}"
           alt="{{ item.name }}"
         />
       </a>
