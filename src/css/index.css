@@ -15,12 +15,11 @@
 @import "blocks/bookmark.css";
 @import "blocks/post.css";
 @import "blocks/grayscale-image.css";
-@import "blocks/link.css";
 @import "blocks/markdown.css";
 @import "blocks/sidenote.css";
-@import "blocks/track.css";
 @import "blocks/movies.css";
 @import "blocks/stars.css";
+@import "blocks/gallery.css";
 
 /* utilities */
 @import "utilities/utilities.css";

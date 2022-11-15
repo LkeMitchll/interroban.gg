@@ -1,22 +1,23 @@
 <footer class="columns | gap-xx-large">
   <div>
     <p class="subtitle | gap">General</p>
-    <ul>
+    <ul class="tertiary-text">
       {% for page in navigation.routes[0].pages %}
       <li class="gap">
-        <a href="{{ page.url }}" class="link">{{ page.name }}</a>
+        <a href="{{ page.url }}">{{ page.name }}</a>
       </li>
       {% endfor %}
     </ul>
   </div>
+
   {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
   {% for category in footerCategories %}
   <div>
     <p class="subtitle | gap">{{ category.name }}</p>
-    <ul>
+    <ul class="tertiary-text">
       {% for page in category.pages %}
       <li class="gap">
-        <a class="link" href="{{ page.url }}">{{ page.name }}</a>
+        <a href="{{ page.url }}">{{ page.name }}</a>
       </li>
       {% endfor %}
     </ul>
@@ -32,9 +33,11 @@
   </div>
   <div class="col-4">
     <p class="horizontal | tertiary-text" style="--gap: var(--space-default)">
-      <a href="https://hotlinewebring.club/interrobang/previous" target="_blank" aria-label="Previous Hotline Webring Site">&larr;</a>
+      <a href="https://hotlinewebring.club/interrobang/previous" target="_blank"
+        aria-label="Previous Hotline Webring Site">&larr;</a>
       <span>Hotline</span>
-      <a href="https://hotlinewebring.club/interrobang/next" target="_blank" aria-label="Next Hotline Webring Site">&rarr;</a>
+      <a href="https://hotlinewebring.club/interrobang/next" target="_blank"
+        aria-label="Next Hotline Webring Site">&rarr;</a>
     </p>
   </div>
 </footer>

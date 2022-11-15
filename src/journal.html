@@ -4,40 +4,99 @@ title: Journal
 theme: green
 ---
 
-<h1 class="banner">
-  <em>Journal&mdash;</em>what I've been doing recently, a blog, a scrapbook,
-  and a place to show what I am currently listening to and watching. It's also a
-  bit of playground to grab data from a few services I like.
-</h1>
-<hr class="gap-large">
+<header class="flow | gap-x-large">
+  <h1>Journal</h1>
+  <section class="flow | measure">
+    <p>
+      What I've been doing recently, a blog, a scrapbook,
+      and a place to show what I am currently listening to and watching.
+      It's also a bit of playground to grab data from a few services I like.
+    </p>
+  </section>
+</header>
 
 {% set toc = ["Blog", "Listening", "Watching", "Scrapbook"] %}
 {% include "toc.html" %}
 
 <article id="blog" class="gap-xx-large">
-  <header class="flow | gap-large">
+  <header class="gap-large">
     <h2>Blog</h2>
-    <hr class="gap-large">
-    <ul>
+    <p class="measure | gap-large">
+      I try my best to write down a few thoughts each year, but I won't hold myself too accountable.
+    </p>
+    <ul class="horizontal | tertiary-text">
       <li>
-        <a href="/rss.xml" target="_blank" referrer="noreferrer" class="link">
+        <a href="/rss.xml" target="_blank" referrer="noreferrer">
           RSS Feed
         </a>
       </li>
       <li>
-        <a href="/feeds/posts.json" target="_blank" referrer="noreferrer" class="link">
+        <a href="/feeds/posts.json" target="_blank" referrer="noreferrer">
           JSON Feed
         </a>
       </li>
     </ul>
-    <hr class="gap-large">
   </header>
 
   {% set posts = collections.post %}
   {% include "posts.html" %}
 </article>
 
-{% include "listening.html" %}
+<article id="listening" class="gap-xx-large">
+  <header class="gap-large">
+    <h2>Listening</h2>
+    <p class="measure | gap-large">
+      I listen to music, mostly while I work, or walk. I use
+      <a href="https://www.apple.com/uk/apple-music/" target="_blank">Apple Music</a>
+      and I collect the stats with <a href="https://www.last.fm" target="_blank">last.fm</a>.
+    </p>
+  </header>
+  <section class="columns" data-cols="2">
+    {% for week in [music.lastWeek, music.thisWeek] %}
+    <div>
+      <h3 class="subtitle">{{ week.title }}</h3>
+      <ul class="tertiary-text gap-large">
+        {% for stat in [week.tracks, week.albums] %}
+        <li class="horizontal | border gap">
+          <p><em>{{ stat.title }}</em></p>
+          <p class="push-right">
+            {{ stat.total }}
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="columns" data-cols="2">
+    <div>
+      <h3 class="subtitle">Top albums (3 months)</h3>
+      <ol>
+        {% for album in music.topAlbums %}
+        <li class="border">
+          <a href="{{ album.url }}" target="_blank" rel="noreferrer noopener">
+            {{ album.title }}
+          </a>
+          <p class="gap-small"><small>{{ album.artist }}</small></p>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div>
+      <h3 class="subtitle">Top artists (3 months)</h3>
+      <ol>
+        {% for artist in music.topArtists %}
+        <li class="border">
+          <a href="{{ artist.url }}" target="_blank" rel="noreferrer noopener">
+            {{ artist.name }}
+          </a>
+          <p class="gap-small"><small>{{ artist.playcount }} plays</small></p>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+</article>
 
 <article id="watching" class="gap-xx-large">
   <header class="gap-large">
@@ -50,16 +109,43 @@ theme: green
 
   <ol class="movies | columns">
     {% for movie in movies %}
-      <li>
-        <a href="{{ movie.url }}" target="_blank">
-        <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
-        </a>
-        <div>
-          <p class="stars | gap-small">{{ movie.rating | starRating | safe }}</p>
-        </div>
-      </li>
+    <li>
+      <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
+      <div class="flow | tertiary-text">
+        <p class="stars | gap-small"><span class="tertiary-text">Rating:</span> {{ movie.rating | starRating | safe }}</p>
+        <a href="{{ movie.url }}">{{ movie.title }}</a>
+      </div>
+    </li>
     {% endfor %}
   </ol>
 </article>
 
-{% include "scrapbook.html" %}
+<article id="scrapbook" class="flow | gap-xx-large">
+  <header>
+    <h2>Scrapbook</h2>
+    <p class="measure gap">
+      This is the last 50 images that have caught my eye. I collect them using
+      <a href="https://savee.it/interrobang/">Savee</a>, a Pinterest
+      alternative.
+    </p>
+    <p class="measure leading-crushed">
+      <small>
+        <strong class="tertiary-text">NOTE </strong>
+        Each image is copyright of its respective owner. Reasonable effort has
+        been made to retain the source information, although this has not always
+        been possible. Clicking an image will open it's source (if known).
+      </small>
+    </p>
+  </header>
+
+  <div class="gallery | masonry">
+    {% for item in scrapbook %}
+    <figure>
+      <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}">
+        <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}"
+          height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
+      </a>
+    </figure>
+    {% endfor %}
+  </div>
+</article>

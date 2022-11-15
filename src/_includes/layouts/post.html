@@ -3,11 +3,13 @@ layout: layouts/default.html
 ---
 
 {% from "stats.html" import stats %}
+
 <header class="flow | gap-x-large">
-  <h1 class="headline | measure | gap-large">{{ title }}</h1>
+  <h1 class="measure | gap-large">{{ title }}</h1>
   {{ stats(updatedDate = date, readableContent = content ) }}
   {% include "commits.html" %}
 </header>
+
 <article class="markdown | flow | gap-x-large">
   {{ content | safe }}
 </article>

@@ -70,7 +70,6 @@ async function topAlbums() {
     .fetchTopAlbums()
     .then((json) => json.topalbums.album);
   return response.map((album) => ({
-    id: album.mbid,
     title: album.name,
     artist: album.artist.name,
     url: album.url,
@@ -82,11 +81,7 @@ async function topArtists() {
   const response = await api
     .fetchTopArtists()
     .then((json) => json.topartists.artist);
-  return response.map((artist) => ({
-    id: artist.mbid,
-    name: artist.name,
-    url: artist.url,
-  }));
+  return response;
 }
 
 module.exports = async function music() {

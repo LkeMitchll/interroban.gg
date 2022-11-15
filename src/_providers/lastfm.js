@@ -51,7 +51,7 @@ module.exports = class LastFMAPI {
       api_key: this.apiKey,
       user: this.username,
       format: 'json',
-      period: '6month',
+      period: '3month',
       limit: 5,
     };
     const params = Object.entries(options)

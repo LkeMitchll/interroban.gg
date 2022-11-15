@@ -17,14 +17,14 @@ permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% e
 <hr class="gap-large">
 
 <header class="flow | gap-large">
-  <ul>
+  <ul class="tertiary-text">
     <li>
-      <a href="/feeds/bookmarks.xml" target="_blank" referrer="noreferrer" class="link">
+      <a href="/feeds/bookmarks.xml" target="_blank" referrer="noreferrer">
         RSS Feed
       </a>
     </li>
     <li>
-      <a href="/feeds/bookmarks.json" target="_blank" referrer="noreferrer" class="link">
+      <a href="/feeds/bookmarks.json" target="_blank" referrer="noreferrer">
         JSON Feed
       </a>
     </li>
@@ -35,14 +35,14 @@ permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% e
 <article id="content" class="flow | gap-xx-large">
   <ul class="flow">
     {% for bookmark in bookmarks[year] | reverse %}
-    <li class="bookmark">
-      <p class="tertiary-text">
+    <li class="bookmark | tertiary-text">
+      <p>
         N&ordm; {{ bookmark.number }}
       </p>
       <a href="{{ bookmark.url }}" target="_blank" rel="noreferrer">
         {{ bookmark.title }}
       </a>
-      <p class="tertiary-text push-right">
+      <p class="push-right">
         {% if bookmark.favourite %}★{% endif %}
         {{ bookmark.tag }} &mdash;
         {{ bookmark.date | formatDate }}
@@ -50,19 +50,19 @@ permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% e
     </li>
     {% endfor %}
   </ul>
-  <nav>
-    <p class="tertiary-text">More:</p>
+  <nav class="tertiary-text">
+    <p>More:</p>
     <ul class="horizontal | gap">
       {% for page in pagination.pages | reverse %}
         {% if page !== "current" %}
           <li>
-            <a class="link" href="/bookmarks/{{ page }}#content">
+            <a href="/bookmarks/{{ page }}#content">
               {{ page }}
             </a>
           </li>
         {% endif %}
       {% endfor %}
     </ul>
-    <a href="#content" class="link">Back to top</a>
+    <a href="#content">Back to top</a>
   </nav>
 </article>

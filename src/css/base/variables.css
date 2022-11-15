@@ -1,7 +1,6 @@
 :root {
   --color-primary: hsl(115deg 13% 11% / 80%);
   --color-bg: hsl(84deg 100% 99% / 100%);
-  --color-highlight: blueviolet;
   --space-tiny: 0.25rem;
   --space-small: 0.5rem;
   --space-default: 1rem;
@@ -30,7 +29,6 @@
   :root {
     --color-primary: hsl(36deg 37% 92% / 100%);
     --color-bg: hsl(173deg 20% 12% / 100%);
-    --color-highlight: yellowgreen;
   }
 }
 

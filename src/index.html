@@ -4,24 +4,25 @@ title: Product Designer
 theme: pink
 ---
 
-<h1 class="banner | gap-xx-large">
+<h1 class="banner | gap-x-large">
   <em>Luke Mitchell&mdash;</em>digital product designer, design director,
-  <em>&amp;</em> user experience engineer for 
+  <em>&amp;</em> user experience engineer for
   <a href="https://www.thoughtbot.com" target="_blank">thoughtbot</a>.
   Specialising in design strategy, process, <em>&amp;</em> systems across
   multiple industries for 10 years.
 </h1>
+<hr class="gap-x-large">
 
 <nav class="gap-xx-large">
   <ol class="flow">
     {% for page in navigation.routes[0].pages %}
-    <li class="horizontal">
+    <li class="horizontal | tertiary-text">
       <p class="horizontal">
-        <span class="tertiary-text">{{ loop.index }}.</span>
-        <a href="{{ page.url }}" class="link">{{ page.name }}</a>
+        <span>{{ loop.index }}.</span>
+        <a href="{{ page.url }}">{{ page.name }}</a>
       </p>
       <hr class="grow" />
-      <p class="tertiary-text">{{ page.description }}</p>
+      <p>{{ page.description }}</p>
     </li>
     {% endfor %}
   </ol>
