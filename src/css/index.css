@@ -11,7 +11,6 @@
 @import "compositions/horizontal.css";
 
 /* blocks */
-@import "blocks/banner.css";
 @import "blocks/bookmark.css";
 @import "blocks/post.css";
 @import "blocks/grayscale-image.css";

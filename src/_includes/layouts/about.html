@@ -4,17 +4,21 @@ title: About
 theme: yellow
 ---
 
-<h1 class="banner">
-  <em>About&mdash;</em>I've been a designer for 10 years, gaining experience
-  working with clients of all sizes, spanning many industries.
-</h1>
-<hr class="gap-large">
+<header class="flow | gap-x-large">
+  <h1>About</h1>
+  <p class="measure">
+    I’ve been a designer and front-end engineer for more than 10 years.
+    I started out as a Graphic Designer, around 2014 I transitioned to Product Design.
+    Since then I have worked with clients of all sizes in many different industries.
+  </p>
+</header>
 
-{% set toc = ["History", "Experience", "Clients", "Skills", "Recognition"] %}
+{% set toc = ["Now", "Experience", "Clients", "Skills", "Recognition", "History"] %}
 {% include "toc.html" %}
 
 <figure class="columns flow | gap-xx-large">
-  {% image "ae9f9db0-ecc5-4d0b-b356-0e70d77ded7a", "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
+  {% image "ae9f9db0-ecc5-4d0b-b356-0e70d77ded7a", "Presenting mini storyboards during a Product Design workshop.
+  Courtesy of Francis Augusto." %}
   <figcaption class="measure | push-down leading-crushed">
     <small>
       <strong class="tertiary-text">Image </strong>
@@ -24,8 +28,13 @@ theme: yellow
   </figcaption>
 </figure>
 
-<article class="markdown | flow gap-xx-large" id="about">
-  {{ content | safe }}
+<article class="gap-large">
+  <h2 id="now">Now</h2>
+  <p class="measure">
+    I am currently a Design Director at <a href=“thoughtbot.com” target=“_blank”>thoughtbot</a>.
+    I still work with clients on a daily basis designing building new products.
+    I also mentor a team of designers, and help grow the business.
+  </p>
 </article>
 
 <article class="columns | gap-xx-large">
@@ -46,7 +55,7 @@ theme: yellow
     <h3 id="clients" class="subtitle">Clients</h3>
     <ul>
       {% for client in cv.clients %}
-        <li>{{ client }}</li>
+      <li>{{ client }}</li>
       {% endfor %}
     </ul>
   </div>
@@ -54,7 +63,7 @@ theme: yellow
     <h3 id="skills" class="subtitle">Skills</h3>
     <ul>
       {% for skill in cv.skills %}
-        <li>{{ skill }}</li>
+      <li>{{ skill }}</li>
       {% endfor %}
     </ul>
   </div>
@@ -63,13 +72,17 @@ theme: yellow
     <ul class="flow">
       {% set awards = cv.recognition %}
       {% for award in awards %}
-        <li>
-          <a href="{{ award.url }}" target="_blank" rel="noopener noreferrer">
-            {{ award.source }}
-          </a>
-          <p>{{ award.date }} </p>
-        </li>
+      <li>
+        <a href="{{ award.url }}" target="_blank" rel="noopener noreferrer">
+          {{ award.source }}
+        </a>
+        <p>{{ award.date }} </p>
+      </li>
       {% endfor %}
     </ul>
   </div>
+</article>
+
+<article class="markdown | flow gap-xx-large" id="about">
+  {{ content | safe }}
 </article>

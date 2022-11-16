@@ -8,15 +8,15 @@ pagination:
   alias: year
 permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% endif %}index.html"
 ---
-<h1 class="banner">
-  <em>Bookmarks&mdash;</em>I try and keep track of all the interesting things I
-  find on my travels around the web. Because the internet never stops changing,
-  as this list gets older things will begin to decay and disappear. So this
-  isn’t an archive as such, it’s a log.
-</h1>
-<hr class="gap-large">
 
-<header class="flow | gap-large">
+<header class="flow | gap-x-large">
+  <h1>Bookmarks</h1>
+  <p class="measure">
+    I try and keep track of all the interesting things I
+    find on my travels around the web. Because the internet never stops changing,
+    as this list gets older things will begin to decay and disappear. So this
+    isn’t an archive as such, it’s a log.
+  </p>
   <ul class="tertiary-text">
     <li>
       <a href="/feeds/bookmarks.xml" target="_blank" referrer="noreferrer">
