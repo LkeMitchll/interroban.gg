@@ -10,7 +10,6 @@ a {
   text-decoration: none;
   border-bottom: var(--border-default);
   padding: 0 0.1em;
-  transition: all 0.25s ease;
 }
 
 a:hover {
