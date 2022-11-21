@@ -10,6 +10,7 @@ a {
   text-decoration: none;
   border-bottom: var(--border-default);
   padding: 0 0.1em;
+  color: var(--color-primary);
 }
 
 a:hover {
@@ -32,26 +33,12 @@ h3 {
   font-weight: 400;
 }
 
-.title {
-  font-feature-settings: "case" on;
-  font-weight: 400;
-  font-style: italic;
-}
-
 .subtitle {
   font-size: var(--text-size-default);
   font-family: var(--text-body);
   font-weight: bold;
-  opacity: 0.9;
 }
 
-.tertiary-title {
-  font-family: var(--text-mono);
-  font-style: italic;
-  margin-bottom: var(--space-small);
-}
-
-.tertiary-title,
 small,
 code,
 pre {
@@ -73,10 +60,6 @@ pre {
   background-color: var(--color-primary);
   color: var(--color-bg);
   max-width: 60ch;
-}
-
-a {
-  color: var(--color-primary);
 }
 
 ul,

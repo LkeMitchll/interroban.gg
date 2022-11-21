@@ -112,7 +112,7 @@ theme: green
     <li>
       <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
       <div class="flow | tertiary-text">
-        <p class="stars | gap-small"><span class="tertiary-text">Rating:</span> {{ movie.rating | starRating | safe }}</p>
+        <p class="tertiary-text | gap-small">Rating: {{ movie.rating | starRating | safe }}</p>
         <a href="{{ movie.url }}">{{ movie.title }}</a>
       </div>
     </li>
