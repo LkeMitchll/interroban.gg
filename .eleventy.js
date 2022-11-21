@@ -43,7 +43,7 @@ module.exports = function(eleventy) {
   eleventy.amendLibrary("md", (mdLib) =>
     mdLib
       .use(namedHeadingsPlugin)
-      .use(classesPlugin, { h2: "title", h3: "subtitle" })
+      .use(classesPlugin, { h3: "subtitle" })
       .use(externalLinksPlugin, {
         externalClassName: null,
         externalTarget: "_blank",

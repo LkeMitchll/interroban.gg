@@ -3,14 +3,14 @@
   {% if updatedDate %}
   <li class="border">
     <p class="horizontal">
-      <em>Updated</em><span class="push-right">{{ updatedDate | formatDate }}</span>
+      Updated <span class="push-right">{{ updatedDate | formatDate }}</span>
     </p>
   </li>
   {% endif %}
   {% if readableContent %}
   <li class="border">
     <p class="horizontal">
-      <em>Reading time</em><span class="push-right">{{ readableContent | readingTime }}</span>
+      Reading time <span class="push-right">{{ readableContent | readingTime }}</span>
     </p>
   </li>
   {% endif %}

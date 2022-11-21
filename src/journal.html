@@ -58,7 +58,7 @@ theme: green
       <ul class="tertiary-text gap-large">
         {% for stat in [week.tracks, week.albums] %}
         <li class="horizontal | border gap">
-          <p><em>{{ stat.title }}</em></p>
+          <p>{{ stat.title }}</p>
           <p class="push-right">
             {{ stat.total }}
           </p>
