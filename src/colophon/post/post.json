@@ -1,4 +1,4 @@
 {
   "tags": "metapost",
-  "layout": "layouts/post.html"
+  "layout": "layouts/post"
 }

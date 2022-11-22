@@ -57,7 +57,6 @@ module.exports = function(eleventy) {
     dir: {
       input: "src",
     },
-    htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
 };

@@ -1,5 +1,5 @@
 ---
-layout: layouts/uses.html
+layout: layouts/uses
 ---
 
 ## Design
@@ -16,8 +16,8 @@ layout: layouts/uses.html
 
 ### Hardware
 
-- [Leuchtturm1917 Notebook](https://www.leuchtturm1917.co.uk/notebook-medium-a5-softcover-123-numbered-pages.html): for taking notes and task management (A5, softcover, dotted, black).
-- [Wacom Intuos M](https://estore.wacom.com/en-GB/wacom-intuos-m-bluetooth-black-n-ctl-6100wlk-n.html): as a drawing tablet for illustration.
+- [Leuchtturm1917 Notebook](https://www.leuchtturm1917.co.uk/notebook-medium-a5-softcover-123-numbered-pages): for taking notes and task management (A5, softcover, dotted, black).
+- [Wacom Intuos M](https://estore.wacom.com/en-GB/wacom-intuos-m-bluetooth-black-n-ctl-6100wlk-n): as a drawing tablet for illustration.
 
 ***
 
@@ -76,6 +76,6 @@ My approach to clothing is pretty simple, I always prefer clothing that is made 
 
 - A flannel shirt from, that I've bought second hand from eBay. I like the quality of Portuguese made flannels.
 - A pair of [Nudie Jeans](https://www.nudiejeans.com/). I like their policies of offering [free repairs and trade-ins](https://www.nudiejeans.com/sustainability/sustainable-products).
-- I'll probably be wearing a beat-up pair of [Converse All-Stars](https://www.converse.com/shop/p/chuck-taylor-all-star-unisex-high-top-shoe/M9160.html?dwvar_M9160_color=black&styleNo=M9160&cgid=chuck-taylor-all-star-shoes) or [Solovair Astronaut](https://www.nps-solovair.com/collections/all/products/s6-969-bk-g?variant=19778886336576) boots.
+- I'll probably be wearing a beat-up pair of [Converse All-Stars](https://www.converse.com/shop/p/chuck-taylor-all-star-unisex-high-top-shoe/M9160?dwvar_M9160_color=black&styleNo=M9160&cgid=chuck-taylor-all-star-shoes) or [Solovair Astronaut](https://www.nps-solovair.com/collections/all/products/s6-969-bk-g?variant=19778886336576) boots.
 - A t-shirt, my goto basic is a [Gildan Hammer](https://www.mygildan.com/store/us/browse/productDetailsPage.jsp?productId=H000).
 - If I'm walking I'll likely be wearing my beloved [GoRuck GR1](https://www.goruck.com/products/gr1) backpack, which I will probably be able to pass down to my grand-children.

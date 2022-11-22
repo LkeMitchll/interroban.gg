@@ -1,5 +1,5 @@
 ---
-layout: layouts/about.html
+layout: layouts/about
 ---
 
 ## History

@@ -1,5 +1,5 @@
 ---
-layout: layouts/colophon.html
+layout: layouts/colophon
 ---
 
 ## Impact

@@ -1,5 +1,5 @@
 ---
-layout: layouts/default.html
+layout: layouts/default
 title: Colophon
 theme: green
 ---
@@ -18,8 +18,8 @@ theme: green
   <div class="gap-large">
     <h2>Updates</h2>
     {% set posts = collections.metapost | reverse %}
-    {% include "posts.html" %}
-    {% include "commits.html" %}
+    {% include "posts.njk" %}
+    {% include "commits.njk" %}
     <hr />
   </div>
   <section class="markdown | flow">

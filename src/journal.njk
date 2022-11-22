@@ -1,5 +1,5 @@
 ---
-layout: layouts/default.html
+layout: layouts/default
 title: Journal
 theme: green
 ---
@@ -16,7 +16,7 @@ theme: green
 </header>
 
 {% set toc = ["Blog", "Listening", "Watching", "Scrapbook"] %}
-{% include "toc.html" %}
+{% include "toc.njk" %}
 
 <article id="blog" class="gap-xx-large">
   <header class="gap-large">
@@ -39,7 +39,7 @@ theme: green
   </header>
 
   {% set posts = collections.post %}
-  {% include "posts.html" %}
+  {% include "posts.njk" %}
 </article>
 
 <article id="listening" class="gap-xx-large">

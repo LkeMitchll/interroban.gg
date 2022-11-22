@@ -1,13 +1,13 @@
 ---
-layout: layouts/default.html
+layout: layouts/default
 ---
 
-{% from "stats.html" import stats %}
+{% from "stats.njk" import stats %}
 
 <header class="flow | gap-x-large">
   <h1 class="measure | gap-large">{{ title }}</h1>
   {{ stats(updatedDate = date, readableContent = content ) }}
-  {% include "commits.html" %}
+  {% include "commits.njk" %}
 </header>
 
 <article class="markdown | flow | gap-x-large">
