@@ -29,6 +29,13 @@
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0"
   },
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "postcss-import": {},
+      "cssnano": {}
+    }
+  },
   "eslintConfig": {
     "env": {
       "browser": true,
@@ -46,14 +53,11 @@
     "extends": "stylelint-config-standard"
   },
   "scripts": {
-    "clean": "npm-run-all clean:*",
-    "clean:build": "rm -rf _site",
-    "build": "npm-run-all clean build:*",
-    "build:eleventy": "eleventy",
-    "build:postcss": "postcss src/css/index.css -u postcss-import -u cssnano -o _site/css/site.css --no-map",
-    "dev": "npm-run-all clean --parallel dev:eleventy dev:postcss",
-    "dev:eleventy": "eleventy --serve",
-    "dev:postcss": "postcss src/css/index.css -u postcss-import -o _site/css/site.css --watch",
+    "clean": "rm -rf _site",
+    "eleventy": "eleventy",
+    "postcss": "postcss src/css/site.css -o _site/site.css",
+    "build": "npm-run-all clean eleventy postcss",
+    "dev": "npm-run-all --parallel 'eleventy -- --serve' 'postcss -- --watch'",
     "lint": "npm-run-all lint:*",
     "lint:stylelint": "stylelint ./src/css",
     "lint:eslint": "eslint ./src"
