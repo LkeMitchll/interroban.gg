@@ -9,8 +9,6 @@ module.exports = function(eleventy) {
   eleventy.addPlugin(pluginReadingTime);
 
   // Passthrough copying
-  eleventy.addPassthroughCopy("src/assets/fonts");
-  eleventy.addPassthroughCopy("src/assets/images");
   eleventy.addPassthroughCopy("src/components/*.js");
   eleventy.addWatchTarget("src/css/");
 

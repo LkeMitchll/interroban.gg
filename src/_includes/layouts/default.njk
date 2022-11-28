@@ -22,20 +22,15 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
     <meta content="{{ pageDescription }}" property="og:description" />
     <meta content="en" property="og:locale" />
 
-    <meta name="generator" content="{{ site.generator }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
 
-    <link rel="icon" href="/assets/images/favicon.ico">
-    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
 
-    {% for font in site.fonts %}
-    <link rel="preload" href="/assets/fonts/{{ font }}.woff2" as="font" type="font/woff2" crossorigin="" />
-    {% endfor %}
     <link rel="preconnect" href="https://ucarecdn.com" />
     <link rel="preconnect" href="https://dr.savee-cdn.com" />
     <link rel="preconnect" href="https://a.ltrbxd.com" />
 
-    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/site.css" />
   </head>
   <body>
     {% if page.url !== "/" %}

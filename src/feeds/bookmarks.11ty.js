@@ -28,8 +28,6 @@ class Posts {
       title: 'Luke Mitchell | Bookmarks',
       description:
         'I try and keep track of all the interesting things I find on my travels around the web. Because the internet never stops changing, as this list gets older things will begin to decay and disappear. So this isn’t an archive as such, it’s a log.',
-      icon: 'https://interroban.gg/assets/images/favicon.svg',
-      favicon: 'https://interroban.gg/assets/images/favicon.svg',
       authors: [{ name: 'Luke Mitchell', url: 'https://interroban.gg' }],
       language: 'en',
       home_page_url: 'https://interroban.gg/bookmarks',

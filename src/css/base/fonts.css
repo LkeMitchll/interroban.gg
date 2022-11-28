@@ -3,7 +3,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("/assets/fonts/Blanco-Regular.woff2") format("woff2");
+  src: url("https://ucarecdn.com/fa828698-ecd3-43a4-ae60-a147f48388e5/BlancoRegular.woff2") format("woff2");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url("/assets/fonts/Blanco-Italic.woff2") format("woff2");
+  src: url("https://ucarecdn.com/5627214f-7bee-4537-80ff-22d9c32599d2/BlancoItalic.woff2") format("woff2");
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("/assets/fonts/Blanco-Medium.woff2") format("woff2");
+  src: url("https://ucarecdn.com/2931494c-0c2f-4e7a-9823-21541da593fd/BlancoMedium.woff2") format("woff2");
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("/assets/fonts/pitch-web-semibold.woff2") format("woff2");
+  src: url("https://ucarecdn.com/30af9f84-8db7-46f4-accd-4f5897bf15d8/pitchwebsemibold.woff2") format("woff2");
 }
 
 @font-face {
@@ -35,5 +35,5 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("/assets/fonts/signifier-web-light.woff2") format("woff2");
+  src: url("https://ucarecdn.com/dcba6d86-2dc9-4ea8-855e-e23a652d3dfd/signifierweblight.woff2") format("woff2");
 }

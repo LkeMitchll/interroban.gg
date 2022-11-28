@@ -28,8 +28,6 @@ class Posts {
       title: 'Luke Mitchell | Product Designer',
       description:
         'Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.',
-      icon: 'https://interroban.gg/assets/images/favicon.svg',
-      favicon: 'https://interroban.gg/assets/images/favicon.svg',
       authors: [{ name: 'Luke Mitchell', url: 'https://interroban.gg' }],
       language: 'en',
       home_page_url: 'https://interroban.gg',
