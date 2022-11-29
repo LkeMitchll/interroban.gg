@@ -5,17 +5,15 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.15",
+    "@11ty/eleventy": "^2.0.0-canary.18",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@toycode/markdown-it-class": "^1.2.4",
-    "cssnano": "^5.0.6",
-    "eleventy-plugin-postcss": "^1.0.4",
     "eleventy-plugin-reading-time": "^0.0.1",
     "markdown-it": "^13.0.0",
     "markdown-it-external-links": "^0.0.6",
     "markdown-it-named-headings": "^1.1.0",
-    "postcss-import": "^14.0.0",
+    "sass": "^1.56.1",
     "simple-git": "^3.11.0",
     "xml-js": "^1.6.11"
   },
@@ -27,13 +25,6 @@
     "npm-run-all": "^4.1.5",
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0"
-  },
-  "postcss": {
-    "map": false,
-    "plugins": {
-      "postcss-import": {},
-      "cssnano": {}
-    }
   },
   "eslintConfig": {
     "env": {
@@ -52,9 +43,11 @@
     "extends": "stylelint-config-standard"
   },
   "scripts": {
-    "clean": "rm -rf _site",
-    "build": "eleventy",
-    "dev": "eleventy --incremental --serve",
+    "clean": "rm -rf _site .cache",
+    "build": "npm-run-all build:*",
+    "build:eleventy": "eleventy",
+    "build:css": "sass --style=compressed src/site.scss:_site/site.css",
+    "dev": "npm-run-all --parallel 'build:eleventy -- --serve --incremental' 'build:css -- --watch'",
     "lint": "npm-run-all lint:*",
     "lint:stylelint": "stylelint ./src/**/*.css",
     "lint:eslint": "eslint ./src/**/*.js"

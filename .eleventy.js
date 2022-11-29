@@ -3,10 +3,8 @@ require("dotenv").config();
 
 module.exports = function(eleventy) {
   // Eleventy plugins
-  const pluginPostCSS = require("eleventy-plugin-postcss");
   const pluginRSS = require("@11ty/eleventy-plugin-rss");
   const pluginReadingTime = require("eleventy-plugin-reading-time");
-  eleventy.addPlugin(pluginPostCSS);
   eleventy.addPlugin(pluginRSS);
   eleventy.addPlugin(pluginReadingTime);
 
