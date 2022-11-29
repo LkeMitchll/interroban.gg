@@ -18,8 +18,8 @@ theme: green
   <div class="gap-large">
     <h2>Updates</h2>
     {% set posts = collections.metapost | reverse %}
-    {% include "posts.njk" %}
-    {% include "commits.njk" %}
+    {% include "components/posts.njk" %}
+    {% include "components/commits.njk" %}
     <hr />
   </div>
   <section class="markdown | flow">

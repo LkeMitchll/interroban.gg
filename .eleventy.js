@@ -10,9 +10,6 @@ module.exports = function(eleventy) {
   eleventy.addPlugin(pluginRSS);
   eleventy.addPlugin(pluginReadingTime);
 
-  // Passthrough copying
-  eleventy.addPassthroughCopy("src/components/*.js");
-
   // Custom filters
   const date = require("./src/_filters/date");
   const stars = require("./src/_filters/stars");

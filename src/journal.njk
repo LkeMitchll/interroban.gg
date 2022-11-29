@@ -16,7 +16,7 @@ theme: green
 </header>
 
 {% set toc = ["Blog", "Listening", "Watching", "Scrapbook"] %}
-{% include "toc.njk" %}
+{% include "components/toc.njk" %}
 
 <article id="blog" class="gap-xx-large">
   <header class="gap-large">
@@ -39,7 +39,7 @@ theme: green
   </header>
 
   {% set posts = collections.post %}
-  {% include "posts.njk" %}
+  {% include "components/posts.njk" %}
 </article>
 
 <article id="listening" class="gap-xx-large">
