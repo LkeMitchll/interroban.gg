@@ -27,7 +27,7 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.post | reverse %}
-    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}" />
@@ -35,8 +35,7 @@
       <id>{{ absolutePostUrl }}</id>
       <summary>{{ post.data.description }}</summary>
       <content type="html">
-        {% set postContent %}{{ post._templateContent }}{% endset %}
-        {{ postContent | safe }}
+        {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
       </content>
     </entry>
   {%- endfor %}
