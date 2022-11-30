@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.horizontal > * {
+.horizontal > *:not(:last-child) {
   margin-right: var(--gap, 1rem);
 }
 
@@ -12,6 +12,12 @@
   }
 }
 
-.horizontal *:last-child {
-  margin-right: 0;
+@media (max-width: 600px) {
+  .horizontal[data-responsive] {
+    display: block;
+  }
+
+  .horizontal[data-responsive] hr {
+    opacity: 0;
+  }
 }

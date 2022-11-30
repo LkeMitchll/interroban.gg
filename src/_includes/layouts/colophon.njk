@@ -15,14 +15,14 @@ theme: green
 </header>
 
 <article class="flow | gap-xx-large">
-  <div class="gap-large">
+  <div class="flow | gap-large">
     <h2>Updates</h2>
     {% set posts = collections.metapost | reverse %}
     {% include "components/posts.njk" %}
     {% include "components/commits.njk" %}
     <hr />
   </div>
-  <section class="markdown | flow">
+  <section class="markdown">
     {{ content | safe }}
   </section>
 </article>
