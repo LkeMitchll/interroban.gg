@@ -4,9 +4,8 @@ title: Bookmarks
 theme: blue
 pagination:
   data: bookmarks
-  size: 1
-  alias: year
-permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% endif %}index.html"
+  size: 100
+  reverse: true
 ---
 
 <header class="flow | gap-x-large">
@@ -34,7 +33,7 @@ permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% e
 
 <article id="content" class="flow | gap-xx-large">
   <ul class="flow">
-    {% for bookmark in bookmarks[year] | reverse %}
+    {% for bookmark in pagination.items %}
     <li class="bookmark | tertiary-text">
       <p>
         N&ordm; {{ bookmark.number }}
@@ -51,16 +50,15 @@ permalink: "bookmarks/{% if pagination.items[0] !== 'current' %}/{{ year }}/{% e
     {% endfor %}
   </ul>
   <nav class="tertiary-text">
-    <p>More:</p>
+    <p class="gap">More bookmarks:</p>
     <ul class="horizontal | gap">
-      {% for page in pagination.pages | reverse %}
-        {% if page !== "current" %}
-          <li>
-            <a href="/bookmarks/{{ page }}#content">
-              {{ page }}
-            </a>
-          </li>
-        {% endif %}
+      {% for pageEntry in pagination.pages %}
+        <li>
+          <a href="{{ pagination.hrefs[loop.index0] }}#content"
+             {% if page.url == pagination.hrefs[loop.index0] %} aria-current="page"{% endif %}
+          >
+          Page {{ loop.index }}</a>
+        </li>
       {% endfor %}
     </ul>
     <a href="#content">Back to top</a>

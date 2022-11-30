@@ -42,7 +42,7 @@
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
-    "dev": "npm run build:eleventy -- --serve --incremental & npm run build:css -- --watch",
+    "dev": "npm run build:eleventy -- --serve --incremental --quiet & npm run build:css -- --watch",
     "build": "npm run build:eleventy && npm run build:css",
     "build:eleventy": "npx @11ty/eleventy",
     "build:css": "sass --style=compressed src/site.scss:_site/site.css",

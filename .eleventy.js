@@ -11,10 +11,8 @@ module.exports = function(eleventy) {
   // Custom filters
   const date = require("./src/_filters/date");
   const stars = require("./src/_filters/stars");
-  const depaginate = require("./src/_filters/dePaginated");
   eleventy.addFilter("formatDate", date);
   eleventy.addFilter("starRating", stars);
-  eleventy.addFilter("dePaginate", depaginate);
 
   // Custom shortcodes
   const responsiveImage = require("./src/_shortcodes/responsiveImage");

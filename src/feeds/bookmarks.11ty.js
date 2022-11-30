@@ -1,9 +1,6 @@
-const dePaginate = require('../_filters/dePaginated');
-
 class Posts {
   constructor() {
     this.filename = 'bookmarks.json';
-    this.combinedData = [];
   }
 
   data() {
@@ -13,9 +10,7 @@ class Posts {
   }
 
   render(data) {
-    this.combinedData = dePaginate(data.bookmarks);
-
-    const bookmarks = this.combinedData.map((bookmark) => ({
+    const bookmarks = data.bookmarks.reverse().map((bookmark) => ({
       id: bookmark.id,
       content_html: `<p>Link: <a href="${bookmark.url}">${bookmark.title}</a></p><ul><li>Added: ${bookmark.date}</li><li>Tag: ${bookmark.tag}</li></ul>`,
       url: bookmark.url,
@@ -31,7 +26,7 @@ class Posts {
       authors: [{ name: 'Luke Mitchell', url: 'https://interroban.gg' }],
       language: 'en',
       home_page_url: 'https://interroban.gg/bookmarks',
-      feed_url: 'https://interroban.gg/feeds/bookmarks.json',
+      feed_url: `https://interroban.gg/feeds/${this.filename}`,
       items: bookmarks,
     };
 
