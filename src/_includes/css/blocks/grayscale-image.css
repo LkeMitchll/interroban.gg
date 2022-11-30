@@ -10,5 +10,4 @@
 
 .grayscale-image img {
   mix-blend-mode: multiply;
-  filter: grayscale(1);
 }
