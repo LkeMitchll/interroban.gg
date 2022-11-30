@@ -10,7 +10,8 @@ class Posts {
   }
 
   render(data) {
-    const bookmarks = data.bookmarks.reverse().map((bookmark) => ({
+    const entries = [...data.bookmarks].reverse()
+    const bookmarks = entries.map((bookmark) => ({
       id: bookmark.id,
       content_html: `<p>Link: <a href="${bookmark.url}">${bookmark.title}</a></p><ul><li>Added: ${bookmark.date}</li><li>Tag: ${bookmark.tag}</li></ul>`,
       url: bookmark.url,

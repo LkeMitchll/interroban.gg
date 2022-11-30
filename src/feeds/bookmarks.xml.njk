@@ -26,7 +26,7 @@
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {% for bookmark in bookmarks %}
+  {% for bookmark in bookmarks | reverse %}
     <entry>
       <title>Bookmark: {{ bookmark.title }}</title>
       <link href="{{ bookmark.url }}" />
