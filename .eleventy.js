@@ -30,12 +30,10 @@ module.exports = function(eleventy) {
 
   // Custom markdown renderer
   const namedHeadingsPlugin = require("markdown-it-named-headings");
-  const classesPlugin = require("@toycode/markdown-it-class");
   const externalLinksPlugin = require("markdown-it-external-links");
   eleventy.amendLibrary("md", (mdLib) =>
     mdLib
       .use(namedHeadingsPlugin)
-      .use(classesPlugin, { h3: "subtitle" })
       .use(externalLinksPlugin, {
         externalClassName: null,
         externalTarget: "_blank",

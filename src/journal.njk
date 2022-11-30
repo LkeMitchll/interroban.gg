@@ -54,7 +54,7 @@ theme: green
   <section class="columns" data-cols="2">
     {% for week in [music.lastWeek, music.thisWeek] %}
     <div>
-      <h3 class="subtitle">{{ week.title }}</h3>
+      <h3>{{ week.title }}</h3>
       <ul class="tertiary-text gap-large">
         {% for stat in [week.tracks, week.albums] %}
         <li class="horizontal | border gap">
@@ -70,7 +70,7 @@ theme: green
   </section>
   <section class="columns" data-cols="2">
     <div>
-      <h3 class="subtitle">Top albums (3 months)</h3>
+      <h3>Top albums (3 months)</h3>
       <ol>
         {% for album in music.topAlbums %}
         <li class="border">
@@ -83,7 +83,7 @@ theme: green
       </ol>
     </div>
     <div>
-      <h3 class="subtitle">Top artists (3 months)</h3>
+      <h3>Top artists (3 months)</h3>
       <ol>
         {% for artist in music.topArtists %}
         <li class="border">

@@ -39,7 +39,7 @@ theme: yellow
 <article class="columns | gap-xx-large">
   <div>
     {% set experience = cv.experience %}
-    <h3 id="experience" class="subtitle">Experience</h3>
+    <h3 id="experience">Experience</h3>
     <ul class="flow">
       {% for job in experience %}
       <li>
@@ -51,7 +51,7 @@ theme: yellow
     </ul>
   </div>
   <div>
-    <h3 id="clients" class="subtitle">Clients</h3>
+    <h3 id="clients">Clients</h3>
     <ul>
       {% for client in cv.clients %}
       <li>{{ client }}</li>
@@ -59,7 +59,7 @@ theme: yellow
     </ul>
   </div>
   <div>
-    <h3 id="skills" class="subtitle">Skills</h3>
+    <h3 id="skills">Skills</h3>
     <ul>
       {% for skill in cv.skills %}
       <li>{{ skill }}</li>
@@ -67,7 +67,7 @@ theme: yellow
     </ul>
   </div>
   <div>
-    <h3 id="recognition" class="subtitle">Recognition</h3>
+    <h3 id="recognition">Recognition</h3>
     <ul class="flow">
       {% set awards = cv.recognition %}
       {% for award in awards %}

@@ -8,7 +8,6 @@
     "@11ty/eleventy": "^2.0.0-canary.18",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
-    "@toycode/markdown-it-class": "^1.2.4",
     "dotenv": "^16.0.1",
     "eleventy-plugin-reading-time": "^0.0.1",
     "markdown-it": "^13.0.0",

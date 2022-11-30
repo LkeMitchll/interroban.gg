@@ -1,6 +1,6 @@
 <footer class="columns | gap-xx-large">
   <div>
-    <p class="subtitle | gap">General</p>
+    <h3 class="gap">General</h3>
     <ul class="tertiary-text">
       {% for page in navigation.routes[0].pages %}
       <li class="gap">
@@ -13,7 +13,7 @@
   {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
   {% for category in footerCategories %}
   <div>
-    <p class="subtitle | gap">{{ category.name }}</p>
+    <h3 class="gap">{{ category.name }}</h3>
     <ul class="tertiary-text">
       {% for page in category.pages %}
       <li class="gap">
