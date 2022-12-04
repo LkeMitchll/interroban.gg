@@ -1,5 +1,6 @@
 html {
-  font-size: 12px;
+  /* @link https://utopia.fyi/type/calculator?c=320,12,1.2,2000,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  font-size: clamp(0.9rem, calc(0.8rem + 0.48vw), 1.41rem);
 }
 
 body {
@@ -9,8 +10,8 @@ body {
   color: var(--color-primary);
   font-family: var(--text-body);
   font-feature-settings: "case" on;
-  margin: var(--space-large) 0 0 0;
-  padding: 0 var(--space-small);
+  margin: var(--space-large) auto 0 auto;
+  padding: 0 5vw;
   text-rendering: optimizelegibility;
   line-height: 1.5;
 }
@@ -26,39 +27,14 @@ figure {
   margin: 0;
 }
 
-@media screen and (min-width: 400px) {
-  html {
-    font-size: 16px;
-  }
-
-  body {
-    padding: 0 var(--space-default);
-  }
-}
-
 @media screen and (min-width: 600px) {
-  html {
-    font-size: 18px;
-  }
-
   body {
-    padding: 0 5vw;
     margin-top: var(--space-xx-large);
   }
 }
 
 @media screen and (min-width: 1600px) {
-  html {
-    font-size: 1.15vw;
-  }
-
   body {
-    padding: 0 15vw;
-  }
-}
-
-@media screen and (min-width: 2000px) {
-  html {
-    font-size: 1vw;
+    max-width: 70vw;
   }
 }
