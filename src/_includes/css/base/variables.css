@@ -1,6 +1,8 @@
 :root {
-  --color-primary: hsl(115deg 13% 11% / 80%);
-  --color-bg: hsl(84deg 100% 99% / 100%);
+  --pink: #ffc8d5;
+  --purple: #4a4356;
+  --color-primary: var(--purple);
+  --color-bg: var(--pink);
   --space-tiny: 0.25rem;
   --space-small: 0.5rem;
   --space-default: 1rem;
@@ -10,7 +12,7 @@
   --space-xx-large: 6rem;
   --text-size-default: 1rem;
   --text-size-large: 1.2rem;
-  --text-size-small: 0.75rem;
+  --text-size-small: 0.7rem;
   --text-weight-normal: 400;
   --text-weight-bold: 600;
   --text-display: "Signifier", "Georgia", "Times New Roman", "Times", serif;
@@ -26,55 +28,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: hsl(36deg 37% 92% / 100%);
-    --color-bg: hsl(173deg 20% 12% / 100%);
-  }
-}
-
-.green {
-  --color-primary: #455643;
-  --color-bg: #e7ffc8;
-}
-
-@media (prefers-color-scheme: dark) {
-  .green {
-    --color-primary: #e7ffc8;
-    --color-bg: #455643;
-  }
-}
-
-.pink {
-  --color-primary: #4a4356;
-  --color-bg: #ffc8d5;
-}
-
-@media (prefers-color-scheme: dark) {
-  .pink {
-    --color-primary: #ffc8d5;
-    --color-bg: #4a4356;
-  }
-}
-
-.yellow {
-  --color-primary: #564343;
-  --color-bg: #fff3c8;
-}
-
-@media (prefers-color-scheme: dark) {
-  .yellow {
-    --color-primary: #fff3c8;
-    --color-bg: #564343;
-  }
-}
-
-.blue {
-  --color-primary: #434d56;
-  --color-bg: #c8ffee;
-}
-
-@media (prefers-color-scheme: dark) {
-  .blue {
-    --color-primary: #c8ffee;
-    --color-bg: #434d56;
+    --color-primary: var(--pink);
+    --color-bg: var(--purple);
   }
 }
