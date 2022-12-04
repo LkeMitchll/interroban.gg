@@ -14,16 +14,9 @@ theme: yellow
   </p>
 </header>
 
-<article class="columns | gap-x-large">
-  {% image "24bf2f60-1f04-47c5-b15a-5ebf461fa8c1", "A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise lamp, and my IKEA Bekant sit-stand desk." %}
-  <p class="measure | push-down leading-crushed">
-    <small>
-      <strong class="tertiary-text">Image </strong>
-      A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise
-      lamp, and my IKEA Bekant sit-stand desk.
-    </small>
-  </p>
-</article>
+{% set image_ID = "24bf2f60-1f04-47c5-b15a-5ebf461fa8c1" %}
+{% set image_alt = "A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise lamp, and my IKEA Bekant sit-stand desk." %}
+{% include "components/image.njk" %}
 
 <article class="markdown | gap-xx-large">
   {{ content | safe }}

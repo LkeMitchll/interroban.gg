@@ -31,13 +31,6 @@ theme: pink
   </ol>
 </nav>
 
-<figure class="columns flow | gap-xx-large">
-  {% image "540ffb1d-051c-41d6-80bb-8a65af13a6cd", "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
-  <figcaption class="measure | push-down leading-crushed">
-    <small>
-      <strong class="tertiary-text">Image </strong>
-      Presenting mini storyboards during a Product Design workshop. Courtesy of
-      <a href="https://www.francisaugusto.co.uk" target="_blank">Francis Augusto</a>.
-    </small>
-  </figcaption>
-</figure>
+{% set image_ID = "540ffb1d-051c-41d6-80bb-8a65af13a6cd" %}
+{% set image_alt = "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
+{% include "components/image.njk" %}

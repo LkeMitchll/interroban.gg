@@ -19,7 +19,9 @@ Design, it took me a while to work out what it was.
   Former tourist hotspot, otherwise a normal seaside town in the UK.
 {% endsidenote %}
 
-{% image "b46d0c2e-45a5-48d8-ba41-7ad421ec6189", "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, Public domain, via Wikimedia Commons" %}
+{% set image_ID = "b46d0c2e-45a5-48d8-ba41-7ad421ec6189" %}
+{% set image_alt = "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, Public domain, via Wikimedia Commons" %}
+{% include "components/image.njk" %}
 
 While aimlessly googling “What do graphic designers do” I found a small forum
 of enthusiasts (the name of which I never remembered, if it still exists) who
