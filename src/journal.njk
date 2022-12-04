@@ -138,7 +138,7 @@ theme: green
     </p>
   </header>
 
-  <div class="gallery | masonry">
+  <div class="masonry">
     {% for item in scrapbook %}
     <figure>
       <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}">
