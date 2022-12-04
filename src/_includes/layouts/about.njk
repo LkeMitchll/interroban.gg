@@ -29,51 +29,7 @@ theme: yellow
   </p>
 </article>
 
-<article class="columns | gap-xx-large">
-  <div>
-    {% set experience = cv.experience %}
-    <h3 id="experience">Experience</h3>
-    <ul class="flow">
-      {% for job in experience %}
-      <li>
-        <p class="tertiary-text">{{ job.period }}</p>
-        <p>{{ job.title }}</p>
-        <p><em>{{ job.employer }}</em></p>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div>
-    <h3 id="clients">Clients</h3>
-    <ul>
-      {% for client in cv.clients %}
-      <li>{{ client }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div>
-    <h3 id="skills">Skills</h3>
-    <ul>
-      {% for skill in cv.skills %}
-      <li>{{ skill }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div>
-    <h3 id="recognition">Recognition</h3>
-    <ul class="flow">
-      {% set awards = cv.recognition %}
-      {% for award in awards %}
-      <li>
-        <a href="{{ award.url }}" target="_blank" rel="noopener noreferrer">
-          {{ award.source }}
-        </a>
-        <p>{{ award.date }} </p>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</article>
+{% include "components/experience.njk" %}
 
 <article class="markdown | gap-xx-large" id="about">
   {{ content | safe }}
