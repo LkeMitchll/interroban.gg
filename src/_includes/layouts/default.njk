@@ -34,7 +34,9 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
   </head>
   <body>
     {% if page.url !== "/" %}
-      <a class="tertiary-text | inline-block gap-large" href="/">&larr; Back</a>
+      <nav class="gap-large">
+        <a class="tertiary-text" href="/">&larr; Back</a>
+      </nav>
     {% endif %}
     <main>
       {{ content | safe }}

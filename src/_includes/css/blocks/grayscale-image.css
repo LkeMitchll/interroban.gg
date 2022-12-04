@@ -11,3 +11,9 @@
 .grayscale-image img {
   mix-blend-mode: multiply;
 }
+
+@media (min-width: 700px) {
+  .grayscale-image[data-image-size="large"] {
+    grid-column: 1 / 4;
+  }
+}

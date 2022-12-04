@@ -31,7 +31,7 @@ pagination:
 </header>
 
 <article id="content" class="flow | gap-xx-large">
-  <ul class="flow">
+  <ul role="list" class="flow">
     {% for bookmark in pagination.items %}
     <li class="horizontal | border tertiary-text" data-responsive>
       <p>
@@ -50,7 +50,7 @@ pagination:
   </ul>
   <nav class="tertiary-text">
     <p class="gap">More bookmarks:</p>
-    <ul class="horizontal | gap">
+    <ul role="list" class="horizontal | gap">
       {% for pageEntry in pagination.pages %}
         <li>
           <a href="{{ pagination.hrefs[loop.index0] }}#content"

@@ -27,6 +27,12 @@ figure {
   margin: 0;
 }
 
+hr {
+  border: 0;
+  margin: auto 0 0;
+  border-bottom: var(--border-default);
+}
+
 @media screen and (min-width: 600px) {
   body {
     margin-top: var(--space-xx-large);

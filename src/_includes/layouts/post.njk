@@ -2,11 +2,24 @@
 layout: layouts/default
 ---
 
-{% from "components/stats.njk" import stats %}
-
-<header class="flow | gap-x-large">
-  <h1 class="measure | gap-large">{{ title }}</h1>
-  {{ stats(updatedDate = date, readableContent = content ) }}
+<header class="flow | measure gap-x-large">
+  <h1 class="gap-large">{{ title }}</h1>
+  <ul role="list" class="tertiary-text">
+    {% if date %}
+    <li class="border">
+      <p class="horizontal">
+        Updated <span class="push-right">{{ date | formatDate }}</span>
+      </p>
+    </li>
+    {% endif %}
+    {% if content %}
+    <li class="border">
+      <p class="horizontal">
+        Reading time <span class="push-right">{{ content | readingTime }}</span>
+      </p>
+    </li>
+    {% endif %}
+  </ul>
   {% include "components/commits.njk" %}
 </header>
 

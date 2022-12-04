@@ -32,7 +32,7 @@ h3 {
 h3 {
   font-size: var(--text-size-default);
   font-family: var(--text-body);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 small,
@@ -53,8 +53,8 @@ pre {
   color: var(--color-bg);
 }
 
-ul,
-ol {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -69,10 +69,4 @@ blockquote {
   margin: 0;
   padding-left: var(--space-default);
   border-left: var(--border-default);
-}
-
-hr {
-  border: 0;
-  margin: auto 0 0;
-  border-bottom: var(--border-default);
 }

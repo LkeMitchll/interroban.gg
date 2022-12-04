@@ -1,7 +1,7 @@
 <footer class="columns | gap-xx-large">
   <div>
     <h3 class="gap">General</h3>
-    <ul class="tertiary-text">
+    <ul role="list" class="tertiary-text">
       {% for page in navigation.routes[0].pages %}
       <li class="gap">
         <a href="{{ page.url }}">{{ page.name }}</a>
@@ -14,7 +14,7 @@
   {% for category in footerCategories %}
   <div>
     <h3 class="gap">{{ category.name }}</h3>
-    <ul class="tertiary-text">
+    <ul role="list" class="tertiary-text">
       {% for page in category.pages %}
       <li class="gap">
         <a href="{{ page.url }}">{{ page.name }}</a>

@@ -1,6 +1,6 @@
 <details class="tertiary-text | gap-x-large">
   <summary class="gap">Recent changes</summary>
-  <ol class="flow gap">
+  <ol role="list" class="flow gap">
     {% for commit in commits %}
     <li>
       <p>#<code>{{ commit.hash }}</code></p>

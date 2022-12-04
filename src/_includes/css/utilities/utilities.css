@@ -18,10 +18,6 @@
   .measure {
     max-width: var(--text-measure);
   }
-
-  .measure.tertiary-text {
-    max-width: 65ch;
-  }
 }
 
 /* u: Gap */
@@ -39,21 +35,11 @@
 }
 
 .gap-x-large {
-  margin-bottom: var(--space-large);
-}
-
-.gap-xx-large {
   margin-bottom: var(--space-x-large);
 }
 
-@media (min-width: 800px) {
-  .gap-x-large {
-    margin-bottom: var(--space-x-large);
-  }
-
-  .gap-xx-large {
-    margin-bottom: var(--space-xx-large);
-  }
+.gap-xx-large {
+  margin-bottom: var(--space-xx-large);
 }
 
 /* u: Leading */
@@ -79,10 +65,4 @@
 
 .border {
   border-bottom: var(--border-default);
-}
-
-/* u: Display */
-
-.inline-block {
-  display: inline-block;
 }

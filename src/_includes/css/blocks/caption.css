@@ -2,7 +2,7 @@
   content: "Above";
   font-variant: small-caps;
   text-transform: lowercase;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 @media (min-width: 700px) {

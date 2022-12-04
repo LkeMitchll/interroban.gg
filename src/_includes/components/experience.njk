@@ -2,7 +2,7 @@
   <div>
     {% set experience = cv.experience %}
     <h3 id="experience">Experience</h3>
-    <ul class="flow">
+    <ul role="list" class="flow">
       {% for job in experience %}
       <li>
         <p class="tertiary-text">{{ job.period }}</p>
@@ -14,7 +14,7 @@
   </div>
   <div>
     <h3 id="clients">Clients</h3>
-    <ul>
+    <ul role="list">
       {% for client in cv.clients %}
       <li>{{ client }}</li>
       {% endfor %}
@@ -22,7 +22,7 @@
   </div>
   <div>
     <h3 id="skills">Skills</h3>
-    <ul>
+    <ul role="list">
       {% for skill in cv.skills %}
       <li>{{ skill }}</li>
       {% endfor %}
@@ -30,7 +30,7 @@
   </div>
   <div>
     <h3 id="recognition">Recognition</h3>
-    <ul class="flow">
+    <ul role="list" class="flow">
       {% set awards = cv.recognition %}
       {% for award in awards %}
       <li>

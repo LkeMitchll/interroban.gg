@@ -23,7 +23,7 @@ title: Journal
     <p class="measure | gap-large">
       I try my best to write down a few thoughts each year, but I won't hold myself too accountable.
     </p>
-    <ul class="horizontal | tertiary-text">
+    <ul role="list" class="horizontal | tertiary-text">
       <li>
         <a href="/rss.xml" target="_blank" referrer="noreferrer">
           RSS Feed
@@ -54,7 +54,7 @@ title: Journal
     {% for week in [music.lastWeek, music.thisWeek] %}
     <div>
       <h3>{{ week.title }}</h3>
-      <ul class="tertiary-text gap-large">
+      <ul role="list" class="tertiary-text gap-large">
         {% for stat in [week.tracks, week.albums] %}
         <li class="horizontal | border gap">
           <p>{{ stat.title }}</p>
@@ -70,7 +70,7 @@ title: Journal
   <section class="columns" data-cols="2">
     <div>
       <h3>Top albums (3 months)</h3>
-      <ol>
+      <ol role="list">
         {% for album in music.topAlbums %}
         <li class="border">
           <a href="{{ album.url }}" target="_blank" rel="noreferrer noopener">
@@ -83,7 +83,7 @@ title: Journal
     </div>
     <div>
       <h3>Top artists (3 months)</h3>
-      <ol>
+      <ol role="list">
         {% for artist in music.topArtists %}
         <li class="border">
           <a href="{{ artist.url }}" target="_blank" rel="noreferrer noopener">
@@ -106,7 +106,7 @@ title: Journal
     </p>
   </header>
 
-  <ol class="movies | columns">
+  <ol role="list" class="movies | columns">
     {% for movie in movies %}
     <li>
       <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
