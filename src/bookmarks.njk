@@ -8,14 +8,14 @@ pagination:
 ---
 
 <header class="flow | gap-x-large">
-  <h1>Bookmarks</h1>
-  <p class="measure">
+  {% include "components/nav.njk" %}
+  <p class="measure gap-large">
     I try and keep track of all the interesting things I
     find on my travels around the web. Because the internet never stops changing,
     as this list gets older things will begin to decay and disappear. So this
     isn’t an archive as such, it’s a log.
   </p>
-  <ul class="tertiary-text">
+  <ul role="list" class="tertiary-text">
     <li>
       <a href="/feeds/bookmarks.xml" target="_blank" referrer="noreferrer">
         RSS Feed

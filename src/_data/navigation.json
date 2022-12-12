@@ -5,17 +5,17 @@
       "pages": [
         {
           "name": "About",
-          "url": "/about",
+          "url": "/about/",
           "description": "Read more about me."
         },
         {
           "name": "Journal",
-          "url": "/journal",
+          "url": "/journal/",
           "description": "A blog, audio-visual tracker."
         },
         {
           "name": "Bookmarks",
-          "url": "/bookmarks",
+          "url": "/bookmarks/",
           "description": "A list of interesting links."
         }
       ]

@@ -33,11 +33,6 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
     <link rel="stylesheet" href="/site.css" />
   </head>
   <body>
-    {% if page.url !== "/" %}
-      <nav class="gap-large">
-        <a class="tertiary-text" href="/">&larr; Back</a>
-      </nav>
-    {% endif %}
     <main>
       {{ content | safe }}
     </main>

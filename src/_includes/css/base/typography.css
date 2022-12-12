@@ -13,6 +13,13 @@ a {
   color: var(--color-primary);
 }
 
+a[role="link"],
+a[role="link"]:hover {
+  padding: 0;
+  border: 0;
+  color: var(--color-primary);
+}
+
 a:hover,
 a[aria-current] {
   background-color: var(--color-primary);
