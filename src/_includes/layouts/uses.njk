@@ -18,6 +18,17 @@ title: Uses
 sit-stand desk." %}
 {% include "components/image.njk" %}
 
+<article>
+  <ul>
+    {% for item in uses %}
+    <li>
+      <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>: {{ item.description }}
+      {% for tag in item.tags %}<span>{{ tag }}</span>{% endfor %}
+    </li>
+    {% endfor %}
+  </ul>
+</article>
+
 <article class="markdown | gap-xx-large">
   {{ content | safe }}
 </article>
