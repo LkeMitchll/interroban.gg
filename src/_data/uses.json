@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Safari",
+    "url": "https://www.apple.com/uk/safari/",
+    "description": "My primary web browser on all devices.",
+    "tags": [
+      "software",
+      "general"
+    ]
+  },
+  {
+    "title": "Mail",
+    "url": "https://support.apple.com/en-gb/guide/mail/welcome/mac",
+    "description": "is how I read email, although I prefer not to.",
+    "tags": [
+      "software",
+      "general"
+    ]
+  }
+]
