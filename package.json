@@ -34,6 +34,9 @@
     ],
     "parserOptions": {
       "ecmaVersion": "latest"
+    },
+    "rules": {
+     "global-require": 0
     }
   },
   "stylelint": {
@@ -47,6 +50,6 @@
     "build:css": "sass --style=compressed src/site.scss:_site/site.css",
     "lint": "npm run lint:stylelint && npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",
-    "lint:eslint": "eslint ./src/**/*.js"
+    "lint:eslint": "eslint ./**/*.js"
   }
 }
