@@ -20,7 +20,7 @@
     "eslint": "^8.23.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "stylelint": "^14.9.1",
-    "stylelint-config-standard": "^26.0.0"
+    "stylelint-config-standard": "^29.0.0"
   },
   "eslintConfig": {
     "env": {
@@ -35,7 +35,7 @@
       "ecmaVersion": "latest"
     },
     "rules": {
-     "global-require": 0
+      "global-require": 0
     }
   },
   "stylelint": {
