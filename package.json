@@ -43,11 +43,11 @@
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
-    "dev": "npm run build:eleventy -- --serve --incremental --quiet & npm run build:css -- --watch",
+    "start": "npm run build:eleventy -- --serve --incremental --quiet & npm run build:css -- --watch",
     "build": "npm run build:eleventy && npm run build:css",
     "build:eleventy": "npx @11ty/eleventy",
     "build:css": "sass --style=compressed src/site.scss:_site/site.css",
-    "lint": "npm run lint:stylelint && npm run lint:eslint",
+    "test": "npm run lint:stylelint & npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",
     "lint:eslint": "eslint ./**/*.js"
   }

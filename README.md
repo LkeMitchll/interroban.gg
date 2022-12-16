@@ -1,7 +1,7 @@
 # interroban.gg
 
-Personal site, blog, and portfolio of Luke Mitchell, a design director, product
-designer, and UI developer.
+Personal site of Luke Mitchell, a design director, product designer, and UI
+developer.
 
 This site pulls data from:
 
@@ -38,8 +38,7 @@ npm run build
 To run a development environment:
 
 ```bash
-npm run dev
+npm start
 ```
 
-Open [http://localhost:8080](http://localhost:8080) with your browser to see
-the result.
+Open the address provided with your browser to see the result.
