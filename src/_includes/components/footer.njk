@@ -17,7 +17,7 @@
     <ul role="list" class="tertiary-text">
       {% for page in category.pages %}
       <li class="gap">
-        <a href="{{ page.url }}">{{ page.name }}</a>
+        <a {% if category.name === "Contact"%}rel="me"{% endif %} href="{{ page.url }}">{{ page.name }}</a>
       </li>
       {% endfor %}
     </ul>
