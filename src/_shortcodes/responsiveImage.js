@@ -6,7 +6,7 @@ module.exports = async function responsiveImage(
   size = 'large',
 ) {
   const imgUrl = `https://ucarecdn.com/${imgUUID}`;
-  const imgMeta = await fetch(`${imgUrl}/-/json/`, { type: 'json' }).then(
+  const imgMeta = await fetch(`${imgUrl}/-/json/`, { duration: '1h', type: 'json' }).then(
     (response) => response,
   );
   const quality = 'smart';
