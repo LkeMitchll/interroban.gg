@@ -1,4 +1,4 @@
-const Fetch = require('@11ty/eleventy-fetch');
+const BookmarksAPI = require('../_providers/bookmarks');
 
 function numberedBookmarks(data) {
   data.forEach((entry, i) => {
@@ -9,22 +9,10 @@ function numberedBookmarks(data) {
 }
 
 module.exports = async function bookmarks() {
-  const credentials = Buffer.from(
-    `${process.env.BOOKMARKS_USER}:${process.env.BOOKMARKS_PASSWORD}`,
-  ).toString('base64');
+  const api = new BookmarksAPI();
 
-  const data = await Fetch(
-    `${process.env.BOOKMARKS_URL}/bookmarks?filter=published`,
-    {
-      duration: '1d',
-      type: 'json',
-      fetchOptions: {
-        headers: {
-          Authorization: `Basic ${credentials}`,
-        },
-      },
-    },
-  ).then((json) => numberedBookmarks(json));
+  const data = await api.fetchPublishedBookmarks()
+    .then((json) => numberedBookmarks(json));
 
   return data;
 };
