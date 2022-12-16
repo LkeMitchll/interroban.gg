@@ -1,7 +1,7 @@
-const Cache = require('@11ty/eleventy-fetch');
+const Fetch = require('@11ty/eleventy-fetch');
 
 module.exports = async function carbon() {
-  const result = Cache(
+  const result = Fetch(
     'https://api.websitecarbon.com/b?url=https%3A%2F%2Finterroban.gg',
     {
       duration: '1m',

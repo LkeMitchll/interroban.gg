@@ -1,4 +1,4 @@
-const Cache = require('@11ty/eleventy-fetch');
+const Fetch = require('@11ty/eleventy-fetch');
 
 module.exports = class LastFMAPI {
   constructor() {
@@ -20,7 +20,7 @@ module.exports = class LastFMAPI {
       .map(([key, val]) => `${key}=${val}`)
       .join('&');
 
-    return Cache(`${this.apiEndpoint}?${params}`, {
+    return Fetch(`${this.apiEndpoint}?${params}`, {
       duration: '1h',
       type: 'json',
     });
@@ -39,7 +39,7 @@ module.exports = class LastFMAPI {
       .map(([key, val]) => `${key}=${val}`)
       .join('&');
 
-    return Cache(`${this.apiEndpoint}?${params}`, {
+    return Fetch(`${this.apiEndpoint}?${params}`, {
       duration: '1h',
       type: 'json',
     });
@@ -58,7 +58,7 @@ module.exports = class LastFMAPI {
       .map(([key, val]) => `${key}=${val}`)
       .join('&');
 
-    return Cache(`${this.apiEndpoint}?${params}`, {
+    return Fetch(`${this.apiEndpoint}?${params}`, {
       duration: '1h',
       type: 'json',
     });
@@ -77,7 +77,7 @@ module.exports = class LastFMAPI {
       .map(([key, val]) => `${key}=${val}`)
       .join('&');
 
-    return Cache(`${this.apiEndpoint}?${params}`, {
+    return Fetch(`${this.apiEndpoint}?${params}`, {
       duration: '1h',
       type: 'json',
     });

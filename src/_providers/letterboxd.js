@@ -1,5 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
-const Cache = require('@11ty/eleventy-fetch');
+const Fetch = require('@11ty/eleventy-fetch');
 const convert = require('xml-js');
 
 module.exports = class LetterboxdAPI {
@@ -8,7 +8,7 @@ module.exports = class LetterboxdAPI {
   }
 
   async getMovies() {
-    const feed = await Cache(this.apiEndpoint, {
+    const feed = await Fetch(this.apiEndpoint, {
       duration: '1d',
       type: 'text',
     }).then((xml) => {

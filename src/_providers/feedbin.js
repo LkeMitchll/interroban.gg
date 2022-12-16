@@ -1,4 +1,4 @@
-const Cache = require('@11ty/eleventy-fetch');
+const Fetch = require('@11ty/eleventy-fetch');
 
 module.exports = class FeedbinAPI {
   constructor() {
@@ -10,7 +10,7 @@ module.exports = class FeedbinAPI {
   }
 
   async getSubscriptions() {
-    return Cache(this.subscriptionsEndpoint, {
+    return Fetch(this.subscriptionsEndpoint, {
       duration: '1d',
       type: 'json',
       fetchOptions: {

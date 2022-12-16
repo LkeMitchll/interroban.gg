@@ -1,4 +1,4 @@
-const Cache = require('@11ty/eleventy-fetch');
+const Fetch = require('@11ty/eleventy-fetch');
 
 function numberedBookmarks(data) {
   data.forEach((entry, i) => {
@@ -13,7 +13,7 @@ module.exports = async function bookmarks() {
     `${process.env.BOOKMARKS_USER}:${process.env.BOOKMARKS_PASSWORD}`,
   ).toString('base64');
 
-  const data = await Cache(
+  const data = await Fetch(
     `${process.env.BOOKMARKS_URL}/bookmarks?filter=published`,
     {
       duration: '1d',

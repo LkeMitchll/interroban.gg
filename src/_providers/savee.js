@@ -1,4 +1,4 @@
-const Cache = require('@11ty/eleventy-fetch');
+const Fetch = require('@11ty/eleventy-fetch');
 
 module.exports = class SaveeAPI {
   constructor() {
@@ -6,7 +6,7 @@ module.exports = class SaveeAPI {
   }
 
   async getItems() {
-    return Cache(this.url, {
+    return Fetch(this.url, {
       duration: '1d',
       type: 'json',
       fetchOptions: {
