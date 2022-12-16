@@ -205,5 +205,122 @@
       "software",
       "development"
     ]
+  },
+  {
+    "title": "Mac mini",
+    "url": "https://support.apple.com/kb/SP776?locale=en_GB",
+    "description": "Is my primary work device. It is configured with the Apple M1, 16GB RAM and 1TB SSD.",
+    "tags": [
+      "hardware",
+      "general"
+    ]
+  },
+  {
+    "title": "iPhone 12 Pro Max",
+    "url": "https://www.apple.com/iphone-12-pro/",
+    "description": "is my primary personal device.",
+    "tags": [
+      "hardware",
+      "general"
+    ]
+  },
+  {
+    "title": "IKEA Bekant Desk",
+    "url": "https://www.ikea.com/gb/en/p/bekant-desk-sit-stand-oak-veneer-white-s09061188/",
+    "description": "This sit-stand desk is a perfect mix of aesthetic and functionality. It's done wonders for my posture and energy.",
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
+  },
+  {
+    "title": "Herman Miller Aeron Chair",
+    "url": "https://www.hermanmiller.com/en_gb/products/seating/office-chairs/aeron-chairs/",
+    "description": " Is the best ergonomic chair ever. They are very expensive, but this second-hand 15+ year old example is still solid as a rock.",
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
+  },
+  {
+    "title": "Dell U2718Q Monitor",
+    "url": "https://www.amazon.co.uk/gp/product/B07439KLK5",
+    "description": "This is a 4k, 27inch monitor with pretty decent color and pixel density, for the price.",
+    "tags": [
+      "hardware",
+      "general"
+    ]
+  },
+  {
+    "title": "Logitech Streamcam",
+    "url": "https://www.logitech.com/en-gb/product/streamcam",
+    "description": "Is a decent 1080p@60Hz webcam, with a USB-C connector. Perfect for Zoom calls etc.",
+    "tags": [
+      "hardware",
+      "general"
+    ]
+  },
+  {
+    "title": "RAMA Kara Keyboard",
+    "url": "https://ramaworks.store/products/kara",
+    "description": "A very high-quality, modular, mechanical keyboard. I bought it as part of the first group-buy in 2020.",
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
+  },
+  {
+    "title": "Apple Magic Mouse",
+    "url": "https://www.apple.com/shop/product/MMMQ3AM/A/magic-mouse-black-multi-touch-surface",
+    "description": "As a mouse, a lot of people hate it, I don't.",
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
+  },
+  {
+    "title": "Sony WH-1000XM3 Headphones",
+    "url": "https://www.amazon.co.uk/Sony-WH-1000XM3-Wireless-Cancelling-Headphones-Black/dp/B07GDR2LYK",
+    "description": "For listening to music & video calls. The noise cancelling is great.",
+    "tags": [
+      "hardware",
+      "audio"
+    ]
+  },
+  {
+    "title": "Shure MV7 Microphone",
+    "url": "https://www.shure.com/en-GB/products/microphones/mv7",
+    "description": "Total overkill? Yes. Excellent sound quality? Yes. Makes me look like a podcaster? Absolutely.",
+    "tags": [
+      "hardware",
+      "audio"
+    ]
+  },
+  {
+    "title": "Blue Compass Arm",
+    "url": "https://www.bluemic.com/en-gb/products/compass/",
+    "description": "To mount the microphone.",
+    "tags": [
+      "hardware",
+      "audio"
+    ]
+  },
+  {
+    "title": "Leuchtturm1917 Notebook",
+    "url": "https://www.leuchtturm1917.co.uk/notebook-medium-a5-softcover-123-numbered-pages",
+    "description": "For taking notes and task management (A5, softcover, dotted, black).",
+    "tags": [
+      "hardware",
+      "general"
+    ]
+  },
+  {
+    "title": "Wacom Intuos M",
+    "url": "https://estore.wacom.com/en-GB/wacom-intuos-m-bluetooth-black-n-ctl-6100wlk-n",
+    "description": "As a drawing tablet for illustration.",
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
   }
 ]

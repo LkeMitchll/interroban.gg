@@ -17,13 +17,15 @@ title: Uses
 {% set image_alt = "A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise lamp, and my IKEA Bekant sit-stand desk." %}
 {% include "components/image.njk" %}
 
-<article>
-  <ul>
-    {% for item in uses %}
-    <li>
-      <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>: {{ item.description }}
-      {% for tag in item.tags %}<span>{{ tag }}</span>{% endfor %}
-    </li>
-    {% endfor %}
-  </ul>
+<article class="flow | measure">
+  {% for tags, items in uses | groupby("tags") %}
+    <h2>{{ tags | replace(",", ": ") | title }}</h2>
+    <ul>
+      {% for item in items %}
+        <li>
+          <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>: {{ item.description }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 </article>
