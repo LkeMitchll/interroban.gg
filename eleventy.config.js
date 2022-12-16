@@ -4,7 +4,6 @@ require('dotenv').config();
 module.exports = function config(eleventy) {
   // Eleventy plugins
   eleventy.addPlugin(require('@11ty/eleventy-plugin-rss'));
-  eleventy.addPlugin(require('eleventy-plugin-reading-time'));
 
   // Custom filters
   eleventy.addFilter('formatDate', require('./src/_filters/date'));

@@ -4,25 +4,10 @@ layout: layouts/default
 
 <header class="flow | measure gap-x-large">
   <h1 class="gap-large">{{ title }}</h1>
-  <ul role="list" class="tertiary-text">
-    {% if date %}
-    <li class="border">
-      <p class="horizontal">
-        Updated <span class="push-right">{{ date | formatDate }}</span>
-      </p>
-    </li>
-    {% endif %}
-    {% if content %}
-    <li class="border">
-      <p class="horizontal">
-        Reading time <span class="push-right">{{ content | readingTime }}</span>
-      </p>
-    </li>
-    {% endif %}
-  </ul>
-  {% include "components/commits.njk" %}
 </header>
 
 <article class="markdown | gap-x-large">
   {{ content | safe }}
 </article>
+
+{% include "components/commits.njk" %}
