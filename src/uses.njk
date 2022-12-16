@@ -17,7 +17,7 @@ title: Uses
 {% set image_alt = "A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise lamp, and my IKEA Bekant sit-stand desk." %}
 {% include "components/image.njk" %}
 
-<article class="flow | measure">
+<article class="flow | measure gap-xx-large">
   {% for tags, items in uses | groupby("tags") %}
     <h2>{{ tags | replace(",", ": ") | title }}</h2>
     <ul>
