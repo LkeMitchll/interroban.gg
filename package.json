@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.18",
+    "@11ty/eleventy": "^2.0.0-canary.23",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "dotenv": "^16.0.1",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "eslint": "^8.23.1",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^29.0.0"
   },
