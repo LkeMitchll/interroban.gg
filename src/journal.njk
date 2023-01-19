@@ -54,7 +54,7 @@ title: Journal
     {% for week in [music.lastWeek, music.thisWeek] %}
     <div>
       <h3>{{ week.title }}</h3>
-      <ul role="list" class="tertiary-text gap-large">
+      <ul role="list" class="columns | tertiary-text gap-large">
         {% for stat in [week.tracks, week.albums] %}
         <li class="horizontal | border gap">
           <p>{{ stat.title }}</p>
