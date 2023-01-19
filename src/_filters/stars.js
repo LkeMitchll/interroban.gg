@@ -14,7 +14,7 @@ module.exports = function starRating(rating) {
     '5.0': { description: 'Five stars', text: '★★★★★' },
   };
 
-  const tag = `<span aria-label='${scoreToStars[rating].description}' 
+  const tag = `<span aria-label='${scoreToStars[rating].description}'
                      title='${scoreToStars[rating].description}'
                >
                 ${scoreToStars[rating].text}

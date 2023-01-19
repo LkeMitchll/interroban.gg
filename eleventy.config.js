@@ -10,7 +10,7 @@ module.exports = function config(eleventy) {
   eleventy.addFilter('starRating', require('./src/_filters/stars'));
 
   // Custom shortcodes
-  eleventy.addAsyncShortcode('image', require('./src/_shortcodes/responsiveImage'));
+  eleventy.addAsyncShortcode('image', require('./src/_shortcodes/image'));
 
   const md = require('markdown-it');
   eleventy.addPairedShortcode('sidenote', (content, number) => {
@@ -24,9 +24,7 @@ module.exports = function config(eleventy) {
 
   // Custom markdown renderer
   eleventy.amendLibrary('md', (mdLib) => mdLib
-    .use(require('markdown-it-named-headings'))
     .use(require('markdown-it-external-links'), {
-      externalClassName: null,
       externalTarget: '_blank',
       externalRel: 'nofollow noopener noreferrer',
       internalDomains: ['interroban.gg', 'localhost'],

@@ -5,21 +5,20 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.23",
+    "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-fetch": "^3.0.0",
-    "@11ty/eleventy-plugin-rss": "^1.1.0",
-    "dotenv": "^16.0.1",
-    "markdown-it": "^13.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "dotenv": "^16.0.3",
+    "markdown-it": "^13.0.1",
     "markdown-it-external-links": "^0.0.6",
-    "markdown-it-named-headings": "^1.1.0",
-    "sass": "^1.56.1",
-    "simple-git": "^3.11.0",
+    "sass": "^1.57.1",
+    "simple-git": "^3.16.0",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "eslint": "^8.23.1",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "stylelint": "^14.9.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0"
   },
   "eslintConfig": {
