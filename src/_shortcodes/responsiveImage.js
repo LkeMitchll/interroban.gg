@@ -33,7 +33,6 @@ module.exports = async function responsiveImage(
             <img src="${fallback}"
                  srcset="${sources}"
                  sizes="${viewportWidths[size].sizes}"
-                 loading="lazy"
                  width="${imgMeta.width}"
                  height="${imgMeta.height}"
                  alt="${imgAlt}" />
