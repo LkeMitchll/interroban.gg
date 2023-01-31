@@ -25,4 +25,4 @@ So now I find myself browsing less, and I get fewer emails, but I'm not missing 
 
 I subscribe to [Feedbin](https://feedbin.com) for $5 a month, and I read it using [NetNewsWire](https://ranchero.com/netnewswire/), a lightweight, open-source app for Mac and iOS.
 
-You can see a list of the content creators I subscribe to on the [/feeds page](/feeds), it pulls data directly from the Feedbin API, so it will always be up-to-date.
+You can see a list of the content creators I subscribe to on the [blogroll page](/blogroll), it pulls data directly from the Feedbin API, so it will always be up-to-date.

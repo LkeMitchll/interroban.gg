@@ -13,10 +13,6 @@
     --cols: 2;
   }
 
-  .columns[data-cols="3"] {
-    --cols: 3;
-  }
-
   .col-4 {
     grid-column: 4;
   }

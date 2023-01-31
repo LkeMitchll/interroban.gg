@@ -13,12 +13,14 @@ title: Blogroll
   <hr />
 </header>
 
-<ul role="list" class="columns | gap-xx-large" data-cols="3">
-  {% for feed in feeds %}
-  <li>
-    <a href="{{ feed.site_url }}" target="_blank" rel="noreferrer">
-      {{ feed.title }}
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+<section class="gap-xx-large">
+  <ul role="list" class="flow">
+    {% for feed in feeds %}
+    <li>
+      <a href="{{ feed.site_url }}" target="_blank" rel="noreferrer">
+        {{ feed.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
