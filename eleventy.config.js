@@ -27,7 +27,7 @@ module.exports = function config(eleventy) {
     .use(require('markdown-it-external-links'), {
       externalTarget: '_blank',
       externalRel: 'nofollow noopener noreferrer',
-      internalDomains: ['interroban.gg', 'localhost'],
+      internalDomains: ['interroban.gg'],
     }));
 
   // Options
