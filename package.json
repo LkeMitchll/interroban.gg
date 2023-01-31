@@ -5,13 +5,13 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0-beta.1",
+    "@11ty/eleventy": "^2.0.0-beta.2",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "dotenv": "^16.0.3",
+    "esbuild": "^0.17.5",
     "markdown-it": "^13.0.1",
     "markdown-it-external-links": "^0.0.6",
-    "sass": "^1.57.1",
     "simple-git": "^3.16.0",
     "xml-js": "^1.6.11"
   },
@@ -45,7 +45,7 @@
     "start": "npm run build:eleventy -- --serve --incremental --quiet & npm run build:css -- --watch",
     "build": "npm run build:eleventy && npm run build:css",
     "build:eleventy": "npx @11ty/eleventy",
-    "build:css": "sass --style=compressed src/site.scss:_site/site.css",
+    "build:css": "esbuild --minify --bundle src/site.css --outfile=_site/site.css",
     "test": "npm run lint:stylelint & npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",
     "lint:eslint": "eslint ./**/*.js"
