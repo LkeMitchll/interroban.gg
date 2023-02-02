@@ -48,6 +48,6 @@
     "build:css": "esbuild --minify --bundle src/site.css --outfile=_site/site.css",
     "test": "npm run lint:stylelint & npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",
-    "lint:eslint": "eslint ./**/*.js"
+    "lint:eslint": "eslint ./src/**/*.js"
   }
 }
