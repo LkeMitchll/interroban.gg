@@ -16,10 +16,10 @@ title: Product Designer
 
 <hr class="gap-xx-large">
 
-<nav class="gap-xx-large" aria-label="page section navigation">
-  <ol role="list" class="flow">
+<nav class="gap-xx-large" aria-label="page navigation">
+  <ol role="list" class="site-index | flow">
     {% for page in navigation.routes[0].pages %}
-    <li class="horizontal | tertiary-text">
+    <li class="horizontal | tertiary-text" data-responsive>
       <p class="horizontal">
         <span>{{ loop.index }}.</span>
         <a href="{{ page.url }}">{{ page.name }}</a>

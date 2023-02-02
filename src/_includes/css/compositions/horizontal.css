@@ -17,6 +17,10 @@
     display: block;
   }
 
+  .horizontal[data-responsive] > * {
+    margin-bottom: var(--space-tiny);
+  }
+
   .horizontal[data-responsive] hr {
     opacity: 0;
   }
