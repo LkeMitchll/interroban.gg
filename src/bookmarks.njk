@@ -48,15 +48,16 @@ pagination:
     </li>
     {% endfor %}
   </ul>
-  <nav class="tertiary-text">
+  <nav class="tertiary-text" aria-label="bookmark page navigation">
     <p class="gap">More bookmarks:</p>
     <ul role="list" class="horizontal | gap">
       {% for pageEntry in pagination.pages %}
         <li>
           <a href="{{ pagination.hrefs[loop.index0] }}#content"
              {% if page.url == pagination.hrefs[loop.index0] %} aria-current="page"{% endif %}
+             aria-label="Page {{ loop.index }}"
           >
-          Page {{ loop.index }}</a>
+          {{ loop.index }}</a>
         </li>
       {% endfor %}
     </ul>

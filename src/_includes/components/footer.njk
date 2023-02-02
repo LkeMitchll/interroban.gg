@@ -1,43 +1,45 @@
-<footer class="columns | gap-xx-large">
-  <div>
-    <h3 class="gap">General</h3>
-    <ul role="list" class="tertiary-text">
-      {% for page in navigation.routes[0].pages %}
-      <li class="gap">
-        <a href="{{ page.url }}">{{ page.name }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+<footer>
+  <h2 class="visually-hidden">Footer</h2>
+  <section class="columns | gap-xx-large">
+    <div>
+      <h3 class="gap">General</h3>
+      <ul role="list" class="tertiary-text">
+        {% for page in navigation.routes[0].pages %}
+        <li class="gap">
+          <a href="{{ page.url }}">{{ page.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-  {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
-  {% for category in footerCategories %}
-  <div>
-    <h3 class="gap">{{ category.name }}</h3>
-    <ul role="list" class="tertiary-text">
-      {% for page in category.pages %}
-      <li class="gap">
-        <a {% if category.name === "Contact"%}rel="me"{% endif %} href="{{ page.url }}">{{ page.name }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endfor %}
-</footer>
-
-<footer class="columns | gap-x-large">
-  <div>
-    <p class="tertiary-text">
-      <small>&copy; {{ dates.currentYear() }}, Luke Mitchell</small>
-    </p>
-  </div>
-  <div class="col-4">
-    <p class="horizontal | tertiary-text">
-      <a href="https://hotlinewebring.club/interrobang/previous" target="_blank"
-        aria-label="Previous Hotline Webring Site">&larr;</a>
-      <span>Hotline</span>
-      <a href="https://hotlinewebring.club/interrobang/next" target="_blank"
-        aria-label="Next Hotline Webring Site">&rarr;</a>
-    </p>
-  </div>
+    {% set footerCategories = [navigation.routes[1], navigation.contact, navigation.elsewhere] %}
+    {% for category in footerCategories %}
+    <div>
+      <h3 class="gap">{{ category.name }}</h3>
+      <ul role="list" class="tertiary-text">
+        {% for page in category.pages %}
+        <li class="gap">
+          <a {% if category.name === "Contact"%}rel="me"{% endif %} href="{{ page.url }}">{{ page.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="columns | gap-x-large">
+    <div>
+      <p class="tertiary-text">
+        <small>&copy; {{ dates.currentYear() }}, Luke Mitchell</small>
+      </p>
+    </div>
+    <div class="col-4">
+      <p class="horizontal | tertiary-text">
+        <a href="https://hotlinewebring.club/interrobang/previous" target="_blank"
+          aria-label="Previous Hotline Webring Site">&larr;</a>
+        <span>Hotline</span>
+        <a href="https://hotlinewebring.club/interrobang/next" target="_blank"
+          aria-label="Next Hotline Webring Site">&rarr;</a>
+      </p>
+    </div>
+  </section>
 </footer>

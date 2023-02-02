@@ -1,7 +1,7 @@
 {% if page.url !== "/" %}
   <a role="link" href="/"><h1>{{title}}</h1></a>
 {% endif %}
-<nav>
+<nav aria-label="site navigation">
   <ul role="list" class="horizontal | tertiary-text">
     {% for link in navigation.routes[0].pages %}
       <li>
