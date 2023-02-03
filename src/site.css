@@ -16,6 +16,7 @@
 @import url("_includes/css/blocks/sidenote");
 @import url("_includes/css/blocks/movies");
 @import url("_includes/css/blocks/caption");
+@import url("_includes/css/blocks/index");
 
 /* utilities */
 @import url("_includes/css/utilities/utilities");
