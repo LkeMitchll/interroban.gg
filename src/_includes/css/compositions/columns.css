@@ -3,6 +3,10 @@
   grid-gap: var(--row-gap, var(--space-large)) var(--gap, var(--space-large));
 }
 
+.columns[data-row-gap="none"] {
+  grid-row-gap: 0;
+}
+
 @media (min-width: 700px) {
   .columns {
     grid-column-gap: var(--space-x-large);
