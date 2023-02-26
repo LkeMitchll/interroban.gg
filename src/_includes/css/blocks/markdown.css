@@ -2,32 +2,24 @@
   display: grid;
   margin-bottom: var(--space-xx-large);
   grid-row-gap: var(--space-medium);
-}
 
-@media screen and (min-width: 600px) {
-  .markdown {
-    grid-template-columns: 2fr 1fr;
-    grid-column-gap: var(--space-large);
+  & *:not(aside, figcaption, figure) {
+    grid-column: 1;
   }
-}
 
-@media screen and (min-width: 1024px) {
-  .markdown {
+  @media screen and (min-width: 600px) {
+    & {
+      grid-template-columns: 2fr 1fr;
+      grid-column-gap: var(--space-large);
+    }
+
+    & figure {
+      grid-column: 1 / 4;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
     grid-template-columns: 50ch 20ch;
     grid-column-gap: var(--space-large);
-  }
-}
-
-.markdown *:not(aside, figcaption) {
-  grid-column: 1;
-}
-
-@media screen and (min-width: 600px) {
-  .markdown figure {
-    grid-column: 1 / 4;
-  }
-
-  .markdown .grayscale-image[data-image-size="large"] {
-    grid-column: 1 / 4;
   }
 }

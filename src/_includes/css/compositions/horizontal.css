@@ -1,23 +1,24 @@
 .horizontal {
   display: flex;
-}
 
-.horizontal > *:not(:last-child) {
-  margin-right: var(--gap, 1rem);
-}
+  & > *:not(:last-child) {
+    margin-right: var(--gap, 1rem);
+  }
 
-@media (min-width: 600px) {
-  .horizontal > * {
-    --gap: 2rem;
+  @media (min-width: 600px) {
+    & > * {
+      --gap: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &[data-responsive] {
+      display: block;
+    }
+
+    &[data-responsive] > * {
+      margin-bottom: var(--space-tiny);
+    }
   }
 }
 
-@media (max-width: 600px) {
-  .horizontal[data-responsive] {
-    display: block;
-  }
-
-  .horizontal[data-responsive] > * {
-    margin-bottom: var(--space-tiny);
-  }
-}

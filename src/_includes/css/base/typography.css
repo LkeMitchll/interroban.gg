@@ -11,19 +11,19 @@ a {
   border-bottom: var(--border-default);
   padding: 0 0.1em;
   color: var(--color-primary);
-}
 
-a[role="link"],
-a[role="link"]:hover {
-  padding: 0;
-  border: 0;
-  color: var(--color-primary);
-}
+  &:hover,
+  &[aria-current] {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+  }
 
-a:hover,
-a[aria-current] {
-  background-color: var(--color-primary);
-  color: var(--color-bg);
+  &[role="link"],
+  &[role="link"]:hover {
+    padding: 0;
+    border: 0;
+    color: var(--color-primary);
+  }
 }
 
 h1,

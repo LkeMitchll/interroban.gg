@@ -13,6 +13,14 @@ body {
   padding: 0 5vw;
   text-rendering: optimizelegibility;
   line-height: 1.5;
+
+  @media screen and (min-width: 600px) {
+    margin-top: var(--space-xx-large);
+  }
+
+  @media screen and (min-width: 1600px) {
+    max-width: 70vw;
+  }
 }
 
 img {
@@ -30,16 +38,4 @@ hr {
   border: 0;
   margin: auto 0 0;
   border-bottom: var(--border-default);
-}
-
-@media screen and (min-width: 600px) {
-  body {
-    margin-top: var(--space-xx-large);
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  body {
-    max-width: 70vw;
-  }
 }

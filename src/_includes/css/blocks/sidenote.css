@@ -1,36 +1,36 @@
 .sidenote {
   position: relative;
   max-width: 30ch;
-}
 
-.sidenote img {
-  margin-bottom: var(--space-default);
-}
+  @media screen and (min-width: 600px) {
+    & small {
+      position: absolute;
+    }
+  }
 
-.sidenote em {
-  font-family: var(--text-mono);
-  font-style: normal;
-  font-size: var(--text-size-small);
-  margin-right: var(--space-tiny);
-}
+  & img {
+    margin-bottom: var(--space-default);
+  }
 
-.sidenote small {
-  display: block;
-  border-left: var(--border-default);
-  padding-left: var(--space-default);
-}
+  & em {
+    font-family: var(--text-mono);
+    font-style: normal;
+    font-size: var(--text-size-small);
+    margin-right: var(--space-tiny);
+  }
 
-.sidenote + p {
-  display: none;
-}
+  & small {
+    display: block;
+    border-left: var(--border-default);
+    padding-left: var(--space-default);
+  }
 
-.sidenote + p:last-child {
-  display: initial;
-  margin-bottom: var(--space-xx-large);
-}
+  & + p {
+    display: none;
+  }
 
-@media screen and (min-width: 600px) {
-  .sidenote small {
-    position: absolute;
+  & + p:last-child {
+    display: initial;
+    margin-bottom: var(--space-xx-large);
   }
 }

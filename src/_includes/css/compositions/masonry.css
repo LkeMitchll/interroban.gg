@@ -1,14 +1,14 @@
 .masonry {
   columns: var(--cols, 4);
   column-gap: var(--space-default);
-}
 
-.masonry a {
-  background-color: initial;
-  padding: 0;
-  border: 0;
-}
+  & a {
+    background-color: initial;
+    padding: 0;
+    border: 0;
+  }
 
-.masonry * {
-  margin: 0 0 var(--space-default);
+  & * {
+    margin: 0 0 var(--space-default);
+  }
 }

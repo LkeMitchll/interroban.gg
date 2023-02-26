@@ -1,12 +1,14 @@
-.caption::before {
-  content: "Above";
-  font-variant: small-caps;
-  text-transform: lowercase;
-  font-weight: 600;
-}
+.caption {
+  &::before {
+    content: "Above";
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-weight: 600;
+  }
 
-@media (min-width: 700px) {
-  .caption::before {
-    content: "Left";
+  @media (min-width: 700px) {
+    &::before {
+      content: "Left";
+    }
   }
 }

@@ -3,6 +3,7 @@ require('dotenv').config();
 
 module.exports = function config(eleventy) {
   // Eleventy plugins
+  eleventy.addPlugin(require('@11tyrocks/eleventy-plugin-lightningcss'), { nesting: true });
   eleventy.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
   // Custom filters
@@ -19,20 +20,6 @@ module.exports = function config(eleventy) {
                 ${result}
               </small>
             </aside>`;
-  });
-
-  // Recognize CSS as a "template language"
-  eleventy.addTemplateFormats('css');
-  // Process CSS with LightningCSS
-  eleventy.addExtension('css', {
-    outputFileExtension: 'css',
-    compile: async (_, inputPath) => {
-      const { bundle } = require('lightningcss');
-      return async () => {
-        const { code } = bundle({ filename: inputPath, minify: true });
-        return code;
-      };
-    },
   });
 
   // Custom markdown renderer

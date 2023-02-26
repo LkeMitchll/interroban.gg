@@ -1,13 +1,15 @@
-@media (max-width: 900px) {
-  .movies {
-    grid-template-columns: repeat(3, 1fr);
+.movies {
+  @media (max-width: 900px) {
+    & {
+      --cols: 3;
+    }
   }
-}
 
-@media (min-width: 900px) {
-  .movies {
-    --cols: 6;
+  @media (min-width: 900px) {
+    & {
+      --cols: 6;
 
-    grid-gap: var(--space-default);
+      grid-gap: var(--space-default);
+    }
   }
 }

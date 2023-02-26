@@ -1,9 +1,11 @@
-@media (max-width: 600px) {
-  .index hr {
-    display: none;
-  }
+.index {
+  @media (max-width: 600px) {
+    & hr {
+      display: none;
+    }
 
-  .index li {
-    border-bottom: var(--border-default);
+    & li {
+      border-bottom: var(--border-default);
+    }
   }
 }
