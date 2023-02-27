@@ -9,7 +9,7 @@
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "dotenv": "^16.0.3",
-    "esbuild": "^0.17.5",
+    "lightningcss": "^1.19.0",
     "markdown-it": "^13.0.1",
     "markdown-it-external-links": "^0.0.6",
     "simple-git": "^3.16.0",
@@ -18,8 +18,8 @@
   "devDependencies": {
     "eslint": "^8.23.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.0"
   },
   "eslintConfig": {
     "env": {
@@ -42,10 +42,8 @@
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
-    "start": "npm run build:eleventy -- --serve --incremental --quiet & npm run build:css -- --watch",
-    "build": "npm run build:eleventy && npm run build:css",
-    "build:eleventy": "npx @11ty/eleventy",
-    "build:css": "esbuild --minify --bundle src/site.css --outfile=_site/site.css",
+    "start": "npm run build -- --serve --incremental --quiet",
+    "build": "npx @11ty/eleventy",
     "test": "npm run lint:stylelint & npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",
     "lint:eslint": "eslint ./src/**/*.js"

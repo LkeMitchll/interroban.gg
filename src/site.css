@@ -1,22 +1,22 @@
 /* base */
-@import url("_includes/css/base/variables");
-@import url("_includes/css/base/fonts");
-@import url("_includes/css/base/global");
-@import url("_includes/css/base/typography");
+@import url("_includes/css/base/variables.css");
+@import url("_includes/css/base/fonts.css");
+@import url("_includes/css/base/global.css");
+@import url("_includes/css/base/typography.css");
 
 /* compositions */
-@import url("_includes/css/compositions/flow");
-@import url("_includes/css/compositions/columns");
-@import url("_includes/css/compositions/masonry");
-@import url("_includes/css/compositions/horizontal");
+@import url("_includes/css/compositions/flow.css");
+@import url("_includes/css/compositions/columns.css");
+@import url("_includes/css/compositions/masonry.css");
+@import url("_includes/css/compositions/horizontal.css");
 
 /* blocks */
-@import url("_includes/css/blocks/grayscale-image");
-@import url("_includes/css/blocks/markdown");
-@import url("_includes/css/blocks/sidenote");
-@import url("_includes/css/blocks/movies");
-@import url("_includes/css/blocks/caption");
-@import url("_includes/css/blocks/index");
+@import url("_includes/css/blocks/grayscale-image.css");
+@import url("_includes/css/blocks/markdown.css");
+@import url("_includes/css/blocks/sidenote.css");
+@import url("_includes/css/blocks/movies.css");
+@import url("_includes/css/blocks/caption.css");
+@import url("_includes/css/blocks/index.css");
 
 /* utilities */
-@import url("_includes/css/utilities/utilities");
+@import url("_includes/css/utilities/utilities.css");
