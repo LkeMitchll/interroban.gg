@@ -76,4 +76,8 @@ blockquote {
   margin: 0;
   padding-left: var(--space-default);
   border-left: var(--border-default);
+
+  & p + p {
+    margin-top: var(--space-default);
+  }
 }
