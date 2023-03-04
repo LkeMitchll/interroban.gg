@@ -18,6 +18,7 @@
 @import url("_includes/css/blocks/caption.css");
 @import url("_includes/css/blocks/index.css");
 @import url("_includes/css/blocks/tag.css");
+@import url("_includes/css/blocks/post.css");
 
 /* utilities */
 @import url("_includes/css/utilities/utilities.css");

@@ -1,0 +1,9 @@
+.post {
+  --flow-space: var(--space-small);
+
+  @media screen and (min-width: 600px) {
+    & {
+      --flow-space: 0;
+    }
+  }
+}
