@@ -5,7 +5,10 @@
       {{ post.data.title }}
     </a>
     <hr class="grow" />
-    <p class="tertiary-text">{{ post.data.date | formatDate }}</p>
+    <p class="horizontal | tertiary-text">
+      <span class="tag">{{ post.data.type if post.data.type else "Post" }}</span>
+      <span>{{ post.data.date | formatDate }}</span>
+    </p>
   </li>
   {% endfor %}
 </ol>

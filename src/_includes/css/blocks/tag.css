@@ -1,0 +1,6 @@
+.tag {
+  border: var(--border-default);
+  border-radius: 100px;
+  padding: 0 var(--space-small);
+  height: fit-content;
+}
