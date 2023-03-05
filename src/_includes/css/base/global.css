@@ -2,10 +2,14 @@ html {
   font-size: clamp(1.2rem, calc(0.8rem + 0.48vw), 1.41rem);
 }
 
+html,
+body {
+  background-color: var(--color-bg);
+}
+
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--color-bg);
   color: var(--color-primary);
   font-family: var(--text-body);
   font-feature-settings: "case" on;
