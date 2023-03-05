@@ -5,13 +5,13 @@
     margin-right: var(--gap, 1rem);
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     & > * {
       --gap: 2rem;
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     &[data-responsive] {
       display: block;
     }

@@ -31,19 +31,17 @@ pagination:
 </header>
 
 <article id="content" class="flow | gap-xx-large">
-  <ul role="list" class="flow">
+  <ul role="list" class="index | flow">
     {% for bookmark in pagination.items %}
-    <li class="post | horizontal flow | border tertiary-text" data-responsive>
-      <p>
-        N&ordm; {{ bookmark.number }}
-      </p>
-      <a class="gap" href="{{ bookmark.url }}" target="_blank" rel="noreferrer">
+    <li class="post | horizontal | tertiary-text" data-responsive>
+      <p>N&ordm; {{ bookmark.number }}</p>
+      <a href="{{ bookmark.url }}" target="_blank" rel="noreferrer">
         {{ bookmark.title }}
       </a>
-      <p class="push-right gap">
-        {% if bookmark.favourite %}★{% endif %}
-        {{ bookmark.tag }} &mdash;
-        {{ bookmark.date | formatDate }}
+      <hr class="grow" />
+      <p class="horizontal | push-right">
+        <span class="tag">{{ bookmark.tag }}</span>
+        <span>{{ bookmark.date | formatDate }}</span>
       </p>
     </li>
     {% endfor %}
