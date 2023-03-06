@@ -1,11 +1,13 @@
 .movies {
-  @media (max-width: 900px) {
+  --cols: 2;
+
+  @media screen and (min-width: 700px) {
     & {
       --cols: 3;
     }
   }
 
-  @media (min-width: 900px) {
+  @media screen and (min-width: 900px) {
     & {
       --cols: 6;
 

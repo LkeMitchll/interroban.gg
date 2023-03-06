@@ -1,6 +1,7 @@
 .columns {
   display: grid;
   grid-gap: var(--row-gap, var(--space-large)) var(--gap, var(--space-large));
+  grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr));
 
   &[data-row-gap="none"] {
     grid-row-gap: 0;
