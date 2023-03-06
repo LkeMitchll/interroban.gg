@@ -5,7 +5,7 @@ layout: layouts/default
 <header class="flow | measure gap-x-large">
   <h1 class="gap-large">{{ title }}</h1>
   <ul class="tertiary-text" role="list">
-    <li>Tags: <span class="tag">{{ post.data.type if post.data.type else "Post" }}</span></li>
+    <li>Tags: <span class="tag">{{ type if type else "Post" }}</span></li>
     <li>Date: {{ date | formatDate }}</li>
   </ul>
 </header>
