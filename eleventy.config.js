@@ -12,9 +12,12 @@ module.exports = function config(eleventy) {
 
   // Custom shortcodes
   eleventy.addAsyncShortcode('image', require('./src/_shortcodes/image'));
+
+  const md = require('markdown-it');
+  const mdOptions = { html: true, typographer: true };
+
   eleventy.addPairedShortcode('sidenote', (content, number) => {
-    const md = require('markdown-it');
-    const result = md({ html: true }).render(content);
+    const result = md(mdOptions).render(content);
     return `<aside id="sn-${number}" class="sidenote">
               <small>
                 ${result}
@@ -22,8 +25,8 @@ module.exports = function config(eleventy) {
             </aside>`;
   });
 
-  // Custom markdown renderer
-  eleventy.amendLibrary('md', (mdLib) => mdLib
+  // Add markdown-it plugins
+  eleventy.setLibrary('md', md(mdOptions)
     .use(require('markdown-it-external-links'), {
       externalTarget: '_blank',
       externalRel: 'nofollow noopener noreferrer',
