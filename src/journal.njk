@@ -25,12 +25,12 @@ title: Journal
     </p>
     <ul role="list" class="horizontal | tertiary-text">
       <li>
-        <a href="/rss.xml" target="_blank" referrer="noreferrer">
+        <a href="/rss.xml">
           RSS Feed
         </a>
       </li>
       <li>
-        <a href="/feeds/posts.json" target="_blank" referrer="noreferrer">
+        <a href="/feeds/posts.json">
           JSON Feed
         </a>
       </li>
@@ -46,8 +46,8 @@ title: Journal
     <h2>Listening</h2>
     <p class="measure | gap-large">
       I listen to music, mostly while I work, or walk. I use
-      <a href="https://www.apple.com/uk/apple-music/" target="_blank">Apple Music</a>
-      and I collect the stats with <a href="https://www.last.fm" target="_blank">last.fm</a>.
+      <a href="https://www.apple.com/uk/apple-music/">Apple Music</a>
+      and I collect the stats with <a href="https://www.last.fm">last.fm</a>.
     </p>
   </header>
   <section class="columns" data-cols="2" data-row-gap="none">
@@ -73,7 +73,7 @@ title: Journal
       <ol role="list">
         {% for album in music.topAlbums %}
         <li class="border">
-          <a href="{{ album.url }}" target="_blank" rel="noreferrer noopener">
+          <a href="{{ album.url }}">
             {{ album.title }}
           </a>
           <p class="gap-small"><small>{{ album.artist }}</small></p>
@@ -86,7 +86,7 @@ title: Journal
       <ol role="list">
         {% for artist in music.topArtists %}
         <li class="border">
-          <a href="{{ artist.url }}" target="_blank" rel="noreferrer noopener">
+          <a href="{{ artist.url }}">
             {{ artist.name }}
           </a>
           <p class="gap-small"><small>{{ artist.playcount }} plays</small></p>
@@ -102,7 +102,7 @@ title: Journal
     <h2>Watching</h2>
     <p class="measure">
       The last 6 movies that I've watched and (hopefully) enjoyed, I record the
-      ratings with <a href="https://letterboxd.com" target="_blank">Letterboxd.</a>
+      ratings with <a href="https://letterboxd.com">Letterboxd.</a>
     </p>
   </header>
 

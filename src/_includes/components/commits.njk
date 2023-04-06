@@ -4,10 +4,7 @@
     {% for commit in commits %}
     <li>
       <p>#<code>{{ commit.hash }}</code></p>
-      <a href="https://github.com/LkeMitchll/interroban.gg/commit/{{ commit.hash }}"
-         target="_blank"
-         rel="noreferrer"
-      >
+      <a href="https://github.com/LkeMitchll/interroban.gg/commit/{{ commit.hash }}">
         {{ commit.message }}
       </a>
       <p>
@@ -18,10 +15,7 @@
     </li>
     {% endfor %}
   </ol>
-  <a href="http://www.github.com/lkemitchll/interroban.gg/commits"
-     target="_blank"
-     rel="noopener noreferrer"
-  >
+  <a href="http://www.github.com/lkemitchll/interroban.gg/commits">
     See all changes
   </a>
 </details>

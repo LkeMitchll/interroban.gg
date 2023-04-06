@@ -25,14 +25,6 @@ module.exports = function config(eleventy) {
             </aside>`;
   });
 
-  // Add markdown-it plugins
-  eleventy.setLibrary('md', md(mdOptions)
-    .use(require('markdown-it-external-links'), {
-      externalTarget: '_blank',
-      externalRel: 'nofollow noopener noreferrer',
-      internalDomains: ['interroban.gg'],
-    }));
-
   // Options
   return {
     dir: {

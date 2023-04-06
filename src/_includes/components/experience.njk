@@ -34,7 +34,7 @@
       {% set awards = cv.recognition %}
       {% for award in awards %}
       <li>
-        <a href="{{ award.url }}" target="_blank" rel="noopener noreferrer">
+        <a href="{{ award.url }}">
           {{ award.source }}
         </a>
         <p>{{ award.date }} </p>

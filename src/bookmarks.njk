@@ -17,12 +17,12 @@ pagination:
   </p>
   <ul role="list" class="horizontal | tertiary-text">
     <li>
-      <a href="/feeds/bookmarks.xml" target="_blank" referrer="noreferrer">
+      <a href="/feeds/bookmarks.xml">
         RSS Feed
       </a>
     </li>
     <li>
-      <a href="/feeds/bookmarks.json" target="_blank" referrer="noreferrer">
+      <a href="/feeds/bookmarks.json">
         JSON Feed
       </a>
     </li>
@@ -35,7 +35,7 @@ pagination:
     {% for bookmark in pagination.items %}
     <li class="post | horizontal | tertiary-text" data-responsive>
       <p>N&ordm; {{ bookmark.number }}</p>
-      <a href="{{ bookmark.url }}" target="_blank" rel="noreferrer">
+      <a href="{{ bookmark.url }}">
         {{ bookmark.title }}
       </a>
       <hr class="grow" />
@@ -55,7 +55,8 @@ pagination:
              {% if page.url == pagination.hrefs[loop.index0] %} aria-current="page"{% endif %}
              aria-label="Page {{ loop.index }}"
           >
-          {{ loop.index }}</a>
+            {{ loop.index }}
+          </a>
         </li>
       {% endfor %}
     </ul>
