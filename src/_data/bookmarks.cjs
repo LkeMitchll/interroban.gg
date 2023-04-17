@@ -1,4 +1,4 @@
-const BookmarksAPI = require('../_providers/bookmarks');
+const BookmarksAPI = require('../_providers/bookmarks.cjs');
 
 function numberedBookmarks(data) {
   data.forEach((entry, i) => {

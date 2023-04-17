@@ -38,7 +38,7 @@
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
-    "ignoreFiles": ["./**/*.js"]
+    "ignoreFiles": ["./**/*.cjs"]
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
@@ -46,6 +46,6 @@
     "build": "npx @11ty/eleventy",
     "test": "npm run lint:stylelint & npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",
-    "lint:eslint": "eslint ./src/**/*.js"
+    "lint:eslint": "eslint ./src/**/*.cjs"
   }
 }

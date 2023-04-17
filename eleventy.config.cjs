@@ -7,11 +7,11 @@ module.exports = function config(eleventy) {
   eleventy.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
   // Custom filters
-  eleventy.addFilter('formatDate', require('./src/_filters/date'));
-  eleventy.addFilter('starRating', require('./src/_filters/stars'));
+  eleventy.addFilter('formatDate', require('./src/_filters/date.cjs'));
+  eleventy.addFilter('starRating', require('./src/_filters/stars.cjs'));
 
   // Custom shortcodes
-  eleventy.addAsyncShortcode('image', require('./src/_shortcodes/image'));
+  eleventy.addAsyncShortcode('image', require('./src/_shortcodes/image.cjs'));
 
   const md = require('markdown-it');
   const mdOptions = { html: true, typographer: true };

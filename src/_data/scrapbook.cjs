@@ -1,4 +1,4 @@
-const SaveeAPI = require('../_providers/savee');
+const SaveeAPI = require('../_providers/savee.cjs');
 
 module.exports = async function scrapbook() {
   const response = new SaveeAPI();

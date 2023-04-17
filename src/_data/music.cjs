@@ -1,4 +1,4 @@
-const LastFMAPI = require('../_providers/lastfm');
+const LastFMAPI = require('../_providers/lastfm.cjs');
 
 function dateToEpochWithOffset(time, offset) {
   const date = new Date();
