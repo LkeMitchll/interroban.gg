@@ -10,7 +10,7 @@ body {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: var(--color-primary);
+  color: var(--color-fg);
   font-family: var(--text-body);
   font-feature-settings: "case" on;
   margin: var(--space-large) auto 0 auto;
@@ -31,7 +31,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  background-color: var(--color-primary);
+  background-color: var(--color-fg);
 }
 
 figure {

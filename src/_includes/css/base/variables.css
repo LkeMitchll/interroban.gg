@@ -1,8 +1,8 @@
 :root {
-  --pink: #ffc8d5;
-  --purple: #4a4356;
-  --color-primary: var(--purple);
-  --color-bg: var(--pink);
+  --color-light: hsl(100deg 15% 90%);
+  --color-dark: hsl(150deg 45% 22%);
+  --color-fg: var(--color-dark);
+  --color-bg: var(--color-light);
   --space-tiny: 0.25rem;
   --space-small: 0.5rem;
   --space-default: 1rem;
@@ -23,12 +23,13 @@
   --text-leading-crushed: 1.1;
   --text-measure: 50ch;
   --border-width-default: 1px;
-  --border-default: var(--border-width-default) dotted var(--color-primary);
+  --border-default: var(--border-width-default) dotted var(--color-fg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: var(--pink);
-    --color-bg: var(--purple);
+    --color-dark: hsl(150deg 5% 10%);
+    --color-fg: var(--color-light);
+    --color-bg: var(--color-dark);
   }
 }

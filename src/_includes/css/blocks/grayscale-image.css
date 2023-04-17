@@ -2,7 +2,7 @@
   background-color: var(--color-bg);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--color-primary);
+    background-color: var(--color-fg);
   }
 
   @media (min-width: 700px) {
