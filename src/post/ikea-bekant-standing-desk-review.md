@@ -5,7 +5,7 @@ description: >
 date: 2020-09-21
 ---
 
-Since the lockdown, all of us at [thoughtbot](thoughtbot.com) have been working from home. I took the opportunity to upgrade my home setup. The biggest change was a new desk.
+Since the lockdown, all of us at [thoughtbot](https://thoughtbot.com) have been working from home. I took the opportunity to upgrade my home setup. The biggest change was a new desk.
 
 I've wanted a sit-stand desk for a long time, this gave the perfect oppurtunity to try one. I settled on the [IKEA Bekant](https://www.ikea.com/gb/en/p/bekant-desk-sit-stand-oak-veneer-white-s09061188/), it's a good price, has the features I want and is nice looking. 
 
