@@ -9,6 +9,7 @@
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.0.0",
+    "@netlify/functions": "^1.4.0",
     "dotenv": "^16.0.3",
     "markdown-it": "^13.0.1",
     "simple-git": "^3.16.0",
@@ -38,7 +39,10 @@
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
-    "ignoreFiles": ["./**/*.cjs"]
+    "ignoreFiles": [
+      "./**/*.js",
+      "./**/*.cjs"
+    ]
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
