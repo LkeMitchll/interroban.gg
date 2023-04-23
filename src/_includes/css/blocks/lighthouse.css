@@ -1,0 +1,19 @@
+.lighthouse {
+  & li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-small);
+  }
+
+  & span {
+    border: var(--border-default);
+    border-radius: 100%;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
