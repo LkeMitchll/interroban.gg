@@ -1,6 +1,6 @@
 :root {
-  --color-light: hsl(100deg 15% 90%);
-  --color-dark: hsl(150deg 45% 22%);
+  --color-light: hsl(45deg 100% 65%);
+  --color-dark: hsl(45deg 100% 20%);
   --color-fg: var(--color-dark);
   --color-bg: var(--color-light);
   --space-tiny: 0.25rem;
@@ -28,7 +28,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-dark: hsl(150deg 5% 10%);
     --color-fg: var(--color-light);
     --color-bg: var(--color-dark);
   }
