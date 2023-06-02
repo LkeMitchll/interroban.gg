@@ -1,8 +1,7 @@
 .caption {
   &::before {
     content: "Above";
-    font-variant: small-caps;
-    text-transform: lowercase;
+    font-variant: all-small-caps;
     font-weight: 600;
   }
 
