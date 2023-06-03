@@ -1,7 +1,8 @@
 <article class="columns | gap-xx-large">
   <div>
+    {% set heading = headingLevel if headingLevel else "h3" %}
     {% set experience = cv.experience %}
-    <h3 id="experience">Experience</h3>
+    <{{ heading }} class="subheading" id="experience">Experience</{{ heading }}>
     <ul role="list" class="flow">
       {% for job in experience %}
       <li>
@@ -13,7 +14,7 @@
     </ul>
   </div>
   <div>
-    <h3 id="clients">Clients</h3>
+    <{{ heading }} class="subheading" id="clients">Clients</{{ heading }}>
     <ul role="list">
       {% for client in cv.clients %}
       <li>{{ client }}</li>
@@ -21,7 +22,7 @@
     </ul>
   </div>
   <div>
-    <h3 id="skills">Skills</h3>
+    <{{ heading }} class="subheading" id="skills">Skills</{{ heading }}>
     <ul role="list">
       {% for skill in cv.skills %}
       <li>{{ skill }}</li>
@@ -29,7 +30,7 @@
     </ul>
   </div>
   <div>
-    <h3 id="recognition">Recognition</h3>
+    <{{ heading }} class="subheading" id="recognition">Recognition</{{ heading }}>
     <ul role="list" class="flow">
       {% set awards = cv.recognition %}
       {% for award in awards %}

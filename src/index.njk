@@ -6,6 +6,13 @@ title: Product Designer
 <header class="flow | gap-x-large">
   <h1>Luke Mitchell</h1>
   {% include "components/nav.njk" %}
+
+  {% set image_ID = "540ffb1d-051c-41d6-80bb-8a65af13a6cd" %}
+  {% set image_alt = "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
+  <div class="gap-x-large">
+    {% include "components/image.njk" %}
+  </div>
+
   <p class="measure">
     Digital product designer, design director, and user experience engineer for
     <a href="https://www.thoughtbot.com">thoughtbot</a>.
@@ -14,28 +21,5 @@ title: Product Designer
   </p>
 </header>
 
-<hr class="gap-xx-large">
-
-<nav class="gap-xx-large" aria-label="page navigation">
-  <ol role="list" class="index | flow">
-    {% for page in navigation.routes[0].pages %}
-    <li class="horizontal | tertiary-text" data-responsive>
-      <p class="horizontal">
-        <span>{{ loop.index }}.</span>
-        <a href="{{ page.url }}">{{ page.name }}</a>
-      </p>
-      <hr class="grow" />
-      <p>{{ page.description }}</p>
-    </li>
-    {% endfor %}
-  </ol>
-</nav>
-
-{% set image_ID = "540ffb1d-051c-41d6-80bb-8a65af13a6cd" %}
-{% set image_alt = "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
-<div class="gap-xx-large">
-  {% include "components/image.njk" %}
-</div>
-
-<h2>About</h2>
+{% set headingLevel = "h2" %}
 {% include "components/experience.njk" %}

@@ -31,19 +31,18 @@ pagination:
 </header>
 
 <article id="content" class="flow | gap-xx-large">
-  <ul role="list" class="index | flow">
+  <ul role="list">
     {% for bookmark in pagination.items %}
-    <li class="post | horizontal | tertiary-text" data-responsive>
-      <p>N&ordm; {{ bookmark.number }}</p>
-      <a href="{{ bookmark.url }}">
-        {{ bookmark.title }}
-      </a>
-      <hr class="grow" />
-      <p class="horizontal | push-right">
-        <span class="tag">{{ bookmark.tag }}</span>
-        <span>{{ bookmark.date | formatDate }}</span>
-      </p>
-    </li>
+      <li class="bookmark | switcher | border tertiary-text">
+        <p>N&ordm; {{ bookmark.number }}</p>
+        <p>
+          <a href="{{ bookmark.url }}">
+            {{ bookmark.title }}
+          </a>
+        </p>
+        <p><span class="tag">{{ bookmark.tag }}</span></p>
+        <p>{{ bookmark.date | formatDate }}</p>
+      </li>
     {% endfor %}
   </ul>
   <nav class="tertiary-text" aria-label="bookmark page navigation">

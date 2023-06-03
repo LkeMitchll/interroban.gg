@@ -9,6 +9,7 @@
 @import url("_includes/css/compositions/columns.css");
 @import url("_includes/css/compositions/masonry.css");
 @import url("_includes/css/compositions/horizontal.css");
+@import url("_includes/css/compositions/switcher.css");
 
 /* blocks */
 @import url("_includes/css/blocks/grayscale-image.css");
@@ -16,9 +17,9 @@
 @import url("_includes/css/blocks/sidenote.css");
 @import url("_includes/css/blocks/movies.css");
 @import url("_includes/css/blocks/caption.css");
-@import url("_includes/css/blocks/index.css");
 @import url("_includes/css/blocks/tag.css");
 @import url("_includes/css/blocks/post.css");
+@import url("_includes/css/blocks/bookmark.css");
 @import url("_includes/css/blocks/lighthouse.css");
 
 /* utilities */
