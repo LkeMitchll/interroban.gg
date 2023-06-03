@@ -4,6 +4,7 @@
 
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: var(--space-small);
 }
 
 .switcher > * {

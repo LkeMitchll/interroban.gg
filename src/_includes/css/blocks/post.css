@@ -1,8 +1,16 @@
 .post {
-  flex-direction: column;
-  gap: var(--space-small);
+  --space: var(--space-small);
+  --threshold: 40rem;
 
-  @media (min-width: 700px) {
-    flex-direction: initial;
+  & > * {
+    flex-grow: 0.5;
+  }
+
+  & > p:nth-child(2) {
+    flex-grow: 2.5;
+  }
+
+  & > p:nth-child(3) {
+    flex-grow: 0.25;
   }
 }

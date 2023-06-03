@@ -2,8 +2,6 @@
   --space: var(--space-small);
   --threshold: 40rem;
 
-  padding-bottom: var(--space-small);
-
   & > p {
     flex-grow: 0.5;
   }
