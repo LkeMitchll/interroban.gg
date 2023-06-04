@@ -7,8 +7,10 @@
         {{ post.data.title }}
       </a>
     </p>
-    <p><span class="tag">{{ post.data.type if post.data.type else "Post" }}</span></p>
-    <p>{{ post.data.date | formatDate }}</p>
+    <div class="horizontal">
+      <p><span class="tag">{{ post.data.type if post.data.type else "Post" }}</span></p>
+      <p class="push-right">{{ post.data.date | formatDate }}</p>
+    </div>
   </li>
   {% endfor %}
 </ol>

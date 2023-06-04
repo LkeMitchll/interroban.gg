@@ -40,8 +40,10 @@ pagination:
             {{ bookmark.title }}
           </a>
         </p>
-        <p><span class="tag">{{ bookmark.tag }}</span></p>
-        <p>{{ bookmark.date | formatDate }}</p>
+        <div class="horizontal">
+          <p><span class="tag">{{ bookmark.tag }}</span></p>
+          <p class="push-right">{{ bookmark.date | formatDate }}</p>
+        </div>
       </li>
     {% endfor %}
   </ul>

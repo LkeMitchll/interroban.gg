@@ -2,11 +2,15 @@
   --space: var(--space-small);
   --threshold: 40rem;
 
-  & > p {
+  & > * {
     flex-grow: 0.5;
   }
 
   & > p:nth-child(2) {
-    flex-grow: 2;
+    flex-grow: 1.5;
+  }
+
+  & > div:nth-child(3) {
+    flex-grow: 1;
   }
 }
