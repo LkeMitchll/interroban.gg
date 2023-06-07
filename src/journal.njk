@@ -50,11 +50,11 @@ title: Journal
       and I collect the stats with <a href="https://www.last.fm">last.fm</a>.
     </p>
   </header>
-  <section class="columns" data-cols="2" data-row-gap="none">
+  <section class="columns">
     {% for week in [music.lastWeek, music.thisWeek] %}
     <div>
       <h3>{{ week.title }}</h3>
-      <ul role="list" class="columns | tertiary-text gap-large" data-row-gap="none">
+      <ul role="list" class="tertiary-text gap-large">
         {% for stat in [week.tracks, week.albums] %}
         <li class="horizontal | border gap">
           <p>{{ stat.title }}</p>
@@ -67,7 +67,7 @@ title: Journal
     </div>
     {% endfor %}
   </section>
-  <section class="columns" data-cols="2" data-row-gap="none">
+  <section class="music | columns">
     <div>
       <h3>Top albums (3 months)</h3>
       <ol role="list">
