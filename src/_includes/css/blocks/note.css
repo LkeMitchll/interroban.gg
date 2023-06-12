@@ -1,0 +1,28 @@
+.notes {
+  --cols: 2;
+
+  @media (min-width: 800px) {
+    --cols: 3;
+  }
+
+  @media (min-width: 1000px) {
+    --cols: 4;
+  }
+}
+
+.note {
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-mid);
+  padding: var(--space-default);
+  display: flex;
+
+  & > a {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+    & > *:first-child {
+      flex-grow: 1;
+    }
+  }
+}

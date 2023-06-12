@@ -14,13 +14,13 @@ title: Journal
   </section>
 </header>
 
-{% set toc = ["Blog", "Listening", "Watching", "Scrapbook"] %}
+{% set toc = ["Writing", "Listening", "Watching", "Scrapbook"] %}
 {% include "components/toc.njk" %}
 
-<article id="blog" class="gap-xx-large">
-  <header class="gap-large">
-    <h2>Blog</h2>
-    <p class="measure | gap-large">
+<article id="writing" class="flow | gap-xx-large">
+  <header class="flow">
+    <h2>Writing</h2>
+    <p class="measure">
       I try my best to write down a few thoughts each year, but I won’t hold myself too accountable.
     </p>
     <ul role="list" class="horizontal | tertiary-text">
@@ -37,11 +37,24 @@ title: Journal
     </ul>
   </header>
 
-  {% set posts = collections.post %}
+  <h3>Shorter Posts</h3>
+  <ul role="list" class="notes | columns">
+    {% for note in collections.notes | reverse %}
+    <li class="note | tertiary-text">
+      <a role="link" href="{{ note.url }}">
+        <h4>{{ note.data.title }}</h4>
+        <p><span class="tag">Note</span></p>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h3>Longer Posts</h3>
+  {% set posts = collections.postsWithoutNotes | reverse %}
   {% include "components/posts.njk" %}
 </article>
 
-<article id="listening" class="gap-xx-large">
+<article id="listening" class="flow | gap-xx-large">
   <header class="gap-large">
     <h2>Listening</h2>
     <p class="measure | gap-large">
@@ -50,7 +63,7 @@ title: Journal
       and I collect the stats with <a href="https://www.last.fm">last.fm</a>.
     </p>
   </header>
-  <section class="columns">
+  <section class="music | columns">
     {% for week in [music.lastWeek, music.thisWeek] %}
     <div>
       <h3>{{ week.title }}</h3>
@@ -129,7 +142,6 @@ title: Journal
     </p>
     <p class="measure leading-crushed">
       <small>
-        <strong class="tertiary-text">NOTE </strong>
         Each image is copyright of its respective owner. Reasonable effort has
         been made to retain the source information, although this has not always
         been possible. Clicking an image will open it’s source (if known).
