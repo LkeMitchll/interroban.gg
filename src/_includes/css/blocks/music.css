@@ -1,0 +1,7 @@
+.music {
+  @media (min-width: 700px) {
+    & {
+      --cols: 2;
+    }
+  }
+}

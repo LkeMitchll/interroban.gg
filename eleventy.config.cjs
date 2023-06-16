@@ -13,6 +13,9 @@ module.exports = function config(eleventy) {
   // Custom shortcodes
   eleventy.addAsyncShortcode('image', require('./src/_shortcodes/image.cjs'));
 
+  eleventy.addCollection('postsWithoutNotes', (collectionAPI) => collectionAPI.getFilteredByTag('post').filter((item) => item.data.type !== 'Note'));
+  eleventy.addCollection('notes', (collectionAPI) => collectionAPI.getFilteredByTag('post').filter((item) => item.data.type === 'Note'));
+
   const md = require('markdown-it');
   const mdOptions = { html: true, typographer: true };
 
