@@ -1,28 +1,30 @@
+@layer base, compositions, blocks, utilities;
+
 /* base */
-@import url("_includes/css/base/variables.css");
-@import url("_includes/css/base/fonts.css");
-@import url("_includes/css/base/global.css");
-@import url("_includes/css/base/typography.css");
+@import url("_includes/css/base/variables.css") layer(base);
+@import url("_includes/css/base/fonts.css") layer(base);
+@import url("_includes/css/base/global.css") layer(base);
+@import url("_includes/css/base/typography.css") layer(base);
 
 /* compositions */
-@import url("_includes/css/compositions/flow.css");
-@import url("_includes/css/compositions/columns.css");
-@import url("_includes/css/compositions/masonry.css");
-@import url("_includes/css/compositions/horizontal.css");
-@import url("_includes/css/compositions/switcher.css");
+@import url("_includes/css/compositions/flow.css") layer(compositions);
+@import url("_includes/css/compositions/columns.css") layer(compositions);
+@import url("_includes/css/compositions/masonry.css") layer(compositions);
+@import url("_includes/css/compositions/horizontal.css") layer(compositions);
+@import url("_includes/css/compositions/switcher.css") layer(compositions);
 
 /* blocks */
-@import url("_includes/css/blocks/grayscale-image.css");
-@import url("_includes/css/blocks/markdown.css");
-@import url("_includes/css/blocks/sidenote.css");
-@import url("_includes/css/blocks/movies.css");
-@import url("_includes/css/blocks/caption.css");
-@import url("_includes/css/blocks/tag.css");
-@import url("_includes/css/blocks/post.css");
-@import url("_includes/css/blocks/bookmark.css");
-@import url("_includes/css/blocks/lighthouse.css");
-@import url("_includes/css/blocks/music.css");
-@import url("_includes/css/blocks/note.css");
+@import url("_includes/css/blocks/grayscale-image.css") layer(blocks);
+@import url("_includes/css/blocks/markdown.css") layer(blocks);
+@import url("_includes/css/blocks/sidenote.css") layer(blocks);
+@import url("_includes/css/blocks/movies.css") layer(blocks);
+@import url("_includes/css/blocks/caption.css") layer(blocks);
+@import url("_includes/css/blocks/tag.css") layer(blocks);
+@import url("_includes/css/blocks/post.css") layer(blocks);
+@import url("_includes/css/blocks/bookmark.css") layer(blocks);
+@import url("_includes/css/blocks/lighthouse.css") layer(blocks);
+@import url("_includes/css/blocks/music.css") layer(blocks);
+@import url("_includes/css/blocks/note.css") layer(blocks);
 
 /* utilities */
-@import url("_includes/css/utilities/utilities.css");
+@import url("_includes/css/utilities/utilities.css") layer(utilities);
