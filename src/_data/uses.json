@@ -90,8 +90,8 @@
     ]
   },
   {
-    "title": "Overcast",
-    "url": "https://overcast.fm",
+    "title": "Castro",
+    "url": "https://www.castro.fm",
     "description": "For listening to podcasts.",
     "tags": [
       "software",
@@ -119,7 +119,7 @@
   {
     "title": "FigJam",
     "url": "https://www.figma.com/figjam",
-    "description": "For graphing & diagrams.",
+    "description": "A collaborative white-board, which is perfect for remote workshops.",
     "tags": [
       "software",
       "design"
@@ -129,15 +129,6 @@
     "title": "Pixelmator Pro",
     "url": "https://www.pixelmator.com/pro/",
     "description": "For photo editing.",
-    "tags": [
-      "software",
-      "design"
-    ]
-  },
-  {
-    "title": "Miro",
-    "url": "https://miro.com",
-    "description": "A collaborative white-board, which is perfect for remote workshops.",
     "tags": [
       "software",
       "design"
@@ -198,8 +189,8 @@
     ]
   },
   {
-    "title": "ASDF",
-    "url": "https://github.com/asdf-vm/asdf",
+    "title": "RTX",
+    "url": "https://github.com/jdxcode/rtx",
     "description": "A universal solution to manage the versions of all the programming languages I need.",
     "tags": [
       "software",
@@ -279,8 +270,8 @@
     ]
   },
   {
-    "title": "Sony WH-1000XM3 Headphones",
-    "url": "https://www.amazon.co.uk/Sony-WH-1000XM3-Wireless-Cancelling-Headphones-Black/dp/B07GDR2LYK",
+    "title": "Apple Airpods Pro",
+    "url": "https://www.apple.com/airpods-pro/",
     "description": "For listening to music & video calls. The noise cancelling is great.",
     "tags": [
       "hardware",
