@@ -21,7 +21,7 @@ module.exports = class LastFMAPI {
       .join('&');
 
     return Fetch(`${this.apiEndpoint}?${params}`, {
-      duration: '1h',
+      duration: '1d',
       type: 'json',
     });
   }
@@ -40,7 +40,7 @@ module.exports = class LastFMAPI {
       .join('&');
 
     return Fetch(`${this.apiEndpoint}?${params}`, {
-      duration: '1h',
+      duration: '1d',
       type: 'json',
     });
   }
@@ -59,7 +59,7 @@ module.exports = class LastFMAPI {
       .join('&');
 
     return Fetch(`${this.apiEndpoint}?${params}`, {
-      duration: '1h',
+      duration: '1d',
       type: 'json',
     });
   }
@@ -78,7 +78,7 @@ module.exports = class LastFMAPI {
       .join('&');
 
     return Fetch(`${this.apiEndpoint}?${params}`, {
-      duration: '1h',
+      duration: '1d',
       type: 'json',
     });
   }
