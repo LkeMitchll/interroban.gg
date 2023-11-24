@@ -12,6 +12,7 @@
     "@netlify/functions": "^2.3.0",
     "dotenv": "^16.3.1",
     "markdown-it": "^13.0.2",
+    "markdown-it-anchor": "^8.6.7",
     "simple-git": "^3.20.0",
     "xml-js": "^1.6.11"
   },
@@ -46,7 +47,7 @@
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
-    "start": "npm run build -- --serve --incremental --quiet",
+    "start": "npm run build -- --serve --quiet",
     "build": "npx @11ty/eleventy",
     "test": "npm run lint:stylelint & npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",

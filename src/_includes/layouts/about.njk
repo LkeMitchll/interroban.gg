@@ -1,6 +1,7 @@
 ---
 layout: layouts/default
 title: About
+toc: ["Now", "Experience", "Clients", "Skills", "Recognition", "History"]
 ---
 
 <header class="flow | gap-x-large">
@@ -12,7 +13,6 @@ title: About
   </p>
 </header>
 
-{% set toc = ["Now", "Experience", "Clients", "Skills", "Recognition", "History"] %}
 {% include "components/toc.njk" %}
 
 {% set image_ID = "ae9f9db0-ecc5-4d0b-b356-0e70d77ded7a" %}
@@ -30,6 +30,6 @@ title: About
 
 {% include "components/experience.njk" %}
 
-<article class="markdown | gap-xx-large" id="history">
+<article class="markdown | gap-xx-large">
   {{ content | safe }}
 </article>

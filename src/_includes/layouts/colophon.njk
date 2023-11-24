@@ -1,6 +1,7 @@
 ---
 layout: layouts/default
 title: Colophon
+toc: ["Updates", "Impact", "Design", "Development", "Typography"]
 ---
 
 <header class="flow | gap-x-large">
@@ -13,7 +14,9 @@ title: Colophon
   <hr>
 </header>
 
-<article class="flow | gap-xx-large">
+{% include "components/toc.njk" %}
+
+<article id="updates" class="flow | gap-xx-large">
   <div class="flow | gap-large">
     <h2 class="gap-large">Updates</h2>
     {% set posts = collections.metapost | reverse %}

@@ -19,7 +19,7 @@ module.exports = function config(eleventy) {
   const md = require('markdown-it');
   const mdOptions = { html: true, typographer: true };
 
-  eleventy.setLibrary('md', md(mdOptions));
+  eleventy.setLibrary('md', md(mdOptions).use(require('markdown-it-anchor')));
 
   eleventy.addPairedShortcode('sidenote', (content, number) => {
     const result = md(mdOptions).render(content);

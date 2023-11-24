@@ -1,6 +1,8 @@
 ---
 layout: layouts/default
 title: Journal
+toc:  ["Writing", "Listening", "Watching", "Scrapbook"]
+posts: collections.postsWithoutNotes
 ---
 
 <header class="flow | gap-x-large">
@@ -14,7 +16,6 @@ title: Journal
   </section>
 </header>
 
-{% set toc = ["Writing", "Listening", "Watching", "Scrapbook"] %}
 {% include "components/toc.njk" %}
 
 <article id="writing" class="flow | gap-xx-large">
