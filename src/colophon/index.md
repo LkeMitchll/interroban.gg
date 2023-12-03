@@ -14,6 +14,13 @@ Last time speedlify ran, this site earned the following [lighthouse](https://pag
 
 {% include "components/lighthouse.njk" %}
 
+## Philosophy
+
+This website will be [incrementally correct], progressively enhanced, and [my personal worry stone].
+
+[incrementally correct]: https://brianlovin.com/writing/incrementally-correct-personal-websites
+[my personal worry stone]: https://ethanmarcotte.com/wrote/let-a-website-be-a-worry-stone
+
 ## Design
 
 Special thanks go to:
@@ -22,7 +29,6 @@ Special thanks go to:
 - [Matthew Smith’s Website](https://matthewsmith.website/) Inspired this page, among others.
 - [Julian](https://julian.digital) inspired the journal.
 - [The Value of Multi-Typeface Design](https://medium.com/s/about-face/the-value-of-multi-typeface-design-ccd67227b0ee) by [Bethany Heck](https://heckhouse.com) made me think more about being less minimal about font selection.
-- [Brian Lovin](https://brianlovin.com) has a great ethos about 'incrementally correct' websites.
 
 And, in no particular order, a list of people and sites that have contributed some visual inspiration:
 
