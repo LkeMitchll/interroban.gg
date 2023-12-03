@@ -90,8 +90,8 @@
     ]
   },
   {
-    "title": "Castro",
-    "url": "https://www.castro.fm",
+    "title": "Overcast",
+    "url": "https://overcast.fm",
     "description": "For listening to podcasts.",
     "tags": [
       "software",
@@ -198,18 +198,36 @@
     ]
   },
   {
-    "title": "Mac mini",
-    "url": "https://support.apple.com/kb/SP776?locale=en_GB",
-    "description": "Is my primary work device. It is configured with the Apple M1, 16GB RAM and 1TB SSD.",
+    "title": "Apple MacBook Pro 16-inch",
+    "url": "https://www.apple.com/uk/macbook-pro/",
+    "description": "Is my primary work device. It is configured with the Apple M2 Pro, 32GB RAM and 512GB SSD.",
     "tags": [
       "hardware",
       "general"
     ]
   },
   {
-    "title": "iPhone 12 Pro Max",
-    "url": "https://www.apple.com/iphone-12-pro/",
+    "title": "Apple Mac mini",
+    "url": "https://www.apple.com/uk/mac-mini/",
+    "description": "Is my personal work device. It is configured with the Apple M1, 16GB RAM and 1TB SSD.",
+    "tags": [
+      "hardware",
+      "general"
+    ]
+  },
+  {
+    "title": "Apple iPhone 15 Pro Max",
+    "url": "https://www.apple.com/iphone-15-pro/",
     "description": "is my primary personal device.",
+    "tags": [
+      "hardware",
+      "general"
+    ]
+  },
+  {
+    "title": "Apple iPad Air (5th Generation)",
+    "url": "https://www.apple.com/ipad-air/",
+    "description": "is my secondary personal device.",
     "tags": [
       "hardware",
       "general"
@@ -227,25 +245,16 @@
   {
     "title": "Herman Miller Aeron Chair",
     "url": "https://www.hermanmiller.com/en_gb/products/seating/office-chairs/aeron-chairs/",
-    "description": " Is the best ergonomic chair ever. They are very expensive, but this second-hand 15+ year old example is still solid as a rock.",
+    "description": "Is the best ergonomic chair ever. They are very expensive, but this second-hand 15+ year old example is still solid as a rock.",
     "tags": [
       "hardware",
       "ergonomics"
     ]
   },
   {
-    "title": "Dell U2718Q Monitor",
-    "url": "https://www.amazon.co.uk/gp/product/B07439KLK5",
-    "description": "This is a 4k, 27inch monitor with pretty decent color and pixel density, for the price.",
-    "tags": [
-      "hardware",
-      "general"
-    ]
-  },
-  {
-    "title": "Logitech Streamcam",
-    "url": "https://www.logitech.com/en-gb/product/streamcam",
-    "description": "Is a decent 1080p@60Hz webcam, with a USB-C connector. Perfect for Zoom calls etc.",
+    "title": "Apple Studio Display",
+    "url": "https://www.apple.com/studio-display/",
+    "description": "A bright, 5K, color-correct display, in a beautifully designed package. Paired with my work devices.",
     "tags": [
       "hardware",
       "general"
@@ -255,6 +264,15 @@
     "title": "RAMA Kara Keyboard",
     "url": "https://ramaworks.store/products/kara",
     "description": "A very high-quality, modular, mechanical keyboard. I bought it as part of the first group-buy in 2020.",
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
+  },
+  {
+    "title": "Owlab Voice Mini Macropad",
+    "url": "https://qwertykeys.notion.site/Voice-Mini-653fc47940cf4ef9accc586e5edd0add",
+    "description": "A neat little macropad with real mechanical keys, and rotating wheel. I use this control music and mute my microphone during calls.",
     "tags": [
       "hardware",
       "ergonomics"
@@ -303,15 +321,6 @@
     "tags": [
       "hardware",
       "general"
-    ]
-  },
-  {
-    "title": "Wacom Intuos M",
-    "url": "https://estore.wacom.com/en-GB/wacom-intuos-m-bluetooth-black-n-ctl-6100wlk-n",
-    "description": "As a drawing tablet for illustration.",
-    "tags": [
-      "hardware",
-      "ergonomics"
     ]
   }
 ]
