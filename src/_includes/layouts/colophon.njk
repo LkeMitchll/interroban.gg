@@ -11,6 +11,7 @@ toc: ["Updates", "Impact", "Design", "Development", "Typography"]
     that have made this site what it is. Check back regularly, as I try to keep
     this up-to-date, when I get time.
   </p>
+  {% include "components/commits.njk" %}
   <hr>
 </header>
 
@@ -21,7 +22,6 @@ toc: ["Updates", "Impact", "Design", "Development", "Typography"]
     <h2 class="gap-large">Updates</h2>
     {% set posts = collections.metapost | reverse %}
     {% include "components/posts.njk" %}
-    {% include "components/commits.njk" %}
     <hr />
   </div>
   <section class="markdown">

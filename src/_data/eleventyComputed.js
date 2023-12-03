@@ -15,7 +15,5 @@ async function getChanges(data) {
 }
 
 module.exports = {
-  eleventyComputed: {
-    commits: async (data) => getChanges(data),
-  },
+  commits: async (data) => getChanges(data),
 };

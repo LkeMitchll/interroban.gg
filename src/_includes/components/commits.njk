@@ -3,7 +3,6 @@
   <ol role="list" class="flow gap">
     {% for commit in commits %}
     <li>
-      <p>#<code>{{ commit.hash }}</code></p>
       <a href="https://github.com/LkeMitchll/interroban.gg/commit/{{ commit.hash }}">
         {{ commit.message }}
       </a>
