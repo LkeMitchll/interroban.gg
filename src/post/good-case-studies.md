@@ -1,5 +1,4 @@
 ---
-id: 72rv3ehgZyfrAUKYMVTrRJ
 title: Good Case Studies
 description: > 
   I'm currently thinking about writing case studies for my work, I didn't know
