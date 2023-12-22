@@ -11,13 +11,19 @@ class Posts {
 
   render(data) {
     const entries = [...data.bookmarks].reverse();
-    const bookmarks = entries.map((bookmark) => ({
-      id: bookmark.id,
-      content_html: `<p>Link: <a href="${bookmark.url}">${bookmark.title}</a></p><ul><li>Added: ${bookmark.date}</li><li>Tag: ${bookmark.tag}</li></ul>`,
-      url: bookmark.url,
-      date_published: bookmark.date,
-      title: bookmark.title,
-    }));
+    const bookmarks = entries.map((bookmark) => {
+      let via = '';
+      if (bookmark.viaURL) {
+        via = `<li>Via <a href="${bookmark.viaURL}">${bookmark.viaName}</a>`;
+      }
+      return {
+        id: bookmark.id,
+        content_html: `<p>Link: <a href="${bookmark.url}">${bookmark.title}</a></p><ul>${via}<li>Added: ${bookmark.date}</li><li>Tag: ${bookmark.tag}</li></ul>`,
+        url: bookmark.url,
+        date_published: bookmark.date,
+        title: bookmark.title,
+      };
+    });
 
     const wrapper = {
       version: 'https://jsonfeed.org/version/1.1',
