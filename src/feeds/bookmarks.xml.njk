@@ -37,6 +37,14 @@
         {% set content %}
           <p>Link: <a href="{{ bookmark.url }}">{{ bookmark.title }}</a></p>
           <ul>
+            {% if bookmark.viaURL %}
+            <li>
+              Via:
+              <a href="{{ bookmark.viaURL }}">
+                {{ bookmark.viaName }}
+              </a>
+            </li>
+            {% endif %}
             <li>Added: {{ bookmark.date }}</li>
             <li>Tag: {{ bookmark.tag }}</li>
           </ul>
