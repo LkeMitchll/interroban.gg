@@ -37,9 +37,13 @@ pagination:
       <li class="bookmark | switcher | border tertiary-text">
         <p>N&ordm; {{ bookmark.number }}</p>
         <p>
-          <a href="{{ bookmark.url }}">
-            {{ bookmark.title }}
-          </a>
+          <a href="{{ bookmark.url }}">{{ bookmark.title }}</a>
+          {% if bookmark.viaURL %}
+            via
+            <a href="{{ bookmark.viaURL }}">
+              {{ bookmark.viaName }}
+            </a>
+          {% endif %}
         </p>
         <div class="horizontal">
           <p><span class="tag">{{ bookmark.tag }}</span></p>
