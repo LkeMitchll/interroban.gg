@@ -1,4 +1,4 @@
-module.exports = function starRating(rating) {
+const starRating = (rating) => {
   // https://github.com/zactopus/letterboxd
   const scoreToStars = {
     '-1.0': { description: 'None', text: 'None' },
@@ -22,3 +22,5 @@ module.exports = function starRating(rating) {
 
   return tag;
 };
+
+export default starRating;

@@ -1,10 +1,6 @@
-const fetch = require('@11ty/eleventy-fetch');
+import fetch from '@11ty/eleventy-fetch';
 
-module.exports = async function responsiveImage(
-  imgUUID,
-  imgAlt,
-  size = 'large',
-) {
+const responsiveImage = async (imgUUID, imgAlt, size = 'large') => {
   const imgUrl = `https://ucarecdn.com/${imgUUID}`;
   const imgMeta = await fetch(`${imgUrl}/-/json/`, { duration: '1h', type: 'json' }).then(
     (response) => response,
@@ -38,3 +34,5 @@ module.exports = async function responsiveImage(
                  alt="${imgAlt}" />
           </div>`;
 };
+
+export default responsiveImage;

@@ -1,4 +1,4 @@
-module.exports = function formattedDate(date) {
+const formattedDate = (date) => {
   const input = new Date(date);
   const niceDate = new Intl.DateTimeFormat(
     'en-US',
@@ -6,3 +6,5 @@ module.exports = function formattedDate(date) {
   ).format(input);
   return niceDate;
 };
+
+export default formattedDate;
