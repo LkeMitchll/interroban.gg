@@ -39,4 +39,4 @@ class Posts {
   }
 }
 
-module.exports = Posts;
+export default Posts;
