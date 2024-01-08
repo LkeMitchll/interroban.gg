@@ -36,15 +36,13 @@
       "ecmaVersion": "latest"
     },
     "rules": {
-      "global-require": 0
+      "global-require": 0,
+      "import/extensions": [ "error", "ignorePackages", { "js": "always" } ]
     }
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
-    "ignoreFiles": [
-      "./**/*.js",
-      "./**/*.cjs"
-    ]
+    "ignoreFiles": [ "./**/*.js" ]
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
@@ -52,6 +50,6 @@
     "build": "npx @11ty/eleventy",
     "test": "npm run lint:stylelint & npm run lint:eslint",
     "lint:stylelint": "stylelint ./src/**/*.css",
-    "lint:eslint": "eslint ./src/**/*.cjs"
+    "lint:eslint": "eslint ./src/**/*.js"
   }
 }
