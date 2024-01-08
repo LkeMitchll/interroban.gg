@@ -1,4 +1,4 @@
-const BookmarksAPI = require('../_providers/bookmarks.cjs');
+import BookmarksAPI from '../_providers/bookmarks.cjs';
 
 function numberedBookmarks(data) {
   data.forEach((entry, i) => {
@@ -8,11 +8,13 @@ function numberedBookmarks(data) {
   return data;
 }
 
-module.exports = async function bookmarks() {
+async function bookmarks() {
   const api = new BookmarksAPI();
 
   const data = await api.fetchPublishedBookmarks()
     .then((json) => numberedBookmarks(json));
 
   return data;
-};
+}
+
+export default bookmarks();

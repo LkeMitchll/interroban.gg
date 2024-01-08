@@ -1,4 +1,6 @@
-const git = require('simple-git')();
+import simpleGit from 'simple-git';
+
+const git = simpleGit();
 
 async function getChanges(data) {
   const options = {
@@ -14,6 +16,6 @@ async function getChanges(data) {
   }
 }
 
-module.exports = {
-  commits: async (data) => getChanges(data),
-};
+const commits = async (data) => getChanges(data);
+
+export default { commits };

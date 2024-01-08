@@ -1,4 +1,4 @@
-const LastFMAPI = require('../_providers/lastfm.cjs');
+import LastFMAPI from '../_providers/lastfm.cjs';
 
 function dateToEpochWithOffset(time, offset) {
   const date = new Date();
@@ -84,11 +84,9 @@ async function topArtists() {
   return response;
 }
 
-module.exports = async function music() {
-  return {
-    lastWeek: await lastWeek(),
-    thisWeek: await thisWeek(),
-    topAlbums: await topAlbums(),
-    topArtists: await topArtists(),
-  };
+export default {
+  lastWeek: await lastWeek(),
+  thisWeek: await thisWeek(),
+  topAlbums: await topAlbums(),
+  topArtists: await topArtists(),
 };

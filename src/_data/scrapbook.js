@@ -1,6 +1,6 @@
-const SaveeAPI = require('../_providers/savee.cjs');
+import SaveeAPI from '../_providers/savee.cjs';
 
-module.exports = async function scrapbook() {
+async function scrapbook() {
   const response = new SaveeAPI();
 
   return response.getItems().then((json) => {
@@ -12,4 +12,6 @@ module.exports = async function scrapbook() {
     });
     return json.data.userByUsername.items.items;
   });
-};
+}
+
+export default scrapbook();
