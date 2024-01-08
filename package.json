@@ -3,9 +3,10 @@
   "version": "4.5.0",
   "description": "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.",
   "private": true,
+  "type": "module",
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "3.0.0-alpha.4",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.2.0",

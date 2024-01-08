@@ -1,7 +1,7 @@
-const Fetch = require('@11ty/eleventy-fetch');
+import fetch from '@11ty/eleventy-fetch';
 
-module.exports = async function carbon() {
-  const result = Fetch(
+async function carbon() {
+  const result = fetch(
     'https://api.websitecarbon.com/b?url=https%3A%2F%2Finterroban.gg',
     {
       duration: '1d',
@@ -10,4 +10,6 @@ module.exports = async function carbon() {
   ).then((json) => json);
 
   return result;
-};
+}
+
+export default carbon();

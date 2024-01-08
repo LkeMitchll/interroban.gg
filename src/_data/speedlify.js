@@ -1,10 +1,10 @@
-const SpeedlifyAPI = require('../_providers/speedlify.cjs');
+import SpeedlifyAPI from '../_providers/speedlify.cjs';
 
 function convertToPercentage(float) {
   return (float * 100).toFixed(0);
 }
 
-module.exports = async function speedlify() {
+async function speedlify() {
   const api = new SpeedlifyAPI();
   const lighthouseRaw = await api.getLighthouseScore();
   const rank = await api.getRank();
@@ -16,4 +16,6 @@ module.exports = async function speedlify() {
   lighthouse.seo = convertToPercentage(lighthouseRaw.seo);
 
   return { lighthouse, rank };
-};
+}
+
+export default speedlify();
