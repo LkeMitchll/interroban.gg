@@ -1,6 +1,6 @@
-const Fetch = require('@11ty/eleventy-fetch');
+import Fetch from '@11ty/eleventy-fetch';
 
-module.exports = class LastFMAPI {
+export default class LastFMAPI {
   constructor() {
     this.apiEndpoint = 'http://ws.audioscrobbler.com/2.0/';
     this.apiKey = process.env.LASTFM_API_KEY;
@@ -82,4 +82,4 @@ module.exports = class LastFMAPI {
       type: 'json',
     });
   }
-};
+}

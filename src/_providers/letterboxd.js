@@ -1,8 +1,8 @@
 /* eslint no-underscore-dangle: 0 */
-const Fetch = require('@11ty/eleventy-fetch');
-const convert = require('xml-js');
+import Fetch from '@11ty/eleventy-fetch';
+import convert from 'xml-js';
 
-module.exports = class LetterboxdAPI {
+export default class LetterboxdAPI {
   constructor() {
     this.apiEndpoint = 'https://letterboxd.com/luke_mitchell/rss';
   }
@@ -31,4 +31,4 @@ module.exports = class LetterboxdAPI {
 
     return result;
   }
-};
+}

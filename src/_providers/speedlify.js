@@ -1,6 +1,6 @@
-const Fetch = require('@11ty/eleventy-fetch');
+import Fetch from '@11ty/eleventy-fetch';
 
-module.exports = class SpeedlifyAPI {
+export default class SpeedlifyAPI {
   constructor() {
     this.url = 'https://www.11ty.dev/speedlify/api/6798b78.json';
   }
@@ -21,4 +21,4 @@ module.exports = class SpeedlifyAPI {
 
     return request;
   }
-};
+}

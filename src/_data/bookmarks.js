@@ -1,4 +1,4 @@
-import BookmarksAPI from '../_providers/bookmarks.cjs';
+import BookmarksAPI from '../_providers/bookmarks.js';
 
 function numberedBookmarks(data) {
   data.forEach((entry, i) => {

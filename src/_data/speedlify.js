@@ -1,4 +1,4 @@
-import SpeedlifyAPI from '../_providers/speedlify.cjs';
+import SpeedlifyAPI from '../_providers/speedlify.js';
 
 function convertToPercentage(float) {
   return (float * 100).toFixed(0);

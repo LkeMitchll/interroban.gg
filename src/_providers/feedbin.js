@@ -1,6 +1,6 @@
-const Fetch = require('@11ty/eleventy-fetch');
+import Fetch from '@11ty/eleventy-fetch';
 
-module.exports = class FeedbinAPI {
+export default class FeedbinAPI {
   constructor() {
     this.apiEndpoint = 'https://api.feedbin.com/v2/';
     this.credentials = Buffer.from(
@@ -20,4 +20,4 @@ module.exports = class FeedbinAPI {
       },
     });
   }
-};
+}

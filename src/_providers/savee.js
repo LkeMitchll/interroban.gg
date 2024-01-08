@@ -1,6 +1,6 @@
-const Fetch = require('@11ty/eleventy-fetch');
+import Fetch from '@11ty/eleventy-fetch';
 
-module.exports = class SaveeAPI {
+export default class SaveeAPI {
   constructor() {
     this.url = 'https://savee.it/api/graphql/';
   }
@@ -39,4 +39,4 @@ module.exports = class SaveeAPI {
       },
     });
   }
-};
+}

@@ -1,4 +1,4 @@
-import LetterboxdAPI from '../_providers/letterboxd.cjs';
+import LetterboxdAPI from '../_providers/letterboxd.js';
 
 async function movies() {
   const api = new LetterboxdAPI();

@@ -1,4 +1,4 @@
-import SaveeAPI from '../_providers/savee.cjs';
+import SaveeAPI from '../_providers/savee.js';
 
 async function scrapbook() {
   const response = new SaveeAPI();

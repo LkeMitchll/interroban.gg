@@ -1,4 +1,4 @@
-import LastFMAPI from '../_providers/lastfm.cjs';
+import LastFMAPI from '../_providers/lastfm.js';
 
 function dateToEpochWithOffset(time, offset) {
   const date = new Date();

@@ -1,6 +1,6 @@
-const Fetch = require('@11ty/eleventy-fetch');
+import Fetch from '@11ty/eleventy-fetch';
 
-module.exports = class BookmarksAPI {
+export default class BookmarksAPI {
   constructor() {
     this.credentials = Buffer.from(
       `${process.env.BOOKMARKS_USER}:${process.env.BOOKMARKS_PASSWORD}`,
@@ -21,4 +21,4 @@ module.exports = class BookmarksAPI {
       },
     );
   }
-};
+}
