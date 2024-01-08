@@ -3,7 +3,7 @@
   margin-bottom: var(--space-xx-large);
   grid-row-gap: var(--space-medium);
 
-  & *:not(aside, figcaption, figure) {
+  & > *:not(aside, figcaption, figure) {
     grid-column: 1;
   }
 
