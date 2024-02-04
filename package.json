@@ -42,7 +42,10 @@
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
-    "ignoreFiles": [ "./**/*.js" ]
+    "ignoreFiles": [ "./**/*.js" ],
+    "rules": {
+      "media-feature-range-notation": "prefix"
+    }
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
