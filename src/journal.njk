@@ -1,10 +1,9 @@
 ---
 layout: layouts/default
 title: Journal
-toc:  ["Writing", "Listening", "Watching", "Scrapbook"]
+toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
 posts: collections.postsWithoutNotes
 ---
-
 <header class="flow | gap-x-large">
   {% include "components/nav.njk" %}
   <section class="flow | measure">
@@ -110,6 +109,35 @@ posts: collections.postsWithoutNotes
       </ol>
     </div>
   </section>
+</article>
+
+<article id="reading" class="gap-xx-large">
+  <header class="gap-large">
+    <h2>Reading</h2>
+    <p class="measure">
+      The books I’m reading, and the books I want to read next. You can see more on
+      <a href="https://literal.club/interrobang">Literal</a>.
+    </p>
+  </header>
+
+  <ol role="list" class="movies | columns">
+    <li class="push-down">
+      <img src="{{ reading.currentlyReading.book.cover }}" width="500" height="750" loading="lazy" alt="{{ reading.currentlyReading.book.title }}" title="{{ reading.currentlyReading.book.title }}" class="gap" />
+      <div class="flow | tertiary-text">
+        <p>Reading now</p>
+        <a href="https://literal.club/book/{{ reading.currentlyReading.book.slug }}">{{ reading.currentlyReading.book.title }}</a>
+      </div>
+    </li>
+    {% for item in reading.upNext %}
+    <li class="push-down">
+      <img src="{{ item.book.cover }}" width="500" height="750" loading="lazy" alt="{{ item.book.title }}" title="{{ item.book.title }}" class="gap opacity-70" />
+      <div class="flow | tertiary-text">
+        <p>Want to read</p>
+        <a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
 </article>
 
 <article id="watching" class="gap-xx-large">
