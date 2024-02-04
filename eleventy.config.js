@@ -9,7 +9,7 @@ import responsiveImage from './src/_shortcodes/image.js';
 
 const config = (eleventy) => {
   // Eleventy plugins
-  eleventy.addPlugin(lightningCSSPlugin, { nesting: true });
+  eleventy.addPlugin(lightningCSSPlugin);
   eleventy.addPlugin(RSSPlugin);
 
   // Custom filters
