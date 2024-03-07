@@ -1,9 +1,9 @@
 import BookmarksAPI from '../_providers/bookmarks.js';
 
 function numberedBookmarks(data) {
-  data.forEach((entry, i) => {
-    const e = entry;
-    e.number = i;
+  data.forEach((e, i) => {
+    const entry = e;
+    entry.number = i;
   });
   return data;
 }
