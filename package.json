@@ -10,7 +10,6 @@
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.2.0",
-    "@netlify/functions": "^2.4.1",
     "dotenv": "^16.3.1",
     "markdown-it": "^14.0.0",
     "markdown-it-anchor": "^8.6.7",
