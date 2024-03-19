@@ -38,20 +38,7 @@ posts: collections.postsWithoutNotes
     </ul>
   </header>
 
-  <h3>Shorter Posts</h3>
-  <ul role="list" class="notes | columns">
-    {% for note in collections.notes | reverse %}
-    <li class="note | tertiary-text">
-      <a role="link" href="{{ note.url }}">
-        <h4>{{ note.data.title }}</h4>
-        <p><span class="tag">Note</span></p>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-
-  <h3>Longer Posts</h3>
-  {% set posts = collections.postsWithoutNotes | reverse %}
+  {% set posts = collections.post %}
   {% include "components/posts.njk" %}
 </article>
 
@@ -64,7 +51,7 @@ posts: collections.postsWithoutNotes
       and I collect the stats with <a href="https://www.last.fm">last.fm</a>.
     </p>
   </header>
-  <section class="music | columns">
+  <section class="columns">
     {% for week in [music.lastWeek, music.thisWeek] %}
     <div>
       <h3>{{ week.title }}</h3>
@@ -179,14 +166,17 @@ posts: collections.postsWithoutNotes
     </p>
   </header>
 
-  <div class="masonry">
-    {% for item in scrapbook %}
-    <figure>
-      <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}">
-        <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}"
-          height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
-      </a>
-    </figure>
+  <div class="columns masonry">
+    {% for batch in scrapbook | batch(5) %}
+    <div>
+      {% for item in batch %}
+      <figure>
+        <a href="{{ item.pageURL if item.pageURL else 'https://savee.it' + item.url }}">
+          <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}" height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
+        </a>
+      </figure>
+      {% endfor %}
+    </div>
     {% endfor %}
   </div>
 </article>

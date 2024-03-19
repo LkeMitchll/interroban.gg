@@ -1,12 +1,5 @@
 .columns {
   display: grid;
-  grid-gap: var(--row-gap, var(--space-large)) var(--gap, var(--space-large));
-  grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr));
-
-  @media (min-width: 700px) {
-    & {
-      grid-column-gap: var(--space-x-large);
-      grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
-    }
-  }
+  grid-gap: var(--row-gap, var(--space-large)) var(--column-gap, var(--space-large));
+  grid-template-columns: repeat(var(--column-count, auto-fit), var(--column-min, minmax(calc(var(--text-measure) / 4), 1fr)));
 }

@@ -1,13 +1,8 @@
 .horizontal {
   display: flex;
-
-  & > *:not(:last-child) {
-    margin-right: var(--gap, 1rem);
-  }
+  gap: var(--gap, 1rem);
 
   @media (min-width: 700px) {
-    & > * {
-      --gap: 2rem;
-    }
+    --gap: 2rem;
   }
 }

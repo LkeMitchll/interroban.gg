@@ -23,8 +23,6 @@
 @import url("_includes/css/blocks/post.css") layer(blocks);
 @import url("_includes/css/blocks/bookmark.css") layer(blocks);
 @import url("_includes/css/blocks/lighthouse.css") layer(blocks);
-@import url("_includes/css/blocks/music.css") layer(blocks);
-@import url("_includes/css/blocks/note.css") layer(blocks);
 
 /* utilities */
 @import url("_includes/css/utilities/utilities.css") layer(utilities);

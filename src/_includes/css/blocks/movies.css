@@ -1,17 +1,4 @@
 .movies {
-  --cols: 2;
-
-  @media screen and (min-width: 700px) {
-    & {
-      --cols: 3;
-    }
-  }
-
-  @media screen and (min-width: 900px) {
-    & {
-      --cols: 6;
-
-      grid-gap: var(--space-default);
-    }
-  }
+  --row-gap: var(--space-default);
+  --column-gap: var(--space-default);
 }
