@@ -19,9 +19,7 @@ const config = (eleventy) => {
   // Custom shortcodes
   eleventy.addAsyncShortcode('image', responsiveImage);
 
-  eleventy.addCollection('postsWithoutNotes', (collectionAPI) => collectionAPI.getFilteredByTag('post').filter((item) => item.data.type !== 'Note'));
-  eleventy.addCollection('notes', (collectionAPI) => collectionAPI.getFilteredByTag('post').filter((item) => item.data.type === 'Note'));
-
+  // Markdown config
   const mdOptions = { html: true, typographer: true };
   const md = markdownIt(mdOptions).use(mdAnchor);
 
@@ -30,9 +28,7 @@ const config = (eleventy) => {
   eleventy.addPairedShortcode('sidenote', (content, number) => {
     const result = md.render(content);
     return `<aside id="sn-${number}" class="sidenote">
-              <small>
-                ${result}
-              </small>
+              <small>${result}</small>
             </aside>`;
   });
 
