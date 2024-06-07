@@ -1,18 +1,18 @@
-import Fetch from '@11ty/eleventy-fetch';
+import Fetch from '@11ty/eleventy-fetch'
 
 export default class SaveeAPI {
-  constructor() {
-    this.url = 'https://savee.it/api/graphql/';
+  constructor () {
+    this.url = 'https://savee.it/api/graphql/'
   }
 
-  async getItems() {
+  async getItems () {
     return Fetch(this.url, {
       duration: '1d',
       type: 'json',
       fetchOptions: {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           query: `{
@@ -34,9 +34,9 @@ export default class SaveeAPI {
                 }
               }
             }
-          }`,
-        }),
-      },
-    });
+          }`
+        })
+      }
+    })
   }
 }

@@ -1,21 +1,21 @@
-import simpleGit from 'simple-git';
+import simpleGit from 'simple-git'
 
-const git = simpleGit();
+const git = simpleGit()
 
-async function getChanges(data) {
+async function getChanges (data) {
   const options = {
     file: data.page.inputPath,
-    maxCount: 3,
-  };
+    maxCount: 3
+  }
 
   try {
-    const history = await git.log(options);
-    return history.all;
+    const history = await git.log(options)
+    return history.all
   } catch (e) {
-    return null;
+    return null
   }
 }
 
-const commits = async (data) => getChanges(data);
+const commits = async (data) => getChanges(data)
 
-export default { commits };
+export default { commits }

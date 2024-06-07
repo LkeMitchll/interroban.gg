@@ -1,18 +1,18 @@
-import Fetch from '@11ty/eleventy-fetch';
+import Fetch from '@11ty/eleventy-fetch'
 
 export default class LiteralAPI {
-  constructor() {
-    this.url = 'https://literal.club/graphql/';
+  constructor () {
+    this.url = 'https://literal.club/graphql/'
   }
 
-  async getAccessToken() {
+  async getAccessToken () {
     const response = await Fetch(`${this.url}#token`, {
       duration: '150d',
       type: 'json',
       fetchOptions: {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           query: `
@@ -24,17 +24,17 @@ export default class LiteralAPI {
         `,
           variables: {
             email: process.env.LITERAL_USER,
-            password: process.env.LITERAL_PASSWORD,
-          },
-        }),
-      },
-    });
+            password: process.env.LITERAL_PASSWORD
+          }
+        })
+      }
+    })
 
-    return response.data.login.token;
+    return response.data.login.token
   }
 
-  async getCurrentlyReadingBooks() {
-    const accessToken = await this.getAccessToken();
+  async getCurrentlyReadingBooks () {
+    const accessToken = await this.getAccessToken()
 
     const response = await Fetch(this.url, {
       duration: '1d',
@@ -43,7 +43,7 @@ export default class LiteralAPI {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           query: `
@@ -57,14 +57,14 @@ export default class LiteralAPI {
               }
             }
           }
-        `,
-        }),
-      },
-    });
+        `
+        })
+      }
+    })
 
-    const currentlyReading = response.data.myReadingStates.filter((shelf) => shelf.status === 'IS_READING')[0];
-    const upNext = response.data.myReadingStates.filter((shelf) => shelf.status === 'WANTS_TO_READ').slice(0, 5);
+    const currentlyReading = response.data.myReadingStates.filter((shelf) => shelf.status === 'IS_READING')[0]
+    const upNext = response.data.myReadingStates.filter((shelf) => shelf.status === 'WANTS_TO_READ').slice(0, 5)
 
-    return { currentlyReading, upNext };
+    return { currentlyReading, upNext }
   }
 }

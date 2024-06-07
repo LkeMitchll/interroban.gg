@@ -1,11 +1,11 @@
-import Fetch from '@11ty/eleventy-fetch';
+import Fetch from '@11ty/eleventy-fetch'
 
 export default class BookmarksAPI {
-  constructor() {
-    this.apiEndpoint = `${process.env.BOOKMARKS_URL}/bookmarks?filter=published`;
+  constructor () {
+    this.apiEndpoint = `${process.env.BOOKMARKS_URL}/bookmarks?filter=published`
   }
 
-  fetchPublishedBookmarks() {
+  fetchPublishedBookmarks () {
     return Fetch(
       this.apiEndpoint,
       {
@@ -13,10 +13,10 @@ export default class BookmarksAPI {
         type: 'json',
         fetchOptions: {
           headers: {
-            Authorization: `Bearer ${process.env.BOOKMARKS_KEY}`,
-          },
-        },
-      },
-    );
+            Authorization: `Bearer ${process.env.BOOKMARKS_KEY}`
+          }
+        }
+      }
+    )
   }
 }

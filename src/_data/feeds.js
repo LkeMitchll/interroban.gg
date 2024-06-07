@@ -1,9 +1,9 @@
-import FeedbinAPI from '../_providers/feedbin.js';
+import FeedbinAPI from '../_providers/feedbin.js'
 
-async function feeds() {
-  const api = new FeedbinAPI();
+async function feeds () {
+  const api = new FeedbinAPI()
 
-  return api.getSubscriptions().then((json) => json);
+  return api.getSubscriptions().then((json) => json)
 }
 
-export default feeds();
+export default feeds()

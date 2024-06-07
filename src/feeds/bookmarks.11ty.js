@@ -1,29 +1,29 @@
 class Posts {
-  constructor() {
-    this.filename = 'bookmarks.json';
+  constructor () {
+    this.filename = 'bookmarks.json'
   }
 
-  data() {
+  data () {
     return {
-      permalink: `/feeds/${this.filename}`,
-    };
+      permalink: `/feeds/${this.filename}`
+    }
   }
 
-  render(data) {
-    const entries = [...data.bookmarks].reverse();
+  render (data) {
+    const entries = [...data.bookmarks].reverse()
     const bookmarks = entries.map((bookmark) => {
-      let via = '';
+      let via = ''
       if (bookmark.viaURL) {
-        via = `<li>Via <a href="${bookmark.viaURL}">${bookmark.viaName}</a>`;
+        via = `<li>Via <a href="${bookmark.viaURL}">${bookmark.viaName}</a>`
       }
       return {
         id: bookmark.id,
         content_html: `<p>Link: <a href="${bookmark.url}">${bookmark.title}</a></p><ul>${via}<li>Added: ${bookmark.date}</li><li>Tag: ${bookmark.tag}</li></ul>`,
         url: bookmark.url,
         date_published: bookmark.date,
-        title: bookmark.title,
-      };
-    });
+        title: bookmark.title
+      }
+    })
 
     const wrapper = {
       version: 'https://jsonfeed.org/version/1.1',
@@ -34,11 +34,11 @@ class Posts {
       language: 'en',
       home_page_url: 'https://interroban.gg/bookmarks',
       feed_url: `https://interroban.gg/feeds/${this.filename}`,
-      items: bookmarks,
-    };
+      items: bookmarks
+    }
 
-    return JSON.stringify(wrapper);
+    return JSON.stringify(wrapper)
   }
 }
 
-export default Posts;
+export default Posts

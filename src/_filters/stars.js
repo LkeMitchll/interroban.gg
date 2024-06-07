@@ -11,16 +11,16 @@ const starRating = (rating) => {
     3.5: { description: 'Three and a half stars', text: '★★★ ½' },
     '4.0': { description: 'Four stars', text: '★★★★' },
     4.5: { description: 'Four and a half stars', text: '★★★★ ½' },
-    '5.0': { description: 'Five stars', text: '★★★★★' },
-  };
+    '5.0': { description: 'Five stars', text: '★★★★★' }
+  }
 
   const tag = `<span aria-label='${scoreToStars[rating].description}'
                      title='${scoreToStars[rating].description}'
                >
                 ${scoreToStars[rating].text}
-               </span>`;
+               </span>`
 
-  return tag;
-};
+  return tag
+}
 
-export default starRating;
+export default starRating

@@ -1,27 +1,27 @@
 /* eslint no-underscore-dangle: 0 */
 class Posts {
-  constructor() {
-    this.filename = 'posts.json';
-    this.result = [];
+  constructor () {
+    this.filename = 'posts.json'
+    this.result = []
   }
 
-  data() {
+  data () {
     return {
-      permalink: `/feeds/${this.filename}`,
-    };
+      permalink: `/feeds/${this.filename}`
+    }
   }
 
-  render(data) {
-    const posts = data.collections.post;
-    posts.reverse();
+  render (data) {
+    const posts = data.collections.post
+    posts.reverse()
     this.result = posts.map((post) => ({
       id: post.data.page.fileSlug,
       content_html: post.data._templateContent,
       url: `https://interroban.gg${post.url}`,
       summary: post.data.description,
       date_published: post.data.date,
-      title: post.data.title,
-    }));
+      title: post.data.title
+    }))
 
     const wrapper = {
       version: 'https://jsonfeed.org/version/1.1',
@@ -32,11 +32,11 @@ class Posts {
       language: 'en',
       home_page_url: 'https://interroban.gg',
       feed_url: 'https://interroban.gg/feeds/posts.json',
-      items: this.result,
-    };
+      items: this.result
+    }
 
-    return JSON.stringify(wrapper);
+    return JSON.stringify(wrapper)
   }
 }
 
-export default Posts;
+export default Posts
