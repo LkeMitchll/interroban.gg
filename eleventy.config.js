@@ -8,6 +8,9 @@ import starFilter from './src/_filters/stars.js';
 import responsiveImage from './src/_shortcodes/image.js';
 
 const config = (eleventy) => {
+  // Manually copy files
+  eleventy.addPassthroughCopy('src/assets');
+
   // Eleventy plugins
   eleventy.addPlugin(lightningCSSPlugin);
   eleventy.addPlugin(RSSPlugin);
