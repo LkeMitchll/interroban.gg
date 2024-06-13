@@ -36,6 +36,17 @@ img {
 
 figure {
   margin: 0;
+
+  & *[data-image-size="large"],
+  & figcaption {
+    grid-column: span 4;
+  }
+
+  @media (min-width: 700px) {
+    & figcaption {
+      grid-column: 4 / 4;
+    }
+  }
 }
 
 hr {
