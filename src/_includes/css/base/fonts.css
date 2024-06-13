@@ -3,7 +3,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("https://ucarecdn.com/2c11c5cd-cee6-4092-a10f-a231c76bbb8c/Blanco-Regular.woff2") format("woff2");
+  src: url("https://assets.interroban.gg/Blanco-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url("https://ucarecdn.com/2c11c5cd-cee6-4092-a10f-a231c76bbb8c/Blanco-Italic.woff2") format("woff2");
+  src: url("https://assets.interroban.gg/Blanco-Italic.woff2") format("woff2");
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("https://ucarecdn.com/2c11c5cd-cee6-4092-a10f-a231c76bbb8c/Blanco-Medium.woff2") format("woff2");
+  src: url("https://assets.interroban.gg/Blanco-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("https://ucarecdn.com/2c11c5cd-cee6-4092-a10f-a231c76bbb8c/pitch-web-semibold.woff2") format("woff2");
+  src: url("https://assets.interroban.gg/pitch-web-semibold.woff2") format("woff2");
 }
 
 @font-face {
@@ -35,5 +35,5 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("https://ucarecdn.com/2c11c5cd-cee6-4092-a10f-a231c76bbb8c/signifier-web-light.woff2") format("woff2");
+  src: url("https://assets.interroban.gg/signifier-web-light.woff2") format("woff2");
 }
