@@ -37,18 +37,22 @@ words, in a single typeface.
   Robert Brownjohn, Ivan Chermayeff & Tom Geismar.
 {% endsidenote %}
 
-A few years later, sat at a desk of a small design agency, I was again
-Googling: “What do Service Designers do?”, “What do Product Designers do?”. I
-loved parts of Graphic Design as a job, but my interest in User Experience, and
-User Interfaces had been growing. It was an itch that couldn’t be scratched
-designing logos and building small Wordpress sites. The empathy and considerate
-approaches of Product Design, combined with strategy and process appealed to
-me.
+I studied Graphic Design at university, and was lucky to get a job straight
+after, at a small, local design agency. I was working on branding, print design
+and Wordpress sites for other local businesses. It's here that I started to
+really become passionate about the web, and user interfaces.
 
-A few more years later I’m happiest doing a little bit of everything that takes
-an idea and turns it into a working product or service. In my spare time (not
-chasing my toddler around) I tinker with new web technologies, read as much as
-I can about design, walk, and fawn over photos of brutalist architecture [3](#sn-3).
+A few years later, sat at my desk, I was again googling: “what do Service
+Designers do?”, and “what do Product Designers do?”. I loved parts of Graphic
+Design as a job, but my interest in User Experience, and User Interfaces had
+been growing. It was an itch that couldn’t be scratched designing logos and
+building small Wordpress sites. The empathy and considerate approaches of
+Product Design, combined with strategy and process appealed to me.
+
+A few _more_ years later I’m happiest doing a little bit of anything that takes
+an idea and turns it into a working product or service. In my spare time
+I tinker with new web technologies, read as much as I can about design, walk,
+and fawn over photos of brutalist architecture [3](#sn-3).
 
 {% sidenote 3 %}
   {% image "ce45ef02-1378-4321-87c4-d57237d509ca", "Photo of the Barbican Estate", "small" %}
@@ -56,3 +60,5 @@ I can about design, walk, and fawn over photos of brutalist architecture [3](#sn
   _Nº3_ I know the [Barbican Estate](https://en.wikipedia.org/wiki/Barbican_Estate)
   like the back of my hand
 {% endsidenote %}
+
+You can get in touch with me by sending me an [email](mailto:luke@interroban.gg).

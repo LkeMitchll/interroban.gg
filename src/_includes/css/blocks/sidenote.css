@@ -25,10 +25,6 @@
     padding-left: var(--space-default);
   }
 
-  & + p {
-    display: none;
-  }
-
   & + p:last-child {
     display: initial;
     margin-bottom: var(--space-xx-large);
