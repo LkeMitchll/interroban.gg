@@ -1,7 +1,7 @@
 ---
 title: Sharing online as an activity
 description: >
-    Chrsitopher on sharing online and how he approaches it.
+    Christopher on sharing online and how he approaches it.
 date: 2024-06-21
 type: Note
 ---
