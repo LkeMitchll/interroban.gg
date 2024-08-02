@@ -1,9 +1,9 @@
-import LiteralAPI from '../_providers/literal.js'
+import LiteralAPI from "../_providers/literal.js";
 
-async function reading () {
-  const response = new LiteralAPI()
+async function reading() {
+  const response = new LiteralAPI();
 
-  return response.getCurrentlyReadingBooks().then((json) => json)
+  return response.getCurrentlyReadingBooks().then((json) => json);
 }
 
-export default reading()
+export default reading();
