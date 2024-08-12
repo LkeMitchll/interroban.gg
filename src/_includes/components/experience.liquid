@@ -1,7 +1,7 @@
 <article class="columns | gap-xx-large">
   <div>
-    {% set heading = headingLevel if headingLevel else "h3" %}
-    {% set experience = cv.experience %}
+    {% assign heading = headingLevel | default: "h3" %}
+    {% assign experience = cv.experience %}
     <{{ heading }} class="subheading" id="experience">Experience</{{ heading }}>
     <ul role="list" class="flow">
       {% for job in experience %}
@@ -32,7 +32,7 @@
   <div>
     <{{ heading }} class="subheading" id="recognition">Recognition</{{ heading }}>
     <ul role="list" class="flow">
-      {% set awards = cv.recognition %}
+      {% assign awards = cv.recognition %}
       {% for award in awards %}
       <li>
         <a href="{{ award.url }}">

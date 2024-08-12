@@ -1,0 +1,14 @@
+{% if page.url != "/" %}
+  <a role="link" href="/"><h1>{{ title }}</h1></a>
+{% endif %}
+<nav aria-label="site navigation">
+  <ul role="list" class="horizontal | tertiary-text">
+    {% for link in navigation.general.pages %}
+      <li>
+        <a href="{{ link.url }}" {% if page.url == link.url %}aria-current="page"{% endif %}>
+          {{ link.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

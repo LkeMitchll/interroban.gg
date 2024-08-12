@@ -12,7 +12,7 @@ According to the official [eleventy speedlify rankings](https://www.11ty.dev/spe
 this website is the **{{ speedlify.rank.cumulative }}th** fastest eleventy site submitted.
 Last time speedlify ran, this site earned the following [lighthouse](https://pagespeed.web.dev) score:
 
-{% include "components/lighthouse.njk" %}
+{% include "components/lighthouse.liquid" %}
 
 ## Philosophy
 

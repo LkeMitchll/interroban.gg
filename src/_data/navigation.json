@@ -1,46 +1,44 @@
 {
-  "routes": [
-    {
-      "name": "General",
-      "pages": [
-        {
-          "name": "About",
-          "url": "/about/",
-          "description": "Read more about me."
-        },
-        {
-          "name": "Journal",
-          "url": "/journal/",
-          "description": "A blog, audio-visual tracker."
-        },
-        {
-          "name": "Bookmarks",
-          "url": "/bookmarks/",
-          "description": "A list of interesting links."
-        }
-      ]
-    },
-    {
-      "name": "Information",
-      "pages": [
-        {
-          "name": "Colophon",
-          "url": "/colophon",
-          "description": "A meta blog."
-        },
-        {
-          "name": "Uses",
-          "url": "/uses",
-          "description": "A list of my current equipment."
-        },
-        {
-          "name": "Blogroll",
-          "url": "/blogroll",
-          "description": "A list of blogs I follow."
-        }
-      ]
-    }
-  ],
+  "general": {
+    "name": "General",
+    "pages": [
+      {
+        "name": "About",
+        "url": "/about/",
+        "description": "Read more about me."
+      },
+      {
+        "name": "Journal",
+        "url": "/journal/",
+        "description": "A blog, audio-visual tracker."
+      },
+      {
+        "name": "Bookmarks",
+        "url": "/bookmarks/",
+        "description": "A list of interesting links."
+      }
+    ]
+  },
+  "information": {
+    "name": "Information",
+    "pages": [
+      {
+        "name": "Colophon",
+        "url": "/colophon",
+        "description": "A meta blog."
+      },
+      {
+        "name": "Uses",
+        "url": "/uses",
+        "description": "A list of my current equipment."
+      },
+      {
+        "name": "Blogroll",
+        "url": "/blogroll",
+        "description": "A list of blogs I follow."
+      }
+    ]
+  },
   "contact": {
     "name": "Contact",
     "pages": [

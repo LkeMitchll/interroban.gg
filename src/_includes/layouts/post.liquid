@@ -11,11 +11,11 @@ layout: layouts/default
 </header>
 
 <article class="h-entry hentry | markdown | gap-x-large">
-  {{ content | safe }}
+  {{ content }}
 </article>
 
-{%- set currentPostMentionCount = webmentions | webmentionCountForPage -%}
-{%- set currentPostMentions = webmentions | webmentionsForPage -%}
+{% assign currentPostMentionCount = webmentions | webmentionCountForPage -%}
+{% assign currentPostMentions = webmentions | webmentionsForPage -%}
 <details class="tertiary-text | gap-x-large">
   <summary class="gap">Mentions: {{ currentPostMentionCount }}</summary>
   {% if currentPostMentionCount > 0 %}
@@ -29,4 +29,4 @@ layout: layouts/default
   {% endif %}
 </details>
 
-{% include "components/commits.njk" %}
+{% include "components/commits.liquid" %}

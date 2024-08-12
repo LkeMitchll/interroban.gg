@@ -1,14 +1,14 @@
 <ol role="list" class="h-feed hfeed | flow | gap-large">
   {% for post in posts %}
   <li class="h-entry hentry | post | switcher | border tertiary-text">
-    <p>N&ordm; {{ loop.revindex }}</p>
+    <p>N&ordm; {{ forloop.index }}</p>
     <p>
       <a href="{{ post.url }}">
         {{ post.data.title }}
       </a>
     </p>
     <div class="horizontal">
-      <p><span class="tag">{{ post.data.type if post.data.type else "Post" }}</span></p>
+      <p><span class="tag">{{ post.data.type | default: "Post" }}</span></p>
       <p class="push-right">{{ post.data.date | formatDate }}</p>
     </div>
   </li>

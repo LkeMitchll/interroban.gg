@@ -5,25 +5,25 @@ toc: ["Updates", "Impact", "Design", "Development", "Typography"]
 ---
 
 <header class="flow | gap-x-large">
-  {% include "components/nav.njk" %}
+  {% include "components/nav.liquid" %}
   <p class="measure">
     This is a development blog, also a list of people, resources and tools
     that have made this site what it is. Check back regularly, as I try to keep
     this up-to-date, when I get time.
   </p>
-  {% include "components/commits.njk" %}
+  {% include "components/commits.liquid" %}
   <hr>
 </header>
 
-{% include "components/toc.njk" %}
+{% include "components/toc.liquid" %}
 
 <article id="updates" class="flow | gap-xx-large">
   <div class="flow | gap-large">
     <h2 class="gap-large">Updates</h2>
-    {% set posts = collections.metapost | reverse %}
-    {% include "components/posts.njk" %}
+    {% assign posts = collections.metapost | reverse %}
+    {% include "components/posts.liquid" %}
   </div>
   <section class="markdown">
-    {{ content | safe }}
+    {{ content }}
   </section>
 </article>

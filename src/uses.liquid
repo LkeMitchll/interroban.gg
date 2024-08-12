@@ -1,0 +1,41 @@
+---
+layout: layouts/default
+title: Uses
+---
+
+<header class="flow | gap-x-large">
+  {% include "components/nav.liquid" %}
+  <p class="measure">
+    This is a fairly living list of my design, development and personal setups.
+    Including software, hardware and as much detail in between. This page
+    follows many of those who have contributed to
+    <a href="https://uses.tech">uses.tech</a>
+  </p>
+</header>
+
+{% include "components/commits.liquid" %}
+
+{% assign image_ID = "24bf2f60-1f04-47c5-b15a-5ebf461fa8c1" %}
+{% assign image_alt = "A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise lamp, and my IKEA Bekant sit-stand desk." %}
+{% include "components/image.liquid" %}
+
+<article class="flow | measure gap-xx-large">
+  {% # Group items into high-level groups (e.g. Hardware / Software) %}
+  {% assign grouped_uses = uses | group_by_exp: "item", "item.tags[0] | capitalize" %}
+  {% for group in grouped_uses %}
+    <h2>{{ group.name }}</h2>
+
+    {% # Sub-group items into smaller groups (e.g. Audio / Ergonomics) %}
+    {% assign sub_grouped_uses = group.items | group_by_exp: "item", "item.tags[1] | capitalize" %}
+    {% for group in sub_grouped_uses %}
+      <h3>{{ group.name }}</h3>
+      <ul>
+        {% for item in group.items %}
+          <li>
+            <a href="{{ item.url }}">{{ item.title }}</a>: {{ item.description }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% endfor %}
+</article>

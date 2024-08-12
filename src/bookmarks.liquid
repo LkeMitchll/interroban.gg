@@ -8,14 +8,14 @@ pagination:
 ---
 
 <header class="flow | gap-x-large">
-  {% include "components/nav.njk" %}
+  {% include "components/nav.liquid" %}
   <p class="measure gap-large">
     I try and keep track of all the interesting things I
     find on my travels around the web. Because the internet never stops changing,
     as this list gets older things will begin to decay and disappear. So this
     isn’t an archive as such, it’s a log.
   </p>
-  {% include "components/commits.njk" %}
+  {% include "components/commits.liquid" %}
   <ul role="list" class="horizontal | tertiary-text">
     <li>
       <a href="/feeds/bookmarks.xml">
@@ -57,11 +57,11 @@ pagination:
     <ul role="list" class="horizontal | gap">
       {% for pageEntry in pagination.pages %}
         <li>
-          <a href="{{ pagination.hrefs[loop.index0] }}#content"
-             {% if page.url == pagination.hrefs[loop.index0] %} aria-current="page"{% endif %}
-             aria-label="Page {{ loop.index }}"
+          <a href="{{ pagination.hrefs[forloop.index0] }}#content"
+             {% if page.url == pagination.hrefs[forloop.index0] %} aria-current="page"{% endif %}
+             aria-label="Page {{ forloop.index }}"
           >
-            {{ loop.index }}
+            {{ forloop.index }}
           </a>
         </li>
       {% endfor %}

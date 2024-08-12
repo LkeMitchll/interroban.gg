@@ -1,0 +1,9 @@
+masonry-layout figure {
+  margin-bottom: var(--space-default);
+}
+
+masonry-layout:not(:defined) {
+  display: grid;
+  grid-gap: var(--space-default);
+  grid-template-columns: repeat(5, 1fr);
+}

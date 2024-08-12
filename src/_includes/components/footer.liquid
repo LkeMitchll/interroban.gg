@@ -1,0 +1,40 @@
+<footer>
+  <h2 class="visually-hidden">Footer</h2>
+  <section class="columns | gap-xx-large">
+    {% assign footerCategories = "general, information, contact, elsewhere" | split: ", " %}
+    {% for category in footerCategories %}
+      <div>
+        <h3 class="gap">{{ navigation[category].name }}</h3>
+        <ul role="list" class="tertiary-text">
+          {% for page in navigation[category].pages %}
+          <li class="gap">
+            <a {% if navigation[category].name == "Contact"%}rel="me"{% endif %} href="{{ page.url }}">{{ page.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </section>
+  <section class="columns | gap-x-large">
+    <div>
+      <p class="tertiary-text">
+        <small>&copy; {{ dates.currentYear }}, Luke Mitchell</small>
+      </p>
+    </div>
+    <div class="col-4">
+      <p class="horizontal | tertiary-text">
+        <a href="https://hotlinewebring.club/interrobang/previous"
+           aria-label="Previous Hotline Webring Site"
+        >
+          &larr;
+        </a>
+        <span>Hotline</span>
+        <a href="https://hotlinewebring.club/interrobang/next"
+           aria-label="Next Hotline Webring Site"
+        >
+          &rarr;
+        </a>
+      </p>
+    </div>
+  </section>
+</footer>

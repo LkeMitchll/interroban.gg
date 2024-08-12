@@ -3,8 +3,8 @@ title: Product Designer
 description: "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer."
 ---
 
-{% set pageTitle = post.fields.title if post.fields.title else title %}
-{% set pageDescription = post.fields.description if post.fields.description else description %}
+{% assign pageTitle = post.fields.title if post.fields.title else title %}
+{% assign pageDescription = post.fields.description if post.fields.description else description %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +41,8 @@ description: "Personal site, blog, and portfolio of Luke Mitchell, a design dire
   </head>
   <body>
     <main>
-      {{ content | safe }}
+      {{ content }}
     </main>
-    {% include "components/footer.njk" %}
+    {% include "components/footer.liquid" %}
   </body>
 </html>

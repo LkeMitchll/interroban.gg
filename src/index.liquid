@@ -1,0 +1,25 @@
+---
+layout: layouts/default
+title: Product Designer
+---
+
+<header class="flow | gap-x-large">
+  <h1>Luke Mitchell</h1>
+  {% include "components/nav" %}
+
+  {% assign image_ID = "540ffb1d-051c-41d6-80bb-8a65af13a6cd" %}
+  {% assign image_alt = "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
+  <div class="gap-x-large">
+    {% include "components/image" %}
+  </div>
+
+  <p class="measure">
+    Digital product designer, design director, and user experience engineer for
+    <a href="https://www.thoughtbot.com">thoughtbot</a>.
+    Specialising in design strategy, process, and systems across
+    multiple industries for more than {{ dates.yearsSinceIBecameADesigner }} years.
+  </p>
+</header>
+
+{% assign headingLevel = "h2" %}
+{% include "components/experience" %}
