@@ -2,19 +2,13 @@
 layout: layouts/default
 title: Journal
 toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
+introduction: >
+  What I’ve been doing recently, a blog, a scrapbook,
+  and a place to show what I am currently listening to and watching.
+  It’s also a bit of playground to grab data from a few services I like.
 ---
-<header class="flow | gap-x-large">
-  {% include "components/nav.liquid" %}
-  <section class="flow | measure">
-    <p>
-      What I’ve been doing recently, a blog, a scrapbook,
-      and a place to show what I am currently listening to and watching.
-      It’s also a bit of playground to grab data from a few services I like.
-    </p>
-  </section>
-  {% include "components/commits.liquid" %}
-</header>
 
+{% include "components/header.liquid", nav: true, intro: introduction, history: true %}
 {% include "components/toc.liquid" %}
 
 <article id="writing" class="flow | gap-xx-large">

@@ -2,18 +2,13 @@
 layout: layouts/default
 title: About
 toc: ["Now", "Experience", "Clients", "Skills", "Recognition", "History"]
+introduction: >
+  I’ve been a full-time designer and front-end engineer since 2011.
+  I started out as a Graphic Designer, around 2014 I transitioned to Product Design.
+  Since then I have worked with clients of all sizes in many different industries.
 ---
 
-<header class="flow | gap-x-large">
-  {% include "components/nav.liquid" %}
-  <p class="measure">
-    I’ve been a designer and front-end engineer for more than {{ dates.yearsSinceIBecameADesigner }} years.
-    I started out as a Graphic Designer, around 2014 I transitioned to Product Design.
-    Since then I have worked with clients of all sizes in many different industries.
-  </p>
-  {% include "components/commits.liquid" %}
-</header>
-
+{% include "components/header.liquid", nav: true, intro: introduction, history: true %}
 {% include "components/toc.liquid" %}
 
 <div class="gap-x-large">

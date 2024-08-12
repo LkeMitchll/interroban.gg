@@ -2,19 +2,13 @@
 layout: layouts/default
 title: Colophon
 toc: ["Updates", "Impact", "Design", "Development", "Typography"]
+introduction: >
+  This is a development blog, also a list of people, resources and tools
+  that have made this site what it is. Check back regularly, as I try to keep
+  this up-to-date, when I get time.
 ---
 
-<header class="flow | gap-x-large">
-  {% include "components/nav.liquid" %}
-  <p class="measure">
-    This is a development blog, also a list of people, resources and tools
-    that have made this site what it is. Check back regularly, as I try to keep
-    this up-to-date, when I get time.
-  </p>
-  {% include "components/commits.liquid" %}
-  <hr>
-</header>
-
+{% include "components/header.liquid", nav: true, intro: introduction, history: true %}
 {% include "components/toc.liquid" %}
 
 <article id="updates" class="flow | gap-xx-large">

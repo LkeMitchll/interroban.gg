@@ -2,17 +2,14 @@
 layout: layouts/default
 ---
 
-<header class="flow | measure gap-x-large">
-  {% if page.inputPath contains 'journal' %}
-    <a role="link" href="/journal#writing"><h1>{{ title }}</h1></a>
-  {% else %}
-    <a role="link" href="/colophon#updates"><h1>{{ title }}</h1></a>
-  {% endif %}
+{% capture post_meta %}
   <ul class="tertiary-text" role="list">
     <li>Tags: <span class="tag">{{ type | default: "Post" }}</span></li>
     <li>Date: {{ date | date_to_string }}</li>
   </ul>
-</header>
+{% endcapture %}
+
+{% include "components/header.liquid", extras: post_meta %}
 
 <article class="h-entry hentry | markdown | gap-x-large">
   {{ content }}

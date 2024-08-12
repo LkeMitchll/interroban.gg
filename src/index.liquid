@@ -3,10 +3,9 @@ layout: layouts/default
 title: Product Designer
 ---
 
-<header class="flow | gap-x-large">
-  <h1>Luke Mitchell</h1>
-  {% include "components/nav" %}
+{% include "components/header.liquid", nav: true %}
 
+<article class="flow | gap-x-large">
   {% assign image_ID = "540ffb1d-051c-41d6-80bb-8a65af13a6cd" %}
   {% assign image_alt = "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
   <div class="gap-x-large">
@@ -19,7 +18,7 @@ title: Product Designer
     Specialising in design strategy, process, and systems across
     multiple industries for more than {{ dates.yearsSinceIBecameADesigner }} years.
   </p>
-</header>
+</article>
 
 {% assign headingLevel = "h2" %}
 {% include "components/experience" %}

@@ -1,19 +1,14 @@
 ---
 layout: layouts/default
 title: Uses
+introduction: >
+  This is a fairly living list of my design, development and personal setups.
+  Including software, hardware and as much detail in between. This page
+  follows many of those who have contributed to
+  <a href="https://uses.tech">uses.tech</a>
 ---
 
-<header class="flow | gap-x-large">
-  {% include "components/nav.liquid" %}
-  <p class="measure">
-    This is a fairly living list of my design, development and personal setups.
-    Including software, hardware and as much detail in between. This page
-    follows many of those who have contributed to
-    <a href="https://uses.tech">uses.tech</a>
-  </p>
-</header>
-
-{% include "components/commits.liquid" %}
+{% include "components/header.liquid", nav: true, intro: introduction, history: true %}
 
 {% assign image_ID = "24bf2f60-1f04-47c5-b15a-5ebf461fa8c1" %}
 {% assign image_alt = "A photo of my desk setup, including a Mac mini, Dell monitor, Anglepoise lamp, and my IKEA Bekant sit-stand desk." %}

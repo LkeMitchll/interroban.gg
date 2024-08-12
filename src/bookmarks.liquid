@@ -5,17 +5,14 @@ pagination:
   data: bookmarks
   size: 100
   reverse: true
+introduction: >
+  I try and keep track of all the interesting things I
+  find on my travels around the web. Because the internet never stops changing,
+  as this list gets older things will begin to decay and disappear. So this
+  isn’t an archive as such, it’s a log.
 ---
 
-<header class="flow | gap-x-large">
-  {% include "components/nav.liquid" %}
-  <p class="measure gap-large">
-    I try and keep track of all the interesting things I
-    find on my travels around the web. Because the internet never stops changing,
-    as this list gets older things will begin to decay and disappear. So this
-    isn’t an archive as such, it’s a log.
-  </p>
-  {% include "components/commits.liquid" %}
+{% capture header_links %}
   <ul role="list" class="horizontal | tertiary-text">
     <li>
       <a href="/feeds/bookmarks.xml">
@@ -29,7 +26,8 @@ pagination:
     </li>
   </ul>
   <hr>
-</header>
+{% endcapture %}
+{% include "components/header.liquid", nav: true, intro: introduction, extras: header_links, history: true %}
 
 <article id="content" class="flow | gap-xx-large">
   <ul role="list">
