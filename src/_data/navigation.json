@@ -60,16 +60,16 @@
     "name": "Elsewhere",
     "pages": [
       {
-        "name": "Dribbble",
-        "url": "https://dribbble.com/Interrobang"
-      },
-      {
         "name": "Savee",
         "url": "https://savee.it/interrobang/"
       },
       {
         "name": "GitHub",
         "url": "https://www.github.com/lkemitchll"
+      },
+      {
+        "name": "Literal",
+        "url": "https://literal.club/interrobang"
       }
     ]
   }

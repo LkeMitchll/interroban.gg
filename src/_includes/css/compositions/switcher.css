@@ -1,6 +1,6 @@
 .switcher {
-  --threshold: 30rem;
-  --space: 0;
+  --threshold: 40rem;
+  --space: var(--space-small);
 
   display: flex;
   flex-wrap: wrap;
@@ -11,4 +11,8 @@
   flex-grow: 1;
   flex-basis: calc((var(--threshold) - 100%) * 999);
   margin: calc(var(--space) / 2);
+}
+
+.switcher__aside {
+  flex-grow: 0.5;
 }

@@ -16,7 +16,7 @@ the spirit of reducing friction [1](#sn-1) I thought I would
 make the switch.
 
 {% sidenote 1 %}
-  _Nº1_ [Brian Lovin](https://brianlovin.com/overthought/reasons-you-arent-updating-your-personal-site)
+  **№ 1** – [Brian Lovin](https://brianlovin.com/overthought/reasons-you-arent-updating-your-personal-site)
   recently gave some excellent pointers for making personal sites more
   updatable.
 {% endsidenote %}
@@ -43,7 +43,7 @@ footnote reference, and then wraps the result in a new ‘paragraphWithFootnotes
 node. Finally I can tell remark how to [render] that custom node.
 
 {% sidenote 2 %}
-  _Nº2_ [remark](https://remark.js.org) is a Markdown processor powered by plugins.
+  **№ 2** – [remark](https://remark.js.org) is a Markdown processor powered by plugins.
 {% endsidenote %}
 
 [footplug]: https://github.com/remarkjs/remark-footnotes

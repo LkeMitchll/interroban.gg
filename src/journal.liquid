@@ -106,7 +106,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <ol role="list" class="movies | columns">
+  <ol role="list" class="columns">
     <li class="push-down">
       <img src="{{ reading.currentlyReading.book.cover }}" width="500" height="750" loading="lazy" alt="{{ reading.currentlyReading.book.title }}" title="{{ reading.currentlyReading.book.title }}" class="gap" />
       <div class="flow | tertiary-text">
@@ -135,7 +135,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <ol role="list" class="movies | columns">
+  <ol role="list" class="columns">
     {% for movie in movies %}
     <li>
       <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
@@ -165,7 +165,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <script type="module"  src="/assets/masonry-layout.min.js"></script>
+  <script type="module"  src="/vendor/masonry-layout.min.js"></script>
   <masonry-layout cols="5">
     {% for item in scrapbook %}
       <figure>

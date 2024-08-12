@@ -35,19 +35,21 @@ pagination:
   <ul role="list">
     {% for bookmark in pagination.items %}
       <li class="bookmark | switcher | border tertiary-text">
-        <p>N&ordm; {{ bookmark.number }}</p>
-        <p>
-          <a href="{{ bookmark.url }}">{{ bookmark.title }}</a>
-          {% if bookmark.viaURL %}
-            via
-            <a href="{{ bookmark.viaURL }}">
-              {{ bookmark.viaName }}
-            </a>
-          {% endif %}
-        </p>
         <div class="horizontal">
+          <p>N&ordm; {{ bookmark.number }}</p>
+          <p>
+            <a href="{{ bookmark.url }}">{{ bookmark.title }}</a>
+            {% if bookmark.viaURL != "" %}
+              via
+              <a href="{{ bookmark.viaURL }}">
+                {{ bookmark.viaName }}
+              </a>
+            {% endif %}
+          </p>
+        </div>
+        <div class="switcher__aside | horizontal">
           <p><span class="tag">{{ bookmark.tag }}</span></p>
-          <p class="push-right">{{ bookmark.date | formatDate }}</p>
+          <p class="push-right">{{ bookmark.date | date_to_string }}</p>
         </div>
       </li>
     {% endfor %}

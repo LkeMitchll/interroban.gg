@@ -8,7 +8,7 @@ date: 2024-06-15
 ---
 
 I have been collecting [bookmarks](https://www.interroban.gg/bookmarks) for
-quite a while, as you read this there are **{{ bookmarks[bookmarks.length - 1].number }}**
+quite a while, as you read this there are **{{ bookmarks | size }}**
 of them, which shocks me, they really build up fast. What
 I haven’t done yet is explain how I collect them and how they end up on this
 site.

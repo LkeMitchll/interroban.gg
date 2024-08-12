@@ -3,10 +3,14 @@ layout: layouts/default
 ---
 
 <header class="flow | measure gap-x-large">
-  <h1 class="gap-large">{{ title }}</h1>
+  {% if page.inputPath contains 'journal' %}
+    <a role="link" href="/journal#writing"><h1>{{ title }}</h1></a>
+  {% else %}
+    <a role="link" href="/colophon#updates"><h1>{{ title }}</h1></a>
+  {% endif %}
   <ul class="tertiary-text" role="list">
-    <li>Tags: <span class="tag">{{ type if type else "Post" }}</span></li>
-    <li>Date: {{ date | formatDate }}</li>
+    <li>Tags: <span class="tag">{{ type | default: "Post" }}</span></li>
+    <li>Date: {{ date | date_to_string }}</li>
   </ul>
 </header>
 
