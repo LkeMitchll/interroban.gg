@@ -13,6 +13,6 @@
   margin: calc(var(--space) / 2);
 }
 
-.switcher__aside {
+.switcher-aside {
   flex-grow: 0.5;
 }
