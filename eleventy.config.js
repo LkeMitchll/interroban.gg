@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { EleventyRenderPlugin } from "@11ty/eleventy";
 import lightningCSSPlugin from "@11tyrocks/eleventy-plugin-lightningcss";
 import RSSPlugin from "@11ty/eleventy-plugin-rss";
 import WebMentionsPlugin from "eleventy-plugin-webmentions";
@@ -16,6 +17,7 @@ const config = (eleventy) => {
   });
 
   // Eleventy plugins
+  eleventy.addPlugin(EleventyRenderPlugin);
   eleventy.addPlugin(lightningCSSPlugin);
   eleventy.addPlugin(WebMentionsPlugin, {
     domain: "interroban.gg",

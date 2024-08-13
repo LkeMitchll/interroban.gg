@@ -11,7 +11,7 @@
     <h1>Luke Mitchell</h1>
   {% endif %}
 
-  {% if nav %}
+  {% if nav == true %}
     <nav aria-label="site navigation">
       <ul role="list" class="horizontal | tertiary-text">
         {% for link in navigation.general.pages %}
@@ -31,11 +31,7 @@
     </p>
   {% endif %}
 
-  {% if history %}
+  {% if history == true %}
     {% include "components/commits.liquid" %}
-  {% endif %}
-
-  {% if extras %}
-    {{ extras | raw }}
   {% endif %}
 </header>

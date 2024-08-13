@@ -1,15 +1,12 @@
 ---
 layout: layouts/default
 title: About
-toc: ["Now", "Experience", "Clients", "Skills", "Recognition", "History"]
 introduction: >
   I’ve been a full-time designer and front-end engineer since 2011.
   I started out as a Graphic Designer, around 2014 I transitioned to Product Design.
   Since then I have worked with clients of all sizes in many different industries.
+toc: ["Now", "Experience", "Clients", "Skills", "Recognition", "History"]
 ---
-
-{% include "components/header.liquid", nav: true, intro: introduction, history: true %}
-{% include "components/toc.liquid" %}
 
 <div class="gap-x-large">
   {% assign image_ID = "ae9f9db0-ecc5-4d0b-b356-0e70d77ded7a" %}
@@ -29,5 +26,5 @@ introduction: >
 {% include "components/experience.liquid" %}
 
 <article class="markdown | gap-xx-large">
-  {{ content }}
+  {% renderFile "./src/_includes/about.md" %}
 </article>

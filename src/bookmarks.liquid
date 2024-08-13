@@ -12,22 +12,19 @@ introduction: >
   isn’t an archive as such, it’s a log.
 ---
 
-{% capture header_links %}
-  <ul role="list" class="horizontal | tertiary-text">
-    <li>
-      <a href="/feeds/bookmarks.xml">
-        RSS Feed
-      </a>
-    </li>
-    <li>
-      <a href="/feeds/bookmarks.json">
-        JSON Feed
-      </a>
-    </li>
-  </ul>
-  <hr>
-{% endcapture %}
-{% include "components/header.liquid", nav: true, intro: introduction, extras: header_links, history: true %}
+<ul role="list" class="horizontal | tertiary-text gap">
+  <li>
+    <a href="/feeds/bookmarks.xml">
+      RSS Feed
+    </a>
+  </li>
+  <li>
+    <a href="/feeds/bookmarks.json">
+      JSON Feed
+    </a>
+  </li>
+</ul>
+<hr class="gap-x-large">
 
 <article id="content" class="flow | gap-xx-large">
   <ul role="list">

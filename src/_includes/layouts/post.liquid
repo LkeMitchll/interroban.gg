@@ -1,15 +1,13 @@
 ---
 layout: layouts/default
+nav: false
+history: false
 ---
 
-{% capture post_meta %}
-  <ul class="tertiary-text" role="list">
-    <li>Tags: <span class="tag">{{ type | default: "Post" }}</span></li>
-    <li>Date: {{ date | date_to_string }}</li>
-  </ul>
-{% endcapture %}
-
-{% include "components/header.liquid", extras: post_meta %}
+<ul class="tertiary-text gap-x-large" role="list">
+  <li>Tags: <span class="tag">{{ type | default: "Post" }}</span></li>
+  <li>Date: {{ date | date_to_string }}</li>
+</ul>
 
 <article class="h-entry hentry | markdown | gap-x-large">
   {{ content }}

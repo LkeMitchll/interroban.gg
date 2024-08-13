@@ -1,0 +1,34 @@
+---
+layout: layouts/default
+title: Colophon
+introduction: >
+  This is a development blog, also a list of people, resources and tools
+  that have made this site what it is. Check back regularly, as I try to keep
+  this up-to-date, when I get time.
+toc: ["Updates", "Impact", "Design", "Development", "Typography"]
+---
+
+<article id="updates" class="flow | gap-xx-large">
+  <div class="flow | gap-large">
+    <h2 class="gap-large">Updates</h2>
+    {% assign posts = collections.metapost | reverse %}
+    {% include "components/posts.liquid" %}
+  </div>
+  <section class="markdown">
+    <h2>Impact</h2>
+    <p>
+      Approximately {{ carbon.c }}g of CO₂  is produced every time someone visits
+      this website. Which is cleaner than {{ carbon.p }}% of websites tested by
+      <a href="https://www.websitecarbon.com/website/interroban-gg/">websitecarbon.com</a>
+    </p>
+    <p>
+      According to the official <a href="https://www.11ty.dev/speedlify/">eleventy speedlify rankings</a>
+      this website is the {{ speedlify.rank.cumulative }}th fastest eleventy site submitted.
+      Last time speedlify ran, this site earned the following lighthouse score:
+    </p>
+
+    {% include "components/lighthouse.liquid" %}
+
+    {% renderFile "./src/_includes/colophon.md" %}
+  </section>
+</article>

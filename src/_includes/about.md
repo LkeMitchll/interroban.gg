@@ -1,7 +1,3 @@
----
-layout: layouts/about
----
-
 ## History
 
 I grew up in a small coastal town in the east of England [1](#sn-1). Not much happens

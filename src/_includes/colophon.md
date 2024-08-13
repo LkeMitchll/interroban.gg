@@ -1,19 +1,3 @@
----
-layout: layouts/colophon
----
-
-## Impact
-
-Approximately **{{ carbon.c }}g** of CO₂  is produced every time someone visits
-this website. Which is cleaner than **{{ carbon.p }}%** of websites tested by
-[websitecarbon.com](https://www.websitecarbon.com/website/interroban-gg/).
-
-According to the official [eleventy speedlify rankings](https://www.11ty.dev/speedlify/)
-this website is the **{{ speedlify.rank.cumulative }}th** fastest eleventy site submitted.
-Last time speedlify ran, this site earned the following [lighthouse](https://pagespeed.web.dev) score:
-
-{% include "components/lighthouse.liquid" %}
-
 ## Philosophy
 
 This website will be [incrementally correct], progressively enhanced, and [my personal worry stone].
