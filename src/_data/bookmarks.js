@@ -1,20 +1,21 @@
-import BookmarksAPI from '../_providers/bookmarks.js'
+import BookmarksAPI from "../_providers/bookmarks.js";
 
-function numberedBookmarks (data) {
+function numberedBookmarks(data) {
   data.forEach((e, i) => {
-    const entry = e
-    entry.number = i
-  })
-  return data
+    const entry = e;
+    entry.number = i;
+  });
+  return data;
 }
 
-async function bookmarks () {
-  const api = new BookmarksAPI()
+async function bookmarks() {
+  const api = new BookmarksAPI();
 
-  const data = await api.fetchPublishedBookmarks()
-    .then((json) => numberedBookmarks(json))
+  const data = await api
+    .fetchPublishedBookmarks()
+    .then((json) => numberedBookmarks(json));
 
-  return data
+  return data;
 }
 
-export default bookmarks()
+export default bookmarks();

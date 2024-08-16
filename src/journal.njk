@@ -38,7 +38,7 @@ posts: collections.postsWithoutNotes
     </ul>
   </header>
 
-  {% set posts = collections.post %}
+  {% set posts = collections.post | reverse %}
   {% include "components/posts.njk" %}
 </article>
 
