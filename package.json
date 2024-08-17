@@ -10,6 +10,7 @@
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.3.0",
+    "@appnest/masonry-layout": "^2.2.3",
     "dotenv": "^16.4.5",
     "eleventy-plugin-webmentions": "^2.1.0",
     "markdown-it": "^14.1.0",
@@ -35,8 +36,9 @@
     "clean": "rm -rf _site .cache",
     "start": "npm run build -- --serve --quiet",
     "build": "npx @11ty/eleventy",
-    "test": "npm run lint:css & npm run lint:js",
+    "test": "npm run lint:css & npm run lint:js & npm run lint:json",
     "lint:css": "stylelint ./src/**/*.css",
-    "lint:js": "npx @biomejs/biome lint ./src/**/*.js"
+    "lint:js": "npx @biomejs/biome lint ./src/**/*.js",
+    "lint:json": "npx @biomejs/biome lint ./src/**/*.json"
   }
 }

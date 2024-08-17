@@ -1,7 +1,3 @@
----
-layout: layouts/about
----
-
 ## History
 
 I grew up in a small coastal town in the east of England [1](#sn-1). Not much happens
@@ -15,13 +11,13 @@ include my hobbies. I eventually started researching this thing called Graphic
 Design, it took me a while to work out what it was.
 
 {% sidenote 1 %}
-  _Nº1_ [Clacton-on-Sea, Essex](https://en.wikipedia.org/wiki/Clacton-on-Sea) –
+  **№ 1** – [Clacton-on-Sea, Essex](https://en.wikipedia.org/wiki/Clacton-on-Sea) –
   Former tourist hotspot, otherwise a normal seaside town in the UK.
 {% endsidenote %}
 
-{% set image_ID = "b46d0c2e-45a5-48d8-ba41-7ad421ec6189" %}
-{% set image_alt = "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, Public domain, via Wikimedia Commons" %}
-{% include "components/image.njk" %}
+{% assign image_ID = "b46d0c2e-45a5-48d8-ba41-7ad421ec6189" %}
+{% assign image_alt = "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, Public domain, via Wikimedia Commons" %}
+{% include "components/image.liquid" %}
 
 While aimlessly googling “What do graphic designers do” I found a small forum
 of enthusiasts (the name of which I never remembered, if it still exists) who
@@ -33,7 +29,7 @@ words, in a single typeface.
 {% sidenote 2 %}
   {% image "49311ea1-8de0-47ed-b4e7-25ba4ad920f4", "Page from 'Watching Words Move' – Robert Brownjohn, Ivan Chermayeff & Tom Geismar ", "small" %}
 
-  _Nº2_ [Watching Words Move](http://robertbrownjohn.com/featured-work/watching-words-move-4/) –
+  **№ 2** – [Watching Words Move](http://robertbrownjohn.com/featured-work/watching-words-move-4/) –
   Robert Brownjohn, Ivan Chermayeff & Tom Geismar.
 {% endsidenote %}
 
@@ -57,7 +53,7 @@ and fawn over photos of brutalist architecture [3](#sn-3).
 {% sidenote 3 %}
   {% image "ce45ef02-1378-4321-87c4-d57237d509ca", "Photo of the Barbican Estate", "small" %}
 
-  _Nº3_ I know the [Barbican Estate](https://en.wikipedia.org/wiki/Barbican_Estate)
+  **№ 3** – I know the [Barbican Estate](https://en.wikipedia.org/wiki/Barbican_Estate)
   like the back of my hand
 {% endsidenote %}
 

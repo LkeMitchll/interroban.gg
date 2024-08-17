@@ -3,14 +3,14 @@
   margin-bottom: var(--space-xx-large);
   grid-row-gap: var(--space-medium);
 
-  & > *:not(aside, figcaption, figure) {
-    grid-column: 1;
-  }
-
   @media screen and (min-width: 600px) {
     & {
       grid-template-columns: 2fr 1fr;
       grid-column-gap: var(--space-large);
+    }
+
+    & > *:not(aside, figcaption, figure) {
+      grid-column: 1;
     }
 
     & figure {

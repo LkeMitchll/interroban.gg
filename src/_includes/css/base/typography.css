@@ -6,6 +6,10 @@ p {
   margin: 0;
 }
 
+*[data-numerals="lining"] * {
+  font-feature-settings: "onum" off;
+}
+
 a {
   text-decoration: none;
   border-bottom: var(--border-default);

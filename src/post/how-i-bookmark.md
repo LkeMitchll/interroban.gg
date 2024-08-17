@@ -8,7 +8,7 @@ date: 2024-06-15
 ---
 
 I have been collecting [bookmarks](https://www.interroban.gg/bookmarks) for
-quite a while, as you read this there are **{{ bookmarks[bookmarks.length - 1].number }}**
+quite a while, as you read this there are **{{ bookmarks | size }}**
 of them, which shocks me, they really build up fast. What
 I haven’t done yet is explain how I collect them and how they end up on this
 site.
@@ -63,9 +63,9 @@ The first step is to open the [Raycast] extension I built, it allows me to
 enter all the bookmark details and save them to a database as a draft, to be
 edited or published later.
 
-{% set image_ID = "045f0c97-8c50-4ce6-b72f-05de8a828172" %}
-{% set image_alt = "My custom Raycast extension that I use to create bookmarks." %}
-{% include "components/image.njk" %}
+{% assign image_ID = "045f0c97-8c50-4ce6-b72f-05de8a828172" %}
+{% assign image_alt = "My custom Raycast extension that I use to create bookmarks." %}
+{% include "components/image.liquid" %}
 
 A few notes on the extension:
 
@@ -81,9 +81,9 @@ bookmarks, and publish them. In the screenshot below you see that it displays
 all the saved content with handy indicators for unpublished bookmarks. From
 here I can tap a keyboard shortcut to publish or delete the drafts as needed.
 
-{% set image_ID = "bbd8ab6f-07c8-485b-9d12-d54cea291aa6" %}
-{% set image_alt = "My custom Raycast extension that I use to managea draft bookmarks." %}
-{% include "components/image.njk" %}
+{% assign image_ID = "bbd8ab6f-07c8-485b-9d12-d54cea291aa6" %}
+{% assign image_alt = "My custom Raycast extension that I use to managea draft bookmarks." %}
+{% include "components/image.liquid" %}
 
 Once published the new bookmarks will appear on the bookmarks page the next day
 – I publish my website every morning, automatically.
@@ -111,7 +111,7 @@ file](https://github.com/LkeMitchll/interroban.gg/blob/eebbe6f36f888f35ece459d99
 to the `data` folder that exports an object is all that is needed.
 
 Once the data is fetched I then display the bookmarks using a [Nunjucks
-template](https://github.com/LkeMitchll/interroban.gg/blob/eebbe6f36f888f35ece459d997cd5ea932fc8499/src/bookmarks.njk#L34-L71)
+template](https://github.com/LkeMitchll/interroban.gg/blob/eebbe6f36f888f35ece459d997cd5ea932fc8499/src/bookmarks.liquid#L34-L71)
 for the markup.
 
 No client side JavaScript is exported, just plain HTML.

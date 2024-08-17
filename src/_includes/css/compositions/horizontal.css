@@ -1,8 +1,8 @@
 .horizontal {
   display: flex;
-  gap: var(--gap, 1rem);
+  gap: var(--gap, var(--space-default));
 
   @media (min-width: 700px) {
-    --gap: 2rem;
+    --gap: var(--space-large);
   }
 }

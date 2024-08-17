@@ -20,13 +20,15 @@ methodology, combined with the core concepts of GTD ([Getting Things Done](https
 productivity forever.
 
 {% sidenote 1 %}
-  _Nº1_ One day I will write a post about how I mix these two things together.
+    **№ 1** – One day I will write a post about how I mix these two things together.
 {% endsidenote %}
 
 Throughout the day I will check off events and tasks as I complete them, and
 jot down notes and updates as I go.
 
-All that is possible in a half-decent productivity app, like [Things](https://culturedcode.com/things/ "Things: A suite of productivity apps"), but there’s a few reasons why I prefer a notebook.
+All that is possible in a half-decent productivity app, like
+[Things](https://culturedcode.com/things/ "Things: A suite of productivity apps"),
+but there’s a few reasons why I prefer a notebook.
 
 ## Downsides
 
@@ -57,7 +59,7 @@ difficult to introduce a new syntax or concept, plug-ins exist but those need
 to be found, installed, or even written from scratch.
 
 {% sidenote 2 %}
-  _Nº2_ [Drafts](https://getdrafts.com) Is probably the easiest to extend app in the
+  **№ 2** – [Drafts](https://getdrafts.com) Is probably the easiest to extend app in the
   space (if you know a bit of javascript), but isn't focussed on to-do's.
 {% endsidenote %}
 
@@ -84,7 +86,7 @@ find it easier to organise myself when I have a to-do to read a document before
 a meeting when the two things are listed next to one another.
 
 {% sidenote 3 %}
-  _Nº3_ There is evidence to prove that I'm not the only one who finds [writing is helpful for memory](https://www.huffingtonpost.com.au/2016/04/21/writing-by-hand-benefits_n_9735384.html).
+  **№ 3** – There is evidence to prove that I'm not the only one who finds [writing is helpful for memory](https://www.huffingtonpost.com.au/2016/04/21/writing-by-hand-benefits_n_9735384.html).
 {% endsidenote %}
 
 ## Zero technology

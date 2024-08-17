@@ -1,5 +1,5 @@
 .columns {
   display: grid;
-  grid-gap: var(--row-gap, var(--space-large)) var(--column-gap, var(--space-large));
+  grid-gap: var(--row-gap, var(--space-default)) var(--column-gap, var(--space-default));
   grid-template-columns: repeat(var(--column-count, auto-fit), var(--column-min, minmax(calc(var(--text-measure) / 4), 1fr)));
 }

@@ -3,7 +3,6 @@
   --color-dark: hsl(45deg 100% 20%);
   --color-fg: var(--color-dark);
   --color-bg: var(--color-light);
-  --space-tiny: 0.25rem;
   --space-small: 0.5rem;
   --space-default: 1rem;
   --space-medium: 1.5rem;

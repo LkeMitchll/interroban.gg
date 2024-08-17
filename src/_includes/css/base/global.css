@@ -16,7 +16,7 @@ body {
   margin: var(--space-large) auto 0 auto;
   padding: 0 5vw;
   text-rendering: optimizelegibility;
-  line-height: 1.5;
+  line-height: var(--text-leading-default);
 
   @media screen and (min-width: 600px) {
     margin-top: var(--space-xx-large);

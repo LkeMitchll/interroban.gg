@@ -1,0 +1,37 @@
+<header class="flow | gap-x-large">
+  {% if page.inputPath contains 'post' %}
+    {% if page.inputPath contains 'colophon' %}
+      <a role="link" href="/colophon#updates"><h1>{{ title }}</h1></a>
+    {% else %}
+      <a role="link" href="/journal#writing"><h1>{{ title }}</h1></a>
+    {% endif %}
+  {% elsif page.url != "/" %}
+    <a role="link" href="/"><h1>{{ title }}</h1></a>
+  {% else %}
+    <h1>Luke Mitchell</h1>
+  {% endif %}
+
+  {% if nav == true %}
+    <nav aria-label="site navigation">
+      <ul role="list" class="horizontal | tertiary-text">
+        {% for link in navigation.general.pages %}
+          <li>
+            <a href="{{ link.url }}" {% if page.url == link.url %}aria-current="page"{% endif %}>
+              {{ link.name }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
+
+  {% if intro %}
+    <p class="measure">
+      {{ intro }}
+    </p>
+  {% endif %}
+
+  {% if history == true %}
+    {% include "components/commits.liquid" %}
+  {% endif %}
+</header>

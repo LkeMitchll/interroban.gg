@@ -1,0 +1,68 @@
+---
+layout: layouts/default
+title: Bookmarks
+pagination:
+  data: bookmarks
+  size: 100
+  reverse: true
+introduction: >
+  I try and keep track of all the interesting things I
+  find on my travels around the web. Because the internet never stops changing,
+  as this list gets older things will begin to decay and disappear. So this
+  isn’t an archive as such, it’s a log.
+---
+
+<ul role="list" class="horizontal | tertiary-text gap">
+  <li>
+    <a href="/feeds/bookmarks.xml">
+      RSS Feed
+    </a>
+  </li>
+  <li>
+    <a href="/feeds/bookmarks.json">
+      JSON Feed
+    </a>
+  </li>
+</ul>
+<hr class="gap-x-large">
+
+<article id="content" class="flow | gap-xx-large">
+  <ul role="list">
+    {% for bookmark in pagination.items %}
+      <li class="bookmark | switcher | border tertiary-text">
+        <div class="horizontal">
+          <p>N&ordm; {{ bookmark.number }}</p>
+          <p>
+            <a href="{{ bookmark.url }}">{{ bookmark.title }}</a>
+            {% if bookmark.viaURL != "" %}
+              via
+              <a href="{{ bookmark.viaURL }}">
+                {{ bookmark.viaName }}
+              </a>
+            {% endif %}
+          </p>
+        </div>
+        <div class="switcher-aside | horizontal">
+          <p><span class="tag">{{ bookmark.tag }}</span></p>
+          <p class="push-right">{{ bookmark.date | date_to_string }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  <nav class="tertiary-text" aria-label="bookmark page navigation">
+    <p class="gap">More bookmarks:</p>
+    <ul role="list" class="horizontal | gap">
+      {% for pageEntry in pagination.pages %}
+        <li>
+          <a href="{{ pagination.hrefs[forloop.index0] }}#content"
+             {% if page.url == pagination.hrefs[forloop.index0] %} aria-current="page"{% endif %}
+             aria-label="Page {{ forloop.index }}"
+          >
+            {{ forloop.index }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <a href="#content">Back to top</a>
+  </nav>
+</article>

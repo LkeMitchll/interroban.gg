@@ -62,7 +62,7 @@ images and text together. Try not to dominate the text with giant images that
 overtake everything else, especially if they are decorative [1](#sn-1).
 
 {% sidenote 1 %}
-  _Nº1_ I'm not keen on mockups of phones floating in the air at funny angles, it
+  **№ 1** – I'm not keen on mockups of phones floating in the air at funny angles, it
   makes it hard to see the details.
 {% endsidenote %}
 
@@ -87,7 +87,7 @@ add character and a sense of creative 'chaos' to a collection of early stage
 sketches [2](#sn-2).
 
 {% sidenote 2 %}
-  _Nº2_ The [Font Review Journal](https://fontreviewjournal.com/untitled-sans/) and the
+  **№ 2** – The [Font Review Journal](https://fontreviewjournal.com/untitled-sans/) and the
   design notes for [Blanco](https://www.fostertype.com/retail-type/blanco#notes)
   do this beautifully.
 {% endsidenote %}

@@ -9,7 +9,6 @@
 /* compositions */
 @import url("_includes/css/compositions/flow.css") layer(compositions);
 @import url("_includes/css/compositions/columns.css") layer(compositions);
-@import url("_includes/css/compositions/masonry.css") layer(compositions);
 @import url("_includes/css/compositions/horizontal.css") layer(compositions);
 @import url("_includes/css/compositions/switcher.css") layer(compositions);
 
@@ -17,12 +16,12 @@
 @import url("_includes/css/blocks/grayscale-image.css") layer(blocks);
 @import url("_includes/css/blocks/markdown.css") layer(blocks);
 @import url("_includes/css/blocks/sidenote.css") layer(blocks);
-@import url("_includes/css/blocks/movies.css") layer(blocks);
 @import url("_includes/css/blocks/caption.css") layer(blocks);
 @import url("_includes/css/blocks/tag.css") layer(blocks);
-@import url("_includes/css/blocks/post.css") layer(blocks);
-@import url("_includes/css/blocks/bookmark.css") layer(blocks);
 @import url("_includes/css/blocks/lighthouse.css") layer(blocks);
+
+/* vendor styles/overrides */
+@import url("_includes/css/vendor/masonry-layout.css") layer(blocks);
 
 /* utilities */
 @import url("_includes/css/utilities/utilities.css") layer(utilities);

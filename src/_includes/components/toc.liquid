@@ -2,9 +2,9 @@
   <ol role="list" class="gap">
     {% for heading in toc %}
     <li class="horizontal | gap">
-      <p>{{ loop.index }}.</p>
+      <p>{{ forloop.index }}.</p>
       <hr class="grow" />
-      <a class="tertiary-text" href="#{{ heading | lower }}">{{ heading }}</a>
+      <a class="tertiary-text" href="#{{ heading | downcase }}">{{ heading }}</a>
     </li>
     {% endfor %}
   </ol>

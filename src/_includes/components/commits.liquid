@@ -8,7 +8,7 @@
       </a>
       <p>
         <time datetime="{{ commit.date }}">
-          {{ commit.date | formatDate }}
+          {{ commit.date | date_to_string }}
         </time>
       </p>
     </li>

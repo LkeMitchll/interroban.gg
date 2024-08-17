@@ -1,21 +1,20 @@
 ---
 layout: layouts/default
+nav: false
+history: false
 ---
 
-<header class="flow | measure gap-x-large">
-  <h1 class="gap-large">{{ title }}</h1>
-  <ul class="tertiary-text" role="list">
-    <li>Tags: <span class="tag">{{ type if type else "Post" }}</span></li>
-    <li>Date: {{ date | formatDate }}</li>
-  </ul>
-</header>
+<ul class="tertiary-text gap-x-large" role="list">
+  <li>Tags: <span class="tag">{{ type | default: "Post" }}</span></li>
+  <li>Date: {{ date | date_to_string }}</li>
+</ul>
 
 <article class="h-entry hentry | markdown | gap-x-large">
-  {{ content | safe }}
+  {{ content }}
 </article>
 
-{%- set currentPostMentionCount = webmentions | webmentionCountForPage -%}
-{%- set currentPostMentions = webmentions | webmentionsForPage -%}
+{% assign currentPostMentionCount = webmentions | webmentionCountForPage -%}
+{% assign currentPostMentions = webmentions | webmentionsForPage -%}
 <details class="tertiary-text | gap-x-large">
   <summary class="gap">Mentions: {{ currentPostMentionCount }}</summary>
   {% if currentPostMentionCount > 0 %}
@@ -29,4 +28,4 @@ layout: layouts/default
   {% endif %}
 </details>
 
-{% include "components/commits.njk" %}
+{% include "components/commits.liquid" %}

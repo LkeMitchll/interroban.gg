@@ -8,25 +8,11 @@
     }
   }
 
-  & img {
-    margin-bottom: var(--space-default);
-  }
-
-  & em {
-    font-family: var(--text-mono);
-    font-style: normal;
-    font-size: var(--text-size-small);
-    margin-right: var(--space-tiny);
-  }
-
   & small {
+    --flow-space: var(--space-small);
+
     display: block;
     border-left: var(--border-default);
     padding-left: var(--space-default);
-  }
-
-  & + p:last-child {
-    display: initial;
-    margin-bottom: var(--space-xx-large);
   }
 }
