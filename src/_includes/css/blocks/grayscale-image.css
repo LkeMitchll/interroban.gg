@@ -12,6 +12,9 @@
   }
 
   & img {
+    /* stylelint-disable property-no-vendor-prefix */
+    -webkit-transform: translateZ(0);
     mix-blend-mode: multiply;
+    filter: grayscale(1);
   }
 }

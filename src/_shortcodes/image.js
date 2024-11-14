@@ -1,15 +1,6 @@
-import fetch from "@11ty/eleventy-fetch";
+import Image from "@11ty/eleventy-img";
 
-const responsiveImage = async (imgUUID, imgAlt, size = "large") => {
-  const imgUrl = `https://ucarecdn.com/${imgUUID}`;
-  const imgMeta = await fetch(`${imgUrl}/-/json/`, {
-    duration: "1h",
-    type: "json",
-  }).then((response) => response);
-  const quality = "smart";
-  const fallback = `${imgUrl}/-/resize/800x/quality/${quality}/`;
-  const sources = [];
-
+const responsiveImage = async (src, alt, size = "large") => {
   const viewportWidths = {
     large: {
       sizes: "(min-width: 1600px) 52.36vw, (min-width: 700px) 67.39vw, 90vw",
@@ -22,19 +13,21 @@ const responsiveImage = async (imgUUID, imgAlt, size = "large") => {
     },
   };
 
-  for (const width of viewportWidths[size].widths) {
-    const source = `${imgUrl}/-/resize/${width}x/-/grayscale/-/quality/${quality}/-/format/webp/ ${width}w`;
-    sources.push(source);
-  }
+  const metadata = await Image(src, {
+    widths: viewportWidths[size].widths,
+    formats: ["avif", "jpeg"],
+    urlPath: "/assets/images/",
+    outputDir: "./_site/assets/images/",
+  });
 
-  return `<div class="grayscale-image" data-image-size="${size}">
-            <img src="${fallback}"
-                 srcset="${sources}"
-                 sizes="${viewportWidths[size].sizes}"
-                 width="${imgMeta.width}"
-                 height="${imgMeta.height}"
-                 alt="${imgAlt}" />
-          </div>`;
+  const imageAttributes = {
+    alt: alt || "",
+    sizes: viewportWidths[size].sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
 };
 
 export default responsiveImage;

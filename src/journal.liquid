@@ -160,10 +160,18 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <masonry-layout cols="5">
     {% for item in scrapbook %}
       <figure>
-        <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}" height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
-        <a class="tertiary-text" href="{{ item.pageURL | default: 'https://savee.it' | append: item.url }}">
-          Source
-        </a>
+        <img
+          src="{{ item.asset.image.thumbnail }}"
+          loading="lazy"
+          width="{{ item.asset.image.width }}"
+          height="{{ item.asset.image.height }}"
+          alt="{{ item.name }}"
+        />
+        {% if item.pageURL %}
+          <a class="tertiary-text" href="{{ item.pageURL }}">Source</a>
+        {% else %}
+          <a class="tertiary-text" href="{{ item.url }}">Source</a>
+        {% endif %}
       </figure>
     {% endfor %}
   </masonry-layout>
