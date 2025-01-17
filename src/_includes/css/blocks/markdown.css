@@ -22,4 +22,8 @@
     grid-template-columns: 50ch 20ch;
     grid-column-gap: var(--space-large);
   }
+
+  & p:has(img) {
+    grid-column: 1 / 3;
+  }
 }
