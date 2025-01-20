@@ -13,19 +13,4 @@ history: false
   {{ content }}
 </article>
 
-{% assign currentPostMentionCount = webmentions | webmentionCountForPage -%}
-{% assign currentPostMentions = webmentions | webmentionsForPage -%}
-<details class="tertiary-text | gap-x-large">
-  <summary class="gap">Mentions: {{ currentPostMentionCount }}</summary>
-  {% if currentPostMentionCount > 0 %}
-    <ol role="list" class="flow gap">
-      {% for mention in currentPostWebMentions %}
-        <li><a href="{{ mention.url }}">{{ mention.author.name }}</a></li>
-      {% endfor %}
-    </ol>
-  {% else %}
-    <p>No webmentions yet 😿</p>
-  {% endif %}
-</details>
-
 {% include "components/commits.liquid" %}

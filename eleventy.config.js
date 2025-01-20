@@ -2,7 +2,6 @@ import "dotenv/config";
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import lightningCSSPlugin from "@11tyrocks/eleventy-plugin-lightningcss";
 import RSSPlugin from "@11ty/eleventy-plugin-rss";
-import WebMentionsPlugin from "eleventy-plugin-webmentions";
 import markdownIt from "markdown-it";
 import mdAnchor from "markdown-it-anchor";
 import starFilter from "./src/_filters/stars.js";
@@ -19,10 +18,6 @@ const config = (eleventy) => {
   // Eleventy plugins
   eleventy.addPlugin(EleventyRenderPlugin);
   eleventy.addPlugin(lightningCSSPlugin);
-  eleventy.addPlugin(WebMentionsPlugin, {
-    domain: "interroban.gg",
-    token: process.env.WEBMENTIONIO_TOKEN,
-  });
   eleventy.addPlugin(RSSPlugin);
 
   // Custom filters
