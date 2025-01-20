@@ -42,18 +42,22 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
   <section class="columns">
-    {% for week in [music.lastWeek, music.thisWeek] %}
+    {% for week in music.weekly %}
     <div>
       <h3>{{ week.title }}</h3>
       <ul role="list" class="tertiary-text gap-large">
-        {% for stat in [week.tracks, week.albums] %}
         <li class="horizontal | border gap">
-          <p>{{ stat.title }}</p>
+          <p>{{ week.tracks.title }}</p>
           <p class="push-right">
-            {{ stat.total }}
+            {{ week.tracks.total }}
           </p>
         </li>
-        {% endfor %}
+        <li class="horizontal | border gap">
+          <p>{{ week.albums.title }}</p>
+          <p class="push-right">
+            {{ week.albums.total }}
+          </p>
+        </li>
       </ul>
     </div>
     {% endfor %}

@@ -85,8 +85,7 @@ async function topArtists() {
 }
 
 export default {
-  lastWeek: await lastWeek(),
-  thisWeek: await thisWeek(),
+  weekly: [lastWeek(), thisWeek()],
   topAlbums: await topAlbums(),
   topArtists: await topArtists(),
 };
