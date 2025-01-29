@@ -37,3 +37,11 @@
   font-display: swap;
   src: url("https://assets.interroban.gg/signifier-web-light.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: Signifier;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://assets.interroban.gg/signifier-web-light-italic.woff2") format("woff2");
+}

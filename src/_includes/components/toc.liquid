@@ -4,7 +4,7 @@
     <li class="horizontal | gap">
       <p>{{ forloop.index }}.</p>
       <hr class="grow" />
-      <a class="tertiary-text" href="#{{ heading | downcase }}">{{ heading }}</a>
+      <a class="tertiary-text" href="#{{ heading | downcase | replace: " ", "-" }}">{{ heading }}</a>
     </li>
     {% endfor %}
   </ol>
