@@ -103,22 +103,12 @@ toc: ["About", "Case Studies", "Highlights", "Experience", "Roles", "Clients", "
     </div>
   </div>
   <ul role="list" class="columns">
+    {% for highlight in collections.highlights %}
     <li>
       <img src="#" alt="" />
-      <h3>Design Sprints</h3>
+      <h3><a href="{{ highlight.url }}">{{ highlight.data.title }}</a></h3>
     </li>
-    <li>
-      <img src="#" alt="" />
-      <h3>Prototyping</h3>
-    </li>
-    <li>
-      <img src="#" alt="" />
-      <h3>Design Systems</h3>
-    </li>
-    <li>
-      <img src="#" alt="" />
-      <h3>MVP Shaping</h3>
-    </li>
+    {% endfor %}
   </ul>
 </article>
 
