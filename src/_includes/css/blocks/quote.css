@@ -1,0 +1,16 @@
+.quote {
+  font-family: var(--text-display);
+  font-size: var(--text-size-default);
+  position: relative;
+}
+
+.quote::before {
+  content: "“";
+  font-size: calc(var(--text-size-large) * 2);
+  font-family: var(--text-heading);
+  opacity: 0.5;
+  position: absolute;
+  left: -2rem;
+  top: -0.1rem;
+  line-height: 1;
+}
