@@ -1,7 +1,7 @@
 .markdown {
   display: grid;
   margin-bottom: var(--space-xx-large);
-  grid-row-gap: var(--space-medium);
+  grid-row-gap: var(--space-default);
 
   @media screen and (min-width: 600px) {
     & {
@@ -25,5 +25,10 @@
 
   & p:has(img) {
     grid-column: 1 / 3;
+  }
+
+  & *:is(h2, h3, h4) {
+    margin-top: var(--space-large);
+    margin-bottom: 0;
   }
 }

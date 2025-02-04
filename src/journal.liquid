@@ -44,7 +44,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <section class="columns">
     {% for week in music.weekly %}
     <div>
-      <h3>{{ week.title }}</h3>
+      <h3 class="subheading">{{ week.title }}</h3>
       <ul role="list" class="tertiary-text">
         <li class="horizontal | border gap">
           <p>{{ week.tracks.title }}</p>
@@ -64,7 +64,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   </section>
   <section class="music | columns">
     <div>
-      <h3>Top albums (3 months)</h3>
+      <h3 class="subheading">Top albums (3 months)</h3>
       <ol role="list">
         {% for album in music.topAlbums %}
         <li class="border">
@@ -77,7 +77,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
       </ol>
     </div>
     <div>
-      <h3>Top artists (3 months)</h3>
+      <h3 class="subheading">Top artists (3 months)</h3>
       <ol role="list">
         {% for artist in music.topArtists %}
         <li class="border">

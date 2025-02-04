@@ -40,13 +40,14 @@ h4 {
   line-height: var(--text-leading-heading);
   text-decoration: none;
   font-weight: 400;
+  margin-top: 0;
 }
 
 h2,
 h3,
 h4,
 .subheading {
-  font-family: "National";
+  font-family: var(--text-heading);
   font-size: var(--text-size-medium);
 }
 
@@ -57,7 +58,8 @@ h4,
   opacity: 0.7;
 }
 
-h4 {
+h4,
+.subheading {
   font-size: var(--text-size-default);
 }
 

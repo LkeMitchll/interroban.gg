@@ -16,6 +16,7 @@
   --text-weight-normal: 400;
   --text-weight-bold: 600;
   --text-display: "Signifier", "Georgia", "Times New Roman", "Times", serif;
+  --text-heading: "National", "Inter", "Roboto", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   --text-body: "Blanco", "Georgia", "Times New Roman", "Times", serif;
   --text-mono: "Pitch", "Monaco", "Courier New", "Courier", monospace;
   --text-leading-default: 1.5;
