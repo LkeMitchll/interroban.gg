@@ -6,6 +6,7 @@ import markdownIt from "markdown-it";
 import mdAnchor from "markdown-it-anchor";
 import starFilter from "./src/_filters/stars.js";
 import responsiveImage from "./src/_shortcodes/image.js";
+import breadcrumbs from "./src/_shortcodes/breadcrumbs.js";
 
 const config = (eleventy) => {
   // Manually copy files
@@ -25,6 +26,7 @@ const config = (eleventy) => {
 
   // Custom shortcodes
   eleventy.addAsyncShortcode("image", responsiveImage);
+  eleventy.addShortcode("breadcrumbs", breadcrumbs);
 
   // Markdown config
   const mdOptions = { html: true, typographer: true };
