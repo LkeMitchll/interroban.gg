@@ -9,6 +9,11 @@ import responsiveImage from "./src/_shortcodes/image.js";
 import breadcrumbs from "./src/_shortcodes/breadcrumbs.js";
 
 const config = (eleventy) => {
+  // Markdown config
+  const mdOptions = { html: true, typographer: true };
+  const md = markdownIt(mdOptions).use(mdAnchor);
+  eleventy.setLibrary("md", md);
+
   // Manually copy files
   eleventy.addPassthroughCopy("src/assets/");
   eleventy.addPassthroughCopy({
@@ -27,13 +32,6 @@ const config = (eleventy) => {
   // Custom shortcodes
   eleventy.addAsyncShortcode("image", responsiveImage);
   eleventy.addShortcode("breadcrumbs", breadcrumbs);
-
-  // Markdown config
-  const mdOptions = { html: true, typographer: true };
-  const md = markdownIt(mdOptions).use(mdAnchor);
-
-  eleventy.setLibrary("md", md);
-
   eleventy.addPairedShortcode("sidenote", (content, number) => {
     const result = md.render(content);
     return `<aside id="sn-${number}" class="sidenote" data-numerals="lining">
