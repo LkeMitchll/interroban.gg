@@ -1,6 +1,6 @@
 import fetch from "@11ty/eleventy-fetch";
 
-const responsiveImage = async (imgUUID, imgAlt, size = "large") => {
+const responsiveImage = async (imgUUID, imgAlt, size = "large", color = false) => {
   const imgUrl = `https://ucarecdn.com/${imgUUID}`;
   const imgMeta = await fetch(`${imgUrl}/-/json/`, {
     duration: "1h",
@@ -9,6 +9,8 @@ const responsiveImage = async (imgUUID, imgAlt, size = "large") => {
   const quality = "smart";
   const fallback = `${imgUrl}/-/resize/800x/quality/${quality}/`;
   const sources = [];
+  const colorStyle = color ? null : "blend-multiply"
+  const colorMode = color ? "" : "-/grayscale/"
 
   const viewportWidths = {
     large: {
@@ -23,17 +25,19 @@ const responsiveImage = async (imgUUID, imgAlt, size = "large") => {
   };
 
   for (const width of viewportWidths[size].widths) {
-    const source = `${imgUrl}/-/resize/${width}x/-/grayscale/-/quality/${quality}/-/format/webp/ ${width}w`;
+    const source = `${imgUrl}/-/resize/${width}x/${colorMode}-/quality/${quality}/-/format/webp/ ${width}w`;
     sources.push(source);
   }
 
-  return `<div class="grayscale-image" data-image-size="${size}">
+  return `<div class="image" data-image-size="${size}">
             <img src="${fallback}"
                  srcset="${sources}"
                  sizes="${viewportWidths[size].sizes}"
                  width="${imgMeta.width}"
                  height="${imgMeta.height}"
-                 alt="${imgAlt}" />
+                 alt="${imgAlt}"
+                 class="${colorStyle}"
+                 />
           </div>`;
 };
 

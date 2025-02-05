@@ -1,4 +1,4 @@
-.grayscale-image {
+.image {
   background-color: var(--color-bg);
 
   @media (prefers-color-scheme: dark) {
@@ -9,9 +9,5 @@
     &[data-image-size="large"] {
       grid-column: 1 / 4;
     }
-  }
-
-  & img {
-    mix-blend-mode: multiply;
   }
 }

@@ -11,9 +11,10 @@
 @import url("_includes/css/compositions/columns.css") layer(compositions);
 @import url("_includes/css/compositions/horizontal.css") layer(compositions);
 @import url("_includes/css/compositions/switcher.css") layer(compositions);
+@import url("_includes/css/compositions/editorial.css") layer(compositions);
 
 /* blocks */
-@import url("_includes/css/blocks/grayscale-image.css") layer(blocks);
+@import url("_includes/css/blocks/image.css") layer(blocks);
 @import url("_includes/css/blocks/markdown.css") layer(blocks);
 @import url("_includes/css/blocks/sidenote.css") layer(blocks);
 @import url("_includes/css/blocks/caption.css") layer(blocks);
