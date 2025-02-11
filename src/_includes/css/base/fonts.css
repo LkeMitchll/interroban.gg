@@ -1,25 +1,25 @@
 @font-face {
-  font-family: Blanco;
+  font-family: "Taurus Grotesk";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("https://assets.interroban.gg/Blanco-Regular.woff2") format("woff2");
+  src: url("/assets/TaurusGroteskTrial-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: Blanco;
+  font-family: "Taurus Grotesk";
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url("https://assets.interroban.gg/Blanco-Italic.woff2") format("woff2");
+  src: url("/assets/TaurusGroteskTrial-Italic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: Blanco;
+  font-family: "Taurus Grotesk";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("https://assets.interroban.gg/Blanco-Medium.woff2") format("woff2");
+  src: url("/assets/TaurusGroteskTrial-Bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -39,9 +39,9 @@
 }
 
 @font-face {
-  font-family: National;
+  font-family: Posthumous;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("/assets/test-national-2-regular.woff2") format("woff2");
+  src: url("/assets/posthumous.woff2") format("woff2");
 }

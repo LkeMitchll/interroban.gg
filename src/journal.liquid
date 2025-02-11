@@ -104,17 +104,17 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <ol role="list" class="columns">
     <li class="push-down">
       <img src="{{ reading.currentlyReading.book.cover }}" width="500" height="750" loading="lazy" alt="{{ reading.currentlyReading.book.title }}" title="{{ reading.currentlyReading.book.title }}" class="gap" />
-      <div class="flow | tertiary-text">
-        <p>Reading now</p>
-        <a href="https://literal.club/book/{{ reading.currentlyReading.book.slug }}">{{ reading.currentlyReading.book.title }}</a>
+      <div class="flow">
+        <p class="tertiary-text">Reading now</p>
+        <small><a href="https://literal.club/book/{{ reading.currentlyReading.book.slug }}">{{ reading.currentlyReading.book.title }}</a></small>
       </div>
     </li>
     {% for item in reading.upNext %}
     <li class="push-down">
       <img src="{{ item.book.cover }}" width="500" height="750" loading="lazy" alt="{{ item.book.title }}" title="{{ item.book.title }}" class="gap opacity-70" />
-      <div class="flow | tertiary-text">
-        <p>Want to read</p>
-        <a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a>
+      <div class="flow">
+        <p class="tertiary-text">Want to read</p>
+        <small><a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a></small>
       </div>
     </li>
     {% endfor %}

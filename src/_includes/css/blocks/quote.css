@@ -1,6 +1,6 @@
 .quote {
-  font-family: var(--text-display);
-  font-size: var(--text-size-default);
+  font-family: var(--text-heading);
+  font-size: var(--text-size-medium);
   position: relative;
 }
 

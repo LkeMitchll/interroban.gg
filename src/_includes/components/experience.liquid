@@ -8,7 +8,7 @@
       <li>
         <p class="tertiary-text">{{ job.period }}</p>
         <p>{{ job.title }}</p>
-        <p><em>{{ job.employer }}</em></p>
+        <p><small>{{ job.employer }}</small></p>
       </li>
       {% endfor %}
     </ul>
@@ -38,7 +38,7 @@
         <a href="{{ award.url }}">
           {{ award.source }}
         </a>
-        <p>{{ award.date }} </p>
+        <p><small>{{ award.date }}</small></p>
       </li>
       {% endfor %}
     </ul>
