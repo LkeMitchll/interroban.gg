@@ -11,7 +11,6 @@
 @import url("_includes/css/compositions/columns.css") layer(compositions);
 @import url("_includes/css/compositions/horizontal.css") layer(compositions);
 @import url("_includes/css/compositions/switcher.css") layer(compositions);
-@import url("_includes/css/compositions/editorial.css") layer(compositions);
 
 /* blocks */
 @import url("_includes/css/blocks/image.css") layer(blocks);
