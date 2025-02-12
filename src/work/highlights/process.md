@@ -27,7 +27,7 @@ A project starts out as a collection of assumptions, assumptions can be dangerou
 
 ## Define
 
-With bad assumptions squashed, and research done we need to make a plan, and lay the foundations of a good product. We should: 
+With bad assumptions squashed, and research done we need to make a plan, and lay the foundations of a good product. We should:
 
 - Write down the problem.
 - Make a map of the journey people will take.
@@ -41,7 +41,7 @@ When we have worked out a what we need to do, we need to start generating and te
 
 - Build ideas as skeletons, as quickly as we can.
 - Test the ideas with the people who will use them.
-- Repeat: Adapt, combine and evolve the best bits. 
+- Repeat: Adapt, combine and evolve the best bits.
 - Make a start defining a visual tone.
 
 ## Refine & Build
