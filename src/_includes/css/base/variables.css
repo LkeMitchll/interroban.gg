@@ -10,12 +10,12 @@
   --space-x-large: 3rem;
   --space-xx-large: 5rem;
   --text-size-default: 1rem;
-  --text-size-large: 1.8rem;
+  --text-size-large: 2rem;
   --text-size-medium: 1.4rem;
   --text-size-small: 0.8rem;
   --text-weight-normal: 400;
   --text-weight-bold: 600;
-  --text-display: "Posthumous", "Georgia", "Times New Roman", "Times", serif;
+  --text-display: "PicNic", "Signifier", "Times New Roman", "Times", serif;
   --text-heading: "Signifier", "Georgia", "Times New Roman", "Times", serif;
   --text-body: "Taurus Grotesk", "Inter", "Roboto", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   --text-mono: "Pitch", "Monaco", "Courier New", "Courier", monospace;
