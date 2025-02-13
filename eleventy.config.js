@@ -14,6 +14,8 @@ const config = (eleventy) => {
   const md = markdownIt(mdOptions).use(mdAnchor);
   eleventy.setLibrary("md", md);
 
+  // Ignore gitignore
+  eleventy.setUseGitIgnore(false);
   // Manually copy files
   eleventy.addPassthroughCopy("src/assets/");
   eleventy.addPassthroughCopy({
@@ -38,6 +40,7 @@ const config = (eleventy) => {
               <small class="flow">${result}</small>
             </aside>`;
   });
+
 
   // Options
   return {
