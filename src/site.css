@@ -20,6 +20,7 @@
 @import url("_includes/css/blocks/tag.css") layer(blocks);
 @import url("_includes/css/blocks/lighthouse.css") layer(blocks);
 @import url("_includes/css/blocks/quote.css") layer(blocks);
+@import url("_includes/css/blocks/books.css") layer(blocks);
 
 /* vendor styles/overrides */
 @import url("_includes/css/vendor/masonry-layout.css") layer(blocks);

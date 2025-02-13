@@ -64,11 +64,43 @@ export default class LiteralAPI {
 
     const currentlyReading = response.data.myReadingStates.filter(
       (shelf) => shelf.status === "IS_READING",
-    )[0];
+    );
+
+    return currentlyReading;
+  }
+
+  async getWantToReadBooks() {
+    const accessToken = await this.getAccessToken();
+
+    const response = await Fetch(this.url, {
+      duration: "1d",
+      type: "json",
+      fetchOptions: {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `
+          query myReadingStates {
+            myReadingStates {
+              status
+              book {
+                title
+                cover
+                slug
+              }
+            }
+          }
+        `,
+        }),
+      },
+    });
     const upNext = response.data.myReadingStates
       .filter((shelf) => shelf.status === "WANTS_TO_READ")
-      .slice(0, 5);
+      .slice(0, 6);
 
-    return { currentlyReading, upNext };
+    return upNext;
   }
 }
