@@ -27,6 +27,13 @@ First, install the bundle:
 npm install
 ```
 
+Next fill out your secret credentials:
+
+```bash
+cp env.example .env
+open .env
+```
+
 Next, build the site:
 
 ```bash
