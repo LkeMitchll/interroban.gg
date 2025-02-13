@@ -10,4 +10,10 @@
       grid-column: 1 / 4;
     }
   }
+
+  @media (min-width: 700px) {
+    &[data-image-size="xlarge"] {
+      grid-column: 1 / 5;
+    }
+  }
 }

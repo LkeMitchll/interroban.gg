@@ -12,7 +12,12 @@ const responsiveImage = async (imgUUID, imgAlt, size = "large", color = false) =
   const colorStyle = color ? null : "blend-multiply"
   const colorMode = color ? "" : "-/grayscale/"
 
+  console.log(size)
   const viewportWidths = {
+    xlarge: {
+      sizes: "(min-width: 1600px) 70.2vw, (min-width: 700px) 90vw, 90vw",
+      widths: [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400],
+    },
     large: {
       sizes: "(min-width: 1600px) 52.36vw, (min-width: 700px) 67.39vw, 90vw",
       widths: [400, 600, 800, 1000, 1200, 1400],
