@@ -28,6 +28,11 @@ body {
   }
 }
 
+::selection {
+  color: var(--color-bg);
+  background: var(--color-fg);
+}
+
 img {
   display: block;
   width: 100%;
