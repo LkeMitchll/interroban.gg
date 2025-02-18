@@ -3,3 +3,422 @@ layout: layouts/default
 nav: false
 title: Contractuali
 ---
+
+<figure class="columns | gap-xx-large">
+  <img src="/assets/contractuali/hero.png" style="grid-column: 1 / 5" />
+  <figcaption class="measure | push-down leading-crushed" style="grid-column: 1 / 5;">
+    <small>
+      <strong>Above</strong>
+    </small>
+  </figcaption>
+</figure>
+
+<h2 class="gap-x-large">Taking an innovative new ideas from zero to MVP</h2>
+
+<section class="markdown | gap-x-large">
+  <p>Contractuali is a contract management platform that aim to not only make drafting, reviewing, storing and signing
+    contracts easier, but also make the data within contracts accessible and queryable.</p>
+
+  <aside class="sidenote">
+    <small class="flow">
+      <p>
+        <strong>Skills: </strong> Product Design, Product Management, Design Direction & Strategy, UI & UX Design,
+        Front-End Development.
+      </p>
+    </small>
+  </aside>
+
+  <p>Imagine you're running a property business that deals with a lot of contrats if you wanted to track the renewal
+    date of each of those contracts you would need to trawl through every single document and extract the renewal date,
+    and then manually enter the data into a separate database, only then can you track those dates. Contractuali aims to
+    automate that process by allowing you to upload all of your documents and then auto-populate and store the data.
+    This means that finding those dates is now a matter of simply searching for them. Additionally any new contracts
+    created within the system will automatically be added to the database with no additional steps.</p>
+
+  <p>We were approached to turn the founders vision into a reality. Before working with us they had been researching the
+    market fit, finding funding, and attracting potential customers, but they had yet to actually build something people
+    would use. Over the next few weeks we took the business from idea to a fully functioning product.</p>
+
+  <h2>Design Sprint</h2>
+
+  <p>We decided to kickoff with a Product Design Sprint (PDS), we chose to do this because it meant that we could take
+    steps to understand the problem, generate ideas and build a prototype to test very quickly. The founder was keen to
+    validate the idea with their potential customers early.</p>
+
+  <h3>Understand</h3>
+
+  <p>On our first day we worked on understanding the problem, setting goals, and creating a very early user flow that we
+    could use later.</p>
+
+  <p>Our first exercises involved talking to the founder about the future and the biggest issues we could be facing.
+    During these exercises I like to offer prompt questions to get the conversation started, some of my favourites are:
+  </p>
+
+  <ul>
+    <li>What would success look like? How would we measure it?</li>
+    <li>If these problems were a medical condition, what would the symptoms be?</li>
+    <li>If in future this project completely failed, what might have caused that?</li>
+    <li>What are we assuming is true?</li>
+  </ul>
+
+  <p>This seems a little negative at first but it's a good thing to think about potential failures and avoid it
+    happening from the beginning. I prefer to then turn the answers of these question into questions themselves, this
+    helps to avoid jumping to solutions too early. Our conversations uncovered these questions that we then used to
+    guide us later on:</p>
+
+  <ul>
+    <li>Can we appeal to clients of different sizes?</li>
+    <li>Can we build something that helps avoid mistakes?</li>
+    <li>Can we build a system that is un-opinionated?</li>
+    <li>Can we make something that is easy to use?</li>
+    <li>Can we improve efficiency?</li>
+    <li>Can we set ourselves apart from our competition?</li>
+    <li>What if companies don&#8217;t want to pay per contract?</li>
+    <li>Will we be trusted?</li>
+    <li>Will we be able to onboard so many legacy documents?</li>
+    <li>Will we appeal to the target markets?</li>
+  </ul>
+
+  <p>We then moved on to interviewing other stakeholders and experts in this problem. We chose to mostly interview
+    people that are potential customers, and end users so that we could understand the problems and expectations that
+    they have. Over the course of the day we extracted these insights, then sorted, grouped and voted on the insights
+    that we felt were the most important or impactful. We chose to express our insights as questions once again, using
+    the ‘how might we’ (HMW) method to help us phrase our insights as questions, these are some examples of the most
+    impactful insights:</p>
+
+  <ul>
+    <li>HMW onboard customers who have lots of scanned documents?</li>
+    <li>HMW avoid a steep user learning curve?</li>
+    <li>HMW effectively report data?</li>
+    <li>HMW allow users to find documents easily?</li>
+    <li>HMW keep the process flexible?</li>
+    <li>HMW allow users to add data points to contracts?</li>
+    <li>HMW keep track of contract amendments?</li>
+    <li>HMW show progress of a contract/project?</li>
+    <li>HMW allow users to see real time versions of data?</li>
+    <li>HMW create a single source of truth for a company?</li>
+  </ul>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/ds-hmw.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <p class="gap">Next we focused on creating an early and basic user flow to help us to choose which areas to focus on most. When
+    creating these in a group I like to ask people to create a list of users on the starting side, then ask them to
+    define the final steps on the other, I find this makes it easier to the fill in the middle rather than getting stuck
+    at the beginning.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/ds-map.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <p>Once we had the map we grabbed our HMWs and applied them to the steps that we think would have the most impact on
+    answering them. For example we felt that the “Search/filter documents” step was the most likely to help answer the
+    question “HMW allow users to find documents easily?”. Taking a step back we could then see the areas of the flow
+    that are most likely to have the highest impact on our questions, meaning we could prioritise ideating on those
+    first as the represent the most risk.</p>
+
+  <p>The areas wee voted as most important to focus on where the contract creation flow, and the search and data mapping
+    flows:</p>
+
+  <p>At the end of this part of the sprint we now had a good understanding of the problem, a list of questions to answer
+    in the rest of the sprint, and a simple map of the experience.</p>
+
+  <h3>Diverge</h3>
+
+  <p>The next stage of the design sprint gave us a chance to generate ideas on how to solve these problems. Starting off
+    with a session to share interesting features or entire apps that we think might act as inspiration for our sketches
+    later on. I refer to this exercise as ‘lightning demos’</p>
+
+  <p>With our focus on search, contract creation, search and data mapping flows we shared apps like Google Docs: for
+    it’s version control and collaborative suggestion features, Slack and Contentful: for their powerful search
+    functionalities, Obsidian: for it’s innovative graph view to represent document connections.</p>
+
+  <p>We made sure to attach images and note down the interesting features to refer back to later.</p>
+
+  <p>The rest of this phase focused on the group creating mini-storyboards using a guided ideas generation and sketching
+    technique. Our goal was to explore as many possibilities as we could, regardless of how realistic, feasible or
+    viable they may or may not be. We would then assemble a more detailed storyboard during the next phase. The
+    technique has four steps:</p>
+
+  <ol>
+    <li>Choose an area of the map that we created in the previous phase to sketch ideas on.</li>
+    <li>Take time to look back on all the resources we have created so far. I like to suggest creating a mind map during
+      this time.</li>
+    <li>Spend a short amount of time roughly sketching ideas that immediately come to you.</li>
+    <li>Spend 8 minutes creating 1 sketch every minute. It sounds bizarre but the pressure can generate ideas you would
+      never think of otherwise.</li>
+    <li>Spend time to create a detailed 3-step sketched storyboard of your idea for the user journey. With plenty of
+      notes if you’re worried about your sketching skills.</li>
+  </ol>
+
+  <p>We repeated this technique several times until everyone had created a mini-storyboard for all the most important
+    areas of our map. We then assembled this on our digital whiteboard for the next phase.</p>
+
+  <h3>Converge</h3>
+
+  <p class="gap">After generating ideas in the second phase our next task was to review the ideas, then use them to plan out a
+    prototype.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/ds-sketch.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <p>Reviewing the ideas could have been a long exercise but I prefer a more efficient approach: All the ideas are
+    assembled together in a gallery. Each person silently reviews all of the ideas, putting dots on things that they
+    think are good or important. When I explain the exercise I give the advice that the participants can place as many
+    dots as they like, I personally use three dots for something excellent, 2 for something great, and 1 for something
+    good. At the end the sketches will have a ‘heat map’ of dots on the ideas that we have decided are the best or most
+    important. At this point people can then ask questions. We follow up with a ‘super vote' that gives a bit more
+    weight to the ideas.</p>
+
+  <p class="gap">To finish up this phase we then assemble a storyboard to turn into a prototype. We use all the resources we have
+    created so far, especially the highest voted storyboard elements from the previous exercise. When we have conflicts
+    we vote on whether to choose one idea over another or to merge them together somehow. By the end of the session we
+    should have a storyboard that is enough of a starting point for a more detailed prototype.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/ds-storyboard.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <h3>Prototype</h3>
+
+  <p class="gap">We decided to build a prototype using Figma, using medium fidelity, above wireframe level. We also focused on
+    desktop/laptop optimised flows for this first testing round.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/ds-prototype.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/ds-prototype-2.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+  <h3>Test</h3>
+
+  <p>We tested our prototype with 5 people initially, their jobs and industries varied, but all of them had
+    high-competency with technology.</p>
+
+  <h3>Results</h3>
+
+  <p>We analysed all of the sessions by making notes and then met to perform affinity mapping exercises to help
+    summarise the issues. In short the first prototype did a good job, but needed some improvements:</p>
+
+  <ul>
+    <li>The prototype was simple, there are lots of edge-cases especially for data that are not accounted for.</li>
+    <li>Can/should we unbundle some elements, while still focusing on the USP?</li>
+    <li>Iterate on the terminology used e.g. “Data Operations”</li>
+    <li>Iterate on the review process</li>
+    <li>Iterate on the spreadsheet creation process</li>
+    <li>Iterate on the “export” creation process.</li>
+    <li>Potentially explore a solution for mapping that can work for both types of data operation.</li>
+    <li>Explore importing data for new customers</li>
+    <li>Explore permissions and how they will inform the structure of the application</li>
+  </ul>
+
+  <p>We then recommended some ideas for next steps under the broader goals of defining an MVP through further research
+    and prototype iteration:</p>
+
+  <ul>
+    <li>Fill in the gaps and features that we did not get a chance to explore earlier</li>
+    <li>Iterate and improve the areas of concern listed above</li>
+    <li>Test again later with users</li>
+    <li>Continue to explore competitor offerings and shortfalls</li>
+    <li>Shape a minimal feature list for the initial launch</li>
+    <li>Define and refine customer personas that are specific to target markets to help shape the MVP further</li>
+  </ul>
+
+  <h2>Planning &amp; Wireframing</h2>
+
+  <h3>Critical Path</h3>
+
+  <p>To help us fill out the gaps in the old prototype we took time to work together and define a detailed critical path
+    and user flow.</p>
+
+  <p>We wanted to avoid solutions too early so our approach was to created a path that was a cross between a user flow
+    and jobs to be done. This means that each step is also accompanied by what the user can see, and what their next
+    steps can be.</p>
+
+  <p class="gap">This method was useful for fleshing out our feature set for the first version while also giving the design team the
+    freedom to explore different UX/UI approaches.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/crit-path.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/crit-path-detail.png" style="grid-column: 1 / 5" />
+    <figcaption class="measure | push-down leading-crushed" style="grid-column: 1 / 5">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <h3>Wireframes</h3>
+
+  <p>Based on the critical path we were then able to start wire-framing something more complete than the prototype.</p>
+
+  <p>These wireframes represent our second prototype and a scaffold like frame for us to iteratively build up into high
+    fidelity mockups later.</p>
+
+  <p>Once we were happy with the first version of the wireframes the development team were able to start working on
+    proof of concept style features, while the design team began converting the wireframes into higher fidelity mockups.
+  </p>
+
+  <h2>Designing and building in a system</h2>
+
+  <h3>Colours</h3>
+
+  <p>When it can to colours we had a bit of a challenge, there was some early branding for us to work with but this only
+    included a logo and single colour, this wasn't going to be good enough for a web application. So our first
+    task to expand this limited palette into something more comprehensive and flexible.</p>
+
+  <p class="gap">We went back to basics and used colour theory to expand the palette using a number of techniques.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/color-disc.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <p>Once we were happy with the base colours we then expanded further by creating variations using the HSL (hue,
+    saturation, lightness), we were able to simple adjust saturation a lightness along a curve to create a further five
+    colours per base colour.</p>
+
+  <p>We were now in a good place with a significantly expanded system, our next task was to set some guidelines
+    regarding how to use this system, with a particular focus on accessibility and contrast.</p>
+
+  <p>We methodically tested all the possible colour combinations and documented combinations to avoid and combinations
+    to never use. This includes:</p>
+
+  <ul>
+    <li>Use as a fill colours</li>
+    <li>Use as stroke colour</li>
+    <li>Use as a text colour, and which background colours it can be used on.</li>
+    <li>Guidance on use cases e.g. which colours to use for positive, negative, and information actions etc.</li>
+  </ul>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/colors.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <img src="/assets/contractuali/colors-detail.png" />
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <h3>Typography</h3>
+
+  <p>We also had to start from scratch with typography too, the only starting point we had was the type in the logo, and
+    again this wasn't going to be enough to support a growing app.</p>
+
+  <p>To get some first insights into which direction to take with typography I utilised some simple exercises from brand
+    sprints.</p>
+
+  <p class="gap">We worked together to fill out personality sliders for the Contractuali, this was an aspirational exercise as well
+    as thinking about our current positioning. This was useful because we had a quick reference for whittling down the
+    thousands of typefaces out there in a selection of around 5 candidates.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/type-exercise.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <p>We then mapped those typefaces on the personality sliders also, we then analysed which of the candidates closely
+    matched the aspirations for the Contractuali brand. The ‘winning’ typeface was Söhne, for its mature, and
+    conventional design, with a slight warmth and modernity, it will also work well as part of a functional interface.
+  </p>
+
+  <p class="gap">Once we had a baseline typeface we then expanded the system to include Söhne’s sibling monospace, and created an
+    early, and very simple typography system with the various weights, sizes and hierarchy that we needed for the MVP.
+  </p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/type.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <h3>Tokens</h3>
+
+  <p class="gap">With the basics of a colour and typography system in place we then setup a simple GitHub repo containing a JSON
+    file of our tokens, we then used a Figma plugin to automatically push updates to the repo, meaning that the design
+    team had control of the tokens from a development perspective.</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/tokens.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <h3>Components &amp; build</h3>
+
+  <p>Now that our tokens were in a good place we moved on to fleshing out our bones, the early prototype. We began by
+    planning out the next few sprints as thin slices of complete, useful software. When you want to build a <a
+      href="https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">vehicle</a> you shouldn’t start by
+    spending a long time making an excellent wheel for a car, when you could use that same time to build a skateboard,
+    you can’t use a single wheel as transport but a skateboard (while limited) is genuinely useful.</p>
+
+  <p class="gap">Once we had our sprints organised we then spent those sprints designing, documenting and building components as we
+    needed them. As we moved forwards our early prototypes got increasingly higher fidelity until after a few sprints
+    the entire prototype had been iterated over. The nice part about this approach is that:</p>
+
+  <figure class="columns | gap">
+    <img src="/assets/contractuali/components.png" style="grid-column: 1 /4" />
+    <figcaption class="measure | push-down leading-crushed">
+      <small class="caption">
+      </small>
+    </figcaption>
+  </figure>
+
+  <ul>
+    <li>The design team can see what’s coming in future can still design future-proof components</li>
+    <li>The stakeholders and development team can still use the prototype to give feedback</li>
+    <li>The prototype remains as a type of specification for the the UX and UI</li>
+  </ul>
+  <p>My role during this period was to:</p>
+
+  <ul>
+    <li>Build and document components in Figma</li>
+    <li>Gather feedback iteratively as designs evolved</li>
+    <li>Work with developers to ensure the specifications remained within scope</li>
+    <li>Develop the UI using HTML and CSS</li>
+  </ul>
+
+  <h2>Learnings &amp; Next Steps</h2>
+  <section>
