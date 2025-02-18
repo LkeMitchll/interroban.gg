@@ -116,7 +116,7 @@ toc: ["About", "Case Studies", "Highlights", "Toolkit", "Experience", "Roles", "
   <ul role="list" class="columns">
     {% for post in collections.toolkit %}
     <li>
-      <img src="#" alt="" class="gap" />
+      <img src="{{ post.data.thumbnail }}" alt="" class="gap bg-dark opacity-70">
       <h3 class="subheading"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
     </li>
     {% endfor %}

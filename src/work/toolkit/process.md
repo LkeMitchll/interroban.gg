@@ -1,5 +1,6 @@
 ---
 title: Process
+thumbnail: '/assets/toolkit/process.png'
 ---
 
 As a product designer my aim is to help clients to build great solutions for the people that need them. This means combining user-centred design with business needs to discover the real problem, define the solution, iterative, test, and refine the solution.

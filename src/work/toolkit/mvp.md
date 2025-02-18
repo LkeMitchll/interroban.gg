@@ -1,5 +1,6 @@
 ---
 title: MVP
+thumbnail: '/assets/toolkit/mvp.png'
 ---
 
 An MVP (Minimal Viable Product) is an excellent way to build and launch fast, it's usually the first version of your new thing that you launch. Once launched you can quickly get feedback from customers and iterate. Sometimes teams lose focus and fixate on the minimal at the cost of viability, or vice-versa. In short:

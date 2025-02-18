@@ -1,5 +1,6 @@
 ---
 title: Design Systems
+thumbnail: '/assets/toolkit/design-system.png'
 ---
 
 Over the years I have been a part of creating design system at various stages of their lifecycle. Below is some of documentation that I wrote for a company wide playbook for my previous employer. It helpfully outlines my essential thoughts on design systems.

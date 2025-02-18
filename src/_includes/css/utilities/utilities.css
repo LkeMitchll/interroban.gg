@@ -79,3 +79,8 @@
 .blend-multiply {
   mix-blend-mode: multiply;
 }
+
+/* u: Background */
+.bg-dark {
+  background-color: var(--color-dark);
+}
