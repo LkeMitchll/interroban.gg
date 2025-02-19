@@ -57,4 +57,16 @@ and fawn over photos of brutalist architecture [3](#sn-3).
   like the back of my hand
 {% endsidenote %}
 
+I am a principal-level digital product designer, design director, and user
+experience engineer formerly at thoughtbot. Specialising in design strategy,
+process, and systems across multiple industries since 2011.
+
+---
+
+You can see more about my work, and my process on the [work](/work) page.
+
+You can see what I have written about, listened to, read, and watched on the [journal](/journal) page.
+
+You can see all the links to online things that I have found interesting on the [bookmarks](/bookmarks) page.
+
 You can get in touch with me by sending me an [email](mailto:luke@interroban.gg).
