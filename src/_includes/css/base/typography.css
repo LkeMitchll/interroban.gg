@@ -58,10 +58,12 @@ h4,
   font-family: var(--text-body);
   font-size: var(--text-size-default);
   font-weight: 600;
+  opacity: 0.8;
 }
 
 h4 {
   font-weight: 400;
+  opacity: 1;
 }
 
 small,
