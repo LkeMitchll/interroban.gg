@@ -17,7 +17,7 @@
   --text-weight-bold: 600;
   --text-display: "PicNic", "Signifier", "Times New Roman", "Times", serif;
   --text-heading: "Signifier", "Georgia", "Times New Roman", "Times", serif;
-  --text-body: "Taurus Grotesk", "Inter", "Roboto", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --text-body: "Taurus Grotesk", "Inter", "Roboto", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', arial, sans-serif;
   --text-mono: "Pitch", "Monaco", "Courier New", "Courier", monospace;
   --text-leading-default: 1.5;
   --text-leading-heading: 1.3;

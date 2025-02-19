@@ -2,7 +2,7 @@
   --column-count: 3;
   --column-min: minmax(calc(var(--text-measure)/3), 1fr);
 
-  @media screen and (min-width: 800) {
+  @media screen and (min-width: 800px) {
     --column-count: 6;
     --column-min: minmax(calc(var(--text-measure)/6), 1fr);
   }
