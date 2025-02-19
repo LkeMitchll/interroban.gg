@@ -48,8 +48,8 @@
     "tags": ["software", "general"]
   },
   {
-    "title": "Notion",
-    "url": "https://www.notion.so/",
+    "title": "Obsidian",
+    "url": "https://obsidian.md",
     "description": "As a personal wiki.",
     "tags": ["software", "general"]
   },
@@ -66,8 +66,8 @@
     "tags": ["software", "general"]
   },
   {
-    "title": "1Password",
-    "url": "https://1password.com/",
+    "title": "Passwords",
+    "url": "https://support.apple.com/en-us/120758",
     "description": "For managing passwords.",
     "tags": ["software", "general"]
   },
@@ -108,8 +108,8 @@
     "tags": ["software", "development"]
   },
   {
-    "title": "Kitty",
-    "url": "https://sw.kovidgoyal.net/kitty/",
+    "title": "Ghostty",
+    "url": "https://ghostty.org/",
     "description": "Is a fast, lightweight terminal emulator, that can be configured easily in a single file.",
     "tags": ["software", "development"]
   },
