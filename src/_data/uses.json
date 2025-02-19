@@ -3,216 +3,324 @@
     "title": "Safari",
     "url": "https://www.apple.com/uk/safari/",
     "description": "My primary web browser on all devices.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Mail",
     "url": "https://support.apple.com/en-gb/guide/mail/welcome/mac",
     "description": "How I read email, although I prefer not to.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Fantastical",
     "url": "https://flexibits.com/fantastical",
     "description": "A great macOS/iOS calandar app.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Things",
     "url": "https://culturedcode.com/things",
     "description": "If you are a fan of GTD, this task manager is perfect.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Rectangle",
     "url": "https://rectangleapp.com/",
     "description": "To wrangle windows on macOS.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Backblaze",
     "url": "https://www.backblaze.com/",
     "description": "Simple external backups.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Apple Music",
     "url": "https://www.apple.com/uk/apple-music/",
     "description": "I'm a recent convert to the service, warts and all.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Raycast",
     "url": "https://www.raycast.com",
     "description": "For finding files and running automations on macOS.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Obsidian",
     "url": "https://obsidian.md",
     "description": "As a personal wiki.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "NetNewsWire",
     "url": "https://ranchero.com/netnewswire/",
     "description": "For reading RSS feeds.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Overcast",
     "url": "https://overcast.fm",
     "description": "For listening to podcasts.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Passwords",
     "url": "https://support.apple.com/en-us/120758",
     "description": "For managing passwords.",
-    "tags": ["software", "general"]
+    "tags": [
+      "software",
+      "general"
+    ]
   },
   {
     "title": "Figma",
     "url": "https://www.figma.com/",
     "description": "For wireframing, prototyping & general UI / UX design.",
-    "tags": ["software", "design"]
+    "tags": [
+      "software",
+      "design"
+    ]
   },
   {
     "title": "FigJam",
     "url": "https://www.figma.com/figjam",
     "description": "A collaborative white-board, which is perfect for remote workshops.",
-    "tags": ["software", "design"]
+    "tags": [
+      "software",
+      "design"
+    ]
   },
   {
     "title": "Pixelmator Pro",
     "url": "https://www.pixelmator.com/pro/",
     "description": "For photo editing.",
-    "tags": ["software", "design"]
+    "tags": [
+      "software",
+      "design"
+    ]
   },
   {
     "title": "iA Writer",
     "url": "https://ia.net/writer",
     "description": "For long-form writing.",
-    "tags": ["software", "writing"]
+    "tags": [
+      "software",
+      "writing"
+    ]
   },
   {
     "title": "Drafts",
     "url": "https://getdrafts.com/",
     "description": "For taking notes, and for first drafts of anything written",
-    "tags": ["software", "writing"]
+    "tags": [
+      "software",
+      "writing"
+    ]
   },
   {
     "title": "Neovim",
     "url": "https://neovim.io/",
     "description": "Is my code-editor of choice, once you start thinking in vim it's hard to use anything else.",
-    "tags": ["software", "development"]
+    "tags": [
+      "software",
+      "development"
+    ]
   },
   {
     "title": "Ghostty",
     "url": "https://ghostty.org/",
     "description": "Is a fast, lightweight terminal emulator, that can be configured easily in a single file.",
-    "tags": ["software", "development"]
+    "tags": [
+      "software",
+      "development"
+    ]
   },
   {
     "title": "Fish",
     "url": "https://fishshell.com/",
     "description": "A modern terminal shell that has great auto-complete, syntax highlighting, and history searching.",
-    "tags": ["software", "development"]
+    "tags": [
+      "software",
+      "development"
+    ]
   },
   {
     "title": "FZF",
     "url": "https://github.com/junegunn/fzf",
     "description": "The ultimate way to trawl through files and history on the command line.",
-    "tags": ["software", "development"]
+    "tags": [
+      "software",
+      "development"
+    ]
   },
   {
     "title": "mise",
     "url": "https://github.com/jdx/mise",
     "description": "A universal solution to manage the versions of all the programming languages I need.",
-    "tags": ["software", "development"]
+    "tags": [
+      "software",
+      "development"
+    ]
   },
   {
     "title": "Apple MacBook Pro 16-inch",
     "url": "https://www.apple.com/uk/macbook-pro/",
     "description": "Is my primary work device. It is configured with the Apple M2 Pro, 32GB RAM and 512GB SSD.",
-    "tags": ["hardware", "general"]
+    "tags": [
+      "hardware",
+      "general"
+    ]
   },
   {
     "title": "Apple Mac mini",
     "url": "https://www.apple.com/uk/mac-mini/",
     "description": "Is my personal work device. It is configured with the Apple M1, 16GB RAM and 1TB SSD.",
-    "tags": ["hardware", "general"]
+    "tags": [
+      "hardware",
+      "general"
+    ]
   },
   {
     "title": "Apple iPhone 15 Pro Max",
     "url": "https://www.apple.com/iphone-15-pro/",
     "description": "is my primary personal device.",
-    "tags": ["hardware", "general"]
+    "tags": [
+      "hardware",
+      "general"
+    ]
   },
   {
     "title": "Apple iPad Air (5th Generation)",
     "url": "https://www.apple.com/ipad-air/",
     "description": "is my secondary personal device.",
-    "tags": ["hardware", "general"]
+    "tags": [
+      "hardware",
+      "general"
+    ]
   },
   {
     "title": "IKEA Bekant Desk",
     "url": "https://www.ikea.com/gb/en/p/bekant-desk-sit-stand-oak-veneer-white-s09061188/",
     "description": "This sit-stand desk is a perfect mix of aesthetic and functionality. It's done wonders for my posture and energy.",
-    "tags": ["hardware", "ergonomics"]
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
   },
   {
     "title": "Herman Miller Aeron Chair",
     "url": "https://www.hermanmiller.com/en_gb/products/seating/office-chairs/aeron-chairs/",
     "description": "Is the best ergonomic chair ever. They are very expensive, but this second-hand 15+ year old example is still solid as a rock.",
-    "tags": ["hardware", "ergonomics"]
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
   },
   {
     "title": "Apple Studio Display",
     "url": "https://www.apple.com/studio-display/",
     "description": "A bright, 5K, color-correct display, in a beautifully designed package. Paired with my work devices.",
-    "tags": ["hardware", "general"]
+    "tags": [
+      "hardware",
+      "general"
+    ]
   },
   {
     "title": "RAMA Kara Keyboard",
     "url": "https://ramaworks.store/products/kara",
     "description": "A very high-quality, modular, mechanical keyboard. I bought it as part of the first group-buy in 2020.",
-    "tags": ["hardware", "ergonomics"]
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
   },
   {
     "title": "Owlab Voice Mini Macropad",
     "url": "https://qwertykeys.notion.site/Voice-Mini-653fc47940cf4ef9accc586e5edd0add",
     "description": "A neat little macropad with real mechanical keys, and rotating wheel. I use this control music and mute my microphone during calls.",
-    "tags": ["hardware", "ergonomics"]
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
   },
   {
     "title": "Apple Magic Mouse",
     "url": "https://www.apple.com/shop/product/MMMQ3AM/A/magic-mouse-black-multi-touch-surface",
     "description": "As a mouse, a lot of people hate it, I don't.",
-    "tags": ["hardware", "ergonomics"]
+    "tags": [
+      "hardware",
+      "ergonomics"
+    ]
   },
   {
     "title": "Apple Airpods Pro",
     "url": "https://www.apple.com/airpods-pro/",
     "description": "For listening to music & video calls. The noise cancelling is great.",
-    "tags": ["hardware", "audio"]
+    "tags": [
+      "hardware",
+      "audio"
+    ]
   },
   {
     "title": "Shure MV7 Microphone",
     "url": "https://www.shure.com/en-GB/products/microphones/mv7",
     "description": "Total overkill? Yes. Excellent sound quality? Yes. Makes me look like a podcaster? Absolutely.",
-    "tags": ["hardware", "audio"]
+    "tags": [
+      "hardware",
+      "audio"
+    ]
   },
   {
     "title": "Blue Compass Arm",
     "url": "https://www.bluemic.com/en-gb/products/compass/",
     "description": "To mount the microphone.",
-    "tags": ["hardware", "audio"]
+    "tags": [
+      "hardware",
+      "audio"
+    ]
   },
   {
     "title": "Leuchtturm1917 Notebook",
     "url": "https://www.leuchtturm1917.co.uk/notebook-medium-a5-softcover-123-numbered-pages",
     "description": "For taking notes and task management (A5, softcover, dotted, black).",
-    "tags": ["hardware", "general"]
+    "tags": [
+      "hardware",
+      "general"
+    ]
   }
 ]
