@@ -7,7 +7,7 @@ As a product designer my aim is to help clients to build great solutions for the
 
 Over the years I have been strongly influenced by the [‘Double Diamond’](https://www.designcouncil.org.uk/news-opinion/what-framework-innovation-design-councils-evolved-double-diamond) framework, the [‘Lean’](http://theleanstartup.com/book) methodology, and many other [design thinking](https://en.wikipedia.org/wiki/Design_thinking) processes to form my own framework for project success. The process is anything but linear, starting out uncertain and messy, gently becoming more refined and focused as time goes on.
 
-Design with users first, constantly iterate and learn, build with systems. Everything I do should meet my [[values]]
+Design with users first, constantly iterate and learn, build with systems. Everything I do should meet my values.
 
 - **Discover**: the who, the what, and why of the problem. Eliminate assumptions.
 - **Define**: understand the problem, decide what success looks like, and lay a foundation to build upon.
