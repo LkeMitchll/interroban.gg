@@ -11,9 +11,7 @@
     }
   }
 
-  @media (min-width: 700px) {
-    &[data-image-size="xlarge"] {
-      grid-column: 1 / 5;
-    }
+  &[data-image-size="xlarge"] {
+    grid-column: 1 / 5;
   }
 }
