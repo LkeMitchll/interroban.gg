@@ -20,7 +20,7 @@ experiences.
 
 Some examples of tokens include:
 
-- Colors
+- Colours
 - Typefaces
 - Spacing and sizing
 - Decorations: shadows, borders etc.

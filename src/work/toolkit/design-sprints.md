@@ -31,5 +31,5 @@ I recommend reading [the book](https://www.thesprintbook.com) to get an idea of 
 
 - I [curated some advice](https://thoughtbot.com/blog/things-i-wish-i-had-known-before-my-first-design-sprint) from other designers on design sprints.
 - I also wrote some [tips for storyboarding](https://thoughtbot.com/blog/design-sprints-storyboarding-tips) during a design sprint.
-- I recommend using a [scorecard]() for the testing phase so that you can quickly gather sentiment and take notes while talking to people.
+- I recommend using a scorecard for the testing phase so that you can quickly gather sentiment and take notes while talking to people.
 - I also like to start with a [simple script](https://docs.google.com/document/d/1UXKQ1Vde84k7puhYCH5M8I1MHEsFw5EYq2kFjfQjLec/edit?usp=sharing) document to keep handy if I get stuck on questions to ask or if I need to explain anything.
