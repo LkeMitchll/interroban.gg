@@ -19,17 +19,17 @@ const responsiveImage = async (imgUUID, imgAlt, size = "large", color = false) =
     },
     large: {
       sizes: "(min-width: 1600px) 52.36vw, (min-width: 700px) 67.39vw, 90vw",
-      widths: [400, 600, 800, 1000, 1200, 1400],
+      widths: [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400],
     },
     small: {
       sizes:
         "(min-width: 2000px) 230px, (min-width: 1040px) calc(3.51vw + 161px), (min-width: 600px) calc(30vw - 46px), (min-width: 400px) 308px, calc(72.5vw + 33px)",
-      widths: [400, 600],
+      widths: [400, 600, 800, 1000, 1200, 1400],
     },
   };
 
   for (const width of viewportWidths[size].widths) {
-    const source = `${imgUrl}/-/resize/${width}x/${colorMode}-/quality/${quality}/-/format/webp/ ${width}w`;
+    const source = `${imgUrl}/-/resize/${width}x/${colorMode}-/quality/${quality}/-/format/auto/ ${width}w`;
     sources.push(source);
   }
 
