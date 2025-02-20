@@ -1,6 +1,6 @@
 ---
 title: Design Sprints
-thumbnail: '/assets/toolkit/design-sprint.png'
+thumbnail: 'e339e845-9292-4497-8bb5-5225e7d9ecee'
 ---
 
 Over the years I have organised, facilitated and supported many design sprints, and their variants. At my last job I helped to completely redesign and rebuild [the resources](https://thoughtbot.com/blog/we-re-building-a-new-design-sprint-guide) that we used to educated clients and the community.
