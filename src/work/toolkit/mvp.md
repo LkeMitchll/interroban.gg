@@ -10,7 +10,7 @@ An MVP (Minimal Viable Product) is an excellent way to build and launch fast, it
 -   A good MVP takes risks
 -   A good MVP steals good ideas
 
-Follow the [[design process]] to build the MVP.
+Follow the design process to build the MVP.
 
 ## Make it lovable
 
