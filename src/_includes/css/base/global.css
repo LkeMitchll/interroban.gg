@@ -1,5 +1,6 @@
 html {
-  font-size: clamp(1.2rem, calc(0.8rem + 0.48vw), 1.41rem);
+  /* https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjQwMHB4IiwibWF4V2lkdGgiOiIxNjAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjE4cHgifQ%3D%3D */
+  font-size: clamp(1rem, 0.9583rem + 0.1667vw, 1.125rem);
 }
 
 html,
@@ -25,6 +26,11 @@ body {
   @media screen and (min-width: 1600px) {
     max-width: 70vw;
   }
+}
+
+::selection {
+  color: var(--color-bg);
+  background: var(--color-fg);
 }
 
 img {

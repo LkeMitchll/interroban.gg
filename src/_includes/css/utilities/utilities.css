@@ -74,3 +74,13 @@
 .opacity-70 {
   opacity: 0.7;
 }
+
+/* u: Multiply */
+.blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+/* u: Background */
+.bg-dark {
+  background-color: var(--color-dark);
+}

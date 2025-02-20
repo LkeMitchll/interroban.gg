@@ -35,7 +35,11 @@ And, in no particular order, a list of people and sites that have contributed so
 
 ## Development
 
-This site is built using [Eleventy](https://www.11ty.dev) (11ty), hosted on [Netlify](https://www.netlify.com), the content and data is pulled from [Contentful](https://www.contentful.com), [Spotify](https://open.spotify.com/user/lkemitchll?si=dPG3-TtUSdSL5lLczPEg_A), [last.fm](https://www.last.fm/user/Luke--Mitchell), and [GitHub](https://github.com/LkeMitchll).
+This site is built using [Eleventy](https://www.11ty.dev) (11ty), hosted on
+[Netlify](https://www.netlify.com), the content and data is pulled from
+[last.fm](https://www.last.fm/user/Luke--Mitchell), [Savee](https://savee.it),
+[Letterboxd](https://letterboxd.com), [Feedbin](https://feedbin.com),
+[Literal](https://literal.club) and [GitHub](https://github.com/LkeMitchll).
 
 The [Source Code](https://github.com/LkeMitchll/interroban.gg) is hosted on GitHub.
 
@@ -53,10 +57,12 @@ The [Source Code](https://github.com/LkeMitchll/interroban.gg) is hosted on GitH
 
 My typographic system is made up of:
 
-- [Blanco](https://www.fostertype.com/retail-type/blanco) from Foster Type is used as body copy, and some headings.
+- [PicNic](https://velvetyne.fr/fonts/picnic/) from Velvetyne is used for display headings.
+- [Taurus Grotesk](https://www.fostertype.com/retail-type/taurus-grotesk) from Foster Type is used as body copy, and some headings.
 - [Signifier](https://klim.co.nz/retail-fonts/signifier/) from Klim is used for larger headings.
 - [Pitch](https://klim.co.nz/retail-fonts/pitch/) from Klim is used for smaller text, and data.
 
 This site has formerly used:
 
+- [Blanco](https://www.fostertype.com/retail-type/blanco) from Foster Type was used as body copy, and some headings.
 - [GT America Extended](http://gt-america.com) from Grilli Type was used for larger headings.

@@ -1,6 +1,6 @@
 :root {
-  --color-light: hsl(45deg 100% 65%);
-  --color-dark: hsl(45deg 100% 20%);
+  --color-light: rgb(255 200 213);
+  --color-dark: rgb(74 67 86);
   --color-fg: var(--color-dark);
   --color-bg: var(--color-light);
   --space-small: 0.5rem;
@@ -10,12 +10,14 @@
   --space-x-large: 3rem;
   --space-xx-large: 5rem;
   --text-size-default: 1rem;
-  --text-size-large: 1.2rem;
-  --text-size-small: 0.7rem;
+  --text-size-large: 2rem;
+  --text-size-medium: 1.4rem;
+  --text-size-small: 0.8rem;
   --text-weight-normal: 400;
   --text-weight-bold: 600;
-  --text-display: "Signifier", "Georgia", "Times New Roman", "Times", serif;
-  --text-body: "Blanco", "Georgia", "Times New Roman", "Times", serif;
+  --text-display: "PicNic", "Signifier", "Times New Roman", "Times", serif;
+  --text-heading: "Signifier", "Georgia", "Times New Roman", "Times", serif;
+  --text-body: "Taurus Grotesk", "Inter", "Roboto", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', arial, sans-serif;
   --text-mono: "Pitch", "Monaco", "Courier New", "Courier", monospace;
   --text-leading-default: 1.5;
   --text-leading-heading: 1.3;

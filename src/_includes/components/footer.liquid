@@ -1,10 +1,10 @@
 <footer>
-  <h2 class="visually-hidden">Footer</h2>
+  <h3 class="visually-hidden">Footer</h3>
   <section class="columns | gap-xx-large">
     {% assign footerCategories = "general, information, contact, elsewhere" | split: ", " %}
     {% for category in footerCategories %}
       <div>
-        <h3 class="gap">{{ navigation[category].name }}</h3>
+        <h4 class="gap">{{ navigation[category].name }}</h4>
         <ul role="list" class="tertiary-text">
           {% for page in navigation[category].pages %}
           <li class="gap">

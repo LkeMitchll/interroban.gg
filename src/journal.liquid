@@ -1,11 +1,11 @@
 ---
 layout: layouts/default
 title: Journal
-introduction: >
+introduction:
   What I’ve been doing recently, a blog, a scrapbook,
   and a place to show what I am currently listening to and watching.
   It’s also a bit of playground to grab data from a few services I like.
-toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
+toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
 ---
 
 <article id="writing" class="flow | gap-xx-large">
@@ -44,7 +44,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <section class="columns">
     {% for week in music.weekly %}
     <div>
-      <h3>{{ week.title }}</h3>
+      <h3 class="subheading">{{ week.title }}</h3>
       <ul role="list" class="tertiary-text">
         <li class="horizontal | border gap">
           <p>{{ week.tracks.title }}</p>
@@ -64,7 +64,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   </section>
   <section class="music | columns">
     <div>
-      <h3>Top albums (3 months)</h3>
+      <h3 class="subheading">Top albums (3 months)</h3>
       <ol role="list">
         {% for album in music.topAlbums %}
         <li class="border">
@@ -77,7 +77,7 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
       </ol>
     </div>
     <div>
-      <h3>Top artists (3 months)</h3>
+      <h3 class="subheading">Top artists (3 months)</h3>
       <ol role="list">
         {% for artist in music.topArtists %}
         <li class="border">
@@ -101,20 +101,34 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <ol role="list" class="columns">
+  <h3>Now</h3>
+  <ol role="list" class="books | columns | gap-large">
+    {% for item in reading.readingNow %}
     <li class="push-down">
-      <img src="{{ reading.currentlyReading.book.cover }}" width="500" height="750" loading="lazy" alt="{{ reading.currentlyReading.book.title }}" title="{{ reading.currentlyReading.book.title }}" class="gap" />
-      <div class="flow | tertiary-text">
-        <p>Reading now</p>
-        <a href="https://literal.club/book/{{ reading.currentlyReading.book.slug }}">{{ reading.currentlyReading.book.title }}</a>
+      <img src="{{ item.book.cover }}" width="500" height="750" loading="lazy" alt="{{ item.book.title }}"
+        title="{{ item.book.title }}" class="gap" />
+      <div class="flow">
+        <p>
+          <small>
+            <a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a>
+          </small>
+        </p>
       </div>
     </li>
-    {% for item in reading.upNext %}
+    {% endfor %}
+  </ol>
+  <h3>Later</h3>
+  <ol role="list" class="books | columns">
+    {% for item in reading.wantToRead %}
     <li class="push-down">
-      <img src="{{ item.book.cover }}" width="500" height="750" loading="lazy" alt="{{ item.book.title }}" title="{{ item.book.title }}" class="gap opacity-70" />
-      <div class="flow | tertiary-text">
-        <p>Want to read</p>
-        <a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a>
+      <img src="{{ item.book.cover }}" width="500" height="750" loading="lazy" alt="{{ item.book.title }}"
+        title="{{ item.book.title }}" class="gap" />
+      <div class="flow">
+        <p>
+          <small>
+            <a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a>
+          </small>
+        </p>
       </div>
     </li>
     {% endfor %}
@@ -133,7 +147,8 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <ol role="list" class="columns">
     {% for movie in movies %}
     <li>
-      <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}" title="{{ movie.title }}" class="gap" />
+      <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}"
+        title="{{ movie.title }}" class="gap" />
       <div class="flow | tertiary-text">
         <p class="tertiary-text | gap-small">Rating: {{ movie.rating | starRating }}</p>
         <a href="{{ movie.url }}">{{ movie.title }}</a>
@@ -160,15 +175,16 @@ toc:  ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <script type="module"  src="/vendor/masonry-layout.min.js"></script>
+  <script type="module" src="/vendor/masonry-layout.min.js"></script>
   <masonry-layout cols="5">
     {% for item in scrapbook %}
-      <figure>
-        <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}" height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
-        <a class="tertiary-text" href="{{ item.pageURL | default: 'https://savee.it' | append: item.url }}">
-          Source
-        </a>
-      </figure>
+    <figure>
+      <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}"
+        height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
+      <a class="tertiary-text" href="{{ item.pageURL | default: 'https://savee.it' | append: item.url }}">
+        Source
+      </a>
+    </figure>
     {% endfor %}
   </masonry-layout>
 </article>

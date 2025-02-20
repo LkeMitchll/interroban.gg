@@ -1,8 +1,7 @@
 ---
-title: Product Designer
+title: Luke Mitchell
 description: "Personal website and blog of Luke Mitchell, a design director, product designer, and UI developer."
 nav: true
-history: true
 ---
 
 {% assign pageTitle = post.fields.title | default: title %}
@@ -43,7 +42,7 @@ history: true
   </head>
   <body>
     <main>
-      {% include "components/header.liquid", nav: nav, intro: introduction, history: history %}
+      {% include "components/header.liquid", nav: nav, intro: introduction %}
 
       {% if toc %}
         {% include "components/toc.liquid" %}

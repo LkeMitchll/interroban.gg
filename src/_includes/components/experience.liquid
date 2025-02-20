@@ -2,13 +2,13 @@
   <div>
     {% assign heading = headingLevel | default: "h3" %}
     {% assign experience = cv.experience %}
-    <{{ heading }} class="subheading" id="experience">Experience</{{ heading }}>
+    <{{ heading }} class="subheading" id="roles">Roles</{{ heading }}>
     <ul role="list" class="flow">
       {% for job in experience %}
       <li>
         <p class="tertiary-text">{{ job.period }}</p>
         <p>{{ job.title }}</p>
-        <p><em>{{ job.employer }}</em></p>
+        <p><small>{{ job.employer }}</small></p>
       </li>
       {% endfor %}
     </ul>
@@ -38,7 +38,7 @@
         <a href="{{ award.url }}">
           {{ award.source }}
         </a>
-        <p>{{ award.date }} </p>
+        <p><small>{{ award.date }}</small></p>
       </li>
       {% endfor %}
     </ul>

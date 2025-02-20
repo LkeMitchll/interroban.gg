@@ -1,0 +1,157 @@
+---
+layout: layouts/default
+title: Work
+introduction:
+  This is my work, what I do on a daily basis, some projects that
+  I have worked on, and some things that I believe make my
+  work better and more fulfilling.
+toc: ["About", "Case Studies", "Highlights", "Toolkit", "Experience", "Roles", "Clients", "Skills", "Recognition"]
+---
+
+<div class="gap-xx-large">
+  {% assign image_ID = "ae9f9db0-ecc5-4d0b-b356-0e70d77ded7a" %}
+  {% assign image_alt = "Presenting mini storyboards during a Product Design workshop. Courtesy of Francis Augusto." %}
+  {% include "components/image.liquid" %}
+</div>
+
+<article class="gap-xx-large">
+  <h2 id="about">About</h2>
+  <div class="markdown">
+    <p>I am a principle/director level product design generalist, manager and design engineer.</p>
+    <p>I am happy working on problems and projects of any size, and capable of producing results as the leading designer
+      on teams of all sizes.</p>
+    <p>I share my values with <a href="https://thoughbot.com">thoughtbot</a>, with a few tweaks.</p>
+    <ul>
+      <li>Earn trust, share it, and bring others along.</li>
+      <li>Keep learning, improving, and making things better.</li>
+      <li>Focus on quality, in the spirit of progressive enhancement.</li>
+      <li>Practice self-management, and lead by example.</li>
+      <li>Find meaning and fulfilment in everything I do.</li>
+    </ul>
+    <p>You can read more about me on the <a href="/about">/about</a> page.</p>
+  </div>
+</article>
+
+<article class="gap-xx-large">
+  <div class="switcher flow | gap-xx-large">
+    <div class="gap-x-large">
+      <h2 id="case-studies">Case Studies</h2>
+      <p class="measure">Below you will find some recent examples of my work, please
+        <a href="mailto:luke@interroban.gg">get in touch</a> if you would like to talk more about my work on these
+        projects.
+      </p>
+    </div>
+
+    <div>
+      <blockquote class="quote">
+        <p>
+          Luke was able to take [the clients] loose requirements and turn around
+          a well-thought-out, high-fidelity prototype in a matter of hours. He
+          did a great job walking the client through his thought process,
+          communicating his design decisions, and bringing the client’s vision to
+          life.
+        </p>
+      </blockquote>
+    </div>
+  </div>
+
+  <ul role="list" class="flow">
+    <li class="switcher | gap-x-large">
+      <div class="flow | gap-large">
+        <h3>Contractuali</h3>
+        <p class="measure">Taking an innovative new, self-funded idea from zero to MVP. Rapid web app design and build.
+        </p>
+        <p class="measure">
+          <small>
+            <strong>Skills: </strong> Product Design, Product Management, Design Direction & Strategy, UI & UX Design,
+            Front-End Development.
+          </small>
+        </p>
+        <p><a href="/work/case-studies/contractuali">Read more</a></p>
+      </div>
+      <figure class="image">
+        {% image "2c11f955-067d-4976-bd87-c175aa4fd87c", "", "large", true %}
+      </figure>
+    </li>
+
+    <li class="switcher">
+      <div class="flow | gap-large">
+        <h3 aria-label="Locked case study">Mobile App</h3>
+        <p class="measure">Pivoting a business during a crisis. Multi-year app design and build. This case study
+          requires a password to view.</p>
+        <p class="measure">
+          <small>
+            <strong>Skills: </strong> Product Design, Product Management, Design Direction & Strategy, UI & UX Design,
+            Front-End Development.
+          </small>
+        </p>
+        <p><a href="/work/case-studies/mobile-app">Read more</a></p>
+      </div>
+      <figure class="image">
+        {% image "5453d3e8-1cb3-43be-878b-7e4b847aa68c", "", "large", true %}
+      </figure>
+    </li>
+  </ul>
+</article>
+
+<article class="flow | gap-xx-large">
+  <div>
+    <h2 id="highlights">Highlights</h2>
+    <p>Below are some images of my previous projects, that I haven't got around to writing more about yet.</p>
+  </div>
+  <ul role="list" class="columns">
+    <li>{% image "bcd230ed-42d0-4145-bd6b-cc338698d3ee", "Two screenshots of the Samaritans self-help app, the dashboard, and the exercise screens", "large", true %}</li>
+    <li>{% image "f322e8df-c4b3-4ee9-9d26-41c819938754", "A collection of tokens, and components from the Lawbite design system", "large", true %}</li>
+    <li>{% image "aee39573-ee22-4782-a8cb-714384cf253d", "Two screnshots of the Koru Kids nanny sharing app, the calendar, and family profile screens", "large", true %}</li>
+  </ul>
+</article>
+
+<article class="gap-xx-large">
+  <div class="switcher flow | gap-xx-large">
+    <div class="gap-x-large">
+      <h2 id="toolkit">Toolkit</h2>
+      <p class="measure">This a little place for me to write more about my process, techniques and other thoughts about
+        my work. I have other thoughts about things in the <a href="/journal">/journal</a></p>
+    </div>
+    <div>
+      <blockquote class="quote">
+        <p>
+          Luke has a great approach of clearly outlining the problems, then
+          talking through the process / approach that we recommend, all while
+          overcoming potential objections and last-minute questions along the
+          way.
+        </p>
+      </blockquote>
+    </div>
+  </div>
+  <ul role="list" class="columns">
+    {% for post in collections.toolkit %}
+    <li>
+      <img src="https://ucarecdn.com/{{ post.data.thumbnail }}/-/preview/1000x1000/" alt="" class="gap bg-dark opacity-70">
+      <h3 class="subheading"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
+
+<div class="switcher flow">
+  <div class="gap-x-large">
+    <h2 id="experience">Experience</h2>
+    <p class="measure">I’ve been a full-time designer and front-end engineer since 2011. I started out as a Graphic
+      Designer, around
+      2014 I transitioned to Product Design. Since then I have worked with clients of all sizes in many different
+      industries.</p>
+  </div>
+  <div>
+    <blockquote class="quote | gap-x-large">
+      <p>
+        Luke has continued to excel as a manager, always providing me with
+        a safe space to express myself, as well as offering guidance,
+        resources, additional perspectives and support throughout different
+        challenges and phases of my professional growth.
+      </p>
+    </blockquote>
+  </div>
+</div>
+
+{% include "components/experience.liquid" %}

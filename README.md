@@ -6,9 +6,10 @@ developer.
 This site pulls data from:
 
 - last.fm: Music stats
-- FeedBin: Subscribed feed stats
+- Feedbin: Subscribed feed stats
 - Savee: Images for the scrapbook
 - Letterboxd: Recently watched movies
+- Literal: What I am currently reading
 - Uploadcare: Image CDN
 
 This is a [Eleventy (11ty)](https://www.11ty.dev) project.
@@ -25,6 +26,13 @@ First, install the bundle:
 
 ```bash
 npm install
+```
+
+Next fill out your secret credentials:
+
+```bash
+cp env.example .env
+open .env
 ```
 
 Next, build the site:

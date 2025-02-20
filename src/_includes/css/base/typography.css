@@ -33,19 +33,37 @@ a {
 
 h1,
 h2,
-h3 {
-  font-size: var(--text-size-large);
-  font-family: var(--text-display);
+h3,
+h4 {
   line-height: var(--text-leading-heading);
   text-decoration: none;
   font-weight: 400;
+  margin-top: 0;
+}
+
+h1 {
+  font-family: var(--text-display);
+  font-size: var(--text-size-large);
+  font-feature-settings: "case" on;
+}
+
+h2 {
+  font-family: var(--text-heading);
+  font-size: var(--text-size-medium);
 }
 
 h3,
+h4,
 .subheading {
-  font-size: var(--text-size-default);
   font-family: var(--text-body);
+  font-size: var(--text-size-default);
   font-weight: 600;
+  opacity: 0.8;
+}
+
+h4 {
+  font-weight: 400;
+  opacity: 1;
 }
 
 small,

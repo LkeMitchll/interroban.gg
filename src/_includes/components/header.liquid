@@ -25,13 +25,11 @@
     </nav>
   {% endif %}
 
+  {% breadcrumbs page.url %}
+
   {% if intro %}
     <p class="measure">
       {{ intro }}
     </p>
-  {% endif %}
-
-  {% if history == true %}
-    {% include "components/commits.liquid" %}
   {% endif %}
 </header>
