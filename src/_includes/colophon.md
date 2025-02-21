@@ -52,6 +52,7 @@ The [Source Code](https://github.com/LkeMitchll/interroban.gg) is hosted on GitH
 - I was also helped along the way by [tea-stack](https://github.com/mattwaler/tea-stack) and [eleventyone](https://github.com/philhawksworth/eleventyone).
 - I was also heavily insipred by [Aleksandr Hovhannisyan](https://www.aleksandrhovhannisyan.com/blog/custom-markdown-components-in-11ty/) when I was working how to build sidenotes.
 - Max Kohler wrote an excellent guide to implementing [per-post commit logs](https://www.maxkohler.com/posts/per-file-commit-history-with-eleventy/)
+- I learned from [Ben White](https://benwhite.com.au) that Cloudflare exposes a very handy environment variable containing the latest commit SHA: [GitHub](https://github.com/d3v1an7/website-benwhite/blob/f4de367d3930a144bc6246948e006e53c239ef9b/src/_components/partial-last-commit.webc)
 
 ## Typography
 
