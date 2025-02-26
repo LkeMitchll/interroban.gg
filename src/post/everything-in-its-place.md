@@ -68,3 +68,9 @@ myself, I don’t have to scramble, and I don’t panic halfway through. It mean
 I actually enjoy doing things a lot more.
 
 Don’t worry, I am capable of being spontaneous too, sometimes.
+
+***
+
+**After 9 years at thoughbot, I am currently looking for a new remote role,
+ideally in as senior, lead, principle or director level product designer.**
+[Get in touch](mailto:luke@interroban.gg)
