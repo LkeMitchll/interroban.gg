@@ -20,7 +20,6 @@ class LastFmNowPlaying extends HTMLElement {
 
           const timeSlot = this.querySelector('[data-time]');
           timeSlot.textContent = "Playing now";
-
         }
       })
   }
