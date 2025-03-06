@@ -13,7 +13,6 @@ p {
 a {
   text-decoration: none;
   border-bottom: var(--border-default);
-  padding: 0 0.1em;
   color: var(--color-fg);
 
   &:hover,
