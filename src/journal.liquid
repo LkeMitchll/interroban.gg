@@ -41,6 +41,20 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
       and I collect the stats with <a href="https://www.last.fm">last.fm</a>.
     </p>
   </header>
+  <section>
+    <h3>Playing now or recently</h3>
+    <now-playing>
+      <div class="horizontal">
+        <img src="{{ last_played.albumArt }}" width="100" data-cover/>
+        <div>
+          <p class="tertiary-text"><small data-time>{{ last_played.playedAt | date: "%d %b %Y @ %H:%M", "Europe/London" }}</small></p>
+          <p><a href="{{ last_played.url }}" data-track>{{ last_played.title }}</a></p>
+          <p><small data-artist>{{ last_played.artist }}</small></p>
+        </div>
+      </div>
+    </now-playing>
+    <script src="/assets/js/now-playing.js"></script>
+  </section>
   <section class="columns">
     {% for week in music.weekly %}
     <div>

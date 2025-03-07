@@ -1,0 +1,7 @@
+now-playing *.horizontal {
+  --gap: var(--gap-small);
+}
+
+now-playing img {
+  max-width: 100px;
+}
