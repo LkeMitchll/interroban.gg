@@ -20,7 +20,7 @@
       <small>&copy; {{ "now" | date: "%Y" }}, Luke Mitchell</small>
     </p>
     <p class="tertiary-text">
-      Last deploy: {{ deploy_info.latest_commit | date: "%d %b %Y @ %H:%M" }} |
+      Last deploy: {{ deploy_info.latest_deployment_date | date: "%d %b %Y @ %H:%M" }} |
       Commit: <a href="https://github.com/LkeMitchll/interroban.gg/commit/{{ deploy_info.latest_commit }}">{{ deploy_info.latest_commit }}</a>
     </p>
   </section>
