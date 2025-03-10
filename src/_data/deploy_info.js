@@ -20,7 +20,7 @@ async function latest_deployment_date() {
     },
   ).then((json) => json);
 
-  return result.result[0].latest_stage.ended_on;
+  return result.result[0].created_on;
 }
 
 export default {
