@@ -1,0 +1,13 @@
+.scrapbook {
+  @media screen and (max-width: 1000px) {
+    & figure {
+      margin: 0 !important;
+      transform: rotate(0) !important;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    --column-gap: var(--space-large);
+    --column-count: 5;
+  }
+}

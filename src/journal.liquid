@@ -7,7 +7,6 @@ introduction:
   It’s also a bit of playground to grab data from a few services I like.
 toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
 ---
-
 <article id="writing" class="flow | gap-xx-large">
   <header class="flow">
     <h2>Writing</h2>
@@ -172,7 +171,7 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <header>
     <h2>Scrapbook</h2>
     <p class="measure gap">
-      This is the last 50 images that have caught my eye. I collect them using
+      This is the last 30 images that have caught my eye. I collect them using
       <a href="https://savee.it/interrobang/">Savee</a>, a Pinterest
       alternative.
     </p>
@@ -185,16 +184,33 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <script type="module" src="/vendor/masonry-layout.min.js"></script>
-  <masonry-layout cols="5">
+  <section class="scrapbook | columns">
+    {% assign rotate_classes = "no-rotate,rotate-1,rotate-1-5,rotate-neg-1,rotate-neg-1-5" | split: "," %}
+    {% assign position_classes = "no-push,push-down" | split: "," %}
+    {% assign margin_classes = "no-gap,gap,gap-large,gap-x-large,mt-default,mt-small,mt-large" | split: "," %}
+
     {% for item in scrapbook %}
-    <figure>
-      <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}"
-        height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
-      <a class="tertiary-text" href="{{ item.pageURL | default: 'https://savee.it' | append: item.url }}">
-        Source
-      </a>
-    </figure>
+      {% assign random_rotate_class = rotate_classes | sample %}
+      {% assign random_position_class = position_classes | sample %}
+      {% assign random_margin_class = margin_classes | sample %}
+
+      {% assign image_width = item.asset.image.width | default: 1000 %}
+      {% assign image_height = item.asset.image.height | default: 1000 %}
+      {% assign height_x_ratio = image_height | times: 1.5 %}
+
+      {% if image_width > height_x_ratio %}
+        {% assign random_position_class = "push-down" %}
+        {% assign random_margin_class = "no-gap" %}
+        {% assign random_margin_class = "gap-x-large" %}
+      {% endif %}
+
+      <figure class="{{ random_rotate_class }} {{ random_margin_class }} {{ random_position_class }}">
+        <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}"
+          height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
+        <a class="tertiary-text" href="{{ item.pageURL | default: 'https://savee.it' | append: item.url }}">
+          Source
+        </a>
+      </figure>
     {% endfor %}
-  </masonry-layout>
+  </section>
 </article>

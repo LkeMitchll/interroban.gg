@@ -17,7 +17,7 @@ export default class SaveeAPI {
         body: JSON.stringify({
           query: `{
             userByUsername(username: "interrobang") {
-              items(limit: 50) {
+              items(limit: 30) {
                 items {
                   _id
                   url
