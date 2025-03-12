@@ -34,10 +34,13 @@ const breadcrumbs = (url) => {
   return `<nav aria-label="Breadcrumb">
       <ol role="list" class="horizontal | tertiary-text" style="--gap: var(--space-small);">
         <span>.. /</span>
-        ${breadcrumbs.map((crumb) => crumb.url
-          ? `<li><a href="${crumb.url}">${crumb.name}</a><span> /</span></li>`
-          : `<li><a href="${url}" role="link">&darr;</a></li>`,
-        ).join("")}
+        ${breadcrumbs
+          .map((crumb) =>
+            crumb.url
+              ? `<li><a href="${crumb.url}">${crumb.name}</a><span> /</span></li>`
+              : `<li><a href="${url}" role="link">&darr;</a></li>`,
+          )
+          .join("")}
       </ol>
     </nav>`;
 };

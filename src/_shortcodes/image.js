@@ -1,6 +1,11 @@
 import fetch from "@11ty/eleventy-fetch";
 
-const responsiveImage = async (imgUUID, imgAlt, size = "large", color = false) => {
+const responsiveImage = async (
+  imgUUID,
+  imgAlt,
+  size = "large",
+  color = false,
+) => {
   const imgUrl = `https://ucarecdn.com/${imgUUID}`;
   const imgMeta = await fetch(`${imgUrl}/-/json/`, {
     duration: "1h",
@@ -9,8 +14,8 @@ const responsiveImage = async (imgUUID, imgAlt, size = "large", color = false) =
   const quality = "smart";
   const fallback = `${imgUrl}/-/resize/800x/quality/${quality}/`;
   const sources = [];
-  const colorStyle = color ? "" : "blend-multiply"
-  const colorMode = color ? "" : "-/grayscale/"
+  const colorStyle = color ? "" : "blend-multiply";
+  const colorMode = color ? "" : "-/grayscale/";
 
   const viewportWidths = {
     xlarge: {

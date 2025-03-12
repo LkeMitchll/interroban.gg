@@ -1,15 +1,15 @@
 .books {
   --column-count: 3;
-  --column-min: minmax(calc(var(--text-measure)/4), 1fr);
+  --column-min: minmax(calc(var(--text-measure) / 4), 1fr);
 
   @media screen and (min-width: 800px) {
     --column-count: 6;
-    --column-min: minmax(calc(var(--text-measure)/6), 1fr);
+    --column-min: minmax(calc(var(--text-measure) / 6), 1fr);
   }
 
   line-height: var(--text-leading-crushed);
 
-    & p {
-      min-height: 2lh
-    }
+  & p {
+    min-height: 2lh;
+  }
 }
