@@ -17,26 +17,12 @@
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "stylelint": "^16.13.2",
-    "stylelint-config-standard": "^37.0.0"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "ignoreFiles": [
-      "./**/*.js"
-    ],
-    "rules": {
-      "media-feature-range-notation": "prefix"
-    }
+    "@biomejs/biome": "1.9.4"
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
     "start": "npm run build -- --serve",
     "build": "npx @11ty/eleventy",
-    "test": "npm run lint:css & npm run lint:js & npm run lint:json",
-    "lint:css": "stylelint ./src/**/*.css",
-    "lint:js": "npx @biomejs/biome lint ./src/**/*.js",
-    "lint:json": "npx @biomejs/biome lint ./src/**/*.json"
+    "test": "npx @biomejs/biome lint ./src"
   }
 }
