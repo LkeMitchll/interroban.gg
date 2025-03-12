@@ -9,7 +9,7 @@
 
   line-height: var(--text-leading-crushed);
 
-    & p {
-      min-height: 2lh
-    }
+  & p {
+    min-height: 2lh
+  }
 }

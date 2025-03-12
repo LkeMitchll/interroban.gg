@@ -1,13 +1,9 @@
 class LastFmNowPlaying extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     fetch('https://interrobang-now-playing.interrobang.workers.dev/now-playing')
       .then(response => response.json())
       .then(data => {
-        if (data && data.title && data.artist) {
+        if (data?.title && data.artist) {
           const imageSlot = this.querySelector('[data-cover]')
           imageSlot.src = data.albumArt
 
