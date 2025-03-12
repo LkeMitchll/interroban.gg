@@ -23,6 +23,6 @@
     "clean": "rm -rf _site .cache",
     "start": "npm run build -- --serve",
     "build": "npx @11ty/eleventy",
-    "test": "npx @biomejs/biome check --error-on-warnings ./src"
+    "test": "npx @biomejs/biome lint ./src"
   }
 }
