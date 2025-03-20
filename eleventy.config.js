@@ -18,10 +18,6 @@ const config = (eleventy) => {
   eleventy.setUseGitIgnore(false);
   // Manually copy files
   eleventy.addPassthroughCopy("src/assets/");
-  eleventy.addPassthroughCopy({
-    "node_modules/@appnest/masonry-layout/umd/masonry-layout.min.js":
-      "vendor/masonry-layout.min.js",
-  });
 
   // Eleventy plugins
   eleventy.addPlugin(EleventyRenderPlugin);

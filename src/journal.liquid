@@ -7,7 +7,6 @@ introduction:
   It’s also a bit of playground to grab data from a few services I like.
 toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
 ---
-
 <article id="writing" class="flow | gap-xx-large">
   <header class="flow">
     <h2>Writing</h2>
@@ -172,7 +171,7 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <header>
     <h2>Scrapbook</h2>
     <p class="measure gap">
-      This is the last 50 images that have caught my eye. I collect them using
+      This is the last 30 images that have caught my eye. I collect them using
       <a href="https://savee.it/interrobang/">Savee</a>, a Pinterest
       alternative.
     </p>
@@ -185,16 +184,24 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <script type="module" src="/vendor/masonry-layout.min.js"></script>
-  <masonry-layout cols="5">
-    {% for item in scrapbook %}
-    <figure>
-      <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}"
-        height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
-      <a class="tertiary-text" href="{{ item.pageURL | default: 'https://savee.it' | append: item.url }}">
-        Source
-      </a>
-    </figure>
+  {% assign num_cols = 5 %}
+  {% assign last = num_cols | minus: 1 %}
+  <div class="scrapbook">
+    {% for col in (0..last) %}
+      <div class="column">
+        {% for item in scrapbook %}
+          {% assign mod_result = forloop.index0 | modulo: num_cols %}
+          {% if mod_result == col %}
+            <figure class="gap">
+              <img src="{{ item.asset.image.thumbnail }}" loading="lazy" width="{{ item.asset.image.width }}"
+                height="{{ item.asset.image.height }}" alt="{{ item.name }}" />
+              <a class="tertiary-text" href="{{ item.pageURL | default: 'https://savee.it' | append: item.url }}">
+                Source
+              </a>
+            </figure>
+          {% endif %}
+        {% endfor %}
+      </div>
     {% endfor %}
-  </masonry-layout>
+  </div>
 </article>

@@ -1,0 +1,8 @@
+.scrapbook {
+  display: flex;
+  gap: var(--space-medium);
+
+  .column {
+    flex: 1;
+  }
+}
