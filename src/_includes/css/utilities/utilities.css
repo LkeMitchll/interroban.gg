@@ -28,7 +28,7 @@
   }
 }
 
-/* u: Gap (Margin Bottom) */
+/* u: Gap */
 .gap {
   margin-bottom: var(--space-default);
 }
@@ -47,19 +47,6 @@
 
 .gap-xx-large {
   margin-bottom: var(--space-xx-large);
-}
-
-/* u: Margin Top */
-.mt-default {
-  margin-top: var(--space-default);
-}
-
-.mt-small {
-  margin-top: var(--space-small);
-}
-
-.mt-large {
-  margin-top: var(--space-large);
 }
 
 /* u: Leading */
@@ -96,21 +83,4 @@
 /* u: Background */
 .bg-dark {
   background-color: var(--color-dark);
-}
-
-/* u: Rotate */
-.rotate-1-5 {
-  transform: rotate(1.5deg);
-}
-
-.rotate-neg-1-5 {
-  transform: rotate(-1.5deg);
-}
-
-.rotate-1 {
-  transform: rotate(1deg);
-}
-
-.rotate-neg-1 {
-  transform: rotate(1deg);
 }
