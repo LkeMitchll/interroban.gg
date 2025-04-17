@@ -24,7 +24,7 @@
   --text-leading-crushed: 1.1;
   --text-measure: 50ch;
   --border-width-default: 1px;
-  --border-default: var(--border-width-default) dotted var(--color-fg);
+  --border-default: var(--border-width-default) dotted currentColor;
 }
 
 @media (prefers-color-scheme: dark) {

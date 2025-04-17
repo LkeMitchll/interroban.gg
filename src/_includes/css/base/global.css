@@ -14,14 +14,10 @@ body {
   color: var(--color-fg);
   font-family: var(--text-body);
   font-feature-settings: "case" on;
-  margin: var(--space-large) auto 0 auto;
+  margin: var(--space-xx-large) auto 0 auto;
   padding: 0 5vw;
   text-rendering: optimizelegibility;
   line-height: var(--text-leading-default);
-
-  @media screen and (min-width: 600px) {
-    margin-top: var(--space-xx-large);
-  }
 
   @media screen and (min-width: 1600px) {
     max-width: 70vw;
