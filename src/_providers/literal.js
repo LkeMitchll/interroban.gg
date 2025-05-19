@@ -81,7 +81,7 @@ export default class LiteralAPI {
   async getRecentlyReadBooks() {
     const data = await this.getReadingStates();
 
-    const upNext = data.data.myReadingStates
+    const upNext = data.data.myReadingStates.reverse()
       .filter((shelf) => shelf.status === "FINISHED")
       .slice(0, 3);
 
