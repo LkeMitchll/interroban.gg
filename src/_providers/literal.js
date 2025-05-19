@@ -33,7 +33,7 @@ export default class LiteralAPI {
     return response.data.login.token;
   }
 
-  async getCurrentlyReadingBooks() {
+  async getReadingStates() {
     const accessToken = await this.getAccessToken();
 
     const response = await Fetch(this.url, {
@@ -54,6 +54,9 @@ export default class LiteralAPI {
                 title
                 cover
                 slug
+                authors {
+                  name
+                }
               }
             }
           }
@@ -62,44 +65,25 @@ export default class LiteralAPI {
       },
     });
 
-    const currentlyReading = response.data.myReadingStates.filter(
+    return response;
+  }
+
+  async getCurrentlyReadingBooks() {
+    const data = await this.getReadingStates();
+
+    const currentlyReading = data.data.myReadingStates.filter(
       (shelf) => shelf.status === "IS_READING",
     );
 
     return currentlyReading;
   }
 
-  async getWantToReadBooks() {
-    const accessToken = await this.getAccessToken();
+  async getRecentlyReadBooks() {
+    const data = await this.getReadingStates();
 
-    const response = await Fetch(this.url, {
-      duration: "1d",
-      type: "json",
-      fetchOptions: {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: `
-          query myReadingStates {
-            myReadingStates {
-              status
-              book {
-                title
-                cover
-                slug
-              }
-            }
-          }
-        `,
-        }),
-      },
-    });
-    const upNext = response.data.myReadingStates
-      .filter((shelf) => shelf.status === "WANTS_TO_READ")
-      .slice(0, 6);
+    const upNext = data.data.myReadingStates
+      .filter((shelf) => shelf.status === "FINISHED")
+      .slice(0, 3);
 
     return upNext;
   }

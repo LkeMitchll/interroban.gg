@@ -6,10 +6,13 @@ async function reading() {
   return response.getCurrentlyReadingBooks().then((json) => json);
 }
 
-async function wantToRead() {
+async function readRecently() {
   const response = new LiteralAPI();
 
-  return response.getWantToReadBooks().then((json) => json);
+  return response.getRecentlyReadBooks().then((json) => json);
 }
 
-export default { readingNow: await reading(), wantToRead: await wantToRead() };
+export default {
+  readingNow: await reading(),
+  readRecently: await readRecently(),
+};

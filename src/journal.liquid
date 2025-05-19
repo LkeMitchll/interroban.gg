@@ -75,7 +75,7 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </div>
     {% endfor %}
   </section>
-  <section class="music | columns">
+  <section class="columns">
     <div>
       <h3 class="subheading">Top albums (3 months)</h3>
       <ol role="list">
@@ -114,34 +114,46 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
     </p>
   </header>
 
-  <h3>Now</h3>
-  <ol role="list" class="books | columns | gap-large">
-    {% for item in reading.readingNow %}
-    <li class="push-down">
-      <img src="{{ item.book.cover }}" width="500" height="750" loading="lazy" alt="{{ item.book.title }}"
-        title="{{ item.book.title }}" class="gap" />
-      <p>
-        <small>
-          <a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a>
-        </small>
-      </p>
-    </li>
-    {% endfor %}
-  </ol>
-  <h3>Later</h3>
-  <ol role="list" class="books | columns">
-    {% for item in reading.wantToRead %}
-    <li class="push-down">
-      <img src="{{ item.book.cover }}" width="500" height="750" loading="lazy" alt="{{ item.book.title }}"
-        title="{{ item.book.title }}" class="gap" />
-      <p>
-        <small>
-          <a href="https://literal.club/book/{{ item.book.slug }}">{{ item.book.title }}</a>
-        </small>
-      </p>
-    </li>
-    {% endfor %}
-  </ol>
+  <section class="columns">
+    <div>
+      <h3>Finished Recently</h3>
+      <ol role="list" class="gap-large">
+        {% for item in reading.readRecently %}
+          <li class="border">
+            <a href="https://literal.club/book/{{ item.book.slug }}">
+              {{ item.book.title }}
+            </a>
+            <p class="gap-small">
+              <small>
+              {% for author in item.book.authors %}
+                {{ author.name }}
+              {% endfor %}
+              </small>
+            </p>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+
+    <div>
+      <h3>Reading Now</h3>
+      <ol role="list" class="gap-large">
+        {% for item in reading.readingNow %}
+          <li class="border">
+            <a href="https://literal.club/book/{{ item.book.slug }}">
+              {{ item.book.title }}
+            </a>
+            <p class="gap-small">
+              <small>
+              {% for author in item.book.authors %}
+                {{ author.name }}
+              {% endfor %}
+              </small>
+            </p>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
 </article>
 
 <article id="watching" class="gap-xx-large">
