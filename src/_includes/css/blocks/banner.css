@@ -1,8 +1,9 @@
 .banner {
+  --padding: var(--space-small);
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% - (var(--padding) * 2));
   display: flex;
   align-items: center;
   justify-content: center;
