@@ -8,9 +8,5 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-small);
-  background-color: var(--color-dark);
-
-  & * {
-    color: var(--color-light);
-  }
+  border-bottom: var(--border-default);
 }
