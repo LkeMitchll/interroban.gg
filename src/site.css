@@ -23,10 +23,6 @@
 @import url("_includes/css/blocks/quote.css") layer(blocks);
 @import url("_includes/css/blocks/now-playing.css") layer(blocks);
 @import url("_includes/css/blocks/scrapbook.css") layer(blocks);
-@import url("_includes/css/blocks/banner.css") layer(blocks);
-
-/* vendor styles/overrides */
-@import url("_includes/css/vendor/masonry-layout.css") layer(blocks);
 
 /* utilities */
 @import url("_includes/css/utilities/utilities.css") layer(utilities);

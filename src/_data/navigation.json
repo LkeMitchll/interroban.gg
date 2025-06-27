@@ -3,11 +3,6 @@
     "name": "General",
     "pages": [
       {
-        "name": "Work",
-        "url": "/work/",
-        "description": "See my work."
-      },
-      {
         "name": "About",
         "url": "/about/",
         "description": "Read more about me."
