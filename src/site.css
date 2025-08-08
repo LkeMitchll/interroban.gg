@@ -10,7 +10,6 @@
 @import url("_includes/css/compositions/flow.css") layer(compositions);
 @import url("_includes/css/compositions/columns.css") layer(compositions);
 @import url("_includes/css/compositions/horizontal.css") layer(compositions);
-@import url("_includes/css/compositions/vertical.css") layer(compositions);
 @import url("_includes/css/compositions/switcher.css") layer(compositions);
 
 /* blocks */
@@ -20,7 +19,6 @@
 @import url("_includes/css/blocks/caption.css") layer(blocks);
 @import url("_includes/css/blocks/tag.css") layer(blocks);
 @import url("_includes/css/blocks/lighthouse.css") layer(blocks);
-@import url("_includes/css/blocks/quote.css") layer(blocks);
 @import url("_includes/css/blocks/now-playing.css") layer(blocks);
 @import url("_includes/css/blocks/scrapbook.css") layer(blocks);
 

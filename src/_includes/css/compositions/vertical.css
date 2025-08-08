@@ -1,5 +1,0 @@
-.vertical {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap, var(--space-small));
-}
