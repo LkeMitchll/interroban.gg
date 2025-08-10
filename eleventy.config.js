@@ -32,7 +32,7 @@ const config = (eleventy) => {
   eleventy.addShortcode("breadcrumbs", breadcrumbs);
   eleventy.addPairedShortcode("sidenote", (content, number) => {
     const result = md.render(content);
-    return `<aside id="sn-${number}" class="sidenote" data-numerals="lining">
+    return `<aside id="sn-${number}" class="sidenote">
               <small class="flow">${result}</small>
             </aside>`;
   });

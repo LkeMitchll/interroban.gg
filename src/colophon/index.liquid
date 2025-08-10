@@ -27,7 +27,12 @@ toc: ["Updates", "Impact", "Design", "Development", "Typography"]
       Last time speedlify ran, this site earned the following lighthouse score:
     </p>
 
-    {% include "components/lighthouse.liquid" %}
+    <ul class="lighthouse | horizontal | tertiary-text" role="list">
+      <li>Performance <span>{{ speedlify.lighthouse.performance }}</span></li>
+      <li>Accessibility <span>{{ speedlify.lighthouse.accessibility }}</span></li>
+      <li>Best Practices <span>{{ speedlify.lighthouse.bestPractices }}</span></li>
+      <li>SEO <span>{{ speedlify.lighthouse.seo }}</span></li>
+    </ul>
 
     {% renderFile "./src/_includes/colophon.md" %}
   </section>
