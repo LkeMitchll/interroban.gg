@@ -2,7 +2,7 @@ import Fetch from "@11ty/eleventy-fetch";
 
 export default class SaveeAPI {
   constructor() {
-    this.url = "https://savee.it/api/graphql/";
+    this.url = process.env.SAVEE_URL;
   }
 
   async getItems() {
@@ -14,28 +14,6 @@ export default class SaveeAPI {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          query: `{
-            userByUsername(username: "interrobang") {
-              items(limit: 30) {
-                items {
-                  _id
-                  url
-                  name
-                  pageURL
-                  asset {
-                    _id
-                    image {
-                      thumbnail
-                      width
-                      ratio
-                    }
-                  }
-                }
-              }
-            }
-          }`,
-        }),
       },
     });
   }
