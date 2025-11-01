@@ -39,13 +39,14 @@ img {
 figure {
   margin: 0;
 
-  & *[data-image-size="large"],
-  & figcaption {
+  & *[data-image-size="large"] {
     grid-column: span 4;
   }
 
-  @media (min-width: 700px) {
-    & figcaption {
+  & figcaption {
+    grid-column: span 4;
+
+    @media (min-width: 700px) {
       grid-column: 4 / 4;
     }
   }

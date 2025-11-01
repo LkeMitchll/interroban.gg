@@ -2,10 +2,8 @@
   &::before {
     content: "Above";
     font-weight: 600;
-  }
 
-  @media (min-width: 700px) {
-    &::before {
+    @media (min-width: 700px) {
       content: "Left";
     }
   }
