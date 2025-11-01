@@ -18,9 +18,9 @@
     ]
   },
   {
-    "title": "Fantastical",
-    "url": "https://flexibits.com/fantastical",
-    "description": "A great macOS/iOS calandar app.",
+    "title": "Itsycal",
+    "url": "https://www.mowglii.com/itsycal/",
+    "description": "A great menubar calandar app for macOS.",
     "tags": [
       "software",
       "general"
@@ -119,7 +119,7 @@
   {
     "title": "FigJam",
     "url": "https://www.figma.com/figjam",
-    "description": "A collaborative white-board, which is perfect for remote workshops.",
+    "description": "Great for diagrams, and a good collaborative white-board.",
     "tags": [
       "software",
       "design"
@@ -198,18 +198,9 @@
     ]
   },
   {
-    "title": "Apple MacBook Pro 16-inch",
+    "title": "Apple MacBook Pro 14-inch",
     "url": "https://www.apple.com/uk/macbook-pro/",
-    "description": "Is my primary work device. It is configured with the Apple M2 Pro, 32GB RAM and 512GB SSD.",
-    "tags": [
-      "hardware",
-      "general"
-    ]
-  },
-  {
-    "title": "Apple Mac mini",
-    "url": "https://www.apple.com/uk/mac-mini/",
-    "description": "Is my personal work device. It is configured with the Apple M1, 16GB RAM and 1TB SSD.",
+    "description": "Is my primary work device. It is configured with the Apple M4 Pro, 24GB RAM and 512GB SSD.",
     "tags": [
       "hardware",
       "general"
