@@ -3,6 +3,11 @@
   margin-bottom: var(--space-xx-large);
   grid-row-gap: var(--space-default);
 
+  blockquote {
+    margin-top: var(--space-default);
+    margin-bottom: var(--space-default);
+  }
+
   @media screen and (min-width: 600px) {
     & {
       grid-template-columns: 2fr 1fr;
