@@ -5,13 +5,16 @@
     background-color: var(--color-fg);
   }
 
-  @media (min-width: 700px) {
-    &[data-image-size="large"] {
-      grid-column: 1 / 4;
-    }
+  & img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
   }
+}
 
-  &[data-image-size="xlarge"] {
-    grid-column: 1 / 5;
+.image[data-image-size="large"] {
+  @media (min-width: 700px) {
+    grid-column: 1 / 4;
   }
 }

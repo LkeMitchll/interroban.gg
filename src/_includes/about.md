@@ -15,7 +15,7 @@ Design, it took me a while to work out what it was.
   Former tourist hotspot, otherwise a normal seaside town in the UK.
 {% endsidenote %}
 
-{% assign image_ID = "b46d0c2e-45a5-48d8-ba41-7ad421ec6189" %}
+{% assign image_ID = "clacton-on-sea.jpg" %}
 {% assign image_alt = "Clacton-on-sea, Essex. c 1905. – Photochrom Print Collection, Public domain, via Wikimedia Commons" %}
 {% include "components/image.liquid" %}
 
@@ -27,7 +27,7 @@ It amazed me, it is simple, playful and expressive, constructed solely from
 words, in a single typeface.
 
 {% sidenote 2 %}
-  {% image "49311ea1-8de0-47ed-b4e7-25ba4ad920f4", "Page from 'Watching Words Move' – Robert Brownjohn, Ivan Chermayeff & Tom Geismar ", "small" %}
+  {% image "watching-words-move.jpg", "Page from 'Watching Words Move' – Robert Brownjohn, Ivan Chermayeff & Tom Geismar ", "small" %}
 
   **№ 2** – [Watching Words Move](http://robertbrownjohn.com/featured-work/watching-words-move-4/) –
   Robert Brownjohn, Ivan Chermayeff & Tom Geismar.
@@ -51,7 +51,7 @@ I tinker with new web technologies, read as much as I can about design, walk,
 and fawn over photos of brutalist architecture [3](#sn-3).
 
 {% sidenote 3 %}
-  {% image "ce45ef02-1378-4321-87c4-d57237d509ca", "Photo of the Barbican Estate", "small" %}
+  {% image "barbican-estate.jpg", "Photo of the Barbican Estate", "small" %}
 
   **№ 3** – I know the [Barbican Estate](https://en.wikipedia.org/wiki/Barbican_Estate)
   like the back of my hand

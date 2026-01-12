@@ -17,7 +17,10 @@ const config = (eleventy) => {
   // Ignore gitignore
   eleventy.setUseGitIgnore(false);
   // Manually copy files
-  eleventy.addPassthroughCopy("src/assets/");
+  eleventy.addPassthroughCopy("src/assets/favicon/");
+  eleventy.addPassthroughCopy("src/assets/js/");
+  eleventy.addPassthroughCopy("src/assets/images/source");
+  eleventy.addPassthroughCopy("src/assets/manifest.webmanifest");
 
   // Eleventy plugins
   eleventy.addPlugin(EleventyRenderPlugin);

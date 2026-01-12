@@ -18,7 +18,7 @@ Early on I knew that I needed to find a serif to pair with Blanco, which I was n
 
 
 {% sidenote 1 %}
-  {% image "a71618d4-f073-4e1a-9201-629600f52025", "Comparison of the Self Modern and Signifier fonts", "small" %}
+  {% image "font-comparison.jpg", "Comparison of the Self Modern and Signifier fonts", "small" %}
 
   **№ 1** – [Self Modern](https://bretagnebretagne.fr/font/self-modern-regular/) Italic (left), [Signifier](https://klim.co.nz/retail-fonts/signifier/) Light Italic (right)
 {% endsidenote %}
