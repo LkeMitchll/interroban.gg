@@ -5,7 +5,7 @@ description: >
 date: 2025-01-17
 ---
 
-{% assign image_ID = "3366f792-dcad-4556-8ee0-8f4d0be7c972" %}
+{% assign image_ID = "chicken-carrier-temu.jpg" %}
 {% assign image_alt = "A screenshot of a product on the marketplace ‘Temu’, the product is described as “Portable Pet Chicken Carrier Bag - Durable Polyester, Ideal for Ducks & Roosters Travel and Catching Duck Coop Accessories Chicken Accessories For Chickens”, the product image shows a Rooster in the bag, the bag has carrying handles." %}
 {% include "components/image.liquid" %}
 

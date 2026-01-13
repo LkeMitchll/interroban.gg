@@ -63,7 +63,7 @@ The first step is to open the [Raycast] extension I built, it allows me to
 enter all the bookmark details and save them to a database as a draft, to be
 edited or published later.
 
-{% assign image_ID = "045f0c97-8c50-4ce6-b72f-05de8a828172" %}
+{% assign image_ID = "raycast-bookmark-create.jpg" %}
 {% assign image_alt = "My custom Raycast extension that I use to create bookmarks." %}
 {% include "components/image.liquid" %}
 
@@ -81,7 +81,7 @@ bookmarks, and publish them. In the screenshot below you see that it displays
 all the saved content with handy indicators for unpublished bookmarks. From
 here I can tap a keyboard shortcut to publish or delete the drafts as needed.
 
-{% assign image_ID = "bbd8ab6f-07c8-485b-9d12-d54cea291aa6" %}
+{% assign image_ID = "raycast-bookmark-manage.jpg" %}
 {% assign image_alt = "My custom Raycast extension that I use to managea draft bookmarks." %}
 {% include "components/image.liquid" %}
 

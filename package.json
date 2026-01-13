@@ -1,13 +1,14 @@
 {
   "name": "interroban.gg",
   "version": "4.5.0",
-  "description": "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.",
+  "description": "Personal site, blog, and portfolio of Luke Mitchell, a product designer, and UI developer.",
   "private": true,
   "type": "module",
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "3.1.2",
-    "@11ty/eleventy-fetch": "^5.1.0",
+    "@11ty/eleventy-fetch": "^5.1.1",
+    "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.5.0",
     "dotenv": "^17.2.3",
@@ -16,7 +17,7 @@
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.2"
+    "@biomejs/biome": "2.3.11"
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
