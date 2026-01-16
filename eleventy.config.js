@@ -21,6 +21,7 @@ const config = (eleventy) => {
   eleventy.addPassthroughCopy("src/assets/js/");
   eleventy.addPassthroughCopy("src/assets/images/source");
   eleventy.addPassthroughCopy("src/assets/manifest.webmanifest");
+  eleventy.addPassthroughCopy("src/robots.txt");
 
   // Eleventy plugins
   eleventy.addPlugin(EleventyRenderPlugin);
