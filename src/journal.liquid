@@ -168,11 +168,11 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
   <ol role="list" class="columns">
     {% for movie in movies %}
     <li>
-      <img src="{{ movie.poster }}" width="500" height="750" loading="lazy" alt="{{ movie.title }}"
-        title="{{ movie.title }}" class="gap" />
+      <img src="{{ movie.posterUrl }}" width="500" height="750" loading="lazy" alt="Movie poster for {{ movie.filmTitle }}"
+        title="{{ movie.filmTitle }}" class="gap" />
       <div class="flow | tertiary-text">
-        <p class="tertiary-text | gap-small">Rating: {{ movie.rating | starRating }}</p>
-        <a href="{{ movie.url }}">{{ movie.title }}</a>
+        <p class="tertiary-text | gap-small">Rating: {{ movie.memberRating | starRating }}</p>
+        <a href="{{ movie.letterboxdUrl }}">{{ movie.filmTitle }}</a>
       </div>
     </li>
     {% endfor %}
