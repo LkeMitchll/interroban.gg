@@ -2,7 +2,7 @@ import Fetch from "@11ty/eleventy-fetch";
 
 export default class LiteralAPI {
   constructor() {
-    this.url = "https://literal.club/graphql/";
+    this.url = "https://api.literal.club/graphql";
   }
 
   async getAccessToken() {
