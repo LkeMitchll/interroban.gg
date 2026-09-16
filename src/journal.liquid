@@ -205,8 +205,8 @@ toc: ["Writing", "Listening", "Reading", "Watching", "Scrapbook"]
           {% assign mod_result = forloop.index0 | modulo: num_cols %}
           {% if mod_result == col %}
             <figure class="gap">
-              <img src="{{ item.thumbnail }}" loading="lazy" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.name }}" />
-              <a class="tertiary-text" href="{{ item.page_url | default: 'https://savee.it' | append: item.url }}">
+              <img src="{{ item.media.thumbnail }}" loading="lazy" width="{{ item.media.width }}" height="{{ item.media.height }}" alt="{{ item.name }}" />
+              <a class="tertiary-text" href="{{ item.url }}">
                 Source
               </a>
             </figure>

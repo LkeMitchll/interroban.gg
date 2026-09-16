@@ -2,7 +2,8 @@ import Fetch from "@11ty/eleventy-fetch";
 
 export default class SaveeAPI {
   constructor() {
-    this.url = process.env.SAVEE_URL;
+    this.amount = 50;
+    this.url = `https://api.savee.com/v1/saves?limit=${this.amount}`;
   }
 
   async getItems() {
@@ -10,8 +11,8 @@ export default class SaveeAPI {
       duration: "1d",
       type: "json",
       fetchOptions: {
-        method: "POST",
         headers: {
+          Authorization: `Bearer ${process.env.SAVEE_API_KEY}`,
           "Content-Type": "application/json",
         },
       },
