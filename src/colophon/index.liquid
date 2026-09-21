@@ -21,19 +21,6 @@ toc: ["Updates", "Impact", "Design", "Development", "Typography"]
       this website. Which is cleaner than {{ carbon.p }}% of websites tested by
       <a href="https://www.websitecarbon.com/website/interroban-gg/">websitecarbon.com</a>
     </p>
-    <p>
-      According to the official <a href="https://www.11ty.dev/speedlify/">eleventy speedlify rankings</a>
-      this website is the {{ speedlify.rank.cumulative }}th fastest eleventy site submitted.
-      Last time speedlify ran, this site earned the following lighthouse score:
-    </p>
-
-    <ul class="lighthouse | horizontal | tertiary-text" role="list">
-      <li>Performance <span>{{ speedlify.lighthouse.performance }}</span></li>
-      <li>Accessibility <span>{{ speedlify.lighthouse.accessibility }}</span></li>
-      <li>Best Practices <span>{{ speedlify.lighthouse.bestPractices }}</span></li>
-      <li>SEO <span>{{ speedlify.lighthouse.seo }}</span></li>
-    </ul>
-
     {% renderFile "./src/_includes/colophon.md" %}
   </section>
 </article>

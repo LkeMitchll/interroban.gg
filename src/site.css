@@ -18,7 +18,6 @@
 @import url("_includes/css/blocks/sidenote.css") layer(blocks);
 @import url("_includes/css/blocks/caption.css") layer(blocks);
 @import url("_includes/css/blocks/tag.css") layer(blocks);
-@import url("_includes/css/blocks/lighthouse.css") layer(blocks);
 @import url("_includes/css/blocks/now-playing.css") layer(blocks);
 @import url("_includes/css/blocks/scrapbook.css") layer(blocks);
 
